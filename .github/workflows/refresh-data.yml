@@ -1,0 +1,72 @@
+# Weekly data refresh.
+#
+# Re-runs the fetch scripts and, when a committed JSON file under data/ has
+# changed, opens a pull request with the diff, so a new MHCLG table lands as
+# something a person reads before it reaches the site. Each script refuses to
+# write a shrunken or incomplete result and exits non-zero, which fails this
+# run rather than committing an empty file.
+#
+# A pull request opened with GITHUB_TOKEN does not trigger other workflows, so
+# CI does not run on it by itself: close and reopen it, or push to its branch,
+# to run ci.yml before merging.
+name: Refresh data
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Council tax, England
+        run: npm run data:council-tax
+
+      - name: Open a pull request when data changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        # Pure shell, no GitHub event interpolation, no injection risk.
+        run: |
+          # The generated stamp changes on every run; only a change in anything
+          # else is a refresh worth reading.
+          changed=""
+          for file in $(git diff --name-only -- data/); do
+            if git diff -U0 -- "$file" | grep -E '^[+-][^+-]' | grep -vqE '"generated":'; then
+              changed="$changed $file"
+            fi
+          done
+          if [ -z "$changed" ]; then
+            echo "No data changed."
+            git checkout -- data/
+            exit 0
+          fi
+          branch="data/refresh-$(date -u +%Y-%m-%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/
+          git commit -m "Refresh data $(date -u +%Y-%m-%d)"
+          git push -u origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "Refresh data $(date -u +%Y-%m-%d)" \
+            --body "The weekly refresh found changed data in:$changed. Read the diff before merging; CI runs once the pull request is reopened or pushed to."
