@@ -21,7 +21,9 @@
   "dependencies": {
     "@fontsource/source-sans-3": "^5.3.0",
     "@fontsource/source-serif-4": "^5.3.0",
-    "astro": "^6.4.8"
+    "@resvg/resvg-js": "^2.6.2",
+    "astro": "^6.4.8",
+    "satori": "^0.26.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

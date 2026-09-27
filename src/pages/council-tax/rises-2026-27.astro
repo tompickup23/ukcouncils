@@ -7,6 +7,7 @@
  */
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { hubCardPath } from "../../lib/og";
 import Fact from "../../components/Fact.astro";
 import SourceLine from "../../components/SourceLine.astro";
 import {
@@ -85,6 +86,7 @@ const groups = [
   title={`Council tax rises ${year}: how much every council in England raised its share`}
   description={area ? `Average area Band D in England went up ${percent(area.england.changePct)} in ${year}. How much every council raised its own share of Band D on ${previous}, as MHCLG publishes it.` : undefined}
   path="/council-tax/rises-2026-27/"
+  ogImage={hubCardPath("rises")}
 >
   <Breadcrumbs items={[{ label: "Council tax", href: "/council-tax/" }, { label: `Rises ${year}` }]} />
   <header class="page-head">

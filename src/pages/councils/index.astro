@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { hubCardPath } from "../../lib/og";
 import { REGIONS, councilPages, councilPath, slugify } from "../../lib/paths";
 
 const pages = councilPages();
@@ -13,6 +14,7 @@ const byRegion = REGIONS.map((region) => ({
   title="Every council in England, by region"
   description={`All ${pages.length} councils in England that set council tax, by region, each with its council tax bands for the year and where the figures come from.`}
   path="/councils/"
+  ogImage={hubCardPath("councils")}
 >
   <Breadcrumbs items={[{ label: "Councils" }]} />
   <header class="page-head">

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { hubCardPath } from "../../lib/og";
 import Fact from "../../components/Fact.astro";
 import HistoryBars from "../../components/HistoryBars.astro";
 import SourceLine from "../../components/SourceLine.astro";
@@ -64,6 +65,7 @@ const structuredData = [
   description={area ? `Average area Band D council tax in England is ${wholePounds(area.england.pounds)} in ${year}, up ${percent(area.england.changePct)} on ${previous}. Band D for all ${pages.length} councils, from MHCLG.` : undefined}
   path="/council-tax/"
   structuredData={structuredData}
+  ogImage={hubCardPath("council-tax")}
 >
   <Breadcrumbs items={[{ label: "Council tax" }]} />
   <header class="page-head">
@@ -148,7 +150,8 @@ const structuredData = [
     <h2 id="table-heading">Which councils have the highest Band D in {year}?</h2>
     <p class="muted">
       Each table is one class of council, sorted by area Band D from highest to lowest. The area figure
-      is what a Band D home pays in total, including the county, police, fire and average parish shares.
+      is what a Band D home pays in total: the shares of every body that sets council tax there, with parish
+      precepts as an average.
     </p>
     {byClass.map((group) => (
       <div class="fact" data-fact>

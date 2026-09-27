@@ -1,22 +1,32 @@
 # UK Councils
 
-## Handoff, 27 September 2026 (Phase 0)
+## Handoff, 27 September 2026
 
-Shipped: the repository scaffold. A one page holding site with the estate
-tokens and a plum accent, `public/_headers` with the full header set, the CSP
-hash injector, the unit suite (sitemap parity, host name, pipe titles, headers,
-`connect-src` parity, dashes, pseudo dashes, colour tokens, motive words), the
-dist check, the 375px and desktop Playwright run, the CSP run through
-`wrangler pages dev`, and `ci.yml` and `deploy.yml`.
+**State.** Six stacked pull requests, none merged, CI green on each as it was
+checked: #1 scaffold, #2 council tax ingest, #3 registry, #4 council tax pages,
+#5 postcode door and static pages, #6 share cards. Merge in order; each one's
+base is the one before. The whole stack builds to 323 pages (296 councils) and
+is on a preview at https://phase-1-preview.ukcouncils.pages.dev/ (noindex).
 
-Not yet done in Phase 0: the one.com nameserver change, custom domains, the
-`www` redirect rule, the Web Analytics beacon, the `CLOUDFLARE_API_TOKEN`
-repository secret, branch protection on `validate`, and Google Workspace for
-`info@`. The plan file records which of these are waiting on Tom.
+**Phase 0, still open.**
+- Zone `ukcouncils.co.uk` exists (id `1eca098af86df9cddbfc9ee0938096d8`),
+  nameservers `lennox.ns.cloudflare.com` and `sreeni.ns.cloudflare.com`. The
+  one.com change has not been made (Chrome was not connected); Tom approved it.
+- The zone still holds one.com's parking records (apex and `www` A to
+  46.30.211.38, null MX): delete them in the dashboard before activation.
+- Pages custom domains `ukcouncils.co.uk` and `www` added, pending the zone.
+- Not done: the `CLOUDFLARE_API_TOKEN` repository secret (Tom), the `www`
+  redirect rule on the zone, Web Analytics site and beacon, branch protection
+  on `validate`, Google Workspace for `info@`.
 
-Next: Phase 1, England council tax (`scripts/fetch-council-tax.mjs` against
-MHCLG Tables 9 and 8a), with `src/lib/redaction.ts` ported before any supplier
-or free text string is read.
+**Next.** Once the secret exists and #1 to #6 are merged, `deploy.yml` ships
+main. Then Phase 0 acceptance (domain serving with headers, beacon load), then
+Phase 1 acceptance (Search Console sitemap), then Phase 2 (term dates and
+elections sections).
+
+**Open question.** The adult social care "element" in MHCLG Tables 8a and 8b
+is not printed: the technical notes do not define it and it is not the whole
+precept. It stays in the data until its definition is confirmed.
 
 ## What it is
 
