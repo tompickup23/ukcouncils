@@ -42,6 +42,9 @@ jobs:
       - name: Council tax, England
         run: npm run data:council-tax
 
+      - name: Spending summaries, AI DOGE
+        run: npm run data:spending
+
       - name: Validate refreshed data and types
         run: |
           npm test

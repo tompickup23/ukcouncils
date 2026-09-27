@@ -14,6 +14,7 @@ import PageContents from "../../components/PageContents.astro";
 import HistoryBars from "../../components/HistoryBars.astro";
 import Fact from "../../components/Fact.astro";
 import SourceLine from "../../components/SourceLine.astro";
+import SpendingRecord from "../../components/SpendingRecord.astro";
 import {
   AREA_TYPE_LABEL,
   CURRENT_YEAR,
@@ -34,6 +35,7 @@ import { sisterLinks, type Council } from "../../lib/registry";
 import { OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
 import { councilTaxSource, longDate } from "../../lib/sources";
+import { spendingFor, spendingRecord } from "../../lib/spending";
 
 export function getStaticPaths() {
   return councilPages().map(({ council, tax }) => ({
@@ -165,6 +167,7 @@ const structuredData = [
     ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
     ...(history.length > 1 ? [{id: 'history', label: 'Previous years'}] : []),
     ...(own ? [{id: 'who-sets-it', label: 'Who sets the charge'}] : []),
+    ...(spendingRecord(name, spendingFor(council.gss)) ? [{id: 'spending', label: 'Spending'}] : []),
     ...(council.reorganisation ? [{id: 'reorganisation', label: 'Reorganisation'}] : []),
   ]} />
 
@@ -263,6 +266,8 @@ const structuredData = [
       <p class="muted"><a href="/council-tax/rises-2026-27/">How much every council raised its own share this year</a>.</p>
     </section>
   )}
+
+  <SpendingRecord gss={council.gss} name={name} />
 
   {council.reorganisation && (
     <section class="section" id="reorganisation" aria-labelledby="reorganisation-heading">

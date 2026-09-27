@@ -134,3 +134,17 @@ CSV downloads and print layouts. `npm run build` now generates Pagefind after
 Astro. Boundary snapshots refresh explicitly with `node scripts/fetch-boundaries.mjs`.
 See `scripts/brand-colours.json` and `python3 scripts/apply-brand.py` for the
 site's blue accent configuration and shared-template regeneration.
+
+### Spending, from AI DOGE
+
+```bash
+npm run data:spending   # AI DOGE summaries into data/spending/aidoge-summaries.json
+```
+
+Reads `https://data.aidoge.co.uk/v1/summaries/index.json`, the summary of each
+council the registry links to an AI DOGE page, and `v1/banks.json`, at data
+time and never from the browser. Raw downloads go to `.cache/aidoge-summaries/`
+(gitignored); the derived file is committed, like council tax, and no supplier
+name is stored. A missing summary is skipped with a log line; an empty result is
+refused. It runs in `refresh-data.yml` after council tax, and in a hand release
+before the build: `npm run data:spending`, then the build and gates as above.
