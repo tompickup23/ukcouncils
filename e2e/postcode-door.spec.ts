@@ -1,5 +1,14 @@
 import { expect, test, type Page } from "@playwright/test";
 
+// The analytics beacon is on every page. Test runs are not page loads, so its
+// requests are stopped here; the browser has already checked them against the
+// CSP by the time a route sees them.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://static.cloudflareinsights.com/**", (route) => route.abort());
+  await page.route("https://cloudflareinsights.com/**", (route) => route.abort());
+});
+
+
 /**
  * The postcode door, with postcodes.io answered by the test so the run does
  * not depend on a third party and sends no real postcode anywhere.

@@ -24,6 +24,8 @@ import { unsourcedFigures } from "./lib/figures.mjs";
 const DIST = resolve(process.cwd(), "dist");
 const SITE_NAME = "UK Councils";
 const SITE_URL = "https://ukcouncils.co.uk";
+// The Web Analytics site token, the same value as CF_BEACON_TOKEN in src/lib/site.ts.
+const BEACON_TOKEN = "78d78550d291419997e07dfb8c36dbdc";
 // Built from parts so this file does not carry the entity names it looks for.
 const DASH = new RegExp(`[\\u2013\\u2014]|&${"m"}dash;|&${"n"}dash;`);
 
@@ -64,6 +66,12 @@ for (const path of files(DIST)) {
 
   const { problems } = unsourcedFigures(text);
   for (const problem of new Set(problems)) failures.push(`${problem} on ${rel(path)}`);
+
+  // A gate that checks the CSP would allow the beacon is not a gate that checks
+  // the beacon is there. Exactly one, carrying this site's token.
+  const beacons = [...text.matchAll(/<script[^>]*static\.cloudflareinsights\.com\/beacon\.min\.js[^>]*>/g)];
+  if (beacons.length !== 1) failures.push(`${beacons.length} analytics beacons on ${rel(path)}`);
+  else if (!beacons[0][0].includes(BEACON_TOKEN)) failures.push(`beacon on ${rel(path)} carries another token`);
 
   const canonical = /<link rel="canonical" href="([^"]+)"/.exec(text)?.[1];
   if (!canonical || !canonical.startsWith(`${SITE_URL}/`)) {
