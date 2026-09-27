@@ -16,6 +16,7 @@
     "test:e2e": "playwright test",
     "test:csp": "playwright test --config playwright.csp.config.ts",
     "data:council-tax": "node scripts/fetch-council-tax.mjs",
+    "data:spending": "node scripts/fetch-spending-summaries.mjs",
     "data:registry": "node scripts/build-registry.mjs",
     "indexnow": "node scripts/indexnow.mjs"
   },

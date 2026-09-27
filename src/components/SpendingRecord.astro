@@ -1,0 +1,33 @@
+---
+/**
+ * What the council publishes about its spending, from the summary AI DOGE
+ * holds for it. Renders nothing for a council with no AI DOGE page: the
+ * section is absent, not empty. The words are built in src/lib/spending.ts.
+ */
+import SourceLine from "./SourceLine.astro";
+import { spendingFor, spendingRecord } from "../lib/spending";
+
+interface Props {
+  gss: string;
+  name: string;
+}
+
+const { gss, name } = Astro.props;
+const record = spendingRecord(name, spendingFor(gss));
+---
+{record && (
+  <section class="section" id="spending" aria-labelledby="spending-heading" data-spending-record>
+    <h2 id="spending-heading">{record.heading}</h2>
+    <div class="fact spending-fact" data-fact>
+      {record.sentences.map((sentence) => <p>{sentence}</p>)}
+      {record.caveat && <p class="caveat">{record.caveat}</p>}
+      <p><a href={record.link.href} data-spending-link>{record.link.text}</a>.</p>
+      <SourceLine source={record.source} />
+    </div>
+  </section>
+)}
+
+<style>
+  .spending-fact { max-width: 40rem; }
+  .spending-fact p { margin: 0.5rem 0; }
+</style>
