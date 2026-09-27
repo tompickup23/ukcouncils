@@ -1,0 +1,10 @@
+---
+/** Anchor navigation adapted from UK Demographics, using this site's tokens. */
+interface Props { items: {id: string; label: string}[] }
+const {items} = Astro.props;
+---
+<nav aria-label="On this page" class="page-contents">
+  <p class="eyebrow">On this page</p>
+  <ul class="pill-nav">{items.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ul>
+</nav>
+<style>.page-contents { margin: 1.5rem 0; padding: 1rem 0; border-block: 1px solid var(--border); }</style>

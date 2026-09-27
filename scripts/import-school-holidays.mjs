@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {readFeed} from './calendar-contract.mjs';
+const source=process.argv[2];
+if(!source)throw Error('Pass the directory containing the verified manifest and snapshot');
+const {manifest,bytes}=readFeed(source);
+const dest=path.join(process.cwd(),'data/school-holidays');fs.mkdirSync(dest,{recursive:true});
+fs.writeFileSync(path.join(dest,manifest.file),bytes);
+fs.writeFileSync(path.join(dest,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
+console.log(`Imported verified calendar snapshot ${manifest.sha256}`);

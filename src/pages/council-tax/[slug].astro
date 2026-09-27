@@ -5,6 +5,7 @@
  * it, all eight bands). Both list councils alphabetically within a region;
  * the one ordered table is on /council-tax/, within class.
  */
+import TaxTable from "../../components/TaxTable.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { hubCardPath } from "../../lib/og";
@@ -13,11 +14,8 @@ import {
   BANDS,
   CURRENT_YEAR,
   PREVIOUS_YEAR,
-  bandChange,
-  changePhrase,
   loadYear,
   pounds,
-  tenInstalments,
   yearLabel,
   type Band,
 } from "../../lib/council-tax";
@@ -30,10 +28,9 @@ import {
   regionPath,
   regionSlug,
   slugify,
-  type CouncilPage,
   type Region,
 } from "../../lib/paths";
-import { changeSource, councilTaxSource } from "../../lib/sources";
+import { councilTaxSource } from "../../lib/sources";
 
 type PageProps = { kind: "band"; band: Band } | { kind: "region"; region: Region };
 
@@ -50,7 +47,6 @@ const year = yearLabel(CURRENT_YEAR);
 const previous = yearLabel(PREVIOUS_YEAR);
 const pages = councilPages();
 const bandSource = councilTaxSource(CURRENT_YEAR, data.source.bandTable);
-const changeRef = changeSource(PREVIOUS_YEAR, CURRENT_YEAR);
 const inRegion = (region: string) => pages.filter((p) => p.tax.region === region);
 
 let title: string;
@@ -73,7 +69,6 @@ if (props.kind === "band") {
   crumb = props.region;
   path = regionPath(props.region);
 }
-const rowChange = (row: CouncilPage, band: Band) => bandChange(row.council.gss, band);
 ---
 <BaseLayout title={title} description={description} path={path} ogImage={hubCardPath("council-tax")}>
   <Breadcrumbs items={[{ label: "Council tax", href: "/council-tax/" }, { label: crumb }]} />
@@ -109,36 +104,7 @@ const rowChange = (row: CouncilPage, band: Band) => bandChange(row.council.gss, 
       {REGIONS.map((region) => (
         <section class="section" id={slugify(region)} aria-labelledby={`${slugify(region)}-heading`}>
           <h2 id={`${slugify(region)}-heading`}>How much is Band {props.band} in {region}?</h2>
-          <div class="fact" data-fact>
-            <div class="table-wrap">
-              <table class="data">
-                <caption>Band {props.band}, {region}, {year}</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Council</th>
-                    <th scope="col" class="num">A year</th>
-                    <th scope="col" class="num">A month, 10 instalments</th>
-                    <th scope="col" class="num">Change on {previous}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {inRegion(region).map((row) => {
-                    const change = rowChange(row, props.band);
-                    return (
-                      <tr data-ons={row.council.gss}>
-                        <th scope="row"><a href={councilPath(row.council)}>{row.tax.name}</a></th>
-                        <td class="num" data-figure>{pounds(row.tax.bands[props.band])}</td>
-                        <td class="num">{pounds(tenInstalments(row.tax.bands[props.band]))}</td>
-                        <td class="num">{change ? changePhrase(change) : "n/a"}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-            <SourceLine source={bandSource} />
-            <SourceLine source={changeRef} />
-          </div>
+          <TaxTable id={`table-${slugify(region)}`} region={region} band={props.band} caption={region} />
         </section>
       ))}
     </>
@@ -155,8 +121,11 @@ const rowChange = (row: CouncilPage, band: Band) => bandChange(row.council.gss, 
       </nav>
       <section class="section" aria-labelledby="bands-heading">
         <h2 id="bands-heading">How much is council tax in {props.region} by band?</h2>
+        <TaxTable id="region-charges" region={props.region} caption={props.region} />
+        <details><summary>View the full eight-band table</summary>
+        <p class="small muted">Scroll across for every band. The council name stays visible.</p>
         <div class="fact" data-fact>
-          <div class="table-wrap">
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Full council tax table">
             <table class="data">
               <caption>Area council tax by band, {props.region}, {year}</caption>
               <thead>
@@ -177,39 +146,9 @@ const rowChange = (row: CouncilPage, band: Band) => bandChange(row.council.gss, 
           </div>
           <SourceLine source={bandSource} />
         </div>
+        </details>
       </section>
-      <section class="section" aria-labelledby="change-heading">
-        <h2 id="change-heading">How much did Band D go up in {props.region}?</h2>
-        <div class="fact" data-fact>
-          <div class="table-wrap">
-            <table class="data">
-              <caption>Area Band D, {previous} and {year}, {props.region}</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Council</th>
-                  <th scope="col" class="num">{previous}</th>
-                  <th scope="col" class="num">{year}</th>
-                  <th scope="col" class="num">Change</th>
-                </tr>
-              </thead>
-              <tbody>
-                {inRegion(props.region).map((row) => {
-                  const change = rowChange(row, "D");
-                  return (
-                    <tr data-ons={row.council.gss}>
-                      <th scope="row"><a href={councilPath(row.council)}>{row.tax.name}</a></th>
-                      <td class="num">{change ? pounds(change.from) : "n/a"}</td>
-                      <td class="num" data-figure>{pounds(row.tax.bands.D)}</td>
-                      <td class="num">{change ? changePhrase(change) : "n/a"}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          <SourceLine source={changeRef} />
-        </div>
-      </section>
+
     </>
   )}
 </BaseLayout>

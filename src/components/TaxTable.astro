@@ -1,0 +1,113 @@
+---
+import SourceLine from './SourceLine.astro';
+import {CURRENT_YEAR, PREVIOUS_YEAR, BANDS, yearLabel} from '../lib/council-tax';
+import {taxRows, taxSources} from '../lib/tax-view-data';
+import {completeClass, moneyPence, monthlyPence, type TaxBand} from '../lib/tax-view';
+import {changeSource} from '../lib/sources';
+import {jsonLd} from '../lib/site';
+interface Props { id: string; region?: string; band?: TaxBand; caption: string }
+const {id, region, band = 'D', caption} = Astro.props;
+const all = taxRows();
+const rows = all.filter(row => !region || row.region === region);
+const classes = [...new Map(rows.map(row => [row.classCode, row.classLabel])).entries()];
+const complete = Object.fromEntries(classes.map(([code]) => [code, Object.fromEntries(BANDS.map(b => [b, completeClass(all, code, CURRENT_YEAR, b)]))]));
+const source = taxSources()[CURRENT_YEAR];
+function change(current: number | undefined, previous: number | undefined) {
+  if (!current || !previous) return null;
+  const difference = current - previous;
+  return difference === 0 ? 'Unchanged' : `${difference > 0 ? 'Up' : 'Down'} ${moneyPence(Math.abs(difference))} (${(Math.abs(difference) / previous * 100).toFixed(1)}%)`;
+}
+---
+<section data-tax-table data-year={CURRENT_YEAR} data-previous={PREVIOUS_YEAR} data-initial-band={band}>
+  <fieldset class="table-controls" disabled>
+    <legend class="visually-hidden">Filter and sort {caption}</legend>
+    <label class="field" for={`${id}-filter`}>Council name<input id={`${id}-filter`} type="search" autocomplete="off" data-table-filter /></label>
+    <label class="field">Band<select data-table-band>{BANDS.map(b => <option selected={b === band}>{b}</option>)}</select></label>
+    <label class="field">Council type<select data-table-class><option value="">All types</option>{classes.map(([code,label]) => <option value={code}>{label}</option>)}</select></label>
+    <label class="field">Sort<select data-table-sort><option value="name">Council name</option><option value="high" disabled>Annual charge, highest first</option><option value="low" disabled>Annual charge, lowest first</option></select></label>
+  </fieldset>
+  <div class="action-links table-actions" data-pagefind-ignore><button class="button secondary" type="button" data-table-export disabled>Download shown rows as CSV</button><button class="button secondary" type="button" data-table-print disabled>Print</button></div>
+  <p class="small muted" data-sort-note>Choose one council type to sort by annual charge.</p>
+  <p class="small" data-table-status role="status">{rows.length} councils, Band {band}, {yearLabel(CURRENT_YEAR)}.</p>
+  <div class="fact" data-fact>
+    <div class="table-wrap" tabindex="0" role="region" aria-label={caption}>
+      <table class="data compact-tax">
+        <caption data-table-caption>{caption}: Band {band}, {yearLabel(CURRENT_YEAR)}</caption>
+        <thead><tr><th scope="col">Council</th><th scope="col" class="num">Annual area charge</th></tr></thead>
+        <tbody>{rows.map(row => {
+          const amount = row.years[CURRENT_YEAR]?.[band];
+          const annualChange = change(amount, row.years[PREVIOUS_YEAR]?.[band]);
+          return <tr data-ons={row.gss} data-slug={row.slug}>
+            <th scope="row"><a href={`/councils/${row.slug}/#band-${band}`}>{row.name}</a><span class="row-detail">{row.classLabel}</span>
+              <span class="row-detail" data-row-change hidden={!annualChange}>{annualChange ? `${annualChange} on ${yearLabel(PREVIOUS_YEAR)}` : ''}</span>
+            </th>
+            <td class="num"><strong data-row-annual data-figure>{amount ? moneyPence(amount) : 'n/a'}</strong><span class="row-detail" data-row-monthly hidden={!amount}>{amount ? `${moneyPence(monthlyPence(amount))} a month` : ''}</span></td>
+          </tr>;
+        })}</tbody>
+      </table>
+    </div>
+    <SourceLine source={source} />
+    <SourceLine source={changeSource(PREVIOUS_YEAR, CURRENT_YEAR)} />
+    <p class="caveat">Whole-area charges include average parish precepts. Your bill and discounts can differ. Monthly equivalents divide the annual charge by ten and round to pennies.</p>
+  </div>
+  <script type="application/json" data-table-data set:html={jsonLd({rows, complete, caption, source})} />
+</section>
+<script>
+  import {moneyPence, monthlyPence, type TaxRow, type TaxBand} from '../lib/tax-view';
+  import {downloadTax, type ExportSource} from '../lib/tax-export';
+  import {matchesCouncil} from '../lib/council-search';
+  for (const root of document.querySelectorAll<HTMLElement>('[data-tax-table]')) {
+    const {rows, complete, caption, source} = JSON.parse(root.querySelector('[data-table-data]')!.textContent!) as {rows: TaxRow[]; complete: Record<string, Record<TaxBand, boolean>>; caption: string; source: ExportSource};
+    const year = root.dataset.year!; const previous = root.dataset.previous!;
+    const body = root.querySelector('tbody')!;
+    const elements = new Map([...body.querySelectorAll<HTMLTableRowElement>('tr')].map(row => [row.dataset.slug!, row]));
+    const band = root.querySelector<HTMLSelectElement>('[data-table-band]')!;
+    const type = root.querySelector<HTMLSelectElement>('[data-table-class]')!;
+    const sort = root.querySelector<HTMLSelectElement>('[data-table-sort]')!;
+    const filter = root.querySelector<HTMLInputElement>('[data-table-filter]')!;
+    let shown = rows;
+    function update() {
+      const b = band.value as TaxBand;
+      const sortable = Boolean(type.value && complete[type.value]?.[b]);
+      for (const option of [...sort.options]) if (option.value !== 'name') option.disabled = !sortable;
+      if (!sortable) sort.value = 'name';
+      root.querySelector('[data-sort-note]')!.textContent = sortable ? 'Numeric sorting compares one council type in the same complete published year.' : 'Choose one council type to sort by annual charge.';
+      const visible = rows.filter(row => (!type.value || row.classCode === type.value) && matchesCouncil(filter.value, row.name));
+      visible.sort((a,c) => sort.value === 'name' ? a.name.localeCompare(c.name) : (sort.value === 'high' ? -1 : 1) * ((a.years[year][b] as number) - (c.years[year][b] as number)) || a.name.localeCompare(c.name));
+      shown = visible;
+      root.querySelector<HTMLButtonElement>('[data-table-export]')!.disabled = !shown.length;
+      for (const element of elements.values()) element.hidden = true;
+      for (const row of visible) {
+        const element = elements.get(row.slug)!; element.hidden = false;
+        const amount = row.years[year]?.[b]; const before = row.years[previous]?.[b];
+        element.querySelector('[data-row-annual]')!.textContent = amount ? moneyPence(amount) : 'n/a';
+        const monthly = element.querySelector<HTMLElement>('[data-row-monthly]')!;
+        monthly.hidden = !amount; monthly.textContent = amount ? `${moneyPence(monthlyPence(amount))} a month` : '';
+        const change = element.querySelector<HTMLElement>('[data-row-change]')!;
+        change.hidden = !amount || !before;
+        if (amount && before) {
+          const delta = amount - before;
+          change.textContent = `${delta === 0 ? 'Unchanged' : `${delta > 0 ? 'Up' : 'Down'} ${moneyPence(Math.abs(delta))} (${(Math.abs(delta) / before * 100).toFixed(1)}%)`} on ${previous.replace('-', '/')}`;
+        }
+        element.querySelector<HTMLAnchorElement>('a')!.href = `/councils/${row.slug}/#band-${b}`;
+        body.append(element);
+      }
+      root.querySelector('[data-table-status]')!.textContent = visible.length ? `${visible.length} councils, Band ${b}, ${year.replace('-', '/')}.` : 'No matching councils. Clear the name filter or choose another council type.';
+      root.querySelector('[data-table-caption]')!.textContent = `${caption}: Band ${b}, ${year.replace('-', '/')}`;
+    }
+    root.querySelector<HTMLFieldSetElement>('fieldset')!.disabled = false;
+    const csv = root.querySelector<HTMLButtonElement>('[data-table-export]')!;
+    csv.disabled = false;
+    csv.addEventListener('click', () => downloadTax(shown, band.value as TaxBand, year, source, `council-tax-${year}-band-${band.value}.csv`));
+    const print = root.querySelector<HTMLButtonElement>('[data-table-print]')!;
+    print.disabled = false; print.addEventListener('click', () => window.print());
+    filter.addEventListener('input', update);
+    for (const control of [band,type,sort]) control.addEventListener('change', update);
+  }
+</script>
+<style>
+  .table-controls { display: grid; grid-template-columns: 2fr 0.7fr 1.4fr 1.6fr; gap: 0.7rem; border: 0; padding: 0; margin: 0; min-width: 0; }
+  .row-detail { display: block; font-size: 0.8rem; color: var(--text-muted); font-weight: 400; white-space: normal; }
+  .compact-tax th:first-child { width: 58%; }
+  @media(max-width: 640px) { .table-controls { grid-template-columns: 1fr 1fr; } .compact-tax th:first-child { min-width: 0; } }
+</style>

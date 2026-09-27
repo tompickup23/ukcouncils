@@ -32,7 +32,7 @@ const index = Object.fromEntries(
   <div class="door-row">
     <input
       id={id}
-      name="postcode"
+      data-postcode-input
       type="text"
       inputmode="text"
       autocomplete="postal-code"
@@ -43,13 +43,14 @@ const index = Object.fromEntries(
       required
       aria-describedby={`${id}-status ${id}-note`}
     />
-    <button type="submit">Find</button>
+    <button type="submit" disabled>Find</button>
   </div>
   <p class="door-status" id={`${id}-status`} role="status" aria-live="polite" data-door-status></p>
   <p class="door-note" id={`${id}-note`}>
     Your postcode is sent to postcodes.io to find the council for it, and is not stored.
     <a href="/privacy/">Privacy</a>. Or <a href="/councils/">choose from the list</a>.
   </p>
+  <noscript><p>Postcode lookup needs JavaScript. <a href="/councils/">Browse all councils</a>.</p></noscript>
   <script type="application/json" data-council-index set:html={JSON.stringify(index).replace(/</g, "\\u003c")} />
 </form>
 
@@ -63,10 +64,11 @@ const index = Object.fromEntries(
   const POSTCODE = /^[A-Z]{1,2}[0-9][A-Z0-9]?\s?[0-9][A-Z]{2}$/;
 
   for (const form of document.querySelectorAll<HTMLFormElement>("[data-postcode-door]")) {
-    const input = form.querySelector<HTMLInputElement>("input[name=postcode]");
+    const input = form.querySelector<HTMLInputElement>("[data-postcode-input]");
     const status = form.querySelector<HTMLElement>("[data-door-status]");
     const indexEl = form.querySelector<HTMLScriptElement>("[data-council-index]");
     if (!input || !status || !indexEl) continue;
+    form.querySelector<HTMLButtonElement>("button")!.disabled = false;
     const index = JSON.parse(indexEl.textContent ?? "{}") as Record<string, Entry>;
     const say = (text: string) => {
       status.textContent = text;

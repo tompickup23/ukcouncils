@@ -27,6 +27,7 @@ interface Props {
   ogImage?: string;
   /** What the share card shows, for og:image:alt. Names no person. */
   ogImageAlt?: string;
+  about?: object;
 }
 
 const {
@@ -35,6 +36,7 @@ const {
   path,
   noindex = false,
   structuredData = [],
+  about,
   ogImage = hubCardPath("home"),
   ogImageAlt = `${SITE_NAME}: your council, from the official record`,
 } = Astro.props;
@@ -48,6 +50,8 @@ const nodes = [
     description,
     url: canonical,
     inLanguage: "en-GB",
+    publisher: { "@id": `${SITE_URL}/#publisher` },
+    ...(about ? { about } : {}),
     isPartOf: { "@id": `${SITE_URL}/#website` },
   },
   ...(path === "/"
@@ -60,14 +64,23 @@ const nodes = [
           name: SITE_NAME,
           description: DEFAULT_DESCRIPTION,
           inLanguage: "en-GB",
+          publisher: { "@id": `${SITE_URL}/#publisher` },
         },
       ]
     : []),
   ...structuredData,
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#publisher`,
+    name: SITE_NAME,
+    url: SITE_URL,
+    description: "Independent reference publisher of sourced local authority information. Not a council or government service.",
+  },
 ];
 ---
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" data-pagefind-ignore={noindex ? "all" : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

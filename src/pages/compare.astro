@@ -1,0 +1,154 @@
+---
+import ViewActions from '../components/ViewActions.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SourceLine from '../components/SourceLine.astro';
+import {CURRENT_YEAR, YEARS, BANDS, yearLabel} from '../lib/council-tax';
+import {taxRows, taxSources} from '../lib/tax-view-data';
+import {SITE_URL, jsonLd} from '../lib/site';
+const rows = taxRows();
+const sources = taxSources();
+---
+<BaseLayout title={`Compare council tax in England ${yearLabel(CURRENT_YEAR)}`} description="Compare the published area council tax charge for two councils of the same type, in the same band and financial year." path="/compare/">
+  <Breadcrumbs items={[{label: 'Council tax', href: '/council-tax/'}, {label: 'Compare councils'}]} />
+  <header class="page-head"><p class="eyebrow">Council tax, England</p><h1>Compare two councils</h1>
+    <p class="lede">The same band. The same year. The same type of council.</p>
+    <p class="muted">Choose your first council to see eligible comparisons. These are whole-area charges, including average parish precepts, rather than each council's own share.</p>
+  </header>
+  <section data-tax-compare>
+    <form class="card" data-comparison-form>
+      <fieldset disabled data-comparison-fields>
+        <legend>Choose your comparison</legend>
+        <div class="task-grid">
+          {['a','b'].map((side, i) => <div>
+            <label class="field">Filter {i === 0 ? 'first' : 'second'} council names<input type="search" data-picker-filter={side} autocomplete="off" /></label>
+            <label class="field" for={`council-${side}`}>{i === 0 ? 'First council' : 'Second council'}</label>
+            <select id={`council-${side}`} name={side} aria-describedby="comparison-rule" required>
+              <option value="">Choose a council</option>
+              {rows.map(row => <option value={row.slug}>{row.name} ({row.classLabel})</option>)}
+            </select>
+          </div>)}
+        </div>
+        <p id="comparison-rule" class="small muted" data-comparison-rule>The second list is limited to the first council's type.</p>
+        <div class="task-grid">
+          <div class="field"><label for="compare-band">Band</label><select id="compare-band" name="band">{BANDS.map(band => <option selected={band === 'D'}>{band}</option>)}</select></div>
+          <div class="field"><label for="compare-year">Financial year</label><select id="compare-year" name="year">{[...YEARS].reverse().map(year => <option value={year} selected={year === CURRENT_YEAR}>{yearLabel(year)}</option>)}</select></div>
+        </div>
+        <div class="action-links"><button class="button" type="submit">Compare</button><button class="button secondary" type="button" data-swap>Swap councils</button></div>
+      </fieldset>
+    </form>
+    <p role="status" data-comparison-status>Choose two councils to see their published charges.</p>
+    <section hidden data-comparison-results aria-label="Comparison result">
+      <h2 data-comparison-heading></h2>
+      <div class="task-grid">
+        {['a','b'].map(side => <div class="card fact" data-fact data-result-side={side}>
+          <h3><a data-result-name></a></h3><p class="fact-label" data-result-label></p>
+          <strong class="fact-figure" data-figure data-result-annual></strong>
+          <p class="source-line" data-result-source></p>
+          <p data-result-monthly></p>
+          <p class="caveat">Area average including parish precepts. Your exact bill and any discounts can differ.</p>
+        </div>)}
+      </div>
+      <div class="card fact" data-fact><strong data-figure data-result-difference></strong><p class="source-line" data-difference-source></p></div>
+      <p class="small muted">Monthly equivalents divide the annual charge by ten and round to pennies. Actual instalments on a bill can differ.</p>
+      <ViewActions id="comparison" />
+      <p><a data-comparison-link>Link to this comparison</a>. You can bookmark this page or copy its address.</p>
+    </section>
+    <script type="application/json" data-comparison-data set:html={jsonLd({site: SITE_URL, rows, sources, years: YEARS, currentYear: CURRENT_YEAR})} />
+  </section>
+  <noscript><p>Interactive comparisons need JavaScript. <a href="/council-tax/">Read the complete published tables</a> or <a href="/councils/">open two council pages</a>; their band selectors work without JavaScript.</p></noscript>
+  <details class="section"><summary>Sources and comparison rules</summary>
+    <p>Comparisons use published area charges for the same council class, band and financial year. A changed authority code or an absent source value is not filled from an earlier area.</p>
+    {YEARS.map(year => <SourceLine source={sources[year]} />)}
+    <p><a href="/methodology/">Read the methodology</a>.</p>
+  </details>
+</BaseLayout>
+<script>
+  import {compareTax, comparisonQuery, moneyPence, monthlyPence, type TaxRow, type ComparisonState} from '../lib/tax-view';
+  import {shareView} from '../lib/share';
+  import {downloadTax, type ExportSource} from '../lib/tax-export';
+  import {matchesCouncil} from '../lib/council-search';
+  const root = document.querySelector<HTMLElement>('[data-tax-compare]')!;
+  const data = JSON.parse(root.querySelector('[data-comparison-data]')!.textContent!) as {site: string; rows: TaxRow[]; years: string[]; currentYear: string; sources: Record<string, ExportSource>};
+  const form = root.querySelector<HTMLFormElement>('form')!;
+  const fields = root.querySelector<HTMLFieldSetElement>('fieldset')!;
+  const status = root.querySelector<HTMLElement>('[data-comparison-status]')!;
+  const result = root.querySelector<HTMLElement>('[data-comparison-results]')!;
+  const control = (name: string) => form.elements.namedItem(name) as HTMLSelectElement;
+  const state = (): ComparisonState => ({a: control('a').value, b: control('b').value, band: control('band').value, year: control('year').value});
+  const filter = (side: string) => root.querySelector<HTMLInputElement>(`[data-picker-filter="${side}"]`)!;
+  function options(side: string, selected: string) {
+    const first = data.rows.find(row => row.slug === control('a').value);
+    const choices = data.rows.filter(row => (side === 'a' || (first && row.classCode === first.classCode && row.gss !== first.gss)) && (row.slug === selected || matchesCouncil(filter(side).value, row.name)));
+    control(side).replaceChildren(new Option('Choose a council', ''), ...choices.map(row => new Option(`${row.name} (${row.classLabel})`, row.slug)));
+    control(side).value = choices.some(row => row.slug === selected) ? selected : '';
+    control(side).disabled = side === 'b' && !first;
+    root.querySelector('[data-comparison-rule]')!.textContent = first ? `Choose another ${first.classLabel.toLowerCase()}. Other council types are excluded.` : "Choose the first council to see eligible comparisons.";
+  }
+  function sourceLine(target: Element, year: string, calculated = false) {
+    const source = data.sources[year];
+    const a = document.createElement('a'); a.href = source.url; a.textContent = `${source.publisher}, ${source.table}, ${year.replace('-', '/')}`;
+    target.replaceChildren(document.createTextNode(calculated ? 'Calculated from published area charges. Source: ' : 'Source: '), a, document.createTextNode(source.date ? `, published ${source.date}.` : '.'));
+  }
+  function show(value: ComparisonState) {
+    const checked = compareTax(data.rows, value, data.years);
+    result.hidden = !checked.ok;
+    if (!checked.ok) {status.textContent = checked.message; return;}
+    status.textContent = 'Comparison ready.';
+    root.querySelector('[data-comparison-heading]')!.textContent = `Band ${checked.band}, ${checked.year.replace('-', '/')}`;
+    for (const [side, row, amount] of [['a', checked.a, checked.aPence], ['b', checked.b, checked.bPence]] as const) {
+      const card = root.querySelector(`[data-result-side="${side}"]`)!;
+      const link = card.querySelector<HTMLAnchorElement>('[data-result-name]')!;
+      link.textContent = row.name; link.href = `/councils/${row.slug}/#band-${checked.band}`;
+      link.title = `Open ${row.name}'s current council tax page`;
+      card.querySelector('[data-result-label]')!.textContent = `${row.classLabel} · annual area charge`;
+      card.querySelector('[data-result-annual]')!.textContent = moneyPence(amount);
+      card.querySelector('[data-result-monthly]')!.textContent = `${moneyPence(monthlyPence(amount))} a month over ten instalments`;
+      sourceLine(card.querySelector('[data-result-source]')!, checked.year);
+    }
+    root.querySelector('[data-result-difference]')!.textContent = checked.differencePence === 0 ? 'Both areas have the same published annual charge.' : `${checked.b.name} is ${moneyPence(Math.abs(checked.differencePence))} ${checked.differencePence > 0 ? 'more' : 'less'} a year than ${checked.a.name}.`;
+    sourceLine(root.querySelector('[data-difference-source]')!, checked.year, true);
+    root.querySelector<HTMLAnchorElement>('[data-comparison-link]')!.href = `/compare/?${comparisonQuery(value)}`;
+  }
+  function restore() {
+    const params = new URLSearchParams(location.search);
+    const value = {a: params.get('a') ?? '', b: params.get('b') ?? '', band: params.get('band') ?? 'D', year: params.get('year') ?? data.currentYear};
+    filter('a').value = ''; filter('b').value = '';
+    options('a', value.a); options('b', value.b);
+    control('band').value = value.band; control('year').value = value.year;
+    if (params.size) show(value);
+    else { result.hidden = true; status.textContent = 'Choose two councils to see their published charges.'; }
+  }
+  const share = root.querySelector<HTMLButtonElement>('[data-share-view]')!;
+  const csv = root.querySelector<HTMLButtonElement>('[data-export-view]')!;
+  share.disabled = false; csv.disabled = false;
+  share.addEventListener('click', () => {
+    const value = state(); if (!compareTax(data.rows, value, data.years).ok || result.hidden) return;
+    void shareView(new URL(`/compare/?${comparisonQuery(value)}`, data.site).href, 'Compare council tax', root.querySelector('[data-share-status]')!, root.querySelector('[data-share-fallback]')!);
+  });
+  csv.addEventListener('click', () => {
+    const checked = compareTax(data.rows, state(), data.years); if (!checked.ok || result.hidden) return;
+    downloadTax([checked.a,checked.b], checked.band, checked.year, data.sources[checked.year], `council-tax-comparison-${checked.year}-band-${checked.band}.csv`);
+  });
+  fields.disabled = false; restore();
+  for (const side of ['a','b']) filter(side).addEventListener('input', () => options(side, control(side).value));
+  form.addEventListener('change', event => {
+    if (event.target === control('a')) {filter('b').value = ''; options('b', control('b').value);}
+    result.hidden = true; status.textContent = 'Choose Compare to update the result.';
+  });
+  form.addEventListener('submit', event => { event.preventDefault(); const value = state(); history.pushState(null, '', `/compare/?${comparisonQuery(value)}`); show(value); });
+  root.querySelector('[data-swap]')!.addEventListener('click', () => {
+    const value = state(); const checked = compareTax(data.rows, value, data.years);
+    if (!checked.ok) {show(value); return;}
+    const swapped = {...value, a: value.b, b: value.a};
+    history.pushState(null, '', `/compare/?${comparisonQuery(swapped)}`); restore();
+  });
+  window.addEventListener('popstate', restore);
+</script>
+<style>
+  fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  legend { font-weight: 600; margin-bottom: 1rem; }
+  select { width: 100%; min-width: 0; padding: 0.65rem; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); }
+  [data-picker-filter] { margin-bottom: 0.7rem; }
+  h3 { margin: 0 0 0.75rem; }
+</style>

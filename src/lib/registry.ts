@@ -75,6 +75,9 @@ export interface SisterLink {
 export function sisterLinks(council: Council): SisterLink[] {
   const links: SisterLink[] = [];
   for (const site of Object.keys(SISTER_SITES) as SisterSite[]) {
+    // The private project is never linked from a public surface, even if an
+    // older registry snapshot or a refresh still contains its mapping.
+    if (site === "ukfoodhygiene") continue;
     const url = council.sisters[site];
     if (typeof url === "string") links.push({ site, name: SISTER_SITES[site], url });
   }

@@ -4,9 +4,14 @@
  * term dates, election, contracts, spending and area sections join as their
  * data does, and until then they are absent, not blank.
  */
+import SchoolHolidays from "../../components/SchoolHolidays.astro";
+import CouncilActions from "../../components/CouncilActions.astro";
+import MiniMap from "../../components/MiniMap.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import BandSelector from "../../components/BandSelector.astro";
+import PageContents from "../../components/PageContents.astro";
+import HistoryBars from "../../components/HistoryBars.astro";
 import Fact from "../../components/Fact.astro";
 import SourceLine from "../../components/SourceLine.astro";
 import {
@@ -26,9 +31,9 @@ import {
 } from "../../lib/council-tax";
 import { councilPages, councilPath, regionPath } from "../../lib/paths";
 import { sisterLinks, type Council } from "../../lib/registry";
-import { absoluteUrl } from "../../lib/site";
+import { OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
-import { changeSource, councilTaxSource, longDate } from "../../lib/sources";
+import { councilTaxSource, longDate } from "../../lib/sources";
 
 export function getStaticPaths() {
   return councilPages().map(({ council, tax }) => ({
@@ -98,18 +103,6 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
 const structuredData = [
   {
     "@context": "https://schema.org",
-    "@type": "GovernmentOrganization",
-    name: `${name} council`,
-    url: absoluteUrl(path),
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name,
-      identifier: council.gss,
-      containedInPlace: { "@type": "AdministrativeArea", name: tax.region },
-    },
-  },
-  {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
       {
@@ -126,8 +119,9 @@ const structuredData = [
   description={description}
   path={path}
   structuredData={structuredData}
+  about={{"@type": "GovernmentOrganization", name: council.officialName, identifier: council.gss, areaServed: {"@type": "AdministrativeArea", name, identifier: council.gss}}}
   ogImage={councilCardPath(council.slug)}
-  ogImageAlt={`${name}: Band D council tax ${year}, ${pounds(bandD)}`}
+  ogImageAlt={`${name}: council tax bands A to H, ${year}`}
 >
   <Breadcrumbs items={[{ label: "Councils", href: "/councils/" }, { label: name }]} />
 
@@ -135,29 +129,16 @@ const structuredData = [
     <p class="eyebrow">Council</p>
     <h1>{name}</h1>
     <p class="muted">{typeLine}</p>
-    <div class="above-fold card">
-      <Fact
-        label={`Band D council tax, ${year}`}
-        figure={pounds(bandD)}
-        change={changeD ? `${changePhrase(changeD)} on ${previous}` : null}
-        source={bandSource}
-      >
-        {changeD && <SourceLine source={changeSource(PREVIOUS_YEAR, CURRENT_YEAR)} />}
-        <p class="caveat">
-          This is the average for the whole area. A home in a parish that sets its own precept pays a
-          different amount; the figure includes the average parish precept for {name}.
-        </p>
-      </Fact>
-    </div>
   </header>
 
+  <div class="council-answer">
   <section class="section" id="council-tax" aria-labelledby="council-tax-heading">
     <h2 id="council-tax-heading">{question}</h2>
     <p class="muted">
-      Choose a band. Each figure is the yearly charge for a home with two adults, as MHCLG publishes it,
-      and the same amount over ten monthly instalments, the usual way it is paid.
+      Choose your band for the published yearly charge, before discounts.
     </p>
     <BandSelector ons={council.gss} authority={tax} />
+    <p class="small muted">Monthly equivalents divide the annual charge by ten and round to pennies. Actual bill instalments can differ.</p>
     <p class="caveat">
       Every band includes the share of every body that sets council tax here, such as the police and,
       where they exist, the county council, the fire authority and parish councils, with parish precepts as
@@ -171,6 +152,21 @@ const structuredData = [
       </ul>
     )}
   </section>
+
+  <MiniMap gss={council.gss} name={name} />
+  </div>
+  <div class="action-links" aria-label="Council tax next steps">
+    <a class="button" data-council-compare href={`/compare/?a=${council.slug}&band=D&year=${CURRENT_YEAR}`}>Compare this council</a>
+    <a href={OFFICIAL_BAND_CHECK}>Find your property band on GOV.UK</a>
+    <a href={OFFICIAL_COUNCIL_LOOKUP}>Find your council for your exact bill</a>
+  </div>
+  <CouncilActions slug={council.slug} />
+  <PageContents items={[
+    ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
+    ...(history.length > 1 ? [{id: 'history', label: 'Previous years'}] : []),
+    ...(own ? [{id: 'who-sets-it', label: 'Who sets the charge'}] : []),
+    ...(council.reorganisation ? [{id: 'reorganisation', label: 'Reorganisation'}] : []),
+  ]} />
 
   {englandArea && areaSource && (
     <section class="section" id="compared" aria-labelledby="compared-heading">
@@ -197,6 +193,35 @@ const structuredData = [
         Both averages include parish and adult social care precepts, the same basis as the {name} figure.
         <a href={regionPath(tax.region)}>Band D for every council in {tax.region}</a>.
       </p>
+    </section>
+  )}
+
+  {history.length > 1 && (
+    <section class="section" id="history" aria-labelledby="history-heading">
+      <h2 id="history-heading">How has Band D in {name} changed?</h2>
+      <div class="fact" data-fact>
+        <HistoryBars rows={history.map(row => ({label: yearLabel(row.year), value: row.bandD}))} format={pounds} caption={`Published area Band D in ${name} by year`} />
+        <SourceLine source={historySource} />
+        <p class="caveat">Cash figures, not adjusted for inflation. Includes average parish precepts.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Council tax history table">
+          <table class="data">
+            <caption>Area Band D in {name}, as published each year</caption>
+            <thead>
+              <tr><th scope="col">Year</th><th scope="col" class="num">Band D</th><th scope="col">Source</th></tr>
+            </thead>
+            <tbody>
+              {history.map((row) => (
+                <tr>
+                  <th scope="row">{yearLabel(row.year)}</th>
+                  <td class="num" data-figure>{pounds(row.bandD)}</td>
+                  <td><a href={loadYear(row.year).source.url}>MHCLG {row.table.replace("_", " ")}</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <SourceLine source={historySource} />
+      </div>
     </section>
   )}
 
@@ -239,32 +264,6 @@ const structuredData = [
     </section>
   )}
 
-  {history.length > 1 && (
-    <section class="section" id="history" aria-labelledby="history-heading">
-      <h2 id="history-heading">How has Band D in {name} changed?</h2>
-      <div class="fact" data-fact>
-        <div class="table-wrap">
-          <table class="data">
-            <caption>Area Band D in {name}, as published each year</caption>
-            <thead>
-              <tr><th scope="col">Year</th><th scope="col" class="num">Band D</th><th scope="col">Source</th></tr>
-            </thead>
-            <tbody>
-              {history.map((row) => (
-                <tr>
-                  <th scope="row">{yearLabel(row.year)}</th>
-                  <td class="num" data-figure>{pounds(row.bandD)}</td>
-                  <td><a href={loadYear(row.year).source.url}>MHCLG {row.table.replace("_", " ")}</a></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <SourceLine source={historySource} />
-      </div>
-    </section>
-  )}
-
   {council.reorganisation && (
     <section class="section" id="reorganisation" aria-labelledby="reorganisation-heading">
       <h2 id="reorganisation-heading">Is {name} council being reorganised?</h2>
@@ -274,6 +273,8 @@ const structuredData = [
       </p>
     </section>
   )}
+
+  <SchoolHolidays place={council} />
 
   {links.length > 0 && (
     <section class="section" id="more" aria-labelledby="more-heading">
@@ -288,7 +289,9 @@ const structuredData = [
 </BaseLayout>
 
 <style>
-  .above-fold { margin-top: 1rem; max-width: 34rem; }
+  .council-answer { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  @media (min-width: 960px) { .council-answer { grid-template-columns: minmax(0, 2fr) minmax(15rem, 1fr); } }
+  #council-tax { max-width: 48rem; margin-top: 1rem; }
   .notes { font-size: 0.9rem; color: var(--text-muted); padding-left: 1.1rem; }
   .sister-links { padding-left: 1.1rem; }
   .sister-links li { margin: 0.25rem 0; }

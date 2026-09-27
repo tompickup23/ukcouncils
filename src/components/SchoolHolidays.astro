@@ -1,0 +1,14 @@
+---
+import { calendarFor } from "../lib/school-holidays";
+const { place } = Astro.props;
+const calendar = calendarFor(place);
+const today = new Intl.DateTimeFormat('en-CA', {timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+const next = calendar?.year.breaks.find((event: { end: string }) => event.end >= today);
+---
+{calendar && <section class="section place-section" id="school-holidays" aria-labelledby="school-holidays-heading">
+<h2 id="school-holidays-heading">School holidays in {place.name}</h2>
+{next ? <p><strong>{next.label}: {next.start} to {next.end}</strong>, from {calendar.authority.name}'s {calendar.year.academicYear} reference calendar.</p> : <p>View the recorded {calendar.year.academicYear} calendar for {calendar.authority.name}.</p>}
+<p class="source-line">Source: <a href={calendar.year.sourceUrl}>{calendar.authority.name}'s official calendar</a>, captured {calendar.year.retrievedAt?.slice(0,10)}. Calendar selection as of {today}.</p>
+<p>This is an education-authority reference. Individual schools, local clusters and INSET days can differ. Confirm with the school before booking.</p>
+<p><a href={calendar.authority.url}>Full calendar, source notes and downloads on UK School Holiday Dates</a>.</p>
+</section>}

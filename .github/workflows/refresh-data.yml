@@ -7,8 +7,8 @@
 # run rather than committing an empty file.
 #
 # A pull request opened with GITHUB_TOKEN does not trigger other workflows, so
-# CI does not run on it by itself: close and reopen it, or push to its branch,
-# to run ci.yml before merging.
+# validate the generated snapshot in this job before opening the request.
+# Any later edit still needs CI on the exact head before merging.
 name: Refresh data
 
 on:
@@ -42,6 +42,24 @@ jobs:
       - name: Council tax, England
         run: npm run data:council-tax
 
+      - name: Validate refreshed data and types
+        run: |
+          npm test
+          npm run check
+
+      - name: Build and check the refreshed site
+        run: |
+          npm run build
+          npm run test:dist
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Check user journeys and production headers
+        run: |
+          npm run test:e2e
+          npm run test:csp
+
       - name: Open a pull request when data changed
         env:
           GH_TOKEN: ${{ github.token }}
@@ -69,4 +87,4 @@ jobs:
           git push -u origin "$branch"
           gh pr create --base main --head "$branch" \
             --title "Refresh data $(date -u +%Y-%m-%d)" \
-            --body "The weekly refresh found changed data in:$changed. Read the diff before merging; CI runs once the pull request is reopened or pushed to."
+            --body "The weekly refresh found changed data in:$changed. This generated snapshot passed unit, type, build, browser and production security header checks in the refresh job. Read the diff before merging. Any subsequent edit needs validation of the exact head to be merged."

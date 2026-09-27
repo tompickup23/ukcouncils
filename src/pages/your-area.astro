@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CouncilFinder from "../components/CouncilFinder.astro";
 import PostcodeDoor from "../components/PostcodeDoor.astro";
 ---
 <BaseLayout
@@ -14,7 +15,8 @@ import PostcodeDoor from "../components/PostcodeDoor.astro";
     <h1>Find your council</h1>
     <p class="lede">Enter your postcode to go to your council's page.</p>
   </header>
-  <PostcodeDoor id="postcode-area" heading="Your postcode" />
+  <div class="task-grid"><PostcodeDoor id="postcode-area" heading="Your postcode" /><CouncilFinder /></div>
+  <p><a href="/councils/">Browse all councils</a></p>
   <p class="muted">
     In a two tier area the postcode finds your district council, which sends the council tax bill; its page
     also shows the county council's share.

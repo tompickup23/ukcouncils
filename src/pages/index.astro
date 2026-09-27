@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CouncilFinder from "../components/CouncilFinder.astro";
+import HistoryBars from "../components/HistoryBars.astro";
+import SourceLine from "../components/SourceLine.astro";
 import Fact from "../components/Fact.astro";
 import PostcodeDoor from "../components/PostcodeDoor.astro";
 import { BANDS, CURRENT_YEAR, PREVIOUS_YEAR, loadYear, percent, wholePounds, yearLabel } from "../lib/council-tax";
@@ -12,17 +15,22 @@ const year = yearLabel(CURRENT_YEAR);
 const previous = yearLabel(PREVIOUS_YEAR);
 const count = councilPages().length;
 ---
-<BaseLayout path="/">
+<BaseLayout path="/" title={`Council tax in England ${year}: find and compare councils`}>
   <section class="home-hero">
     <p class="eyebrow">UK Councils</p>
-    <h1>Your council, from the official record</h1>
+    <h1>Council tax for your area</h1>
     <p class="lede">
-      What your council charges, band by band, and how much it went up, for every council in England,
-      with the source and date under every figure.
+      Find your council, choose your band and compare the published charge. Covering all {count} councils in England for {year}, with the official source beside every figure.
     </p>
-    <PostcodeDoor id="postcode-home" />
+    <div class="task-grid"><PostcodeDoor id="postcode-home" /><CouncilFinder /></div>
+    <p><a href="/councils/">Browse all councils</a></p>
   </section>
 
+  <nav class="task-nav section" aria-label="Council tax tools">
+    <a class="card" href="/your-area/"><strong>Find your charge</strong><span>Annual amounts for every band, with the monthly equivalent.</span></a>
+    <a class="card" href="/compare/"><strong>Compare councils</strong><span>Put the same band and year side by side.</span></a>
+    <a class="card" href="/council-tax/rises-2026-27/"><strong>Understand the increase</strong><span>See how each council changed its own share.</span></a>
+  </nav>
   {area && (
     <section class="section" aria-labelledby="home-average">
       <h2 id="home-average">How much is council tax in England in {year}?</h2>
@@ -33,13 +41,22 @@ const count = councilPages().length;
             figure={wholePounds(area.england.pounds)}
             change={`up ${percent(area.england.changePct)} on ${previous}`}
             source={councilTaxSource(CURRENT_YEAR, area.table)}
-          />
+          ><p class="caveat">Includes adult social care and average parish precepts.</p></Fact>
         </div>
       </div>
       <p><a href="/council-tax/">Council tax for all {count} councils in England</a> · <a href="/council-tax/rises-2026-27/">How much each council raised its share</a></p>
     </section>
   )}
 
+  {data.england.history && <section class="section" aria-labelledby="home-history">
+    <h2 id="home-history">How the England average has changed</h2>
+    <div data-fact class="fact">
+      <HistoryBars rows={data.england.history.rows.filter(r => typeof r.pounds === 'number').map(r => ({label: yearLabel(r.year), value: r.pounds!}))} format={wholePounds} caption="Published average Band D in England by year" />
+      <SourceLine source={councilTaxSource(CURRENT_YEAR, data.england.history.table)} />
+      <p class="caveat">Cash figures, not adjusted for inflation. Includes adult social care and average parish precepts.</p>
+      <a href="/council-tax/#history-heading">Read the complete history table</a>
+    </div>
+  </section>}
   <section class="section" aria-labelledby="home-bands">
     <h2 id="home-bands">Council tax by band</h2>
     <ul class="pill-nav">
@@ -56,6 +73,6 @@ const count = councilPages().length;
 </BaseLayout>
 
 <style>
-  .home-hero { padding: 1.5rem 0 0.5rem; max-width: 44rem; }
+  .home-hero { padding: 1.5rem 0 0.5rem;  }
   .home-hero h1 { font-size: clamp(2rem, 7vw, 3rem); margin: 0 0 0.75rem; }
 </style>

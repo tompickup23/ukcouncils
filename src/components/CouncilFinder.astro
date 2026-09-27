@@ -1,0 +1,43 @@
+---
+import { councilPages, councilPath } from "../lib/paths";
+interface Props { id?: string }
+const { id = "council-name" } = Astro.props;
+const rows = councilPages();
+---
+<section class="card council-finder" data-council-finder>
+  <label class="field" for={id}><span>Find your council by name</span>
+    <input id={id} type="search" placeholder="e.g. Burnley" autocomplete="off" disabled aria-controls={`${id}-results`} aria-describedby={`${id}-status`} />
+  </label>
+  <p id={`${id}-status`} class="muted small" role="status" data-finder-status>Enter at least two letters. Search covers councils in England.</p>
+  <ul id={`${id}-results`} class="finder-results" hidden>
+    {rows.map(({council, tax}) => <li hidden data-name={`${tax.name} ${council.officialName}`}>
+      <a href={`${councilPath(council)}#council-tax`}>{tax.name}<span>{tax.class} · {tax.region}</span></a>
+    </li>)}
+  </ul>
+  <noscript><p>Name search needs JavaScript. <a href="/councils/">Browse all councils</a>.</p></noscript>
+</section>
+<script>
+  import { matchesCouncil, normalise } from "../lib/council-search";
+  for (const finder of document.querySelectorAll<HTMLElement>('[data-council-finder]')) {
+    const input = finder.querySelector<HTMLInputElement>('input')!;
+    const list = finder.querySelector<HTMLUListElement>('ul')!;
+    const status = finder.querySelector<HTMLElement>('[data-finder-status]')!;
+    const rows = [...list.querySelectorAll<HTMLLIElement>('li')];
+    input.disabled = false;
+    input.addEventListener('input', () => {
+      const query = normalise(input.value);
+      const matches = query.length < 2 ? [] : rows.filter(row => matchesCouncil(query, row.dataset.name ?? ''));
+      matches.sort((a,b) => Number(normalise(b.querySelector('a')!.firstChild!.textContent!) === query) - Number(normalise(a.querySelector('a')!.firstChild!.textContent!) === query));
+      const visible = new Set(matches.slice(0,8));
+      rows.forEach(row => { row.hidden = !visible.has(row); });
+      for (const row of matches.slice(0,8)) list.append(row);
+      list.hidden = !visible.size;
+      status.textContent = query.length < 2 ? 'Enter at least two letters. Search covers councils in England.' : matches.length ? `${matches.length} matching councils${matches.length > 8 ? '; showing the first eight. Keep typing to narrow the list' : ''}. Tab to choose a result.` : 'No matching council in England. Try a shorter name or browse all councils.';
+    });
+  }
+</script>
+<style>
+  .finder-results { list-style: none; padding: 0; margin: 0; }
+  .finder-results a { display: block; padding: 0.6rem 0; border-top: 1px solid var(--border); font-weight: 600; }
+  .finder-results span { display: block; color: var(--text-muted); font-size: 0.85rem; font-weight: 400; }
+</style>

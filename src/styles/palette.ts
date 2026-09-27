@@ -8,9 +8,9 @@ export const cardPalette = {
   ground: "#0f1317",
   groundInk: "#f4f6f7",
   groundMuted: "#98a3ac",
-  accentBright: "#e28fc8",
-  accentDeep: "#7a2d62",
-  accentWash: "#f8eef5",
+  accentBright: "#8cc4ed",
+  accentDeep: "#245b87",
+  accentWash: "#eef5fb",
 } as const;
 
 /** The global.css token each value mirrors. */
