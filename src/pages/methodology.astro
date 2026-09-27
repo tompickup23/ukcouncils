@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { CURRENT_YEAR, PREVIOUS_YEAR, loadYear, yearLabel } from "../lib/council-tax";
+import { tableName } from "../lib/sources";
+
+const data = loadYear(CURRENT_YEAR);
+const year = yearLabel(CURRENT_YEAR);
+const previous = yearLabel(PREVIOUS_YEAR);
+const ratios = data.source.bandTableNotes.find((n) => n.id === "ac")?.text ?? null;
+---
+<BaseLayout
+  title="Methodology: how UK Councils reads the council tax tables"
+  description="How UK Councils reads the MHCLG council tax tables, what each figure includes, and the two calculations the site makes."
+  path="/methodology/"
+>
+  <Breadcrumbs items={[{ label: "Methodology" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Methodology</p>
+    <h1>How the figures are read</h1>
+  </header>
+  <div class="prose">
+    <h2>Council tax by band</h2>
+    <p>
+      Each council's figures for bands A to H are {tableName(data.source.bandTable)} of the MHCLG release
+      for {year}, read as published. No band is worked out from another. The figure is the area charge for
+      a home with two adults: it includes the county council where there is one, the police and crime
+      commissioner, the fire authority where it sets a precept, and the average parish precept for the
+      council's area. A home in a parish with its own precept pays a different amount, which is why every
+      band figure carries that caveat.
+    </p>
+    {ratios && <p>MHCLG's note on the band table: {ratios}</p>}
+    <h2>The two calculations</h2>
+    <p>
+      <strong>The change on {previous}</strong> is this year's published figure less last year's published
+      figure for the same council, from the two band tables, and as a percentage of last year's figure,
+      rounded to one decimal place. It is labelled as calculated wherever it appears. Where a council's
+      ONS code differs between the two tables, as Barnsley's and Sheffield's do between the 2024 to 2025
+      and 2025 to 2026 tables, no change is shown for that pair of years: ONS issues a new code when an
+      area's boundary changes, so the two figures may not be for the same area.
+    </p>
+    <p>
+      <strong>The monthly figure</strong> is the yearly charge divided by ten, because ten monthly instalments
+      is the usual way council tax is paid. It is labelled as such and never as a twelfth.
+    </p>
+    <h2>What is not shown</h2>
+    <p>
+      MHCLG's tables include an adult social care element for councils with social care duties. The
+      technical notes do not define it, and it is not the whole adult social care precept, so the site does
+      not print it.
+    </p>
+    <h2>Comparisons</h2>
+    <p>
+      The national page orders councils by area Band D within each class of council, because MHCLG publishes
+      every council for the same complete year. Band and region pages list councils alphabetically. No
+      page says why a council's figure is higher or lower than another's.
+    </p>
+  </div>
+</BaseLayout>

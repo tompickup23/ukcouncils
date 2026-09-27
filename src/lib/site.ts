@@ -25,9 +25,14 @@ export const THEME_STORAGE_KEY = "ukcouncils-theme";
  */
 export const STATIC_PATHS = [
   "/",
+  "/your-area/",
   "/councils/",
   "/council-tax/",
   "/council-tax/rises-2026-27/",
+  "/about/",
+  "/methodology/",
+  "/sources/",
+  "/privacy/",
 ] as const;
 
 export type NavItem = { href: string; label: string; desc: string };
@@ -38,6 +43,7 @@ export const NAV_GROUPS: NavGroup[] = [
   {
     label: "Councils",
     items: [
+      { href: "/your-area/", label: "Your area", desc: "Find your council by postcode" },
       { href: "/councils/", label: "Every council", desc: "All 296 councils in England, by region" },
     ],
   },
@@ -47,6 +53,15 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/council-tax/", label: "Council tax in England", desc: "The England average and every council" },
       { href: "/council-tax/band-d/", label: "Band D", desc: "Band D for every council, by region" },
       { href: "/council-tax/rises-2026-27/", label: "Rises 2026/27", desc: "How much each council raised its own share" },
+    ],
+  },
+  {
+    label: "About",
+    items: [
+      { href: "/about/", label: "About", desc: "What the site publishes and its rules" },
+      { href: "/methodology/", label: "Methodology", desc: "How every figure is read" },
+      { href: "/sources/", label: "Sources", desc: "Every table used, with dates" },
+      { href: "/privacy/", label: "Privacy", desc: "What happens to a postcode" },
     ],
   },
 ];

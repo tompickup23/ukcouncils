@@ -94,6 +94,24 @@ test("the theme select runs under the policy", async ({ page }) => {
   expect(found, describe(found)).toEqual([]);
 });
 
+test("the postcode door reaches postcodes.io under the policy", async ({ page }) => {
+  // The route is answered by the test, but only after the browser has checked
+  // the request against connect-src: a policy without the origin fails here.
+  const found = await watch(page);
+  await page.route("https://api.postcodes.io/postcodes/**", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ status: 200, result: { codes: { admin_district: "E07000117" } } }),
+    }),
+  );
+  await page.goto("/your-area/");
+  await page.locator("#postcode-area").fill("BB11 1DU");
+  await page.getByRole("button", { name: "Find" }).click();
+  await expect(page).toHaveURL(/\/councils\/burnley\/#council-tax$/);
+  expect(found, describe(found)).toEqual([]);
+});
+
 test("_headers allows exactly the inline scripts the built tree has", async () => {
   // A hash with no script behind it fails too: a stale one outliving the code
   // it allowed is how an allowance nobody can account for survives a refactor.

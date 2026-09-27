@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Fact from "../components/Fact.astro";
+import PostcodeDoor from "../components/PostcodeDoor.astro";
 import { BANDS, CURRENT_YEAR, PREVIOUS_YEAR, loadYear, percent, wholePounds, yearLabel } from "../lib/council-tax";
 import { REGIONS, bandPath, councilPages, regionPath } from "../lib/paths";
 import { councilTaxSource } from "../lib/sources";
@@ -19,7 +20,7 @@ const count = councilPages().length;
       What your council charges, band by band, and how much it went up, for every council in England,
       with the source and date under every figure.
     </p>
-    <p><a class="cta" href="/councils/">Find your council</a></p>
+    <PostcodeDoor id="postcode-home" />
   </section>
 
   {area && (
@@ -57,13 +58,4 @@ const count = councilPages().length;
 <style>
   .home-hero { padding: 1.5rem 0 0.5rem; max-width: 44rem; }
   .home-hero h1 { font-size: clamp(2rem, 7vw, 3rem); margin: 0 0 0.75rem; }
-  .cta {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--bg);
-    padding: 0.65rem 1.1rem;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    text-decoration: none;
-  }
 </style>
