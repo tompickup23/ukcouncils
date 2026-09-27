@@ -2,9 +2,9 @@
 
 ## Handoff, 27 September 2026
 
-**State.** Six stacked pull requests, none merged, CI green on each as it was
+**State.** Seven stacked pull requests, none merged, CI green on each as it was
 checked: #1 scaffold, #2 council tax ingest, #3 registry, #4 council tax pages,
-#5 postcode door and static pages, #6 share cards. Merge in order; each one's
+#5 postcode door and static pages, #6 share cards, #7 analytics beacon. Merge in order; each one's
 base is the one before. The whole stack builds to 323 pages (296 councils) and
 is on a preview at https://phase-1-preview.ukcouncils.pages.dev/ (noindex).
 
@@ -12,14 +12,16 @@ is on a preview at https://phase-1-preview.ukcouncils.pages.dev/ (noindex).
 - Zone `ukcouncils.co.uk` exists (id `1eca098af86df9cddbfc9ee0938096d8`),
   nameservers `lennox.ns.cloudflare.com` and `sreeni.ns.cloudflare.com`. The
   one.com change has not been made (Chrome was not connected); Tom approved it.
-- The zone still holds one.com's parking records (apex and `www` A to
-  46.30.211.38, null MX): delete them in the dashboard before activation.
+- The one.com parking records were deleted; the zone is empty. It needs two
+  proxied CNAMEs, `@` and `www` to `ukcouncils.pages.dev` (Tom: DNS changes
+  were blocked for the agent), and a redirect rule sending `www` to the apex.
 - Pages custom domains `ukcouncils.co.uk` and `www` added, pending the zone.
-- Not done: the `CLOUDFLARE_API_TOKEN` repository secret (Tom), the `www`
-  redirect rule on the zone, Web Analytics site and beacon, branch protection
-  on `validate`, Google Workspace for `info@`.
+- Web Analytics site created; the beacon is PR #7.
+- Not done: the `CLOUDFLARE_API_TOKEN` repository secret (Tom), Google
+  Workspace for `info@` (Admin asked for a password), branch protection on
+  `validate` (needs GitHub Pro or a public repo, so at launch).
 
-**Next.** Once the secret exists and #1 to #6 are merged, `deploy.yml` ships
+**Next.** Once the secret exists and #1 to #7 are merged, `deploy.yml` ships
 main. Then Phase 0 acceptance (domain serving with headers, beacon load), then
 Phase 1 acceptance (Search Console sitemap), then Phase 2 (term dates and
 elections sections).

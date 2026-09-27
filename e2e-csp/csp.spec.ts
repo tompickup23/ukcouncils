@@ -4,6 +4,15 @@ import { expect, test, type ConsoleMessage, type Page } from "@playwright/test";
 import { hashesIn, scriptSrcOf } from "../scripts/inject_csp_hashes.mjs";
 import { STATIC_PATHS } from "../src/lib/site";
 
+// The analytics beacon is on every page. Test runs are not page loads, so its
+// requests are stopped here; the browser has already checked them against the
+// CSP by the time a route sees them.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://static.cloudflareinsights.com/**", (route) => route.abort());
+  await page.route("https://cloudflareinsights.com/**", (route) => route.abort());
+});
+
+
 /**
  * The production Content Security Policy, applied.
  *
@@ -109,6 +118,19 @@ test("the postcode door reaches postcodes.io under the policy", async ({ page })
   await page.locator("#postcode-area").fill("BB11 1DU");
   await page.getByRole("button", { name: "Find" }).click();
   await expect(page).toHaveURL(/\/councils\/burnley\/#council-tax$/);
+  expect(found, describe(found)).toEqual([]);
+});
+
+test("the analytics beacon is allowed by the policy", async ({ page }) => {
+  const found = await watch(page);
+  const requested: string[] = [];
+  page.on("request", (request) => {
+    if (request.url().includes("cloudflareinsights.com")) requested.push(request.url());
+  });
+  await page.goto("/");
+  await page.waitForTimeout(1_000);
+  // The browser only issues the request if script-src allowed it.
+  expect(requested.some((url) => url.startsWith("https://static.cloudflareinsights.com/beacon.min.js"))).toBe(true);
   expect(found, describe(found)).toEqual([]);
 });
 

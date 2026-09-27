@@ -2,7 +2,16 @@
 import "../styles/global.css";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import { DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL, absoluteUrl, jsonLd, pageTitle } from "../lib/site";
+import {
+  BEACON_SCRIPT,
+  CF_BEACON_TOKEN,
+  DEFAULT_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  absoluteUrl,
+  jsonLd,
+  pageTitle,
+} from "../lib/site";
 import { hubCardPath } from "../lib/og";
 
 interface Props {
@@ -90,5 +99,6 @@ const nodes = [
       <slot />
     </main>
     <SiteFooter />
+    <script is:inline defer src={BEACON_SCRIPT} data-cf-beacon={JSON.stringify({ token: CF_BEACON_TOKEN })}></script>
   </body>
 </html>

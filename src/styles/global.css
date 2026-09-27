@@ -432,3 +432,4 @@ table.data tbody tr:nth-child(even) { background: color-mix(in srgb, var(--bg-su
 .prose { max-width: 44rem; }
 .prose h2 { font-size: 1.35rem; margin: 1.75rem 0 0.5rem; }
 .prose li { margin: 0.35rem 0; }
+.prose code { overflow-wrap: anywhere; }

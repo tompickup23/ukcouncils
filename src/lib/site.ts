@@ -13,6 +13,17 @@ export const DEFAULT_DESCRIPTION =
   "Council tax by band and how much it changed for every council in England, from the official "
   + "MHCLG tables, each figure with its source and date.";
 
+/**
+ * Cloudflare Web Analytics. The site token is public: it is printed in every
+ * page. The beacon script loads from BEACON_SCRIPT and posts page loads to
+ * BEACON_ENDPOINT, which is why the CSP allows the one in script-src and the
+ * other in connect-src. scripts/check-dist.mjs fails a page that does not
+ * carry exactly one beacon with this token.
+ */
+export const CF_BEACON_TOKEN = "78d78550d291419997e07dfb8c36dbdc";
+export const BEACON_SCRIPT = "https://static.cloudflareinsights.com/beacon.min.js";
+export const BEACON_ENDPOINT = "https://cloudflareinsights.com";
+
 /** The key the manual theme choice is stored under. public/theme-init.js reads the same key. */
 export const THEME_STORAGE_KEY = "ukcouncils-theme";
 

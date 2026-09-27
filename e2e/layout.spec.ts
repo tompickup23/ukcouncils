@@ -1,6 +1,15 @@
 import { expect, test } from "@playwright/test";
 import { STATIC_PATHS } from "../src/lib/site";
 
+// The analytics beacon is on every page. Test runs are not page loads, so its
+// requests are stopped here; the browser has already checked them against the
+// CSP by the time a route sees them.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://static.cloudflareinsights.com/**", (route) => route.abort());
+  await page.route("https://cloudflareinsights.com/**", (route) => route.abort());
+});
+
+
 /**
  * Every static path and one page of each programmatic family renders, and no
  * page body scrolls horizontally at the viewport the project runs at. Two
