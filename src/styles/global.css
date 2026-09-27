@@ -268,3 +268,163 @@ img, svg { max-width: 100%; height: auto; }
   white-space: nowrap;
   border: 0;
 }
+
+/* === Layout primitives. === */
+.shell {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main.shell { padding-top: 1.25rem; padding-bottom: 2rem; }
+
+[id] { scroll-margin-top: clamp(72px, 12vh, 100px); }
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0 0 0.35rem;
+}
+
+.lede { font-size: 1.15rem; color: var(--text); max-width: 44rem; }
+.muted { color: var(--text-muted); }
+
+.page-head { margin-bottom: 1.5rem; }
+.page-head h1 { font-size: clamp(1.8rem, 5.5vw, 2.6rem); margin: 0 0 0.5rem; }
+
+.section { margin: 2.25rem 0; }
+.section > h2 { font-size: clamp(1.35rem, 4vw, 1.75rem); margin: 0 0 0.85rem; }
+
+/* A fact is one figure and the source line directly under it. Every figure on
+   the site sits inside one; scripts/check-dist.mjs holds the pages to it. */
+.fact { margin: 0 0 1.1rem; }
+.fact-figure {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 7vw, 2.6rem);
+  line-height: 1.1;
+  color: var(--text);
+}
+.fact-label { display: block; color: var(--text-muted); font-size: 0.95rem; }
+.fact-change { display: block; margin-top: 0.2rem; }
+.source-line {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  line-height: 1.45;
+}
+.source-line a { color: var(--text-faint); }
+.caveat {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-left: 3px solid var(--border-strong);
+  padding-left: 0.6rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem 1.1rem;
+}
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.85rem;
+}
+
+/* Tables scroll inside their own box, never the page. */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+table.data caption {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+}
+table.data th,
+table.data td {
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+table.data thead th {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  background: var(--bg-subtle);
+  white-space: nowrap;
+}
+table.data td.num,
+table.data th.num { text-align: right; white-space: nowrap; }
+table.data tbody tr:nth-child(even) { background: color-mix(in srgb, var(--bg-subtle) 55%, transparent); }
+
+.pill-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.pill-nav a {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg-card);
+}
+.pill-nav a:hover { border-color: var(--accent); color: var(--accent); }
+.pill-nav a[aria-current="page"] {
+  background: var(--accent-wash);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.link-list {
+  columns: 16rem auto;
+  column-gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.link-list li { break-inside: avoid; padding: 0.2rem 0; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--bg-card);
+  padding: 0.5rem 0.75rem;
+  z-index: 100;
+}
+
+@media (max-width: 480px) {
+  table.data { font-size: 0.88rem; }
+  table.data th, table.data td { padding: 0.45rem 0.5rem; }
+}

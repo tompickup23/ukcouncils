@@ -39,6 +39,20 @@
       "unitary": "Table_7a",
       "county": "Table_7b",
       "district": "Table_7c"
+    },
+    "referendumPrinciples": {
+      "section": "5.27",
+      "text": "Authorities are required to hold a referendum if their relevant basic amount of council tax for 2024-25 is in excess of the council tax referendum principles which apply to them. The referendum principles are: 5% or more than 5% (comprising up to a maximum of 2% for expenditure on adult social care and 3% on other expenditure) for authorities with responsibility for adult social care services. 5% or more than 5% (comprising up to a maximum of 2% for expenditure on adult social care and 3% on other expenditure) for unitarising authorities with responsibility for adult social care services which are equalising difference council tax levels across their predecessor areas. The principle may be applied to either the increase in each individual predecessor area, or to the tax base-weighted average band D figure of all the predecessor areas. More than £5, or 3% or more than 3%, (the greater of the two) for district councils in 2 tier areas. More than £13 for Police and Crime Commissioners. More than £13 for the police component of the Greater Manchester Combined Authority and the West Yorkshire Combined Authority precept. 3% or more than 3%, for fire and rescue authorities. More than £37.26 for the adjusted relevant basic amount of council tax of the GLA. More than £24.26 for the unadjusted relevant basic amount of council tax of the GLA. 10% or more than 10% for Woking Borough Council. 10% or more than 10% [comprising of up to a maximum of 2% expenditure on adult social care and 8% on other expenditure] for Birmingham City Council, Slough Council and Thurrock Council. No referendum principles were set for mayoral combined authorities or local precepting authorities.",
+      "title": "Council Tax levels set by local authorities in England 2024 to 2025: technical notes (revised)",
+      "url": "https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2024-to-2025/council-tax-levels-set-by-local-authorities-in-england-2024-to-2025-technical-notes"
+    },
+    "notes": {
+      "a": "This includes core GLA, Transport for London (TfL), The London Legacy Development Corporation, the London Fire and Emergency Planning Authority (LFEPA) and The Mayor's Office for Policing and Crime.",
+      "b": "The year on year percentage change is based on a comparison with an agreed alternative notional amount, rather than the actual Band D set.",
+      "c": "Does not include the Mayor's Office for Policing and Crime element from GLA which is shown in Table_7a and excludes City of London Police (as this element is not distinguishable from the council tax charged by the City of London). Greater Manchester Combined Authority's and West Yorkshire Combined Authority's police function are included.",
+      "d": "Covers both metropolitan and shire and fire rescue authorities. It excludes fire and rescue services provided by counties, unitaries, GLA and Greater Manchester Combined Authority.",
+      "e": "Greater Manchester Combined Authority's and West Yorkshire Combined Authority's police function can be found in Table 7d.",
+      "f": "This reflects only Greater Manchester Combined Authority’s general functions which includes their responsibility for fire and rescue services."
     }
   },
   "england": {},

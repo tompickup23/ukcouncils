@@ -1,0 +1,159 @@
+---
+/**
+ * The band selector: eight radio inputs and CSS, no JavaScript. Every band's
+ * figure is in the HTML, so a crawler and a screen reader get all eight; the
+ * inputs only choose which panel is shown. Band D is selected by default
+ * because it is the band every published comparison uses.
+ *
+ * Each panel is a fact with its own source line, and the year on year change
+ * for that band carries its own "calculated from two published tables" line.
+ */
+import Fact from "./Fact.astro";
+import {
+  BANDS,
+  CURRENT_YEAR,
+  PREVIOUS_YEAR,
+  bandChange,
+  changePhrase,
+  loadYear,
+  pounds,
+  tenInstalments,
+  yearLabel,
+  type Authority,
+} from "../lib/council-tax";
+import { changeSource, councilTaxSource } from "../lib/sources";
+
+interface Props {
+  ons: string;
+  authority: Authority;
+  idPrefix?: string;
+}
+
+const { ons, authority, idPrefix = "band" } = Astro.props;
+const bandTable = loadYear(CURRENT_YEAR).source.bandTable;
+const source = councilTaxSource(CURRENT_YEAR, bandTable);
+const changeRef = changeSource(PREVIOUS_YEAR, CURRENT_YEAR);
+const year = yearLabel(CURRENT_YEAR);
+const previous = yearLabel(PREVIOUS_YEAR);
+---
+<div class="band-selector" style={`--bands:${BANDS.length}`}>
+  {BANDS.map((band) => (
+    <input
+      class="band-radio"
+      type="radio"
+      name={`${idPrefix}-band`}
+      id={`${idPrefix}-${band}`}
+      value={band}
+      checked={band === "D"}
+      data-band={band}
+    />
+  ))}
+  <fieldset class="band-tabs">
+    <legend class="visually-hidden">Choose a council tax band</legend>
+    {BANDS.map((band) => (
+      <label for={`${idPrefix}-${band}`} data-band-label={band}>{band}</label>
+    ))}
+  </fieldset>
+  <div class="band-panels">
+    {BANDS.map((band) => {
+      const annual = authority.bands[band];
+      const change = bandChange(ons, band);
+      return (
+        <div class="band-panel card" data-band-panel={band}>
+          <Fact
+            label={`Band ${band}, ${year}, for the year`}
+            figure={pounds(annual)}
+            source={source}
+          >
+            <span class="band-monthly">
+              {pounds(tenInstalments(annual))} a month over ten monthly instalments
+            </span>
+          </Fact>
+          {change && (
+            <Fact
+              class="fact-small"
+              label={`Change on ${previous}, Band ${band}`}
+              figure={changePhrase(change)}
+              source={changeRef}
+            >
+              <span class="band-monthly">{pounds(change.from)} in {previous}</span>
+            </Fact>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+<style>
+  .band-selector { position: relative; }
+  .band-radio {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
+  .band-tabs {
+    display: grid;
+    grid-template-columns: repeat(var(--bands), minmax(0, 1fr));
+    gap: 0.3rem;
+    border: none;
+    padding: 0;
+    margin: 0 0 0.6rem;
+  }
+  .band-tabs label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .band-tabs label:hover { border-color: var(--accent); color: var(--accent); }
+  .band-panel { display: none; }
+  .band-monthly { display: block; color: var(--text-muted); margin-top: 0.2rem; }
+  .fact-small .fact-figure { font-size: 1.3rem; }
+  .fact-small { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--border); }
+
+  /* One pair of rules per band. The radios come first in source order so the
+     general sibling combinator reaches both the labels and the panels. */
+  .band-radio[data-band="A"]:checked ~ .band-panels [data-band-panel="A"],
+  .band-radio[data-band="B"]:checked ~ .band-panels [data-band-panel="B"],
+  .band-radio[data-band="C"]:checked ~ .band-panels [data-band-panel="C"],
+  .band-radio[data-band="D"]:checked ~ .band-panels [data-band-panel="D"],
+  .band-radio[data-band="E"]:checked ~ .band-panels [data-band-panel="E"],
+  .band-radio[data-band="F"]:checked ~ .band-panels [data-band-panel="F"],
+  .band-radio[data-band="G"]:checked ~ .band-panels [data-band-panel="G"],
+  .band-radio[data-band="H"]:checked ~ .band-panels [data-band-panel="H"] { display: block; }
+
+  .band-radio[data-band="A"]:checked ~ .band-tabs [data-band-label="A"],
+  .band-radio[data-band="B"]:checked ~ .band-tabs [data-band-label="B"],
+  .band-radio[data-band="C"]:checked ~ .band-tabs [data-band-label="C"],
+  .band-radio[data-band="D"]:checked ~ .band-tabs [data-band-label="D"],
+  .band-radio[data-band="E"]:checked ~ .band-tabs [data-band-label="E"],
+  .band-radio[data-band="F"]:checked ~ .band-tabs [data-band-label="F"],
+  .band-radio[data-band="G"]:checked ~ .band-tabs [data-band-label="G"],
+  .band-radio[data-band="H"]:checked ~ .band-tabs [data-band-label="H"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+
+  .band-radio[data-band="A"]:focus-visible ~ .band-tabs [data-band-label="A"],
+  .band-radio[data-band="B"]:focus-visible ~ .band-tabs [data-band-label="B"],
+  .band-radio[data-band="C"]:focus-visible ~ .band-tabs [data-band-label="C"],
+  .band-radio[data-band="D"]:focus-visible ~ .band-tabs [data-band-label="D"],
+  .band-radio[data-band="E"]:focus-visible ~ .band-tabs [data-band-label="E"],
+  .band-radio[data-band="F"]:focus-visible ~ .band-tabs [data-band-label="F"],
+  .band-radio[data-band="G"]:focus-visible ~ .band-tabs [data-band-label="G"],
+  .band-radio[data-band="H"]:focus-visible ~ .band-tabs [data-band-label="H"] {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+</style>

@@ -1,0 +1,284 @@
+---
+/**
+ * The site header, copied from UK Demographics' SiteHeader.astro: a mega menu
+ * built on <details> (native toggle, keyboard and no-JS fallback), one group
+ * open at a time, click outside and Escape to close, and a mobile drawer that
+ * opens the active group. Colours are tokens only. The search dialog is not
+ * carried over until Pagefind is wired in.
+ */
+import ThemeSelect from "./ThemeSelect.astro";
+import { NAV_GROUPS, SITE_NAME, SITE_TAGLINE, type NavGroup } from "../lib/site";
+
+const pathname = Astro.url.pathname;
+
+function isActiveItem(href: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(href);
+}
+function isActiveGroup(group: NavGroup): boolean {
+  return group.items.some((item) => isActiveItem(item.href));
+}
+---
+
+<div class="site-header-bar">
+  <header class="site-header shell">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="30" height="30">
+          <rect width="64" height="64" rx="12" fill="var(--accent)"></rect>
+          <path d="M14 50V28L32 16l18 12v22H38V36H26v14z" fill="var(--accent-wash)"></path>
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <span class="brand-name">{SITE_NAME}</span>
+        <small>{SITE_TAGLINE}</small>
+      </span>
+    </a>
+
+    <div class="site-tools">
+      <nav class="site-nav-mega desktop-nav" aria-label="Primary">
+        {NAV_GROUPS.map((group) => (
+          <details class="mega-group" data-active={isActiveGroup(group) ? "true" : "false"}>
+            <summary class="mega-trigger">
+              <span>{group.label}</span>
+              <span class="mega-caret" aria-hidden="true">
+                <svg viewBox="0 0 10 6" width="10" height="6" fill="none">
+                  <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </summary>
+            <div class="mega-panel">
+              {group.items.map((item) => (
+                <a href={item.href} class="mega-item" aria-current={isActiveItem(item.href) ? "page" : undefined}>
+                  <span class="mega-item-label">{item.label}</span>
+                  <span class="mega-item-desc">{item.desc}</span>
+                </a>
+              ))}
+            </div>
+          </details>
+        ))}
+      </nav>
+      <ThemeSelect />
+      <button class="mobile-menu-btn" type="button" data-mobile-menu-toggle aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+</div>
+
+<div class="mobile-drawer" data-mobile-drawer hidden>
+  <div class="mobile-drawer-backdrop" data-mobile-drawer-close></div>
+  <nav class="mobile-drawer-panel" aria-label="Mobile navigation">
+    <div class="mobile-drawer-head">
+      <span class="mobile-drawer-title">Menu</span>
+      <button type="button" class="mobile-drawer-close" data-mobile-drawer-close aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="mobile-drawer-body">
+      <a href="/" class:list={["mobile-drawer-home", { active: pathname === "/" }]}>Home</a>
+      {NAV_GROUPS.map((group) => (
+        <details class="mobile-group" open={isActiveGroup(group)}>
+          <summary class="mobile-group-trigger">
+            <span>{group.label}</span>
+            <span class="mobile-group-caret" aria-hidden="true">
+              <svg viewBox="0 0 10 6" width="10" height="6" fill="none">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mobile-group-items">
+            {group.items.map((item) => (
+              <a href={item.href} class="mobile-group-item" aria-current={isActiveItem(item.href) ? "page" : undefined}>
+                <span class="mobile-item-label">{item.label}</span>
+                <span class="mobile-item-desc">{item.desc}</span>
+              </a>
+            ))}
+          </div>
+        </details>
+      ))}
+    </div>
+  </nav>
+</div>
+
+<script>
+  const groups = Array.from(document.querySelectorAll<HTMLDetailsElement>(".site-nav-mega .mega-group"));
+  for (const group of groups) {
+    group.addEventListener("toggle", () => {
+      if (group.open) for (const other of groups) if (other !== group) other.open = false;
+    });
+  }
+  document.addEventListener("click", (event) => {
+    const target = event.target as Node;
+    if (!groups.some((g) => g.contains(target))) for (const g of groups) g.open = false;
+  });
+
+  const toggle = document.querySelector<HTMLButtonElement>("[data-mobile-menu-toggle]");
+  const drawer = document.querySelector<HTMLDivElement>("[data-mobile-drawer]");
+  const openDrawer = () => {
+    if (!drawer) return;
+    drawer.removeAttribute("hidden");
+    toggle?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  };
+  const closeDrawer = () => {
+    if (!drawer) return;
+    drawer.setAttribute("hidden", "");
+    toggle?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+  toggle?.addEventListener("click", openDrawer);
+  for (const closer of document.querySelectorAll<HTMLElement>("[data-mobile-drawer-close]")) {
+    closer.addEventListener("click", closeDrawer);
+  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    for (const g of groups) g.open = false;
+    if (drawer && !drawer.hasAttribute("hidden")) closeDrawer();
+  });
+</script>
+
+<style>
+  .site-header-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-top: 4px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
+    backdrop-filter: blur(6px);
+  }
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 3.75rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--text);
+    min-width: 0;
+  }
+  .brand-mark { display: inline-flex; flex: none; }
+  .brand-copy { display: flex; flex-direction: column; min-width: 0; }
+  .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; line-height: 1.1; }
+  .brand-copy small { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .site-tools { display: flex; align-items: center; gap: 0.5rem; }
+
+  .site-nav-mega { display: inline-flex; align-items: center; gap: 0.15rem; }
+  .mega-group { position: relative; }
+  .mega-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .mega-trigger::-webkit-details-marker { display: none; }
+  .mega-trigger::marker { content: ""; }
+  .mega-trigger:hover, .mega-group[open] .mega-trigger { color: var(--text); background: var(--bg-subtle); }
+  .mega-group[data-active="true"] .mega-trigger { color: var(--text); }
+  .mega-group[data-active="true"] .mega-trigger::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0.8rem;
+    right: 0.8rem;
+    height: 2px;
+    background: var(--accent);
+  }
+  .mega-caret { display: inline-flex; transition: transform 180ms; opacity: 0.7; }
+  .mega-group[open] .mega-caret { transform: rotate(180deg); }
+  .mega-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    z-index: 60;
+  }
+  .mega-group:last-of-type .mega-panel { left: auto; right: 0; }
+  .mega-item { display: block; padding: 0.65rem 0.8rem; border-radius: var(--radius-sm); text-decoration: none; }
+  .mega-item:hover { background: var(--bg-subtle); }
+  .mega-item[aria-current="page"] { background: var(--accent-wash); }
+  .mega-item-label { display: block; font-weight: 600; color: var(--text); }
+  .mega-item[aria-current="page"] .mega-item-label { color: var(--accent); }
+  .mega-item-desc { display: block; font-size: 0.82rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+  .mobile-menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    color: var(--text);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+  }
+  @media (max-width: 860px) {
+    .desktop-nav { display: none; }
+    .mobile-menu-btn { display: inline-flex; }
+  }
+  @media (max-width: 420px) {
+    .brand-copy small { display: none; }
+  }
+
+  .mobile-drawer { position: fixed; inset: 0; z-index: 1000; }
+  .mobile-drawer[hidden] { display: none; }
+  .mobile-drawer-backdrop { position: absolute; inset: 0; background: color-mix(in srgb, var(--ground) 55%, transparent); }
+  .mobile-drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(92vw, 380px);
+    background: var(--bg-card);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  .mobile-drawer-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-drawer-title { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .mobile-drawer-close { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border: none; background: none; color: var(--text); cursor: pointer; }
+  .mobile-drawer-body { display: flex; flex-direction: column; }
+  .mobile-drawer-home { padding: 0.85rem 0.25rem; font-weight: 600; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .mobile-drawer-home.active { color: var(--accent); }
+  .mobile-group { border-bottom: 1px solid var(--border); }
+  .mobile-group-trigger { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 0.25rem; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; }
+  .mobile-group-trigger::-webkit-details-marker { display: none; }
+  .mobile-group-caret { transition: transform 180ms; opacity: 0.6; }
+  .mobile-group[open] .mobile-group-caret { transform: rotate(180deg); }
+  .mobile-group-items { display: flex; flex-direction: column; gap: 0.15rem; padding-bottom: 0.5rem; }
+  .mobile-group-item { display: block; padding: 0.6rem 0.75rem; border-radius: var(--radius-sm); text-decoration: none; color: var(--text); }
+  .mobile-group-item[aria-current="page"] { background: var(--accent-wash); color: var(--accent); }
+  .mobile-item-label { display: block; font-weight: 600; }
+  .mobile-item-desc { display: block; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.1rem; }
+</style>

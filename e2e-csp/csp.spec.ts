@@ -16,7 +16,7 @@ import { STATIC_PATHS } from "../src/lib/site";
 
 const ROOT = resolve(import.meta.dirname, "..");
 
-const PAGES = [...STATIC_PATHS, "/this-page-does-not-exist/"];
+const PAGES = [...STATIC_PATHS, "/councils/burnley/", "/council-tax/band-d/", "/this-page-does-not-exist/"];
 
 interface Violation {
   directive: string;
