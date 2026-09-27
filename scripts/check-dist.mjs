@@ -119,6 +119,24 @@ if (existsSync(bandFile)) {
   }
 }
 
+// When the build rendered cards (BUILD_OG=1), every og:image must resolve to
+// a card in the tree. An iteration build renders none and skips this.
+if (existsSync(join(DIST, "og"))) {
+  let cards = 0;
+  for (const path of files(DIST)) {
+    if (!path.endsWith(".html")) continue;
+    const image = /<meta property="og:image" content="([^"]+)"/.exec(readFileSync(path, "utf-8"))?.[1];
+    if (!image) {
+      failures.push(`no og:image on ${rel(path)}`);
+      continue;
+    }
+    const local = join(DIST, new URL(image).pathname);
+    if (!existsSync(local)) failures.push(`og:image ${image} on ${rel(path)} was not built`);
+    else cards += 1;
+  }
+  console.log(`dist check: ${cards} pages point at a built share card`);
+}
+
 const allowed = new Set(
   scriptSrcOf(readFileSync(join(DIST, "_headers"), "utf-8"))
     .filter((t) => t.startsWith("'sha256-"))

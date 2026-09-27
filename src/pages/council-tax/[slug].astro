@@ -7,6 +7,7 @@
  */
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { hubCardPath } from "../../lib/og";
 import SourceLine from "../../components/SourceLine.astro";
 import {
   BANDS,
@@ -74,7 +75,7 @@ if (props.kind === "band") {
 }
 const rowChange = (row: CouncilPage, band: Band) => bandChange(row.council.gss, band);
 ---
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout title={title} description={description} path={path} ogImage={hubCardPath("council-tax")}>
   <Breadcrumbs items={[{ label: "Council tax", href: "/council-tax/" }, { label: crumb }]} />
   <header class="page-head">
     <p class="eyebrow">Council tax, England</p>
@@ -85,7 +86,8 @@ const rowChange = (row: CouncilPage, band: Band) => bandChange(row.council.gss, 
         : `Every band for every council in ${props.region}, as a yearly charge for a home with two adults.`}
     </p>
     <p class="caveat">
-      Each figure is the area charge, including the county, police, fire and average parish shares. A home
+      Each figure is the area charge: the shares of every body that sets council tax there, with parish
+      precepts as an average. A home
       in a parish with its own precept pays a different amount.
     </p>
   </header>

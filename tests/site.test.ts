@@ -177,10 +177,14 @@ describe("house style", () => {
   });
 
   it("declares every colour as a token in global.css and nowhere else in src", () => {
+    // palette.ts is the typed copy the share card renderer reads, because
+    // Satori cannot read a custom property; tests/palette.test.ts holds it equal
+    // to global.css.
     const tokenFile = join(ROOT, "src", "styles", "global.css");
+    const paletteFile = join(ROOT, "src", "styles", "palette.ts");
     const offenders: string[] = [];
     for (const path of walk(join(ROOT, "src"), /\.(astro|ts|tsx|css)$/)) {
-      if (path === tokenFile) continue;
+      if (path === tokenFile || path === paletteFile) continue;
       for (const [i, line] of readFileSync(path, "utf-8").split("\n").entries()) {
         const stripped = line
           .replace(/https?:\/\/\S+/g, "")

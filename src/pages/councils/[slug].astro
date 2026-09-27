@@ -27,6 +27,7 @@ import {
 import { councilPages, councilPath, regionPath } from "../../lib/paths";
 import { sisterLinks, type Council } from "../../lib/registry";
 import { absoluteUrl } from "../../lib/site";
+import { councilCardPath } from "../../lib/og";
 import { changeSource, councilTaxSource, longDate } from "../../lib/sources";
 
 export function getStaticPaths() {
@@ -87,7 +88,7 @@ const path = councilPath(council);
 const question = `How much is council tax in ${name} in ${year}?`;
 const answer = `Band D council tax in ${name} is ${pounds(bandD)} a year in ${year}`
   + (changeD ? `, ${changePhrase(changeD)} on ${previous}` : "")
-  + `. The figure includes the county, police, fire and average parish shares, from MHCLG ${bandSource.table}.`;
+  + `. The figure includes the share of every body that sets council tax there, with parish precepts as an average, from MHCLG ${bandSource.table}.`;
 
 const title = `${name} council tax bands ${year}`;
 const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
@@ -120,7 +121,14 @@ const structuredData = [
   },
 ];
 ---
-<BaseLayout title={title} description={description} path={path} structuredData={structuredData}>
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  structuredData={structuredData}
+  ogImage={councilCardPath(council.slug)}
+  ogImageAlt={`${name}: Band D council tax ${year}, ${pounds(bandD)}`}
+>
   <Breadcrumbs items={[{ label: "Councils", href: "/councils/" }, { label: name }]} />
 
   <header class="page-head council-head">
@@ -151,7 +159,9 @@ const structuredData = [
     </p>
     <BandSelector ons={council.gss} authority={tax} />
     <p class="caveat">
-      Every band includes the county, police, fire and average parish shares. A home in a parish with
+      Every band includes the share of every body that sets council tax here, such as the police and,
+      where they exist, the county council, the fire authority and parish councils, with parish precepts as
+      an average. A home in a parish with
       its own precept pays a different amount, and discounts such as the single person discount are not
       taken off.
     </p>
