@@ -2,29 +2,39 @@
 
 ## Handoff, 27 September 2026
 
-**State.** Seven stacked pull requests, none merged, CI green on each as it was
-checked: #1 scaffold, #2 council tax ingest, #3 registry, #4 council tax pages,
-#5 postcode door and static pages, #6 share cards, #7 analytics beacon. Merge in order; each one's
-base is the one before. The whole stack builds to 323 pages (296 councils) and
-is on a preview at https://phase-1-preview.ukcouncils.pages.dev/ (noindex).
+**Live.** https://ukcouncils.co.uk/ serves `main` (PRs #1 to #7 merged): 323
+pages, 296 council pages, full security headers, the analytics beacon reporting
+page loads, `www` redirecting to the apex (301, path and query kept), sitemap
+of 322 URLs submitted to Search Console (property `sc-domain:ukcouncils.co.uk`
+on info@ukplaces.co.uk, "Success", 322 discovered). Phase 0 and Phase 1
+acceptance are met.
 
-**Phase 0, still open.**
-- Zone `ukcouncils.co.uk` exists (id `1eca098af86df9cddbfc9ee0938096d8`),
-  nameservers `lennox.ns.cloudflare.com` and `sreeni.ns.cloudflare.com`. The
-  one.com change has not been made (Chrome was not connected); Tom approved it.
-- The one.com parking records were deleted; the zone is empty. It needs two
-  proxied CNAMEs, `@` and `www` to `ukcouncils.pages.dev` (Tom: DNS changes
-  were blocked for the agent), and a redirect rule sending `www` to the apex.
-- Pages custom domains `ukcouncils.co.uk` and `www` added, pending the zone.
-- Web Analytics site created; the beacon is PR #7.
-- Not done: the `CLOUDFLARE_API_TOKEN` repository secret (Tom), Google
-  Workspace for `info@` (Admin asked for a password), branch protection on
-  `validate` (needs GitHub Pro or a public repo, so at launch).
+**How it was deployed.** From this Mac with `wrangler pages deploy dist
+--project-name ukcouncils --branch main` after a `BUILD_OG=1` build and every
+gate. `deploy.yml` fails at the publish step until the `CLOUDFLARE_API_TOKEN`
+repository secret exists; until then deploy the same way by hand.
 
-**Next.** Once the secret exists and #1 to #7 are merged, `deploy.yml` ships
-main. Then Phase 0 acceptance (domain serving with headers, beacon load), then
-Phase 1 acceptance (Search Console sitemap), then Phase 2 (term dates and
-elections sections).
+**DNS (Cloudflare zone `1eca098af86df9cddbfc9ee0938096d8`).** Proxied CNAMEs `@`
+and `www` to `ukcouncils.pages.dev`; MX `1 smtp.google.com`; SPF; Google site
+verification TXT; DMARC `v=DMARC1; p=none; rua=mailto:info@ukcouncils.co.uk`.
+Redirect rule "Redirect from WWW to root".
+
+**Email.** ukcouncils.co.uk is a user alias domain of the ukplaces.co.uk
+Workspace, verified, Gmail active. DKIM cannot be generated until 24 to 72 hours
+after Gmail was enabled (27 September): then Admin, Apps, Gmail, Authenticate
+email, ukcouncils.co.uk, Generate, add the TXT, Start authentication, and move
+DMARC to `p=quarantine`.
+
+**Left for Tom.** The repository secret (one command, below). Bing Webmaster
+Tools sign in, then "Import from Google Search Console". Branch protection on
+`validate` at launch (needs GitHub Pro or a public repo).
+
+```bash
+gh secret set CLOUDFLARE_API_TOKEN -R tompickup23/ukcouncils
+```
+
+**Next.** Phase 2: term dates and elections sections, the term dates hub, the
+elections hub and the by-election feed in RSS.
 
 **Open question.** The adult social care "element" in MHCLG Tables 8a and 8b
 is not printed: the technical notes do not define it and it is not the whole
