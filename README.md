@@ -2,6 +2,14 @@
 
 ## Handoff, 27 September 2026
 
+**Council-page release.** This change consolidates batches A to E and the
+verified school-holiday adapter: council lookup, band answers, comparisons,
+search, maps, sharing, exports and the blue palette. The implementation records
+under `docs/` describe the earlier local sessions; their statements about
+uncommitted work are historical. The launch record below is also historical.
+The contact mailbox remains unverified and unpublished. Spending integration
+is separate work in PR #10, which must rebase after this release.
+
 **Live.** https://ukcouncils.co.uk/ serves `main` (PRs #1 to #7 merged): 323
 pages, 296 council pages, full security headers, the analytics beacon reporting
 page loads, `www` redirecting to the apex (301, path and query kept), sitemap
@@ -35,25 +43,35 @@ gh secret set CLOUDFLARE_API_TOKEN -R tompickup23/ukcouncils
 ```
 
 **Next session, in this order.**
-1. Phase 2 (plan section 9): a term dates section on every council page from
-   `/Users/tompickup/schoolholidaysdates-site/data-source/calendars_merged.json`
-   (next break, full year, confidence label as published, "set by X County
-   Council" for districts, link and `.ics` on UK School Holiday Dates rebuilt
-   from its live sitemap); an elections section from
-   `/Users/tompickup/ukelections/data` (seats by party, control, history since
-   2016, cycle, next election date only where UKE holds one, by-elections, no
-   person named); `/term-dates/2026-27/` and `/elections/` hubs in
-   `STATIC_PATHS`; by-elections in the RSS. Read UKE files from `origin/main`.
-2. DKIM from 30 September 2026 (Google allows it 24 to 72 hours after Gmail was
+
+Follow [the improvement and reuse plan](docs/IMPROVEMENT-PLAN-2026-09-27.md),
+which supersedes the earlier post-launch ordering. This handoff is a plan,
+not permission to commit, push, deploy or change another site's public output.
+
+1. Confirm the contact mailbox receives mail before setting `CONTACT_EMAIL`.
+   Review the dependency-audit follow-up in the implementation record before
+   a later framework migration.
+2. Rebase the separate spending integration in PR #10 after this release.
+3. Batch F: school dates now use a verified committed feed; election results
+   still need a separate, reproducible data adapter. Preserve education-authority attribution, published confidence,
+   source dates and the prohibition on individual names. Read UKE inputs from
+   an identified revision of `origin/main`; obtain sister URLs from live
+   sitemaps. The original plan retains the source inventory.
+4. Batch G: Wales and Scotland council tax, and Northern Ireland rates, after
+   their separate definitions and coverage checks pass. News is an optional
+   editorial programme, not a dependency of the council service.
+
+Infrastructure can proceed independently when authorised:
+
+1. DKIM from 30 September 2026 (Google allows it 24 to 72 hours after Gmail was
    enabled on 27 September): Admin, Apps, Gmail, Authenticate email,
    ukcouncils.co.uk, Generate, TXT into Cloudflare, Start authentication; then
    DMARC to `p=quarantine`.
-3. Pagefind site search (`'wasm-unsafe-eval'` is already in the CSP).
-4. Phase 4, Wales and Scotland council tax; Northern Ireland pages on rates.
-5. Sister site footer links to UK Councils, and UK Places fixes (Shepway name,
-   `officialName`, 60 stale AI DOGE coverage claims), each in its own repo.
-6. The registry rebuild needs the sister clones on this Mac, so it cannot run
-   in `refresh-data.yml`; schedule it here or fetch the mappings over HTTPS.
+2. Make registry and dataset refreshes reproducible without local sister
+   clones, and validate generated changes within the refresh workflow.
+3. Sister site links and UK Places fixes remain separate work in their own
+   repos. UK Food Hygiene stays private and unlinked under the global guide;
+   remove existing public links in the first authorised implementation batch.
 
 Deploying by hand from this Mac, after every gate:
 
@@ -107,3 +125,12 @@ Every dataset is written by a script under `scripts/` into committed JSON under
 `data/`, with a `generated` stamp and a `source` block. The site reads only that
 JSON, from `process.cwd()`. Sources, licences and caveats are listed in the plan,
 section 3.
+
+## Phase two local improvements
+
+[Implementation and validation record](docs/PHASE-TWO-IMPLEMENTATION-2026-09-27.md):
+blue palette, lazy full-site search, state-preserving sharing, sourced maps,
+CSV downloads and print layouts. `npm run build` now generates Pagefind after
+Astro. Boundary snapshots refresh explicitly with `node scripts/fetch-boundaries.mjs`.
+See `scripts/brand-colours.json` and `python3 scripts/apply-brand.py` for the
+site's blue accent configuration and shared-template regeneration.

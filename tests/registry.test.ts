@@ -58,6 +58,10 @@ describe("the council registry", () => {
     }
   });
 
+  it("never publishes private sister links from any registry row", () => {
+    for (const council of councils) expect(sisterLinks(council).some(link => link.site === 'ukfoodhygiene')).toBe(false);
+  });
+
   it("finds a council by slug and lists its links in a fixed order", () => {
     const burnley = councilBySlug("burnley");
     expect(burnley?.gss).toBe("E07000117");
@@ -66,7 +70,6 @@ describe("the council registry", () => {
       "ukdemographics",
       "aidoge",
       "asylumstats",
-      "ukfoodhygiene",
     ]);
   });
 });

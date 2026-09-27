@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/inject_csp_hashes.mjs",
+    "build": "astro build && pagefind --site dist && node scripts/inject_csp_hashes.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run",
@@ -24,12 +24,16 @@
     "@fontsource/source-serif-4": "^5.3.0",
     "@resvg/resvg-js": "^2.6.2",
     "astro": "^6.4.8",
+    "d3-geo": "^3.1.1",
     "satori": "^0.26.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.62.1",
+    "@types/d3-geo": "^3.1.1",
     "@types/node": "^26.4.1",
+    "pagefind": "^1.5.2",
     "typescript": "^5.9.3",
     "vitest": "^4.1.11"
   }

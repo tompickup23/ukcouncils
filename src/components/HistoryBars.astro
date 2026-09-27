@@ -3,8 +3,8 @@
  * A single series bar chart for a published yearly figure. One hue (the
  * accent, contrast checked against both surfaces), no legend because the
  * heading names the series, a native <title> on every bar as the hover layer
- * (no script, so nothing for the CSP to allow), direct labels on the first and
- * last bar only, and the published table under it as the accessible view.
+ * (no script, so nothing for the CSP to allow), direct labels on every bar in a short series, otherwise the first and
+ * last bar, and the published table under it as the accessible view.
  */
 interface Row {
   label: string;
@@ -34,7 +34,7 @@ const bars = rows.map((row, i) => {
     x: PAD.left + i * step + gap / 2,
     y: PAD.top + innerH - h,
     h,
-    showLabel: i === 0 || i === rows.length - 1,
+    showLabel: rows.length <= 5 || i === 0 || i === rows.length - 1,
   };
 });
 const r = 4;

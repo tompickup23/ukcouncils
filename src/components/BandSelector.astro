@@ -66,9 +66,10 @@ const previous = yearLabel(PREVIOUS_YEAR);
             source={source}
           >
             <span class="band-monthly">
-              {pounds(tenInstalments(annual))} a month over ten monthly instalments
+              {pounds(tenInstalments(annual))} a month over ten instalments, rounded
             </span>
           </Fact>
+          <p class="caveat">Area average including parish precepts. Your exact bill and any discounts can differ.</p>
           {change && (
             <Fact
               class="fact-small"
@@ -84,6 +85,32 @@ const previous = yearLabel(PREVIOUS_YEAR);
     })}
   </div>
 </div>
+
+<script>
+  for (const selector of document.querySelectorAll<HTMLElement>('.band-selector')) {
+    const radios = [...selector.querySelectorAll<HTMLInputElement>('[data-band]')];
+    const updateCompare = () => {
+      const link = document.querySelector<HTMLAnchorElement>('[data-council-compare]');
+      if (!link) return;
+      const url = new URL(link.href);
+      url.searchParams.set('band', radios.find(radio => radio.checked)!.value);
+      link.href = url.pathname + url.search;
+    };
+    const restore = () => {
+      const selected = radios.find(radio => `#band-${radio.value}` === location.hash);
+      if (selected) selected.checked = true;
+      else if (!location.hash || location.hash === '#council-tax') radios.find(radio => radio.value === 'D')!.checked = true;
+      updateCompare();
+    };
+    restore();
+    window.addEventListener('hashchange', restore);
+    window.addEventListener('popstate', restore);
+    for (const radio of radios) radio.addEventListener('change', () => {
+      if (radio.checked) history.pushState(null, '', `#band-${radio.value}`);
+      updateCompare();
+    });
+  }
+</script>
 
 <style>
   .band-selector { position: relative; }
@@ -118,8 +145,8 @@ const previous = yearLabel(PREVIOUS_YEAR);
   .band-tabs label:hover { border-color: var(--accent); color: var(--accent); }
   .band-panel { display: none; }
   .band-monthly { display: block; color: var(--text-muted); margin-top: 0.2rem; }
-  .fact-small .fact-figure { font-size: 1.3rem; }
-  .fact-small { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--border); }
+  .band-panel :global(.fact-small .fact-figure) { font-size: 1.3rem; }
+  .band-panel :global(.fact-small) { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--border); }
 
   /* One pair of rules per band. The radios come first in source order so the
      general sibling combinator reaches both the labels and the panels. */

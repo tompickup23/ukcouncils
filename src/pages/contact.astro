@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { CONTACT_EMAIL, OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../lib/site";
+---
+<BaseLayout title="Contact UK Councils" description="Contact information for UK Councils, how to report a factual error, and where to find official council services." path="/contact/">
+  <Breadcrumbs items={[{ label: "Contact" }]} />
+  <header class="page-head"><p class="eyebrow">About this site</p><h1>Contact UK Councils</h1></header>
+  <div class="prose">
+    <p>UK Councils is an independent reference publisher. We explain official figures; we cannot access council accounts, amend bills or process payments.</p>
+    <h2>Site questions and factual corrections</h2>
+    {CONTACT_EMAIL ? <p>Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> about this site's content.</p> : <p>A public contact mailbox is being verified. No contact form is available on this site yet.</p>}
+    <p>For a factual correction, include the page address, the figure or statement concerned, and a link to the relevant official source. Do not send a council account number, your bill, or other personal financial information.</p>
+    <p>Our <a href="/corrections/">corrections page</a> explains how substantive changes are recorded.</p>
+    <h2>Your bill or council services</h2>
+    <p><a href={OFFICIAL_COUNCIL_LOOKUP}>Find your council's official website on GOV.UK</a> for your exact bill, payments, discounts and local services.</p>
+    <p><a href={OFFICIAL_BAND_CHECK}>Check your property's council tax band on GOV.UK</a>.</p>
+  </div>
+</BaseLayout>

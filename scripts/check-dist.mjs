@@ -52,6 +52,7 @@ for (const path of files(DIST)) {
   if (!/\.(html|xml|txt|json|js|css|svg|webmanifest)$|_headers$|_redirects$/.test(path)) continue;
   const text = readFileSync(path, "utf-8");
   if (DASH.test(text)) failures.push(`dash in ${rel(path)}`);
+  if (/https?:\/\/ukfoodhygiene\.co\.uk\b/.test(text)) failures.push(`private sister link in ${rel(path)}`);
   if (!path.endsWith(".html")) continue;
   pages += 1;
 
@@ -152,6 +153,18 @@ const allowed = new Set(
 );
 for (const [hash, where] of hashesIn(DIST)) {
   if (!allowed.has(hash)) failures.push(`inline script on ${where.page} not in dist/_headers: ${hash}`);
+}
+
+// The search index must cover the same public routes as the sitemap.
+const searchEntry = join(DIST, "pagefind", "pagefind-entry.json");
+if (!existsSync(searchEntry)) failures.push("Pagefind index missing");
+else {
+  const entry = JSON.parse(readFileSync(searchEntry, "utf8"));
+  const indexed = Object.values(entry.languages).reduce((sum, language) => sum + language.page_count, 0);
+  if (indexed !== locs.length) failures.push(`search pages ${indexed} differs from sitemap ${locs.length}`);
+}
+for (const asset of ["pagefind.js", "pagefind-worker.js"]) {
+  if (!existsSync(join(DIST, "pagefind", asset))) failures.push(`missing search asset ${asset}`);
 }
 
 if (failures.length) {

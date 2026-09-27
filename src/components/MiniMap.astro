@@ -1,0 +1,26 @@
+---
+import {boundaryMap, boundarySource} from '../lib/boundaries';
+interface Props {gss: string; name: string}
+const {gss,name} = Astro.props;
+const map = boundaryMap(gss);
+---
+{map && <figure class="council-map" data-boundary-map={gss}>
+  <svg viewBox="0 0 300 180" role="img" aria-label={`${name} council boundary highlighted, with neighbouring areas`}>
+    <path d={map.context} class="map-context" />
+    <path d={map.focal} class="map-focal" data-map-focal />
+  </svg>
+  <figcaption><strong>{name} council area</strong><br />
+    <span class="source-line">Source: <a href={boundarySource.url}>Office for National Statistics, {boundarySource.date}</a>.</span>
+    <p class="small muted">Illustrative area boundary. Parish charges and individual property bands vary within it.</p>
+    <p class="small map-attribution">{boundarySource.attribution} Licensed under <a href={boundarySource.licenceUrl}>OGL v3.0</a>.</p>
+    <details><summary>Map detail</summary><p class="small">{boundarySource.method}</p></details>
+  </figcaption>
+</figure>}
+<style>
+  .council-map { margin: 0; padding: 1rem; align-self: start; background: var(--bg-subtle); border: 1px solid var(--border); border-radius: var(--radius); }
+  svg { display: block; width: 100%; height: auto; max-height: 15rem; margin-bottom: 0.75rem; }
+  .map-context { fill: var(--border); stroke: var(--bg); stroke-width: 1; }
+  .map-focal { fill: var(--accent); stroke: var(--bg); stroke-width: 1; }
+  figcaption { font-size: 0.85rem; }
+  .small { font-size: 0.78rem; }
+</style>

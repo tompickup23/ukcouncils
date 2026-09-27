@@ -1,4 +1,5 @@
 ---
+import TaxTable from "../../components/TaxTable.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { hubCardPath } from "../../lib/og";
@@ -11,12 +12,10 @@ import {
   PREVIOUS_YEAR,
   loadYear,
   percent,
-  pounds,
   wholePounds,
   yearLabel,
-  type Authority,
 } from "../../lib/council-tax";
-import { REGIONS, bandPath, councilPages, councilPath, regionPath } from "../../lib/paths";
+import { REGIONS, bandPath, councilPages, regionPath } from "../../lib/paths";
 import { councilTaxSource } from "../../lib/sources";
 
 const data = loadYear(CURRENT_YEAR);
@@ -25,26 +24,6 @@ const previous = yearLabel(PREVIOUS_YEAR);
 const area = data.england.areaBandD;
 const history = data.england.history;
 const pages = councilPages();
-
-/**
- * The full table, sorted by area Band D within each class of authority. MHCLG
- * publishes every authority for the same complete year, which is the one case
- * in which the site orders bodies by a money figure; the class is labelled and
- * nothing is said about why a figure is high or low.
- */
-const CLASS_ORDER: { code: Authority["classCode"][]; label: string }[] = [
-  { code: ["ILB", "OLB"], label: "London boroughs" },
-  { code: ["MD"], label: "Metropolitan districts" },
-  { code: ["UA"], label: "Unitary authorities" },
-  { code: ["SD"], label: "Shire districts" },
-];
-const byClass = CLASS_ORDER.map((group) => ({
-  ...group,
-  rows: pages
-    .filter((p) => group.code.includes(p.tax.classCode))
-    .sort((a, b) => b.tax.bands.D - a.tax.bands.D || a.tax.name.localeCompare(b.tax.name)),
-}));
-const bandSource = councilTaxSource(CURRENT_YEAR, data.source.bandTable);
 
 const structuredData = [
   {
@@ -147,31 +126,8 @@ const structuredData = [
   </section>
 
   <section class="section" aria-labelledby="table-heading">
-    <h2 id="table-heading">Which councils have the highest Band D in {year}?</h2>
-    <p class="muted">
-      Each table is one class of council, sorted by area Band D from highest to lowest. The area figure
-      is what a Band D home pays in total: the shares of every body that sets council tax there, with parish
-      precepts as an average.
-    </p>
-    {byClass.map((group) => (
-      <div class="fact" data-fact>
-        <div class="table-wrap">
-          <table class="data">
-            <caption>{group.label}, area Band D {year}, highest first</caption>
-            <thead><tr><th scope="col">Council</th><th scope="col">Region</th><th scope="col" class="num">Band D</th></tr></thead>
-            <tbody>
-              {group.rows.map(({ council, tax }) => (
-                <tr data-ons={council.gss}>
-                  <th scope="row"><a href={councilPath(council)}>{tax.name}</a></th>
-                  <td>{tax.region}</td>
-                  <td class="num" data-figure>{pounds(tax.bands.D)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <SourceLine source={bandSource} />
-      </div>
-    ))}
+    <h2 id="table-heading">Compare published council tax charges</h2>
+    <p class="muted">Choose a band, filter by council name, or select one council type to sort by charge. <a href="/compare/">Compare two councils side by side</a>.</p>
+    <TaxTable id="england-charges" caption="England" />
   </section>
 </BaseLayout>

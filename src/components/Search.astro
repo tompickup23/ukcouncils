@@ -1,0 +1,85 @@
+---
+/** Native dialog and lazy Pagefind pattern adapted from UK Elections. */
+---
+<a href="/councils/" class="search-trigger button secondary" data-search-open aria-haspopup="dialog">Search</a>
+<dialog class="site-search" aria-labelledby="search-title" data-site-search data-pagefind-ignore>
+  <form method="dialog"><button class="button secondary" aria-label="Close search">Close</button></form>
+  <h2 id="search-title">Search UK Councils</h2>
+  <label class="field" for="site-search-input">Council, region or topic<input id="site-search-input" type="search" autocomplete="off" placeholder="Try Burnley or council tax" /></label>
+  <p role="status" data-search-status>Type to search council pages and guides.</p>
+  <ol data-search-results></ol>
+  <button type="button" class="button secondary" data-search-more hidden>Show more results</button>
+  <button type="button" class="button secondary" data-search-retry hidden>Retry search</button>
+  <p class="small muted">Search runs in your browser. <a href="/councils/">Browse all councils</a> or <a href="/your-area/">find your area by postcode</a>.</p>
+</dialog>
+<script>
+  type Hit = {data: () => Promise<{url: string; meta: {title?: string}; excerpt: string}>};
+  type Index = {destroy: () => Promise<void>; search: (term: string) => Promise<{results: Hit[]}>};
+  const trigger = document.querySelector<HTMLAnchorElement>('[data-search-open]')!;
+  const dialog = document.querySelector<HTMLDialogElement>('[data-site-search]')!;
+  const input = dialog.querySelector<HTMLInputElement>('input')!;
+  const status = dialog.querySelector<HTMLElement>('[data-search-status]')!;
+  const results = dialog.querySelector<HTMLOListElement>('[data-search-results]')!;
+  const retry = dialog.querySelector<HTMLButtonElement>('[data-search-retry]')!;
+  const more = dialog.querySelector<HTMLButtonElement>('[data-search-more]')!;
+  let index: Index | undefined;
+  let hits: Hit[] = []; let offset = 0; let sequence = 0; let timer: ReturnType<typeof setTimeout>;
+  let focusBefore: HTMLElement | null = null;
+  async function page(token: number) {
+    const slice = await Promise.all(hits.slice(offset, offset + 8).map(hit => hit.data()));
+    if (token !== sequence || !dialog.open) return;
+    for (const hit of slice) {
+      const item = document.createElement('li'); const link = document.createElement('a');
+      link.href = hit.url; link.textContent = hit.meta.title ?? hit.url;
+      const excerpt = document.createElement('p');
+      excerpt.textContent = new DOMParser().parseFromString(hit.excerpt, 'text/html').body.textContent;
+      item.append(link, excerpt); results.append(item);
+    }
+    offset += slice.length; more.hidden = offset >= hits.length;
+  }
+  async function search() {
+    const token = ++sequence; const term = input.value.trim();
+    results.replaceChildren(); more.hidden = true; retry.hidden = true; hits = []; offset = 0;
+    if (!term) {status.textContent = 'Type to search council pages and guides.'; return;}
+    status.textContent = 'Searching…';
+    try {
+      const modulePath = '/pagefind/pagefind.js';
+      index ??= await import(/* @vite-ignore */ modulePath) as Index;
+      const found = await index.search(term);
+      if (token !== sequence || !dialog.open) return;
+      hits = found.results;
+      await page(token);
+      if (token !== sequence || !dialog.open) return;
+      status.textContent = hits.length ? `${hits.length} matching pages.` : 'No matching pages. Try a council name or a broader topic.';
+    } catch {
+      if (token !== sequence || !dialog.open) return;
+      results.replaceChildren(); more.hidden = true;
+      status.textContent = 'Search could not load. Retry or use the council directory below.'; retry.hidden = false;
+    }
+  }
+  function open() {focusBefore = document.activeElement as HTMLElement; dialog.showModal(); input.focus(); if (input.value) void search();}
+  trigger.addEventListener('click', event => {event.preventDefault(); open();});
+  dialog.addEventListener('keydown', event => {if (event.key === 'Escape') {event.preventDefault(); event.stopPropagation(); dialog.close();}});
+  dialog.addEventListener('close', () => {sequence++; clearTimeout(timer); focusBefore?.focus();});
+  input.addEventListener('input', () => {sequence++; clearTimeout(timer); timer = setTimeout(() => void search(), 180);});
+  retry.addEventListener('click', async () => {retry.disabled = true; try {await index?.destroy(); index = undefined; await search();} finally {retry.disabled = false;}});
+  more.addEventListener('click', async () => {
+    more.disabled = true;
+    try {await page(sequence);} catch {status.textContent = 'More results could not load. Try again.';} finally {more.disabled = false;}
+  });
+  document.addEventListener('keydown', event => {
+    const target = event.target as HTMLElement;
+    if (event.key === '/' && !event.ctrlKey && !event.metaKey && !event.altKey && !dialog.open && !target.closest('input, textarea, select, [contenteditable]')) {event.preventDefault(); open();}
+  });
+</script>
+<style>
+  .search-trigger { min-height: 2.5rem; padding: 0.45rem 0.65rem; }
+  .site-search { width: 92vw; max-width: 42rem; max-height: 85dvh; padding: clamp(1rem, 4vw, 2rem); border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--bg); color: var(--text); box-shadow: var(--shadow); }
+  .site-search::backdrop { background: color-mix(in srgb, var(--ground) 75%, transparent); }
+  form { display: flex; justify-content: end; }
+  h2 { margin-top: 0.5rem; }
+  ol { list-style: none; padding: 0; }
+  ol :global(li) { padding: 1rem 0; border-top: 1px solid var(--border); }
+  ol :global(a) { font-weight: 600; }
+  ol :global(p) { font-size: 0.9rem; color: var(--text-muted); margin: 0.3rem 0 0; }
+</style>

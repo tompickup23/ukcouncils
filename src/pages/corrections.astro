@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+---
+<BaseLayout title="Corrections at UK Councils" description="How UK Councils records substantive corrections to sourced figures and statements." path="/corrections/">
+  <Breadcrumbs items={[{ label: "Corrections" }]} />
+  <header class="page-head"><p class="eyebrow">Our record</p><h1>Corrections</h1></header>
+  <div class="prose">
+    <p>No substantive factual corrections have been recorded in this log yet.</p>
+    <h2>What we record</h2>
+    <p>When a published figure or statement needs correcting, the entry records the affected page, what it previously said, the correction, its official source and the date of the correction. Routine design changes and the addition of a new financial year are not factual corrections.</p>
+    <p>Source revisions are distinguished from errors in our reading or calculation. A source publication date is not presented as the date this site last changed.</p>
+    <p>See <a href="/contact/">contact information and how to report an error</a>, or read the <a href="/methodology/">methodology</a>.</p>
+  </div>
+</BaseLayout>

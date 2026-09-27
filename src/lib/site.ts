@@ -9,6 +9,11 @@ export const SITE_URL = "https://ukcouncils.co.uk";
 
 export const SITE_TAGLINE = "Your council, from the official record";
 
+/** Publish a contact address only after receipt has been confirmed. */
+export const CONTACT_EMAIL: string | null = null;
+export const OFFICIAL_BAND_CHECK = "https://www.gov.uk/council-tax-bands";
+export const OFFICIAL_COUNCIL_LOOKUP = "https://www.gov.uk/find-local-council";
+
 export const DEFAULT_DESCRIPTION =
   "Council tax by band and how much it changed for every council in England, from the official "
   + "MHCLG tables, each figure with its source and date.";
@@ -44,6 +49,9 @@ export const STATIC_PATHS = [
   "/methodology/",
   "/sources/",
   "/privacy/",
+  "/compare/",
+  "/contact/",
+  "/corrections/",
 ] as const;
 
 export type NavItem = { href: string; label: string; desc: string };
@@ -62,6 +70,7 @@ export const NAV_GROUPS: NavGroup[] = [
     label: "Council tax",
     items: [
       { href: "/council-tax/", label: "Council tax in England", desc: "The England average and every council" },
+      { href: "/compare/", label: "Compare councils", desc: "Compare the same band and year within a council type" },
       { href: "/council-tax/band-d/", label: "Band D", desc: "Band D for every council, by region" },
       { href: "/council-tax/rises-2026-27/", label: "Rises 2026/27", desc: "How much each council raised its own share" },
     ],
@@ -73,6 +82,8 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/methodology/", label: "Methodology", desc: "How every figure is read" },
       { href: "/sources/", label: "Sources", desc: "Every table used, with dates" },
       { href: "/privacy/", label: "Privacy", desc: "What happens to a postcode" },
+      { href: "/contact/", label: "Contact", desc: "Questions about the site and official council services" },
+      { href: "/corrections/", label: "Corrections", desc: "How factual corrections are recorded" },
     ],
   },
 ];
