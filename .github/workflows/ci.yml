@@ -1,0 +1,84 @@
+# Continuous integration for ukcouncils, on every pull request.
+#
+# `validate` is the check branch protection gates on: the type check and the
+# unit suite, which do not overlap (vitest does not type check, astro check
+# does not run the tests). `build` then proves the site builds, that what it
+# built passes the dist check, that no page scrolls sideways at 375px, and that
+# the production headers from public/_headers break nothing. That last run is
+# the only one that applies them: astro preview sends no headers at all.
+#
+# No BUILD_OG here. The Satori pass is the slow part of a build and is not what
+# a pull request is proving; deploy.yml sets it.
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      - name: Unit tests
+        run: npm test
+
+  build:
+    name: Build and browser tests
+    needs: [validate]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Check the built tree
+        run: npm run test:dist
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser tests, mobile and desktop
+        run: npm run test:e2e
+
+      - name: Security headers against the built tree
+        run: npm run test:csp
+
+      - name: Keep the report when a spec failed
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

@@ -1,0 +1,52 @@
+---
+/**
+ * System, light or dark. The choice is stored under ukcouncils-theme and
+ * public/theme-init.js applies it before first paint on the next load. Without
+ * JavaScript the select does nothing and the system preference stands, which
+ * is a correct page.
+ */
+---
+<label class="theme-select">
+  <span class="visually-hidden">Colour theme</span>
+  <select data-theme-select>
+    <option value="system">System theme</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+</label>
+
+<script>
+  const KEY = "ukcouncils-theme";
+  for (const select of document.querySelectorAll<HTMLSelectElement>("[data-theme-select]")) {
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem(KEY);
+    } catch {
+      saved = null;
+    }
+    select.value = saved === "light" || saved === "dark" ? saved : "system";
+    select.addEventListener("change", () => {
+      const value = select.value;
+      try {
+        if (value === "system") localStorage.removeItem(KEY);
+        else localStorage.setItem(KEY, value);
+      } catch {
+        // Storage refused: the choice still applies to this page.
+      }
+      if (value === "system") document.documentElement.removeAttribute("data-theme");
+      else document.documentElement.setAttribute("data-theme", value);
+    });
+  }
+</script>
+
+<style>
+  .theme-select select {
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--bg-card);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    padding: 0.3rem 0.5rem;
+  }
+</style>
