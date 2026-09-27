@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { councilPages } from "../lib/paths";
+
+const count = councilPages().length;
+---
+<BaseLayout
+  title="About UK Councils"
+  description="What UK Councils publishes about local authorities, where every figure comes from, and the rules the site keeps."
+  path="/about/"
+>
+  <Breadcrumbs items={[{ label: "About" }]} />
+  <header class="page-head">
+    <p class="eyebrow">About</p>
+    <h1>About UK Councils</h1>
+  </header>
+  <div class="prose">
+    <p>
+      UK Councils has one page for each local authority, answering the questions people ask about it from
+      official published tables. Today it covers council tax for the {count} councils in England that bill
+      it. School term dates, election results, contracts and spending join as their data is added, and
+      councils in Scotland, Wales and Northern Ireland follow.
+    </p>
+    <h2>The rules the site keeps</h2>
+    <ul>
+      <li>Every figure comes from an official table, and its source and date are printed directly under it.</li>
+      <li>A figure the source does not hold is not shown. A missing figure means a missing section, never a zero or an estimate.</li>
+      <li>Councils are compared only where every council has the same complete official year, as in the MHCLG council tax tables, and only within the same class of council.</li>
+      <li>No person is named anywhere on the site.</li>
+      <li>The site states what a table says and the rule that applies. It says nothing about why a council did what it did.</li>
+    </ul>
+    <p>
+      How each figure is read and calculated is on the <a href="/methodology/">methodology</a> page, and every
+      table used is listed on the <a href="/sources/">sources</a> page.
+    </p>
+  </div>
+</BaseLayout>

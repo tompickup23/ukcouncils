@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PostcodeDoor from "../components/PostcodeDoor.astro";
+---
+<BaseLayout
+  title="Find your council by postcode"
+  description="Enter a postcode to find the council for it and what it charges in council tax, band by band, from the official tables."
+  path="/your-area/"
+>
+  <Breadcrumbs items={[{ label: "Your area" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Your area</p>
+    <h1>Find your council</h1>
+    <p class="lede">Enter your postcode to go to your council's page.</p>
+  </header>
+  <PostcodeDoor id="postcode-area" heading="Your postcode" />
+  <p class="muted">
+    In a two tier area the postcode finds your district council, which sends the council tax bill; its page
+    also shows the county council's share.
+  </p>
+</BaseLayout>

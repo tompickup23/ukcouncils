@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+---
+<BaseLayout
+  title="Privacy"
+  description="What UK Councils does with a postcode typed into the site, and what it does not collect."
+  path="/privacy/"
+>
+  <Breadcrumbs items={[{ label: "Privacy" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacy</h1>
+  </header>
+  <div class="prose">
+    <h2>A postcode you type in</h2>
+    <p>
+      When you use the postcode door, your browser sends the postcode to postcodes.io
+      (<code>https://api.postcodes.io</code>) to find the council for it. This site does not receive the
+      postcode, does not store it, and does not put it in any web address on this site.
+    </p>
+    <h2>What this site does not do</h2>
+    <p>This site sets no cookies and asks for no personal information. It has no accounts and no forms that send anything to it.</p>
+    <h2>A saved colour theme</h2>
+    <p>If you choose light or dark, the choice is saved in your own browser under the name ukcouncils-theme and is never sent anywhere.</p>
+  </div>
+</BaseLayout>

@@ -428,3 +428,7 @@ table.data tbody tr:nth-child(even) { background: color-mix(in srgb, var(--bg-su
   table.data { font-size: 0.88rem; }
   table.data th, table.data td { padding: 0.45rem 0.5rem; }
 }
+
+.prose { max-width: 44rem; }
+.prose h2 { font-size: 1.35rem; margin: 1.75rem 0 0.5rem; }
+.prose li { margin: 0.35rem 0; }

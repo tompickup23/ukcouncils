@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { YEARS, loadYear, yearLabel } from "../lib/council-tax";
+import { loadRegistry } from "../lib/registry";
+import { longDate } from "../lib/sources";
+
+const years = [...YEARS].reverse().map((y) => ({ year: y, source: loadYear(y).source }));
+const registry = loadRegistry();
+---
+<BaseLayout
+  title="Sources: every table UK Councils uses"
+  description="Every official table UK Councils publishes figures from, with its publisher, date, licence and file."
+  path="/sources/"
+>
+  <Breadcrumbs items={[{ label: "Sources" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Sources</p>
+    <h1>Where the figures come from</h1>
+  </header>
+  <div class="prose">
+    <h2>Council tax, England</h2>
+    <ul>
+      {years.map(({ year, source }) => (
+        <li>
+          <a href={source.url}>{source.title}</a>, {source.publisher}, published {longDate(source.published)}
+          {source.updated && source.updated !== source.published ? `, updated ${longDate(source.updated)}` : ""}.
+          Used for {yearLabel(year)}: {source.files.map((f) => f.title).join("; ")}. {source.licence}.
+        </li>
+      ))}
+    </ul>
+    <h2>The list of councils</h2>
+    <p>
+      The councils and their web addresses on this site come from the <a href={registry.source.spine}>UK Places
+      registry</a>, so the sister sites use the same addresses. A link to a sister site is shown only where
+      that site's own records name the council and the page is in that site's live sitemap; the check was
+      last run on {longDate(registry.generated)}.
+    </p>
+    <h2>Postcode lookup</h2>
+    <p>The postcode door uses <a href="https://postcodes.io/">postcodes.io</a>, which is built on Office for National Statistics postcode data.</p>
+  </div>
+</BaseLayout>
