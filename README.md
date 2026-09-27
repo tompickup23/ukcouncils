@@ -25,16 +25,43 @@ after Gmail was enabled (27 September): then Admin, Apps, Gmail, Authenticate
 email, ukcouncils.co.uk, Generate, add the TXT, Start authentication, and move
 DMARC to `p=quarantine`.
 
-**Left for Tom.** The repository secret (one command, below). Bing Webmaster
-Tools sign in, then "Import from Google Search Console". Branch protection on
-`validate` at launch (needs GitHub Pro or a public repo).
+**Left for Tom.** The repository secret (one command, below); until it exists
+`deploy.yml` fails at publish on every push to `main` and deploys are by hand.
+Branch protection on `validate` at launch (needs GitHub Pro or a public repo).
+Bing Webmaster Tools: done by Tom (imported from Search Console).
 
 ```bash
 gh secret set CLOUDFLARE_API_TOKEN -R tompickup23/ukcouncils
 ```
 
-**Next.** Phase 2: term dates and elections sections, the term dates hub, the
-elections hub and the by-election feed in RSS.
+**Next session, in this order.**
+1. Phase 2 (plan section 9): a term dates section on every council page from
+   `/Users/tompickup/schoolholidaysdates-site/data-source/calendars_merged.json`
+   (next break, full year, confidence label as published, "set by X County
+   Council" for districts, link and `.ics` on UK School Holiday Dates rebuilt
+   from its live sitemap); an elections section from
+   `/Users/tompickup/ukelections/data` (seats by party, control, history since
+   2016, cycle, next election date only where UKE holds one, by-elections, no
+   person named); `/term-dates/2026-27/` and `/elections/` hubs in
+   `STATIC_PATHS`; by-elections in the RSS. Read UKE files from `origin/main`.
+2. DKIM from 30 September 2026 (Google allows it 24 to 72 hours after Gmail was
+   enabled on 27 September): Admin, Apps, Gmail, Authenticate email,
+   ukcouncils.co.uk, Generate, TXT into Cloudflare, Start authentication; then
+   DMARC to `p=quarantine`.
+3. Pagefind site search (`'wasm-unsafe-eval'` is already in the CSP).
+4. Phase 4, Wales and Scotland council tax; Northern Ireland pages on rates.
+5. Sister site footer links to UK Councils, and UK Places fixes (Shepway name,
+   `officialName`, 60 stale AI DOGE coverage claims), each in its own repo.
+6. The registry rebuild needs the sister clones on this Mac, so it cannot run
+   in `refresh-data.yml`; schedule it here or fetch the mappings over HTTPS.
+
+Deploying by hand from this Mac, after every gate:
+
+```bash
+rm -rf .astro node_modules/.vite dist && BUILD_OG=1 npm run build && npm run test:dist && npx --yes wrangler@4 pages deploy dist --project-name ukcouncils --branch main --commit-hash "$(git rev-parse HEAD)"
+```
+
+Then `npm run indexnow` when pages were added.
 
 **Open question.** The adult social care "element" in MHCLG Tables 8a and 8b
 is not printed: the technical notes do not define it and it is not the whole
