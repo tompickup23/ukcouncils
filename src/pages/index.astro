@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout path="/">
+  <section class="wrap holding">
+    <h1>Your council, from the official record</h1>
+    <p class="lede">
+      One page per UK local authority, answering the questions people ask about it: council tax
+      by band and how much it changed, when the schools break up, who won the last election and
+      what the council buys.
+    </p>
+    <p>
+      The site is being built. Every figure it publishes will come from an official table, with
+      the source and date printed under it.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .holding {
+    padding-top: 2.5rem;
+    max-width: 42rem;
+  }
+  .holding h1 {
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
+    margin: 0 0 1rem;
+  }
+  .lede {
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+  .holding p:not(.lede) {
+    color: var(--text-muted);
+  }
+</style>

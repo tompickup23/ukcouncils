@@ -1,0 +1,19 @@
+node_modules
+dist
+.astro
+.wrangler
+.DS_Store
+coverage
+playwright-report
+test-results
+.cache
+
+# Downloaded source files. The committed JSON under data/ is the record; the raw
+# ODS is fetched again by the script that reads it.
+data/raw/
+
+# Environment and credential files
+*.env
+.env
+.env.*
+!.env.example

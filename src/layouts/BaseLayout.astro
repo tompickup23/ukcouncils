@@ -1,0 +1,98 @@
+---
+import "../styles/global.css";
+import ThemeSelect from "../components/ThemeSelect.astro";
+import { DEFAULT_DESCRIPTION, SITE_NAME, absoluteUrl, pageTitle } from "../lib/site";
+
+interface Props {
+  /** The page's own title. The site name is appended after a pipe. Omit on the home page. */
+  title?: string;
+  description?: string;
+  /** Path of this page, for the canonical tag. */
+  path: string;
+  noindex?: boolean;
+}
+
+const { title, description = DEFAULT_DESCRIPTION, path, noindex = false } = Astro.props;
+const fullTitle = pageTitle(title);
+const canonical = absoluteUrl(path);
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_GB" />
+    <script is:inline src="/theme-init.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="/">{SITE_NAME}</a>
+        <ThemeSelect />
+      </div>
+    </header>
+    <main id="main" data-pagefind-body>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>{SITE_NAME} republishes official figures about UK local authorities. Every figure carries its source and date.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .skip {
+    position: absolute;
+    left: -9999px;
+  }
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+    background: var(--bg-card);
+    padding: 0.5rem 0.75rem;
+    z-index: 10;
+  }
+  .site-header {
+    border-top: 4px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+    background: var(--header-backdrop);
+  }
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.5rem;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  main {
+    display: block;
+    min-height: 60vh;
+  }
+  .site-footer {
+    margin-top: 3rem;
+    background: var(--ground);
+    color: var(--ground-muted);
+    padding: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+</style>

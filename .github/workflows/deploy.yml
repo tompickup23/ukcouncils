@@ -1,0 +1,66 @@
+# Deploys main to Cloudflare Pages project "ukcouncils" on every push.
+#
+# The same gates as ci.yml run first, so nothing reaches production that a
+# pull request would have failed. The pattern is lancashireai's deploy.yml:
+# wrangler direct upload with the token from repository secrets.
+#
+# BUILD_OG is set through an env block, never inline on the run line. Pure
+# shell, no GitHub event interpolation, no injection risk.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: build-and-deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build
+        env:
+          BUILD_OG: "1"
+        run: npm run build
+
+      - name: Check the built tree
+        run: npm run test:dist
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser tests, mobile and desktop
+        run: npm run test:e2e
+
+      - name: Security headers against the built tree
+        run: npm run test:csp
+
+      - name: Publish dist/ to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 35e8f9e8edb5487b97309d107331f7f5
+        run: npx --yes wrangler@4 pages deploy dist --project-name ukcouncils --branch main --commit-hash "$GITHUB_SHA"
