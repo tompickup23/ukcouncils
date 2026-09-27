@@ -96,15 +96,18 @@ block at the top of `src/styles/global.css` is rendered from
 edit inside the `estate-tokens` sentinels. This supersedes the plan's section 5
 mention of Sora and Manrope, which UK Demographics has since moved off.
 
-Accent triple, hue 319 (plum), chosen clear of every estate hue and computed
-against WCAG AA, not eyeballed:
+Accent: deep blue, explicitly replacing pink/plum at Tom's request on 27 September 2026.
+The local accent values live in `scripts/brand-colours.json`. Run
+`python3 scripts/apply-brand.py` to render the shared estate template for this site.
+The renderer path may be supplied with `--renderer`; normal builds do not read other repos.
+Keep manual theme overrides, `palette.ts` and the favicon in sync.
 
 | token | value | measured |
 |---|---|---|
-| deep | `#7a2d62` | 8.83 on white, 8.16 on subtle, 7.79 on wash |
-| bright | `#e28fc8` | 7.99 on the dark ground |
-| wash | `#f8eef5` | `--text-faint` 4.93 on it |
-| dark wash | `#2a1424` | bright 7.35 on it |
+| deep | `#245b87` | 7.19 on white, 6.64 on subtle, 6.53 on wash |
+| bright | `#8cc4ed` | 9.98 on the dark ground |
+| wash | `#eef5fb` | `--text-faint` 5.07 on it |
+| dark wash | `#122838` | bright 8.10 on it |
 
 No hex literal outside `global.css` in `src/`. Tested. Light and dark follow
 the system; the manual choice is stored under `ukcouncils-theme`.
@@ -121,3 +124,15 @@ the system; the manual choice is stored under `ukcouncils-theme`.
   so the 301 is a redirect rule on the zone, not a line in `public/_redirects`.
 - One.com and Google Admin steps are Tom's to approve one save at a time.
   Never type a password or handle a 2FA prompt.
+
+## Search, maps and exports
+
+- `npm run build` generates the Pagefind index after Astro. The header loads it
+  only when a search is entered. Exclude noindex pages from the index.
+- Maps are build-time SVG using the committed May 2026 ONS snapshot. Refresh
+  explicitly with `node scripts/fetch-boundaries.mjs`. Exact GSS joins only;
+  `tests/phase-two.test.ts` guards coverage, checksum and spherical winding.
+- CSV exports use integer-pence view data and the selected band/year/visible
+  rows. Source, licence, original file hashes and caveats travel with each row.
+- Council OG cards are band-neutral because fragments cannot change metadata.
+  Shared links restore the band; comparison links restore both councils and year.
