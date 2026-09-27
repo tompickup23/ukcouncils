@@ -1,0 +1,26 @@
+---
+/**
+ * One figure and its source line. The source is a required prop, so a figure
+ * cannot be placed on a page without one; scripts/check-dist.mjs counts every
+ * data-figure against a source line inside the same fact.
+ */
+import SourceLine from "./SourceLine.astro";
+import type { SourceRef } from "../lib/sources";
+
+interface Props {
+  figure: string;
+  label: string;
+  source: SourceRef;
+  change?: string | null;
+  class?: string;
+}
+
+const { figure, label, source, change = null, class: className } = Astro.props;
+---
+<div class:list={["fact", className]} data-fact>
+  <span class="fact-label">{label}</span>
+  <span class="fact-figure" data-figure>{figure}</span>
+  {change && <span class="fact-change">{change}</span>}
+  <slot />
+  <SourceLine source={source} />
+</div>

@@ -1,0 +1,71 @@
+---
+/**
+ * A single series bar chart for a published yearly figure. One hue (the
+ * accent, contrast checked against both surfaces), no legend because the
+ * heading names the series, a native <title> on every bar as the hover layer
+ * (no script, so nothing for the CSP to allow), direct labels on the first and
+ * last bar only, and the published table under it as the accessible view.
+ */
+interface Row {
+  label: string;
+  value: number;
+}
+
+interface Props {
+  rows: Row[];
+  format: (value: number) => string;
+  caption: string;
+}
+
+const { rows, format, caption } = Astro.props;
+const W = 640;
+const H = 240;
+const PAD = { top: 26, right: 8, bottom: 30, left: 8 };
+const innerW = W - PAD.left - PAD.right;
+const innerH = H - PAD.top - PAD.bottom;
+const max = Math.max(...rows.map((r) => r.value));
+const step = innerW / rows.length;
+const gap = 2;
+const barW = step - gap;
+const bars = rows.map((row, i) => {
+  const h = (row.value / max) * innerH;
+  return {
+    ...row,
+    x: PAD.left + i * step + gap / 2,
+    y: PAD.top + innerH - h,
+    h,
+    showLabel: i === 0 || i === rows.length - 1,
+  };
+});
+const r = 4;
+/** A bar with its data end rounded and its baseline square. */
+const barPath = (b: (typeof bars)[number]) =>
+  `M${b.x},${b.y + b.h} V${b.y + r} Q${b.x},${b.y} ${b.x + r},${b.y} H${b.x + barW - r} Q${b.x + barW},${b.y} ${b.x + barW},${b.y + r} V${b.y + b.h} Z`;
+---
+<figure class="history-bars">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={caption}>
+    <line x1={PAD.left} x2={W - PAD.right} y1={PAD.top + innerH} y2={PAD.top + innerH} class="axis"></line>
+    {bars.map((b) => (
+      <g class="bar">
+        <title>{`${b.label}: ${format(b.value)}`}</title>
+        <path d={barPath(b)}></path>
+        {b.showLabel && (
+          <text x={b.x + barW / 2} y={b.y - 8} text-anchor="middle" class="value">{format(b.value)}</text>
+        )}
+        {b.showLabel && (
+          <text x={b.x + barW / 2} y={H - 10} text-anchor="middle" class="tick">{b.label}</text>
+        )}
+      </g>
+    ))}
+  </svg>
+</figure>
+
+<style>
+  .history-bars { margin: 0 0 0.75rem; max-width: 44rem; }
+  .history-bars svg { width: 100%; height: auto; display: block; }
+  .history-bars path { fill: var(--accent); }
+  .history-bars .bar:hover path { fill: var(--accent-bright); }
+  .history-bars .axis { stroke: var(--border-strong); stroke-width: 1; }
+  .history-bars .value { fill: var(--text); font-size: 15px; font-weight: 600; }
+  .history-bars .tick { fill: var(--text-muted); font-size: 13px; }
+</style>

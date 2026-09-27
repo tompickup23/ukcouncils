@@ -1,0 +1,193 @@
+---
+/**
+ * How much each council raised its own share of Band D this year, as MHCLG
+ * publishes it, largest first within each class of authority. The referendum
+ * limit is quoted from MHCLG's own definition and stated as the rule; no
+ * sentence says why any council set what it set.
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Fact from "../../components/Fact.astro";
+import SourceLine from "../../components/SourceLine.astro";
+import {
+  CURRENT_YEAR,
+  PREVIOUS_YEAR,
+  loadYear,
+  percent,
+  pounds,
+  wholePounds,
+  yearLabel,
+  type OwnFigures,
+} from "../../lib/council-tax";
+import { councilPages, councilPath } from "../../lib/paths";
+import { councilTaxSource } from "../../lib/sources";
+
+const data = loadYear(CURRENT_YEAR);
+const year = yearLabel(CURRENT_YEAR);
+const previous = yearLabel(PREVIOUS_YEAR);
+const area = data.england.areaBandD;
+const classes = data.england.byClass;
+const pages = councilPages();
+const principles = data.source.referendumPrinciples;
+const tables = data.source.ownTables;
+
+interface Row {
+  name: string;
+  href: string | null;
+  own: OwnFigures;
+}
+
+const sortRows = (rows: Row[]) =>
+  rows
+    .filter((r) => typeof r.own.changePct === "number")
+    .sort((a, b) => (b.own.changePct as number) - (a.own.changePct as number) || a.name.localeCompare(b.name));
+
+const unitaryRows = sortRows(
+  pages
+    .filter((p) => p.tax.own && p.tax.classCode !== "SD")
+    .map((p) => ({ name: p.tax.name, href: councilPath(p.council), own: p.tax.own as OwnFigures })),
+);
+const districtRows = sortRows(
+  pages
+    .filter((p) => p.tax.own && p.tax.classCode === "SD")
+    .map((p) => ({ name: p.tax.name, href: councilPath(p.council), own: p.tax.own as OwnFigures })),
+);
+const countyRows = sortRows(Object.values(data.counties).map((own) => ({ name: `${own.name} County Council`, href: null, own })));
+
+const groups = [
+  {
+    id: "unitary",
+    label: "London boroughs, metropolitan districts and unitary authorities",
+    question: "How much did London boroughs, metropolitan districts and unitary authorities raise their share?",
+    table: tables.unitary,
+    rows: unitaryRows,
+    pounds: false,
+  },
+  {
+    id: "county",
+    label: "Shire county councils",
+    question: "How much did county councils raise their share?",
+    table: tables.county,
+    rows: countyRows,
+    pounds: false,
+  },
+  {
+    id: "district",
+    label: "Shire district councils",
+    question: "How much did district councils raise their share?",
+    table: tables.district,
+    rows: districtRows,
+    pounds: true,
+  },
+];
+---
+<BaseLayout
+  title={`Council tax rises ${year}: how much every council in England raised its share`}
+  description={area ? `Average area Band D in England went up ${percent(area.england.changePct)} in ${year}. How much every council raised its own share of Band D on ${previous}, as MHCLG publishes it.` : undefined}
+  path="/council-tax/rises-2026-27/"
+>
+  <Breadcrumbs items={[{ label: "Council tax", href: "/council-tax/" }, { label: `Rises ${year}` }]} />
+  <header class="page-head">
+    <p class="eyebrow">Council tax, England</p>
+    <h1>How much has council tax gone up in {year}?</h1>
+  </header>
+
+  {area && (
+    <section class="section" aria-labelledby="england-heading">
+      <h2 id="england-heading">How much has council tax gone up in England this year?</h2>
+      <div class="fact-grid">
+        <div class="card">
+          <Fact
+            label={`Average area Band D, England, ${year}`}
+            figure={`up ${percent(area.england.changePct)}`}
+            change={`${wholePounds(area.england.pounds)} a year`}
+            source={councilTaxSource(CURRENT_YEAR, area.table)}
+          />
+        </div>
+      </div>
+      {classes && (
+        <div class="fact" data-fact>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>Average Band D by class of authority, {year}, excluding parish precepts</caption>
+              <thead><tr><th scope="col">Class</th><th scope="col" class="num">Band D</th><th scope="col" class="num">Change on {previous}</th></tr></thead>
+              <tbody>
+                {classes.rows.map((row) => (
+                  <tr>
+                    <th scope="row">{row.class}</th>
+                    <td class="num" data-figure>{wholePounds(row.bandD)}</td>
+                    <td class="num">{percent(row.changePct)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <SourceLine source={councilTaxSource(CURRENT_YEAR, classes.table)} />
+        </div>
+      )}
+    </section>
+  )}
+
+  <section class="section" aria-labelledby="limit-heading">
+    <h2 id="limit-heading">How much can a council raise council tax without a referendum?</h2>
+    <p>
+      A council that sets an increase in its own share above the limit for the year must hold a local
+      referendum. The principles for {year}, as MHCLG's technical notes set them out, are quoted below.
+      Rows for councils with a different limit carry MHCLG's note saying so.
+    </p>
+    {principles && (
+      <blockquote class="card">
+        <p>{principles.text}</p>
+        <SourceLine
+          source={{
+            publisher: "MHCLG",
+            title: principles.title,
+            url: principles.url,
+            table: `section ${principles.section}`,
+            date: data.source.published,
+          }}
+        />
+      </blockquote>
+    )}
+  </section>
+
+  {groups.map((group) => (
+    <section class="section" id={group.id} aria-labelledby={`${group.id}-heading`}>
+      <h2 id={`${group.id}-heading`}>{group.question}</h2>
+      <p class="muted">Largest first. The council's own Band D excludes parish precepts and the other bodies' shares.</p>
+      <div class="fact" data-fact>
+        <div class="table-wrap">
+          <table class="data">
+            <caption>{group.label}, own Band D {year}, change on {previous}, largest first</caption>
+            <thead>
+              <tr>
+                <th scope="col">Council</th>
+                <th scope="col" class="num">Own Band D</th>
+                <th scope="col" class="num">Change</th>
+                {group.pounds && <th scope="col" class="num">In pounds</th>}
+                <th scope="col">Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              {group.rows.map((row) => (
+                <tr>
+                  <th scope="row">{row.href ? <a href={row.href}>{row.name}</a> : row.name}</th>
+                  <td class="num">{pounds(row.own.bandD)}</td>
+                  <td class="num" data-figure>{percent(row.own.changePct, 2)}</td>
+                  {group.pounds && <td class="num">{pounds(row.own.changePounds)}</td>}
+                  <td class="note-cell">{row.own.notes.map((n) => n.text).join(" ")}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <SourceLine source={councilTaxSource(CURRENT_YEAR, group.table)} />
+      </div>
+    </section>
+  ))}
+</BaseLayout>
+
+<style>
+  .note-cell { font-size: 0.82rem; color: var(--text-muted); min-width: 14rem; }
+  blockquote.card { margin: 1rem 0 0; }
+</style>

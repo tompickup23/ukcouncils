@@ -144,7 +144,9 @@ async function filesFor(config) {
       sha256: sha256(bytes),
     });
   }
+  const principles = await referendumPrinciples(attachments);
   const manifest = {
+    principles,
     pageTitle: houseText(content.title),
     pageUrl: `https://www.gov.uk/government/statistics/${config.slug}`,
     firstPublished: content.first_published_at?.slice(0, 10) ?? null,
@@ -153,6 +155,33 @@ async function filesFor(config) {
   };
   writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
   return manifest;
+}
+
+/**
+ * The referendum principles for the year, quoted from the technical notes
+ * that accompany the tables: the section headed "Referendum principles", up
+ * to the next numbered section. Null when the year's notes have no such
+ * section; a page then states no principle rather than one from memory.
+ */
+async function referendumPrinciples(attachments) {
+  const notes = attachments.find((a) => /technical notes/i.test(a.title ?? "") && !/\.(ods|xlsx|pdf)$/i.test(a.url ?? ""));
+  if (!notes) return null;
+  const url = notes.url.startsWith("http") ? notes.url : `https://www.gov.uk${notes.url}`;
+  const response = await fetch(url.replace("https://www.gov.uk/", "https://www.gov.uk/api/content/"));
+  if (!response.ok) return null;
+  const body = (await response.json()).details?.body ?? "";
+  const text = body
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#39;|&rsquo;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/\s+/g, " ");
+  // The section runs to the next numbered heading, which is "5.28 Title" or
+  // "6. Title" depending on where it falls in the document.
+  const match = /(\d+\.\d+) Referendum principles (.+?)(?= \d+(?:\.\d+|\.) [A-Z][a-z]+|$)/.exec(text);
+  if (!match) return null;
+  return { section: match[1], text: houseText(match[2]), title: houseText(notes.title), url };
 }
 
 /** Note id to text, from every Notes sheet in the files for a year. */
@@ -413,6 +442,10 @@ async function build(config) {
       bandTableTitle: band.title,
       bandTableNotes: band.titleNotes,
       ownTables: ownSheets,
+      // Every note the workbook defines, so a page can quote the published
+      // definition of a rule (the referendum limits are notes to Table 4).
+      referendumPrinciples: manifest.principles ?? null,
+      notes: Object.fromEntries([...notes.entries()].map(([id, text]) => [id.replace(/^\[note |\]$/g, ""), text])),
     },
     england,
     counties,

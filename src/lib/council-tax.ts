@@ -67,6 +67,8 @@ export interface YearFile {
     bandTableTitle: string;
     bandTableNotes: Note[];
     ownTables: Record<string, string>;
+    notes: Record<string, string>;
+    referendumPrinciples: { section: string; text: string; title: string; url: string } | null;
   };
   england: {
     areaBandD?: {

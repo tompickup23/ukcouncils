@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { REGIONS, councilPages, councilPath, slugify } from "../../lib/paths";
+
+const pages = councilPages();
+const byRegion = REGIONS.map((region) => ({
+  region,
+  rows: pages.filter((p) => p.tax.region === region),
+}));
+---
+<BaseLayout
+  title="Every council in England, by region"
+  description={`All ${pages.length} councils in England that set council tax, by region, each with its council tax bands for the year and where the figures come from.`}
+  path="/councils/"
+>
+  <Breadcrumbs items={[{ label: "Councils" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Councils</p>
+    <h1>Every council in England</h1>
+    <p class="lede">
+      The {pages.length} councils in England that bill council tax. Each page answers what the council
+      charges and where the figures come from. Councils in Scotland, Wales and Northern Ireland follow.
+    </p>
+  </header>
+  <nav aria-label="Jump to a region">
+    <ul class="pill-nav">
+      {REGIONS.map((region) => <li><a href={`#${slugify(region)}`}>{region}</a></li>)}
+    </ul>
+  </nav>
+  {byRegion.map(({ region, rows }) => (
+    <section class="section" id={slugify(region)} aria-labelledby={`${slugify(region)}-heading`}>
+      <h2 id={`${slugify(region)}-heading`}>Councils in {region}</h2>
+      <ul class="link-list">
+        {rows.map(({ council, tax }) => <li><a href={councilPath(council)}>{tax.name}</a></li>)}
+      </ul>
+    </section>
+  ))}
+</BaseLayout>

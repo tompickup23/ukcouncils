@@ -1,35 +1,69 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Fact from "../components/Fact.astro";
+import { BANDS, CURRENT_YEAR, PREVIOUS_YEAR, loadYear, percent, wholePounds, yearLabel } from "../lib/council-tax";
+import { REGIONS, bandPath, councilPages, regionPath } from "../lib/paths";
+import { councilTaxSource } from "../lib/sources";
+
+const data = loadYear(CURRENT_YEAR);
+const area = data.england.areaBandD;
+const year = yearLabel(CURRENT_YEAR);
+const previous = yearLabel(PREVIOUS_YEAR);
+const count = councilPages().length;
 ---
 <BaseLayout path="/">
-  <section class="wrap holding">
+  <section class="home-hero">
+    <p class="eyebrow">UK Councils</p>
     <h1>Your council, from the official record</h1>
     <p class="lede">
-      One page per UK local authority, answering the questions people ask about it: council tax
-      by band and how much it changed, when the schools break up, who won the last election and
-      what the council buys.
+      What your council charges, band by band, and how much it went up, for every council in England,
+      with the source and date under every figure.
     </p>
-    <p>
-      The site is being built. Every figure it publishes will come from an official table, with
-      the source and date printed under it.
-    </p>
+    <p><a class="cta" href="/councils/">Find your council</a></p>
+  </section>
+
+  {area && (
+    <section class="section" aria-labelledby="home-average">
+      <h2 id="home-average">How much is council tax in England in {year}?</h2>
+      <div class="fact-grid">
+        <div class="card">
+          <Fact
+            label={`Average area Band D, England, ${year}`}
+            figure={wholePounds(area.england.pounds)}
+            change={`up ${percent(area.england.changePct)} on ${previous}`}
+            source={councilTaxSource(CURRENT_YEAR, area.table)}
+          />
+        </div>
+      </div>
+      <p><a href="/council-tax/">Council tax for all {count} councils in England</a> · <a href="/council-tax/rises-2026-27/">How much each council raised its share</a></p>
+    </section>
+  )}
+
+  <section class="section" aria-labelledby="home-bands">
+    <h2 id="home-bands">Council tax by band</h2>
+    <ul class="pill-nav">
+      {BANDS.map((band) => <li><a href={bandPath(band)}>Band {band}</a></li>)}
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="home-regions">
+    <h2 id="home-regions">Council tax by region</h2>
+    <ul class="pill-nav">
+      {REGIONS.map((region) => <li><a href={regionPath(region)}>{region}</a></li>)}
+    </ul>
   </section>
 </BaseLayout>
 
 <style>
-  .holding {
-    padding-top: 2.5rem;
-    max-width: 42rem;
-  }
-  .holding h1 {
-    font-size: clamp(1.9rem, 6vw, 2.8rem);
-    margin: 0 0 1rem;
-  }
-  .lede {
-    font-size: 1.2rem;
-    color: var(--text);
-  }
-  .holding p:not(.lede) {
-    color: var(--text-muted);
+  .home-hero { padding: 1.5rem 0 0.5rem; max-width: 44rem; }
+  .home-hero h1 { font-size: clamp(2rem, 7vw, 3rem); margin: 0 0 0.75rem; }
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 0.65rem 1.1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-decoration: none;
   }
 </style>

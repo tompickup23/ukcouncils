@@ -9,12 +9,17 @@
  *   * a sitemap URL with no built page behind it, or on another host
  *   * a page whose canonical tag is not on the site's own origin
  *   * dist/_headers missing a hash for an inline script the tree carries
+ *   * a figure (data-figure) that is not inside a fact with a source line
+ *   * a band page or the national table that does not list every authority
+ *     in the band table, or a council page count that does not match it
+ *   * a council page with no MHCLG source line or no parish precept caveat
  *
  * Exits non-zero naming each failure.
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { hashesIn, scriptSrcOf } from "./inject_csp_hashes.mjs";
+import { unsourcedFigures } from "./lib/figures.mjs";
 
 const DIST = resolve(process.cwd(), "dist");
 const SITE_NAME = "UK Councils";
@@ -57,6 +62,9 @@ for (const path of files(DIST)) {
     if (/\s-\s/.test(title)) failures.push(`hyphen separator in title on ${rel(path)}: ${title}`);
   }
 
+  const { problems } = unsourcedFigures(text);
+  for (const problem of new Set(problems)) failures.push(`${problem} on ${rel(path)}`);
+
   const canonical = /<link rel="canonical" href="([^"]+)"/.exec(text)?.[1];
   if (!canonical || !canonical.startsWith(`${SITE_URL}/`)) {
     failures.push(`canonical not on ${SITE_URL} for ${rel(path)}: ${canonical ?? "none"}`);
@@ -74,6 +82,40 @@ for (const loc of locs) {
   const path = new URL(loc).pathname;
   if (!existsSync(join(DIST, path, "index.html")) && !existsSync(join(DIST, path))) {
     failures.push(`sitemap URL with no page: ${loc}`);
+  }
+}
+
+// Every English billing authority in the band table appears on every band
+// page and in the national table, and every council page names its source.
+const bandFile = join(process.cwd(), "data", "council-tax", "england-2026-27.json");
+if (existsSync(bandFile)) {
+  const onsCodes = Object.keys(JSON.parse(readFileSync(bandFile, "utf-8")).authorities);
+  const listed = (page) => new Set([...readFileSync(page, "utf-8").matchAll(/data-ons="([^"]+)"/g)].map((m) => m[1]));
+  const pagesToCover = ["A", "B", "C", "D", "E", "F", "G", "H"]
+    .map((b) => join(DIST, "council-tax", `band-${b.toLowerCase()}`, "index.html"))
+    .concat(join(DIST, "council-tax", "index.html"));
+  for (const page of pagesToCover) {
+    if (!existsSync(page)) {
+      failures.push(`missing ${rel(page)}`);
+      continue;
+    }
+    const seen = listed(page);
+    const missing = onsCodes.filter((ons) => !seen.has(ons));
+    if (missing.length) failures.push(`${rel(page)} does not list ${missing.length} authorities, first ${missing[0]}`);
+  }
+  const councilDir = join(DIST, "councils");
+  const councilPages = existsSync(councilDir)
+    ? readdirSync(councilDir, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => join(councilDir, e.name, "index.html"))
+    : [];
+  if (councilPages.length !== onsCodes.length) {
+    failures.push(`${councilPages.length} council pages built for ${onsCodes.length} authorities in the band table`);
+  }
+  for (const page of councilPages) {
+    const html = readFileSync(page, "utf-8");
+    if (!/Source: <a href="https:\/\/www\.gov\.uk\/government\/statistics\//.test(html)) {
+      failures.push(`${rel(page)} has no MHCLG source line`);
+    }
+    if (!/class="caveat"/.test(html)) failures.push(`${rel(page)} has no parish precept caveat`);
   }
 }
 

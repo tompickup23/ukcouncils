@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Fact from "../../components/Fact.astro";
+import HistoryBars from "../../components/HistoryBars.astro";
+import SourceLine from "../../components/SourceLine.astro";
+import {
+  BANDS,
+  CURRENT_YEAR,
+  PREVIOUS_YEAR,
+  loadYear,
+  percent,
+  pounds,
+  wholePounds,
+  yearLabel,
+  type Authority,
+} from "../../lib/council-tax";
+import { REGIONS, bandPath, councilPages, councilPath, regionPath } from "../../lib/paths";
+import { councilTaxSource } from "../../lib/sources";
+
+const data = loadYear(CURRENT_YEAR);
+const year = yearLabel(CURRENT_YEAR);
+const previous = yearLabel(PREVIOUS_YEAR);
+const area = data.england.areaBandD;
+const history = data.england.history;
+const pages = councilPages();
+
+/**
+ * The full table, sorted by area Band D within each class of authority. MHCLG
+ * publishes every authority for the same complete year, which is the one case
+ * in which the site orders bodies by a money figure; the class is labelled and
+ * nothing is said about why a figure is high or low.
+ */
+const CLASS_ORDER: { code: Authority["classCode"][]; label: string }[] = [
+  { code: ["ILB", "OLB"], label: "London boroughs" },
+  { code: ["MD"], label: "Metropolitan districts" },
+  { code: ["UA"], label: "Unitary authorities" },
+  { code: ["SD"], label: "Shire districts" },
+];
+const byClass = CLASS_ORDER.map((group) => ({
+  ...group,
+  rows: pages
+    .filter((p) => group.code.includes(p.tax.classCode))
+    .sort((a, b) => b.tax.bands.D - a.tax.bands.D || a.tax.name.localeCompare(b.tax.name)),
+}));
+const bandSource = councilTaxSource(CURRENT_YEAR, data.source.bandTable);
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: `Council tax levels set by local authorities in England, ${year}`,
+    description: "Area council tax by band for every billing authority in England, as published by MHCLG.",
+    url: data.source.url,
+    license: data.source.licenceUrl,
+    creator: { "@type": "GovernmentOrganization", name: data.source.publisher },
+    temporalCoverage: `${CURRENT_YEAR.slice(0, 4)}-04-01/${Number(CURRENT_YEAR.slice(0, 4)) + 1}-03-31`,
+    spatialCoverage: { "@type": "Place", name: "England" },
+  },
+];
+---
+<BaseLayout
+  title={`Council tax in England ${year}: every council by band`}
+  description={area ? `Average area Band D council tax in England is ${wholePounds(area.england.pounds)} in ${year}, up ${percent(area.england.changePct)} on ${previous}. Band D for all ${pages.length} councils, from MHCLG.` : undefined}
+  path="/council-tax/"
+  structuredData={structuredData}
+>
+  <Breadcrumbs items={[{ label: "Council tax" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Council tax, England</p>
+    <h1>Council tax in England, {year}</h1>
+    <p class="lede">
+      What every council in England charges by band, as the Ministry of Housing, Communities and Local
+      Government publishes it.
+    </p>
+  </header>
+
+  {area && (
+    <section class="section" aria-labelledby="average-heading">
+      <h2 id="average-heading">What is the average council tax in England in {year}?</h2>
+      <div class="fact-grid">
+        <div class="card">
+          <Fact
+            label={`Average area Band D, England, ${year}`}
+            figure={wholePounds(area.england.pounds)}
+            change={`up ${percent(area.england.changePct)} on ${previous}`}
+            source={councilTaxSource(CURRENT_YEAR, area.table)}
+          >
+            <p class="caveat">Includes the adult social care and average parish precepts.</p>
+          </Fact>
+        </div>
+        {(["london", "metropolitan", "unitary", "shire"] as const).map((type) => (
+          <div class="card">
+            <Fact
+              label={`Average area Band D, ${type === "london" ? "London" : `${type} areas`}, ${year}`}
+              figure={wholePounds(area.byAreaType[type].pounds)}
+              change={`up ${percent(area.byAreaType[type].changePct)} on ${previous}`}
+              source={councilTaxSource(CURRENT_YEAR, area.table)}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {history && history.rows.length > 1 && (
+    <section class="section" aria-labelledby="history-heading">
+      <h2 id="history-heading">How has average council tax in England changed?</h2>
+      <div class="fact" data-fact>
+        <HistoryBars
+          rows={history.rows.filter((r) => typeof r.pounds === "number").map((r) => ({ label: yearLabel(r.year), value: r.pounds as number }))}
+          format={(v) => wholePounds(v)}
+          caption={`Average Band D council tax in England, ${yearLabel(history.rows[0].year)} to ${year}`}
+        />
+        <div class="table-wrap">
+          <table class="data">
+            <caption>Average Band D in England, including parish and adult social care precepts</caption>
+            <thead><tr><th scope="col">Year</th><th scope="col" class="num">Band D</th><th scope="col" class="num">Change</th></tr></thead>
+            <tbody>
+              {history.rows.map((row) => (
+                <tr>
+                  <th scope="row">{yearLabel(row.year)}</th>
+                  <td class="num" data-figure>{wholePounds(row.pounds)}</td>
+                  <td class="num">{percent(row.changePct)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="caveat">Cash figures as published each year, not adjusted for inflation.</p>
+        <SourceLine source={councilTaxSource(CURRENT_YEAR, history.table)} />
+      </div>
+    </section>
+  )}
+
+  <section class="section" aria-labelledby="bands-heading">
+    <h2 id="bands-heading">Council tax by band for every council</h2>
+    <ul class="pill-nav">
+      {BANDS.map((band) => <li><a href={bandPath(band)}>Band {band}</a></li>)}
+    </ul>
+    <h3>By region</h3>
+    <ul class="pill-nav">
+      {REGIONS.map((region) => <li><a href={regionPath(region)}>{region}</a></li>)}
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="table-heading">
+    <h2 id="table-heading">Which councils have the highest Band D in {year}?</h2>
+    <p class="muted">
+      Each table is one class of council, sorted by area Band D from highest to lowest. The area figure
+      is what a Band D home pays in total, including the county, police, fire and average parish shares.
+    </p>
+    {byClass.map((group) => (
+      <div class="fact" data-fact>
+        <div class="table-wrap">
+          <table class="data">
+            <caption>{group.label}, area Band D {year}, highest first</caption>
+            <thead><tr><th scope="col">Council</th><th scope="col">Region</th><th scope="col" class="num">Band D</th></tr></thead>
+            <tbody>
+              {group.rows.map(({ council, tax }) => (
+                <tr data-ons={council.gss}>
+                  <th scope="row"><a href={councilPath(council)}>{tax.name}</a></th>
+                  <td>{tax.region}</td>
+                  <td class="num" data-figure>{pounds(tax.bands.D)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <SourceLine source={bandSource} />
+      </div>
+    ))}
+  </section>
+</BaseLayout>

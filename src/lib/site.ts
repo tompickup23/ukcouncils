@@ -7,9 +7,11 @@ export const SITE_NAME = "UK Councils";
  */
 export const SITE_URL = "https://ukcouncils.co.uk";
 
+export const SITE_TAGLINE = "Your council, from the official record";
+
 export const DEFAULT_DESCRIPTION =
-  "Council tax by band, school term dates, election results and council contracts for every "
-  + "local authority in the UK, each figure with its official source and date.";
+  "Council tax by band and how much it changed for every council in England, from the official "
+  + "MHCLG tables, each figure with its source and date.";
 
 /** The key the manual theme choice is stored under. public/theme-init.js reads the same key. */
 export const THEME_STORAGE_KEY = "ukcouncils-theme";
@@ -18,8 +20,36 @@ export const THEME_STORAGE_KEY = "ukcouncils-theme";
  * Static routes that are indexable. Adding a hub page under src/pages means
  * adding it here in the same change, or it never reaches the sitemap or the
  * search index. tests/site.test.ts fails on a hub that is missing.
+ * Programmatic pages (one per council, band or region) are listed by
+ * src/lib/paths.ts from the data that builds them.
  */
-export const STATIC_PATHS = ["/"] as const;
+export const STATIC_PATHS = [
+  "/",
+  "/councils/",
+  "/council-tax/",
+  "/council-tax/rises-2026-27/",
+] as const;
+
+export type NavItem = { href: string; label: string; desc: string };
+export type NavGroup = { label: string; items: NavItem[] };
+
+/** The mega menu. A page not listed here is reachable only by link. */
+export const NAV_GROUPS: NavGroup[] = [
+  {
+    label: "Councils",
+    items: [
+      { href: "/councils/", label: "Every council", desc: "All 296 councils in England, by region" },
+    ],
+  },
+  {
+    label: "Council tax",
+    items: [
+      { href: "/council-tax/", label: "Council tax in England", desc: "The England average and every council" },
+      { href: "/council-tax/band-d/", label: "Band D", desc: "Band D for every council, by region" },
+      { href: "/council-tax/rises-2026-27/", label: "Rises 2026/27", desc: "How much each council raised its own share" },
+    ],
+  },
+];
 
 /** A path on this site as an absolute URL on the canonical origin. */
 export function absoluteUrl(path: string): string {
@@ -32,4 +62,12 @@ export function absoluteUrl(path: string): string {
  */
 export function pageTitle(title?: string): string {
   return title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+}
+
+/**
+ * JSON-LD as the text of a script element. `<` is escaped so no string in the
+ * data can close the element early.
+ */
+export function jsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
 }
