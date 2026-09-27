@@ -15,7 +15,8 @@
     "test:dist": "node scripts/check-dist.mjs",
     "test:e2e": "playwright test",
     "test:csp": "playwright test --config playwright.csp.config.ts",
-    "data:council-tax": "node scripts/fetch-council-tax.mjs"
+    "data:council-tax": "node scripts/fetch-council-tax.mjs",
+    "data:registry": "node scripts/build-registry.mjs"
   },
   "dependencies": {
     "@fontsource/source-sans-3": "^5.3.0",
