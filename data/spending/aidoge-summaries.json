@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-27",
+  "generated": "2026-09-28",
   "source": {
     "publisher": "AI DOGE",
     "summaries": {
       "url": "https://data.aidoge.co.uk/v1/summaries/index.json",
-      "generated": "2026-09-26"
+      "generated": "2026-09-28"
     },
     "banks": {
       "url": "https://data.aidoge.co.uk/v1/banks.json",
-      "generated": "2026-09-26"
+      "generated": "2026-09-28"
     },
     "rule": "One entry per council the registry links to an AI DOGE page and whose summary was published."
   },
@@ -16,7 +16,7 @@
     "mapped": 234,
     "held": 234,
     "headline": 228,
-    "bank": 209
+    "bank": 212
   },
   "bodies": {
     "E06000001": {
@@ -356,7 +356,7 @@
     "E06000014": {
       "id": "york",
       "url": "https://aidoge.co.uk/councils/york/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -408,7 +408,7 @@
     "E06000016": {
       "id": "leicester_city",
       "url": "https://aidoge.co.uk/councils/leicester_city/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -438,23 +438,23 @@
     "E06000017": {
       "id": "rutland",
       "url": "https://aidoge.co.uk/councils/rutland/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
         "2024/25": {
           "monthsHeld": 12,
-          "records": 11278
+          "records": 11357
         },
         "2026/27": {
           "monthsHeld": 3,
-          "records": 2853
+          "records": 2868
         }
       },
       "headline": {
         "year": "2024/25",
-        "records": 11278,
-        "totalNet": 61263581.74
+        "records": 11357,
+        "totalNet": 65300879.53
       }
     },
     "E06000018": {
@@ -530,7 +530,7 @@
     "E06000022": {
       "id": "bath_and_north_east_somerset",
       "url": "https://aidoge.co.uk/councils/bath_and_north_east_somerset/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -692,7 +692,7 @@
     "E06000027": {
       "id": "torbay",
       "url": "https://aidoge.co.uk/councils/torbay/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -870,7 +870,7 @@
     "E06000038": {
       "id": "reading",
       "url": "https://aidoge.co.uk/councils/reading/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -970,7 +970,7 @@
     "E06000043": {
       "id": "brighton_and_hove",
       "url": "https://aidoge.co.uk/councils/brighton_and_hove/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -996,7 +996,7 @@
     "E06000044": {
       "id": "portsmouth",
       "url": "https://aidoge.co.uk/councils/portsmouth/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -1252,7 +1252,7 @@
     "E06000056": {
       "id": "central_bedfordshire",
       "url": "https://aidoge.co.uk/councils/central_bedfordshire/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -1930,7 +1930,7 @@
     "E07000042": {
       "id": "mid_devon",
       "url": "https://aidoge.co.uk/councils/mid_devon/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -2016,7 +2016,7 @@
     "E07000063": {
       "id": "lewes",
       "url": "https://aidoge.co.uk/councils/lewes/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -2038,7 +2038,7 @@
     "E07000064": {
       "id": "rother",
       "url": "https://aidoge.co.uk/councils/rother/",
-      "generated": "2026-09-10",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -2324,7 +2324,7 @@
     "E07000077": {
       "id": "uttlesford",
       "url": "https://aidoge.co.uk/councils/uttlesford/",
-      "generated": "2026-09-10",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -2562,7 +2562,7 @@
     "E07000087": {
       "id": "fareham",
       "url": "https://aidoge.co.uk/councils/fareham/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -3618,7 +3618,7 @@
     "E07000136": {
       "id": "boston",
       "url": "https://aidoge.co.uk/councils/boston/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 250,
       "bank": true,
       "years": {
@@ -3636,7 +3636,7 @@
     "E07000137": {
       "id": "east_lindsey",
       "url": "https://aidoge.co.uk/councils/east_lindsey/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -3898,7 +3898,7 @@
     "E07000171": {
       "id": "bassetlaw",
       "url": "https://aidoge.co.uk/councils/bassetlaw/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -4274,7 +4274,7 @@
     "E07000200": {
       "id": "babergh",
       "url": "https://aidoge.co.uk/councils/babergh/",
-      "generated": "2026-09-10",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -4330,7 +4330,7 @@
     "E07000203": {
       "id": "mid_suffolk",
       "url": "https://aidoge.co.uk/councils/mid_suffolk/",
-      "generated": "2026-09-10",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -4682,7 +4682,7 @@
     "E07000223": {
       "id": "adur",
       "url": "https://aidoge.co.uk/councils/adur/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -4752,7 +4752,7 @@
     "E07000226": {
       "id": "crawley",
       "url": "https://aidoge.co.uk/councils/crawley/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -4834,7 +4834,7 @@
     "E07000229": {
       "id": "worthing",
       "url": "https://aidoge.co.uk/councils/worthing/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -4930,7 +4930,7 @@
     "E07000237": {
       "id": "worcester",
       "url": "https://aidoge.co.uk/councils/worcester/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -4952,9 +4952,9 @@
     "E07000239": {
       "id": "wyre_forest",
       "url": "https://aidoge.co.uk/councils/wyre_forest/",
-      "generated": "2026-09-10",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
-      "bank": false,
+      "bank": true,
       "years": {
         "2024/25": {
           "monthsHeld": 12,
@@ -4996,9 +4996,9 @@
     "E07000241": {
       "id": "welwyn_hatfield",
       "url": "https://aidoge.co.uk/councils/welwyn_hatfield/",
-      "generated": "2026-09-10",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
-      "bank": false,
+      "bank": true,
       "years": {
         "2019/20": {
           "monthsHeld": 1,
@@ -5017,22 +5017,26 @@
           "records": 5
         },
         "2023/24": {
-          "monthsHeld": 8,
-          "records": 19
+          "monthsHeld": 9,
+          "records": 20
         },
         "2024/25": {
           "monthsHeld": 12,
-          "records": 140
+          "records": 163
         },
         "2025/26": {
           "monthsHeld": 12,
-          "records": 7637
+          "records": 8239
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 3198
         }
       },
       "headline": {
         "year": "2025/26",
-        "records": 7637,
-        "totalNet": 90355969.18
+        "records": 8239,
+        "totalNet": 94723696.13
       }
     },
     "E07000244": {
@@ -5086,7 +5090,7 @@
     "E08000001": {
       "id": "bolton",
       "url": "https://aidoge.co.uk/councils/bolton/",
-      "generated": "2026-09-26",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -5252,7 +5256,7 @@
     "E08000007": {
       "id": "stockport",
       "url": "https://aidoge.co.uk/councils/stockport/",
-      "generated": "2026-09-10",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -5307,6 +5311,10 @@
         "2025/26": {
           "monthsHeld": 12,
           "records": 331981
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 117051
         }
       },
       "headline": {
@@ -5934,7 +5942,7 @@
     "E08000035": {
       "id": "leeds",
       "url": "https://aidoge.co.uk/councils/leeds/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -6080,7 +6088,7 @@
     "E09000003": {
       "id": "barnet",
       "url": "https://aidoge.co.uk/councils/barnet/",
-      "generated": "2026-09-26",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -6089,8 +6097,8 @@
           "records": 286548
         },
         "2026/27": {
-          "monthsHeld": 3,
-          "records": 69026
+          "monthsHeld": 4,
+          "records": 94026
         }
       },
       "headline": {
@@ -6500,7 +6508,7 @@
     "E09000024": {
       "id": "merton",
       "url": "https://aidoge.co.uk/councils/merton/",
-      "generated": "2026-09-09",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -6552,9 +6560,9 @@
     "E09000026": {
       "id": "redbridge",
       "url": "https://aidoge.co.uk/councils/redbridge/",
-      "generated": "2026-09-10",
+      "generated": "2026-09-28",
       "thresholdGbp": 500,
-      "bank": false,
+      "bank": true,
       "years": {
         "2004/05": {
           "monthsHeld": 1,
