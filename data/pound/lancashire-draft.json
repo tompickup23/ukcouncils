@@ -1,0 +1,2179 @@
+{
+ "$meta": {
+  "status": "DRAFT. Not verified, not published. Machine proposals from the Phase 1 waterfall; no row has been accepted by a named person.",
+  "pipelineGitSha": "2179112f80c04b0d8791a3c84bbf701e4d8e986d",
+  "generatedAt": "2026-10-04T20:41:36Z",
+  "years": [
+   "2024/25",
+   "2025/26"
+  ],
+  "inputs": [
+   {
+    "file": "coverage.json",
+    "sha256": "5e03f40ec6f6e11db9f134ead4fd625d11f0050e878a6cdb7a33c4844cab9708"
+   },
+   {
+    "file": "resolver_proposed.csv",
+    "sha256": "cd4cd75eaf8570ba61cbbc79c43d56260420baa905dd9c8f7b46eb6f479d32dc"
+   },
+   {
+    "file": "payee_key_values.csv",
+    "sha256": "4497464da21e1547598073cb34f837fe666fdfe10194bee7e9fba2786905478d"
+   },
+   {
+    "file": "ownership_walk.csv",
+    "sha256": "3139a81ea88fdc379ce4a10d5e014a4bdbcec422df19a1cc404b3ff7b9c29122"
+   }
+  ],
+  "bodsAsAt": "2025-03-11",
+  "notCovered": {
+   "chorley": "No bank published (manifest HTTP 404, 4 October 2026). Not yet covered (RULES.md decision 10).",
+   "lancashire_fire": "No bank published (manifest HTTP 404, 4 October 2026). Not yet covered (RULES.md decision 10).",
+   "lancashire_pcc": "Bank ends January 2025 (its newest file covers April 2024 to January 2025). Not yet covered (RULES.md decision 10)."
+  },
+  "note": "Pence. Shares are of each body's supplier total (bank net less internal transfers, settlement noise and purchase cards). Spend under each body's publication threshold is not published and is unknown in size. Ownership lines cover resolved suppliers only."
+ },
+ "bodies": {
+  "blackburn": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 28748489729,
+     "resolvedPence": 12840849452,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500 (council page)",
+     "vatBasis": "net",
+     "byClassPence": {
+      "supplier": 12014093549,
+      "public body": 826755903
+     },
+     "byReasonPence": {
+      "redacted": 1483484335,
+      "ambiguous": 5101967878,
+      "no-candidate": 8860467757,
+      "payment-route": 442534524,
+      "individual-payee": 19185783
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 11047,
+      "pence": 1483203235
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 2361278449,
+       "payeeKeys": 371
+      },
+      {
+       "class": "foreign entity",
+       "pence": 5256987,
+       "payeeKeys": 4
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 2728710804,
+       "payeeKeys": 237
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 3587496602,
+       "payeeKeys": 569
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 2197443942,
+       "payeeKeys": 256
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 339172759,
+       "payeeKeys": 76
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 9623306,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 565272552,
+       "payeeKeys": 63
+      },
+      {
+       "class": "cycle",
+       "pence": 2258513,
+       "payeeKeys": 3
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 217579635,
+       "payeeKeys": 33
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 33701523804,
+     "resolvedPence": 15297321292,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500 (council page)",
+     "vatBasis": "net",
+     "byClassPence": {
+      "supplier": 14807913540,
+      "public body": 489407752
+     },
+     "byReasonPence": {
+      "redacted": 10737458129,
+      "ambiguous": 2511253244,
+      "no-candidate": 4807067226,
+      "payment-route": 334100247,
+      "individual-payee": 14323666
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 19519,
+      "pence": 10737458129
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 3615285200,
+       "payeeKeys": 394
+      },
+      {
+       "class": "foreign entity",
+       "pence": 3778203,
+       "payeeKeys": 4
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 2794456521,
+       "payeeKeys": 267
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 4006120965,
+       "payeeKeys": 585
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 3141283264,
+       "payeeKeys": 285
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 517842688,
+       "payeeKeys": 89
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 5458729,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 498873973,
+       "payeeKeys": 77
+      },
+      {
+       "class": "cycle",
+       "pence": 12322406,
+       "payeeKeys": 3
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 212491591,
+       "payeeKeys": 27
+      }
+     ]
+    }
+   }
+  },
+  "blackpool": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 118818005438,
+     "resolvedPence": 68294479256,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 250,
+     "thresholdStated": "over £250",
+     "vatBasis": "gross",
+     "byClassPence": {
+      "supplier": 31724685031,
+      "public body": 32620640200,
+      "council company": 3949154025
+     },
+     "byReasonPence": {
+      "ambiguous": 12599373512,
+      "redacted": 2178578031,
+      "payment-route": 5665978927,
+      "no-candidate": 29962787970,
+      "individual-payee": 116807742
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 17132,
+      "pence": 2178578031
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 3898666091,
+       "payeeKeys": 489
+      },
+      {
+       "class": "foreign entity",
+       "pence": 12387259,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 3628692960,
+       "payeeKeys": 320
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 11819302321,
+       "payeeKeys": 685
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 4870912350,
+       "payeeKeys": 364
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 1499613430,
+       "payeeKeys": 94
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 13361324,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 1760239345,
+       "payeeKeys": 74
+      },
+      {
+       "class": "cycle",
+       "pence": 1708800,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 4219801151,
+       "payeeKeys": 50
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 104070696347,
+     "resolvedPence": 61197125845,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 250,
+     "thresholdStated": "over £250",
+     "vatBasis": "gross",
+     "byClassPence": {
+      "supplier": 35145770656,
+      "public body": 23783942077,
+      "council company": 2267413112
+     },
+     "byReasonPence": {
+      "ambiguous": 9951313551,
+      "redacted": 3077065851,
+      "payment-route": 4333054029,
+      "no-candidate": 25381900256,
+      "individual-payee": 130236815
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 17984,
+      "pence": 3076916451
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 4380604871,
+       "payeeKeys": 478
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 3963706896,
+       "payeeKeys": 313
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 12370624526,
+       "payeeKeys": 670
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 4549572578,
+       "payeeKeys": 339
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 1523785346,
+       "payeeKeys": 86
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 46183505,
+       "payeeKeys": 3
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 3965114329,
+       "payeeKeys": 87
+      },
+      {
+       "class": "cycle",
+       "pence": 658800,
+       "payeeKeys": 1
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 4345519805,
+       "payeeKeys": 48
+      }
+     ]
+    }
+   }
+  },
+  "burnley": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 4409580867,
+     "resolvedPence": 3730159204,
+     "handVerifiedPence": 0,
+     "thresholdPounds": null,
+     "thresholdStated": "unknown",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "supplier": 3462373391,
+      "public body": 267785813
+     },
+     "byReasonPence": {
+      "no-candidate": 499712616,
+      "ambiguous": 176680867,
+      "invalid-identifier": 1818780,
+      "redacted": 124500,
+      "individual-payee": 1084900
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 557155656,
+       "payeeKeys": 134
+      },
+      {
+       "class": "foreign entity",
+       "pence": 8495315,
+       "payeeKeys": 3
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 408523715,
+       "payeeKeys": 61
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 574473013,
+       "payeeKeys": 178
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 1283346834,
+       "payeeKeys": 91
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 510621101,
+       "payeeKeys": 17
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 109936014,
+       "payeeKeys": 17
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 9821743,
+       "payeeKeys": 17
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 3805678731,
+     "resolvedPence": 2893982016,
+     "handVerifiedPence": 0,
+     "thresholdPounds": null,
+     "thresholdStated": "unknown",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "supplier": 2840585285,
+      "public body": 53396731
+     },
+     "byReasonPence": {
+      "no-candidate": 643867686,
+      "ambiguous": 265551739,
+      "redacted": 348900,
+      "individual-payee": 1928390
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 427317423,
+       "payeeKeys": 160
+      },
+      {
+       "class": "foreign entity",
+       "pence": 5711788,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 395737127,
+       "payeeKeys": 73
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 783073153,
+       "payeeKeys": 214
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 763150875,
+       "payeeKeys": 102
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 339146760,
+       "payeeKeys": 21
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 106976087,
+       "payeeKeys": 29
+      },
+      {
+       "class": "cycle",
+       "pence": 1697000,
+       "payeeKeys": 1
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 17775072,
+       "payeeKeys": 21
+      }
+     ]
+    }
+   }
+  },
+  "fylde": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 1822112009,
+     "resolvedPence": 1481851551,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "public body": 254707678,
+      "supplier": 1227017153,
+      "council company": 126720
+     },
+     "byReasonPence": {
+      "ambiguous": 158008323,
+      "no-candidate": 166102113,
+      "individual-payee": 15800522,
+      "redacted": 349500
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 245832674,
+       "payeeKeys": 93
+      },
+      {
+       "class": "foreign entity",
+       "pence": 761200,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 211904755,
+       "payeeKeys": 37
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 277486931,
+       "payeeKeys": 124
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 346862539,
+       "payeeKeys": 64
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 89927824,
+       "payeeKeys": 9
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 2051287,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 47325228,
+       "payeeKeys": 19
+      },
+      {
+       "class": "cycle",
+       "pence": 1546100,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 3318615,
+       "payeeKeys": 3
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 1639835704,
+     "resolvedPence": 1399856783,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "public body": 257629061,
+      "supplier": 1142101002,
+      "council company": 126720
+     },
+     "byReasonPence": {
+      "ambiguous": 79392936,
+      "no-candidate": 139505282,
+      "individual-payee": 21080703
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 288288405,
+       "payeeKeys": 88
+      },
+      {
+       "class": "foreign entity",
+       "pence": 961875,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 119705131,
+       "payeeKeys": 35
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 302248179,
+       "payeeKeys": 107
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 295942697,
+       "payeeKeys": 58
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 78945882,
+       "payeeKeys": 13
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 2038427,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 43376049,
+       "payeeKeys": 24
+      },
+      {
+       "class": "cycle",
+       "pence": 1868300,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 8726057,
+       "payeeKeys": 8
+      }
+     ]
+    }
+   }
+  },
+  "hyndburn": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 8976520751,
+     "resolvedPence": 7107591658,
+     "handVerifiedPence": 0,
+     "thresholdPounds": null,
+     "thresholdStated": "over £250 (download page); link text on transparency page says \"Expenditure over £500\"",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "public body": 4952283498,
+      "supplier": 2155308160
+     },
+     "byReasonPence": {
+      "no-candidate": 1695952570,
+      "ambiguous": 168491412,
+      "individual-payee": 4252311,
+      "redacted": 232800
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 738157958,
+       "payeeKeys": 103
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 226223632,
+       "payeeKeys": 61
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 295618792,
+       "payeeKeys": 135
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 119489637,
+       "payeeKeys": 64
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 73499953,
+       "payeeKeys": 19
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 699636050,
+       "payeeKeys": 20
+      },
+      {
+       "class": "cycle",
+       "pence": 539400,
+       "payeeKeys": 1
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 2142738,
+       "payeeKeys": 7
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 6165790284,
+     "resolvedPence": 4836176514,
+     "handVerifiedPence": 0,
+     "thresholdPounds": null,
+     "thresholdStated": "over £250 (download page); link text on transparency page says \"Expenditure over £500\"",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "public body": 3535113750,
+      "supplier": 1301062764
+     },
+     "byReasonPence": {
+      "no-candidate": 1011206798,
+      "ambiguous": 315632515,
+      "individual-payee": 2654577,
+      "redacted": 119880
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 582363710,
+       "payeeKeys": 85
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 163684945,
+       "payeeKeys": 49
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 223535997,
+       "payeeKeys": 103
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 123400084,
+       "payeeKeys": 60
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 56114191,
+       "payeeKeys": 21
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 148025266,
+       "payeeKeys": 20
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 3938571,
+       "payeeKeys": 8
+      }
+     ]
+    }
+   }
+  },
+  "lancashire_cc": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 198038485184,
+     "resolvedPence": 119872938519,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 250,
+     "thresholdStated": "\"over £250 (including VAT)\"",
+     "vatBasis": "net",
+     "byClassPence": {
+      "council company": 4146760543,
+      "supplier": 108050193774,
+      "public body": 7675984202
+     },
+     "byReasonPence": {
+      "redacted": 14338422689,
+      "no-candidate": 46381112875,
+      "ambiguous": 17005314435,
+      "individual-payee": 349510123,
+      "payment-route": 91186543
+     },
+     "rc03AccrualPayments": {
+      "rows": 7195,
+      "pence": 6437718263
+     },
+     "withheldIndividuals": {
+      "rows": 126223,
+      "pence": 14338386689
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 19133472706,
+       "payeeKeys": 1405
+      },
+      {
+       "class": "foreign entity",
+       "pence": 2400409115,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 17080424909,
+       "payeeKeys": 618
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 34042418219,
+       "payeeKeys": 1816
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 14675099303,
+       "payeeKeys": 876
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 11297372218,
+       "payeeKeys": 182
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 306977,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 5525796914,
+       "payeeKeys": 185
+      },
+      {
+       "class": "cycle",
+       "pence": 70943165,
+       "payeeKeys": 4
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 3823950248,
+       "payeeKeys": 181
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 194762577448,
+     "resolvedPence": 121631614089,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 250,
+     "thresholdStated": "\"over £250 (including VAT)\"",
+     "vatBasis": "net",
+     "byClassPence": {
+      "council company": 4926966924,
+      "supplier": 109630750018,
+      "public body": 7073897147
+     },
+     "byReasonPence": {
+      "redacted": 14983575604,
+      "no-candidate": 42581824481,
+      "ambiguous": 15109251103,
+      "individual-payee": 375660015,
+      "payment-route": 80652156
+     },
+     "rc03AccrualPayments": {
+      "rows": 7503,
+      "pence": 7720229456
+     },
+     "withheldIndividuals": {
+      "rows": 121187,
+      "pence": 14983521104
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 20690001911,
+       "payeeKeys": 1348
+      },
+      {
+       "class": "foreign entity",
+       "pence": 1857303418,
+       "payeeKeys": 3
+      },
+      {
+       "class": "trust or trustee",
+       "pence": 47167,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 20890309400,
+       "payeeKeys": 656
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 34942507700,
+       "payeeKeys": 1709
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 14477495710,
+       "payeeKeys": 829
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 7179552870,
+       "payeeKeys": 162
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 204602,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 5557621682,
+       "payeeKeys": 224
+      },
+      {
+       "class": "cycle",
+       "pence": 70894418,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 3964811140,
+       "payeeKeys": 165
+      }
+     ]
+    }
+   }
+  },
+  "lancaster": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 4852547221,
+     "resolvedPence": 3873640019,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500 (excluding VAT)",
+     "vatBasis": "net",
+     "byClassPence": {
+      "supplier": 3535667726,
+      "public body": 337972293
+     },
+     "byReasonPence": {
+      "ambiguous": 357494734,
+      "no-candidate": 581818455,
+      "individual-payee": 39294213,
+      "redacted": 299800
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 594754424,
+       "payeeKeys": 164
+      },
+      {
+       "class": "foreign entity",
+       "pence": 131792409,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 521342271,
+       "payeeKeys": 93
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 1368879902,
+       "payeeKeys": 232
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 490232142,
+       "payeeKeys": 97
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 88049153,
+       "payeeKeys": 30
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 5797300,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 154184291,
+       "payeeKeys": 33
+      },
+      {
+       "class": "cycle",
+       "pence": 5991300,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 174644534,
+       "payeeKeys": 21
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 5157762314,
+     "resolvedPence": 3852681960,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500 (excluding VAT)",
+     "vatBasis": "net",
+     "byClassPence": {
+      "public body": 332861140,
+      "supplier": 3519820820
+     },
+     "byReasonPence": {
+      "ambiguous": 790403136,
+      "no-candidate": 482606465,
+      "individual-payee": 31946253,
+      "redacted": 124500
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 468715330,
+       "payeeKeys": 207
+      },
+      {
+       "class": "foreign entity",
+       "pence": 120528190,
+       "payeeKeys": 4
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 540864040,
+       "payeeKeys": 105
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 1243743069,
+       "payeeKeys": 292
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 666056194,
+       "payeeKeys": 120
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 185289512,
+       "payeeKeys": 41
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 138853982,
+       "payeeKeys": 37
+      },
+      {
+       "class": "cycle",
+       "pence": 622300,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 155148203,
+       "payeeKeys": 20
+      }
+     ]
+    }
+   }
+  },
+  "pendle": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 2530913359,
+     "resolvedPence": 1859511424,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500",
+     "vatBasis": "net",
+     "byClassPence": {
+      "supplier": 1736844824,
+      "public body": 122666600
+     },
+     "byReasonPence": {
+      "no-candidate": 459189740,
+      "ambiguous": 187037649,
+      "redacted": 21066105,
+      "individual-payee": 4108441
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 381,
+      "pence": 20966205
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 229956458,
+       "payeeKeys": 132
+      },
+      {
+       "class": "foreign entity",
+       "pence": 5450103,
+       "payeeKeys": 3
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 135005514,
+       "payeeKeys": 80
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 510251189,
+       "payeeKeys": 161
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 218719075,
+       "payeeKeys": 88
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 374202191,
+       "payeeKeys": 18
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 236737815,
+       "payeeKeys": 22
+      },
+      {
+       "class": "cycle",
+       "pence": 1364400,
+       "payeeKeys": 1
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 25158079,
+       "payeeKeys": 15
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 4611812524,
+     "resolvedPence": 3667348272,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500",
+     "vatBasis": "net",
+     "byClassPence": {
+      "supplier": 1777624878,
+      "public body": 1889723394
+     },
+     "byReasonPence": {
+      "no-candidate": 671804895,
+      "ambiguous": 240993915,
+      "redacted": 28955852,
+      "individual-payee": 2709590
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 190,
+      "pence": 19109740
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 270400829,
+       "payeeKeys": 147
+      },
+      {
+       "class": "foreign entity",
+       "pence": 4706749,
+       "payeeKeys": 4
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 146789787,
+       "payeeKeys": 87
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 490816934,
+       "payeeKeys": 181
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 297013113,
+       "payeeKeys": 106
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 408999543,
+       "payeeKeys": 21
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 150198535,
+       "payeeKeys": 31
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 8699388,
+       "payeeKeys": 14
+      }
+     ]
+    }
+   }
+  },
+  "preston": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 4263185950,
+     "resolvedPence": 3486125997,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 250,
+     "thresholdStated": "over £250",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "public body": 277325665,
+      "supplier": 3208800332
+     },
+     "byReasonPence": {
+      "ambiguous": 351086013,
+      "redacted": 64505429,
+      "no-candidate": 351014970,
+      "individual-payee": 10084041,
+      "payment-route": 369500
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 806,
+      "pence": 63761529
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 1229725932,
+       "payeeKeys": 138
+      },
+      {
+       "class": "foreign entity",
+       "pence": 7432554,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 294584640,
+       "payeeKeys": 84
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 545666474,
+       "payeeKeys": 193
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 569028767,
+       "payeeKeys": 94
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 72154018,
+       "payeeKeys": 23
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 23480773,
+       "payeeKeys": 4
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 433484430,
+       "payeeKeys": 35
+      },
+      {
+       "class": "cycle",
+       "pence": 6892900,
+       "payeeKeys": 1
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 26349844,
+       "payeeKeys": 29
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 4659392813,
+     "resolvedPence": 3620542677,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 250,
+     "thresholdStated": "over £250",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "public body": 724341458,
+      "supplier": 2896201219
+     },
+     "byReasonPence": {
+      "ambiguous": 557417899,
+      "redacted": 45277285,
+      "no-candidate": 422049491,
+      "individual-payee": 13827761,
+      "payment-route": 277700
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 537,
+      "pence": 44738285
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 828656683,
+       "payeeKeys": 161
+      },
+      {
+       "class": "foreign entity",
+       "pence": 10875300,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 649534619,
+       "payeeKeys": 95
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 701622778,
+       "payeeKeys": 239
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 399357860,
+       "payeeKeys": 143
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 14959571,
+       "payeeKeys": 23
+      },
+      {
+       "class": "corporate parent, no further PSC data",
+       "pence": 19501593,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 240400528,
+       "payeeKeys": 47
+      },
+      {
+       "class": "cycle",
+       "pence": 460900,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 30831387,
+       "payeeKeys": 32
+      }
+     ]
+    }
+   }
+  },
+  "ribble_valley": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 1075172835,
+     "resolvedPence": 722292783,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 250,
+     "thresholdStated": "over £250",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "public body": 131596256,
+      "supplier": 590696527
+     },
+     "byReasonPence": {
+      "ambiguous": 117516210,
+      "no-candidate": 212632742,
+      "redacted": 18742805,
+      "individual-payee": 3958295,
+      "payment-route": 30000
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 268,
+      "pence": 17928105
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 95513970,
+       "payeeKeys": 98
+      },
+      {
+       "class": "foreign entity",
+       "pence": 20000593,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 58197867,
+       "payeeKeys": 42
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 213652127,
+       "payeeKeys": 125
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 110760738,
+       "payeeKeys": 60
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 31554105,
+       "payeeKeys": 14
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 25030505,
+       "payeeKeys": 17
+      },
+      {
+       "class": "cycle",
+       "pence": 772100,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 35214522,
+       "payeeKeys": 21
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 966880782,
+     "resolvedPence": 657078645,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 250,
+     "thresholdStated": "over £250",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "public body": 108851404,
+      "supplier": 548227241
+     },
+     "byReasonPence": {
+      "ambiguous": 172891377,
+      "no-candidate": 120018352,
+      "redacted": 16297108,
+      "individual-payee": 561700,
+      "payment-route": 33600
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 233,
+      "pence": 15927408
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 122480005,
+       "payeeKeys": 98
+      },
+      {
+       "class": "foreign entity",
+       "pence": 14408578,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 50606022,
+       "payeeKeys": 45
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 217470478,
+       "payeeKeys": 157
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 75739187,
+       "payeeKeys": 60
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 15986550,
+       "payeeKeys": 12
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 35287175,
+       "payeeKeys": 20
+      },
+      {
+       "class": "cycle",
+       "pence": 1421200,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 14828046,
+       "payeeKeys": 23
+      }
+     ]
+    }
+   }
+  },
+  "rossendale": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 961727818,
+     "resolvedPence": 694241128,
+     "handVerifiedPence": 0,
+     "thresholdPounds": null,
+     "thresholdStated": "not stated on the page",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "supplier": 616423471,
+      "public body": 77822157,
+      "council company": -4500
+     },
+     "byReasonPence": {
+      "ambiguous": 113655705,
+      "no-candidate": 138654350,
+      "redacted": 14156150,
+      "individual-payee": 845920,
+      "payment-route": 174565
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 299,
+      "pence": 14156150
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 96990680,
+       "payeeKeys": 84
+      },
+      {
+       "class": "foreign entity",
+       "pence": 16986069,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 77410146,
+       "payeeKeys": 59
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 127415423,
+       "payeeKeys": 135
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 72942801,
+       "payeeKeys": 68
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 9896162,
+       "payeeKeys": 14
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 200358706,
+       "payeeKeys": 21
+      },
+      {
+       "class": "cycle",
+       "pence": 608800,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 13814684,
+       "payeeKeys": 9
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 711745530,
+     "resolvedPence": 502664430,
+     "handVerifiedPence": 0,
+     "thresholdPounds": null,
+     "thresholdStated": "not stated on the page",
+     "vatBasis": "unknown",
+     "byClassPence": {
+      "supplier": 455211733,
+      "public body": 47452697
+     },
+     "byReasonPence": {
+      "ambiguous": 77968427,
+      "no-candidate": 120137323,
+      "redacted": 10503316,
+      "payment-route": 218954,
+      "individual-payee": 253080
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 211,
+      "pence": 10443816
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 46560386,
+       "payeeKeys": 79
+      },
+      {
+       "class": "foreign entity",
+       "pence": 1323885,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 67288860,
+       "payeeKeys": 49
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 108512011,
+       "payeeKeys": 118
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 39851052,
+       "payeeKeys": 56
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 7553658,
+       "payeeKeys": 11
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 174871719,
+       "payeeKeys": 24
+      },
+      {
+       "class": "cycle",
+       "pence": 942300,
+       "payeeKeys": 3
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 8307862,
+       "payeeKeys": 9
+      }
+     ]
+    }
+   }
+  },
+  "south_ribble": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 3626076455,
+     "resolvedPence": 1830246807,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500",
+     "vatBasis": "net",
+     "byClassPence": {
+      "public body": 1043068373,
+      "supplier": 740661274,
+      "council company": 46517160
+     },
+     "byReasonPence": {
+      "ambiguous": 1135980273,
+      "no-candidate": 638497303,
+      "individual-payee": 21352072
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 188578291,
+       "payeeKeys": 101
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 66670635,
+       "payeeKeys": 55
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 315655918,
+       "payeeKeys": 162
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 124598153,
+       "payeeKeys": 71
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 19771412,
+       "payeeKeys": 25
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 20333136,
+       "payeeKeys": 14
+      },
+      {
+       "class": "cycle",
+       "pence": 1458000,
+       "payeeKeys": 1
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 3595729,
+       "payeeKeys": 7
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 3762408601,
+     "resolvedPence": 2476049220,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500",
+     "vatBasis": "net",
+     "byClassPence": {
+      "public body": 915211171,
+      "supplier": 1555531306,
+      "council company": 5306743
+     },
+     "byReasonPence": {
+      "ambiguous": 585319262,
+      "no-candidate": 686000984,
+      "individual-payee": 15039135
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 367826518,
+       "payeeKeys": 108
+      },
+      {
+       "class": "foreign entity",
+       "pence": 96000,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 136758897,
+       "payeeKeys": 59
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 480446578,
+       "payeeKeys": 181
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 500511173,
+       "payeeKeys": 80
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 27652729,
+       "payeeKeys": 24
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 33673504,
+       "payeeKeys": 25
+      },
+      {
+       "class": "cycle",
+       "pence": 359500,
+       "payeeKeys": 1
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 8206407,
+       "payeeKeys": 8
+      }
+     ]
+    }
+   }
+  },
+  "west_lancashire": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 3164915839,
+     "resolvedPence": 2126087979,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500 excluding VAT",
+     "vatBasis": "net",
+     "byClassPence": {
+      "public body": 429210734,
+      "supplier": 1696877245
+     },
+     "byReasonPence": {
+      "ambiguous": 597376067,
+      "no-candidate": 438483893,
+      "individual-payee": 2967900
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 616039461,
+       "payeeKeys": 64
+      },
+      {
+       "class": "foreign entity",
+       "pence": 7884558,
+       "payeeKeys": 1
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 185586312,
+       "payeeKeys": 40
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 366487374,
+       "payeeKeys": 119
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 242559992,
+       "payeeKeys": 58
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 66606383,
+       "payeeKeys": 15
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 196574231,
+       "payeeKeys": 16
+      },
+      {
+       "class": "cycle",
+       "pence": 3355500,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 11783434,
+       "payeeKeys": 5
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 2938632504,
+     "resolvedPence": 1809621507,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500 excluding VAT",
+     "vatBasis": "net",
+     "byClassPence": {
+      "public body": 591556559,
+      "supplier": 1191064948,
+      "council company": 27000000
+     },
+     "byReasonPence": {
+      "ambiguous": 610579937,
+      "no-candidate": 516266060,
+      "individual-payee": 1790000,
+      "redacted": 375000
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 422005547,
+       "payeeKeys": 51
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 111289943,
+       "payeeKeys": 34
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 236567434,
+       "payeeKeys": 87
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 249964407,
+       "payeeKeys": 52
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 85265408,
+       "payeeKeys": 12
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 82916338,
+       "payeeKeys": 18
+      },
+      {
+       "class": "cycle",
+       "pence": 259423,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 2796448,
+       "payeeKeys": 4
+      }
+     ]
+    }
+   }
+  },
+  "wyre": {
+   "years": {
+    "2024/25": {
+     "supplierTotalPence": 8955371787,
+     "resolvedPence": 1546167562,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500.00 (excluding VAT)",
+     "vatBasis": "net",
+     "byClassPence": {
+      "supplier": 1512510620,
+      "public body": 33563342,
+      "council company": 93600
+     },
+     "byReasonPence": {
+      "ambiguous": 4419383700,
+      "no-candidate": 2974661363,
+      "individual-payee": 14800162,
+      "redacted": 359000
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 0,
+      "pence": 0
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 153741813,
+       "payeeKeys": 91
+      },
+      {
+       "class": "foreign entity",
+       "pence": 11795072,
+       "payeeKeys": 2
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 276093318,
+       "payeeKeys": 48
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 878227369,
+       "payeeKeys": 120
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 131133364,
+       "payeeKeys": 74
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 43060285,
+       "payeeKeys": 16
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 9223844,
+       "payeeKeys": 13
+      },
+      {
+       "class": "cycle",
+       "pence": 1738500,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 7497055,
+       "payeeKeys": 13
+      }
+     ]
+    },
+    "2025/26": {
+     "supplierTotalPence": 13667374381,
+     "resolvedPence": 2096246072,
+     "handVerifiedPence": 0,
+     "thresholdPounds": 500,
+     "thresholdStated": "over £500.00 (excluding VAT)",
+     "vatBasis": "net",
+     "byClassPence": {
+      "supplier": 2043176854,
+      "public body": 53019218,
+      "council company": 50000
+     },
+     "byReasonPence": {
+      "ambiguous": 7700877551,
+      "no-candidate": 3827402784,
+      "redacted": 31859606,
+      "individual-payee": 10988368
+     },
+     "rc03AccrualPayments": {
+      "rows": 0,
+      "pence": 0
+     },
+     "withheldIndividuals": {
+      "rows": 11,
+      "pence": 31593206
+     },
+     "ownershipPence": [
+      {
+       "class": "individual",
+       "pence": 148949354,
+       "payeeKeys": 103
+      },
+      {
+       "class": "foreign entity",
+       "pence": 7158733,
+       "payeeKeys": 3
+      },
+      {
+       "class": "no PSC filed",
+       "pence": 244123623,
+       "payeeKeys": 63
+      },
+      {
+       "class": "no unit over 50%",
+       "pence": 1229577263,
+       "payeeKeys": 138
+      },
+      {
+       "class": "more than 50% of shares, voting rights not filed",
+       "pence": 270135879,
+       "payeeKeys": 88
+      },
+      {
+       "class": "corporate parent without a register number",
+       "pence": 75303101,
+       "payeeKeys": 19
+      },
+      {
+       "class": "no PSC data held",
+       "pence": 51837428,
+       "payeeKeys": 24
+      },
+      {
+       "class": "cycle",
+       "pence": 3365000,
+       "payeeKeys": 2
+      },
+      {
+       "class": "resolved, no Companies House number",
+       "pence": 12726473,
+       "payeeKeys": 16
+      }
+     ]
+    }
+   }
+  }
+ }
+}

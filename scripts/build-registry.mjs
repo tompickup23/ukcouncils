@@ -150,6 +150,13 @@ function sisterMappings() {
   return { candidates, used };
 }
 
+/**
+ * Reorganisation notes UK Places has wrong, corrected here against the primary
+ * source (data/registry/reorganisation-corrections.json says why). Applied on
+ * every rebuild until UK Places carries the fix itself.
+ */
+const CORRECTIONS = JSON.parse(readFileSync(join(ROOT, "data", "registry", "reorganisation-corrections.json"), "utf-8")).councils;
+
 async function main() {
   const registry = JSON.parse(await text(REGISTRY_URL));
   const places = Object.values(registry.places ?? registry);
@@ -188,7 +195,7 @@ async function main() {
       region: place.region,
       county: place.county ?? null,
       parentGss: place.parentGss ?? null,
-      reorganisation: place.reorganisation ?? null,
+      reorganisation: CORRECTIONS[place.gss] ?? place.reorganisation ?? null,
       sisters,
     };
   }

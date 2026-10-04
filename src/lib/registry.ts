@@ -26,7 +26,15 @@ export interface Council {
   region: string;
   county: string | null;
   parentGss: string | null;
-  reorganisation: { status: string; note: string; sourceUrl: string; sourceDate: string } | null;
+  reorganisation: {
+    status: string;
+    note: string;
+    sourceUrl: string;
+    sourceDate: string;
+    /** Set where UK Councils corrected the UK Places note against the primary sources listed. */
+    sources?: { publisher: string; title: string; url: string; table?: string; date?: string | null }[];
+    recordedBy?: string;
+  } | null;
   sisters: Record<SisterSite, string | null>;
 }
 

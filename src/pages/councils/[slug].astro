@@ -273,9 +273,11 @@ const structuredData = [
     <section class="section" id="reorganisation" aria-labelledby="reorganisation-heading">
       <h2 id="reorganisation-heading">Is {name} council being reorganised?</h2>
       <p>{council.reorganisation.note}</p>
-      <p class="source-line">
-        Source: <a href={council.reorganisation.sourceUrl}>{new URL(council.reorganisation.sourceUrl).hostname}</a>{longDate(council.reorganisation.sourceDate) ? `, ${longDate(council.reorganisation.sourceDate)}` : ""}, as recorded by UK Places.
-      </p>
+      {council.reorganisation.sources ? council.reorganisation.sources.map((source) => <SourceLine source={source} />) : (
+        <p class="source-line">
+          Source: <a href={council.reorganisation.sourceUrl}>{new URL(council.reorganisation.sourceUrl).hostname}</a>{longDate(council.reorganisation.sourceDate) ? `, ${longDate(council.reorganisation.sourceDate)}` : ""}, as recorded by UK Places.
+        </p>
+      )}
     </section>
   )}
 

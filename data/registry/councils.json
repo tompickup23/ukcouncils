@@ -188,10 +188,26 @@
       "county": null,
       "parentGss": null,
       "reorganisation": {
-        "status": "government-decided",
-        "note": "East Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Blackburn with Darwen's area would join Burnley, Hyndburn, Pendle and Rossendale in a new council that the proposal calls Pennine Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": "https://ukelections.co.uk/seats/blackburn-with-darwen/",
@@ -212,10 +228,26 @@
       "county": null,
       "parentGss": null,
       "reorganisation": {
-        "status": "government-decided",
-        "note": "West Lancashire (Fylde Coast) is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Blackpool's area would join Fylde and Wyre in a new council that the proposal calls Fylde Coast. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. Fylde Coast is not the West Lancashire district, which would join South Lancashire. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": null,
@@ -2649,10 +2681,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "East Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Burnley's area would join Blackburn with Darwen, Hyndburn, Pendle and Rossendale in a new council that the proposal calls Pennine Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": "https://ukelections.co.uk/seats/burnley/",
@@ -2673,10 +2721,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "South Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Chorley's area would join South Ribble and West Lancashire in a new council that the proposal calls South Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": "https://ukelections.co.uk/seats/chorley/",
@@ -2697,10 +2761,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "West Lancashire (Fylde Coast) is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Fylde's area would join Blackpool and Wyre in a new council that the proposal calls Fylde Coast. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. Fylde Coast is not the West Lancashire district, which would join South Lancashire. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": null,
@@ -2721,10 +2801,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "East Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Hyndburn's area would join Blackburn with Darwen, Burnley, Pendle and Rossendale in a new council that the proposal calls Pennine Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": "https://ukelections.co.uk/seats/hyndburn/",
@@ -2745,10 +2841,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "North Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Lancaster's area would join Preston and Ribble Valley in a new council that the proposal calls North Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": null,
@@ -2769,10 +2881,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "East Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Pendle's area would join Blackburn with Darwen, Burnley, Hyndburn and Rossendale in a new council that the proposal calls Pennine Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": "https://ukelections.co.uk/seats/pendle/",
@@ -2793,10 +2921,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "North Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Preston's area would join Lancaster and Ribble Valley in a new council that the proposal calls North Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": "https://ukelections.co.uk/seats/preston/",
@@ -2817,10 +2961,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "North Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Ribble Valley's area would join Lancaster and Preston in a new council that the proposal calls North Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": null,
@@ -2841,10 +3001,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "East Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Rossendale's area would join Blackburn with Darwen, Burnley, Hyndburn and Pendle in a new council that the proposal calls Pennine Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": null,
@@ -2865,10 +3041,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "South Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, South Ribble's area would join Chorley and West Lancashire in a new council that the proposal calls South Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": null,
@@ -2889,10 +3081,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "South Lancashire is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, West Lancashire's area would join Chorley and South Ribble in a new council that the proposal calls South Lancashire. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. The council the proposal calls Fylde Coast (Blackpool, Fylde and Wyre) is a different group. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": "https://ukelections.co.uk/seats/west-lancashire/",
@@ -2913,10 +3121,26 @@
       "county": "Lancashire",
       "parentGss": "E10000017",
       "reorganisation": {
-        "status": "government-decided",
-        "note": "West Lancashire (Fylde Coast) is a working geographic label in the government-decided four-unitary model; the source records that the arrangement remains subject to a Structural Change Order.",
-        "sourceUrl": "https://news.lancashire.gov.uk/news/government-announces-local-government-reorganisation-decision-for-lancashire",
-        "sourceDate": "2026-07-16"
+        "status": "government-decided, paused",
+        "note": "Under the four-unitary proposal the Secretary of State chose on 16 July 2026, Wyre's area would join Blackpool and Fylde in a new council that the proposal calls Fylde Coast. The decision letter uses the proposal's names and does not name the new councils formally; it says a Structural Changes Order, subject to Parliamentary approval, is required. Fylde Coast is not the West Lancashire district, which would join South Lancashire. On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.",
+        "sourceUrl": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+        "sourceDate": "2026-07-16",
+        "sources": [
+          {
+            "publisher": "MHCLG",
+            "title": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+            "url": "https://assets.publishing.service.gov.uk/media/6a58d21c24d4d0ad06d945c0/Local_government_reorganisation_-_decision_letter_to_Lancashire__Blackburn_with_Darwen_and_Blackpool_council_leaders.pdf",
+            "table": "pages 2 and 4",
+            "date": "2026-07-16"
+          },
+          {
+            "publisher": "Hansard",
+            "title": "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+            "url": "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+            "date": "2026-09-07"
+          }
+        ],
+        "recordedBy": "UK Councils, correcting UK Places, 4 October 2026"
       },
       "sisters": {
         "ukelections": null,

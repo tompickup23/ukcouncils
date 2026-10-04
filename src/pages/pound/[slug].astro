@@ -1,0 +1,225 @@
+---
+/**
+ * DRAFT Public Pound pages for Lancashire: one per council with a spending
+ * bank (fourteen) and one per group in the 16 July 2026 decision letter
+ * (four). Not in the sitemap, the search index or the menu, and noindex.
+ * Not for release: the matches are machine proposals no person has checked,
+ * and RULES.md rule 1.14 blocks launch (Reports Public_Pound_work/phase0).
+ *
+ * No supplier string reaches this page: the data file holds classes and
+ * sums only. Nothing is ranked; classes are shown in a fixed order.
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Fact from "../../components/Fact.astro";
+import SourceLine from "../../components/SourceLine.astro";
+import { councilPath } from "../../lib/paths";
+import {
+  CLASS_LABEL,
+  NOT_COVERED,
+  OWNERSHIP_LABEL,
+  REASON_LABEL,
+  bodyIdFor,
+  loadPound,
+  ownershipSource,
+  penceToPounds,
+  poundPagePath,
+  poundCouncil,
+  poundPages,
+  poundSource,
+  share,
+  type PoundPage,
+  type PoundYear,
+} from "../../lib/pound";
+import type { SourceRef } from "../../lib/sources";
+
+export function getStaticPaths() {
+  return poundPages().map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+interface Props {
+  page: PoundPage;
+}
+
+const { page } = Astro.props;
+const data = loadPound();
+const meta = data.$meta;
+const years = meta.years;
+const CLASS_ORDER = ["supplier", "public body", "council company", "gate decision"];
+const REASON_ORDER = Object.keys(REASON_LABEL);
+
+const HANSARD: SourceRef = {
+  publisher: "Hansard",
+  title: "HC Deb, 7 September 2026, vol. 790, cols 667 to 682, Local Government Reorganisation",
+  url: "https://hansard.parliament.uk/Commons/2026-09-07/debates/BBDE7BC0-92C4-4B04-BFC8-CFB70302CD0E/LocalGovernmentReorganisation",
+  date: "2026-09-07",
+};
+
+function vatWords(year: PoundYear): string {
+  const threshold = year.thresholdPounds
+    ? `The council publishes payments over £${year.thresholdPounds}.`
+    : "The council's publication threshold is not established from its own page or file.";
+  const vat = year.vatBasis === "net" ? "Amounts are net of VAT."
+    : year.vatBasis === "gross" ? "Amounts include VAT."
+    : "Whether amounts include VAT is not known.";
+  return `${threshold} ${vat} Spending under the threshold is not published and is unknown in size.`;
+}
+
+const council = page.kind === "body" ? page.council! : null;
+const body = page.kind === "body" ? data.bodies[page.bodyId!] : null;
+const unitary = page.kind === "unitary" ? page.unitary! : null;
+
+const members = unitary
+  ? unitary.members.map((gss) => {
+      const c = poundCouncil(gss)!;
+      const id = bodyIdFor(gss);
+      return { council: c, id, data: id ? data.bodies[id] : null };
+    })
+  : [];
+
+/** A total across members only where each is covered and states the same threshold and VAT basis. */
+function memberTotal(fy: string): { pence: number } | { reason: string } {
+  const missing = members.filter((m) => !m.data);
+  if (missing.length) return { reason: `${missing.map((m) => m.council.name).join(" and ")} not yet covered` };
+  const ys = members.map((m) => m.data!.years[fy]);
+  const bases = new Set(ys.map((y) => `${y.thresholdPounds ?? "n/a"} ${y.vatBasis ?? "unknown"}`));
+  if (bases.size > 1) return { reason: "the members publish on different thresholds or VAT bases" };
+  if (ys.some((y) => !y.thresholdPounds)) return { reason: "a member's publication threshold is not established" };
+  if (ys.some((y) => (y.vatBasis ?? "unknown") === "unknown")) return { reason: "a member's VAT basis is unknown" };
+  return { pence: ys.reduce((sum, y) => sum + y.supplierTotalPence, 0) };
+}
+
+const title = page.kind === "body"
+  ? `Where ${page.name} council's payments go, 2024/25 and 2025/26 (draft)`
+  : `Where payments go in the area the proposal calls ${page.name}, 2024/25 and 2025/26 (draft)`;
+const path = poundPagePath(page.slug);
+---
+<BaseLayout title={title} description="Draft. Not published." path={path} noindex>
+  {council && <Breadcrumbs items={[{ label: "Councils", href: "/councils/" }, ...(council.gss === "E10000017" ? [] : [{ label: council.name, href: councilPath(council) }]), { label: "Where the payments go (draft)" }]} />}
+  {unitary && <Breadcrumbs items={[{ label: "Councils", href: "/councils/" }, { label: `${unitary.name} (draft)` }]} />}
+
+  <header class="page-head">
+    <p class="eyebrow">Draft, not published</p>
+    <h1>{title}</h1>
+    <p class="caveat" data-draft>
+      This page is a draft. Every match below is a proposal from a computer pipeline that no person has checked,
+      and the share checked by a person is 0%. It is not published and its figures are not for quotation.
+      Pipeline {meta.pipelineGitSha.slice(0, 7)}, built {meta.generatedAt.slice(0, 10)}.
+    </p>
+  </header>
+
+  {body && council && years.map((fy) => {
+    const y = body.years[fy];
+    const src = poundSource(council, meta);
+    const unclassified = y.supplierTotalPence - y.resolvedPence;
+    const supplierClass = y.byClassPence.supplier ?? 0;
+    return (
+      <section class="section" id={`fy-${fy.replace("/", "-")}`} aria-labelledby={`h-${fy.replace("/", "-")}`}>
+        <h2 id={`h-${fy.replace("/", "-")}`}>{fy}</h2>
+        <Fact label={`Payments in ${council.name}'s supplier total, ${fy}`} figure={penceToPounds(y.supplierTotalPence)} source={src}>
+          <p class="caveat">{vatWords(y)}</p>
+          {y.rc03AccrualPayments.rows > 0 && (
+            <p class="caveat">Includes {y.rc03AccrualPayments.rows.toLocaleString("en-GB")} accrual-coded payments of {penceToPounds(y.rc03AccrualPayments.pence)}, counted as payments under rule RC03 and shown on their own line.</p>
+          )}
+          {y.withheldIndividuals.rows > 0 && (
+            <p class="caveat">Includes {y.withheldIndividuals.rows.toLocaleString("en-GB")} payments to individuals whose names the council withheld, {penceToPounds(y.withheldIndividuals.pence)}.</p>
+          )}
+        </Fact>
+        <Fact label="Share matched to a register entry by the pipeline" figure={share(y.resolvedPence, y.supplierTotalPence)} source={src}>
+          <p class="caveat">{penceToPounds(y.resolvedPence)} matched; {penceToPounds(unclassified)} not matched, with a reason for each payee.</p>
+        </Fact>
+        <Fact label="Share checked by a person" figure={share(y.handVerifiedPence, y.supplierTotalPence)} source={src} />
+
+        <div class="fact" data-fact>
+          <h3>Who the payments went to, by kind of payee</h3>
+          <table>
+            <thead><tr><th scope="col">Kind of payee</th><th scope="col">Value</th><th scope="col">Share</th></tr></thead>
+            <tbody>
+              {CLASS_ORDER.filter((c) => y.byClassPence[c]).map((c) => (
+                <tr><td>{CLASS_LABEL[c] ?? c}</td><td>{penceToPounds(y.byClassPence[c])}</td><td>{share(y.byClassPence[c], y.supplierTotalPence)}</td></tr>
+              ))}
+              {REASON_ORDER.filter((r) => y.byReasonPence[r]).map((r) => (
+                <tr><td>Not matched: {REASON_LABEL[r]}</td><td>{penceToPounds(y.byReasonPence[r])}</td><td>{share(y.byReasonPence[r], y.supplierTotalPence)}</td></tr>
+              ))}
+            </tbody>
+          </table>
+          <SourceLine source={src} />
+        </div>
+
+        {supplierClass > 0 && (
+          <div class="fact" data-fact>
+            <h3>Who controls the matched suppliers</h3>
+            <p class="muted">Each matched company is followed up its chain of people with significant control to the first unit that nobody holds more than 50% of the votes in. Shares are of the matched supplier value, {penceToPounds(supplierClass)}.</p>
+            <table>
+              <thead><tr><th scope="col">Top of the chain</th><th scope="col">Value</th><th scope="col">Share</th></tr></thead>
+              <tbody>
+                {y.ownershipPence.map((o) => (
+                  <tr><td>{OWNERSHIP_LABEL[o.class] ?? o.class}</td><td>{penceToPounds(o.pence)}</td><td>{share(o.pence, supplierClass)}</td></tr>
+                ))}
+              </tbody>
+            </table>
+            <p class="caveat">The ownership edition is dated {meta.bodsAsAt}; a 2025/26 payment is read against the chain as it stood then. Where a chain stops short of a unit nobody controls, the reason it stops is its own line; a company registered in the UK is not thereby UK-owned.</p>
+            <SourceLine source={ownershipSource(meta)} />
+          </div>
+        )}
+      </section>
+    );
+  })}
+
+  {unitary && (
+    <section class="section" id="members" aria-labelledby="members-heading">
+      <h2 id="members-heading">The councils in {unitary.name}</h2>
+      <p>
+        {unitary.name} is the name the councils' proposal used for this group, and the Secretary of State's decision letter of 16 July 2026 uses it.
+        The letter does not name the new councils formally.
+      </p>
+      <SourceLine source={unitary.source} />
+      <p>On 7 September 2026 the Secretary of State told the House of Commons that the July decisions for fourteen areas, Lancashire included, were paused pending a review.</p>
+      <SourceLine source={HANSARD} />
+      <p class="caveat">Lancashire County Council's payments are not split between these groups: a county figure is never apportioned.</p>
+      {years.map((fy) => {
+        const total = memberTotal(fy);
+        return (
+          <div class="fact" data-fact>
+            <h3>{fy}</h3>
+            <table>
+              <thead><tr><th scope="col">Council</th><th scope="col">Supplier total</th><th scope="col">Threshold</th><th scope="col">VAT basis</th><th scope="col">Matched by the pipeline</th></tr></thead>
+              <tbody>
+                {members.map((m) => {
+                  const y = m.data?.years[fy];
+                  return y ? (
+                    <tr><td><a href={poundPagePath(m.council.slug)}>{m.council.name}</a></td><td>{penceToPounds(y.supplierTotalPence)}</td><td>{y.thresholdPounds ? `£${y.thresholdPounds}` : "n/a"}</td><td>{y.vatBasis ?? "unknown"}</td><td>{share(y.resolvedPence, y.supplierTotalPence)}</td></tr>
+                  ) : (
+                    <tr><td>{m.council.name}</td><td colspan="4">{NOT_COVERED[m.council.gss] ?? "Not yet covered."}</td></tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <p>{"pence" in total ? `Total across the councils: ${penceToPounds(total.pence)}.` : `No total across the councils is given: ${total.reason}.`}</p>
+            {members.filter((m) => m.data).map((m) => <SourceLine source={poundSource(m.council, meta)} />)}
+          </div>
+        );
+      })}
+    </section>
+  )}
+
+  <section class="section" id="about-this-draft" aria-labelledby="about-heading">
+    <h2 id="about-heading">About these figures</h2>
+    <p>
+      Payments are matched to Companies House, the Charity Commission, the CQC register (for identity only), lists of public bodies,
+      GLEIF and public procurement records, in a fixed order. A payee that matches nothing, or more than one entry, stays unmatched with
+      its reason, and its value stays in every total. No probabilistic matching is used.
+    </p>
+    <p>
+      Inclusion on this page implies no impropriety: councils pay companies of every kind for legitimate reasons. Two organisations can
+      share a name; each match shows its method and confidence in the verification tables, and low-confidence matches are flagged, not asserted.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  table { border-collapse: collapse; width: 100%; max-width: 44rem; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--border, currentColor); vertical-align: top; }
+  td:nth-child(n + 2), th:nth-child(n + 2) { text-align: right; }
+  .fact h3 { margin: 0.5rem 0; }
+</style>
