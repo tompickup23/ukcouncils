@@ -1,8 +1,8 @@
 {
  "$meta": {
   "status": "DRAFT. Not verified, not published. Machine proposals from the Phase 1 waterfall; no row has been accepted by a named person.",
-  "pipelineGitSha": "2179112f80c04b0d8791a3c84bbf701e4d8e986d",
-  "generatedAt": "2026-10-04T20:41:36Z",
+  "pipelineGitSha": "23236752631a1026efd47dc01ebeca6f10439c93",
+  "generatedAt": "2026-10-05T08:45:48Z",
   "years": [
    "2024/25",
    "2025/26"
@@ -10,11 +10,11 @@
   "inputs": [
    {
     "file": "coverage.json",
-    "sha256": "5e03f40ec6f6e11db9f134ead4fd625d11f0050e878a6cdb7a33c4844cab9708"
+    "sha256": "1977345d74d166e223c279bfebf5e6d5f30709e5f63b637b5c7d431432f4aacc"
    },
    {
     "file": "resolver_proposed.csv",
-    "sha256": "cd4cd75eaf8570ba61cbbc79c43d56260420baa905dd9c8f7b46eb6f479d32dc"
+    "sha256": "362402b4a288dd336caacf336588c9c255b6514c04922831b581e90d6fa53b74"
    },
    {
     "file": "payee_key_values.csv",
@@ -22,23 +22,286 @@
    },
    {
     "file": "ownership_walk.csv",
-    "sha256": "3139a81ea88fdc379ce4a10d5e014a4bdbcec422df19a1cc404b3ff7b9c29122"
+    "sha256": "08deafe7c068db0c194c7641bb5d1e915b31f4edc08d34981353920cfbf4cf93"
    }
   ],
   "bodsAsAt": "2025-03-11",
+  "agentReview": {
+   "status": "Agent-labelled: two independent model passes, no person labelled any row (RULES.md decisions 12 and 13). Never clerical precision or verification.",
+   "agreement": {
+    "gold": {
+     "reviewed": 661,
+     "passes_agree": 628,
+     "agreement_rate": [
+      0.9501,
+      0.9307,
+      0.9642
+     ],
+     "agreed": {
+      "same": 553,
+      "different": 57,
+      "cannot tell": 51
+     },
+     "not_reviewed": 3
+    },
+    "recall": {
+     "reviewed": 140,
+     "passes_agree": 130,
+     "agreement_rate": [
+      0.9286,
+      0.8735,
+      0.9607
+     ],
+     "agreed": {
+      "same": 48,
+      "different": 67,
+      "cannot tell": 25
+     },
+     "not_reviewed": 59
+    },
+    "verify": {
+     "reviewed": 626,
+     "passes_agree": 597,
+     "agreement_rate": [
+      0.9537,
+      0.9343,
+      0.9676
+     ],
+     "agreed": {
+      "same": 523,
+      "different": 46,
+      "cannot tell": 57
+     },
+     "not_reviewed": 0
+    }
+   },
+   "precision": {
+    "label": "agent-labelled precision (no person labelled these pairs)",
+    "byStratum": {
+     "step 1 and 1b, identifier": {
+      "population": 1297,
+      "drawn": 48,
+      "labelled_same_or_different": 44,
+      "agent_same": 44,
+      "cannot_tell": 4,
+      "row_precision_wilson": [
+       1.0,
+       0.9197,
+       1.0
+      ],
+      "pound_precision": 1.0,
+      "pound_precision_bootstrap_95": [
+       1.0,
+       1.0
+      ]
+     },
+     "step 2b, exact name": {
+      "population": 14262,
+      "drawn": 138,
+      "labelled_same_or_different": 133,
+      "agent_same": 131,
+      "cannot_tell": 5,
+      "row_precision_wilson": [
+       0.985,
+       0.9468,
+       0.9959
+      ],
+      "pound_precision": 0.7651,
+      "pound_precision_bootstrap_95": [
+       0.5092,
+       1.0
+      ]
+     },
+     "step 2c, prefix": {
+      "population": 442,
+      "drawn": 106,
+      "labelled_same_or_different": 83,
+      "agent_same": 61,
+      "cannot_tell": 22,
+      "row_precision_wilson": [
+       0.7349,
+       0.6311,
+       0.818
+      ],
+      "pound_precision": 0.7559,
+      "pound_precision_bootstrap_95": [
+       0.4633,
+       0.9265
+      ]
+     },
+     "step 3, charity": {
+      "population": 405,
+      "drawn": 44,
+      "labelled_same_or_different": 41,
+      "agent_same": 28,
+      "cannot_tell": 3,
+      "row_precision_wilson": [
+       0.6829,
+       0.5302,
+       0.8044
+      ],
+      "pound_precision": 0.6368,
+      "pound_precision_bootstrap_95": [
+       0.2087,
+       0.9221
+      ]
+     },
+     "step 4, CQC provider": {
+      "population": 57,
+      "drawn": 28,
+      "labelled_same_or_different": 27,
+      "agent_same": 27,
+      "cannot_tell": 1,
+      "row_precision_wilson": [
+       1.0,
+       0.8754,
+       1.0
+      ],
+      "pound_precision": 1.0,
+      "pound_precision_bootstrap_95": [
+       1.0,
+       1.0
+      ]
+     },
+     "step 5, public body": {
+      "population": 401,
+      "drawn": 44,
+      "labelled_same_or_different": 44,
+      "agent_same": 43,
+      "cannot_tell": 0,
+      "row_precision_wilson": [
+       0.9773,
+       0.8819,
+       0.996
+      ],
+      "pound_precision": 1.0,
+      "pound_precision_bootstrap_95": [
+       0.9999,
+       1.0
+      ]
+     },
+     "step 6, GLEIF": {
+      "population": 427,
+      "drawn": 44,
+      "labelled_same_or_different": 41,
+      "agent_same": 30,
+      "cannot_tell": 3,
+      "row_precision_wilson": [
+       0.7317,
+       0.5807,
+       0.8431
+      ],
+      "pound_precision": 0.7827,
+      "pound_precision_bootstrap_95": [
+       0.5194,
+       0.9655
+      ]
+     },
+     "step 7, OCDS and GGIS": {
+      "population": 676,
+      "drawn": 116,
+      "labelled_same_or_different": 103,
+      "agent_same": 98,
+      "cannot_tell": 11,
+      "row_precision_wilson": [
+       0.9515,
+       0.8914,
+       0.9791
+      ],
+      "pound_precision": 0.9881,
+      "pound_precision_bootstrap_95": [
+       0.9657,
+       0.9996
+      ]
+     },
+     "variant only (W1, W1b, W2)": {
+      "population": 295,
+      "drawn": 96,
+      "labelled_same_or_different": 94,
+      "agent_same": 91,
+      "cannot_tell": 2,
+      "row_precision_wilson": [
+       0.9681,
+       0.9103,
+       0.9891
+      ],
+      "pound_precision": 0.9707,
+      "pound_precision_bootstrap_95": [
+       0.8499,
+       1.0
+      ]
+     }
+    },
+    "allStrata": {
+     "row_precision_population_weighted": 0.9659,
+     "pound_precision": 0.8915,
+     "pound_precision_bootstrap_95": [
+      0.7762,
+      0.9938
+     ]
+    }
+   },
+   "recall": {
+    "label": "recall, an estimate, against the registers searched (agent-labelled; no person searched)",
+    "rows": {
+     "share_missed": [
+      0.2414,
+      0.1636,
+      0.341
+     ],
+     "estimated_missed": [
+      2493,
+      1690,
+      3522
+     ],
+     "recall": [
+      0.8799,
+      0.8383,
+      0.9153
+     ]
+    },
+    "pounds": {
+     "share_missed": [
+      0.3068,
+      0.2202,
+      0.4096
+     ],
+     "estimated_missed": [
+      12838428325,
+      9214543407,
+      17140222431
+     ],
+     "recall": [
+      0.9346,
+      0.9146,
+      0.9522
+     ]
+    },
+    "note": "Missed: both passes matched the key to the same candidate record from a blocked search of the Companies House, Charity Commission, CQC, public-body and GLEIF extracts. Not missed: both passes said none of the candidates is the payee, or the search found no candidate. Cannot tell is left out of the denominator. Not missed is not the same as absent from every register. Interval columns are the point, then the low and high ends."
+   }
+  },
+  "scottishDefinition": "Not computed: none of the 41 columns in the 28 pinned bank files carries a supplier or invoice address, so the Scottish Government invoice-address definition (rule 2.3) cannot be built from the banks.",
   "notCovered": {
    "chorley": "No bank published (manifest HTTP 404, 4 October 2026). Not yet covered (RULES.md decision 10).",
    "lancashire_fire": "No bank published (manifest HTTP 404, 4 October 2026). Not yet covered (RULES.md decision 10).",
    "lancashire_pcc": "Bank ends January 2025 (its newest file covers April 2024 to January 2025). Not yet covered (RULES.md decision 10)."
   },
-  "note": "Pence. Shares are of each body's supplier total (bank net less internal transfers, settlement noise and purchase cards). Spend under each body's publication threshold is not published and is unknown in size. Ownership lines cover resolved suppliers only."
+  "note": "Pence. The supplier total (bank net less internal transfers, settlement noise and purchase cards) is shown on three lines (decision 14); resolved, corroborated, agent-reviewed and hand-verified values are of supplier spend only. Hand-verified is nil: no person verifies rows (decision 12). Corroborated and agent-reviewed are not verification. Spend under each body's publication threshold is not published and is unknown in size. Ownership lines cover resolved suppliers only; the individual class is a count and a value, with no country (decision 20)."
  },
  "bodies": {
   "blackburn": {
    "years": {
     "2024/25": {
      "supplierTotalPence": 28748489729,
-     "resolvedPence": 12840849452,
+     "linesPence": {
+      "supplierSpend": 27921733826,
+      "publicBodies": 826755903,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 12014093549,
+     "supplierSpendCorroboratedPence": 7365398561,
+     "supplierSpendAgentReviewedPence": 2472383780,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500 (council page)",
@@ -65,59 +328,135 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 2361278449,
-       "payeeKeys": 371
+       "pence": 2121234264,
+       "payeeKeys": 343,
+       "companies": 338
       },
       {
        "class": "foreign entity",
        "pence": 5256987,
-       "payeeKeys": 4
+       "payeeKeys": 4,
+       "companies": 3
       },
       {
        "class": "no PSC filed",
-       "pence": 2728710804,
-       "payeeKeys": 237
+       "pence": 2612895071,
+       "payeeKeys": 232,
+       "companies": 228
       },
       {
        "class": "no unit over 50%",
-       "pence": 3587496602,
-       "payeeKeys": 569
+       "pence": 3528228178,
+       "payeeKeys": 561,
+       "companies": 557
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 2197443942,
-       "payeeKeys": 256
+       "pence": 2196511518,
+       "payeeKeys": 255,
+       "companies": 254
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 434261204,
+       "payeeKeys": 47,
+       "companies": 47
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 339172759,
-       "payeeKeys": 76
+       "pence": 338937659,
+       "payeeKeys": 75,
+       "companies": 73
       },
       {
        "class": "corporate parent, no further PSC data",
        "pence": 9623306,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC data held",
-       "pence": 565272552,
-       "payeeKeys": 63
+       "pence": 547307214,
+       "payeeKeys": 59,
+       "companies": 59
       },
       {
        "class": "cycle",
        "pence": 2258513,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 3
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 217579635,
-       "payeeKeys": 33
+       "payeeKeys": 33,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 2842530551
+       },
+       {
+        "class": "foreign entity",
+        "pence": 6880531
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 2849058219
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 3767904822
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 907294733
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 798813613
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 16434934
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 599948432
+       },
+       {
+        "class": "cycle",
+        "pence": 7648079
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 217579635
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 1563,
+      "hhi": 99,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 3.7
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 9807346780
     },
     "2025/26": {
      "supplierTotalPence": 33701523804,
-     "resolvedPence": 15297321292,
+     "linesPence": {
+      "supplierSpend": 33212116052,
+      "publicBodies": 489407752,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 14807913540,
+     "supplierSpendCorroboratedPence": 9645961936,
+     "supplierSpendAgentReviewedPence": 3085040174,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500 (council page)",
@@ -144,55 +483,123 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 3615285200,
-       "payeeKeys": 394
+       "pence": 2761538413,
+       "payeeKeys": 378,
+       "companies": 351
       },
       {
        "class": "foreign entity",
        "pence": 3778203,
-       "payeeKeys": 4
+       "payeeKeys": 4,
+       "companies": 3
       },
       {
        "class": "no PSC filed",
-       "pence": 2794456521,
-       "payeeKeys": 267
+       "pence": 2691528400,
+       "payeeKeys": 264,
+       "companies": 245
       },
       {
        "class": "no unit over 50%",
-       "pence": 4006120965,
-       "payeeKeys": 585
+       "pence": 3993831713,
+       "payeeKeys": 583,
+       "companies": 552
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 3141283264,
-       "payeeKeys": 285
+       "payeeKeys": 285,
+       "companies": 255
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 968964160,
+       "payeeKeys": 21,
+       "companies": 18
       },
       {
        "class": "corporate parent without a register number",
        "pence": 517842688,
-       "payeeKeys": 89
+       "payeeKeys": 89,
+       "companies": 75
       },
       {
        "class": "corporate parent, no further PSC data",
        "pence": 5458729,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 1
       },
       {
        "class": "no PSC data held",
        "pence": 498873973,
-       "payeeKeys": 77
+       "payeeKeys": 77,
+       "companies": 74
       },
       {
        "class": "cycle",
        "pence": 12322406,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 3
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 212491591,
-       "payeeKeys": 27
+       "payeeKeys": 27,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 3559882524
+       },
+       {
+        "class": "foreign entity",
+        "pence": 6771460
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 3528560710
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 4769024760
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 1054810891
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 1123217049
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 12126185
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 520194791
+       },
+       {
+        "class": "cycle",
+        "pence": 20833579
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 212491591
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 1562,
+      "hhi": 131,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 5.5
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 12632478675
     }
    }
   },
@@ -200,7 +607,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 118818005438,
-     "resolvedPence": 68294479256,
+     "linesPence": {
+      "supplierSpend": 82248211213,
+      "publicBodies": 32620640200,
+      "councilCompaniesOwn": 3949154025,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 31724685031,
+     "supplierSpendCorroboratedPence": 14427235329,
+     "supplierSpendAgentReviewedPence": 9968371432,
      "handVerifiedPence": 0,
      "thresholdPounds": 250,
      "thresholdStated": "over £250",
@@ -228,59 +643,135 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 3898666091,
-       "payeeKeys": 489
+       "pence": 3202004616,
+       "payeeKeys": 460,
+       "companies": 456
       },
       {
        "class": "foreign entity",
        "pence": 12387259,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "no PSC filed",
-       "pence": 3628692960,
-       "payeeKeys": 320
+       "pence": 3520477067,
+       "payeeKeys": 312,
+       "companies": 297
       },
       {
        "class": "no unit over 50%",
-       "pence": 11819302321,
-       "payeeKeys": 685
+       "pence": 11526969444,
+       "payeeKeys": 677,
+       "companies": 656
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 4870912350,
-       "payeeKeys": 364
+       "pence": 4870444950,
+       "payeeKeys": 362,
+       "companies": 354
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 1124591533,
+       "payeeKeys": 56,
+       "companies": 56
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 1499613430,
-       "payeeKeys": 94
+       "pence": 1493621501,
+       "payeeKeys": 89,
+       "companies": 84
       },
       {
        "class": "corporate parent, no further PSC data",
        "pence": 13361324,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "no PSC data held",
-       "pence": 1760239345,
-       "payeeKeys": 74
+       "pence": 1739317386,
+       "payeeKeys": 70,
+       "companies": 69
       },
       {
        "class": "cycle",
        "pence": 1708800,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 4219801151,
-       "payeeKeys": 50
+       "payeeKeys": 50,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 4526086619
+       },
+       {
+        "class": "foreign entity",
+        "pence": 14079181
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 3605883762
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 13421593687
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 1453313257
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 2425242587
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 26041595
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 1969135870
+       },
+       {
+        "class": "cycle",
+        "pence": 63507322
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 4219801151
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 1983,
+      "hhi": 223,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 8.1
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 24075692132
     },
     "2025/26": {
      "supplierTotalPence": 104070696347,
-     "resolvedPence": 61197125845,
+     "linesPence": {
+      "supplierSpend": 78019341158,
+      "publicBodies": 23783942077,
+      "councilCompaniesOwn": 2267413112,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 35145770656,
+     "supplierSpendCorroboratedPence": 18994481112,
+     "supplierSpendAgentReviewedPence": 10468308294,
      "handVerifiedPence": 0,
      "thresholdPounds": 250,
      "thresholdStated": "over £250",
@@ -308,50 +799,117 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 4380604871,
-       "payeeKeys": 478
+       "pence": 3768000601,
+       "payeeKeys": 459,
+       "companies": 449
       },
       {
        "class": "no PSC filed",
-       "pence": 3963706896,
-       "payeeKeys": 313
+       "pence": 3878397663,
+       "payeeKeys": 312,
+       "companies": 290
       },
       {
        "class": "no unit over 50%",
-       "pence": 12370624526,
-       "payeeKeys": 670
+       "pence": 12370306526,
+       "payeeKeys": 669,
+       "companies": 658
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 4549572578,
-       "payeeKeys": 339
+       "pence": 4549498538,
+       "payeeKeys": 338,
+       "companies": 328
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 698747977,
+       "payeeKeys": 24,
+       "companies": 24
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 1523785346,
-       "payeeKeys": 86
+       "pence": 1523445032,
+       "payeeKeys": 85,
+       "companies": 81
       },
       {
        "class": "corporate parent, no further PSC data",
        "pence": 46183505,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 2
       },
       {
        "class": "no PSC data held",
-       "pence": 3965114329,
-       "payeeKeys": 87
+       "pence": 3965012209,
+       "payeeKeys": 86,
+       "companies": 85
       },
       {
        "class": "cycle",
        "pence": 658800,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 4345519805,
-       "payeeKeys": 48
+       "payeeKeys": 48,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 5226112884
+       },
+       {
+        "class": "foreign entity",
+        "pence": 86430
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 4080485866
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 14013360475
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 747338996
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 2489400438
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 50497305
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 4163761657
+       },
+       {
+        "class": "cycle",
+        "pence": 29206800
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 4345519805
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 1920,
+      "hhi": 203,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 8.1
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 28997416941
     }
    }
   },
@@ -359,7 +917,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 4409580867,
-     "resolvedPence": 3730159204,
+     "linesPence": {
+      "supplierSpend": 4141795054,
+      "publicBodies": 267785813,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 3462373391,
+     "supplierSpendCorroboratedPence": 1775693549,
+     "supplierSpendAgentReviewedPence": 1325802842,
      "handVerifiedPence": 0,
      "thresholdPounds": null,
      "thresholdStated": "unknown",
@@ -386,49 +952,115 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 557155656,
-       "payeeKeys": 134
+       "pence": 292683458,
+       "payeeKeys": 128,
+       "companies": 127
       },
       {
        "class": "foreign entity",
        "pence": 8495315,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 3
       },
       {
        "class": "no PSC filed",
-       "pence": 408523715,
-       "payeeKeys": 61
+       "pence": 408405890,
+       "payeeKeys": 60,
+       "companies": 58
       },
       {
        "class": "no unit over 50%",
-       "pence": 574473013,
-       "payeeKeys": 178
+       "pence": 574270343,
+       "payeeKeys": 177,
+       "companies": 176
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 1283346834,
-       "payeeKeys": 91
+       "pence": 1268774634,
+       "payeeKeys": 88,
+       "companies": 87
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 329027338,
+       "payeeKeys": 15,
+       "companies": 15
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 510621101,
-       "payeeKeys": 17
+       "pence": 510386601,
+       "payeeKeys": 16,
+       "companies": 15
       },
       {
        "class": "no PSC data held",
-       "pence": 109936014,
-       "payeeKeys": 17
+       "pence": 60508069,
+       "payeeKeys": 14,
+       "companies": 14
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 9821743,
-       "payeeKeys": 17
+       "payeeKeys": 17,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 1015329807
+       },
+       {
+        "class": "foreign entity",
+        "pence": 8763555
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 413362866
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 785051626
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 366648765
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 804348894
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 59046135
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 9821743
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 506,
+      "hhi": 748,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 19.2
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 3097303581
     },
     "2025/26": {
      "supplierTotalPence": 3805678731,
-     "resolvedPence": 2893982016,
+     "linesPence": {
+      "supplierSpend": 3752282000,
+      "publicBodies": 53396731,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 2840585285,
+     "supplierSpendCorroboratedPence": 1728697212,
+     "supplierSpendAgentReviewedPence": 738536976,
      "handVerifiedPence": 0,
      "thresholdPounds": null,
      "thresholdStated": "unknown",
@@ -454,50 +1086,113 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 427317423,
-       "payeeKeys": 160
+       "pence": 351939692,
+       "payeeKeys": 155,
+       "companies": 139
       },
       {
        "class": "foreign entity",
        "pence": 5711788,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 395737127,
-       "payeeKeys": 73
+       "pence": 395383004,
+       "payeeKeys": 72,
+       "companies": 70
       },
       {
        "class": "no unit over 50%",
        "pence": 783073153,
-       "payeeKeys": 214
+       "payeeKeys": 214,
+       "companies": 187
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 763150875,
-       "payeeKeys": 102
+       "pence": 761450375,
+       "payeeKeys": 101,
+       "companies": 89
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 77432354,
+       "payeeKeys": 7,
+       "companies": 7
       },
       {
        "class": "corporate parent without a register number",
        "pence": 339146760,
-       "payeeKeys": 21
+       "payeeKeys": 21,
+       "companies": 20
       },
       {
        "class": "no PSC data held",
        "pence": 106976087,
-       "payeeKeys": 29
+       "payeeKeys": 29,
+       "companies": 27
       },
       {
        "class": "cycle",
        "pence": 1697000,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 17775072,
-       "payeeKeys": 21
+       "payeeKeys": 21,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 600299875
+       },
+       {
+        "class": "foreign entity",
+        "pence": 5711788
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 400095511
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 884672682
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 83029654
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 739948113
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 107296418
+       },
+       {
+        "class": "cycle",
+        "pence": 1756172
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 17775072
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 556,
+      "hhi": 387,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 10.9
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 2462893310
     }
    }
   },
@@ -505,7 +1200,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 1822112009,
-     "resolvedPence": 1481851551,
+     "linesPence": {
+      "supplierSpend": 1567277611,
+      "publicBodies": 254707678,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 126720
+     },
+     "supplierSpendResolvedPence": 1227017153,
+     "supplierSpendCorroboratedPence": 882786915,
+     "supplierSpendAgentReviewedPence": 189545594,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500",
@@ -532,59 +1235,135 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 245832674,
-       "payeeKeys": 93
+       "pence": 167753172,
+       "payeeKeys": 83,
+       "companies": 83
       },
       {
        "class": "foreign entity",
        "pence": 761200,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 211904755,
-       "payeeKeys": 37
+       "pence": 197561551,
+       "payeeKeys": 33,
+       "companies": 33
       },
       {
        "class": "no unit over 50%",
        "pence": 277486931,
-       "payeeKeys": 124
+       "payeeKeys": 124,
+       "companies": 121
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 346862539,
-       "payeeKeys": 64
+       "payeeKeys": 64,
+       "companies": 64
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 96159577,
+       "payeeKeys": 18,
+       "companies": 17
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 89927824,
-       "payeeKeys": 9
+       "pence": 89576074,
+       "payeeKeys": 8,
+       "companies": 8
       },
       {
        "class": "corporate parent, no further PSC data",
        "pence": 2051287,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC data held",
-       "pence": 47325228,
-       "payeeKeys": 19
+       "pence": 43940107,
+       "payeeKeys": 16,
+       "companies": 16
       },
       {
        "class": "cycle",
        "pence": 1546100,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 3318615,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 216921636
+       },
+       {
+        "class": "foreign entity",
+        "pence": 761200
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 352445591
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 327596508
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 116930438
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 166211204
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 2051287
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 39234574
+       },
+       {
+        "class": "cycle",
+        "pence": 1546100
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 3318615
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 345,
+      "hhi": 380,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 12.1
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1072332509
     },
     "2025/26": {
      "supplierTotalPence": 1639835704,
-     "resolvedPence": 1399856783,
+     "linesPence": {
+      "supplierSpend": 1382079923,
+      "publicBodies": 257629061,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 126720
+     },
+     "supplierSpendResolvedPence": 1142101002,
+     "supplierSpendCorroboratedPence": 865326792,
+     "supplierSpendAgentReviewedPence": 150968155,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500",
@@ -610,55 +1389,123 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 288288405,
-       "payeeKeys": 88
+       "pence": 189348067,
+       "payeeKeys": 81,
+       "companies": 76
       },
       {
        "class": "foreign entity",
        "pence": 961875,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 119705131,
-       "payeeKeys": 35
+       "pence": 101938971,
+       "payeeKeys": 33,
+       "companies": 32
       },
       {
        "class": "no unit over 50%",
        "pence": 302248179,
-       "payeeKeys": 107
+       "payeeKeys": 107,
+       "companies": 102
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 295942697,
-       "payeeKeys": 58
+       "payeeKeys": 58,
+       "companies": 51
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 116706498,
+       "payeeKeys": 9,
+       "companies": 8
       },
       {
        "class": "corporate parent without a register number",
        "pence": 78945882,
-       "payeeKeys": 13
+       "payeeKeys": 13,
+       "companies": 12
       },
       {
        "class": "corporate parent, no further PSC data",
        "pence": 2038427,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 1
       },
       {
        "class": "no PSC data held",
        "pence": 43376049,
-       "payeeKeys": 24
+       "payeeKeys": 24,
+       "companies": 21
       },
       {
        "class": "cycle",
        "pence": 1868300,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 8726057,
-       "payeeKeys": 8
+       "payeeKeys": 8,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 216412007
+       },
+       {
+        "class": "foreign entity",
+        "pence": 961875
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 111291513
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 496703011
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 117882793
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 141596970
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 2038427
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 44620049
+       },
+       {
+        "class": "cycle",
+        "pence": 1868300
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 8726057
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 311,
+      "hhi": 527,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 16.0
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1016194947
     }
    }
   },
@@ -666,7 +1513,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 8976520751,
-     "resolvedPence": 7107591658,
+     "linesPence": {
+      "supplierSpend": 4024237253,
+      "publicBodies": 4952283498,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 2155308160,
+     "supplierSpendCorroboratedPence": 1692681320,
+     "supplierSpendAgentReviewedPence": 176060730,
      "handVerifiedPence": 0,
      "thresholdPounds": null,
      "thresholdStated": "over £250 (download page); link text on transparency page says \"Expenditure over £500\"",
@@ -692,49 +1547,119 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 738157958,
-       "payeeKeys": 103
+       "pence": 729116355,
+       "payeeKeys": 89,
+       "companies": 88
       },
       {
        "class": "no PSC filed",
-       "pence": 226223632,
-       "payeeKeys": 61
+       "pence": 213723306,
+       "payeeKeys": 60,
+       "companies": 57
       },
       {
        "class": "no unit over 50%",
-       "pence": 295618792,
-       "payeeKeys": 135
+       "pence": 290751184,
+       "payeeKeys": 132,
+       "companies": 131
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 119489637,
-       "payeeKeys": 64
+       "pence": 119360637,
+       "payeeKeys": 63,
+       "companies": 63
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 32527464,
+       "payeeKeys": 22,
+       "companies": 20
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 73499953,
-       "payeeKeys": 19
+       "pence": 73306943,
+       "payeeKeys": 18,
+       "companies": 18
       },
       {
        "class": "no PSC data held",
-       "pence": 699636050,
-       "payeeKeys": 20
+       "pence": 693840133,
+       "payeeKeys": 18,
+       "companies": 18
       },
       {
        "class": "cycle",
        "pence": 539400,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 2142738,
-       "payeeKeys": 7
+       "payeeKeys": 7,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 770375154
+       },
+       {
+        "class": "foreign entity",
+        "pence": 325532
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 219719162
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 294119528
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 94462878
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 92461509
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 681162259
+       },
+       {
+        "class": "cycle",
+        "pence": 539400
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 2142738
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 399,
+      "hhi": 1418,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 27.3
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1865957565
     },
     "2025/26": {
      "supplierTotalPence": 6165790284,
-     "resolvedPence": 4836176514,
+     "linesPence": {
+      "supplierSpend": 2630676534,
+      "publicBodies": 3535113750,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 1301062764,
+     "supplierSpendCorroboratedPence": 992255976,
+     "supplierSpendAgentReviewedPence": 105925032,
      "handVerifiedPence": 0,
      "thresholdPounds": null,
      "thresholdStated": "over £250 (download page); link text on transparency page says \"Expenditure over £500\"",
@@ -760,40 +1685,93 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 582363710,
-       "payeeKeys": 85
+       "pence": 566547716,
+       "payeeKeys": 75,
+       "companies": 75
       },
       {
        "class": "no PSC filed",
-       "pence": 163684945,
-       "payeeKeys": 49
+       "pence": 152903819,
+       "payeeKeys": 48,
+       "companies": 48
       },
       {
        "class": "no unit over 50%",
        "pence": 223535997,
-       "payeeKeys": 103
+       "payeeKeys": 103,
+       "companies": 103
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 123400084,
-       "payeeKeys": 60
+       "payeeKeys": 60,
+       "companies": 60
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 26597120,
+       "payeeKeys": 11,
+       "companies": 9
       },
       {
        "class": "corporate parent without a register number",
        "pence": 56114191,
-       "payeeKeys": 21
+       "payeeKeys": 21,
+       "companies": 21
       },
       {
        "class": "no PSC data held",
        "pence": 148025266,
-       "payeeKeys": 20
+       "payeeKeys": 20,
+       "companies": 20
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 3938571,
-       "payeeKeys": 8
+       "payeeKeys": 8,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 621635686
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 156954521
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 262115049
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 35402697
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 69281675
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 151734565
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 3938571
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 341,
+      "hhi": 1209,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 32.6
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1097357874
     }
    }
   },
@@ -801,7 +1779,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 198038485184,
-     "resolvedPence": 119872938519,
+     "linesPence": {
+      "supplierSpend": 186215740439,
+      "publicBodies": 7675984202,
+      "councilCompaniesOwn": 3534903355,
+      "councilCompaniesOther": 611857188
+     },
+     "supplierSpendResolvedPence": 108050193774,
+     "supplierSpendCorroboratedPence": 69052882311,
+     "supplierSpendAgentReviewedPence": 19735688715,
      "handVerifiedPence": 0,
      "thresholdPounds": 250,
      "thresholdStated": "\"over £250 (including VAT)\"",
@@ -829,59 +1815,135 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 19133472706,
-       "payeeKeys": 1405
+       "pence": 16794432880,
+       "payeeKeys": 1321,
+       "companies": 1299
       },
       {
        "class": "foreign entity",
        "pence": 2400409115,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "no PSC filed",
-       "pence": 17080424909,
-       "payeeKeys": 618
+       "pence": 16555613545,
+       "payeeKeys": 603,
+       "companies": 588
       },
       {
        "class": "no unit over 50%",
-       "pence": 34042418219,
-       "payeeKeys": 1816
+       "pence": 33648342347,
+       "payeeKeys": 1800,
+       "companies": 1767
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 14675099303,
-       "payeeKeys": 876
+       "pence": 14636072172,
+       "payeeKeys": 864,
+       "companies": 851
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 3409121647,
+       "payeeKeys": 151,
+       "companies": 147
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 11297372218,
-       "payeeKeys": 182
+       "pence": 11205801091,
+       "payeeKeys": 170,
+       "companies": 169
       },
       {
        "class": "corporate parent, no further PSC data",
-       "pence": 306977,
-       "payeeKeys": 2
+       "pence": 257635,
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC data held",
-       "pence": 5525796914,
-       "payeeKeys": 185
+       "pence": 5505249929,
+       "payeeKeys": 174,
+       "companies": 170
       },
       {
        "class": "cycle",
        "pence": 70943165,
-       "payeeKeys": 4
+       "payeeKeys": 4,
+       "companies": 4
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 3823950248,
-       "payeeKeys": 181
+       "payeeKeys": 181,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 20674569742
+       },
+       {
+        "class": "foreign entity",
+        "pence": 2406349578
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 17458474508
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 35709925102
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 5097296482
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 16800644516
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 135642658
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 5865649611
+       },
+       {
+        "class": "cycle",
+        "pence": 77691329
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 3823950248
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 5053,
+      "hhi": 63,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 2.9
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 88657244862
     },
     "2025/26": {
      "supplierTotalPence": 194762577448,
-     "resolvedPence": 121631614089,
+     "linesPence": {
+      "supplierSpend": 182761713377,
+      "publicBodies": 7073897147,
+      "councilCompaniesOwn": 4207457628,
+      "councilCompaniesOther": 719509296
+     },
+     "supplierSpendResolvedPence": 109630750018,
+     "supplierSpendCorroboratedPence": 67851250423,
+     "supplierSpendAgentReviewedPence": 21632803917,
      "handVerifiedPence": 0,
      "thresholdPounds": 250,
      "thresholdStated": "\"over £250 (including VAT)\"",
@@ -909,60 +1971,133 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 20690001911,
-       "payeeKeys": 1348
+       "pence": 19420153918,
+       "payeeKeys": 1304,
+       "companies": 1293
       },
       {
        "class": "foreign entity",
        "pence": 1857303418,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 3
       },
       {
        "class": "trust or trustee",
        "pence": 47167,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 20890309400,
-       "payeeKeys": 656
+       "pence": 20306086377,
+       "payeeKeys": 654,
+       "companies": 634
       },
       {
        "class": "no unit over 50%",
-       "pence": 34942507700,
-       "payeeKeys": 1709
+       "pence": 34918214424,
+       "payeeKeys": 1705,
+       "companies": 1686
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 14477495710,
-       "payeeKeys": 829
+       "pence": 14476623894,
+       "payeeKeys": 827,
+       "companies": 819
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 1898735034,
+       "payeeKeys": 56,
+       "companies": 56
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 7179552870,
-       "payeeKeys": 162
+       "pence": 7160538028,
+       "payeeKeys": 160,
+       "companies": 159
       },
       {
        "class": "corporate parent, no further PSC data",
        "pence": 204602,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC data held",
-       "pence": 5557621682,
-       "payeeKeys": 224
+       "pence": 5557137598,
+       "payeeKeys": 222,
+       "companies": 215
       },
       {
        "class": "cycle",
        "pence": 70894418,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 3964811140,
-       "payeeKeys": 165
+       "payeeKeys": 165,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 24155559608
+       },
+       {
+        "class": "foreign entity",
+        "pence": 1859774015
+       },
+       {
+        "class": "trust or trustee",
+        "pence": 47167
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 22334943797
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 36607800584
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 2347419429
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 11781487662
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 140910022
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 6361791918
+       },
+       {
+        "class": "cycle",
+        "pence": 76204676
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 3964811140
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 4910,
+      "hhi": 55,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 2.1
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 89301007892
     }
    }
   },
@@ -970,7 +2105,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 4852547221,
-     "resolvedPence": 3873640019,
+     "linesPence": {
+      "supplierSpend": 4514574928,
+      "publicBodies": 337972293,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 3535667726,
+     "supplierSpendCorroboratedPence": 1213934532,
+     "supplierSpendAgentReviewedPence": 1217583037,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500 (excluding VAT)",
@@ -996,59 +2139,125 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 594754424,
-       "payeeKeys": 164
+       "pence": 555222378,
+       "payeeKeys": 152,
+       "companies": 152
       },
       {
        "class": "foreign entity",
        "pence": 131792409,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "no PSC filed",
-       "pence": 521342271,
-       "payeeKeys": 93
+       "pence": 485894789,
+       "payeeKeys": 91,
+       "companies": 91
       },
       {
        "class": "no unit over 50%",
-       "pence": 1368879902,
-       "payeeKeys": 232
+       "pence": 1353292730,
+       "payeeKeys": 230,
+       "companies": 229
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 490232142,
-       "payeeKeys": 97
+       "pence": 402054859,
+       "payeeKeys": 95,
+       "companies": 95
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 216347304,
+       "payeeKeys": 23,
+       "companies": 23
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 88049153,
-       "payeeKeys": 30
-      },
-      {
-       "class": "corporate parent, no further PSC data",
-       "pence": 5797300,
-       "payeeKeys": 1
+       "pence": 87697403,
+       "payeeKeys": 29,
+       "companies": 28
       },
       {
        "class": "no PSC data held",
-       "pence": 154184291,
-       "payeeKeys": 33
+       "pence": 122730020,
+       "payeeKeys": 30,
+       "companies": 30
       },
       {
        "class": "cycle",
        "pence": 5991300,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 174644534,
-       "payeeKeys": 21
+       "payeeKeys": 21,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 772212283
+       },
+       {
+        "class": "foreign entity",
+        "pence": 131792409
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 500331394
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 1394073555
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 289156770
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 117552333
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 149913148
+       },
+       {
+        "class": "cycle",
+        "pence": 5991300
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 174644534
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 661,
+      "hhi": 324,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 14.1
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 2424065837
     },
     "2025/26": {
      "supplierTotalPence": 5157762314,
-     "resolvedPence": 3852681960,
+     "linesPence": {
+      "supplierSpend": 4824901174,
+      "publicBodies": 332861140,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 3519820820,
+     "supplierSpendCorroboratedPence": 1418760898,
+     "supplierSpendAgentReviewedPence": 1513573173,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500 (excluding VAT)",
@@ -1074,50 +2283,113 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 468715330,
-       "payeeKeys": 207
+       "pence": 434613056,
+       "payeeKeys": 197,
+       "companies": 173
       },
       {
        "class": "foreign entity",
        "pence": 120528190,
-       "payeeKeys": 4
+       "payeeKeys": 4,
+       "companies": 3
       },
       {
        "class": "no PSC filed",
-       "pence": 540864040,
-       "payeeKeys": 105
+       "pence": 490905738,
+       "payeeKeys": 103,
+       "companies": 97
       },
       {
        "class": "no unit over 50%",
        "pence": 1243743069,
-       "payeeKeys": 292
+       "payeeKeys": 292,
+       "companies": 260
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 666056194,
-       "payeeKeys": 120
+       "payeeKeys": 120,
+       "companies": 109
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 84060576,
+       "payeeKeys": 12,
+       "companies": 10
       },
       {
        "class": "corporate parent without a register number",
        "pence": 185289512,
-       "payeeKeys": 41
+       "payeeKeys": 41,
+       "companies": 36
       },
       {
        "class": "no PSC data held",
        "pence": 138853982,
-       "payeeKeys": 37
+       "payeeKeys": 37,
+       "companies": 33
       },
       {
        "class": "cycle",
        "pence": 622300,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 155148203,
-       "payeeKeys": 20
+       "payeeKeys": 20,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 623264385
+       },
+       {
+        "class": "foreign entity",
+        "pence": 120528190
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 836230970
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 1294648013
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 98354676
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 243748230
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 147275853
+       },
+       {
+        "class": "cycle",
+        "pence": 622300
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 155148203
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 735,
+      "hhi": 253,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 9.4
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 2923156449
     }
    }
   },
@@ -1125,7 +2397,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 2530913359,
-     "resolvedPence": 1859511424,
+     "linesPence": {
+      "supplierSpend": 2408246759,
+      "publicBodies": 122666600,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 1736844824,
+     "supplierSpendCorroboratedPence": 883596612,
+     "supplierSpendAgentReviewedPence": 565740149,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500",
@@ -1151,54 +2431,125 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 229956458,
-       "payeeKeys": 132
+       "pence": 161239983,
+       "payeeKeys": 119,
+       "companies": 118
       },
       {
        "class": "foreign entity",
        "pence": 5450103,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 3
       },
       {
        "class": "no PSC filed",
-       "pence": 135005514,
-       "payeeKeys": 80
+       "pence": 130628280,
+       "payeeKeys": 78,
+       "companies": 77
       },
       {
        "class": "no unit over 50%",
-       "pence": 510251189,
-       "payeeKeys": 161
+       "pence": 510089452,
+       "payeeKeys": 160,
+       "companies": 158
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 218719075,
-       "payeeKeys": 88
+       "pence": 210728875,
+       "payeeKeys": 87,
+       "companies": 86
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 82177046,
+       "payeeKeys": 19,
+       "companies": 19
       },
       {
        "class": "corporate parent without a register number",
        "pence": 374202191,
-       "payeeKeys": 18
+       "payeeKeys": 18,
+       "companies": 18
       },
       {
        "class": "no PSC data held",
-       "pence": 236737815,
-       "payeeKeys": 22
+       "pence": 235806415,
+       "payeeKeys": 20,
+       "companies": 19
       },
       {
        "class": "cycle",
        "pence": 1364400,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 25158079,
-       "payeeKeys": 15
+       "payeeKeys": 15,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 269902627
+       },
+       {
+        "class": "foreign entity",
+        "pence": 5682032
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 138591066
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 527945791
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 205701008
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 415245356
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 147254465
+       },
+       {
+        "class": "cycle",
+        "pence": 1364400
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 25158079
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 505,
+      "hhi": 533,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 19.1
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1449294678
     },
     "2025/26": {
      "supplierTotalPence": 4611812524,
-     "resolvedPence": 3667348272,
+     "linesPence": {
+      "supplierSpend": 2722089130,
+      "publicBodies": 1889723394,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 1777624878,
+     "supplierSpendCorroboratedPence": 939089011,
+     "supplierSpendAgentReviewedPence": 528942353,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500",
@@ -1224,45 +2575,107 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 270400829,
-       "payeeKeys": 147
+       "pence": 261947245,
+       "payeeKeys": 140,
+       "companies": 127
       },
       {
        "class": "foreign entity",
        "pence": 4706749,
-       "payeeKeys": 4
+       "payeeKeys": 4,
+       "companies": 3
       },
       {
        "class": "no PSC filed",
-       "pence": 146789787,
-       "payeeKeys": 87
+       "pence": 146588087,
+       "payeeKeys": 86,
+       "companies": 73
       },
       {
        "class": "no unit over 50%",
        "pence": 490816934,
-       "payeeKeys": 181
+       "payeeKeys": 181,
+       "companies": 159
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 297013113,
-       "payeeKeys": 106
+       "payeeKeys": 106,
+       "companies": 89
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 8655284,
+       "payeeKeys": 8,
+       "companies": 6
       },
       {
        "class": "corporate parent without a register number",
        "pence": 408999543,
-       "payeeKeys": 21
+       "payeeKeys": 21,
+       "companies": 19
       },
       {
        "class": "no PSC data held",
        "pence": 150198535,
-       "payeeKeys": 31
+       "payeeKeys": 31,
+       "companies": 24
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 8699388,
-       "payeeKeys": 14
+       "payeeKeys": 14,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 377542672
+       },
+       {
+        "class": "foreign entity",
+        "pence": 4928429
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 152657065
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 625153037
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 22882169
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 435468583
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 150198535
+       },
+       {
+        "class": "cycle",
+        "pence": 95000
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 8699388
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 505,
+      "hhi": 580,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 20.8
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1467713554
     }
    }
   },
@@ -1270,7 +2683,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 4263185950,
-     "resolvedPence": 3486125997,
+     "linesPence": {
+      "supplierSpend": 3985860285,
+      "publicBodies": 277325665,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 3208800332,
+     "supplierSpendCorroboratedPence": 1591596555,
+     "supplierSpendAgentReviewedPence": 1291305133,
      "handVerifiedPence": 0,
      "thresholdPounds": 250,
      "thresholdStated": "over £250",
@@ -1297,59 +2718,135 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 1229725932,
-       "payeeKeys": 138
+       "pence": 194589975,
+       "payeeKeys": 120,
+       "companies": 119
       },
       {
        "class": "foreign entity",
        "pence": 7432554,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 294584640,
-       "payeeKeys": 84
+       "pence": 293221835,
+       "payeeKeys": 81,
+       "companies": 80
       },
       {
        "class": "no unit over 50%",
-       "pence": 545666474,
-       "payeeKeys": 193
+       "pence": 545330874,
+       "payeeKeys": 192,
+       "companies": 192
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 569028767,
-       "payeeKeys": 94
+       "payeeKeys": 94,
+       "companies": 94
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 1062294558,
+       "payeeKeys": 27,
+       "companies": 27
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 72154018,
-       "payeeKeys": 23
+       "pence": 72127058,
+       "payeeKeys": 22,
+       "companies": 22
       },
       {
        "class": "corporate parent, no further PSC data",
-       "pence": 23480773,
-       "payeeKeys": 4
+       "pence": 17829114,
+       "payeeKeys": 3,
+       "companies": 2
       },
       {
        "class": "no PSC data held",
-       "pence": 433484430,
-       "payeeKeys": 35
+       "pence": 413702853,
+       "payeeKeys": 32,
+       "companies": 31
       },
       {
        "class": "cycle",
        "pence": 6892900,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 26349844,
-       "payeeKeys": 29
+       "payeeKeys": 29,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 246907988
+       },
+       {
+        "class": "foreign entity",
+        "pence": 7432554
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 290595752
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 942465762
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 1136607871
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 148211144
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 17829114
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 385507403
+       },
+       {
+        "class": "cycle",
+        "pence": 6892900
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 26349844
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 589,
+      "hhi": 1236,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 31.8
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 2880834635
     },
     "2025/26": {
      "supplierTotalPence": 4659392813,
-     "resolvedPence": 3620542677,
+     "linesPence": {
+      "supplierSpend": 3935051355,
+      "publicBodies": 724341458,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 2896201219,
+     "supplierSpendCorroboratedPence": 1765727190,
+     "supplierSpendAgentReviewedPence": 702719938,
      "handVerifiedPence": 0,
      "thresholdPounds": 250,
      "thresholdStated": "over £250",
@@ -1376,55 +2873,123 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 828656683,
-       "payeeKeys": 161
+       "pence": 283019570,
+       "payeeKeys": 147,
+       "companies": 141
       },
       {
        "class": "foreign entity",
        "pence": 10875300,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
        "pence": 649534619,
-       "payeeKeys": 95
+       "payeeKeys": 95,
+       "companies": 91
       },
       {
        "class": "no unit over 50%",
-       "pence": 701622778,
-       "payeeKeys": 239
+       "pence": 700626778,
+       "payeeKeys": 238,
+       "companies": 222
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 399357860,
-       "payeeKeys": 143
+       "payeeKeys": 143,
+       "companies": 131
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 546663092,
+       "payeeKeys": 16,
+       "companies": 16
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 14959571,
-       "payeeKeys": 23
+       "pence": 14929592,
+       "payeeKeys": 22,
+       "companies": 22
       },
       {
        "class": "corporate parent, no further PSC data",
        "pence": 19501593,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 1
       },
       {
        "class": "no PSC data held",
        "pence": 240400528,
-       "payeeKeys": 47
+       "payeeKeys": 47,
+       "companies": 44
       },
       {
        "class": "cycle",
        "pence": 460900,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 30831387,
-       "payeeKeys": 32
+       "payeeKeys": 32,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 470565535
+       },
+       {
+        "class": "foreign entity",
+        "pence": 11245682
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 674651643
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 714466912
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 549571412
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 164005766
+       },
+       {
+        "class": "corporate parent, no further PSC data",
+        "pence": 19501593
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 260900389
+       },
+       {
+        "class": "cycle",
+        "pence": 460900
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 30831387
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 697,
+      "hhi": 576,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 18.5
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 2463333284
     }
    }
   },
@@ -1432,7 +2997,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 1075172835,
-     "resolvedPence": 722292783,
+     "linesPence": {
+      "supplierSpend": 943576579,
+      "publicBodies": 131596256,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 590696527,
+     "supplierSpendCorroboratedPence": 263806645,
+     "supplierSpendAgentReviewedPence": 253004623,
      "handVerifiedPence": 0,
      "thresholdPounds": 250,
      "thresholdStated": "over £250",
@@ -1459,54 +3032,125 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 95513970,
-       "payeeKeys": 98
+       "pence": 94644234,
+       "payeeKeys": 91,
+       "companies": 91
       },
       {
        "class": "foreign entity",
        "pence": 20000593,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 58197867,
-       "payeeKeys": 42
+       "pence": 57217051,
+       "payeeKeys": 41,
+       "companies": 40
       },
       {
        "class": "no unit over 50%",
-       "pence": 213652127,
-       "payeeKeys": 125
+       "pence": 210841130,
+       "payeeKeys": 121,
+       "companies": 119
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 110760738,
-       "payeeKeys": 60
+       "payeeKeys": 60,
+       "companies": 60
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 6513737,
+       "payeeKeys": 16,
+       "companies": 16
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 31554105,
-       "payeeKeys": 14
+       "pence": 31406605,
+       "payeeKeys": 12,
+       "companies": 12
       },
       {
        "class": "no PSC data held",
-       "pence": 25030505,
-       "payeeKeys": 17
+       "pence": 23325817,
+       "payeeKeys": 15,
+       "companies": 14
       },
       {
        "class": "cycle",
        "pence": 772100,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 35214522,
-       "payeeKeys": 21
+       "payeeKeys": 21,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 111264299
+       },
+       {
+        "class": "foreign entity",
+        "pence": 19872673
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 95715416
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 212761635
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 41323974
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 44054355
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 29717553
+       },
+       {
+        "class": "cycle",
+        "pence": 772100
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 35214522
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 371,
+      "hhi": 200,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 6.4
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 516539081
     },
     "2025/26": {
      "supplierTotalPence": 966880782,
-     "resolvedPence": 657078645,
+     "linesPence": {
+      "supplierSpend": 858029378,
+      "publicBodies": 108851404,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 548227241,
+     "supplierSpendCorroboratedPence": 229476362,
+     "supplierSpendAgentReviewedPence": 238070547,
      "handVerifiedPence": 0,
      "thresholdPounds": 250,
      "thresholdStated": "over £250",
@@ -1533,50 +3177,113 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 122480005,
-       "payeeKeys": 98
+       "pence": 122119152,
+       "payeeKeys": 95,
+       "companies": 90
       },
       {
        "class": "foreign entity",
        "pence": 14408578,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 50606022,
-       "payeeKeys": 45
+       "pence": 49707425,
+       "payeeKeys": 44,
+       "companies": 44
       },
       {
        "class": "no unit over 50%",
        "pence": 217470478,
-       "payeeKeys": 157
+       "payeeKeys": 157,
+       "companies": 147
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 75739187,
-       "payeeKeys": 60
+       "payeeKeys": 60,
+       "companies": 58
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 1259450,
+       "payeeKeys": 4,
+       "companies": 4
       },
       {
        "class": "corporate parent without a register number",
        "pence": 15986550,
-       "payeeKeys": 12
+       "payeeKeys": 12,
+       "companies": 11
       },
       {
        "class": "no PSC data held",
        "pence": 35287175,
-       "payeeKeys": 20
+       "payeeKeys": 20,
+       "companies": 18
       },
       {
        "class": "cycle",
        "pence": 1421200,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 14828046,
-       "payeeKeys": 23
+       "payeeKeys": 23,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 163974627
+       },
+       {
+        "class": "foreign entity",
+        "pence": 14536498
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 58420179
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 222444337
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 1998154
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 26804860
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 41923557
+       },
+       {
+        "class": "cycle",
+        "pence": 3296983
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 14828046
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 393,
+      "hhi": 169,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 5.6
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 467303592
     }
    }
   },
@@ -1584,7 +3291,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 961727818,
-     "resolvedPence": 694241128,
+     "linesPence": {
+      "supplierSpend": 883910161,
+      "publicBodies": 77822157,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": -4500
+     },
+     "supplierSpendResolvedPence": 616423471,
+     "supplierSpendCorroboratedPence": 272094699,
+     "supplierSpendAgentReviewedPence": 237323671,
      "handVerifiedPence": 0,
      "thresholdPounds": null,
      "thresholdStated": "not stated on the page",
@@ -1612,54 +3327,125 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 96990680,
-       "payeeKeys": 84
+       "pence": 86691917,
+       "payeeKeys": 77,
+       "companies": 77
       },
       {
        "class": "foreign entity",
        "pence": 16986069,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "no PSC filed",
-       "pence": 77410146,
-       "payeeKeys": 59
+       "pence": 71563682,
+       "payeeKeys": 58,
+       "companies": 58
       },
       {
        "class": "no unit over 50%",
-       "pence": 127415423,
-       "payeeKeys": 135
+       "pence": 123899941,
+       "payeeKeys": 132,
+       "companies": 132
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 72942801,
-       "payeeKeys": 68
+       "payeeKeys": 68,
+       "companies": 68
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 19961018,
+       "payeeKeys": 12,
+       "companies": 12
       },
       {
        "class": "corporate parent without a register number",
        "pence": 9896162,
-       "payeeKeys": 14
+       "payeeKeys": 14,
+       "companies": 14
       },
       {
        "class": "no PSC data held",
-       "pence": 200358706,
-       "payeeKeys": 21
+       "pence": 200058397,
+       "payeeKeys": 20,
+       "companies": 20
       },
       {
        "class": "cycle",
        "pence": 608800,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 13814684,
-       "payeeKeys": 9
+       "payeeKeys": 9,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 101353978
+       },
+       {
+        "class": "foreign entity",
+        "pence": 17041588
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 76673889
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 136998181
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 35225317
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 34307885
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 200058397
+       },
+       {
+        "class": "cycle",
+        "pence": 949552
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 13814684
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 378,
+      "hhi": 542,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 18.4
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 506285415
     },
     "2025/26": {
      "supplierTotalPence": 711745530,
-     "resolvedPence": 502664430,
+     "linesPence": {
+      "supplierSpend": 664292833,
+      "publicBodies": 47452697,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 455211733,
+     "supplierSpendCorroboratedPence": 206518872,
+     "supplierSpendAgentReviewedPence": 170078384,
      "handVerifiedPence": 0,
      "thresholdPounds": null,
      "thresholdStated": "not stated on the page",
@@ -1686,50 +3472,113 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 46560386,
-       "payeeKeys": 79
+       "pence": 40355983,
+       "payeeKeys": 76,
+       "companies": 76
       },
       {
        "class": "foreign entity",
        "pence": 1323885,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 67288860,
-       "payeeKeys": 49
+       "pence": 62537770,
+       "payeeKeys": 48,
+       "companies": 45
       },
       {
        "class": "no unit over 50%",
        "pence": 108512011,
-       "payeeKeys": 118
+       "payeeKeys": 118,
+       "companies": 118
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 39851052,
-       "payeeKeys": 56
+       "payeeKeys": 56,
+       "companies": 56
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 11339200,
+       "payeeKeys": 6,
+       "companies": 5
       },
       {
        "class": "corporate parent without a register number",
        "pence": 7553658,
-       "payeeKeys": 11
+       "payeeKeys": 11,
+       "companies": 11
       },
       {
        "class": "no PSC data held",
-       "pence": 174871719,
-       "payeeKeys": 24
+       "pence": 174488012,
+       "payeeKeys": 22,
+       "companies": 22
       },
       {
        "class": "cycle",
        "pence": 942300,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 3
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 8307862,
-       "payeeKeys": 9
+       "payeeKeys": 9,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 49862919
+       },
+       {
+        "class": "foreign entity",
+        "pence": 1810241
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 65567799
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 119289916
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 11343764
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 23203255
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 174522480
+       },
+       {
+        "class": "cycle",
+        "pence": 1303497
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 8307862
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 332,
+      "hhi": 634,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 20.8
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 372914965
     }
    }
   },
@@ -1737,7 +3586,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 3626076455,
-     "resolvedPence": 1830246807,
+     "linesPence": {
+      "supplierSpend": 2536490922,
+      "publicBodies": 1043068373,
+      "councilCompaniesOwn": 46517160,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 740661274,
+     "supplierSpendCorroboratedPence": 373708501,
+     "supplierSpendAgentReviewedPence": 108555619,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500",
@@ -1763,49 +3620,119 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 188578291,
-       "payeeKeys": 101
+       "pence": 183201653,
+       "payeeKeys": 93,
+       "companies": 93
       },
       {
        "class": "no PSC filed",
-       "pence": 66670635,
-       "payeeKeys": 55
+       "pence": 64718456,
+       "payeeKeys": 53,
+       "companies": 53
       },
       {
        "class": "no unit over 50%",
-       "pence": 315655918,
-       "payeeKeys": 162
+       "pence": 315573618,
+       "payeeKeys": 161,
+       "companies": 159
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 124598153,
-       "payeeKeys": 71
+       "payeeKeys": 71,
+       "companies": 71
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 7880117,
+       "payeeKeys": 12,
+       "companies": 12
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 19771412,
-       "payeeKeys": 25
+       "pence": 19302412,
+       "payeeKeys": 24,
+       "companies": 24
       },
       {
        "class": "no PSC data held",
        "pence": 20333136,
-       "payeeKeys": 14
+       "payeeKeys": 14,
+       "companies": 14
       },
       {
        "class": "cycle",
        "pence": 1458000,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 3595729,
-       "payeeKeys": 7
+       "payeeKeys": 7,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 243733873
+       },
+       {
+        "class": "foreign entity",
+        "pence": 591920
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 77742778
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 314661543
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 34990042
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 37151753
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 26735636
+       },
+       {
+        "class": "cycle",
+        "pence": 1458000
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 3595729
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 431,
+      "hhi": 273,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 11.7
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 479605999
     },
     "2025/26": {
      "supplierTotalPence": 3762408601,
-     "resolvedPence": 2476049220,
+     "linesPence": {
+      "supplierSpend": 2841890687,
+      "publicBodies": 915211171,
+      "councilCompaniesOwn": 5306743,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 1555531306,
+     "supplierSpendCorroboratedPence": 841147790,
+     "supplierSpendAgentReviewedPence": 468734985,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500",
@@ -1831,50 +3758,113 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 367826518,
-       "payeeKeys": 108
+       "pence": 281311851,
+       "payeeKeys": 105,
+       "companies": 99
       },
       {
        "class": "foreign entity",
        "pence": 96000,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 136758897,
-       "payeeKeys": 59
+       "pence": 112192436,
+       "payeeKeys": 58,
+       "companies": 56
       },
       {
        "class": "no unit over 50%",
        "pence": 480446578,
-       "payeeKeys": 181
+       "payeeKeys": 181,
+       "companies": 173
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 500511173,
-       "payeeKeys": 80
+       "payeeKeys": 80,
+       "companies": 76
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 111081128,
+       "payeeKeys": 4,
+       "companies": 4
       },
       {
        "class": "corporate parent without a register number",
        "pence": 27652729,
-       "payeeKeys": 24
+       "payeeKeys": 24,
+       "companies": 21
       },
       {
        "class": "no PSC data held",
        "pence": 33673504,
-       "payeeKeys": 25
+       "payeeKeys": 25,
+       "companies": 23
       },
       {
        "class": "cycle",
        "pence": 359500,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 8206407,
-       "payeeKeys": 8
+       "payeeKeys": 8,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 672206508
+       },
+       {
+        "class": "foreign entity",
+        "pence": 51508633
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 121332811
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 495520198
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 116345099
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 56378646
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 33673504
+       },
+       {
+        "class": "cycle",
+        "pence": 359500
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 8206407
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 460,
+      "hhi": 626,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 18.6
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1309220878
     }
    }
   },
@@ -1882,7 +3872,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 3164915839,
-     "resolvedPence": 2126087979,
+     "linesPence": {
+      "supplierSpend": 2735705105,
+      "publicBodies": 429210734,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 1696877245,
+     "supplierSpendCorroboratedPence": 827776070,
+     "supplierSpendAgentReviewedPence": 549470658,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500 excluding VAT",
@@ -1907,54 +3905,125 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 616039461,
-       "payeeKeys": 64
+       "pence": 607662296,
+       "payeeKeys": 58,
+       "companies": 58
       },
       {
        "class": "foreign entity",
        "pence": 7884558,
-       "payeeKeys": 1
+       "payeeKeys": 1,
+       "companies": 1
       },
       {
        "class": "no PSC filed",
-       "pence": 185586312,
-       "payeeKeys": 40
+       "pence": 164215856,
+       "payeeKeys": 38,
+       "companies": 38
       },
       {
        "class": "no unit over 50%",
-       "pence": 366487374,
-       "payeeKeys": 119
+       "pence": 366086590,
+       "payeeKeys": 118,
+       "companies": 116
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
-       "pence": 242559992,
-       "payeeKeys": 58
+       "pence": 239926492,
+       "payeeKeys": 57,
+       "companies": 55
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 32781905,
+       "payeeKeys": 10,
+       "companies": 9
       },
       {
        "class": "corporate parent without a register number",
        "pence": 66606383,
-       "payeeKeys": 15
+       "payeeKeys": 15,
+       "companies": 15
       },
       {
        "class": "no PSC data held",
        "pence": 196574231,
-       "payeeKeys": 16
+       "payeeKeys": 16,
+       "companies": 15
       },
       {
        "class": "cycle",
        "pence": 3355500,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 11783434,
-       "payeeKeys": 5
+       "payeeKeys": 5,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 709255870
+       },
+       {
+        "class": "foreign entity",
+        "pence": 7884558
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 168132528
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 380684384
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 253249604
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 129253989
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 33277378
+       },
+       {
+        "class": "cycle",
+        "pence": 3355500
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 11783434
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 310,
+      "hhi": 432,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 10.9
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1377246728
     },
     "2025/26": {
      "supplierTotalPence": 2938632504,
-     "resolvedPence": 1809621507,
+     "linesPence": {
+      "supplierSpend": 2320075945,
+      "publicBodies": 591556559,
+      "councilCompaniesOwn": 27000000,
+      "councilCompaniesOther": 0
+     },
+     "supplierSpendResolvedPence": 1191064948,
+     "supplierSpendCorroboratedPence": 526386299,
+     "supplierSpendAgentReviewedPence": 508318068,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500 excluding VAT",
@@ -1981,45 +4050,103 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 422005547,
-       "payeeKeys": 51
+       "pence": 420675455,
+       "payeeKeys": 49,
+       "companies": 49
       },
       {
        "class": "no PSC filed",
-       "pence": 111289943,
-       "payeeKeys": 34
+       "pence": 70346018,
+       "payeeKeys": 33,
+       "companies": 33
       },
       {
        "class": "no unit over 50%",
        "pence": 236567434,
-       "payeeKeys": 87
+       "payeeKeys": 87,
+       "companies": 86
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 249964407,
-       "payeeKeys": 52
+       "payeeKeys": 52,
+       "companies": 51
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 42274017,
+       "payeeKeys": 3,
+       "companies": 3
       },
       {
        "class": "corporate parent without a register number",
        "pence": 85265408,
-       "payeeKeys": 12
+       "payeeKeys": 12,
+       "companies": 12
       },
       {
        "class": "no PSC data held",
        "pence": 82916338,
-       "payeeKeys": 18
+       "payeeKeys": 18,
+       "companies": 17
       },
       {
        "class": "cycle",
        "pence": 259423,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 2796448,
-       "payeeKeys": 4
+       "payeeKeys": 4,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 499123457
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 75625088
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 375646030
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 42274017
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 100607394
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 94733091
+       },
+       {
+        "class": "cycle",
+        "pence": 259423
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 2796448
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 254,
+      "hhi": 831,
+      "hhiAbove1800": false,
+      "topOwnerSharePct": 24.9
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1033588733
     }
    }
   },
@@ -2027,7 +4154,15 @@
    "years": {
     "2024/25": {
      "supplierTotalPence": 8955371787,
-     "resolvedPence": 1546167562,
+     "linesPence": {
+      "supplierSpend": 8921714845,
+      "publicBodies": 33563342,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 93600
+     },
+     "supplierSpendResolvedPence": 1512510620,
+     "supplierSpendCorroboratedPence": 1186946910,
+     "supplierSpendAgentReviewedPence": 15789045,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500.00 (excluding VAT)",
@@ -2054,54 +4189,125 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 153741813,
-       "payeeKeys": 91
+       "pence": 151633784,
+       "payeeKeys": 88,
+       "companies": 88
       },
       {
        "class": "foreign entity",
        "pence": 11795072,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "no PSC filed",
-       "pence": 276093318,
-       "payeeKeys": 48
+       "pence": 242426430,
+       "payeeKeys": 47,
+       "companies": 47
       },
       {
        "class": "no unit over 50%",
-       "pence": 878227369,
-       "payeeKeys": 120
+       "pence": 878153870,
+       "payeeKeys": 119,
+       "companies": 118
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 131133364,
-       "payeeKeys": 74
+       "payeeKeys": 74,
+       "companies": 73
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 37448950,
+       "payeeKeys": 8,
+       "companies": 8
       },
       {
        "class": "corporate parent without a register number",
-       "pence": 43060285,
-       "payeeKeys": 16
+       "pence": 42630785,
+       "payeeKeys": 15,
+       "companies": 15
       },
       {
        "class": "no PSC data held",
-       "pence": 9223844,
-       "payeeKeys": 13
+       "pence": 8052810,
+       "payeeKeys": 11,
+       "companies": 11
       },
       {
        "class": "cycle",
        "pence": 1738500,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 7497055,
-       "payeeKeys": 13
+       "payeeKeys": 13,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 228278170
+       },
+       {
+        "class": "foreign entity",
+        "pence": 12043958
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 246506384
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 876284803
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 51511138
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 70103757
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 18546855
+       },
+       {
+        "class": "cycle",
+        "pence": 1738500
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 7497055
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 369,
+      "hhi": 2243,
+      "hhiAbove1800": true,
+      "topOwnerSharePct": 46.8
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1196860455
     },
     "2025/26": {
      "supplierTotalPence": 13667374381,
-     "resolvedPence": 2096246072,
+     "linesPence": {
+      "supplierSpend": 13614305163,
+      "publicBodies": 53019218,
+      "councilCompaniesOwn": 0,
+      "councilCompaniesOther": 50000
+     },
+     "supplierSpendResolvedPence": 2043176854,
+     "supplierSpendCorroboratedPence": 1564389271,
+     "supplierSpendAgentReviewedPence": 134571190,
      "handVerifiedPence": 0,
      "thresholdPounds": 500,
      "thresholdStated": "over £500.00 (excluding VAT)",
@@ -2128,50 +4334,113 @@
      "ownershipPence": [
       {
        "class": "individual",
-       "pence": 148949354,
-       "payeeKeys": 103
+       "pence": 147788349,
+       "payeeKeys": 102,
+       "companies": 96
       },
       {
        "class": "foreign entity",
        "pence": 7158733,
-       "payeeKeys": 3
+       "payeeKeys": 3,
+       "companies": 2
       },
       {
        "class": "no PSC filed",
-       "pence": 244123623,
-       "payeeKeys": 63
+       "pence": 216302859,
+       "payeeKeys": 62,
+       "companies": 57
       },
       {
        "class": "no unit over 50%",
        "pence": 1229577263,
-       "payeeKeys": 138
+       "payeeKeys": 138,
+       "companies": 132
       },
       {
        "class": "more than 50% of shares, voting rights not filed",
        "pence": 270135879,
-       "payeeKeys": 88
+       "payeeKeys": 88,
+       "companies": 79
+      },
+      {
+       "class": "more than one controlling parent filed",
+       "pence": 28981769,
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "corporate parent without a register number",
        "pence": 75303101,
-       "payeeKeys": 19
+       "payeeKeys": 19,
+       "companies": 18
       },
       {
        "class": "no PSC data held",
        "pence": 51837428,
-       "payeeKeys": 24
+       "payeeKeys": 24,
+       "companies": 20
       },
       {
        "class": "cycle",
        "pence": 3365000,
-       "payeeKeys": 2
+       "payeeKeys": 2,
+       "companies": 2
       },
       {
        "class": "resolved, no Companies House number",
        "pence": 12726473,
-       "payeeKeys": 16
+       "payeeKeys": 16,
+       "companies": 0
       }
-     ]
+     ],
+     "ownershipIfSharesCountedPence": {
+      "label": "Sensitivity, not the method: the same lines if a shares band above 50% with no voting rights filed were counted as control (RULES.md decision 17; rule 2.1 is voting power)",
+      "lines": [
+       {
+        "class": "individual",
+        "pence": 226572827
+       },
+       {
+        "class": "foreign entity",
+        "pence": 7228508
+       },
+       {
+        "class": "no PSC filed",
+        "pence": 325312210
+       },
+       {
+        "class": "no unit over 50%",
+        "pence": 1250430807
+       },
+       {
+        "class": "more than one controlling parent filed",
+        "pence": 43853669
+       },
+       {
+        "class": "corporate parent without a register number",
+        "pence": 108070347
+       },
+       {
+        "class": "no PSC data held",
+        "pence": 65617013
+       },
+       {
+        "class": "cycle",
+        "pence": 3365000
+       },
+       {
+        "class": "resolved, no Companies House number",
+        "pence": 12726473
+       }
+      ]
+     },
+     "ownerConcentration": {
+      "owners": 414,
+      "hhi": 2245,
+      "hhiAbove1800": true,
+      "topOwnerSharePct": 46.7
+     },
+     "supplierSpendCorroboratedOrAgentReviewedPence": 1580709413
     }
    }
   }

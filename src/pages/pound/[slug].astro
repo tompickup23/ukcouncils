@@ -13,11 +13,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Fact from "../../components/Fact.astro";
 import SourceLine from "../../components/SourceLine.astro";
+import PoundMethod from "../../components/PoundMethod.astro";
 import { councilPath } from "../../lib/paths";
 import {
   CLASS_LABEL,
   NOT_COVERED,
   OWNERSHIP_LABEL,
+  POUND_METHOD_PATH,
   REASON_LABEL,
   bodyIdFor,
   loadPound,
@@ -34,7 +36,10 @@ import {
 import type { SourceRef } from "../../lib/sources";
 
 export function getStaticPaths() {
-  return poundPages().map((page) => ({ params: { slug: page.slug }, props: { page } }));
+  const pages = poundPages();
+  if (pages.some((p) => p.slug === "method")) throw new Error("a pound page slug collides with the method page");
+  const method: PoundPage = { kind: "method", slug: "method", name: "How the figures are made" };
+  return [...pages, method].map((page) => ({ params: { slug: page.slug }, props: { page } }));
 }
 
 interface Props {
@@ -94,6 +99,7 @@ const title = page.kind === "body"
   : `Where payments go in the area the proposal calls ${page.name}, 2024/25 and 2025/26 (draft)`;
 const path = poundPagePath(page.slug);
 ---
+{page.kind === "method" ? <PoundMethod /> : (
 <BaseLayout title={title} description="Draft. Not published." path={path} noindex>
   {council && <Breadcrumbs items={[{ label: "Councils", href: "/councils/" }, ...(council.gss === "E10000017" ? [] : [{ label: council.name, href: councilPath(council) }]), { label: "Where the payments go (draft)" }]} />}
   {unitary && <Breadcrumbs items={[{ label: "Councils", href: "/councils/" }, { label: `${unitary.name} (draft)` }]} />}
@@ -103,16 +109,20 @@ const path = poundPagePath(page.slug);
     <h1>{title}</h1>
     <p class="caveat" data-draft>
       This page is a draft. Every match below is a proposal from a computer pipeline that no person has checked,
-      and the share checked by a person is 0%. It is not published and its figures are not for quotation.
-      Pipeline {meta.pipelineGitSha.slice(0, 7)}, built {meta.generatedAt.slice(0, 10)}.
+      and the share checked by a person is 0%. Some matches are corroborated by a second register, and some were
+      reviewed by two automated model passes; neither is a check by a person. It is not published and its figures
+      are not for quotation. Pipeline {meta.pipelineGitSha.slice(0, 7)}, built {meta.generatedAt.slice(0, 10)}.
+      <a href={POUND_METHOD_PATH}>How these figures are made</a>.
     </p>
   </header>
 
   {body && council && years.map((fy) => {
     const y = body.years[fy];
     const src = poundSource(council, meta);
-    const unclassified = y.supplierTotalPence - y.resolvedPence;
+    const spend = y.linesPence.supplierSpend;
+    const unclassified = spend - y.supplierSpendResolvedPence;
     const supplierClass = y.byClassPence.supplier ?? 0;
+    const conc = y.ownerConcentration;
     return (
       <section class="section" id={`fy-${fy.replace("/", "-")}`} aria-labelledby={`h-${fy.replace("/", "-")}`}>
         <h2 id={`h-${fy.replace("/", "-")}`}>{fy}</h2>
@@ -125,21 +135,41 @@ const path = poundPagePath(page.slug);
             <p class="caveat">Includes {y.withheldIndividuals.rows.toLocaleString("en-GB")} payments to individuals whose names the council withheld, {penceToPounds(y.withheldIndividuals.pence)}.</p>
           )}
         </Fact>
-        <Fact label="Share matched to a register entry by the pipeline" figure={share(y.resolvedPence, y.supplierTotalPence)} source={src}>
-          <p class="caveat">{penceToPounds(y.resolvedPence)} matched; {penceToPounds(unclassified)} not matched, with a reason for each payee.</p>
+        <div class="fact" data-fact>
+          <h3>The supplier total on three lines</h3>
+          <table>
+            <thead><tr><th scope="col">Line</th><th scope="col">Value</th><th scope="col">Share of the total</th></tr></thead>
+            <tbody>
+              <tr><td>Supplier spend</td><td>{penceToPounds(spend)}</td><td>{share(spend, y.supplierTotalPence)}</td></tr>
+              <tr><td>Public bodies (precepts, rates shares, levies, other councils, departments)</td><td>{penceToPounds(y.linesPence.publicBodies)}</td><td>{share(y.linesPence.publicBodies, y.supplierTotalPence)}</td></tr>
+              <tr><td>The council's own companies</td><td>{penceToPounds(y.linesPence.councilCompaniesOwn)}</td><td>{share(y.linesPence.councilCompaniesOwn, y.supplierTotalPence)}</td></tr>
+              <tr><td>Other councils' companies</td><td>{penceToPounds(y.linesPence.councilCompaniesOther)}</td><td>{share(y.linesPence.councilCompaniesOther, y.supplierTotalPence)}</td></tr>
+            </tbody>
+          </table>
+          <p class="caveat">Every share below is of supplier spend. A payee the pipeline could not match stays in supplier spend, whatever it is.</p>
+          <SourceLine source={src} />
+        </div>
+        <Fact label="Share of supplier spend matched to a register entry by the pipeline" figure={share(y.supplierSpendResolvedPence, spend)} source={src}>
+          <p class="caveat">{penceToPounds(y.supplierSpendResolvedPence)} matched; {penceToPounds(unclassified)} not matched, with a reason for each payee.</p>
         </Fact>
-        <Fact label="Share checked by a person" figure={share(y.handVerifiedPence, y.supplierTotalPence)} source={src} />
+        <Fact label="Share of supplier spend corroborated by a second register" figure={share(y.supplierSpendCorroboratedPence, spend)} source={src}>
+          <p class="caveat">Two or more independent registers name the same organisation. This is not a check by a person.</p>
+        </Fact>
+        <Fact label="Share of supplier spend reviewed by two automated passes" figure={share(y.supplierSpendAgentReviewedPence, spend)} source={src}>
+          <p class="caveat">Two independent model passes, each citing register records, agreed the match. This is not a check by a person. Corroborated or reviewed together: {share(y.supplierSpendCorroboratedOrAgentReviewedPence, spend)}.</p>
+        </Fact>
+        <Fact label="Share of supplier spend checked by a person" figure={share(y.handVerifiedPence, spend)} source={src} />
 
         <div class="fact" data-fact>
-          <h3>Who the payments went to, by kind of payee</h3>
+          <h3>Supplier spend by kind of payee</h3>
           <table>
-            <thead><tr><th scope="col">Kind of payee</th><th scope="col">Value</th><th scope="col">Share</th></tr></thead>
+            <thead><tr><th scope="col">Kind of payee</th><th scope="col">Value</th><th scope="col">Share of supplier spend</th></tr></thead>
             <tbody>
-              {CLASS_ORDER.filter((c) => y.byClassPence[c]).map((c) => (
-                <tr><td>{CLASS_LABEL[c] ?? c}</td><td>{penceToPounds(y.byClassPence[c])}</td><td>{share(y.byClassPence[c], y.supplierTotalPence)}</td></tr>
+              {CLASS_ORDER.filter((c) => c !== "public body" && c !== "council company" && y.byClassPence[c]).map((c) => (
+                <tr><td>{CLASS_LABEL[c] ?? c}</td><td>{penceToPounds(y.byClassPence[c])}</td><td>{share(y.byClassPence[c], spend)}</td></tr>
               ))}
               {REASON_ORDER.filter((r) => y.byReasonPence[r]).map((r) => (
-                <tr><td>Not matched: {REASON_LABEL[r]}</td><td>{penceToPounds(y.byReasonPence[r])}</td><td>{share(y.byReasonPence[r], y.supplierTotalPence)}</td></tr>
+                <tr><td>Not matched: {REASON_LABEL[r]}</td><td>{penceToPounds(y.byReasonPence[r])}</td><td>{share(y.byReasonPence[r], spend)}</td></tr>
               ))}
             </tbody>
           </table>
@@ -158,7 +188,31 @@ const path = poundPagePath(page.slug);
                 ))}
               </tbody>
             </table>
-            <p class="caveat">The ownership edition is dated {meta.bodsAsAt}; a 2025/26 payment is read against the chain as it stood then. Where a chain stops short of a unit nobody controls, the reason it stops is its own line; a company registered in the UK is not thereby UK-owned.</p>
+            <p class="caveat">The ownership edition is dated {meta.bodsAsAt}; a 2025/26 payment is read against the chain as it stood then. Where a chain stops short of a unit nobody controls, the reason it stops is its own line; a company registered in the UK is not thereby UK-owned. Companies controlled by an individual are shown only as this total: no company, person or country is named.</p>
+            <SourceLine source={ownershipSource(meta)} />
+            <details>
+              <summary>Sensitivity: if shares were counted as control</summary>
+              <p class="muted">{y.ownershipIfSharesCountedPence.label}.</p>
+              <table>
+                <thead><tr><th scope="col">Top of the chain</th><th scope="col">Value</th><th scope="col">Share</th></tr></thead>
+                <tbody>
+                  {y.ownershipIfSharesCountedPence.lines.map((o) => (
+                    <tr><td>{OWNERSHIP_LABEL[o.class] ?? o.class}</td><td>{penceToPounds(o.pence)}</td><td>{share(o.pence, supplierClass)}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </details>
+          </div>
+        )}
+
+        {conc && (
+          <div class="fact" data-fact>
+            <h3>How concentrated the matched suppliers' owners are</h3>
+            <p>
+              Herfindahl-Hirschman index {conc.hhi?.toLocaleString("en-GB") ?? "n/a"} across {conc.owners.toLocaleString("en-GB")} owners;
+              the largest owner received {conc.topOwnerSharePct ?? "n/a"}% of matched supplier value.
+            </p>
+            <p class="caveat">Measured on matched supplier value only ({penceToPounds(supplierClass)}), at the top of each ownership chain; a company controlled by an individual counts as its own owner. The index runs from 0 to 10,000; Open Contracting treats a value above 1,800 as high. Concentration shows nothing about value for money, price or conduct.</p>
             <SourceLine source={ownershipSource(meta)} />
           </div>
         )}
@@ -183,12 +237,12 @@ const path = poundPagePath(page.slug);
           <div class="fact" data-fact>
             <h3>{fy}</h3>
             <table>
-              <thead><tr><th scope="col">Council</th><th scope="col">Supplier total</th><th scope="col">Threshold</th><th scope="col">VAT basis</th><th scope="col">Matched by the pipeline</th></tr></thead>
+              <thead><tr><th scope="col">Council</th><th scope="col">Supplier total</th><th scope="col">Threshold</th><th scope="col">VAT basis</th><th scope="col">Supplier spend matched</th></tr></thead>
               <tbody>
                 {members.map((m) => {
                   const y = m.data?.years[fy];
                   return y ? (
-                    <tr><td><a href={poundPagePath(m.council.slug)}>{m.council.name}</a></td><td>{penceToPounds(y.supplierTotalPence)}</td><td>{y.thresholdPounds ? `£${y.thresholdPounds}` : "n/a"}</td><td>{y.vatBasis ?? "unknown"}</td><td>{share(y.resolvedPence, y.supplierTotalPence)}</td></tr>
+                    <tr><td><a href={poundPagePath(m.council.slug)}>{m.council.name}</a></td><td>{penceToPounds(y.supplierTotalPence)}</td><td>{y.thresholdPounds ? `£${y.thresholdPounds}` : "n/a"}</td><td>{y.vatBasis ?? "unknown"}</td><td>{share(y.supplierSpendResolvedPence, y.linesPence.supplierSpend)}</td></tr>
                   ) : (
                     <tr><td>{m.council.name}</td><td colspan="4">{NOT_COVERED[m.council.gss] ?? "Not yet covered."}</td></tr>
                   );
@@ -216,6 +270,7 @@ const path = poundPagePath(page.slug);
     </p>
   </section>
 </BaseLayout>
+)}
 
 <style>
   table { border-collapse: collapse; width: 100%; max-width: 44rem; font-variant-numeric: tabular-nums; }

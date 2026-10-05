@@ -1,0 +1,140 @@
+---
+/**
+ * DRAFT method page for the Public Pound in Lancashire, rendered at
+ * /pound/method/ by the [slug] route so that, like the other draft pages, it
+ * stays out of the sitemap, search and menu (noindex). Not for release
+ * (RULES.md rule 1.14 blocks launch). Every figure comes from
+ * data/pound/lancashire-draft.json, the waterfall's page aggregate; nothing
+ * here is typed in by hand.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "./Breadcrumbs.astro";
+import { OWNERSHIP_LABEL, POUND_METHOD_PATH, loadPound, pct } from "../lib/pound";
+
+const data = loadPound();
+const meta = data.$meta;
+const review = meta.agentReview;
+const strata = review.precision ? Object.entries(review.precision.byStratum) : [];
+const title = "How the Public Pound figures are made (draft)";
+---
+<BaseLayout title={title} description="Draft. Not published." path={POUND_METHOD_PATH} noindex>
+  <Breadcrumbs items={[{ label: "Councils", href: "/councils/" }, { label: "Public Pound method (draft)" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Draft, not published</p>
+    <h1>{title}</h1>
+    <p class="caveat" data-draft>
+      This page is a draft and its figures are not for quotation. Pipeline {meta.pipelineGitSha.slice(0, 7)}, built {meta.generatedAt.slice(0, 10)}.
+    </p>
+  </header>
+
+  <section class="section" aria-labelledby="h-what">
+    <h2 id="h-what">What is counted</h2>
+    <p>
+      Each council's payments over its own publication threshold, as the council published them, for 2024/25 and 2025/26. The
+      supplier total is shown on three lines: supplier spend; payments to public bodies (precepts, rates shares, levies, other
+      councils and government departments); and payments to council companies, a council's own apart from other councils'.
+      Matching, ownership and concentration are measured on supplier spend only. Spending under each council's threshold is not
+      published and is unknown in size.
+    </p>
+  </section>
+
+  <section class="section" aria-labelledby="h-match">
+    <h2 id="h-match">How payees are matched</h2>
+    <p>
+      Each payee name is matched, in a fixed order, to Companies House, the Charity Commission, the CQC register (for identity
+      only), lists of public bodies, GLEIF and public procurement and grant records. A former government department is matched to
+      the body that replaced it only through GOV.UK's own links between them; a name the council truncated is not completed. A
+      payee that matches nothing, or more than one entry, stays unmatched with its reason. No probabilistic matching is used.
+    </p>
+    <p>
+      No person has checked any match, so the share checked by a person is 0% for every council. Two other measures are shown and
+      neither is a check by a person. <strong>Corroborated</strong>: two or more independent registers name the same organisation.
+      <strong>Reviewed by two automated passes</strong>: two independent passes of a language model, given the register records and
+      different instructions, each cited the records and agreed the match. A disagreement counts as "cannot tell".
+    </p>
+  </section>
+
+  <section class="section" aria-labelledby="h-precision">
+    <h2 id="h-precision">How often the matches look right</h2>
+    {review.precision ? (
+      <>
+        <p>
+          A random sample of matches, drawn by method and value before any review, was labelled by the two automated passes. This
+          is {review.precision.label}. Across all methods, weighted to the population:
+          {" "}{pct(review.precision.allStrata.row_precision_population_weighted)} of matches and {pct(review.precision.allStrata.pound_precision)} of matched
+          value (95% interval {pct(review.precision.allStrata.pound_precision_bootstrap_95[0])} to {pct(review.precision.allStrata.pound_precision_bootstrap_95[1])}).
+        </p>
+        <table>
+          <thead><tr><th scope="col">Method</th><th scope="col">Matches</th><th scope="col">Sampled</th><th scope="col">Labelled</th><th scope="col">Cannot tell</th><th scope="col">Same (95% interval)</th><th scope="col">By value</th></tr></thead>
+          <tbody>
+            {strata.map(([name, s]) => (
+              <tr>
+                <td>{name}</td><td>{s.population.toLocaleString("en-GB")}</td><td>{s.drawn}</td><td>{s.labelled_same_or_different}</td><td>{s.cannot_tell}</td>
+                <td>{pct(s.row_precision_wilson[0])} ({pct(s.row_precision_wilson[1])} to {pct(s.row_precision_wilson[2])})</td>
+                <td>{pct(s.pound_precision)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {review.agreement && (
+          <p>
+            The two passes gave the same label on {pct(review.agreement.gold?.agreement_rate[0])} of sampled matches.
+          </p>
+        )}
+        {review.recall?.rows && (
+          <p>
+            Of payees the pipeline left unmatched, an estimated {pct(review.recall.rows.share_missed[0])} had a register entry the
+            two passes agreed on among the candidates searched. Recall, an estimate against the registers searched:
+            {" "}{pct(review.recall.rows.recall[0])} of payees ({pct(review.recall.rows.recall[1])} to {pct(review.recall.rows.recall[2])})
+            {review.recall.pounds ? ` and ${pct(review.recall.pounds.recall[0])} of value` : ""}.
+          </p>
+        )}
+      </>
+    ) : (
+      <p>The automated review has not run for this build, so no precision figure is given.</p>
+    )}
+  </section>
+
+  <section class="section" aria-labelledby="h-own">
+    <h2 id="h-own">How ownership is followed</h2>
+    <p>
+      Each matched company is followed up its chain of people with significant control to the first unit that nobody holds more than
+      50% of the votes in. Where no unit passes 50%, or a chain stops, the reason is its own line. Where a company has more than one
+      parent filed as holding more than 50% of votes, that is its own line: "{OWNERSHIP_LABEL["more than one controlling parent filed"]}".
+      A holding of more than 50% of shares with no voting rights filed is not counted as control; a sensitivity line shows the
+      result if it were. GLEIF's reporting exceptions are shown as evidence, never used to set a line.
+    </p>
+    <p>
+      Companies controlled by an individual are given only as a total per council: no company, person or country of residence is shown.
+      A company registered in the UK is not thereby UK-owned.
+    </p>
+  </section>
+
+  <section class="section" aria-labelledby="h-conc">
+    <h2 id="h-conc">Concentration</h2>
+    <p>
+      Concentration is the Herfindahl-Hirschman index of matched supplier value across ultimate owners, from 0 to 10,000, with the
+      largest owner's share. Open Contracting treats a value above 1,800 as high. It is measured on matched value only and shows
+      nothing about value for money, price or conduct.
+    </p>
+    {meta.scottishDefinition && <p>{meta.scottishDefinition}</p>}
+  </section>
+
+  <section class="section" aria-labelledby="h-never">
+    <h2 id="h-never">What these pages never claim</h2>
+    <ul>
+      <li>That a share of spending kept in an area measures local benefit, jobs or growth.</li>
+      <li>That a payment to a UK-registered company is UK-owned where the ownership chain stops short.</li>
+      <li>That ownership, location or concentration shows poor value for money, overpricing or impropriety.</li>
+    </ul>
+    <p>
+      Inclusion implies no impropriety: councils pay organisations of every kind for legitimate reasons. Two organisations can share a name.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--border, currentColor); vertical-align: top; }
+  td:nth-child(n + 2), th:nth-child(n + 2) { text-align: right; }
+</style>

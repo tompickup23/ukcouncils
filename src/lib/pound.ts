@@ -18,7 +18,13 @@ import type { SourceRef } from "./sources";
 
 export interface PoundYear {
   supplierTotalPence: number;
-  resolvedPence: number;
+  /** The supplier total on three lines (RULES.md decision 14). */
+  linesPence: { supplierSpend: number; publicBodies: number; councilCompaniesOwn: number; councilCompaniesOther: number };
+  /** Of supplier spend only. */
+  supplierSpendResolvedPence: number;
+  supplierSpendCorroboratedPence: number;
+  supplierSpendAgentReviewedPence: number;
+  supplierSpendCorroboratedOrAgentReviewedPence: number;
   handVerifiedPence: number;
   thresholdPounds: number | null;
   thresholdStated: boolean | string | null;
@@ -27,7 +33,28 @@ export interface PoundYear {
   byReasonPence: Record<string, number>;
   rc03AccrualPayments: { rows: number; pence: number };
   withheldIndividuals: { rows: number; pence: number };
-  ownershipPence: { class: string; pence: number; payeeKeys: number }[];
+  ownershipPence: { class: string; pence: number; payeeKeys: number; companies: number }[];
+  ownershipIfSharesCountedPence: { label: string; lines: { class: string; pence: number }[] };
+  ownerConcentration: { owners: number; hhi: number | null; hhiAbove1800: boolean; topOwnerSharePct: number | null } | null;
+}
+
+/** [point, low, high] */
+export type Interval = [number | null, number | null, number | null];
+
+export interface AgentReview {
+  status: string | null;
+  agreement: Record<string, { reviewed: number; passes_agree: number; agreement_rate: Interval;
+    agreed: Record<string, number>; not_reviewed: number }> | null;
+  precision: {
+    label: string;
+    byStratum: Record<string, { population: number; drawn: number; labelled_same_or_different: number;
+      agent_same: number; cannot_tell: number; row_precision_wilson: Interval; pound_precision: number | null;
+      pound_precision_bootstrap_95: [number | null, number | null] }>;
+    allStrata: { row_precision_population_weighted: number | null; pound_precision: number | null;
+      pound_precision_bootstrap_95: [number | null, number | null] };
+  } | null;
+  recall: { label: string; rows: { share_missed: Interval; estimated_missed: number[]; recall: Interval } | null;
+    pounds: { share_missed: Interval; estimated_missed: number[]; recall: Interval } | null; note: string } | null;
 }
 
 export interface PoundFile {
@@ -38,6 +65,8 @@ export interface PoundFile {
     years: string[];
     inputs: { file: string; sha256: string }[];
     bodsAsAt: string | null;
+    agentReview: AgentReview;
+    scottishDefinition: string | null;
     notCovered: unknown;
     note: string;
   };
@@ -114,7 +143,7 @@ export function bodyIdFor(gss: string): string | null {
 }
 
 export interface PoundPage {
-  kind: "body" | "unitary";
+  kind: "body" | "unitary" | "method";
   slug: string;
   name: string;
   council?: Council;
@@ -165,6 +194,13 @@ export function poundPages(): PoundPage[] {
   return [...bodies, ...unitaries];
 }
 
+export const POUND_METHOD_PATH = "/pound/method/";
+
+/** A share from 0 to 1 as a percentage to one decimal place, or n/a. */
+export function pct(x: number | null | undefined): string {
+  return x === null || x === undefined ? "n/a" : `${(100 * x).toFixed(1)}%`;
+}
+
 export function poundPagePath(slug: string): string {
   return `/pound/${slug}/`;
 }
@@ -206,6 +242,7 @@ export const OWNERSHIP_LABEL: Record<string, string> = {
   "trust or trustee": "Trust or trustee",
   "no PSC filed": "Statement filed: no registrable person",
   "no unit over 50%": "No person or entity holds more than 50% of votes",
+  "more than one controlling parent filed": "More than one parent filed as holding more than 50% of votes",
   "more than 50% of shares, voting rights not filed": "More than 50% of shares held, voting rights not filed",
   "corporate parent without a register number": "Corporate parent without a register number",
   "corporate parent, no further PSC data": "Corporate parent, no further PSC data",
