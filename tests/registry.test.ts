@@ -68,8 +68,6 @@ describe("the council registry", () => {
     expect(sisterLinks(burnley!).map((l) => l.site)).toEqual([
       "ukelections",
       "ukdemographics",
-      "aidoge",
-      "asylumstats",
     ]);
   });
 });

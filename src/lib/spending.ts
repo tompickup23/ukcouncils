@@ -145,9 +145,7 @@ export function spendingRecord(name: string, body: SpendingBody | null): Spendin
       );
     }
   }
-  const link = body.bank
-    ? { text: "Search every payment on AI DOGE", href: `${body.url}#transactions` }
-    : { text: `See what AI DOGE holds for ${name}`, href: body.url };
+  const link = { text: "How the payments summary is compiled", href: "/methodology/#payments" };
   return {
     heading: SPENDING_HEADING,
     sentences,
@@ -156,7 +154,7 @@ export function spendingRecord(name: string, body: SpendingBody | null): Spendin
     source: {
       publisher: "AI DOGE",
       title: `spending summary for ${name}`,
-      url: body.url,
+      url: "/methodology/#payments",
       table: "from the council's own published spending files",
       date: body.generated,
     },

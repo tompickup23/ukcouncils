@@ -11,15 +11,15 @@ test.beforeEach(async ({ page }) => {
  * a headline and a transaction bank; Luton has no AI DOGE page, so its page
  * carries no section at all, not an empty one.
  */
-test("a council with a bank states its payments and links to the search", async ({ page }) => {
+test("a council with a bank states its payments and links to the method", async ({ page }) => {
   await page.goto("/councils/burnley/");
   const section = page.locator("[data-spending-record]");
   await expect(section).toHaveCount(1);
   await expect(section.locator("h2")).toHaveText("What the council publishes about its spending");
   await expect(section).toContainText(/Burnley published [\d,]+ payments of £500 and over in \d{4}\/\d{2}, totalling £[\d,]+, as at \d{1,2} \w+ \d{4}\./);
   const link = section.locator("[data-spending-link]");
-  await expect(link).toHaveText("Search every payment on AI DOGE");
-  await expect(link).toHaveAttribute("href", "https://aidoge.co.uk/councils/burnley/#transactions");
+  await expect(link).toHaveText("How the payments summary is compiled");
+  await expect(link).toHaveAttribute("href", "/methodology/#payments");
   await expect(section.locator(".source-line")).toHaveCount(1);
 });
 

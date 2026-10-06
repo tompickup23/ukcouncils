@@ -27,7 +27,7 @@ const SITE_URL = "https://ukcouncils.co.uk";
 // The Web Analytics site token, the same value as CF_BEACON_TOKEN in src/lib/site.ts.
 const BEACON_TOKEN = "78d78550d291419997e07dfb8c36dbdc";
 // Built from parts so this file does not carry the entity names it looks for.
-const DASH = new RegExp(`[\\u2013\\u2014]|&${"m"}dash;|&${"n"}dash;`);
+const DASH = /[\u2013\u2014]|&(?:mdash|ndash|#0*821[12]|#x0*201[34]);/i;
 
 if (!existsSync(DIST)) {
   console.error("dist/ is not there. Run npm run build first.");
@@ -52,9 +52,12 @@ for (const path of files(DIST)) {
   if (!/\.(html|xml|txt|json|js|css|svg|webmanifest)$|_headers$|_redirects$/.test(path)) continue;
   const text = readFileSync(path, "utf-8");
   if (DASH.test(text)) failures.push(`dash in ${rel(path)}`);
-  if (/https?:\/\/ukfoodhygiene\.co\.uk\b/.test(text)) failures.push(`private sister link in ${rel(path)}`);
+  if (/https?:\/\/(?:www\.)?(?:aidoge|asylumstats|labourtracker|ukmigration|ukethnicity|ukcrime|ukpoliticians)\.co\.uk\b/i.test(text)) failures.push(`tier C link in ${rel(path)}`);
+  if (/<a\b[^>]*\bdownload(?:[ =/>])|data-(?:export-view|table-export)/i.test(text) && path.endsWith('.html')) failures.push(`dataset download on ${rel(path)}`);
   if (!path.endsWith(".html")) continue;
   pages += 1;
+  const readable = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+  if (/\s-\s/.test(readable)) failures.push(`pseudo-dash in ${rel(path)}`);
 
   const title = /<title>([^<]*)<\/title>/.exec(text)?.[1];
   if (!title) failures.push(`no title on ${rel(path)}`);

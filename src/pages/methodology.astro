@@ -20,6 +20,8 @@ const ratios = data.source.bandTableNotes.find((n) => n.id === "ac")?.text ?? nu
     <h1>How the figures are read</h1>
   </header>
   <div class="prose">
+    <h2 id="payments">Payments</h2>
+    <p>AI DOGE is the source system for the payments summaries. It reads the council's published spending files. Each summary retains its own source date and coverage caveat. A total appears only where the source system supplies a reconciled headline. Published payments are not the council's whole expenditure and are not compared with its budget.</p>
     <h2>Council tax by band</h2>
     <p>
       Each council's figures for bands A to H are {tableName(data.source.bandTable)} of the MHCLG release

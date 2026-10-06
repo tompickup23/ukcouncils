@@ -5,31 +5,21 @@
  */
 import { SITE_NAME } from "../lib/site";
 
-const SISTERS = [
-  { name: "UK Elections", url: "https://ukelections.co.uk/", blurb: "Results and seats for every council" },
-  { name: "UK Demographics", url: "https://ukdemographics.co.uk/", blurb: "Population and census for every place" },
-  { name: "UK School Holiday Dates", url: "https://ukschoolholidaydates.co.uk/", blurb: "Term dates for every education authority" },
-  { name: "AI DOGE", url: "https://aidoge.co.uk/", blurb: "What public bodies publish about their spending" },
-];
+
+import { networkFooter } from "../lib/network-footer";
+const network = await networkFooter;
 const year = new Date().getUTCFullYear();
 ---
 <footer class="site-footer">
   <div class="shell">
-    <section aria-labelledby="footer-sisters">
-      <h2 id="footer-sisters" class="footer-eyebrow">Sister sites</h2>
-      <ul class="footer-sisters">
-        {SISTERS.map((s) => (
-          <li><a href={s.url}>{s.name}</a><span>{s.blurb}</span></li>
-        ))}
-      </ul>
-    </section>
+    {network && <p>Part of the UK State public data network. <a href={network.method}>Method</a> · <a href={network.corrections}>Network corrections</a></p>}
     <p class="footer-imprint">
       An independent reference site, not a council or government service.
       {SITE_NAME} republishes official figures about local authorities in the UK. Every figure carries its
       source and date. Council tax figures are from the Ministry of Housing, Communities and Local
       Government under the Open Government Licence v3.0. &copy; {year} {SITE_NAME}.
     </p>
-    <p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/corrections/">Corrections</a> · <a href="/sources/">Sources</a></p>
+    <p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/corrections/">Corrections</a> · <a href="/privacy/">Privacy</a></p>
   </div>
 </footer>
 
@@ -41,26 +31,6 @@ const year = new Date().getUTCFullYear();
     padding: 2rem 0 2.5rem;
     font-size: 0.92rem;
   }
-  .footer-eyebrow {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ground-muted);
-    margin: 0 0 0.75rem;
-  }
-  .footer-sisters {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-    gap: 0.75rem 1.25rem;
-  }
-  .footer-sisters li { display: flex; flex-direction: column; }
-  .footer-sisters a { color: var(--ground-ink); font-weight: 600; }
-  .footer-sisters span { font-size: 0.85rem; }
   .footer-imprint { max-width: 48rem; margin: 0; line-height: 1.5; }
   .footer-links a { color: var(--ground-ink); }
 </style>

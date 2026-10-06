@@ -67,10 +67,10 @@ describe("the spending sentence builder", () => {
     ]);
     expect(record!.caveat).toMatch(/not all of it/);
     expect(record!.link).toEqual({
-      text: "Search every payment on AI DOGE",
-      href: "https://aidoge.co.uk/councils/burnley/#transactions",
+      text: "How the payments summary is compiled",
+      href: "/methodology/#payments",
     });
-    expect(record!.source.url).toBe("https://aidoge.co.uk/councils/burnley/");
+    expect(record!.source.url).toBe("/methodology/#payments");
     expect(record!.source.date).toBe("2026-09-09");
   });
 
@@ -92,7 +92,7 @@ describe("the spending sentence builder", () => {
     expect(record.sentences.join(" ")).not.toMatch(/£/);
     expect(record.caveat).toBeNull();
     // No bank, so the link does not promise a search of every payment.
-    expect(record.link).toEqual({ text: "See what AI DOGE holds for Chorley", href: "https://aidoge.co.uk/councils/chorley/" });
+    expect(record.link).toEqual({ text: "How the payments summary is compiled", href: "/methodology/#payments" });
   });
 
   it("uses the AI DOGE wording where no year is held", () => {
