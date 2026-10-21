@@ -82,12 +82,31 @@ jobs:
             exit 0
           fi
           branch="data/refresh-$(date -u +%Y-%m-%d)"
+          compare_url="https://github.com/tompickup23/ukcouncils/compare/main...${branch}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
           git add data/
           git commit -m "Refresh data $(date -u +%Y-%m-%d)"
           git push -u origin "$branch"
-          gh pr create --base main --head "$branch" \
+          # Keep attempting a PR for when the repo allows Actions to open them.
+          # If create is refused, the pushed branch and compare URL are enough
+          # for a person to review; do not fail the job for want of that setting.
+          if gh pr create --base main --head "$branch" \
             --title "Refresh data $(date -u +%Y-%m-%d)" \
-            --body "The weekly refresh found changed data in:$changed. This generated snapshot passed unit, type, build, browser and production security header checks in the refresh job. Read the diff before merging. Any subsequent edit needs validation of the exact head to be merged."
+            --body "The weekly refresh found changed data in:$changed. This generated snapshot passed unit, type, build, browser and production security header checks in the refresh job. Read the diff before merging. Any subsequent edit needs validation of the exact head to be merged."; then
+            echo "Pull request opened for ${branch}."
+          else
+            {
+              echo "## Refresh data branch pushed"
+              echo
+              echo "\`gh pr create\` was refused (often because the repository setting"
+              echo "\"Allow GitHub Actions to create and approve pull requests\" is off)."
+              echo "The validated snapshot is on the branch below."
+              echo
+              echo "- Branch: \`${branch}\`"
+              echo "- Compare: ${compare_url}"
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "PR create refused; branch ${branch} left at ${compare_url}"
+            exit 0
+          fi
