@@ -143,6 +143,7 @@ by hand.
 | `npm test` | 8 files, 86 tests passed |
 | `npm run check` | Result (77 files): 0 errors |
 | `npm run build` | 326 pages built; Pagefind indexed 325 pages; CSP hashes written |
+| `npm run test:dist` | 326 pages, 325 sitemap URLs, all passed |
 
 No data check failed.
 
