@@ -134,12 +134,17 @@ create and approve pull requests" is enabled, the existing PR path remains.
 
 ## Validation on this fold
 
-Recorded after copy of the 19 October files (see commit / CI on this branch):
+Run in the worktree after copying the 19 October files. Data was not edited
+by hand.
 
-- Commands: `npm ci`, `npm test`, `npm run check`, `npm run build` (and any
-  further scripts named by the repo for a local data fold).
-- Data was not edited by hand. If a check fails on the data itself, that
-  failure is recorded here and work stops.
+| Command | Result |
+|---|---|
+| `npm ci` | ok |
+| `npm test` | 8 files, 86 tests passed |
+| `npm run check` | Result (77 files): 0 errors |
+| `npm run build` | 326 pages built; Pagefind indexed 325 pages; CSP hashes written |
+
+No data check failed.
 
 ## Left for Tom (not done here)
 
