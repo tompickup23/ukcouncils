@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19",
+  "generated": "2026-11-02",
   "source": {
     "publisher": "AI DOGE",
     "summaries": {
@@ -5520,7 +5520,7 @@
     "E08000017": {
       "id": "doncaster",
       "url": "https://aidoge.co.uk/councils/doncaster/",
-      "generated": "2026-09-09",
+      "generated": "2026-10-19",
       "thresholdGbp": 500,
       "bank": true,
       "years": {
@@ -5529,8 +5529,12 @@
           "records": 259689
         },
         "2025/26": {
-          "monthsHeld": 6,
-          "records": 86572
+          "monthsHeld": 11,
+          "records": 235460
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 86941
         }
       },
       "headline": {
