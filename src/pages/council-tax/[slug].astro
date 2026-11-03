@@ -6,6 +6,7 @@
  * the one ordered table is on /council-tax/, within class.
  */
 import TaxTable from "../../components/TaxTable.astro";
+import BandHeadline from "../../components/BandHeadline.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { hubCardPath } from "../../lib/og";
@@ -14,8 +15,12 @@ import {
   BANDS,
   CURRENT_YEAR,
   PREVIOUS_YEAR,
+  bandExtremes,
   loadYear,
   pounds,
+  tenInstalments,
+  twelveInstalments,
+  wholePounds,
   yearLabel,
   type Band,
 } from "../../lib/council-tax";
@@ -47,6 +52,7 @@ const year = yearLabel(CURRENT_YEAR);
 const previous = yearLabel(PREVIOUS_YEAR);
 const pages = councilPages();
 const bandSource = councilTaxSource(CURRENT_YEAR, data.source.bandTable);
+const area = data.england.areaBandD;
 const inRegion = (region: string) => pages.filter((p) => p.tax.region === region);
 
 let title: string;
@@ -56,9 +62,25 @@ let crumb: string;
 let path: string;
 if (props.kind === "band") {
   const count = pages.length;
-  title = `Council tax Band ${props.band} ${year} for every council in England`;
+  const extremes = bandExtremes(props.band);
+  title = `Council tax Band ${props.band} monthly cost ${year} for every council in England`;
   heading = `Council tax Band ${props.band} in England, ${year}`;
-  description = `How much Band ${props.band} council tax is in ${year} for all ${count} councils in England, a year and a month, and the change on ${previous}, from MHCLG.`;
+  if (props.band === "D" && area && typeof area.england.pounds === "number") {
+    description =
+      `Average area Band D council tax in England is ${wholePounds(area.england.pounds)} a year in ${year}`
+      + ` (${pounds(tenInstalments(area.england.pounds))} a month over ten instalments,`
+      + ` ${pounds(twelveInstalments(area.england.pounds))} over twelve).`
+      + ` Band D for all ${count} councils, from MHCLG.`;
+  } else {
+    description =
+      `Band ${props.band} area council tax in England runs from ${pounds(extremes.lowest.pounds)} a year`
+      + ` (${pounds(tenInstalments(extremes.lowest.pounds))} a month over ten instalments)`
+      + ` to ${pounds(extremes.highest.pounds)} a year in ${year} across ${count} councils.`
+      + (area && typeof area.england.pounds === "number"
+        ? ` Average area Band D is ${wholePounds(area.england.pounds)}.`
+        : "")
+      + ` From MHCLG.`;
+  }
   crumb = `Band ${props.band}`;
   path = bandPath(props.band);
 } else {
@@ -89,6 +111,7 @@ if (props.kind === "band") {
 
   {props.kind === "band" && (
     <>
+      <BandHeadline band={props.band} />
       <nav aria-label="Other bands">
         <ul class="pill-nav">
           {BANDS.map((band) => (

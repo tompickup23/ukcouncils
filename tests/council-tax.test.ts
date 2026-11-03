@@ -7,8 +7,11 @@ import {
   changePhrase,
   councilTaxPath,
   loadYear,
+  bandExtremes,
+  bandMeaning,
   pounds,
   tenInstalments,
+  twelveInstalments,
   yearLabel,
   yearWords,
 } from "../src/lib/council-tax";
@@ -155,6 +158,11 @@ describe("formatting", () => {
     expect(tenInstalments(2549.42)).toBe(254.94);
   });
 
+  it("prints the annual charge over twelve instalments", () => {
+    expect(twelveInstalments(2549.42)).toBe(212.45);
+    expect(twelveInstalments(2392)).toBe(199.33);
+  });
+
   it("prints n/a for an absent figure and never a zero", () => {
     expect(pounds(null)).toBe("n/a");
     expect(pounds(undefined)).toBe("n/a");
@@ -164,5 +172,22 @@ describe("formatting", () => {
   it("writes years the two ways the site uses", () => {
     expect(yearLabel("2026-27")).toBe("2026/27");
     expect(yearWords("2026-27")).toBe("2026 to 2027");
+  });
+});
+
+describe("band headline helpers", () => {
+  it("states what each band is from the Table 9 ratio note", () => {
+    expect(bandMeaning("D")).toContain("reference council tax band");
+    expect(bandMeaning("E")).toContain("eleven ninths of Band D");
+    expect(bandMeaning("A")).toContain("six ninths of Band D");
+  });
+
+  it("reads the lowest and highest Table 9 charges for a band", () => {
+    const { lowest, highest } = bandExtremes("D");
+    expect(lowest.pounds).toBeLessThan(highest.pounds);
+    expect(lowest.name.length).toBeGreaterThan(0);
+    expect(highest.name.length).toBeGreaterThan(0);
+    expect(tenInstalments(lowest.pounds)).toBe(Number((lowest.pounds / 10).toFixed(2)));
+    expect(twelveInstalments(highest.pounds)).toBe(Number((highest.pounds / 12).toFixed(2)));
   });
 });

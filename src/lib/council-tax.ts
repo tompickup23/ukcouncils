@@ -142,11 +142,72 @@ export function bandChange(
 
 /**
  * The annual charge over ten monthly instalments, which is the statutory
- * default and the way "per month" is asked. Printed as such, never as a
- * twelfth.
+ * default and the usual way "per month" is asked. Labelled as arithmetic on
+ * the published annual figure wherever it is printed.
  */
 export function tenInstalments(annual: number): number {
   return round(annual / 10, 2);
+}
+
+/**
+ * The annual charge over twelve monthly instalments. Labelled as arithmetic on
+ * the published annual figure wherever it is printed; not a published MHCLG
+ * figure and not a substitute for the ten instalment default.
+ */
+export function twelveInstalments(annual: number): number {
+  return round(annual / 12, 2);
+}
+
+/** MHCLG's published ratios of each band to Band D, from the Table 9 notes. */
+export const BAND_RATIO_OF_D: Record<Band, string> = {
+  A: "six ninths",
+  B: "seven ninths",
+  C: "eight ninths",
+  D: "nine ninths",
+  E: "eleven ninths",
+  F: "thirteen ninths",
+  G: "fifteen ninths",
+  H: "eighteen ninths",
+};
+
+/** One sentence saying what a band is, from the Table 9 ratio note. */
+export function bandMeaning(band: Band): string {
+  if (band === "D") {
+    return "Band D is the reference council tax band; every other band is a fixed ratio of Band D under the ratios MHCLG publishes with the band table.";
+  }
+  return `Band ${band} is charged at ${BAND_RATIO_OF_D[band]} of Band D under the ratios MHCLG publishes with the band table.`;
+}
+
+/**
+ * The lowest and highest published area charges for one band in one year, read
+ * from the authorities already held in Table 9. Both values are published
+ * figures for named councils, not an average.
+ */
+export function bandExtremes(
+  band: Band,
+  year: Year = CURRENT_YEAR,
+  root = process.cwd(),
+): {
+  lowest: { name: string; ons: string; pounds: number };
+  highest: { name: string; ons: string; pounds: number };
+} {
+  const rows = Object.entries(loadYear(year, root).authorities)
+    .map(([ons, authority]) => ({
+      ons,
+      name: authority.name,
+      pounds: authority.bands[band],
+    }))
+    .filter((row) => typeof row.pounds === "number");
+  if (rows.length === 0) {
+    throw new Error(`No Table 9 figures for Band ${band} in ${year}.`);
+  }
+  let lowest = rows[0]!;
+  let highest = rows[0]!;
+  for (const row of rows) {
+    if (row.pounds < lowest.pounds) lowest = row;
+    if (row.pounds > highest.pounds) highest = row;
+  }
+  return { lowest, highest };
 }
 
 const POUNDS = new Intl.NumberFormat("en-GB", {
