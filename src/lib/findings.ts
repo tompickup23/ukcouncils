@@ -1,4 +1,4 @@
-import { CURRENT_YEAR, PREVIOUS_YEAR, loadYear, yearLabel, type Authority, type Year } from "./council-tax";
+import { CURRENT_YEAR, PREVIOUS_YEAR, loadYear, yearLabel, type Authority, type Note, type Year } from "./council-tax";
 import { longDate, tableName, type SourceRef } from "./sources";
 import { dataUpdates, type DataUpdate } from "./dataset-dates";
 
@@ -23,20 +23,61 @@ export interface ClassGroup<T> {
 }
 
 export interface Bin {
-  /** The whole point at or above which every change in the bin sits. */
+  /**
+   * The bin's key. Zero or above: every published change in the bin is at
+   * least `floor` and under `floor + 1` per cent. Below zero: every fall in the
+   * bin is at least `-floor - 1` and under `-floor` per cent.
+   */
   floor: number;
   label: string;
   count: number;
+  /**
+   * Present on a row that counts councils whose published change MHCLG notes
+   * as rounded, with the actual change below the referendum threshold. Those
+   * councils sit in this row, never in a whole point bin.
+   */
+  note?: Note;
+  /** The published, rounded change those councils carry. */
+  published?: number;
 }
 
 /**
- * The label of a whole point bin: a change at least `floor` and below
- * `floor + 1` per cent. A negative bin is a fall, stated as such.
+ * The bin key of a published change: the whole point of a rise, or of the
+ * size of a fall, so a fall of exactly 1% sits with falls of 1% to under 2%.
  */
+export function binFloor(pct: number): number {
+  return pct >= 0 ? Math.floor(pct) : -(Math.floor(-pct) + 1);
+}
+
+/** The label of a whole point bin. A negative bin is a fall, stated as such. */
 export function binLabel(floor: number): string {
   if (floor >= 0) return `${floor}% to under ${floor + 1}%`;
-  return `a fall of more than ${-(floor + 1)}% and up to ${-floor}%`;
+  if (floor === -1) return "a fall of under 1%";
+  return `a fall of ${-floor - 1}% to under ${-floor}%`;
 }
+
+/**
+ * MHCLG notes on an own row saying the published change shows as a rounded
+ * figure and the actual change is below the referendum threshold (notes s and
+ * w in 2026 to 2027). Matched on MHCLG's own wording, never on a council name.
+ */
+const ROUNDING_NOTE = /due to rounding/i;
+
+export function roundingNote(authority: Authority): Note | null {
+  return authority.own?.notes.find((n) => ROUNDING_NOTE.test(n.text)) ?? null;
+}
+
+/** The label of a rounding note row: the published figure and the note. */
+export function roundedLabel(published: number, note: Note): string {
+  return `published as ${published.toFixed(2)}%, below the threshold per MHCLG note ${note.id}`;
+}
+
+/**
+ * MHCLG notes on an own row saying the average Band D including parish
+ * precepts is pending approval (note x in 2026 to 2027). Matched on MHCLG's
+ * own wording.
+ */
+const PENDING_PARISH_NOTE = /including local precepts.*pending approval/i;
 
 function byClass(year: Year = CURRENT_YEAR) {
   const data = loadYear(year);
@@ -67,6 +108,8 @@ function ownSource(): SourceRef {
 
 export interface ChangeNote {
   classes: ClassGroup<Bin[]>[];
+  /** Every MHCLG rounding note a row carries, once each, printed under the table. */
+  roundingNotes: Note[];
   /** Councils whose row holds no published change. Absent from every bin. */
   notPublished: number;
   total: number;
@@ -82,8 +125,10 @@ export interface ChangeNote {
 export function changeDistribution(): ChangeNote {
   let notPublished = 0;
   let total = 0;
+  const notes = new Map<string, Note>();
   const classes = byClass().map(({ code, label, authorities }) => {
     const counts = new Map<number, number>();
+    const rounded = new Map<string, Bin>();
     for (const authority of authorities) {
       const pct = authority.own?.changePct;
       if (typeof pct !== "number") {
@@ -91,15 +136,29 @@ export function changeDistribution(): ChangeNote {
         continue;
       }
       total += 1;
-      const floor = Math.floor(pct);
+      const note = roundingNote(authority);
+      if (note) {
+        notes.set(note.id, note);
+        const key = `${note.id}|${pct}`;
+        const row = rounded.get(key) ?? { floor: binFloor(pct), label: roundedLabel(pct, note), count: 0, note, published: pct };
+        row.count += 1;
+        rounded.set(key, row);
+        continue;
+      }
+      const floor = binFloor(pct);
       counts.set(floor, (counts.get(floor) ?? 0) + 1);
     }
-    const rows = [...counts.entries()]
-      .sort((a, b) => a[0] - b[0])
-      .map(([floor, count]) => ({ floor, label: binLabel(floor), count }));
+    // A rounding row sits just above the bin its published figure would fall
+    // in, since MHCLG says the actual change is below that figure.
+    const sortKey = (b: Bin) => (b.note ? b.floor - 0.5 : b.floor);
+    const rows: Bin[] = [
+      ...[...counts.entries()].map(([floor, count]) => ({ floor, label: binLabel(floor), count })),
+      ...rounded.values(),
+    ].sort((a, b) => sortKey(a) - sortKey(b) || a.label.localeCompare(b.label));
     return { classCode: code, label, councils: authorities.length, rows };
   });
-  return { classes, notPublished, total, source: ownSource(), accessed: loadYear(CURRENT_YEAR).generated };
+  const roundingNotes = [...notes.values()].sort((a, b) => a.id.length - b.id.length || a.id.localeCompare(b.id));
+  return { classes, roundingNotes, notPublished, total, source: ownSource(), accessed: loadYear(CURRENT_YEAR).generated };
 }
 
 export interface ParishCounts {
@@ -116,6 +175,8 @@ export interface ParishCounts {
 export interface ParishNote {
   classes: ClassGroup<ParishCounts>[];
   totals: ParishCounts;
+  /** MHCLG notes that an average including parish precepts is pending approval, printed under the parish note. */
+  pendingNotes: Note[];
   source: SourceRef;
   accessed: string;
 }
@@ -128,6 +189,7 @@ export interface ParishNote {
  */
 export function parishComponent(): ParishNote {
   const totals: ParishCounts = { withParish: 0, without: 0, lower: 0, notPublished: 0 };
+  const pending = new Map<string, Note>();
   const classes = byClass().map(({ code, label, authorities }) => {
     const rows: ParishCounts = { withParish: 0, without: 0, lower: 0, notPublished: 0 };
     for (const authority of authorities) {
@@ -143,10 +205,12 @@ export function parishComponent(): ParishNote {
               : "lower";
       rows[key] += 1;
       totals[key] += 1;
+      for (const note of authority.own?.notes ?? []) if (PENDING_PARISH_NOTE.test(note.text)) pending.set(note.id, note);
     }
     return { classCode: code, label, councils: authorities.length, rows };
   });
-  return { classes, totals, source: ownSource(), accessed: loadYear(CURRENT_YEAR).generated };
+  const pendingNotes = [...pending.values()].sort((a, b) => a.id.length - b.id.length || a.id.localeCompare(b.id));
+  return { classes, totals, pendingNotes, source: ownSource(), accessed: loadYear(CURRENT_YEAR).generated };
 }
 
 export const CHANGE_NOTE_ID = "band-d-change-by-point";
@@ -158,14 +222,15 @@ export function findingUpdates(): DataUpdate[] {
   const previous = yearLabel(PREVIOUS_YEAR);
   const change = changeDistribution();
   const parish = parishComponent();
-  const cite = (s: SourceRef) => `Source: ${s.publisher}, ${s.title}, ${s.table}, published ${longDate(s.date)}`;
+  const cite = (s: SourceRef, accessed: string) =>
+    `Source: ${s.publisher}, ${s.title}, ${s.table}, published ${longDate(s.date)}, accessed ${longDate(accessed)}`;
   return [
     {
       id: `finding-${CHANGE_NOTE_ID}-${CURRENT_YEAR}`,
       dataset: "council-tax",
       title: `Finding: own Band D change by whole percentage point, ${year} on ${previous}, by class`,
       date: FINDINGS_DATE,
-      description: `How many of ${change.total} councils in each class changed their own Band D by each whole percentage point. ${cite(change.source)}.`,
+      description: `How many of ${change.total} councils in each class changed their own Band D by each whole percentage point. ${cite(change.source, change.accessed)}.`,
       path: `/findings/#${CHANGE_NOTE_ID}`,
     },
     {
@@ -173,7 +238,7 @@ export function findingUpdates(): DataUpdate[] {
       dataset: "council-tax",
       title: `Finding: councils whose ${year} average Band D includes parish precepts`,
       date: FINDINGS_DATE,
-      description: `${parish.totals.withParish} councils, counted within each class. ${cite(parish.source)}.`,
+      description: `${parish.totals.withParish} councils, counted within each class. ${cite(parish.source, parish.accessed)}.`,
       path: `/findings/#${PARISH_NOTE_ID}`,
     },
   ];

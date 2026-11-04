@@ -32,6 +32,8 @@ export interface DataUpdate {
 interface SchoolHolidaysManifest {
   snapshotDate?: string;
   authorityCount?: number;
+  /** The calendar file the manifest points to, in data/school-holidays. */
+  file?: string;
 }
 
 export function schoolHolidaysManifest(root = process.cwd()): SchoolHolidaysManifest {
@@ -52,13 +54,16 @@ function councilTaxUpdates(year: Year): DataUpdate[] {
   const out: DataUpdate[] = [];
   const published = iso(source.published);
   const cite = `Source: ${source.publisher}, ${source.title}, ${tableName(source.bandTable)}`;
+  // The date this site read the MHCLG file, from the data file's own field.
+  const accessed = iso(data.generated);
+  const read = accessed ? `, accessed ${longDate(accessed)}` : "";
   if (published) {
     out.push({
       id: `council-tax-${year}`,
       dataset: "council-tax",
       title: `Council tax ${yearLabel(year)} for every council in England`,
       date: published,
-      description: `Band A to H for ${NUM.format(count)} billing authorities. ${cite}, published ${longDate(published)}.`,
+      description: `Band A to H for ${NUM.format(count)} billing authorities. ${cite}, published ${longDate(published)}${read}.`,
       path: "/council-tax/",
     });
   }
@@ -69,7 +74,7 @@ function councilTaxUpdates(year: Year): DataUpdate[] {
       dataset: "council-tax",
       title: `Council tax ${yearLabel(year)} tables revised by MHCLG`,
       date: updated,
-      description: `MHCLG revised the ${yearLabel(year)} tables. ${cite}, updated ${longDate(updated)}.`,
+      description: `MHCLG revised the ${yearLabel(year)} tables. ${cite}, updated ${longDate(updated)}${read}.`,
       path: "/council-tax/",
     });
   }
@@ -87,7 +92,7 @@ function registryUpdate(): DataUpdate[] {
       dataset: "registry",
       title: "List of councils and sister site links refreshed",
       date,
-      description: `${NUM.format(count)} local authorities, each sister link checked against that site's live sitemap. Source: UK Places registry, edition of ${longDate(date)}.`,
+      description: `${NUM.format(count)} local authorities, each sister link checked against that site's live sitemap. Source: UK Places registry, file data/registry/councils.json, edition of ${longDate(date)}, accessed ${longDate(date)}.`,
       path: "/councils/",
     },
   ];
@@ -98,13 +103,14 @@ function schoolHolidaysUpdate(): DataUpdate[] {
   const date = iso(manifest.snapshotDate);
   if (!date) return [];
   const count = typeof manifest.authorityCount === "number" ? `${NUM.format(manifest.authorityCount)} education authorities. ` : "";
+  const file = typeof manifest.file === "string" ? `data/school-holidays/${manifest.file}` : "data/school-holidays/manifest.json";
   return [
     {
       id: `school-holidays-${date}`,
       dataset: "school-holidays",
       title: "School term and holiday dates refreshed",
       date,
-      description: `${count}Source: UK School Holiday Dates, snapshot of ${longDate(date)}.`,
+      description: `${count}Source: UK School Holiday Dates, file ${file}, snapshot of ${longDate(date)}, accessed ${longDate(date)}.`,
       path: "/councils/",
     },
   ];
@@ -115,13 +121,15 @@ function spendingUpdate(): DataUpdate[] {
   const date = iso(spending.source.summaries.generated) ?? iso(spending.generated);
   if (!date) return [];
   const count = Object.keys(spending.bodies).length;
+  // The date this site wrote its copy of the export, from the file's own field.
+  const accessed = iso(spending.generated) ?? date;
   return [
     {
       id: `spending-${date}`,
       dataset: "spending",
       title: "Published spending records refreshed",
       date,
-      description: `What AI DOGE holds of the spending ${NUM.format(count)} councils publish. Source: ${spending.source.publisher}, spending summaries export of ${longDate(date)}.`,
+      description: `What AI DOGE holds of the spending ${NUM.format(count)} councils publish. Source: ${spending.source.publisher}, spending summaries export of ${longDate(date)}, file data/spending/aidoge-summaries.json, accessed ${longDate(accessed)}.`,
       path: "/councils/",
     },
   ];

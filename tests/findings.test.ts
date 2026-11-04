@@ -1,9 +1,9 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { dataUpdates } from "../src/lib/dataset-dates";
-import { allUpdates, changeDistribution, findingUpdates, parishComponent } from "../src/lib/findings";
+import { allUpdates, binLabel, changeDistribution, findingUpdates, parishComponent } from "../src/lib/findings";
 import { feedXml } from "../src/pages/rss.xml";
 import { sitemapPaths } from "../src/pages/sitemap.xml";
 
@@ -15,14 +15,22 @@ import { sitemapPaths } from "../src/pages/sitemap.xml";
 
 const json = (path: string) => JSON.parse(readFileSync(join(process.cwd(), path), "utf-8"));
 
-interface RawOwn { bandD: number | null; changePct: number | null; bandDWithParish: number | null; table: string }
+interface RawNote { id: string; text: string }
+interface RawOwn { bandD: number | null; changePct: number | null; bandDWithParish: number | null; table: string; notes: RawNote[] }
 interface RawAuthority { classCode: string; own: RawOwn | null }
 const current = json("data/council-tax/england-2026-27.json") as {
   generated: string;
-  source: { published: string };
+  source: { published: string; notes: Record<string, string> };
   authorities: Record<string, RawAuthority>;
 };
 const authorities = Object.values(current.authorities);
+
+// MHCLG notes s and w: the published change is rounded and the actual change
+// is below the referendum threshold. Read from each council's own row.
+const ROUNDED_IDS = ["s", "w"];
+const roundedNote = (a: RawAuthority) => a.own?.notes.find((n) => ROUNDED_IDS.includes(n.id)) ?? null;
+// The bin a recount puts a change in: whole points of a rise, or of the size of a fall.
+const recountBin = (pct: number) => (pct >= 0 ? Math.floor(pct) : -(Math.floor(-pct) + 1));
 
 describe("the change distribution note", () => {
   const note = changeDistribution();
@@ -31,14 +39,14 @@ describe("the change distribution note", () => {
     const expected: Record<string, Record<number, number>> = {};
     for (const a of authorities) {
       const pct = a.own?.changePct;
-      if (typeof pct !== "number") continue;
-      const bin = Math.floor(pct);
+      if (typeof pct !== "number" || roundedNote(a)) continue;
+      const bin = recountBin(pct);
       expected[a.classCode] ??= {};
       expected[a.classCode]![bin] = (expected[a.classCode]![bin] ?? 0) + 1;
     }
     const actual: Record<string, Record<number, number>> = {};
     for (const group of note.classes) {
-      actual[group.classCode] = Object.fromEntries(group.rows.map((r) => [r.floor, r.count]));
+      actual[group.classCode] = Object.fromEntries(group.rows.filter((r) => !r.note).map((r) => [r.floor, r.count]));
     }
     expect(actual).toEqual(expected);
   });
@@ -52,10 +60,52 @@ describe("the change distribution note", () => {
     }
   });
 
+  it("shows every council carrying MHCLG note s or w in a row with its note, never in a whole point row", () => {
+    const expected: Record<string, Record<string, number>> = {};
+    for (const a of authorities) {
+      const n = roundedNote(a);
+      const pct = a.own?.changePct;
+      if (!n || typeof pct !== "number") continue;
+      expected[a.classCode] ??= {};
+      const key = `${n.id} ${pct}`;
+      expected[a.classCode]![key] = (expected[a.classCode]![key] ?? 0) + 1;
+    }
+    expect(Object.keys(expected).length).toBeGreaterThan(0);
+    const actual: Record<string, Record<string, number>> = {};
+    for (const group of note.classes) {
+      for (const row of group.rows.filter((r) => r.note)) {
+        actual[group.classCode] ??= {};
+        actual[group.classCode]![`${row.note!.id} ${row.published}`] = row.count;
+        expect(row.label).toBe(`published as ${row.published!.toFixed(2)}%, below the threshold per MHCLG note ${row.note!.id}`);
+      }
+    }
+    expect(actual).toEqual(expected);
+    const used = [...new Set(authorities.flatMap((a) => (roundedNote(a) ? [roundedNote(a)!.id] : [])))].sort();
+    expect(note.roundingNotes.map((n) => n.id).sort()).toEqual(used);
+    for (const n of note.roundingNotes) expect(n.text).toBe(current.source.notes[n.id]);
+  });
+
+  it("prints every MHCLG rounding note under the table on the built page", () => {
+    const page = join(process.cwd(), "dist", "findings", "index.html");
+    if (!existsSync(page)) return;
+    const html = readFileSync(page, "utf-8");
+    for (const n of note.roundingNotes) {
+      expect(html).toContain(`data-mhclg-note="${n.id}"`);
+      expect(html).toContain(`below the threshold per MHCLG note ${n.id}`);
+    }
+  });
+
+  it("labels falls by their size, with no zero lower bound", () => {
+    expect(binLabel(-1)).toBe("a fall of under 1%");
+    expect(binLabel(-6)).toBe("a fall of 5% to under 6%");
+    expect(binLabel(0)).toBe("0% to under 1%");
+    for (const row of note.classes.flatMap((g) => g.rows)) expect(row.label).not.toMatch(/more than 0%/);
+  });
+
   it("orders bins by percentage within a class, never councils, and dates the read", () => {
     for (const group of note.classes) {
-      const floors = group.rows.map((r) => r.floor);
-      expect(floors).toEqual([...floors].sort((a, b) => a - b));
+      const keys = group.rows.map((r) => (r.note ? r.floor - 0.5 : r.floor));
+      expect(keys).toEqual([...keys].sort((a, b) => a - b));
     }
     expect(note.source.date).toBe(current.source.published);
     expect(note.accessed).toBe(current.generated);
@@ -86,6 +136,15 @@ describe("the parish precept note", () => {
       notPublished: sum("notPublished"),
     });
   });
+
+  it("carries MHCLG note x, read from the data, under the parish note", () => {
+    const held = authorities.flatMap((a) => a.own?.notes ?? []).filter((n) => n.id === "x");
+    expect(held.length).toBeGreaterThan(0);
+    expect(note.pendingNotes.map((n) => n.id)).toEqual(["x"]);
+    expect(note.pendingNotes[0]!.text).toBe(current.source.notes.x);
+    const page = join(process.cwd(), "dist", "findings", "index.html");
+    if (existsSync(page)) expect(readFileSync(page, "utf-8")).toContain('data-mhclg-note="x"');
+  });
 });
 
 describe("the dataset dates", () => {
@@ -105,8 +164,8 @@ describe("the dataset dates", () => {
   });
 });
 
-// sax ships with Astro's dependency tree (through svgo); it is a strict XML
-// parser, so a malformed feed throws.
+// sax is a declared devDependency; it is a strict XML parser, so a malformed
+// feed throws.
 const require = createRequire(import.meta.url);
 const sax = require("sax") as {
   parser: (strict: boolean) => {
@@ -162,6 +221,7 @@ describe("the feed", () => {
       expect(item.link).toMatch(/^https:\/\/ukcouncils\.co\.uk\//);
       expect(Number.isNaN(new Date(item.pubDate).getTime())).toBe(false);
       expect(item.description).toMatch(/Source: /);
+      expect(item.description, item.guid).toMatch(/, accessed \d{1,2} [A-Z][a-z]+ \d{4}\.$/);
     }
     expect(new Set(items.map((i) => i.guid)).size).toBe(items.length);
   });
@@ -172,6 +232,13 @@ describe("the feed", () => {
       expect(guids.some((g) => g.startsWith(`ukcouncils-${dataset}`)), dataset).toBe(true);
     }
     for (const finding of findingUpdates()) expect(guids).toContain(`ukcouncils-${finding.id}`);
+  });
+
+  it("names the file behind every item that is not an MHCLG table", () => {
+    const byPrefix = (prefix: string) => items.filter((i) => i.guid.startsWith(`ukcouncils-${prefix}`));
+    for (const i of byPrefix("registry-")) expect(i.description).toContain("data/registry/councils.json");
+    for (const i of byPrefix("school-holidays-")) expect(i.description).toMatch(/data\/school-holidays\/\S+\.json/);
+    for (const i of byPrefix("spending-")) expect(i.description).toContain("data/spending/aidoge-summaries.json");
   });
 
   it("prints no dash and no motive word", () => {

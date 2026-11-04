@@ -50,7 +50,11 @@ const showMissing = parish.totals.notPublished > 0;
     <p>
       This note counts councils by the percentage change in their own average Band D for {year} on {previous},
       excluding parish precepts, as MHCLG publishes it for each council. Each row counts the councils whose
-      published change is at least the lower figure and under the next whole point. It covers {change.total}
+      published change is at least the lower figure and under the next whole point; a fall row counts the size
+      of the fall the same way.
+      {change.roundingNotes.length > 0 &&
+        ` A council whose published change MHCLG notes as rounded, with the actual change below the referendum threshold, is counted in its own row with that note, not in a whole point row; the notes are under the table.`}
+      It covers {change.total}
       councils in {change.classes.length} classes of authority; the county councils, which MHCLG publishes separately, are not part of it.
       {change.notPublished > 0 && ` ${change.notPublished} councils have no published change and are in no row.`}
     </p>
@@ -71,6 +75,9 @@ const showMissing = parish.totals.notPublished > 0;
       </div>
       <SourceLine source={{ ...change.source, method: "Counted from the published percentage change for each council" }} />
       <p class="muted">Read from the MHCLG files on {longDate(change.accessed)}.</p>
+      {change.roundingNotes.map((note) => (
+        <p class="muted" data-mhclg-note={note.id}>MHCLG note {note.id}: {note.text}</p>
+      ))}
     </div>
     <p>
       Every council's own figure and change are on <a href="/council-tax/rises-2026-27/">council tax rises {year}</a>
@@ -118,6 +125,9 @@ const showMissing = parish.totals.notPublished > 0;
       </div>
       <SourceLine source={{ ...parish.source, method: "Counted by comparing the two published averages for each council" }} />
       <p class="muted">Read from the MHCLG files on {longDate(parish.accessed)}.</p>
+      {parish.pendingNotes.map((note) => (
+        <p class="muted" data-mhclg-note={note.id}>MHCLG note {note.id}: {note.text}</p>
+      ))}
     </div>
     <p>
       The parish precept line sits under the Band D figure on <a href="/councils/">each council's page</a>; the
