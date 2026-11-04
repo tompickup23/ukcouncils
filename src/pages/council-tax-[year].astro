@@ -10,7 +10,6 @@
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import SourceLine from "../components/SourceLine.astro";
 import { CURRENT_YEAR, NEXT_YEAR, NEXT_YEAR_RELEASE, yearAnchor, yearLabel } from "../lib/council-tax";
 import { INCREASES_PATH, NEXT_YEAR_PATH } from "../lib/site";
 import { longDate } from "../lib/sources";
@@ -21,14 +20,16 @@ export function getStaticPaths() {
 
 const next = yearLabel(NEXT_YEAR);
 const current = yearLabel(CURRENT_YEAR);
-// Councils set the next year's council tax in the February and March before it starts.
+// Section 30(6): set before 11 March in the financial year before, which ends
+// in March of the calendar year the next year starts in.
 const setYear = NEXT_YEAR.slice(0, 4);
+const ACT_ACCESSED = "2026-11-04";
 const release = NEXT_YEAR_RELEASE;
 const ACT_URL = "https://www.legislation.gov.uk/ukpga/1992/14/section/30";
 ---
 <BaseLayout
   title={`Council tax ${next} in England: figures not yet set`}
-  description={`Council tax for ${next} is not yet set. Councils in England set it in February ${setYear}, and MHCLG publishes the figures for every council, with the release announced for ${release.release}.`}
+  description={`Council tax for ${next} is not yet set. Councils in England must set it before 11 March ${setYear}, and MHCLG publishes the figures for every council, with the release announced for ${release.release}.`}
   path={NEXT_YEAR_PATH}
 >
   <Breadcrumbs items={[{ label: "Council tax", href: "/council-tax/" }, { label: next }]} />
@@ -44,18 +45,12 @@ const ACT_URL = "https://www.legislation.gov.uk/ukpga/1992/14/section/30";
   <section class="section" aria-labelledby="set-heading">
     <h2 id="set-heading">When do councils set council tax for {next}?</h2>
     <p>
-      Councils set their council tax for {next} in February {setYear}. The law requires the amount for a
-      year to be set before 11 March in the year before it; an amount set on or after that date is not
-      invalid for that reason alone.
+      The law requires each council's amount for {next} to be set before 11 March {setYear}; an amount set
+      on or after that date is not invalid for that reason alone.
     </p>
-    <SourceLine
-      source={{
-        publisher: "legislation.gov.uk",
-        title: "Local Government Finance Act 1992",
-        url: ACT_URL,
-        table: "section 30(6)",
-      }}
-    />
+    <p class="source-line">
+      Source: <a href={ACT_URL}>legislation.gov.uk, Local Government Finance Act 1992</a>, section 30(6), accessed {longDate(ACT_ACCESSED)}.
+    </p>
   </section>
 
   <section class="section" aria-labelledby="published-heading">
