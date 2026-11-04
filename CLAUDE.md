@@ -117,6 +117,14 @@ the system; the manual choice is stored under `ukcouncils-theme`.
 - GitHub `tompickup23/ukcouncils`, private until launch.
 - Cloudflare account `35e8f9e8edb5487b97309d107331f7f5`, Pages project
   `ukcouncils`, production branch `main`, direct upload from `deploy.yml`.
+- `deploy.yml` on push to `main`: the same gates as `ci.yml` in the same
+  order (plus `BUILD_OG`), then publish only when the repository secrets
+  `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` both exist. With either
+  absent the job summary names it, publish and IndexNow are skipped and the
+  run ends green; never add a fallback route. After a publish that succeeded,
+  `scripts/indexnow.mjs --changed` submits the URLs whose `<main>` changed
+  since the last submitted build. Change a gate in both workflows at once.
+  `docs/DEPLOY.md` has the token, the by hand route and the IndexNow detail.
 - `ci.yml` on pull requests: job `validate` (check and unit tests) is the one
   branch protection gates on; job `build` builds, runs the dist check, the
   375px and desktop layout run and the CSP run.
