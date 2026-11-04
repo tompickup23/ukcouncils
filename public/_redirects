@@ -1,0 +1,3 @@
+# Moved pages. Cloudflare Pages applies these before serving dist/.
+/council-tax/rises-2026-27/ /council-tax/increases/#year-2026-27 301
+/council-tax/rises-2026-27 /council-tax/increases/#year-2026-27 301

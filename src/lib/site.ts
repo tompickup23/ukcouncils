@@ -1,3 +1,5 @@
+import { CURRENT_YEAR, NEXT_YEAR, yearLabel } from "./council-tax";
+
 export const SITE_NAME = "UK Councils";
 
 /**
@@ -33,6 +35,15 @@ export const BEACON_ENDPOINT = "https://cloudflareinsights.com";
 export const THEME_STORAGE_KEY = "ukcouncils-theme";
 
 /**
+ * The evergreen increases page, one section per year in YEARS. The old
+ * year-in-the-URL page is a 301 to its section, in public/_redirects.
+ */
+export const INCREASES_PATH = "/council-tax/increases/";
+
+/** The page for the year no council has set yet, built from NEXT_YEAR. */
+export const NEXT_YEAR_PATH = `/council-tax-${NEXT_YEAR}/`;
+
+/**
  * Static routes that are indexable. Adding a hub page under src/pages means
  * adding it here in the same change, or it never reaches the sitemap or the
  * search index. tests/site.test.ts fails on a hub that is missing.
@@ -44,7 +55,8 @@ export const STATIC_PATHS = [
   "/your-area/",
   "/councils/",
   "/council-tax/",
-  "/council-tax/rises-2026-27/",
+  INCREASES_PATH,
+  NEXT_YEAR_PATH,
   "/about/",
   "/methodology/",
   "/sources/",
@@ -72,7 +84,8 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/council-tax/", label: "Council tax in England", desc: "The England average and every council" },
       { href: "/compare/", label: "Compare councils", desc: "Compare the same band and year within a council type" },
       { href: "/council-tax/band-d/", label: "Band D", desc: "Band D for every council, by region" },
-      { href: "/council-tax/rises-2026-27/", label: "Rises 2026/27", desc: "How much each council raised its own share" },
+      { href: INCREASES_PATH, label: "Rises by year", desc: `How much each council raised its own share, to ${yearLabel(CURRENT_YEAR)}` },
+      { href: NEXT_YEAR_PATH, label: `Council tax ${yearLabel(NEXT_YEAR)}`, desc: "Not yet set: when the figures are published" },
     ],
   },
   {

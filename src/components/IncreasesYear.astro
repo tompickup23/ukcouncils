@@ -1,36 +1,46 @@
 ---
 /**
- * How much each council raised its own share of Band D this year, as MHCLG
- * publishes it, largest first within each class of authority. The referendum
- * limit is quoted from MHCLG's own definition and stated as the rule; no
- * sentence says why any council set what it set.
+ * One year's section of the increases page: how much each council raised its
+ * own share of Band D that year, as MHCLG publishes it, largest first within
+ * each class of authority. The referendum limit is quoted from MHCLG's own
+ * definition and stated as the rule; no sentence says why any council set what
+ * it set. A table the year's file does not hold is absent, not blank.
  */
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { hubCardPath } from "../../lib/og";
-import Fact from "../../components/Fact.astro";
-import SourceLine from "../../components/SourceLine.astro";
+import Fact from "./Fact.astro";
+import SourceLine from "./SourceLine.astro";
 import {
   CURRENT_YEAR,
-  PREVIOUS_YEAR,
   loadYear,
   percent,
   pounds,
+  precedingYear,
   wholePounds,
+  yearAnchor,
   yearLabel,
   type OwnFigures,
-} from "../../lib/council-tax";
-import { councilPages, councilPath } from "../../lib/paths";
-import { councilTaxSource } from "../../lib/sources";
+  type Year,
+} from "../lib/council-tax";
+import { councilPages, councilPath } from "../lib/paths";
+import { councilTaxSource } from "../lib/sources";
 
-const data = loadYear(CURRENT_YEAR);
-const year = yearLabel(CURRENT_YEAR);
-const previous = yearLabel(PREVIOUS_YEAR);
+interface Props {
+  year: Year;
+}
+
+const { year: yearCode } = Astro.props;
+const data = loadYear(yearCode);
+const year = yearLabel(yearCode);
+const previous = yearLabel(precedingYear(yearCode));
+const isCurrent = yearCode === CURRENT_YEAR;
+const id = (part: string) => `${yearCode}-${part}`;
 const area = data.england.areaBandD;
 const classes = data.england.byClass;
-const pages = councilPages();
 const principles = data.source.referendumPrinciples;
 const tables = data.source.ownTables;
+
+// A council links to its page only where this year's ONS code is the code the
+// page is built from: a reissued code marks a boundary change.
+const pageByCode = new Map(councilPages().map((p) => [p.council.gss, councilPath(p.council)]));
 
 interface Row {
   name: string;
@@ -43,16 +53,16 @@ const sortRows = (rows: Row[]) =>
     .filter((r) => typeof r.own.changePct === "number")
     .sort((a, b) => (b.own.changePct as number) - (a.own.changePct as number) || a.name.localeCompare(b.name));
 
-const unitaryRows = sortRows(
-  pages
-    .filter((p) => p.tax.own && p.tax.classCode !== "SD")
-    .map((p) => ({ name: p.tax.name, href: councilPath(p.council), own: p.tax.own as OwnFigures })),
-);
-const districtRows = sortRows(
-  pages
-    .filter((p) => p.tax.own && p.tax.classCode === "SD")
-    .map((p) => ({ name: p.tax.name, href: councilPath(p.council), own: p.tax.own as OwnFigures })),
-);
+// Every authority in the year's table appears, linked or not.
+const authorities = Object.entries(data.authorities);
+const rowsFor = (district: boolean) =>
+  sortRows(
+    authorities
+      .filter(([, a]) => a.own && (a.classCode === "SD") === district)
+      .map(([code, a]) => ({ name: a.name, href: pageByCode.get(code) ?? null, own: a.own as OwnFigures })),
+  );
+const unitaryRows = rowsFor(false);
+const districtRows = rowsFor(true);
 const countyRows = sortRows(Object.values(data.counties).map((own) => ({ name: `${own.name} County Council`, href: null, own })));
 
 const groups = [
@@ -80,30 +90,21 @@ const groups = [
     rows: districtRows,
     pounds: true,
   },
-];
+].filter((group) => group.table && group.rows.length > 0);
 ---
-<BaseLayout
-  title={`Council tax rises ${year}: how much every council in England raised its share`}
-  description={area ? `Average area Band D in England went up ${percent(area.england.changePct)} in ${year}. How much every council raised its own share of Band D on ${previous}, as MHCLG publishes it.` : undefined}
-  path="/council-tax/rises-2026-27/"
-  ogImage={hubCardPath("rises")}
->
-  <Breadcrumbs items={[{ label: "Council tax", href: "/council-tax/" }, { label: `Rises ${year}` }]} />
-  <header class="page-head">
-    <p class="eyebrow">Council tax, England</p>
-    <h1>How much has council tax gone up in {year}?</h1>
-  </header>
+<section class="section year-section" id={yearAnchor(yearCode)} aria-labelledby={id("heading")}>
+  <h2 id={id("heading")}>Council tax rises {year}</h2>
 
   {area && (
-    <section class="section" aria-labelledby="england-heading">
-      <h2 id="england-heading">How much has council tax gone up in England this year?</h2>
+    <section class="section" aria-labelledby={id("england-heading")}>
+      <h3 id={id("england-heading")}>{isCurrent ? "How much has council tax gone up in England this year?" : `How much did council tax go up in England in ${year}?`}</h3>
       <div class="fact-grid">
         <div class="card">
           <Fact
             label={`Average area Band D, England, ${year}`}
             figure={`up ${percent(area.england.changePct)}`}
             change={`${wholePounds(area.england.pounds)} a year`}
-            source={councilTaxSource(CURRENT_YEAR, area.table)}
+            source={councilTaxSource(yearCode, area.table)}
           />
         </div>
       </div>
@@ -124,20 +125,20 @@ const groups = [
               </tbody>
             </table>
           </div>
-          <SourceLine source={councilTaxSource(CURRENT_YEAR, classes.table)} />
+          <SourceLine source={councilTaxSource(yearCode, classes.table)} />
         </div>
       )}
     </section>
   )}
 
-  <section class="section" aria-labelledby="limit-heading">
-    <h2 id="limit-heading">How much can a council raise council tax without a referendum?</h2>
-    <p>
-      A council that sets an increase in its own share above the limit for the year must hold a local
-      referendum. The principles for {year}, as MHCLG's technical notes set them out, are quoted below.
-      Rows for councils with a different limit carry MHCLG's note saying so.
-    </p>
-    {principles && (
+  {principles && (
+    <section class="section" aria-labelledby={id("limit-heading")}>
+      <h3 id={id("limit-heading")}>{isCurrent ? "How much can a council raise council tax without a referendum?" : `How much could a council raise council tax without a referendum in ${year}?`}</h3>
+      <p>
+        A council that sets an increase in its own share above the limit for the year must hold a local
+        referendum. The principles for {year}, as MHCLG's technical notes set them out, are quoted below.
+        Rows for councils with a different limit carry MHCLG's note saying so.
+      </p>
       <blockquote class="card">
         <p>{principles.text}</p>
         <SourceLine
@@ -150,12 +151,12 @@ const groups = [
           }}
         />
       </blockquote>
-    )}
-  </section>
+    </section>
+  )}
 
   {groups.map((group) => (
-    <section class="section" id={group.id} aria-labelledby={`${group.id}-heading`}>
-      <h2 id={`${group.id}-heading`}>{group.question}</h2>
+    <section class="section" id={id(group.id)} aria-labelledby={id(`${group.id}-heading`)}>
+      <h3 id={id(`${group.id}-heading`)}>{isCurrent ? group.question : group.question.replace(/\?$/, ` in ${year}?`)}</h3>
       <p class="muted">Largest first. The council's own Band D excludes parish precepts and the other bodies' shares.</p>
       <div class="fact" data-fact>
         <div class="table-wrap">
@@ -183,11 +184,11 @@ const groups = [
             </tbody>
           </table>
         </div>
-        <SourceLine source={councilTaxSource(CURRENT_YEAR, group.table)} />
+        <SourceLine source={councilTaxSource(yearCode, group.table)} />
       </div>
     </section>
   ))}
-</BaseLayout>
+</section>
 
 <style>
   .note-cell { font-size: 0.82rem; color: var(--text-muted); min-width: 14rem; }

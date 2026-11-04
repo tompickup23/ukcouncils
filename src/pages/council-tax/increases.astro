@@ -1,0 +1,44 @@
+---
+/**
+ * How much each council raised its own share of Band D, one section per year
+ * in YEARS, newest first. The URL carries no year, so a new year is a new
+ * section, not a new page. The old year-in-the-URL page is a 301 to its
+ * section, in public/_redirects.
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import IncreasesYear from "../../components/IncreasesYear.astro";
+import { hubCardPath } from "../../lib/og";
+import { CURRENT_YEAR, PREVIOUS_YEAR, YEARS, loadYear, percent, yearAnchor, yearLabel } from "../../lib/council-tax";
+import { INCREASES_PATH, NEXT_YEAR_PATH } from "../../lib/site";
+
+const years = [...YEARS].reverse();
+const year = yearLabel(CURRENT_YEAR);
+const previous = yearLabel(PREVIOUS_YEAR);
+const earliest = yearLabel(YEARS[0]);
+const area = loadYear(CURRENT_YEAR).england.areaBandD;
+---
+<BaseLayout
+  title={`Council tax rises in England, ${earliest} to ${year}: how much every council raised its share`}
+  description={area ? `Average area Band D in England went up ${percent(area.england.changePct)} in ${year}. How much every council raised its own share of Band D on ${previous}, and in each year back to ${earliest}, as MHCLG publishes it.` : undefined}
+  path={INCREASES_PATH}
+  ogImage={hubCardPath("rises")}
+>
+  <Breadcrumbs items={[{ label: "Council tax", href: "/council-tax/" }, { label: "Rises by year" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Council tax, England</p>
+    <h1>How much has council tax gone up?</h1>
+    <nav aria-label="Years on this page">
+      <ul class="year-jump">
+        {years.map((y) => <li><a href={`#${yearAnchor(y)}`}>{yearLabel(y)}</a></li>)}
+      </ul>
+    </nav>
+    <p class="muted">Each year's figures are from that year's MHCLG tables. <a href={NEXT_YEAR_PATH}>When the next year's figures are published</a>.</p>
+  </header>
+
+  {years.map((y) => <IncreasesYear year={y} />)}
+</BaseLayout>
+
+<style>
+  .year-jump { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; list-style: none; padding: 0; margin: 1rem 0 0; }
+</style>

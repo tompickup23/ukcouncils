@@ -1,0 +1,95 @@
+---
+/**
+ * The year after CURRENT_YEAR, before any council has set it. The page says
+ * when the figures are set and published, with the source, and what the site
+ * will show once MHCLG publishes them. It prints no figure for any council or
+ * band: there is no source table yet, so there is nothing to print. No pound
+ * sign may appear on it (tests/years.test.ts).
+ *
+ * One path, built from NEXT_YEAR, so the page moves when CURRENT_YEAR does.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import SourceLine from "../components/SourceLine.astro";
+import { CURRENT_YEAR, NEXT_YEAR, NEXT_YEAR_RELEASE, yearAnchor, yearLabel } from "../lib/council-tax";
+import { INCREASES_PATH, NEXT_YEAR_PATH } from "../lib/site";
+import { longDate } from "../lib/sources";
+
+export function getStaticPaths() {
+  return [{ params: { year: NEXT_YEAR } }];
+}
+
+const next = yearLabel(NEXT_YEAR);
+const current = yearLabel(CURRENT_YEAR);
+// Councils set the next year's council tax in the February and March before it starts.
+const setYear = NEXT_YEAR.slice(0, 4);
+const release = NEXT_YEAR_RELEASE;
+const ACT_URL = "https://www.legislation.gov.uk/ukpga/1992/14/section/30";
+---
+<BaseLayout
+  title={`Council tax ${next} in England: figures not yet set`}
+  description={`Council tax for ${next} is not yet set. Councils in England set it in February ${setYear}, and MHCLG publishes the figures for every council, with the release announced for ${release.release}.`}
+  path={NEXT_YEAR_PATH}
+>
+  <Breadcrumbs items={[{ label: "Council tax", href: "/council-tax/" }, { label: next }]} />
+  <header class="page-head">
+    <p class="eyebrow">Council tax, England</p>
+    <h1>Council tax {next}: not yet set</h1>
+    <p class="lede">
+      No council in England has set its council tax for {next} yet, so this page holds no figure for any
+      council or band.
+    </p>
+  </header>
+
+  <section class="section" aria-labelledby="set-heading">
+    <h2 id="set-heading">When do councils set council tax for {next}?</h2>
+    <p>
+      Councils set their council tax for {next} in February {setYear}. The law requires the amount for a
+      year to be set before 11 March in the year before it; an amount set on or after that date is not
+      invalid for that reason alone.
+    </p>
+    <SourceLine
+      source={{
+        publisher: "legislation.gov.uk",
+        title: "Local Government Finance Act 1992",
+        url: ACT_URL,
+        table: "section 30(6)",
+      }}
+    />
+  </section>
+
+  <section class="section" aria-labelledby="published-heading">
+    <h2 id="published-heading">When are the {next} figures published?</h2>
+    <p>
+      The {release.publisherName} publishes the figures for every council in England as accredited official
+      statistics: "{release.title}". GOV.UK announces the release for {release.release}.
+    </p>
+    <p class="source-line">
+      Source: <a href={release.url}>{release.publisher}, {release.title}</a>, {release.kind}, published {longDate(release.announced)}, accessed {longDate(release.accessed)}.
+    </p>
+  </section>
+
+  <section class="section" aria-labelledby="show-heading">
+    <h2 id="show-heading">What will the site show when the {next} figures are published?</h2>
+    <p>When MHCLG publishes the {next} tables, the site will show, each with its source line:</p>
+    <ul>
+      <li>Band D and Bands A to H for every council in England for {next}, from the published band table.</li>
+      <li>How much each council's charge changed on {current}, calculated from the two published tables.</li>
+      <li>How much each council raised its own share of Band D in {next}, as a new section on the <a href={INCREASES_PATH}>increases page</a>.</li>
+      <li>The average area Band D for England and the average Band D for each class of authority.</li>
+      <li>The referendum principles for {next}, quoted from MHCLG's technical notes.</li>
+    </ul>
+    <p>
+      Until then no figure for {next} appears anywhere on the site: there is no projected, typical or
+      estimated amount for any council or band.
+    </p>
+  </section>
+
+  <section class="section" aria-labelledby="latest-heading">
+    <h2 id="latest-heading">What are the latest published figures?</h2>
+    <p>
+      The latest published figures are for {current}: <a href="/council-tax/">council tax in England, {current}</a>,
+      and <a href={`${INCREASES_PATH}#${yearAnchor(CURRENT_YEAR)}`}>how much each council raised its share in {current}</a>.
+    </p>
+  </section>
+</BaseLayout>

@@ -28,7 +28,9 @@ describe("sitemap parity", () => {
     const found = new Set<string>(["/"]);
     const visit = (dir: string, prefix: string) => {
       for (const entry of readdirSync(dir, { withFileTypes: true })) {
-        if (entry.name.startsWith("[") || entry.name.startsWith("_")) continue;
+        // A name with a parameter anywhere in it ("council-tax-[year].astro")
+        // is a dynamic route and lists its own paths.
+        if (entry.name.includes("[") || entry.name.startsWith("_")) continue;
         if (entry.isFile() && entry.name.endsWith(".astro") && !NOT_A_HUB.has(entry.name)) {
           found.add(`${prefix}${entry.name.replace(/\.astro$/, "")}/`);
         }

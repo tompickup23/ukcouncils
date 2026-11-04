@@ -8,6 +8,7 @@ import PostcodeDoor from "../components/PostcodeDoor.astro";
 import { BANDS, CURRENT_YEAR, PREVIOUS_YEAR, loadYear, percent, wholePounds, yearLabel } from "../lib/council-tax";
 import { REGIONS, bandPath, councilPages, regionPath } from "../lib/paths";
 import { councilTaxSource } from "../lib/sources";
+import { INCREASES_PATH } from "../lib/site";
 
 const data = loadYear(CURRENT_YEAR);
 const area = data.england.areaBandD;
@@ -29,7 +30,7 @@ const count = councilPages().length;
   <nav class="task-nav section" aria-label="Council tax tools">
     <a class="card" href="/your-area/"><strong>Find your charge</strong><span>Annual amounts for every band, with the monthly equivalent.</span></a>
     <a class="card" href="/compare/"><strong>Compare councils</strong><span>Put the same band and year side by side.</span></a>
-    <a class="card" href="/council-tax/rises-2026-27/"><strong>Understand the increase</strong><span>See how each council changed its own share.</span></a>
+    <a class="card" href={INCREASES_PATH}><strong>Understand the increase</strong><span>See how each council changed its own share.</span></a>
   </nav>
   {area && (
     <section class="section" aria-labelledby="home-average">
@@ -44,7 +45,7 @@ const count = councilPages().length;
           ><p class="caveat">Includes adult social care and average parish precepts.</p></Fact>
         </div>
       </div>
-      <p><a href="/council-tax/">Council tax for all {count} councils in England</a> · <a href="/council-tax/rises-2026-27/">How much each council raised its share</a></p>
+      <p><a href="/council-tax/">Council tax for all {count} councils in England</a> · <a href={INCREASES_PATH}>How much each council raised its share</a></p>
     </section>
   )}
 

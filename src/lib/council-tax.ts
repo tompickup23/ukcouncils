@@ -16,6 +16,46 @@ export const PREVIOUS_YEAR = "2025-26";
 export const YEARS = ["2024-25", "2025-26", "2026-27"] as const;
 export type Year = (typeof YEARS)[number];
 
+/** "2026-27" to "2027-28". A label for a year, never a figure. */
+export function followingYear(year: string): string {
+  const start = Number(year.slice(0, 4)) + 1;
+  return `${start}-${String(start + 1).slice(2)}`;
+}
+
+/** "2026-27" to "2025-26". A label for a year, never a figure. */
+export function precedingYear(year: string): string {
+  const start = Number(year.slice(0, 4)) - 1;
+  return `${start}-${String(start + 1).slice(2)}`;
+}
+
+/**
+ * The year after CURRENT_YEAR, which no council has set yet. Pages for it say
+ * when the figures are published and print none: there is no source table.
+ */
+export const NEXT_YEAR = followingYear(CURRENT_YEAR);
+
+/** The id of a year's section on the increases page: "year-2026-27". */
+export function yearAnchor(year: string): string {
+  return `year-${year}`;
+}
+
+/**
+ * The GOV.UK statistics announcement for NEXT_YEAR's council tax tables, as
+ * the page read on the access date. The release date is the announcement's
+ * own wording, provisional status included; update it when GOV.UK changes it,
+ * and replace the whole block when NEXT_YEAR moves on.
+ */
+export const NEXT_YEAR_RELEASE = {
+  publisher: "MHCLG",
+  publisherName: "Ministry of Housing, Communities and Local Government",
+  title: "Council Tax levels set by local authorities in England 2027 to 2028",
+  kind: "Accredited official statistics announcement",
+  url: "https://www.gov.uk/government/statistics/announcements/council-tax-levels-set-by-local-authorities-in-england-2027-to-2028",
+  announced: "2026-03-31",
+  release: "March 2027 (provisional)",
+  accessed: "2026-11-04",
+} as const;
+
 export interface Note {
   id: string;
   text: string;
