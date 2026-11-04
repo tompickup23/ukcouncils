@@ -19,7 +19,6 @@ import {
   loadYear,
   pounds,
   tenInstalments,
-  twelveInstalments,
   wholePounds,
   yearLabel,
   type Band,
@@ -61,25 +60,18 @@ let heading: string;
 let crumb: string;
 let path: string;
 if (props.kind === "band") {
-  const count = pages.length;
   const extremes = bandExtremes(props.band);
   title = `Council tax Band ${props.band} monthly cost ${year} for every council in England`;
   heading = `Council tax Band ${props.band} in England, ${year}`;
   if (props.band === "D" && area && typeof area.england.pounds === "number") {
     description =
-      `Average area Band D council tax in England is ${wholePounds(area.england.pounds)} a year in ${year}`
-      + ` (${pounds(tenInstalments(area.england.pounds))} a month over ten instalments,`
-      + ` ${pounds(twelveInstalments(area.england.pounds))} over twelve).`
-      + ` Band D for all ${count} councils, from MHCLG.`;
+      `England Band D average ${wholePounds(area.england.pounds)} a year in ${year}`
+      + ` (${pounds(tenInstalments(area.england.pounds))} a month over ten). From MHCLG.`;
   } else {
     description =
-      `Band ${props.band} area council tax in England runs from ${pounds(extremes.lowest.pounds)} a year`
-      + ` (${pounds(tenInstalments(extremes.lowest.pounds))} a month over ten instalments)`
-      + ` to ${pounds(extremes.highest.pounds)} a year in ${year} across ${count} councils.`
-      + (area && typeof area.england.pounds === "number"
-        ? ` Average area Band D is ${wholePounds(area.england.pounds)}.`
-        : "")
-      + ` From MHCLG.`;
+      `Band ${props.band} from ${pounds(extremes.lowest.pounds)} a year`
+      + ` (${pounds(tenInstalments(extremes.lowest.pounds))} a month over ten)`
+      + ` to ${pounds(extremes.highest.pounds)} in ${year}. From MHCLG.`;
   }
   crumb = `Band ${props.band}`;
   path = bandPath(props.band);

@@ -190,4 +190,12 @@ describe("band headline helpers", () => {
     expect(tenInstalments(lowest.pounds)).toBe(Number((lowest.pounds / 10).toFixed(2)));
     expect(twelveInstalments(highest.pounds)).toBe(Number((highest.pounds / 12).toFixed(2)));
   });
+
+  it("divides the held England Band D average by ten and twelve the same way as elsewhere", () => {
+    const annual = loadYear("2026-27").england.areaBandD?.england.pounds;
+    expect(typeof annual).toBe("number");
+    if (typeof annual !== "number") return;
+    expect(tenInstalments(annual)).toBe(Number((annual / 10).toFixed(2)));
+    expect(twelveInstalments(annual)).toBe(Number((annual / 12).toFixed(2)));
+  });
 });
