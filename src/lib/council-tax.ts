@@ -244,6 +244,21 @@ export function changePhrase(change: { pounds: number; pct: number }): string {
   return `${direction} ${pounds(Math.abs(change.pounds))} (${percent(Math.abs(change.pct))})`;
 }
 
+/**
+ * "up 4.9% on 2025/26" or "down 0.3% on 2025/26". Direction comes from the
+ * sign; the percentage is always positive, matching the own share lines on
+ * the council page.
+ */
+export function percentChangeOn(
+  changePct: number | null | undefined,
+  previousLabel: string,
+  places = 1,
+): string | null {
+  if (typeof changePct !== "number") return null;
+  const direction = changePct >= 0 ? "up" : "down";
+  return `${direction} ${percent(Math.abs(changePct), places)} on ${previousLabel}`;
+}
+
 /** Which Table 7 area type an authority's class averages against. */
 export function areaTypeFor(classCode: Authority["classCode"]): "london" | "metropolitan" | "unitary" | "shire" {
   if (classCode === "ILB" || classCode === "OLB") return "london";
