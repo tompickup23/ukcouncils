@@ -58,10 +58,10 @@ describe("the year variable", () => {
   });
 
   it("is written once: no template under src hard-codes a year label", () => {
-    // Year labels are "2026-27", "2026/27" and "2026 to 2027". An ISO date
+    // Year labels are "2026-27", "2026/27", "2026/2027" and "2026 to 2027". An ISO date
     // ("2026-03-31") is not one. The year and its data readers hold them; a
     // page reads CURRENT_YEAR, YEARS or NEXT_YEAR and formats the label.
-    const LABEL = /\b20\d{2}[-/]\d{2}\b(?!-\d)|\b20\d{2} to 20\d{2}\b/g;
+    const LABEL = /\b20\d{2}[-/]\d{2}\b(?!-\d)|\b20\d{2}\/20\d{2}\b|\b20\d{2} to 20\d{2}\b/g;
     const DATA_READERS = new Set(["src/lib/council-tax.ts", "src/lib/spending.ts", "src/lib/school-holidays.ts"]);
     // Each exception is one exact string in one file, so a new year label in
     // the same file still fails.
@@ -74,7 +74,7 @@ describe("the year variable", () => {
       "src/pages/councils/[slug].astro": ["2026-27"],
     };
     const offenders: string[] = [];
-    for (const path of walk(join(ROOT, "src"), /\.(astro|ts)$/)) {
+    for (const path of walk(join(ROOT, "src"), /\.(astro|ts|tsx|js|mjs)$/)) {
       const file = rel(path);
       if (DATA_READERS.has(file)) continue;
       for (const [i, line] of readFileSync(path, "utf-8").split("\n").entries()) {
