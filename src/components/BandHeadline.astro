@@ -1,16 +1,16 @@
 ---
 /**
  * The answer block above the regional tables on every band page: what the band
- * is, the England average Band D MHCLG publishes, ten and twelve instalment
- * arithmetic on that average, the Table 9 range for this band when it is not
- * Band D, the GOV.UK band checker, and the source lines the site uses
- * elsewhere. No new data source and no derived band average.
+ * is (from the MHCLG Table 9 ratio note held in the data), the England average
+ * for that band when MHCLG publishes one, ten and twelve instalment arithmetic
+ * on that average, a blank note when no average is held for the band, and the
+ * GOV.UK band checker. No derived band average and no valuation ranges the
+ * committed data does not hold.
  */
 import Fact from "./Fact.astro";
 import {
   CURRENT_YEAR,
   PREVIOUS_YEAR,
-  bandExtremes,
   bandMeaning,
   loadYear,
   pounds,
@@ -21,7 +21,7 @@ import {
   yearLabel,
   type Band,
 } from "../lib/council-tax";
-import { councilTaxSource } from "../lib/sources";
+import { councilTaxSource, tableName } from "../lib/sources";
 import { OFFICIAL_BAND_CHECK } from "../lib/site";
 
 interface Props {
@@ -35,78 +35,60 @@ const previous = yearLabel(PREVIOUS_YEAR);
 const area = data.england.areaBandD;
 const bandSource = councilTaxSource(CURRENT_YEAR, data.source.bandTable);
 const areaSource = area ? councilTaxSource(CURRENT_YEAR, area.table) : null;
-const extremes = bandExtremes(band);
-const englandAnnual = area?.england.pounds ?? null;
+const englandAverageForBand = band === "D" && area && typeof area.england.pounds === "number"
+  ? area.england.pounds
+  : null;
 const instalmentSource = areaSource
   ? {
       ...areaSource,
       method: "Calculated from the published England average",
     }
   : null;
-const rangeInstalmentSource = {
-  ...bandSource,
-  method: "Calculated from the published annual charges",
-};
 ---
 <section class="section" id="band-headline" aria-labelledby="band-headline-heading">
   <h2 id="band-headline-heading">Band {band} at a glance</h2>
   <p class="lede">{bandMeaning(band)}</p>
 
-  {area && areaSource && typeof englandAnnual === "number" && instalmentSource && (
+  {typeof englandAverageForBand === "number" && area && areaSource && instalmentSource ? (
     <div class="fact-grid">
       <div class="card">
         <Fact
-          label={`England average area Band D, ${year}`}
-          figure={wholePounds(englandAnnual)}
+          label={`England average area Band ${band}, ${year}`}
+          figure={wholePounds(englandAverageForBand)}
           change={`up ${percent(area.england.changePct)} on ${previous}`}
           source={areaSource}
         >
           <p class="caveat">Includes the adult social care and average parish precepts.</p>
         </Fact>
-        <Fact
-          class="fact-small"
-          label={`Monthly equivalents of that England average, ${year}`}
-          figure={pounds(tenInstalments(englandAnnual))}
-          source={instalmentSource}
-        >
-          <span class="band-monthly">
-            {pounds(tenInstalments(englandAnnual))} a month over ten instalments, calculated as the annual charge divided by ten and rounded to pennies
-          </span>
-          <span class="band-monthly">
-            {pounds(twelveInstalments(englandAnnual))} a month over twelve instalments, calculated as the annual charge divided by twelve and rounded to pennies
-          </span>
-        </Fact>
-      </div>
-      {band !== "D" && (
-        <div class="card">
+        <div class="instalment-row" aria-label={`Monthly equivalents of the England Band ${band} average`}>
           <Fact
-            label={`Band ${band} area charges in England, ${year}`}
-            figure={`${pounds(extremes.lowest.pounds)} to ${pounds(extremes.highest.pounds)}`}
-            source={bandSource}
+            class="fact-small"
+            label={`Over ten instalments, ${year}`}
+            figure={pounds(tenInstalments(englandAverageForBand))}
+            source={instalmentSource}
           >
-            <p class="caveat">Whole-area charges include average parish precepts. Your bill and discounts can differ.</p>
+            <span class="band-monthly">
+              Annual charge divided by ten and rounded to pennies
+            </span>
           </Fact>
           <Fact
             class="fact-small"
-            label={`Monthly equivalents at the lowest and highest Band ${band}, ${year}`}
-            figure={`${pounds(tenInstalments(extremes.lowest.pounds))} to ${pounds(tenInstalments(extremes.highest.pounds))} over ten`}
-            source={rangeInstalmentSource}
+            label={`Over twelve instalments, ${year}`}
+            figure={pounds(twelveInstalments(englandAverageForBand))}
+            source={instalmentSource}
           >
             <span class="band-monthly">
-              Lowest {pounds(extremes.lowest.pounds)} a year in {extremes.lowest.name}: {pounds(tenInstalments(extremes.lowest.pounds))} over ten instalments, {pounds(twelveInstalments(extremes.lowest.pounds))} over twelve
-            </span>
-            <span class="band-monthly">
-              Highest {pounds(extremes.highest.pounds)} a year in {extremes.highest.name}: {pounds(tenInstalments(extremes.highest.pounds))} over ten instalments, {pounds(twelveInstalments(extremes.highest.pounds))} over twelve
+              Annual charge divided by twelve and rounded to pennies
             </span>
           </Fact>
         </div>
-      )}
+      </div>
     </div>
+  ) : (
+    <p class="muted" data-band-average-absent>
+      MHCLG does not publish an England average for Band {band}. The England average it publishes is for Band D only ({year}, {area ? tableName(area.table) : "Table 7"}). Band {band} for every council is listed in the tables below from {bandSource.table}.
+    </p>
   )}
-
-  <p class="muted">
-    MHCLG publishes the England average for Band D. Band {band} for every council is listed in the tables below from {bandSource.table}.
-  </p>
 
   <div class="action-links" aria-label="Find your property band">
     <a href={OFFICIAL_BAND_CHECK}>Find your property band on GOV.UK</a>
@@ -114,7 +96,16 @@ const rangeInstalmentSource = {
 </section>
 
 <style>
+  .instalment-row {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border);
+  }
+  @media (min-width: 40rem) {
+    .instalment-row { grid-template-columns: 1fr 1fr; }
+  }
   .band-monthly { display: block; color: var(--text-muted); margin-top: 0.35rem; }
-  .card :global(.fact-small) { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--border); }
   .card :global(.fact-small .fact-figure) { font-size: 1.3rem; }
 </style>

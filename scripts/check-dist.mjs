@@ -100,9 +100,9 @@ const bandFile = join(process.cwd(), "data", "council-tax", "england-2026-27.jso
 if (existsSync(bandFile)) {
   const onsCodes = Object.keys(JSON.parse(readFileSync(bandFile, "utf-8")).authorities);
   const listed = (page) => new Set([...readFileSync(page, "utf-8").matchAll(/data-ons="([^"]+)"/g)].map((m) => m[1]));
-  const pagesToCover = ["A", "B", "C", "D", "E", "F", "G", "H"]
-    .map((b) => join(DIST, "council-tax", `band-${b.toLowerCase()}`, "index.html"))
-    .concat(join(DIST, "council-tax", "index.html"));
+  const bandPages = ["A", "B", "C", "D", "E", "F", "G", "H"]
+    .map((b) => ({ band: b, path: join(DIST, "council-tax", `band-${b.toLowerCase()}`, "index.html") }));
+  const pagesToCover = bandPages.map((p) => p.path).concat(join(DIST, "council-tax", "index.html"));
   for (const page of pagesToCover) {
     if (!existsSync(page)) {
       failures.push(`missing ${rel(page)}`);
@@ -111,6 +111,26 @@ if (existsSync(bandFile)) {
     const seen = listed(page);
     const missing = onsCodes.filter((ons) => !seen.has(ons));
     if (missing.length) failures.push(`${rel(page)} does not list ${missing.length} authorities, first ${missing[0]}`);
+  }
+  // Every band page carries the headline block above the tables, with the
+  // GOV.UK band checker, and states the England average only when held.
+  for (const { band, path: page } of bandPages) {
+    if (!existsSync(page)) continue;
+    const html = readFileSync(page, "utf-8");
+    if (!/id="band-headline"/.test(html)) failures.push(`${rel(page)} has no band headline block`);
+    if (!/https:\/\/www\.gov\.uk\/council-tax-bands/.test(html)) {
+      failures.push(`${rel(page)} has no GOV.UK band checker link`);
+    }
+    if (band === "D") {
+      if (!/England average area Band D/.test(html)) {
+        failures.push(`${rel(page)} does not state the held England Band D average`);
+      }
+      if (!/Over ten instalments/.test(html) || !/Over twelve instalments/.test(html)) {
+        failures.push(`${rel(page)} is missing the ten or twelve instalment figures`);
+      }
+    } else if (!/data-band-average-absent/.test(html)) {
+      failures.push(`${rel(page)} should note that no England average is held for Band ${band}`);
+    }
   }
   const councilDir = join(DIST, "councils");
   const councilPages = existsSync(councilDir)
