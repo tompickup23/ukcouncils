@@ -26,7 +26,7 @@ export interface Bin {
   /**
    * The bin's key. Zero or above: every published change in the bin is at
    * least `floor` and under `floor + 1` per cent. Below zero: every fall in the
-   * bin is at least `-floor - 1` and under `-floor` per cent.
+   * bin is at least `-(floor + 1)` and under `-floor` per cent.
    */
   floor: number;
   label: string;
@@ -53,7 +53,7 @@ export function binFloor(pct: number): number {
 export function binLabel(floor: number): string {
   if (floor >= 0) return `${floor}% to under ${floor + 1}%`;
   if (floor === -1) return "a fall of under 1%";
-  return `a fall of ${-floor - 1}% to under ${-floor}%`;
+  return `a fall of ${-(floor + 1)}% to under ${-floor}%`;
 }
 
 /**
