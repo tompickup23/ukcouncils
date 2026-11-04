@@ -19,6 +19,11 @@ test.beforeEach(async ({ page }) => {
  */
 const SAMPLES = [
   "/councils/burnley/",
+  // The Lancashire profiles: a unitary with no school calendar, a unitary with
+  // one, and a district whose spending record holds no total.
+  "/councils/blackpool/",
+  "/councils/blackburn-with-darwen/",
+  "/councils/chorley/",
   "/councils/lewes/",
   "/councils/windsor-and-maidenhead/",
   "/councils/king-s-lynn-and-west-norfolk/",

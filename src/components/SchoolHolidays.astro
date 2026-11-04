@@ -1,14 +1,26 @@
 ---
-import { calendarFor } from "../lib/school-holidays";
-const { place } = Astro.props;
-const calendar = calendarFor(place);
-const today = new Intl.DateTimeFormat('en-CA', {timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-const next = calendar?.year.breaks.find((event: { end: string }) => event.end >= today);
+/**
+ * The next school break from the UK School Holiday Dates snapshot, for the
+ * education authority the snapshot joins the council to by GSS code. Renders
+ * nothing where the snapshot holds no calendar. The selection is made in
+ * src/lib/council-profile.ts.
+ */
+import { longDate } from "../lib/sources";
+import type { ProfileTermDates } from "../lib/council-profile";
+
+interface Props {
+  name: string;
+  term: ProfileTermDates | null;
+}
+
+const { name, term } = Astro.props;
 ---
-{calendar && <section class="section place-section" id="school-holidays" aria-labelledby="school-holidays-heading">
-<h2 id="school-holidays-heading">School holidays in {place.name}</h2>
-{next ? <p><strong>{next.label}: {next.start} to {next.end}</strong>, from {calendar.authority.name}'s {calendar.year.academicYear} reference calendar.</p> : <p>View the recorded {calendar.year.academicYear} calendar for {calendar.authority.name}.</p>}
-<p class="source-line">Source: <a href={calendar.year.sourceUrl}>{calendar.authority.name}'s official calendar</a>, captured {calendar.year.retrievedAt?.slice(0,10)}. Calendar selection as of {today}.</p>
-<p>This is an education-authority reference. Individual schools, local clusters and INSET days can differ. Confirm with the school before booking.</p>
-<p><a href={calendar.authority.url}>Full calendar, source notes and downloads on UK School Holiday Dates</a>.</p>
+{term && <section class="section place-section" id="school-holidays" aria-labelledby="school-holidays-heading" data-profile-section="school-holidays">
+<h2 id="school-holidays-heading">School holidays in {name}</h2>
+{term.next
+  ? <p data-next-break><strong>{term.next.label}: {longDate(term.next.start)} to {longDate(term.next.end)}</strong>, from {term.authorityName}'s {term.academicYear} reference calendar.</p>
+  : <p>View the recorded {term.academicYear} calendar for {term.authorityName}.</p>}
+<p class="source-line">Source: <a href={term.sourceUrl}>{term.authorityName}'s official calendar</a>{term.retrievedAt ? `, captured ${longDate(term.retrievedAt)}` : ""}. Next break selected on {longDate(term.selectedOn)}.</p>
+<p>This is an education authority reference. Individual schools, local clusters and INSET days can differ. Confirm with the school before booking.</p>
+<p><a href={term.authorityUrl}>Full calendar, source notes and downloads on UK School Holiday Dates</a>.</p>
 </section>}
