@@ -118,10 +118,13 @@ the system; the manual choice is stored under `ukcouncils-theme`.
 - Cloudflare account `35e8f9e8edb5487b97309d107331f7f5`, Pages project
   `ukcouncils`, production branch `main`, direct upload from `deploy.yml`.
 - `deploy.yml` on push to `main`: the same gates as `ci.yml` in the same
-  order (plus `BUILD_OG`), then publish only when the repository secrets
-  `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` both exist. With either
-  absent the job summary names it, publish and IndexNow are skipped and the
-  run ends green; never add a fallback route. After a publish that succeeded,
+  order (plus `BUILD_OG`), then publish only on `refs/heads/main` and only
+  when the repository secret `CLOUDFARE_API_TOKEN` exists (spelt with no L
+  after the F, deliberately; the workflow passes it to wrangler as
+  `CLOUDFLARE_API_TOKEN`). The account ID above is not a secret and stays
+  written in the workflow. With the secret absent or another ref, the job
+  summary says which, publish and IndexNow are skipped and the run ends green;
+  never add a fallback route. After a publish that succeeded,
   `scripts/indexnow.mjs --changed` submits the URLs whose `<main>` changed
   since the last submitted build. Change a gate in both workflows at once.
   `docs/DEPLOY.md` has the token, the by hand route and the IndexNow detail.

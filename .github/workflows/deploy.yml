@@ -7,13 +7,17 @@
 # lancashireai's deploy.yml: wrangler direct upload with the token from
 # repository secrets.
 #
-# Without CLOUDFLARE_API_TOKEN or CLOUDFLARE_ACCOUNT_ID the job stops after the
-# gates: the job summary names the missing secret, the publish and IndexNow
-# steps are skipped, and the run ends green. There is no fallback route. See
-# docs/DEPLOY.md.
+# The token is the repository secret CLOUDFARE_API_TOKEN (no L after the F),
+# a deliberate spelling kept as saved on 4 November 2026. The account ID is
+# not a secret and is written below, as in CLAUDE.md.
 #
-# The secrets reach only the step that tests for them and the step that
-# publishes; npm ci and the test runs never see them.
+# Without CLOUDFARE_API_TOKEN, or on a manual run from any ref other than
+# refs/heads/main, the job stops after the gates: the job summary says why,
+# the publish and IndexNow steps are skipped, and the run ends green. There is
+# no fallback route. See docs/DEPLOY.md.
+#
+# The token reaches only the step that tests for it and the step that
+# publishes; npm ci and the test runs never see it.
 #
 # BUILD_OG is set through an env block, never inline on the run line. Pure
 # shell, no GitHub event interpolation, no injection risk.
@@ -80,21 +84,21 @@ jobs:
           path: playwright-report/
           retention-days: 7
 
-      # Deploy, only with both secrets present.
+      # Deploy, only from main and only with the token secret present.
 
-      - name: Check the deploy secrets
+      - name: Check the deploy secret and branch
         id: secrets
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFARE_API_TOKEN: ${{ secrets.CLOUDFARE_API_TOKEN }}
+          DEPLOY_REF: ${{ github.ref }}
         run: |
-          missing=""
-          [ -n "$CLOUDFLARE_API_TOKEN" ] || missing="$missing CLOUDFLARE_API_TOKEN"
-          [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || missing="$missing CLOUDFLARE_ACCOUNT_ID"
-          missing="${missing# }"
-          if [ -n "$missing" ]; then
-            echo "Deploy skipped: repository secret missing: ${missing}. Gates passed; nothing was published. See docs/DEPLOY.md." >> "$GITHUB_STEP_SUMMARY"
-            echo "::notice title=Deploy skipped::Repository secret missing: ${missing}"
+          if [ "$DEPLOY_REF" != "refs/heads/main" ]; then
+            echo "Deploy skipped: this run is on ${DEPLOY_REF}, not refs/heads/main. Gates passed; nothing was published. See docs/DEPLOY.md." >> "$GITHUB_STEP_SUMMARY"
+            echo "::notice title=Deploy skipped::Run is on ${DEPLOY_REF}, not refs/heads/main"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          elif [ -z "$CLOUDFARE_API_TOKEN" ]; then
+            echo "Deploy skipped: repository secret missing: CLOUDFARE_API_TOKEN. Gates passed; nothing was published. See docs/DEPLOY.md." >> "$GITHUB_STEP_SUMMARY"
+            echo "::notice title=Deploy skipped::Repository secret missing: CLOUDFARE_API_TOKEN"
             echo "ready=false" >> "$GITHUB_OUTPUT"
           else
             echo "ready=true" >> "$GITHUB_OUTPUT"
@@ -104,8 +108,10 @@ jobs:
         id: publish
         if: steps.secrets.outputs.ready == 'true'
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # The repository secret is spelt CLOUDFARE_API_TOKEN (no L after the F), as saved on
+          # 4 November 2026; wrangler still reads the variable as CLOUDFLARE_API_TOKEN.
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 35e8f9e8edb5487b97309d107331f7f5
         run: npx --yes wrangler@4 pages deploy dist --project-name ukcouncils --branch main --commit-hash "$GITHUB_SHA"
 
       # IndexNow, only after a publish that succeeded. The manifest of page
