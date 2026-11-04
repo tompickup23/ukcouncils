@@ -68,10 +68,6 @@ describe("the year variable", () => {
     const EXCEPTIONS: Record<string, string[]> = {
       // A fixed historical fact about two named tables, not the current year.
       "src/pages/methodology.astro": ["2024 to 2025", "2025 to 2026"],
-      // A link to the old increases URL, which public/_redirects sends to the
-      // 2026/27 section. The file belongs to another change; when that link
-      // moves to INCREASES_PATH this exception goes.
-      "src/pages/councils/[slug].astro": ["2026-27"],
     };
     const offenders: string[] = [];
     for (const path of walk(join(ROOT, "src"), /\.(astro|ts)$/)) {

@@ -1,4 +1,5 @@
-import { CURRENT_YEAR, NEXT_YEAR, yearLabel } from "./council-tax";
+import { BANDS, CURRENT_YEAR, NEXT_YEAR, yearLabel } from "./council-tax";
+import { bandPath } from "./paths";
 
 export const SITE_NAME = "UK Councils";
 
@@ -83,10 +84,19 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { href: "/council-tax/", label: "Council tax in England", desc: "The England average and every council" },
       { href: "/compare/", label: "Compare councils", desc: "Compare the same band and year within a council type" },
-      { href: "/council-tax/band-d/", label: "Band D", desc: "Band D for every council, by region" },
       { href: INCREASES_PATH, label: "Rises by year", desc: `How much each council raised its own share, to ${yearLabel(CURRENT_YEAR)}` },
       { href: NEXT_YEAR_PATH, label: `Council tax ${yearLabel(NEXT_YEAR)}`, desc: "Not yet set: when the figures are published" },
     ],
+  },
+  {
+    label: "Bands",
+    // The band pages, A to H. Band D sits here with the others, not on its own
+    // in the council tax group.
+    items: BANDS.map((band) => ({
+      href: bandPath(band),
+      label: `Band ${band}`,
+      desc: `Band ${band} for every council, by region`,
+    })),
   },
   {
     label: "About",
