@@ -14,7 +14,7 @@ import {
   bandMeaning,
   loadYear,
   pounds,
-  percent,
+  percentChangeOn,
   tenInstalments,
   twelveInstalments,
   wholePounds,
@@ -38,6 +38,8 @@ const areaSource = area ? councilTaxSource(CURRENT_YEAR, area.table) : null;
 const englandAverageForBand = band === "D" && area && typeof area.england.pounds === "number"
   ? area.england.pounds
   : null;
+const englandChange = area ? percentChangeOn(area.england.changePct, previous) : null;
+const areaTableLabel = area ? tableName(area.table) : null;
 const instalmentSource = areaSource
   ? {
       ...areaSource,
@@ -55,7 +57,7 @@ const instalmentSource = areaSource
         <Fact
           label={`England average area Band ${band}, ${year}`}
           figure={wholePounds(englandAverageForBand)}
-          change={`up ${percent(area.england.changePct)} on ${previous}`}
+          change={englandChange}
           source={areaSource}
         >
           <p class="caveat">Includes the adult social care and average parish precepts.</p>
@@ -86,7 +88,7 @@ const instalmentSource = areaSource
     </div>
   ) : (
     <p class="muted" data-band-average-absent>
-      MHCLG does not publish an England average for Band {band}. The England average it publishes is for Band D only ({year}, {area ? tableName(area.table) : "Table 7"}). Band {band} for every council is listed in the tables below from {bandSource.table}.
+      MHCLG does not publish an England average for Band {band}. The England average it publishes is for Band D only{areaTableLabel ? ` (${year}, ${areaTableLabel})` : ` (${year})`}. Band {band} for every council is listed in the tables below from {bandSource.table}.
     </p>
   )}
 

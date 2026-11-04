@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import {
   BANDS,
+  CURRENT_YEAR,
   YEARS,
   bandChange,
   changePhrase,
@@ -9,12 +10,14 @@ import {
   loadYear,
   bandExtremes,
   bandMeaning,
+  percentChangeOn,
   pounds,
   tenInstalments,
   twelveInstalments,
   yearLabel,
   yearWords,
 } from "../src/lib/council-tax";
+import { tableName } from "../src/lib/sources";
 
 /**
  * The committed council tax files, held to the contract the pages rely on.
@@ -94,13 +97,13 @@ describe.each(YEARS)("england-%s.json", (year) => {
 });
 
 describe("the current year", () => {
-  const data = loadYear("2026-27");
+  const data = loadYear(CURRENT_YEAR);
 
   it("carries the England area average and the Band D history", () => {
     expect(data.england.areaBandD?.england).toEqual({ pounds: 2392, changePct: 4.9 });
     const history = data.england.history?.rows ?? [];
     expect(history[0]?.year).toBe("2012-13");
-    expect(history.at(-1)).toEqual({ year: "2026-27", pounds: 2392, changePct: 4.9 });
+    expect(history.at(-1)).toEqual({ year: CURRENT_YEAR, pounds: 2392, changePct: 4.9 });
   });
 
   it("matches rows read from the published workbook by hand", () => {
@@ -151,6 +154,13 @@ describe("the change between years", () => {
     expect(changePhrase({ pounds: -1, pct: -0.3 })).toBe("down £1.00 (0.3%)");
     expect(changePhrase({ pounds: 0, pct: 0 })).toBe("unchanged");
   });
+
+  it("reads a percent change line with direction and no sign", () => {
+    expect(percentChangeOn(4.9, "2025/26")).toBe("up 4.9% on 2025/26");
+    expect(percentChangeOn(-0.3, "2025/26")).toBe("down 0.3% on 2025/26");
+    expect(percentChangeOn(0, "2025/26")).toBe("up 0.0% on 2025/26");
+    expect(percentChangeOn(null, "2025/26")).toBeNull();
+  });
 });
 
 describe("formatting", () => {
@@ -192,10 +202,19 @@ describe("band headline helpers", () => {
   });
 
   it("divides the held England Band D average by ten and twelve the same way as elsewhere", () => {
-    const annual = loadYear("2026-27").england.areaBandD?.england.pounds;
+    const annual = loadYear(CURRENT_YEAR).england.areaBandD?.england.pounds;
     expect(typeof annual).toBe("number");
     if (typeof annual !== "number") return;
     expect(tenInstalments(annual)).toBe(Number((annual / 10).toFixed(2)));
     expect(twelveInstalments(annual)).toBe(Number((annual / 12).toFixed(2)));
+  });
+
+  it("names the England average table from the source record, never a literal", () => {
+    const area = loadYear(CURRENT_YEAR).england.areaBandD;
+    expect(area?.table).toBeTruthy();
+    expect(tableName(area!.table)).toBe(area!.table.replace(/_/g, " "));
+    const headline = readFileSync("src/components/BandHeadline.astro", "utf-8");
+    expect(headline).not.toMatch(/"Table 7"/);
+    expect(headline).toMatch(/tableName\(area\.table\)/);
   });
 });
