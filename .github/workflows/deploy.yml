@@ -61,6 +61,8 @@ jobs:
 
       - name: Publish dist/ to Cloudflare Pages
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # The repository secret is spelt CLOUDFARE_API_TOKEN (no L after the F), as saved on
+          # 4 November 2026; wrangler still reads the variable as CLOUDFLARE_API_TOKEN.
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 35e8f9e8edb5487b97309d107331f7f5
         run: npx --yes wrangler@4 pages deploy dist --project-name ukcouncils --branch main --commit-hash "$GITHUB_SHA"

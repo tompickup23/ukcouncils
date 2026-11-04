@@ -19,8 +19,8 @@ acceptance are met.
 
 **How it was deployed.** From this Mac with `wrangler pages deploy dist
 --project-name ukcouncils --branch main` after a `BUILD_OG=1` build and every
-gate. `deploy.yml` fails at the publish step until the `CLOUDFLARE_API_TOKEN`
-repository secret exists; until then deploy the same way by hand.
+gate. Since 4 November 2026 `deploy.yml` publishes on every push to `main`, using
+the repository secret `CLOUDFARE_API_TOKEN` (spelt without the L after the F).
 
 **DNS (Cloudflare zone `1eca098af86df9cddbfc9ee0938096d8`).** Proxied CNAMEs `@`
 and `www` to `ukcouncils.pages.dev`; MX `1 smtp.google.com`; SPF; Google site
@@ -39,7 +39,7 @@ Branch protection on `validate` at launch (needs GitHub Pro or a public repo).
 Bing Webmaster Tools: done by Tom (imported from Search Console).
 
 ```bash
-gh secret set CLOUDFLARE_API_TOKEN -R tompickup23/ukcouncils
+gh secret set CLOUDFARE_API_TOKEN -R tompickup23/ukcouncils
 ```
 
 **Next session, in this order.**
@@ -116,8 +116,9 @@ npm run test:csp`.
 
 A push to `main` runs `.github/workflows/deploy.yml`: the same gates as CI, a
 build with `BUILD_OG=1`, then `wrangler pages deploy dist --project-name
-ukcouncils --branch main`. It needs the `CLOUDFLARE_API_TOKEN` repository
-secret. Pull requests run `.github/workflows/ci.yml` and publish nothing.
+ukcouncils --branch main`. It reads the `CLOUDFARE_API_TOKEN` repository secret
+(spelt without the L after the F, as saved on 4 November 2026) into wrangler's
+`CLOUDFLARE_API_TOKEN` variable. Pull requests run `.github/workflows/ci.yml` and publish nothing.
 
 ## Data
 
