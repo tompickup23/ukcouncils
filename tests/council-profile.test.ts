@@ -40,22 +40,37 @@ function page(slug: string): string {
   return readFileSync(join(DIST, "councils", slug, "index.html"), "utf-8");
 }
 
+/**
+ * The raw files the expected sections come from, read once for the whole
+ * run: reading them again for each of 296 councils made the test slow.
+ */
+const SPENDING = JSON.parse(readFileSync(join(ROOT, "data", "spending", "aidoge-summaries.json"), "utf-8"));
+const MANIFEST = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", "manifest.json"), "utf-8"));
+const FEED = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", MANIFEST.file), "utf-8"));
+const CURRENT = loadYear(CURRENT_YEAR);
+
 /** The sections a council's data supports, read from the raw files, not through the reader. */
 function expectedSections(gss: string, parentGss: string | null): string[] {
-  const spending = JSON.parse(readFileSync(join(ROOT, "data", "spending", "aidoge-summaries.json"), "utf-8"));
-  const manifest = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", "manifest.json"), "utf-8"));
-  const feed = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", manifest.file), "utf-8"));
-  const bandD = loadYear(CURRENT_YEAR).authorities[gss]?.bands.D;
-  const calendar = feed.authorities[parentGss || gss];
+  const bandD = CURRENT.authorities[gss]?.bands.D;
+  const calendar = FEED.authorities[parentGss || gss];
   const present: Record<string, boolean> = {
     about: true,
-    spending: Boolean(spending.bodies[gss]?.generated),
+    spending: Boolean(SPENDING.bodies[gss]?.generated),
     "tax-summary": typeof bandD === "number" && bandD > 0,
-    "school-holidays": Boolean(calendar && calendar.scope === "authority" && calendar.years[feed.currentYear]),
+    "school-holidays": Boolean(calendar && calendar.scope === "authority" && calendar.years[FEED.currentYear]),
     sources: true,
   };
   return PROFILE_SECTIONS.filter((id) => present[id]);
 }
+
+/** Every reorganisation source URL the register records. */
+const REORGANISATION_URLS = [
+  ...new Set(
+    Object.values(loadRegistry().councils)
+      .map((council) => council.reorganisation?.sourceUrl)
+      .filter((url): url is string => Boolean(url)),
+  ),
+];
 
 describe("the Lancashire council profiles", () => {
   it("builds a page for the fourteen Lancashire councils with a council tax row", () => {
@@ -102,10 +117,19 @@ describe("the Lancashire council profiles", () => {
 
   it("builds no seats, control or election section: no committed file holds them", () => {
     const files = readdirSync(join(ROOT, "data"), { recursive: true }) as string[];
+    // These two checks fail by design once a seats or elections file is
+    // committed: that is the point at which the section must be built.
     expect(files.filter((f) => /seat|election|control|councillor/i.test(f))).toEqual([]);
     for (const { council, tax } of lancashire) {
       const profile = councilProfile(council, tax) as unknown as Record<string, unknown>;
       for (const key of ["seats", "control", "elections"]) expect(profile[key]).toBeUndefined();
+    }
+  });
+
+  it("lists no reorganisation source for any council", () => {
+    for (const { council, tax } of pages) {
+      const urls = councilProfile(council, tax).sources.map((source) => source.url);
+      for (const url of REORGANISATION_URLS) expect(urls, council.slug).not.toContain(url);
     }
   });
 
@@ -149,7 +173,7 @@ describe.skipIf(!built)("the built Lancashire council pages", () => {
     }
   });
 
-  it("put the parish precept caveat under every Band D figure", () => {
+  it("put the parish precept caveat directly under every Band D figure", () => {
     for (const { council } of lancashire) {
       const html = page(council.slug).replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, "");
       const starts = [...html.matchAll(/<[^>]*\sdata-fact\b[^>]*>/g)].map((m) => m.index!);
@@ -162,7 +186,14 @@ describe.skipIf(!built)("the built Lancashire council pages", () => {
         const label = text(/class="fact-label">([\s\S]*?)<\/span>/.exec(segment)?.[1] ?? "");
         if (!/Band D/.test(beforeSource) || /^Change on/.test(label)) continue;
         checked += 1;
-        expect(text(segment), `${council.slug}: ${beforeSource.slice(0, 80)}`).toMatch(/parish/i);
+        // The element that follows the figure's source line, and the figure
+        // block it closes, is the caveat, and the caveat names parish precepts.
+        const sourceAt = segment.indexOf('class="source-line');
+        const afterSource = segment.slice(segment.indexOf("</p>", sourceAt) + 4).replace(/^\s*(<\/div>\s*)?/, "");
+        const caveat = /^<p class="caveat"[^>]*>([\s\S]*?)<\/p>/.exec(afterSource);
+        const where = `${council.slug}: ${beforeSource.slice(0, 80)}`;
+        expect(caveat, where).not.toBeNull();
+        expect(text(caveat![1]), where).toMatch(/parish\b.*\bprecepts?\b/i);
       }
       expect(checked, council.slug).toBeGreaterThan(2);
     }
@@ -179,5 +210,18 @@ describe.skipIf(!built)("the built Lancashire council pages", () => {
       const missing = [...cited].filter((href) => !listed.has(href));
       expect(missing, council.slug).toEqual([]);
     }
+  });
+});
+
+describe.skipIf(!built)("every built page", () => {
+  it("cites no reorganisation source", () => {
+    const files = (readdirSync(DIST, { recursive: true }) as string[]).filter((f) => f.endsWith(".html"));
+    expect(files.length).toBeGreaterThan(300);
+    expect(REORGANISATION_URLS.length).toBeGreaterThan(0);
+    const citing = files.filter((f) => {
+      const html = readFileSync(join(DIST, f), "utf-8");
+      return REORGANISATION_URLS.some((url) => html.includes(url));
+    });
+    expect(citing).toEqual([]);
   });
 });

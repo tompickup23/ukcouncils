@@ -1,4 +1,4 @@
-import { boundaryMap, boundarySource } from "./boundaries";
+import { boundaryAreas, boundarySource } from "./boundaries";
 import {
   CURRENT_YEAR,
   PREVIOUS_YEAR,
@@ -148,7 +148,7 @@ export function profileTermDates(
  * Every table and file a council page draws on, once each, in page order. It
  * mirrors what the page prints: the band table for each year in the history,
  * the England area table, the own share tables, the register, the spending
- * summary, the school calendar, the boundary file and the reorganisation note.
+ * summary, the school calendar and the boundary file.
  */
 export function profileSources(council: Council, tax: Authority, today = londonToday()): SourceRef[] {
   const out: SourceRef[] = [];
@@ -190,24 +190,26 @@ export function profileSources(council: Council, tax: Authority, today = londonT
     });
   }
 
-  if (boundaryMap(council.gss)) {
+  // Whether the committed boundary file holds this council, by its GSS code
+  // alone: drawing the map only to learn that would project every area.
+  if (hasBoundary(council.gss)) {
     add({
       publisher: boundarySource.publisher,
       title: boundarySource.title,
       url: boundarySource.url,
+      // The file records its edition, not a publication date.
+      table: `${boundarySource.date} edition, publication date not recorded`,
       date: null,
     });
   }
 
-  if (council.reorganisation) {
-    add({
-      publisher: new URL(council.reorganisation.sourceUrl).hostname,
-      title: "local government reorganisation note, as recorded by UK Places",
-      url: council.reorganisation.sourceUrl,
-      date: council.reorganisation.sourceDate,
-    });
-  }
   return out;
+}
+
+let boundaryIds: Set<string> | undefined;
+function hasBoundary(gss: string): boolean {
+  boundaryIds ??= new Set(boundaryAreas().map((area) => area.properties.LAD26CD));
+  return boundaryIds.has(gss);
 }
 
 export function councilProfile(council: Council, tax: Authority, today = londonToday()): CouncilProfile {

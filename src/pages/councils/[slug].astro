@@ -40,7 +40,7 @@ import { bandLinks, similarCouncils } from "../../lib/council-links";
 import { sisterLinks, type Council } from "../../lib/registry";
 import { INCREASES_PATH, OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
-import { councilTaxSource, longDate } from "../../lib/sources";
+import { councilTaxSource } from "../../lib/sources";
 import { councilProfile } from "../../lib/council-profile";
 
 export function getStaticPaths() {
@@ -170,7 +170,6 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
     ...(history.length > 1 ? [{id: 'history', label: 'Previous years'}] : []),
     ...(own ? [{id: 'who-sets-it', label: 'Who sets the charge'}] : []),
-    ...(council.reorganisation ? [{id: 'reorganisation', label: 'Reorganisation'}] : []),
     ...(profile.sources.length > 0 ? [{id: 'sources', label: 'Sources'}] : []),
   ]} />
 
@@ -279,16 +278,6 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
         </ul>
       )}
       <p class="muted"><a href={INCREASES_PATH}>How much every council raised its own share this year</a>.</p>
-    </section>
-  )}
-
-  {council.reorganisation && (
-    <section class="section" id="reorganisation" aria-labelledby="reorganisation-heading">
-      <h2 id="reorganisation-heading">Is {name} council being reorganised?</h2>
-      <p>{council.reorganisation.note}</p>
-      <p class="source-line">
-        Source: <a href={council.reorganisation.sourceUrl}>{new URL(council.reorganisation.sourceUrl).hostname}</a>{longDate(council.reorganisation.sourceDate) ? `, ${longDate(council.reorganisation.sourceDate)}` : ""}, as recorded by UK Places.
-      </p>
     </section>
   )}
 

@@ -18,7 +18,7 @@ const { name, about } = Astro.props;
   <h2 id="about-heading">What is {name} council?</h2>
   <div class="profile-about">
     <dl class="profile-list">
-      <div><dt>Official name</dt><dd>{about.officialName}</dd></div>
+      <div><dt>Name in the register</dt><dd>{about.officialName}</dd></div>
       <div><dt>Type</dt><dd data-council-type>{about.type}</dd></div>
       {about.county && <div><dt>County</dt><dd>{about.county}</dd></div>}
     </dl>
