@@ -32,8 +32,9 @@ export function councilTaxRelease(): string | null {
 
 /**
  * The newest source date a council page draws on: the MHCLG release behind
- * every band, and where the page shows them, the AI DOGE spending summary,
- * the reorganisation source and the school calendar capture.
+ * every band, and where the page shows them, the AI DOGE spending summary
+ * and the school calendar capture. The reorganisation field is held (see
+ * "Held data" in CLAUDE.md), so its source date does not count.
  */
 export function councilLastmod(council: Council, tax: Authority): string | null {
   const spending = spendingFor(council.gss);
@@ -41,7 +42,6 @@ export function councilLastmod(council: Council, tax: Authority): string | null 
   return newest([
     councilTaxRelease(),
     spending && spendingRecord(tax.name, spending) ? spending.generated : null,
-    council.reorganisation?.sourceDate,
     calendar?.year?.retrievedAt,
   ]);
 }
