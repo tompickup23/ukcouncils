@@ -87,7 +87,7 @@ test('regional table keeps a selected band, filters, and only sorts one class', 
   await expect(page.locator('details table thead th')).toHaveCount(9);
 });
 
-test('metadata separates publisher from the council and omits invented sitemap dates', async ({page,request}) => {
+test('metadata separates publisher from the council and dates the sitemap only from sources', async ({page,request}) => {
   await page.goto('/councils/burnley/');
   const nodes = await page.locator('script[type="application/ld+json"]').evaluateAll(elements => elements.map(element => JSON.parse(element.textContent!)));
   expect(nodes.find(node => node['@type'] === 'WebPage').about.identifier).toBe('E07000117');
@@ -95,7 +95,10 @@ test('metadata separates publisher from the council and omits invented sitemap d
   expect(nodes.some(node => node['@type'] === 'GovernmentOrganization' && node.url?.includes('ukcouncils'))).toBe(false);
   await expect(page.locator('a[href*="ukfoodhygiene"]')).toHaveCount(0);
   const sitemap = await (await request.get('/sitemap.xml')).text();
-  expect(sitemap).not.toContain('<lastmod>');
+  // lastmod is a source date (src/lib/lastmod.ts), a plain day, never a build timestamp.
+  for (const [, date] of sitemap.matchAll(/<lastmod>([^<]*)<\/lastmod>/g)) expect(date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  expect(sitemap).toMatch(/\/councils\/burnley\/<\/loc><lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+  expect(sitemap).toContain('/about/</loc></url>');
   expect(sitemap).toContain('/compare/</loc>');
   expect(sitemap).not.toContain('?a=');
 });

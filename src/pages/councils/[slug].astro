@@ -31,8 +31,9 @@ import {
   type Authority,
 } from "../../lib/council-tax";
 import { councilPages, councilPath, regionPath } from "../../lib/paths";
+import { bandLinks, similarCouncils } from "../../lib/council-links";
 import { sisterLinks, type Council } from "../../lib/registry";
-import { OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
+import { INCREASES_PATH, OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
 import { councilTaxSource } from "../../lib/sources";
 import { spendingFor, spendingRecord } from "../../lib/spending";
@@ -58,7 +59,6 @@ const bandD = tax.bands.D;
 const changeD = bandChange(council.gss, "D");
 const areaType = areaTypeFor(tax.classCode);
 const englandArea = current.england.areaBandD;
-const bandSource = councilTaxSource(CURRENT_YEAR, current.source.bandTable);
 const areaSource = englandArea ? councilTaxSource(CURRENT_YEAR, englandArea.table) : null;
 
 /** The class of authority as a sentence, with the county for a district. */
@@ -93,34 +93,19 @@ const historySource = {
 const links = sisterLinks(council);
 const path = councilPath(council);
 const question = `How much is council tax in ${name} in ${year}?`;
-const answer = `Band D council tax in ${name} is ${pounds(bandD)} a year in ${year}`
-  + (changeD ? `, ${changePhrase(changeD)} on ${previous}` : "")
-  + `. The figure includes the share of every body that sets council tax there, with parish precepts as an average, from MHCLG ${bandSource.table}.`;
+const bands = bandLinks(council, tax.region);
+const similar = similarCouncils(council);
 
+/** The title's subject, before the pipe. The H1 prints the same words. */
 const title = `${name} council tax bands ${year}`;
 const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   + (changeD ? `, ${changePhrase(changeD)} on ${previous}` : "")
   + `. Every band from A to H, who sets each share and the England average, from MHCLG.`;
-
-const structuredData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: question,
-        acceptedAnswer: { "@type": "Answer", text: answer },
-      },
-    ],
-  },
-];
 ---
 <BaseLayout
   title={title}
   description={description}
   path={path}
-  structuredData={structuredData}
   about={{"@type": "GovernmentOrganization", name: council.officialName, identifier: council.gss, areaServed: {"@type": "AdministrativeArea", name, identifier: council.gss}}}
   ogImage={councilCardPath(council.slug)}
   ogImageAlt={`${name}: council tax bands A to H, ${year}`}
@@ -129,7 +114,7 @@ const structuredData = [
 
   <header class="page-head council-head">
     <p class="eyebrow">Council</p>
-    <h1>{name}</h1>
+    <h1>{title}</h1>
     <p class="muted">{typeLine}</p>
   </header>
 
@@ -163,6 +148,14 @@ const structuredData = [
     <a href={OFFICIAL_COUNCIL_LOOKUP}>Find your council for your exact bill</a>
   </div>
   <CouncilActions slug={council.slug} />
+  {bands.length > 0 && (
+    <nav class="band-links" aria-labelledby="band-links-heading">
+      <h2 id="band-links-heading" class="small-heading">Bands A to H for every council, with {name} in its region</h2>
+      <ul class="pill-nav">
+        {bands.map(({ band, href }) => <li><a href={href} data-band-link={band}>Band {band}</a></li>)}
+      </ul>
+    </nav>
+  )}
   <PageContents items={[
     ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
     ...(history.length > 1 ? [{id: 'history', label: 'Previous years'}] : []),
@@ -262,7 +255,7 @@ const structuredData = [
           {own.notes.map((note) => <li>MHCLG note: {note.text}</li>)}
         </ul>
       )}
-      <p class="muted"><a href="/council-tax/rises-2026-27/">How much every council raised its own share this year</a>.</p>
+      <p class="muted"><a href={INCREASES_PATH}>How much every council raised its own share this year</a>.</p>
     </section>
   )}
 
@@ -271,6 +264,18 @@ const structuredData = [
   {/* The reorganisation field is held: see "Held data" in CLAUDE.md. */}
 
   <SchoolHolidays place={council} />
+
+  {similar && (
+    <section class="section" id="similar" aria-labelledby="similar-heading">
+      <h2 id="similar-heading">Similar councils</h2>
+      <p class="muted">{similar.heading}, by council type in the UK Places register.</p>
+      <ul class="sister-links" data-similar-councils>
+        {similar.pages.map(({ council: other, tax: otherTax }) => (
+          <li><a href={councilPath(other)}>{otherTax.name}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   {links.length > 0 && (
     <section class="section" id="more" aria-labelledby="more-heading">
@@ -290,5 +295,7 @@ const structuredData = [
   #council-tax { max-width: 48rem; margin-top: 1rem; }
   .notes { font-size: 0.9rem; color: var(--text-muted); padding-left: 1.1rem; }
   .sister-links { padding-left: 1.1rem; }
+  .band-links { margin-top: 1.5rem; }
+  .small-heading { font-size: 1rem; margin: 0 0 0.5rem; }
   .sister-links li { margin: 0.25rem 0; }
 </style>
