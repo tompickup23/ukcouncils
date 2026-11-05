@@ -34,7 +34,7 @@ import { councilPages, councilPath, regionPath } from "../../lib/paths";
 import { sisterLinks, type Council } from "../../lib/registry";
 import { OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
-import { councilTaxSource, longDate } from "../../lib/sources";
+import { councilTaxSource } from "../../lib/sources";
 import { spendingFor, spendingRecord } from "../../lib/spending";
 
 export function getStaticPaths() {
@@ -168,7 +168,6 @@ const structuredData = [
     ...(history.length > 1 ? [{id: 'history', label: 'Previous years'}] : []),
     ...(own ? [{id: 'who-sets-it', label: 'Who sets the charge'}] : []),
     ...(spendingRecord(name, spendingFor(council.gss)) ? [{id: 'spending', label: 'Spending'}] : []),
-    ...(council.reorganisation ? [{id: 'reorganisation', label: 'Reorganisation'}] : []),
   ]} />
 
   {englandArea && areaSource && (
@@ -269,15 +268,7 @@ const structuredData = [
 
   <SpendingRecord gss={council.gss} name={name} />
 
-  {council.reorganisation && (
-    <section class="section" id="reorganisation" aria-labelledby="reorganisation-heading">
-      <h2 id="reorganisation-heading">Is {name} council being reorganised?</h2>
-      <p>{council.reorganisation.note}</p>
-      <p class="source-line">
-        Source: <a href={council.reorganisation.sourceUrl}>{new URL(council.reorganisation.sourceUrl).hostname}</a>{longDate(council.reorganisation.sourceDate) ? `, ${longDate(council.reorganisation.sourceDate)}` : ""}, as recorded by UK Places.
-      </p>
-    </section>
-  )}
+  {/* The reorganisation field is held: see "Held data" in CLAUDE.md. */}
 
   <SchoolHolidays place={council} />
 

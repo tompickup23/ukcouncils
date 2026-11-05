@@ -13,6 +13,7 @@
  *   * a band page or the national table that does not list every authority
  *     in the band table, or a council page count that does not match it
  *   * a council page with no MHCLG source line or no parish precept caveat
+ *   * any built file carrying the held reorganisation text
  *
  * Exits non-zero naming each failure.
  */
@@ -28,6 +29,7 @@ const SITE_URL = "https://ukcouncils.co.uk";
 const BEACON_TOKEN = "78d78550d291419997e07dfb8c36dbdc";
 // Built from parts so this file does not carry the entity names it looks for.
 const DASH = new RegExp(`[\\u2013\\u2014]|&${"m"}dash;|&${"n"}dash;`);
+const HELD_PHRASES = ["government-decided", "four-unitary", "Structural Change Order"];
 
 if (!existsSync(DIST)) {
   console.error("dist/ is not there. Run npm run build first.");
@@ -52,6 +54,8 @@ for (const path of files(DIST)) {
   if (!/\.(html|xml|txt|json|js|css|svg|webmanifest)$|_headers$|_redirects$/.test(path)) continue;
   const text = readFileSync(path, "utf-8");
   if (DASH.test(text)) failures.push(`dash in ${rel(path)}`);
+  // The withdrawn Lancashire reorganisation note is held: see "Held data" in CLAUDE.md.
+  for (const phrase of HELD_PHRASES) if (text.includes(phrase)) failures.push(`held reorganisation text "${phrase}" in ${rel(path)}`);
   if (/https?:\/\/ukfoodhygiene\.co\.uk\b/.test(text)) failures.push(`private sister link in ${rel(path)}`);
   if (!path.endsWith(".html")) continue;
   pages += 1;

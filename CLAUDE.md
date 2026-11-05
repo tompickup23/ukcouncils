@@ -86,6 +86,21 @@ line under every Band D figure is not optional).
   of tolerance, runs on every static path.
 - **Components are copied into this repo, never imported across repos.**
 
+## Held data
+
+**The registry `reorganisation` field is held, from 5 November 2026.** No page
+renders it: not the council page section, its contents entry, JSON-LD, OG text
+or the search index. The field came from the UK Places spine and described the
+fourteen Lancashire councils as part of a "government-decided four-unitary
+model", citing news.lancashire.gov.uk, 16 July 2026. As reported to this repo,
+the government withdrew that decision on 29 October 2026 (Hansard, 29 October
+2026, HCWS432; MHCLG, "Local government reorganisation: review update letters
+to council leaders", 29 October 2026). The fix belongs in UK Places; do not
+edit `data/registry/councils.json` by hand. Render the field again only after
+the registry is rebuilt from a corrected source, and any new statement about
+reorganisation needs the owner's decision and two sources. `npm run test:dist`
+and `tests/reorganisation-held.test.ts` fail if the text reaches `dist/`.
+
 ## Design
 
 The estate brand system (`clawd/briefings/uk-network-brand/BRAND-SYSTEM-2026-08-23.md`)
