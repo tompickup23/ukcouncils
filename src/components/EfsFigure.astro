@@ -1,0 +1,25 @@
+---
+import SourceLine from "./SourceLine.astro";
+import type { EfsFigure, EfsStatement } from "../lib/efs";
+import { efsRoles, efsSource, efsYear } from "../lib/efs-presentation";
+interface Props { figure: EfsFigure; statement: EfsStatement }
+const { figure, statement } = Astro.props;
+---
+<div class="efs-figure" data-fact data-efs-figure data-role={figure.role} data-year={figure.supportYear} data-amount={figure.amountGbpM}>
+  <p>
+    {figure.amountGbpM !== null && <strong data-figure>£{figure.amountGbpM}m</strong>}
+    <span>{efsYear(figure.supportYear)}</span>
+    <span class="role">{efsRoles[figure.role]}</span>
+  </p>
+  {figure.marking && <p class="marking">{efsYear(figure.marking)}</p>}
+  {figure.note && <p class="caveat">{efsYear(figure.note)}</p>}
+  <SourceLine source={efsSource(statement.page, statement.table)} />
+</div>
+<style>
+  .efs-figure { overflow-wrap: anywhere; }
+  .efs-figure + .efs-figure { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .efs-figure p { margin: 0.25rem 0; }
+  strong { font-variant-numeric: tabular-nums; margin-right: 0.5rem; }
+  .role { display: block; color: var(--text-muted); font-size: 0.9rem; }
+  .marking { font-size: 0.9rem; }
+</style>

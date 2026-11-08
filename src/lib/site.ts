@@ -66,6 +66,7 @@ export const STATIC_PATHS = [
   "/contact/",
   "/corrections/",
   "/findings/",
+  "/exceptional-financial-support/",
 ] as const;
 
 export type NavItem = { href: string; label: string; desc: string };

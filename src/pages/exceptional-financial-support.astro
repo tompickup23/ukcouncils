@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageContents from "../components/PageContents.astro";
+import SourceLine from "../components/SourceLine.astro";
+import EfsFigure from "../components/EfsFigure.astro";
+import { efs, pages, authorities, statements, multipleFigures, figuresByAuthority, type EfsTable } from "../lib/efs";
+import { efsYear, efsSource, efsTableHeading } from "../lib/efs-presentation";
+import { longDate } from "../lib/sources";
+
+const years = Object.keys(pages).sort().reverse();
+const period = `${efsYear(years.at(-1)!)} to ${efsYear(years[0])}`;
+const councilIndex = Object.entries(authorities).sort(([, a], [, b]) => a.name.localeCompare(b.name, "en-GB"));
+const byAuthority = figuresByAuthority();
+const tables: EfsTable[] = ["main", "later", "hra", "police", "birmingham_revised"];
+const collectionSource = {
+  publisher: efs.publisher,
+  title: "Exceptional Financial Support for local authorities",
+  url: efs.collection,
+  table: "last updated 23 February 2026",
+};
+---
+<BaseLayout
+  title={`Exceptional Financial Support for councils in England, ${period}`}
+  description={`Exceptional Financial Support in England, by year and council. MHCLG figures, sources, markings and revision notes, ${period}.`}
+  path="/exceptional-financial-support/"
+>
+  <Breadcrumbs items={[{ label: "Exceptional Financial Support" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Council finance, England</p>
+    <h1>Exceptional Financial Support</h1>
+    <p class="lede">MHCLG's published support, by year and council, from {efsYear(years.at(-1)!)} to {efsYear(years[0])}.</p>
+  </header>
+  <PageContents items={[{ id: "what-it-is", label: "What it is" }, { id: "by-year", label: "By year" }, { id: "by-council", label: "By council" }, { id: "method", label: "How this page is made" }]} />
+
+  <section class="section" id="what-it-is" aria-labelledby="what-heading">
+    <h2 id="what-heading">What is Exceptional Financial Support?</h2>
+    <p>The government agrees support for councils that requested help with financial pressures they considered unmanageable. Where relevant, support is conditional on an external assurance review.</p>
+    <SourceLine source={collectionSource} />
+    <p>Support most often takes the form of permission to treat revenue costs as capital costs, through a capitalisation direction.</p>
+    <SourceLine source={{ publisher: "Department for Levelling Up, Housing and Communities", title: "Local Government Finance Update", table: "HCWS300", date: "2024-02-29", url: "https://questions-statements.parliament.uk/written-statements/detail/2024-02-29/hcws300" }} />
+    <p class="caveat">The figures retain MHCLG's markings. Amounts from different pages are shown separately, with revision notes where MHCLG provides them.</p>
+  </section>
+
+  <section class="section" id="by-year" aria-labelledby="year-heading">
+    <h2 id="year-heading">By year</h2>
+    <ul class="pill-nav">{years.map(year => <li><a href={`#year-${year}`}>{efsYear(year)}</a></li>)}</ul>
+    {years.map(year => {
+      const page = pages[year];
+      const pageStatements = statements.filter(statement => statement.page === year);
+      const mainCount = pageStatements.filter(statement => statement.table === "main").length;
+      return <section class="year-section" id={`year-${year}`} aria-labelledby={`heading-${year}`}>
+        <h3 id={`heading-${year}`}>{efsYear(year)}</h3>
+        <p><a href={page.url}>{page.title}</a></p>
+        <p class="muted">First published {longDate(page.firstPublished)}. Last updated {longDate(page.updated)}.</p>
+        <p>{page.proseCount ? <>The page says <q>{page.proseCount}</q>.</> : "The page prints no count."} Its main table lists {mainCount} authorities.</p>
+        <SourceLine source={efsSource(year)} />
+        {tables.map(table => {
+          const rows = pageStatements.filter(statement => statement.table === table);
+          if (!rows.length) return null;
+          const heading = efsTableHeading(table, year);
+          return <section class="table-section" aria-labelledby={`heading-${year}-${table}`}>
+            <h4 id={`heading-${year}-${table}`}>{heading}</h4>
+            <div class="table-wrap" role="region" aria-label={heading} tabindex="0">
+              <table class="data efs-table" data-efs-table={table} data-page={year}>
+                <caption>{heading}</caption>
+                <thead><tr><th scope="col">Authority</th><th scope="col">Figures and markings</th></tr></thead>
+                <tbody>{rows.map(statement => {
+                  const authority = authorities[statement.authority];
+                  return <tr data-efs-statement>
+                    <th scope="row">{authority.slug ? <a href={`/councils/${authority.slug}/`}>{statement.authorityAsPrinted}</a> : statement.authorityAsPrinted}</th>
+                    <td>{statement.figures.map(figure => <EfsFigure figure={figure} statement={statement} />)}</td>
+                  </tr>;
+                })}</tbody>
+              </table>
+            </div>
+            <SourceLine source={efsSource(year, table)} />
+          </section>;
+        })}
+        <p><a href="#by-year">Back to years</a></p>
+      </section>;
+    })}
+  </section>
+
+  <section class="section" id="by-council" aria-labelledby="council-heading">
+    <h2 id="council-heading">By council</h2>
+    <p>Every authority in the source tables, in alphabetical order. Housing Revenue Account and police support retain their separate labels.</p>
+    <ul class="authority-index">{councilIndex.map(([key, authority]) => <li><a href={`#authority-${key}`}>{authority.name}</a></li>)}</ul>
+    {councilIndex.map(([key, authority]) => {
+      const entries = byAuthority.get(key)!;
+      const differences = multipleFigures.filter(entry => entry.authority === key);
+      return <section class="authority-section" id={`authority-${key}`} aria-labelledby={`name-${key}`} data-efs-authority={key}>
+        <h3 id={`name-${key}`}>{authority.slug ? <a href={`/councils/${authority.slug}/`}>{authority.name}</a> : authority.name}</h3>
+        {differences.map(difference => <aside class="revision-note" data-efs-multiple>
+          <h4>MHCLG's pages print more than one figure for {efsYear(difference.supportYear)}</h4>
+          <p>{efsYear(difference.relation)}</p>
+          <ul>{Object.entries(difference.byPage).map(([page, amounts]) => <li>
+            <p>{amounts.map(amount => `£${amount}m`).join("; ")} on the {efsYear(page)} page.</p>
+            <SourceLine source={efsSource(page)} />
+          </li>)}</ul>
+        </aside>)}
+        {years.filter(year => entries.some(entry => entry.statement.page === year)).map(year => <section class="council-year" aria-labelledby={`authority-${key}-${year}`}>
+          <h4 id={`authority-${key}-${year}`}>From the {efsYear(year)} page</h4>
+          {entries.filter(entry => entry.statement.page === year).map(({ statement, figure }) => <EfsFigure figure={figure} statement={statement} />)}
+        </section>)}
+        <p><a href="#by-council">Back to council index</a></p>
+      </section>;
+    })}
+  </section>
+
+  <section class="section" id="method" aria-labelledby="method-heading">
+    <h2 id="method-heading">How this page is made</h2>
+    <p>The figures were curated by hand from the seven GOV.UK year pages on {longDate(efs.curated)}. Amounts and their decimal places are kept exactly as printed.</p>
+    <SourceLine source={collectionSource} />
+    <p>This page does not add support across councils or years, rank councils or compare their amounts. The figures mix in-principle and final amounts, capitalisation and grant, and general fund and Housing Revenue Account support. A covering total printed by MHCLG is kept alongside its breakdown and is never added to it.</p>
+    <p>Where pages print different figures for the same council and year, each figure remains with its own source. The relation is stated only where MHCLG states it. The number of table rows and the count quoted in the page's prose are reported separately.</p>
+    <p>Unlinked authorities are county councils, a former council and two police bodies with no UK Councils page. No successor relationship is inferred. Capitalisation direction PDFs, assurance reviews and request letters are outside this page's scope.</p>
+    <p>The source is published under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{efs.licence}</a>.</p>
+  </section>
+</BaseLayout>
+<style>
+  .year-section, .authority-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .year-section > h3, .authority-section > h3 { font-size: 1.5rem; margin-top: 0; }
+  .table-section, .council-year { margin: 1.5rem 0; }
+  .efs-table { table-layout: fixed; }
+  .efs-table th:first-child { width: 28%; }
+  .efs-table th, .efs-table td { overflow-wrap: anywhere; }
+  .efs-table tbody th:first-child { min-width: 0; position: static; }
+  .authority-index { columns: 3 14rem; padding-left: 1.25rem; }
+  .authority-index li { break-inside: avoid; margin: 0.4rem 0; }
+  .revision-note { margin: 1rem 0; padding: 1rem; border-left: 3px solid var(--accent); background: var(--bg-subtle); }
+  .revision-note h4 { margin-top: 0; }
+  .revision-note li { margin-bottom: 0.75rem; }
+  .authority-section, .year-section { overflow-wrap: anywhere; }
+  @media (max-width: 600px) { .efs-table th:first-child { width: 32%; } }
+</style>
