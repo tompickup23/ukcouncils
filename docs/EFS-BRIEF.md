@@ -57,6 +57,10 @@ Use existing components (`SourceLine`, `Breadcrumbs`, `PageContents` if it fits)
 
 Push `feat/efs-by-year` and open one PR to main titled "Exceptional Financial Support by year (I007)". In the body: what each phase built, the test counts, the data check result, screenshots at 375px and desktop in light and dark, the files you left alone because of PRs 13 and 30, and what is left for C3 (the council page link) and C2b (the 2027-28 list). End with: "Built with Codex from a brief and curated data prepared in Claude Code." Do not merge or deploy.
 
+## Review decisions, 8 November 2026
+
+After the phase 1 stop: the Birmingham hash convention is now written into the source notes, section 3. Use it in the extractor, then rerun the tests. Also fix the registry test: `data/registry/councils.json` holds `councils` as an object keyed by GSS, not an array. The uncommitted phase 1 files in the worktree are yours to finish; keep every integrity test as strict as it is now.
+
 ## Stop and report, rather than work around it, if
 
 - a raw body or cell hash test fails;

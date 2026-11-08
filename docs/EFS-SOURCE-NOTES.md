@@ -60,6 +60,8 @@ The 57 cells that hold more than one simple figure were read by hand. The 69 sim
 - South Yorkshire Mayoral Combined Authority and Kent Police and Crime Commissioner, with no code recorded.
 Names printed two ways ("Redcar & Cleveland" and "Redcar and Cleveland"; "Windsor & Maidenhead" and "Windsor and Maidenhead") resolve to one authority.
 
+**Cell hash convention** (added 8 November 2026 after the Codex phase 1 stop). `cellSha256` is the SHA-256 of the UTF-8 text of the cell after this normalisation: strip HTML tags, unescape HTML entities, collapse every run of whitespace to one space, trim. For the `main`, `hra`, `police` and `later` tables, the cell is the second column. For `birmingham_revised`, which has no header and holds the year in its first column, the hashed text is the normalised first cell, then a space, a vertical bar and a space, then the normalised second cell. Check: the 2020-21 Birmingham revised row hashes to `cd1ac3514bfd49d718815d9577422e439a5e5806d2e3b3f9f1dc3092bc43a5d4`, the stored value. The extractor should build that joined string for those six rows only. Do not change the stored hashes.
+
 **House style in the data.** Cell text is not stored, only its hash, because the cells in Birmingham's revised table join the earlier figure to its marking with a spaced hyphen, which the house rules forbid on any surface. The figures and markings are stored without it. The raw bodies in `data/efs/raw/` are verbatim source snapshots and keep MHCLG's punctuation, including one en dash in a 2026-27 heading. They are inputs to tests only and must never be rendered or copied into a page.
 
 ## 4. Figures that differ between pages
