@@ -58,8 +58,8 @@ export function binLabel(floor: number): string {
 
 /**
  * MHCLG notes on an own row saying the published change shows as a rounded
- * figure and the actual change is below the referendum threshold (notes s and
- * w in 2026 to 2027). Matched on MHCLG's own wording, never on a council name.
+ * figure and the actual change is below the referendum threshold.
+ * Matched on MHCLG's own wording, never on a council name.
  */
 const ROUNDING_NOTE = /due to rounding/i;
 
@@ -74,8 +74,7 @@ export function roundedLabel(published: number, note: Note): string {
 
 /**
  * MHCLG notes on an own row saying the average Band D including parish
- * precepts is pending approval (note x in 2026 to 2027). Matched on MHCLG's
- * own wording.
+ * precepts is pending approval. Matched on MHCLG's own wording.
  */
 const PENDING_PARISH_NOTE = /including local precepts.*pending approval/i;
 

@@ -8,7 +8,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import SourceLine from "../components/SourceLine.astro";
-import { CURRENT_YEAR, PREVIOUS_YEAR, yearLabel } from "../lib/council-tax";
+import { CURRENT_YEAR, PREVIOUS_YEAR, yearAnchor, yearLabel } from "../lib/council-tax";
+import { INCREASES_PATH } from "../lib/site";
 import {
   CHANGE_NOTE_ID,
   FINDINGS_DATE,
@@ -80,7 +81,7 @@ const showMissing = parish.totals.notPublished > 0;
       ))}
     </div>
     <p>
-      Every council's own figure and change are on <a href="/council-tax/rises-2026-27/">council tax rises {year}</a>
+      Every council's own figure and change are on <a href={`${INCREASES_PATH}#${yearAnchor(CURRENT_YEAR)}`}>council tax rises {year}</a>
       and on <a href="/councils/">each council's page</a>.
     </p>
   </article>
@@ -154,6 +155,6 @@ const showMissing = parish.totals.notPublished > 0;
 </BaseLayout>
 
 <style>
-  .updates { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+  .updates { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; overflow-wrap: anywhere; }
   .updates p { margin: 0; }
 </style>
