@@ -53,7 +53,7 @@ function strings(record: SpendingRecord): string[] {
   ];
 }
 
-// Built from parts, as in scripts/check-dist.mjs, so this file carries no entity name it looks for.
+// Built from parts so this file carries no entity name it looks for.
 const DASH = new RegExp(`[\\u2013\\u2014]|&${"m"}dash;|&${"n"}dash;|\\s-\\s`);
 const MOTIVE = /\b(hiding|hides|failing|failed to publish|waste|wasted|wasteful|scandal|secretive|unlawful|not compliant|non-compliant)\b/i;
 
@@ -135,12 +135,18 @@ describe("data/spending/aidoge-summaries.json", () => {
   const data = loadSpending();
   const registry = loadRegistry();
   const bodies = Object.entries(data.bodies);
+  const councilById = new Map(Object.values(registry.councils)
+    .filter((council) => council.sisters.aidoge)
+    .map((council) => [new URL(council.sisters.aidoge!).pathname.split("/").filter(Boolean).at(-1), council]));
 
   it("holds only councils the registry links to AI DOGE, at the URL the registry holds", () => {
     expect(bodies.length).toBeGreaterThan(0);
-    for (const [gss, body] of bodies) {
-      const council = registry.councils[gss];
-      expect(council, gss).toBeDefined();
+    for (const [key, body] of bodies) {
+      const council = councilById.get(body.id)!;
+      expect(council, key).toBeDefined();
+      expect([body.id, council.gss]).toContain(key);
+      expect(data.bodies[body.id]).toEqual(body);
+      expect(data.bodies[council.gss]).toEqual(body);
       expect(body.url).toBe(council.sisters.aidoge);
       expect(body.url.endsWith(`/${body.id}/`)).toBe(true);
     }
@@ -163,7 +169,7 @@ describe("data/spending/aidoge-summaries.json", () => {
 
   it("builds a record for every body it holds", () => {
     for (const [gss, body] of bodies) {
-      const record = spendingRecord(registry.councils[gss].name, body);
+      const record = spendingRecord(councilById.get(body.id)!.name, body);
       expect(record, gss).not.toBeNull();
       for (const text of strings(record!)) expect(text, gss).not.toMatch(DASH);
     }

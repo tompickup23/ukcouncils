@@ -10,7 +10,7 @@
       "url": "https://data.aidoge.co.uk/v1/banks.json",
       "generated": "2026-10-19"
     },
-    "rule": "One entry per council the registry links to an AI DOGE page and whose summary was published."
+    "rule": "Each council summary is keyed by its AI DOGE URL id and registry GSS code. Counts describe councils, not keys."
   },
   "counts": {
     "mapped": 234,
@@ -6906,6 +6906,6899 @@
         "records": 79152,
         "totalNet": 1293695785.32
       }
+    },
+    "adur": {
+      "id": "adur",
+      "url": "https://aidoge.co.uk/councils/adur/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8876
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6879
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1581
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6879,
+        "totalNet": 169437065.8
+      }
+    },
+    "arun": {
+      "id": "arun",
+      "url": "https://aidoge.co.uk/councils/arun/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 11363
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 11363,
+        "totalNet": 71012107.63
+      }
+    },
+    "babergh": {
+      "id": "babergh",
+      "url": "https://aidoge.co.uk/councils/babergh/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2023/24": {
+          "monthsHeld": 9,
+          "records": 164
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5377
+        },
+        "2025/26": {
+          "monthsHeld": 3,
+          "records": 3
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 5377,
+        "totalNet": 31446028.62
+      }
+    },
+    "barking_and_dagenham": {
+      "id": "barking_and_dagenham",
+      "url": "https://aidoge.co.uk/councils/barking_and_dagenham/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 64690
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 60488
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 60488,
+        "totalNet": 916061654.93
+      }
+    },
+    "barnet": {
+      "id": "barnet",
+      "url": "https://aidoge.co.uk/councils/barnet/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 286548
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 118385
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 286548,
+        "totalNet": 868707432.65
+      }
+    },
+    "basildon": {
+      "id": "basildon",
+      "url": "https://aidoge.co.uk/councils/basildon/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 463
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 10084
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 11442
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 11442,
+        "totalNet": 110721002.58
+      }
+    },
+    "bassetlaw": {
+      "id": "bassetlaw",
+      "url": "https://aidoge.co.uk/councils/bassetlaw/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 9186
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 3376
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 9186,
+        "totalNet": 62108930.88
+      }
+    },
+    "bath_and_north_east_somerset": {
+      "id": "bath_and_north_east_somerset",
+      "url": "https://aidoge.co.uk/councils/bath_and_north_east_somerset/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2020/21": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2022/23": {
+          "monthsHeld": 3,
+          "records": 3
+        },
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 21195
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 74474
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 73710
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 19648
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 73710,
+        "totalNet": 410498417.58
+      }
+    },
+    "bedford": {
+      "id": "bedford",
+      "url": "https://aidoge.co.uk/councils/bedford/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2020/21": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2021/22": {
+          "monthsHeld": 7,
+          "records": 17
+        },
+        "2022/23": {
+          "monthsHeld": 11,
+          "records": 151
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 2054
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 69291
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 66081
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 66081,
+        "totalNet": 374076382.36
+      }
+    },
+    "bexley": {
+      "id": "bexley",
+      "url": "https://aidoge.co.uk/councils/bexley/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 77523
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 77577
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 24749
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 77577,
+        "totalNet": 533560632.21
+      }
+    },
+    "blaby": {
+      "id": "blaby",
+      "url": "https://aidoge.co.uk/councils/blaby/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4079
+        },
+        "2025/26": {
+          "monthsHeld": 3,
+          "records": 356
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 4079,
+        "totalNet": 21525903.12
+      }
+    },
+    "blackburn": {
+      "id": "blackburn",
+      "url": "https://aidoge.co.uk/councils/blackburn/",
+      "generated": "2026-09-09",
+      "thresholdGbp": null,
+      "bank": true,
+      "years": {
+        "2020/21": {
+          "monthsHeld": 11,
+          "records": 55507
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 66806
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 109271
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 95422
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 94490
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 93439
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 93439,
+        "totalNet": 337015238.04
+      }
+    },
+    "blackpool": {
+      "id": "blackpool",
+      "url": "https://aidoge.co.uk/councils/blackpool/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 101657
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 105586
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 39679
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 105586,
+        "totalNet": 1040706963.47
+      }
+    },
+    "bolsover": {
+      "id": "bolsover",
+      "url": "https://aidoge.co.uk/councils/bolsover/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7655
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 2847
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7655,
+        "totalNet": 79029966.2
+      }
+    },
+    "bolton": {
+      "id": "bolton",
+      "url": "https://aidoge.co.uk/councils/bolton/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 33361
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 32063
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 11153
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 32063,
+        "totalNet": 273147261.25
+      }
+    },
+    "boston": {
+      "id": "boston",
+      "url": "https://aidoge.co.uk/councils/boston/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 2518
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 2518,
+        "totalNet": 84498447.46
+      }
+    },
+    "bournemouth_christchurch_and_poole": {
+      "id": "bournemouth_christchurch_and_poole",
+      "url": "https://aidoge.co.uk/councils/bournemouth_christchurch_and_poole/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 485903
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 416592
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 85483
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 416592,
+        "totalNet": 711749706.8
+      }
+    },
+    "bracknell_forest": {
+      "id": "bracknell_forest",
+      "url": "https://aidoge.co.uk/councils/bracknell_forest/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2020/21": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2021/22": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2022/23": {
+          "monthsHeld": 6,
+          "records": 11
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 664
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 30131
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 29688
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 346
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 29688,
+        "totalNet": 195771552.43
+      }
+    },
+    "bradford": {
+      "id": "bradford",
+      "url": "https://aidoge.co.uk/councils/bradford/",
+      "generated": "2026-10-19",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 101739
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 126638
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 136276
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 144204
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 153635
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 138212
+        },
+        "2026/27": {
+          "monthsHeld": 6,
+          "records": 69158
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 138212,
+        "totalNet": 990338368.17
+      }
+    },
+    "braintree": {
+      "id": "braintree",
+      "url": "https://aidoge.co.uk/councils/braintree/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4709
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 4709,
+        "totalNet": 25553892.86
+      }
+    },
+    "breckland": {
+      "id": "breckland",
+      "url": "https://aidoge.co.uk/councils/breckland/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4609
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4658
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1227
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4658,
+        "totalNet": 36601590.13
+      }
+    },
+    "brent": {
+      "id": "brent",
+      "url": "https://aidoge.co.uk/councils/brent/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 7,
+          "records": 42211
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 72457
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 17666
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 72457,
+        "totalNet": 920483628.23
+      }
+    },
+    "brighton_and_hove": {
+      "id": "brighton_and_hove",
+      "url": "https://aidoge.co.uk/councils/brighton_and_hove/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 89252
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 107002
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 39083
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 107002,
+        "totalNet": 618961150.35
+      }
+    },
+    "bristol": {
+      "id": "bristol",
+      "url": "https://aidoge.co.uk/councils/bristol/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 70890
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 71038
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 71038,
+        "totalNet": 793019978.54
+      }
+    },
+    "broadland": {
+      "id": "broadland",
+      "url": "https://aidoge.co.uk/councils/broadland/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5380
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5380,
+        "totalNet": 70655115.27
+      }
+    },
+    "bromsgrove": {
+      "id": "bromsgrove",
+      "url": "https://aidoge.co.uk/councils/bromsgrove/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 1854
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 1807
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 1807,
+        "totalNet": 46322860.77
+      }
+    },
+    "broxtowe": {
+      "id": "broxtowe",
+      "url": "https://aidoge.co.uk/councils/broxtowe/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 18615
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 18941
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 4211
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 18941,
+        "totalNet": 48885144.16
+      }
+    },
+    "buckinghamshire": {
+      "id": "buckinghamshire",
+      "url": "https://aidoge.co.uk/councils/buckinghamshire/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 10,
+          "records": 174083
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 220917
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 113114
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 220917,
+        "totalNet": 934487189.66
+      }
+    },
+    "burnley": {
+      "id": "burnley",
+      "url": "https://aidoge.co.uk/councils/burnley/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4096
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4489
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1251
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4489,
+        "totalNet": 38056787.31
+      }
+    },
+    "bury": {
+      "id": "bury",
+      "url": "https://aidoge.co.uk/councils/bury/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 9,
+          "records": 38935
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 53338
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 17829
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 53338,
+        "totalNet": 216627415.66
+      }
+    },
+    "calderdale": {
+      "id": "calderdale",
+      "url": "https://aidoge.co.uk/councils/calderdale/",
+      "generated": "2026-10-19",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 56368
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 50062
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 57189
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 64169
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 69180
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 72933
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 68458
+        },
+        "2026/27": {
+          "monthsHeld": 6,
+          "records": 31755
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 72933,
+        "totalNet": 377055230.78
+      }
+    },
+    "cambridge": {
+      "id": "cambridge",
+      "url": "https://aidoge.co.uk/councils/cambridge/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2018/19": {
+          "monthsHeld": 3,
+          "records": 3
+        },
+        "2019/20": {
+          "monthsHeld": 2,
+          "records": 7
+        },
+        "2020/21": {
+          "monthsHeld": 3,
+          "records": 11
+        },
+        "2021/22": {
+          "monthsHeld": 2,
+          "records": 4
+        },
+        "2022/23": {
+          "monthsHeld": 7,
+          "records": 13
+        },
+        "2023/24": {
+          "monthsHeld": 11,
+          "records": 478
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 9227
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 8399
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 5
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 8399,
+        "totalNet": 154573441.86
+      }
+    },
+    "cannock_chase": {
+      "id": "cannock_chase",
+      "url": "https://aidoge.co.uk/councils/cannock_chase/",
+      "generated": "2026-10-12",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 6366
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6673
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 3024
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6673,
+        "totalNet": 107352346.03
+      }
+    },
+    "canterbury": {
+      "id": "canterbury",
+      "url": "https://aidoge.co.uk/councils/canterbury/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2018/19": {
+          "monthsHeld": 4,
+          "records": 4
+        },
+        "2019/20": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2020/21": {
+          "monthsHeld": 7,
+          "records": 13
+        },
+        "2021/22": {
+          "monthsHeld": 8,
+          "records": 110
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 280
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 1781
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 21368
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 21234
+        },
+        "2026/27": {
+          "monthsHeld": 2,
+          "records": 2
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 21234,
+        "totalNet": 84594095.71
+      }
+    },
+    "castle_point": {
+      "id": "castle_point",
+      "url": "https://aidoge.co.uk/councils/castle_point/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 1454
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4318
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4188
+        },
+        "2026/27": {
+          "monthsHeld": 6,
+          "records": 1046
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4188,
+        "totalNet": 25922992.65
+      }
+    },
+    "central_bedfordshire": {
+      "id": "central_bedfordshire",
+      "url": "https://aidoge.co.uk/councils/central_bedfordshire/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 223985
+        },
+        "2025/26": {
+          "monthsHeld": 5,
+          "records": 102309
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 60635
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 223985,
+        "totalNet": 686724387.46
+      }
+    },
+    "charnwood": {
+      "id": "charnwood",
+      "url": "https://aidoge.co.uk/councils/charnwood/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 1,
+          "records": 4
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5537
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6629
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 1203
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6629,
+        "totalNet": 71687566.98
+      }
+    },
+    "chelmsford": {
+      "id": "chelmsford",
+      "url": "https://aidoge.co.uk/councils/chelmsford/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 1141
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 7538
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5920
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 2221
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5920,
+        "totalNet": 38259839.1
+      }
+    },
+    "cheltenham": {
+      "id": "cheltenham",
+      "url": "https://aidoge.co.uk/councils/cheltenham/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2014/15": {
+          "monthsHeld": 1,
+          "records": 14
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5684
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6844
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 2279
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6844,
+        "totalNet": 69965864.61
+      }
+    },
+    "cherwell": {
+      "id": "cherwell",
+      "url": "https://aidoge.co.uk/councils/cherwell/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5667
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5595
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5595,
+        "totalNet": 35378973.96
+      }
+    },
+    "cheshire_west_and_chester": {
+      "id": "cheshire_west_and_chester",
+      "url": "https://aidoge.co.uk/councils/cheshire_west_and_chester/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 31530
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 9586
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 31530,
+        "totalNet": 476073696.26
+      }
+    },
+    "chesterfield": {
+      "id": "chesterfield",
+      "url": "https://aidoge.co.uk/councils/chesterfield/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2004/05": {
+          "monthsHeld": 1,
+          "records": 6
+        },
+        "2020/21": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2021/22": {
+          "monthsHeld": 2,
+          "records": 5
+        },
+        "2022/23": {
+          "monthsHeld": 8,
+          "records": 25
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 604
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 10215
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 9866
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 3483
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 10215,
+        "totalNet": 58344414.33
+      }
+    },
+    "chichester": {
+      "id": "chichester",
+      "url": "https://aidoge.co.uk/councils/chichester/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 152
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3953
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4201
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4201,
+        "totalNet": 163010760.53
+      }
+    },
+    "chorley": {
+      "id": "chorley",
+      "url": "https://aidoge.co.uk/councils/chorley/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 8,
+          "records": 5045
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 6832
+        },
+        "2023/24": {
+          "monthsHeld": 9,
+          "records": 3299
+        },
+        "2024/25": {
+          "monthsHeld": 9,
+          "records": 2916
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4128
+        }
+      },
+      "headline": null
+    },
+    "city_of_london": {
+      "id": "city_of_london",
+      "url": "https://aidoge.co.uk/councils/city_of_london/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 40624
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 40624,
+        "totalNet": 617153199.21
+      }
+    },
+    "colchester": {
+      "id": "colchester",
+      "url": "https://aidoge.co.uk/councils/colchester/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 13609
+        },
+        "2025/26": {
+          "monthsHeld": 10,
+          "records": 10603
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 13609,
+        "totalNet": 107299394.31
+      }
+    },
+    "cornwall": {
+      "id": "cornwall",
+      "url": "https://aidoge.co.uk/councils/cornwall/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 15415
+        },
+        "2023/24": {
+          "monthsHeld": 4,
+          "records": 105613
+        },
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 296742
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 315200
+        }
+      },
+      "headline": null
+    },
+    "cotswold": {
+      "id": "cotswold",
+      "url": "https://aidoge.co.uk/councils/cotswold/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5485
+        },
+        "2025/26": {
+          "monthsHeld": 8,
+          "records": 3679
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1359
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 5485,
+        "totalNet": 38203385.19
+      }
+    },
+    "coventry": {
+      "id": "coventry",
+      "url": "https://aidoge.co.uk/councils/coventry/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2007/08": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2012/13": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2017/18": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2018/19": {
+          "monthsHeld": 7,
+          "records": 22
+        },
+        "2019/20": {
+          "monthsHeld": 8,
+          "records": 20
+        },
+        "2020/21": {
+          "monthsHeld": 9,
+          "records": 31
+        },
+        "2021/22": {
+          "monthsHeld": 11,
+          "records": 53
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 81
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 3531
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 173856
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 162023
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 4
+        },
+        "2027/28": {
+          "monthsHeld": 1,
+          "records": 1
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 162023,
+        "totalNet": 617186747.56
+      }
+    },
+    "crawley": {
+      "id": "crawley",
+      "url": "https://aidoge.co.uk/councils/crawley/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 1436
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5494
+        },
+        "2025/26": {
+          "monthsHeld": 9,
+          "records": 4517
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 5494,
+        "totalNet": 79509159.49
+      }
+    },
+    "croydon": {
+      "id": "croydon",
+      "url": "https://aidoge.co.uk/councils/croydon/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 42487
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 350959
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 117396
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 36998
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 350959,
+        "totalNet": 970445300.26
+      }
+    },
+    "darlington": {
+      "id": "darlington",
+      "url": "https://aidoge.co.uk/councils/darlington/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2023/24": {
+          "monthsHeld": 11,
+          "records": 921
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 18262
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 16676
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 18262,
+        "totalNet": 139945315.99
+      }
+    },
+    "dartford": {
+      "id": "dartford",
+      "url": "https://aidoge.co.uk/councils/dartford/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 117
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 6563
+        },
+        "2025/26": {
+          "monthsHeld": 5,
+          "records": 469
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 6563,
+        "totalNet": 68715749.4
+      }
+    },
+    "derby_city": {
+      "id": "derby_city",
+      "url": "https://aidoge.co.uk/councils/derby_city/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 120223
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 126294
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 35606
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 126294,
+        "totalNet": 459819917.87
+      }
+    },
+    "derbyshire_dales": {
+      "id": "derbyshire_dales",
+      "url": "https://aidoge.co.uk/councils/derbyshire_dales/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4040
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3669
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3669,
+        "totalNet": 28021889.82
+      }
+    },
+    "doncaster": {
+      "id": "doncaster",
+      "url": "https://aidoge.co.uk/councils/doncaster/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 259689
+        },
+        "2025/26": {
+          "monthsHeld": 6,
+          "records": 86572
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 259689,
+        "totalNet": 857884834.27
+      }
+    },
+    "dorset": {
+      "id": "dorset",
+      "url": "https://aidoge.co.uk/councils/dorset/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 23387
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 23387,
+        "totalNet": 267718116.23
+      }
+    },
+    "dudley": {
+      "id": "dudley",
+      "url": "https://aidoge.co.uk/councils/dudley/",
+      "generated": "2026-10-05",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 67068
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 65103
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 44226
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 65103,
+        "totalNet": 505524727.99
+      }
+    },
+    "durham": {
+      "id": "durham",
+      "url": "https://aidoge.co.uk/councils/durham/",
+      "generated": "2026-10-03",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 4514
+        },
+        "2023/24": {
+          "monthsHeld": 5,
+          "records": 27927
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 71687
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 70042
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 28675
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 70042,
+        "totalNet": 851989648.48
+      }
+    },
+    "ealing": {
+      "id": "ealing",
+      "url": "https://aidoge.co.uk/councils/ealing/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 258
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 15879
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 46731
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 113866
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 101920
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 103302
+        },
+        "2025/26": {
+          "monthsHeld": 9,
+          "records": 67893
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 103302,
+        "totalNet": 558816875.86
+      }
+    },
+    "east_cambridgeshire": {
+      "id": "east_cambridgeshire",
+      "url": "https://aidoge.co.uk/councils/east_cambridgeshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2004/05": {
+          "monthsHeld": 1,
+          "records": 2
+        },
+        "2020/21": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2021/22": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2023/24": {
+          "monthsHeld": 4,
+          "records": 66
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 13171
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 13398
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 4184
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 13398,
+        "totalNet": 34243316.64
+      }
+    },
+    "east_devon": {
+      "id": "east_devon",
+      "url": "https://aidoge.co.uk/councils/east_devon/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5467
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5096
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 9
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5096,
+        "totalNet": 51959126.5
+      }
+    },
+    "east_hampshire": {
+      "id": "east_hampshire",
+      "url": "https://aidoge.co.uk/councils/east_hampshire/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 3,
+          "records": 5
+        },
+        "2023/24": {
+          "monthsHeld": 8,
+          "records": 15
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3020
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 2640
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 1213
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 2640,
+        "totalNet": 145488192.98
+      }
+    },
+    "east_lindsey": {
+      "id": "east_lindsey",
+      "url": "https://aidoge.co.uk/councils/east_lindsey/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5397
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6950
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6950,
+        "totalNet": 72120304.89
+      }
+    },
+    "east_staffordshire": {
+      "id": "east_staffordshire",
+      "url": "https://aidoge.co.uk/councils/east_staffordshire/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 4
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 2782
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 2782,
+        "totalNet": 14224001
+      }
+    },
+    "east_suffolk": {
+      "id": "east_suffolk",
+      "url": "https://aidoge.co.uk/councils/east_suffolk/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 10484
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 11506
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 11506,
+        "totalNet": 433801705.08
+      }
+    },
+    "eastleigh": {
+      "id": "eastleigh",
+      "url": "https://aidoge.co.uk/councils/eastleigh/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 9,
+          "records": 4568
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6040
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6040,
+        "totalNet": 55494952.69
+      }
+    },
+    "elmbridge": {
+      "id": "elmbridge",
+      "url": "https://aidoge.co.uk/councils/elmbridge/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 1,
+          "records": 3
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 14
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 8623
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 8623,
+        "totalNet": 33501211.81
+      }
+    },
+    "enfield": {
+      "id": "enfield",
+      "url": "https://aidoge.co.uk/councils/enfield/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 96449
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 80468
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 80468,
+        "totalNet": 669181030.12
+      }
+    },
+    "epsom_and_ewell": {
+      "id": "epsom_and_ewell",
+      "url": "https://aidoge.co.uk/councils/epsom_and_ewell/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 299
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 16418
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 16783
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 3557
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 16783,
+        "totalNet": 19111727.07
+      }
+    },
+    "erewash": {
+      "id": "erewash",
+      "url": "https://aidoge.co.uk/councils/erewash/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2020/21": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2023/24": {
+          "monthsHeld": 6,
+          "records": 392
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5040
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4702
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 568
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4702,
+        "totalNet": 50511179.49
+      }
+    },
+    "fareham": {
+      "id": "fareham",
+      "url": "https://aidoge.co.uk/councils/fareham/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 6897
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6983
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 2191
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6983,
+        "totalNet": 176690696.84
+      }
+    },
+    "fenland": {
+      "id": "fenland",
+      "url": "https://aidoge.co.uk/councils/fenland/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3611
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1023
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3611,
+        "totalNet": 24565334.75
+      }
+    },
+    "folkestone_and_hythe": {
+      "id": "folkestone_and_hythe",
+      "url": "https://aidoge.co.uk/councils/folkestone_and_hythe/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 6727
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6617
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6617,
+        "totalNet": 62299439.77
+      }
+    },
+    "forest_of_dean": {
+      "id": "forest_of_dean",
+      "url": "https://aidoge.co.uk/councils/forest_of_dean/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 4,
+          "records": 1084
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4740
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5517
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 1835
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5517,
+        "totalNet": 20474262.05
+      }
+    },
+    "fylde": {
+      "id": "fylde",
+      "url": "https://aidoge.co.uk/councils/fylde/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2015/16": {
+          "monthsHeld": 6,
+          "records": 1639
+        },
+        "2016/17": {
+          "monthsHeld": 12,
+          "records": 3393
+        },
+        "2017/18": {
+          "monthsHeld": 12,
+          "records": 3252
+        },
+        "2018/19": {
+          "monthsHeld": 12,
+          "records": 3572
+        },
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 3414
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 3161
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 3753
+        },
+        "2022/23": {
+          "monthsHeld": 11,
+          "records": 3992
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 4202
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4098
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4120
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4120,
+        "totalNet": 16398357.04
+      }
+    },
+    "gateshead": {
+      "id": "gateshead",
+      "url": "https://aidoge.co.uk/councils/gateshead/",
+      "generated": "2026-10-16",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 9,
+          "records": 59841
+        },
+        "2020/21": {
+          "monthsHeld": 11,
+          "records": 74791
+        },
+        "2021/22": {
+          "monthsHeld": 11,
+          "records": 136378
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 169982
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 310518
+        },
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 361593
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 420435
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 127257
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 420435,
+        "totalNet": 403014407.19
+      }
+    },
+    "gedling": {
+      "id": "gedling",
+      "url": "https://aidoge.co.uk/councils/gedling/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3297
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3091
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 606
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3091,
+        "totalNet": 16912150.76
+      }
+    },
+    "gloucester": {
+      "id": "gloucester",
+      "url": "https://aidoge.co.uk/councils/gloucester/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 14695
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 14608
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 4370
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 14608,
+        "totalNet": 87666847.05
+      }
+    },
+    "gosport": {
+      "id": "gosport",
+      "url": "https://aidoge.co.uk/councils/gosport/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3246
+        },
+        "2026/27": {
+          "monthsHeld": 2,
+          "records": 548
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 3246,
+        "totalNet": 42183826.09
+      }
+    },
+    "gravesham": {
+      "id": "gravesham",
+      "url": "https://aidoge.co.uk/councils/gravesham/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 8835
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 8835,
+        "totalNet": 97206601.43
+      }
+    },
+    "great_yarmouth": {
+      "id": "great_yarmouth",
+      "url": "https://aidoge.co.uk/councils/great_yarmouth/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8970
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 8970,
+        "totalNet": 184211699.16
+      }
+    },
+    "guildford": {
+      "id": "guildford",
+      "url": "https://aidoge.co.uk/councils/guildford/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 14690
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 13719
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 3366
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 13719,
+        "totalNet": 128200905.59
+      }
+    },
+    "halton": {
+      "id": "halton",
+      "url": "https://aidoge.co.uk/councils/halton/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 90561
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 94581
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 94581,
+        "totalNet": 276323633.62
+      }
+    },
+    "hammersmith_and_fulham": {
+      "id": "hammersmith_and_fulham",
+      "url": "https://aidoge.co.uk/councils/hammersmith_and_fulham/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 65785
+        },
+        "2025/26": {
+          "monthsHeld": 9,
+          "records": 45831
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 65785,
+        "totalNet": 523511580.41
+      }
+    },
+    "harborough": {
+      "id": "harborough",
+      "url": "https://aidoge.co.uk/councils/harborough/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3766
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 3766,
+        "totalNet": 28912037.67
+      }
+    },
+    "harlow": {
+      "id": "harlow",
+      "url": "https://aidoge.co.uk/councils/harlow/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2020/21": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2021/22": {
+          "monthsHeld": 3,
+          "records": 4
+        },
+        "2022/23": {
+          "monthsHeld": 3,
+          "records": 3
+        },
+        "2023/24": {
+          "monthsHeld": 9,
+          "records": 475
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8730
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 9625
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 9625,
+        "totalNet": 148739006.61
+      }
+    },
+    "hart": {
+      "id": "hart",
+      "url": "https://aidoge.co.uk/councils/hart/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 1808
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3887
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 940
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3887,
+        "totalNet": 29008078.07
+      }
+    },
+    "hartlepool": {
+      "id": "hartlepool",
+      "url": "https://aidoge.co.uk/councils/hartlepool/",
+      "generated": "2026-10-05",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 38007
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 25587
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 17271
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 20122
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 10369
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 20122,
+        "totalNet": 197511308.88
+      }
+    },
+    "hastings": {
+      "id": "hastings",
+      "url": "https://aidoge.co.uk/councils/hastings/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2021/22": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2022/23": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2023/24": {
+          "monthsHeld": 10,
+          "records": 285
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8845
+        },
+        "2025/26": {
+          "monthsHeld": 2,
+          "records": 2
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 8845,
+        "totalNet": 37832007.7
+      }
+    },
+    "havant": {
+      "id": "havant",
+      "url": "https://aidoge.co.uk/councils/havant/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2023/24": {
+          "monthsHeld": 7,
+          "records": 300
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3130
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 3130,
+        "totalNet": 59590870.41
+      }
+    },
+    "havering": {
+      "id": "havering",
+      "url": "https://aidoge.co.uk/councils/havering/",
+      "generated": "2026-10-17",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 85019
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 91093
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 87574
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 41132
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 87574,
+        "totalNet": 385541197.18
+      }
+    },
+    "high_peak": {
+      "id": "high_peak",
+      "url": "https://aidoge.co.uk/councils/high_peak/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2023/24": {
+          "monthsHeld": 5,
+          "records": 113
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4890
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4331
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 984
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4331,
+        "totalNet": 235368542.28
+      }
+    },
+    "hinckley_and_bosworth": {
+      "id": "hinckley_and_bosworth",
+      "url": "https://aidoge.co.uk/councils/hinckley_and_bosworth/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8203
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 8289
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 2642
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 8203,
+        "totalNet": 49876753.88
+      }
+    },
+    "horsham": {
+      "id": "horsham",
+      "url": "https://aidoge.co.uk/councils/horsham/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 11974
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 12871
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 3603
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 12871,
+        "totalNet": 24142088.15
+      }
+    },
+    "hounslow": {
+      "id": "hounslow",
+      "url": "https://aidoge.co.uk/councils/hounslow/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 34597
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 31283
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 11291
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 31283,
+        "totalNet": 292312110.01
+      }
+    },
+    "huntingdonshire": {
+      "id": "huntingdonshire",
+      "url": "https://aidoge.co.uk/councils/huntingdonshire/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 1,
+          "records": 2
+        },
+        "2022/23": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 4
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 10392
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 9936
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 3
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 9936,
+        "totalNet": 43945653.66
+      }
+    },
+    "hyndburn": {
+      "id": "hyndburn",
+      "url": "https://aidoge.co.uk/councils/hyndburn/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2016/17": {
+          "monthsHeld": 3,
+          "records": 599
+        },
+        "2017/18": {
+          "monthsHeld": 12,
+          "records": 2340
+        },
+        "2018/19": {
+          "monthsHeld": 12,
+          "records": 2466
+        },
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 2392
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 2698
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 3038
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 2177
+        },
+        "2023/24": {
+          "monthsHeld": 10,
+          "records": 2632
+        },
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 7947
+        },
+        "2025/26": {
+          "monthsHeld": 7,
+          "records": 3515
+        }
+      },
+      "headline": {
+        "year": "2022/23",
+        "records": 2177,
+        "totalNet": 7156724.59
+      }
+    },
+    "ipswich": {
+      "id": "ipswich",
+      "url": "https://aidoge.co.uk/councils/ipswich/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 10325
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 9509
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 9509,
+        "totalNet": 71013695.14
+      }
+    },
+    "isle_of_wight": {
+      "id": "isle_of_wight",
+      "url": "https://aidoge.co.uk/councils/isle_of_wight/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 91
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 94927
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 96907
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 32436
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 96907,
+        "totalNet": 277444079.91
+      }
+    },
+    "isles_of_scilly": {
+      "id": "isles_of_scilly",
+      "url": "https://aidoge.co.uk/councils/isles_of_scilly/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3291
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 3291,
+        "totalNet": 13601969.95
+      }
+    },
+    "islington": {
+      "id": "islington",
+      "url": "https://aidoge.co.uk/councils/islington/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2023/24": {
+          "monthsHeld": 5,
+          "records": 524
+        },
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 48496
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 68051
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 68051,
+        "totalNet": 608105180.69
+      }
+    },
+    "kensington_and_chelsea": {
+      "id": "kensington_and_chelsea",
+      "url": "https://aidoge.co.uk/councils/kensington_and_chelsea/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 98
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 75820
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 74208
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 19298
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 74208,
+        "totalNet": 565142385.18
+      }
+    },
+    "kingston_upon_hull": {
+      "id": "kingston_upon_hull",
+      "url": "https://aidoge.co.uk/councils/kingston_upon_hull/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 166466
+        },
+        "2025/26": {
+          "monthsHeld": 10,
+          "records": 131248
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 166466,
+        "totalNet": 668772686.27
+      }
+    },
+    "kingston_upon_thames": {
+      "id": "kingston_upon_thames",
+      "url": "https://aidoge.co.uk/councils/kingston_upon_thames/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2003/04": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2014/15": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2015/16": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2019/20": {
+          "monthsHeld": 3,
+          "records": 5
+        },
+        "2020/21": {
+          "monthsHeld": 8,
+          "records": 57
+        },
+        "2021/22": {
+          "monthsHeld": 9,
+          "records": 16
+        },
+        "2022/23": {
+          "monthsHeld": 11,
+          "records": 55
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 1406
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 42714
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 36636
+        },
+        "2026/27": {
+          "monthsHeld": 2,
+          "records": 16
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 36636,
+        "totalNet": 309952934.88
+      }
+    },
+    "kirklees": {
+      "id": "kirklees",
+      "url": "https://aidoge.co.uk/councils/kirklees/",
+      "generated": "2026-10-19",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2017/18": {
+          "monthsHeld": 12,
+          "records": 32259
+        },
+        "2018/19": {
+          "monthsHeld": 12,
+          "records": 32913
+        },
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 37641
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 60166
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 66447
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 56222
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 55273
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 72819
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 70768
+        },
+        "2026/27": {
+          "monthsHeld": 6,
+          "records": 36725
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 70768,
+        "totalNet": 656404459.64
+      }
+    },
+    "knowsley": {
+      "id": "knowsley",
+      "url": "https://aidoge.co.uk/councils/knowsley/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 22857
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 77924
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 82323
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 26568
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 82323,
+        "totalNet": 440206497.25
+      }
+    },
+    "lambeth": {
+      "id": "lambeth",
+      "url": "https://aidoge.co.uk/councils/lambeth/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2018/19": {
+          "monthsHeld": 1,
+          "records": 3
+        },
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 6
+        },
+        "2023/24": {
+          "monthsHeld": 9,
+          "records": 25
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 358110
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 364103
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 364103,
+        "totalNet": 1231521341.1
+      }
+    },
+    "lancaster": {
+      "id": "lancaster",
+      "url": "https://aidoge.co.uk/councils/lancaster/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 5634
+        },
+        "2022/23": {
+          "monthsHeld": 9,
+          "records": 5257
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 7622
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8063
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7965
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 61
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7965,
+        "totalNet": 51577623.14
+      }
+    },
+    "leeds": {
+      "id": "leeds",
+      "url": "https://aidoge.co.uk/councils/leeds/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 6,
+          "records": 8018
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 299523
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 299523,
+        "totalNet": 1680156113.94
+      }
+    },
+    "leicester_city": {
+      "id": "leicester_city",
+      "url": "https://aidoge.co.uk/councils/leicester_city/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 19574
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 81940
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 76311
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 24929
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 76311,
+        "totalNet": 507325891.3
+      }
+    },
+    "lewes": {
+      "id": "lewes",
+      "url": "https://aidoge.co.uk/councils/lewes/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 19131
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 23310
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 23310,
+        "totalNet": 197868943.83
+      }
+    },
+    "lewisham": {
+      "id": "lewisham",
+      "url": "https://aidoge.co.uk/councils/lewisham/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 80573
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 73241
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 19821
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 80573,
+        "totalNet": 861748352.82
+      }
+    },
+    "lincoln": {
+      "id": "lincoln",
+      "url": "https://aidoge.co.uk/councils/lincoln/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 2686
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 9286
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 10536
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 2847
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 10536,
+        "totalNet": 75094041.62
+      }
+    },
+    "maidstone": {
+      "id": "maidstone",
+      "url": "https://aidoge.co.uk/councils/maidstone/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 5,
+          "records": 379
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 17776
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 18817
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 18817,
+        "totalNet": 56663447.79
+      }
+    },
+    "maldon": {
+      "id": "maldon",
+      "url": "https://aidoge.co.uk/councils/maldon/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 1474
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 1585
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 1585,
+        "totalNet": 13962703.44
+      }
+    },
+    "malvern_hills": {
+      "id": "malvern_hills",
+      "url": "https://aidoge.co.uk/councils/malvern_hills/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8020
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 8080
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 3400
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 8080,
+        "totalNet": 25899143.22
+      }
+    },
+    "mansfield": {
+      "id": "mansfield",
+      "url": "https://aidoge.co.uk/councils/mansfield/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 11623
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 13586
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 13586,
+        "totalNet": 91950108.75
+      }
+    },
+    "medway_towns": {
+      "id": "medway_towns",
+      "url": "https://aidoge.co.uk/councils/medway_towns/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 1,
+          "records": 327
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 114545
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 119028
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 119028,
+        "totalNet": 523409706.73
+      }
+    },
+    "merton": {
+      "id": "merton",
+      "url": "https://aidoge.co.uk/councils/merton/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 44450
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 48329
+        },
+        "2026/27": {
+          "monthsHeld": 6,
+          "records": 24492
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 48329,
+        "totalNet": 672386387.64
+      }
+    },
+    "mid_devon": {
+      "id": "mid_devon",
+      "url": "https://aidoge.co.uk/councils/mid_devon/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 7,
+          "records": 7212
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 9554
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 2845
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 9554,
+        "totalNet": 157145152.52
+      }
+    },
+    "mid_suffolk": {
+      "id": "mid_suffolk",
+      "url": "https://aidoge.co.uk/councils/mid_suffolk/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 8,
+          "records": 155
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4752
+        },
+        "2025/26": {
+          "monthsHeld": 4,
+          "records": 5
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 4752,
+        "totalNet": 32058685.49
+      }
+    },
+    "mid_sussex": {
+      "id": "mid_sussex",
+      "url": "https://aidoge.co.uk/councils/mid_sussex/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 1609
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5495
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7036
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1889
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7036,
+        "totalNet": 33089897.37
+      }
+    },
+    "middlesbrough": {
+      "id": "middlesbrough",
+      "url": "https://aidoge.co.uk/councils/middlesbrough/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 12938
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 41412
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 43298
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 43298,
+        "totalNet": 276441092.19
+      }
+    },
+    "milton_keynes": {
+      "id": "milton_keynes",
+      "url": "https://aidoge.co.uk/councils/milton_keynes/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 69054
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 82692
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 20733
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 82692,
+        "totalNet": 632424110.72
+      }
+    },
+    "mole_valley": {
+      "id": "mole_valley",
+      "url": "https://aidoge.co.uk/councils/mole_valley/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4174
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4060
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4060,
+        "totalNet": 22291829.28
+      }
+    },
+    "new_forest": {
+      "id": "new_forest",
+      "url": "https://aidoge.co.uk/councils/new_forest/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 2
+        },
+        "2023/24": {
+          "monthsHeld": 4,
+          "records": 14
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 13060
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 16764
+        }
+      },
+      "headline": null
+    },
+    "newark_and_sherwood": {
+      "id": "newark_and_sherwood",
+      "url": "https://aidoge.co.uk/councils/newark_and_sherwood/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 9,
+          "records": 5522
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7781
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 2232
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7781,
+        "totalNet": 132357787.17
+      }
+    },
+    "newcastle_under_lyme": {
+      "id": "newcastle_under_lyme",
+      "url": "https://aidoge.co.uk/councils/newcastle_under_lyme/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 3846
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4199
+        }
+      },
+      "headline": null
+    },
+    "newcastle_upon_tyne": {
+      "id": "newcastle_upon_tyne",
+      "url": "https://aidoge.co.uk/councils/newcastle_upon_tyne/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 76214
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 76546
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 81345
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 82976
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 82976,
+        "totalNet": 710089202.92
+      }
+    },
+    "newham": {
+      "id": "newham",
+      "url": "https://aidoge.co.uk/councils/newham/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 326187
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 344142
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 120820
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 344142,
+        "totalNet": 940508802.79
+      }
+    },
+    "north_devon": {
+      "id": "north_devon",
+      "url": "https://aidoge.co.uk/councils/north_devon/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 5318
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5925
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5925,
+        "totalNet": 29419642.74
+      }
+    },
+    "north_east_derbyshire": {
+      "id": "north_east_derbyshire",
+      "url": "https://aidoge.co.uk/councils/north_east_derbyshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 7248
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7709
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 188
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7709,
+        "totalNet": 26082281.55
+      }
+    },
+    "north_east_lincolnshire": {
+      "id": "north_east_lincolnshire",
+      "url": "https://aidoge.co.uk/councils/north_east_lincolnshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 33705
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 29253
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 25134
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 26167
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 32029
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 38307
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 5069
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 38307,
+        "totalNet": 204094800.98
+      }
+    },
+    "north_hertfordshire": {
+      "id": "north_hertfordshire",
+      "url": "https://aidoge.co.uk/councils/north_hertfordshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 2,
+          "records": 191
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5615
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 3185
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5615,
+        "totalNet": 58250264.24
+      }
+    },
+    "north_kesteven": {
+      "id": "north_kesteven",
+      "url": "https://aidoge.co.uk/councils/north_kesteven/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 1909
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 7052
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7199
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1916
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7199,
+        "totalNet": 44777602.83
+      }
+    },
+    "north_norfolk": {
+      "id": "north_norfolk",
+      "url": "https://aidoge.co.uk/councils/north_norfolk/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 852
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3454
+        },
+        "2025/26": {
+          "monthsHeld": 9,
+          "records": 2532
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 3454,
+        "totalNet": 32725766.24
+      }
+    },
+    "north_northants": {
+      "id": "north_northants",
+      "url": "https://aidoge.co.uk/councils/north_northants/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 87872
+        },
+        "2025/26": {
+          "monthsHeld": 9,
+          "records": 67696
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 24691
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 87872,
+        "totalNet": 708840631.77
+      }
+    },
+    "north_somerset": {
+      "id": "north_somerset",
+      "url": "https://aidoge.co.uk/councils/north_somerset/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2005/06": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2019/20": {
+          "monthsHeld": 3,
+          "records": 3
+        },
+        "2020/21": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2021/22": {
+          "monthsHeld": 4,
+          "records": 5
+        },
+        "2022/23": {
+          "monthsHeld": 6,
+          "records": 12
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 1768
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 117112
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 102931
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 1
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 102931,
+        "totalNet": 360915143.96
+      }
+    },
+    "north_warwickshire": {
+      "id": "north_warwickshire",
+      "url": "https://aidoge.co.uk/councils/north_warwickshire/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 9,
+          "records": 205
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3430
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3900
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 1712
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3900,
+        "totalNet": 13306333.23
+      }
+    },
+    "north_yorkshire": {
+      "id": "north_yorkshire",
+      "url": "https://aidoge.co.uk/councils/north_yorkshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 131298
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 131298,
+        "totalNet": 550992148.97
+      }
+    },
+    "northumberland": {
+      "id": "northumberland",
+      "url": "https://aidoge.co.uk/councils/northumberland/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 245730
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 274142
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 274142,
+        "totalNet": 692519643.94
+      }
+    },
+    "norwich": {
+      "id": "norwich",
+      "url": "https://aidoge.co.uk/councils/norwich/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 9311
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 9311,
+        "totalNet": 91752009.4
+      }
+    },
+    "nottingham_city": {
+      "id": "nottingham_city",
+      "url": "https://aidoge.co.uk/councils/nottingham_city/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 39216
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 33113
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 4
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 33113,
+        "totalNet": 640928554.4
+      }
+    },
+    "nuneaton_and_bedworth": {
+      "id": "nuneaton_and_bedworth",
+      "url": "https://aidoge.co.uk/councils/nuneaton_and_bedworth/",
+      "generated": "2026-10-14",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 6019
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 7045
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7017
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1468
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7017,
+        "totalNet": 97816481.05
+      }
+    },
+    "oadby_and_wigston": {
+      "id": "oadby_and_wigston",
+      "url": "https://aidoge.co.uk/councils/oadby_and_wigston/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 1,
+          "records": 9
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3190
+        },
+        "2025/26": {
+          "monthsHeld": 6,
+          "records": 1622
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 975
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 3190,
+        "totalNet": 11500913.27
+      }
+    },
+    "oldham": {
+      "id": "oldham",
+      "url": "https://aidoge.co.uk/councils/oldham/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 24592
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 23331
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 23331,
+        "totalNet": 362263855.26
+      }
+    },
+    "oxford": {
+      "id": "oxford",
+      "url": "https://aidoge.co.uk/councils/oxford/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2000/01": {
+          "monthsHeld": 2,
+          "records": 59
+        },
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 4446
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 20266
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 20770
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 5434
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 20770,
+        "totalNet": 151333544.6
+      }
+    },
+    "pendle": {
+      "id": "pendle",
+      "url": "https://aidoge.co.uk/councils/pendle/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 11526
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 9744
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 8382
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 11044
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 12205
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 12205,
+        "totalNet": 46118125.24
+      }
+    },
+    "peterborough": {
+      "id": "peterborough",
+      "url": "https://aidoge.co.uk/councils/peterborough/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 71584
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 71584,
+        "totalNet": 373657558.74
+      }
+    },
+    "plymouth": {
+      "id": "plymouth",
+      "url": "https://aidoge.co.uk/councils/plymouth/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 146909
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 165766
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 56925
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 165766,
+        "totalNet": 576733311.59
+      }
+    },
+    "portsmouth": {
+      "id": "portsmouth",
+      "url": "https://aidoge.co.uk/councils/portsmouth/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 223180
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 226703
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 75341
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 226703,
+        "totalNet": 626865393.19
+      }
+    },
+    "preston": {
+      "id": "preston",
+      "url": "https://aidoge.co.uk/councils/preston/",
+      "generated": "2026-10-04",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 5971
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 5287
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 6236
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 6993
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 7689
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8183
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 8833
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 740
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 8833,
+        "totalNet": 46593928.13
+      }
+    },
+    "reading": {
+      "id": "reading",
+      "url": "https://aidoge.co.uk/councils/reading/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 40175
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 47510
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 23311
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 47510,
+        "totalNet": 480224147.65
+      }
+    },
+    "redbridge": {
+      "id": "redbridge",
+      "url": "https://aidoge.co.uk/councils/redbridge/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2004/05": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2018/19": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2019/20": {
+          "monthsHeld": 5,
+          "records": 5
+        },
+        "2020/21": {
+          "monthsHeld": 10,
+          "records": 30
+        },
+        "2021/22": {
+          "monthsHeld": 9,
+          "records": 22
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 113
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 5730
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 254613
+        },
+        "2025/26": {
+          "monthsHeld": 1,
+          "records": 1
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 254613,
+        "totalNet": 482292688.91
+      }
+    },
+    "redcar_and_cleveland": {
+      "id": "redcar_and_cleveland",
+      "url": "https://aidoge.co.uk/councils/redcar_and_cleveland/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 26287
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 31515
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 26287,
+        "totalNet": 191533519.16
+      }
+    },
+    "redditch": {
+      "id": "redditch",
+      "url": "https://aidoge.co.uk/councils/redditch/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3044
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 2753
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 3044,
+        "totalNet": 57408197.09
+      }
+    },
+    "ribble_valley": {
+      "id": "ribble_valley",
+      "url": "https://aidoge.co.uk/councils/ribble_valley/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 2197
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 2650
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 2958
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3431
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3288
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3288,
+        "totalNet": 9668807.82
+      }
+    },
+    "rochdale": {
+      "id": "rochdale",
+      "url": "https://aidoge.co.uk/councils/rochdale/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2013/14": {
+          "monthsHeld": 12,
+          "records": 13132
+        },
+        "2014/15": {
+          "monthsHeld": 6,
+          "records": 12970
+        },
+        "2015/16": {
+          "monthsHeld": 12,
+          "records": 51330
+        },
+        "2016/17": {
+          "monthsHeld": 12,
+          "records": 56453
+        },
+        "2017/18": {
+          "monthsHeld": 12,
+          "records": 61114
+        },
+        "2018/19": {
+          "monthsHeld": 10,
+          "records": 158155
+        },
+        "2019/20": {
+          "monthsHeld": 9,
+          "records": 212751
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 224503
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 260470
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 288454
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 290082
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 301953
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 305169
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 305169,
+        "totalNet": 549062827.89
+      }
+    },
+    "rochford": {
+      "id": "rochford",
+      "url": "https://aidoge.co.uk/councils/rochford/",
+      "generated": "2026-10-14",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 3162
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 2749
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 3281
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 4173
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 4561
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5319
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 4844
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 5319,
+        "totalNet": 17485714.55
+      }
+    },
+    "rossendale": {
+      "id": "rossendale",
+      "url": "https://aidoge.co.uk/councils/rossendale/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 9958
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 9661
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 8754
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8089
+        },
+        "2025/26": {
+          "monthsHeld": 9,
+          "records": 6074
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 8089,
+        "totalNet": 9617278.18
+      }
+    },
+    "rother": {
+      "id": "rother",
+      "url": "https://aidoge.co.uk/councils/rother/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2016/17": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2018/19": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2019/20": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2020/21": {
+          "monthsHeld": 3,
+          "records": 4
+        },
+        "2021/22": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2022/23": {
+          "monthsHeld": 6,
+          "records": 12
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 1140
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 13073
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 13073,
+        "totalNet": 41091062.84
+      }
+    },
+    "rugby": {
+      "id": "rugby",
+      "url": "https://aidoge.co.uk/councils/rugby/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 4,
+          "records": 1526
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5486
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5558
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5558,
+        "totalNet": 99268107.42
+      }
+    },
+    "runnymede": {
+      "id": "runnymede",
+      "url": "https://aidoge.co.uk/councils/runnymede/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "1899/00": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4989
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 3730
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 4989,
+        "totalNet": 42538299.89
+      }
+    },
+    "rushmoor": {
+      "id": "rushmoor",
+      "url": "https://aidoge.co.uk/councils/rushmoor/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 1287
+        },
+        "2024/25": {
+          "monthsHeld": 9,
+          "records": 3261
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4847
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 351
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4847,
+        "totalNet": 20384955.3
+      }
+    },
+    "rutland": {
+      "id": "rutland",
+      "url": "https://aidoge.co.uk/councils/rutland/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 11357
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 2868
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 11357,
+        "totalNet": 65300879.53
+      }
+    },
+    "salford": {
+      "id": "salford",
+      "url": "https://aidoge.co.uk/councils/salford/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 28811
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 30532
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 11774
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 30532,
+        "totalNet": 659578339.38
+      }
+    },
+    "sandwell": {
+      "id": "sandwell",
+      "url": "https://aidoge.co.uk/councils/sandwell/",
+      "generated": "2026-10-18",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 44451
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 55995
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 50000
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 49979
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 48397
+        },
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 61358
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 81830
+        },
+        "2026/27": {
+          "monthsHeld": 2,
+          "records": 12600
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 81830,
+        "totalNet": 729816675.21
+      }
+    },
+    "sefton": {
+      "id": "sefton",
+      "url": "https://aidoge.co.uk/councils/sefton/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2005/06": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2020/21": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2021/22": {
+          "monthsHeld": 3,
+          "records": 5
+        },
+        "2022/23": {
+          "monthsHeld": 6,
+          "records": 8
+        },
+        "2023/24": {
+          "monthsHeld": 8,
+          "records": 23
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 2165
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 75055
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 6
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 75055,
+        "totalNet": 374209712.39
+      }
+    },
+    "sevenoaks": {
+      "id": "sevenoaks",
+      "url": "https://aidoge.co.uk/councils/sevenoaks/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2009/10": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2023/24": {
+          "monthsHeld": 9,
+          "records": 120
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3993
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4093
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 1412
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4093,
+        "totalNet": 27040935.62
+      }
+    },
+    "shropshire": {
+      "id": "shropshire",
+      "url": "https://aidoge.co.uk/councils/shropshire/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 43574
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 1249
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 43574,
+        "totalNet": 500448192.08
+      }
+    },
+    "solihull": {
+      "id": "solihull",
+      "url": "https://aidoge.co.uk/councils/solihull/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 121159
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 129877
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 121408
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 139217
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 144911
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 129404
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 11590
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 129404,
+        "totalNet": 414356957.89
+      }
+    },
+    "somerset": {
+      "id": "somerset",
+      "url": "https://aidoge.co.uk/councils/somerset/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 217345
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 380065
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 123452
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 380065,
+        "totalNet": 1287401107.67
+      }
+    },
+    "south_cambridgeshire": {
+      "id": "south_cambridgeshire",
+      "url": "https://aidoge.co.uk/councils/south_cambridgeshire/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2023/24": {
+          "monthsHeld": 11,
+          "records": 457
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 7801
+        },
+        "2025/26": {
+          "monthsHeld": 2,
+          "records": 2
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 7801,
+        "totalNet": 63743005.48
+      }
+    },
+    "south_derbyshire": {
+      "id": "south_derbyshire",
+      "url": "https://aidoge.co.uk/councils/south_derbyshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4806
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4712
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 1588
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4712,
+        "totalNet": 24693500.89
+      }
+    },
+    "south_gloucestershire": {
+      "id": "south_gloucestershire",
+      "url": "https://aidoge.co.uk/councils/south_gloucestershire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 42532
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 45835
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 45835,
+        "totalNet": 708848891.15
+      }
+    },
+    "south_kesteven": {
+      "id": "south_kesteven",
+      "url": "https://aidoge.co.uk/councils/south_kesteven/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 9807
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 10415
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 1
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 10415,
+        "totalNet": 65839678.82
+      }
+    },
+    "south_norfolk": {
+      "id": "south_norfolk",
+      "url": "https://aidoge.co.uk/councils/south_norfolk/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 8437
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 8437,
+        "totalNet": 61849723.1
+      }
+    },
+    "south_oxfordshire": {
+      "id": "south_oxfordshire",
+      "url": "https://aidoge.co.uk/councils/south_oxfordshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 7179
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7539
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7539,
+        "totalNet": 46062235.89
+      }
+    },
+    "south_ribble": {
+      "id": "south_ribble",
+      "url": "https://aidoge.co.uk/councils/south_ribble/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 5366
+        },
+        "2022/23": {
+          "monthsHeld": 10,
+          "records": 4450
+        },
+        "2023/24": {
+          "monthsHeld": 11,
+          "records": 2808
+        },
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 2759
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3308
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3308,
+        "totalNet": 37624086.01
+      }
+    },
+    "south_tyneside": {
+      "id": "south_tyneside",
+      "url": "https://aidoge.co.uk/councils/south_tyneside/",
+      "generated": "2026-10-05",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 11,
+          "records": 24466
+        },
+        "2020/21": {
+          "monthsHeld": 11,
+          "records": 35281
+        },
+        "2021/22": {
+          "monthsHeld": 10,
+          "records": 35043
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 46218
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 48010
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 48890
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 58318
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 4239
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 58318,
+        "totalNet": 434881420.35
+      }
+    },
+    "southampton": {
+      "id": "southampton",
+      "url": "https://aidoge.co.uk/councils/southampton/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 53316
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 54234
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 14511
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 54234,
+        "totalNet": 478699210.61
+      }
+    },
+    "southwark": {
+      "id": "southwark",
+      "url": "https://aidoge.co.uk/councils/southwark/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 6,
+          "records": 11
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 138316
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 138316,
+        "totalNet": 1502792779.33
+      }
+    },
+    "st_albans": {
+      "id": "st_albans",
+      "url": "https://aidoge.co.uk/councils/st_albans/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 8799
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7512
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7512,
+        "totalNet": 104341488.93
+      }
+    },
+    "st_helens": {
+      "id": "st_helens",
+      "url": "https://aidoge.co.uk/councils/st_helens/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 1,
+          "records": 3431
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 54289
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 54289,
+        "totalNet": 208168202.29
+      }
+    },
+    "stafford": {
+      "id": "stafford",
+      "url": "https://aidoge.co.uk/councils/stafford/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4600
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 4600,
+        "totalNet": 51662670.65
+      }
+    },
+    "staffordshire_moorlands": {
+      "id": "staffordshire_moorlands",
+      "url": "https://aidoge.co.uk/councils/staffordshire_moorlands/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 44
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 2491
+        },
+        "2025/26": {
+          "monthsHeld": 6,
+          "records": 1050
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 2491,
+        "totalNet": 129256163.71
+      }
+    },
+    "stockport": {
+      "id": "stockport",
+      "url": "https://aidoge.co.uk/councils/stockport/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2009/10": {
+          "monthsHeld": 1,
+          "records": 4
+        },
+        "2012/13": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2013/14": {
+          "monthsHeld": 2,
+          "records": 4
+        },
+        "2015/16": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2017/18": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2018/19": {
+          "monthsHeld": 2,
+          "records": 2
+        },
+        "2019/20": {
+          "monthsHeld": 4,
+          "records": 5
+        },
+        "2020/21": {
+          "monthsHeld": 1,
+          "records": 34
+        },
+        "2021/22": {
+          "monthsHeld": 4,
+          "records": 12
+        },
+        "2022/23": {
+          "monthsHeld": 11,
+          "records": 53
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 2034
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 234518
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 331981
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 117051
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 331981,
+        "totalNet": 880738882.71
+      }
+    },
+    "stockton_on_tees": {
+      "id": "stockton_on_tees",
+      "url": "https://aidoge.co.uk/councils/stockton_on_tees/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 2,
+          "records": 135
+        },
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 68294
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 123500
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 31441
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 123500,
+        "totalNet": 252830488.29
+      }
+    },
+    "stoke_on_trent": {
+      "id": "stoke_on_trent",
+      "url": "https://aidoge.co.uk/councils/stoke_on_trent/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 41148
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 46410
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 41148,
+        "totalNet": 497298961.83
+      }
+    },
+    "stratford_on_avon": {
+      "id": "stratford_on_avon",
+      "url": "https://aidoge.co.uk/councils/stratford_on_avon/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 4,
+          "records": 6
+        },
+        "2022/23": {
+          "monthsHeld": 4,
+          "records": 5
+        },
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 3
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 6449
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6583
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6583,
+        "totalNet": 45962668.18
+      }
+    },
+    "stroud": {
+      "id": "stroud",
+      "url": "https://aidoge.co.uk/councils/stroud/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 2794
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 4
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 2794,
+        "totalNet": 21671791.41
+      }
+    },
+    "sunderland": {
+      "id": "sunderland",
+      "url": "https://aidoge.co.uk/councils/sunderland/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 26983
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 26917
+        },
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 29690
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 31021
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 32130
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 33240
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 33034
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 7273
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 33034,
+        "totalNet": 471563738.18
+      }
+    },
+    "surrey_heath": {
+      "id": "surrey_heath",
+      "url": "https://aidoge.co.uk/councils/surrey_heath/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 1359
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3913
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3451
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 1294
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3451,
+        "totalNet": 44779859.31
+      }
+    },
+    "sutton": {
+      "id": "sutton",
+      "url": "https://aidoge.co.uk/councils/sutton/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2004/05": {
+          "monthsHeld": 1,
+          "records": 2
+        },
+        "2017/18": {
+          "monthsHeld": 1,
+          "records": 2
+        },
+        "2019/20": {
+          "monthsHeld": 1,
+          "records": 4
+        },
+        "2020/21": {
+          "monthsHeld": 3,
+          "records": 3
+        },
+        "2021/22": {
+          "monthsHeld": 6,
+          "records": 43
+        },
+        "2022/23": {
+          "monthsHeld": 9,
+          "records": 80
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 2740
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 68604
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 63451
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 63451,
+        "totalNet": 396545756.73
+      }
+    },
+    "swale": {
+      "id": "swale",
+      "url": "https://aidoge.co.uk/councils/swale/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 6935
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6739
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6739,
+        "totalNet": 101439052.65
+      }
+    },
+    "swindon": {
+      "id": "swindon",
+      "url": "https://aidoge.co.uk/councils/swindon/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 1,
+          "records": 4
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 71374
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 72824
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 72824,
+        "totalNet": 386910124.22
+      }
+    },
+    "tamworth": {
+      "id": "tamworth",
+      "url": "https://aidoge.co.uk/councils/tamworth/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 4872
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 4833
+        },
+        "2026/27": {
+          "monthsHeld": 1,
+          "records": 83
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 4833,
+        "totalNet": 132988937.77
+      }
+    },
+    "telford_and_the_wrekin": {
+      "id": "telford_and_the_wrekin",
+      "url": "https://aidoge.co.uk/councils/telford_and_the_wrekin/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 100,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 34759
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 34960
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 34960,
+        "totalNet": 212379410.77
+      }
+    },
+    "test_valley": {
+      "id": "test_valley",
+      "url": "https://aidoge.co.uk/councils/test_valley/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 3,
+          "records": 1890
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7559
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 2666
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7559,
+        "totalNet": 25388417.15
+      }
+    },
+    "tewkesbury": {
+      "id": "tewkesbury",
+      "url": "https://aidoge.co.uk/councils/tewkesbury/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3909
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3677
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 1319
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3677,
+        "totalNet": 56460713.94
+      }
+    },
+    "three_rivers": {
+      "id": "three_rivers",
+      "url": "https://aidoge.co.uk/councils/three_rivers/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 2208
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 2139
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 882
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 2139,
+        "totalNet": 27573044.52
+      }
+    },
+    "thurrock": {
+      "id": "thurrock",
+      "url": "https://aidoge.co.uk/councils/thurrock/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 32456
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 34229
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 28808
+        }
+      },
+      "headline": null
+    },
+    "torbay": {
+      "id": "torbay",
+      "url": "https://aidoge.co.uk/councils/torbay/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 37466
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 39158
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 39158,
+        "totalNet": 324531833.65
+      }
+    },
+    "tower_hamlets": {
+      "id": "tower_hamlets",
+      "url": "https://aidoge.co.uk/councils/tower_hamlets/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 84652
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 49272
+        },
+        "2021/22": {
+          "monthsHeld": 11,
+          "records": 50818
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 57915
+        },
+        "2023/24": {
+          "monthsHeld": 4,
+          "records": 23574
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 68162
+        },
+        "2025/26": {
+          "monthsHeld": 10,
+          "records": 57687
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 68162,
+        "totalNet": 918101598.97
+      }
+    },
+    "uttlesford": {
+      "id": "uttlesford",
+      "url": "https://aidoge.co.uk/councils/uttlesford/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5654
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6155
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6155,
+        "totalNet": 45804416.89
+      }
+    },
+    "vale_of_white_horse": {
+      "id": "vale_of_white_horse",
+      "url": "https://aidoge.co.uk/councils/vale_of_white_horse/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3796
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3624
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3624,
+        "totalNet": 42885356.37
+      }
+    },
+    "wakefield": {
+      "id": "wakefield",
+      "url": "https://aidoge.co.uk/councils/wakefield/",
+      "generated": "2026-10-19",
+      "thresholdGbp": 250,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 12,
+          "records": 94140
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 91085
+        },
+        "2021/22": {
+          "monthsHeld": 10,
+          "records": 132776
+        },
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 189720
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 32989
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 35607
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 37855
+        },
+        "2026/27": {
+          "monthsHeld": 6,
+          "records": 18776
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 37855,
+        "totalNet": 329291091.13
+      }
+    },
+    "walsall": {
+      "id": "walsall",
+      "url": "https://aidoge.co.uk/councils/walsall/",
+      "generated": "2026-10-14",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2021/22": {
+          "monthsHeld": 12,
+          "records": 97723
+        },
+        "2022/23": {
+          "monthsHeld": 9,
+          "records": 79594
+        },
+        "2023/24": {
+          "monthsHeld": 10,
+          "records": 108190
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 131698
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 124732
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 33039
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 124732,
+        "totalNet": 535881494.12
+      }
+    },
+    "waltham_forest": {
+      "id": "waltham_forest",
+      "url": "https://aidoge.co.uk/councils/waltham_forest/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 16412
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 16132
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 1762
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 16132,
+        "totalNet": 306531610.39
+      }
+    },
+    "wandsworth": {
+      "id": "wandsworth",
+      "url": "https://aidoge.co.uk/councils/wandsworth/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 11,
+          "records": 42227
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 47536
+        }
+      },
+      "headline": null
+    },
+    "warrington": {
+      "id": "warrington",
+      "url": "https://aidoge.co.uk/councils/warrington/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2016/17": {
+          "monthsHeld": 3,
+          "records": 3
+        },
+        "2019/20": {
+          "monthsHeld": 2,
+          "records": 3
+        },
+        "2021/22": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2022/23": {
+          "monthsHeld": 4,
+          "records": 8
+        },
+        "2023/24": {
+          "monthsHeld": 10,
+          "records": 991
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 76656
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 70878
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 70878,
+        "totalNet": 393187151.85
+      }
+    },
+    "watford": {
+      "id": "watford",
+      "url": "https://aidoge.co.uk/councils/watford/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 2820
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3246
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 1383
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3246,
+        "totalNet": 71363549.77
+      }
+    },
+    "welwyn_hatfield": {
+      "id": "welwyn_hatfield",
+      "url": "https://aidoge.co.uk/councils/welwyn_hatfield/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2019/20": {
+          "monthsHeld": 1,
+          "records": 2
+        },
+        "2020/21": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2021/22": {
+          "monthsHeld": 4,
+          "records": 4
+        },
+        "2022/23": {
+          "monthsHeld": 4,
+          "records": 5
+        },
+        "2023/24": {
+          "monthsHeld": 9,
+          "records": 20
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 163
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 8239
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 3198
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 8239,
+        "totalNet": 94723696.13
+      }
+    },
+    "west_berkshire": {
+      "id": "west_berkshire",
+      "url": "https://aidoge.co.uk/councils/west_berkshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 41529
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 13244
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 41529,
+        "totalNet": 279992017.06
+      }
+    },
+    "west_lancashire": {
+      "id": "west_lancashire",
+      "url": "https://aidoge.co.uk/councils/west_lancashire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2016/17": {
+          "monthsHeld": 3,
+          "records": 1352
+        },
+        "2017/18": {
+          "monthsHeld": 12,
+          "records": 5107
+        },
+        "2018/19": {
+          "monthsHeld": 12,
+          "records": 5672
+        },
+        "2019/20": {
+          "monthsHeld": 9,
+          "records": 3849
+        },
+        "2020/21": {
+          "monthsHeld": 12,
+          "records": 9027
+        },
+        "2021/22": {
+          "monthsHeld": 7,
+          "records": 3058
+        },
+        "2022/23": {
+          "monthsHeld": 10,
+          "records": 3340
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 5912
+        },
+        "2024/25": {
+          "monthsHeld": 9,
+          "records": 3582
+        },
+        "2025/26": {
+          "monthsHeld": 8,
+          "records": 2164
+        }
+      },
+      "headline": {
+        "year": "2023/24",
+        "records": 5912,
+        "totalNet": 45287280.34
+      }
+    },
+    "west_lindsey": {
+      "id": "west_lindsey",
+      "url": "https://aidoge.co.uk/councils/west_lindsey/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 6696
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 5986
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 2493
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 5986,
+        "totalNet": 13200549.8
+      }
+    },
+    "west_northants": {
+      "id": "west_northants",
+      "url": "https://aidoge.co.uk/councils/west_northants/",
+      "generated": "2026-10-03",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 3,
+          "records": 22391
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 93403
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 117263
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 117263,
+        "totalNet": 1085482956.71
+      }
+    },
+    "west_oxfordshire": {
+      "id": "west_oxfordshire",
+      "url": "https://aidoge.co.uk/councils/west_oxfordshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3135
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3706
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3706,
+        "totalNet": 36261653.84
+      }
+    },
+    "west_suffolk": {
+      "id": "west_suffolk",
+      "url": "https://aidoge.co.uk/councils/west_suffolk/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 6530
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 6805
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 2519
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 6805,
+        "totalNet": 53210044.39
+      }
+    },
+    "westminster": {
+      "id": "westminster",
+      "url": "https://aidoge.co.uk/councils/westminster/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 3,
+          "records": 21201
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 79152
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 79152,
+        "totalNet": 1293695785.32
+      }
+    },
+    "westmorland_and_furness": {
+      "id": "westmorland_and_furness",
+      "url": "https://aidoge.co.uk/councils/westmorland_and_furness/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2023/24": {
+          "monthsHeld": 6,
+          "records": 169
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 116519
+        },
+        "2025/26": {
+          "monthsHeld": 4,
+          "records": 277
+        },
+        "2026/27": {
+          "monthsHeld": 2,
+          "records": 25572
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 116519,
+        "totalNet": 326114373.76
+      }
+    },
+    "wigan": {
+      "id": "wigan",
+      "url": "https://aidoge.co.uk/councils/wigan/",
+      "generated": "2026-10-05",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2022/23": {
+          "monthsHeld": 12,
+          "records": 81167
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 86028
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 88989
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 90438
+        },
+        "2026/27": {
+          "monthsHeld": 5,
+          "records": 36747
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 90438,
+        "totalNet": 597698577.76
+      }
+    },
+    "wiltshire": {
+      "id": "wiltshire",
+      "url": "https://aidoge.co.uk/councils/wiltshire/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 91529
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 86114
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 86114,
+        "totalNet": 800701648.73
+      }
+    },
+    "windsor_and_maidenhead": {
+      "id": "windsor_and_maidenhead",
+      "url": "https://aidoge.co.uk/councils/windsor_and_maidenhead/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 16290
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 29493
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 5626
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 29493,
+        "totalNet": 266180053.13
+      }
+    },
+    "wirral": {
+      "id": "wirral",
+      "url": "https://aidoge.co.uk/councils/wirral/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 71478
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 71478,
+        "totalNet": 610586404.07
+      }
+    },
+    "woking": {
+      "id": "woking",
+      "url": "https://aidoge.co.uk/councils/woking/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2018/19": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2019/20": {
+          "monthsHeld": 1,
+          "records": 1
+        },
+        "2020/21": {
+          "monthsHeld": 5,
+          "records": 5
+        },
+        "2021/22": {
+          "monthsHeld": 10,
+          "records": 38
+        },
+        "2022/23": {
+          "monthsHeld": 8,
+          "records": 22
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 63
+        },
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 1774
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 18710
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 18710,
+        "totalNet": 119188267.37
+      }
+    },
+    "wokingham": {
+      "id": "wokingham",
+      "url": "https://aidoge.co.uk/councils/wokingham/",
+      "generated": "2026-09-10",
+      "thresholdGbp": 500,
+      "bank": false,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 42405
+        },
+        "2025/26": {
+          "monthsHeld": 9,
+          "records": 35949
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 42405,
+        "totalNet": 279686490.16
+      }
+    },
+    "wolverhampton": {
+      "id": "wolverhampton",
+      "url": "https://aidoge.co.uk/councils/wolverhampton/",
+      "generated": "2026-09-26",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 94672
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 99323
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 23082
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 99323,
+        "totalNet": 443554874.75
+      }
+    },
+    "worcester": {
+      "id": "worcester",
+      "url": "https://aidoge.co.uk/councils/worcester/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 7516
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 7711
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 7711,
+        "totalNet": 35159187.11
+      }
+    },
+    "worthing": {
+      "id": "worthing",
+      "url": "https://aidoge.co.uk/councils/worthing/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 5478
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 3975
+        },
+        "2026/27": {
+          "monthsHeld": 3,
+          "records": 863
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 3975,
+        "totalNet": 327007171.25
+      }
+    },
+    "wyre": {
+      "id": "wyre",
+      "url": "https://aidoge.co.uk/councils/wyre/",
+      "generated": "2026-09-09",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2017/18": {
+          "monthsHeld": 7,
+          "records": 5243
+        },
+        "2019/20": {
+          "monthsHeld": 5,
+          "records": 3928
+        },
+        "2020/21": {
+          "monthsHeld": 8,
+          "records": 5530
+        },
+        "2021/22": {
+          "monthsHeld": 8,
+          "records": 5847
+        },
+        "2022/23": {
+          "monthsHeld": 6,
+          "records": 5230
+        },
+        "2023/24": {
+          "monthsHeld": 12,
+          "records": 8225
+        },
+        "2024/25": {
+          "monthsHeld": 8,
+          "records": 7598
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 10158
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 10158,
+        "totalNet": 136673743.81
+      }
+    },
+    "wyre_forest": {
+      "id": "wyre_forest",
+      "url": "https://aidoge.co.uk/councils/wyre_forest/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 3443
+        },
+        "2025/26": {
+          "monthsHeld": 11,
+          "records": 3020
+        }
+      },
+      "headline": {
+        "year": "2024/25",
+        "records": 3443,
+        "totalNet": 34790627.81
+      }
+    },
+    "york": {
+      "id": "york",
+      "url": "https://aidoge.co.uk/councils/york/",
+      "generated": "2026-10-10",
+      "thresholdGbp": 500,
+      "bank": true,
+      "years": {
+        "2024/25": {
+          "monthsHeld": 12,
+          "records": 63095
+        },
+        "2025/26": {
+          "monthsHeld": 12,
+          "records": 68369
+        },
+        "2026/27": {
+          "monthsHeld": 4,
+          "records": 22128
+        }
+      },
+      "headline": {
+        "year": "2025/26",
+        "records": 68369,
+        "totalNet": 295531350.35
+      }
     }
+  },
+  "mapping": {
+    "source": "data/registry/councils.json",
+    "mapped": 234,
+    "unmapped": []
   }
 }
