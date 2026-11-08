@@ -1,0 +1,35 @@
+---
+/**
+ * What the council is, as the UK Places register records it: its official
+ * name, its type and, for a district, its county. No statutory basis for the
+ * services a type provides is cited on this site, so none are listed.
+ */
+import SourceLine from "./SourceLine.astro";
+import type { ProfileAbout } from "../lib/council-profile";
+
+interface Props {
+  name: string;
+  about: ProfileAbout;
+}
+
+const { name, about } = Astro.props;
+---
+<section class="section" id="about" aria-labelledby="about-heading" data-profile-section="about">
+  <h2 id="about-heading">What is {name} council?</h2>
+  <div class="profile-about">
+    <dl class="profile-list">
+      <div><dt>Name in the register</dt><dd>{about.officialName}</dd></div>
+      <div><dt>Type</dt><dd data-council-type>{about.type}</dd></div>
+      {about.county && <div><dt>County</dt><dd>{about.county}</dd></div>}
+    </dl>
+    <SourceLine source={about.source} />
+  </div>
+</section>
+
+<style>
+  .profile-about { max-width: 40rem; }
+  .profile-list { margin: 0.5rem 0; display: grid; gap: 0.35rem; }
+  .profile-list div { display: grid; grid-template-columns: minmax(7rem, auto) minmax(0, 1fr); gap: 1rem; }
+  .profile-list dt { color: var(--text-muted); }
+  .profile-list dd { margin: 0; overflow-wrap: anywhere; }
+</style>

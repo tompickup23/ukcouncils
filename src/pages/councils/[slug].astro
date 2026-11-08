@@ -1,8 +1,10 @@
 ---
 /**
- * One page per council. Phase 1 carries the council tax answer only; the
- * term dates, election, contracts, spending and area sections join as their
- * data does, and until then they are absent, not blank.
+ * One page per council: the council tax answer, then the profile built from
+ * committed data in src/lib/council-profile.ts (what the council is, its
+ * spending record, Band D at a glance, the next school break, and one list of
+ * sources). A section whose data is missing is absent, not blank. Seats,
+ * control and elections join when a sourced file holds them.
  */
 import SchoolHolidays from "../../components/SchoolHolidays.astro";
 import CouncilActions from "../../components/CouncilActions.astro";
@@ -15,6 +17,9 @@ import HistoryBars from "../../components/HistoryBars.astro";
 import Fact from "../../components/Fact.astro";
 import SourceLine from "../../components/SourceLine.astro";
 import SpendingRecord from "../../components/SpendingRecord.astro";
+import ProfileAbout from "../../components/ProfileAbout.astro";
+import ProfileTax from "../../components/ProfileTax.astro";
+import ProfileSources from "../../components/ProfileSources.astro";
 import {
   AREA_TYPE_LABEL,
   CURRENT_YEAR,
@@ -35,8 +40,8 @@ import { bandLinks, similarCouncils } from "../../lib/council-links";
 import { sisterLinks, type Council } from "../../lib/registry";
 import { INCREASES_PATH, OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
-import { councilTaxSource, longDate } from "../../lib/sources";
-import { spendingFor, spendingRecord } from "../../lib/spending";
+import { councilTaxSource } from "../../lib/sources";
+import { councilProfile } from "../../lib/council-profile";
 
 export function getStaticPaths() {
   return councilPages().map(({ council, tax }) => ({
@@ -95,6 +100,7 @@ const path = councilPath(council);
 const question = `How much is council tax in ${name} in ${year}?`;
 const bands = bandLinks(council, tax.region);
 const similar = similarCouncils(council);
+const profile = councilProfile(council, tax);
 
 /** The title's subject, before the pipe. The H1 prints the same words. */
 const title = `${name} council tax bands ${year}`;
@@ -157,12 +163,23 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     </nav>
   )}
   <PageContents items={[
+    {id: 'about', label: 'What the council is'},
+    ...(profile.spending ? [{id: 'spending', label: 'Spending'}] : []),
+    ...(profile.tax ? [{id: 'tax-summary', label: 'Band D at a glance'}] : []),
+    ...(profile.termDates ? [{id: 'school-holidays', label: 'School holidays'}] : []),
     ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
     ...(history.length > 1 ? [{id: 'history', label: 'Previous years'}] : []),
     ...(own ? [{id: 'who-sets-it', label: 'Who sets the charge'}] : []),
-    ...(spendingRecord(name, spendingFor(council.gss)) ? [{id: 'spending', label: 'Spending'}] : []),
-    ...(council.reorganisation ? [{id: 'reorganisation', label: 'Reorganisation'}] : []),
+    ...(profile.sources.length > 0 ? [{id: 'sources', label: 'Sources'}] : []),
   ]} />
+
+  <ProfileAbout name={name} about={profile.about} />
+
+  <SpendingRecord gss={council.gss} name={name} />
+
+  {profile.tax && <ProfileTax name={name} region={tax.region} tax={profile.tax} />}
+
+  <SchoolHolidays name={name} term={profile.termDates} />
 
   {englandArea && areaSource && (
     <section class="section" id="compared" aria-labelledby="compared-heading">
@@ -175,6 +192,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
             change={`up ${percent(englandArea.england.changePct)} on ${previous}`}
             source={areaSource}
           />
+          <p class="caveat">Includes parish and adult social care precepts.</p>
         </div>
         <div class="card">
           <Fact
@@ -183,6 +201,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
             change={`up ${percent(englandArea.byAreaType[areaType].changePct)} on ${previous}`}
             source={areaSource}
           />
+          <p class="caveat">Includes parish and adult social care precepts.</p>
         </div>
       </div>
       <p class="muted">
@@ -238,6 +257,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
               change={typeof own.changePct === "number" ? `${own.changePct >= 0 ? "up" : "down"} ${percent(Math.abs(own.changePct), 2)} on ${previous}, as published` : null}
               source={ownSource}
             />
+            <p class="caveat">The council's own share, excluding parish precepts, as MHCLG publishes it.</p>
           </div>
         )}
         {county && countySource && typeof county.bandD === "number" && (
@@ -248,6 +268,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
               change={typeof county.changePct === "number" ? `${county.changePct >= 0 ? "up" : "down"} ${percent(Math.abs(county.changePct), 2)} on ${previous}, as published` : null}
               source={countySource}
             />
+            <p class="caveat">The county council's own share, excluding parish precepts, as MHCLG publishes it.</p>
           </div>
         )}
       </div>
@@ -260,19 +281,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     </section>
   )}
 
-  <SpendingRecord gss={council.gss} name={name} />
-
-  {council.reorganisation && (
-    <section class="section" id="reorganisation" aria-labelledby="reorganisation-heading">
-      <h2 id="reorganisation-heading">Is {name} council being reorganised?</h2>
-      <p>{council.reorganisation.note}</p>
-      <p class="source-line">
-        Source: <a href={council.reorganisation.sourceUrl}>{new URL(council.reorganisation.sourceUrl).hostname}</a>{longDate(council.reorganisation.sourceDate) ? `, ${longDate(council.reorganisation.sourceDate)}` : ""}, as recorded by UK Places.
-      </p>
-    </section>
-  )}
-
-  <SchoolHolidays place={council} />
+  {profile.sources.length > 0 && <ProfileSources name={name} sources={profile.sources} />}
 
   {similar && (
     <section class="section" id="similar" aria-labelledby="similar-heading">
