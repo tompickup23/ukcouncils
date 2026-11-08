@@ -1,0 +1,160 @@
+---
+/**
+ * Findings: dated data notes, each a count or a distribution read from data
+ * the site already holds, grouped within MHCLG's class of authority. No note
+ * ranks councils or compares classes, and none says why a council set what it
+ * set. Below the notes, the list of data updates the feed carries.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import SourceLine from "../components/SourceLine.astro";
+import { CURRENT_YEAR, PREVIOUS_YEAR, yearAnchor, yearLabel } from "../lib/council-tax";
+import { INCREASES_PATH } from "../lib/site";
+import {
+  CHANGE_NOTE_ID,
+  FINDINGS_DATE,
+  PARISH_NOTE_ID,
+  allUpdates,
+  changeDistribution,
+  parishComponent,
+} from "../lib/findings";
+import { longDate } from "../lib/sources";
+
+const year = yearLabel(CURRENT_YEAR);
+const previous = yearLabel(PREVIOUS_YEAR);
+const change = changeDistribution();
+const parish = parishComponent();
+const updates = allUpdates();
+const written = longDate(FINDINGS_DATE);
+const showLower = parish.totals.lower > 0;
+const showMissing = parish.totals.notPublished > 0;
+---
+<BaseLayout
+  title="Findings"
+  description={`Dated data notes on council tax in England for ${year}, each a count within a class of authority with its MHCLG source, and every data update the site has taken.`}
+  path="/findings/"
+>
+  <Breadcrumbs items={[{ label: "Findings" }]} />
+  <header class="page-head">
+    <p class="eyebrow">Findings</p>
+    <h1>Data notes and updates</h1>
+    <p class="lede">
+      Each note counts something in the official tables the site already publishes, within MHCLG's class
+      of authority. Councils are not ranked and classes are not compared. The figures for each council are
+      on its own page.
+    </p>
+  </header>
+
+  <article class="section" id={CHANGE_NOTE_ID} aria-labelledby="change-heading">
+    <h2 id="change-heading">How many councils changed their own Band D by each whole percentage point in {year}?</h2>
+    <p class="muted">Written {written}.</p>
+    <p>
+      This note counts councils by the percentage change in their own average Band D for {year} on {previous},
+      excluding parish precepts, as MHCLG publishes it for each council. Each row counts the councils whose
+      published change is at least the lower figure and under the next whole point; a fall row counts the size
+      of the fall the same way.
+      {change.roundingNotes.length > 0 &&
+        ` A council whose published change MHCLG notes as rounded, with the actual change below the referendum threshold, is counted in its own row with that note, not in a whole point row; the notes are under the table.`}
+      It covers {change.total}
+      councils in {change.classes.length} classes of authority; the county councils, which MHCLG publishes separately, are not part of it.
+      {change.notPublished > 0 && ` ${change.notPublished} councils have no published change and are in no row.`}
+    </p>
+    <div class="fact" data-fact>
+      <div class="table-wrap">
+        <table class="data">
+          <caption>Councils by whole percentage point of change in own Band D, {year} on {previous}, within each class</caption>
+          <thead><tr><th scope="col">Change on {previous}</th><th scope="col" class="num">Councils</th></tr></thead>
+          {change.classes.map((group) => (
+            <tbody>
+              <tr><th scope="colgroup" colspan="2">{group.label} ({group.councils} councils)</th></tr>
+              {group.rows.map((row) => (
+                <tr><th scope="row">{row.label}</th><td class="num" data-figure>{row.count}</td></tr>
+              ))}
+            </tbody>
+          ))}
+        </table>
+      </div>
+      <SourceLine source={{ ...change.source, method: "Counted from the published percentage change for each council" }} />
+      <p class="muted">Read from the MHCLG files on {longDate(change.accessed)}.</p>
+      {change.roundingNotes.map((note) => (
+        <p class="muted" data-mhclg-note={note.id}>MHCLG note {note.id}: {note.text}</p>
+      ))}
+    </div>
+    <p>
+      Every council's own figure and change are on <a href={`${INCREASES_PATH}#${yearAnchor(CURRENT_YEAR)}`}>council tax rises {year}</a>
+      and on <a href="/councils/">each council's page</a>.
+    </p>
+  </article>
+
+  <article class="section" id={PARISH_NOTE_ID} aria-labelledby="parish-heading">
+    <h2 id="parish-heading">How many councils' average Band D for {year} includes parish precepts?</h2>
+    <p class="muted">Written {written}.</p>
+    <p>
+      MHCLG publishes each council's average Band D for {year} twice: excluding parish precepts and including
+      them. This note counts the councils where the figure including parish precepts is higher, which means
+      parish or town council precepts are part of the average. Where the two figures are equal, no parish
+      precept is included. Of {parish.classes.reduce((n, g) => n + g.councils, 0)} councils, {parish.totals.withParish}
+      have a parish precept component and {parish.totals.without} do not.
+    </p>
+    <div class="fact" data-fact>
+      <div class="table-wrap">
+        <table class="data">
+          <caption>Councils whose average Band D for {year} includes parish precepts, within each class</caption>
+          <thead>
+            <tr>
+              <th scope="col">Class</th>
+              <th scope="col" class="num">Councils</th>
+              <th scope="col" class="num">Includes parish precepts</th>
+              <th scope="col" class="num">No parish precept</th>
+              {showLower && <th scope="col" class="num">Including below excluding</th>}
+              {showMissing && <th scope="col" class="num">Not published</th>}
+            </tr>
+          </thead>
+          <tbody>
+            {parish.classes.map((group) => (
+              <tr>
+                <th scope="row">{group.label}</th>
+                <td class="num" data-figure>{group.councils}</td>
+                <td class="num" data-figure>{group.rows.withParish}</td>
+                <td class="num" data-figure>{group.rows.without}</td>
+                {showLower && <td class="num" data-figure>{group.rows.lower}</td>}
+                {showMissing && <td class="num" data-figure>{group.rows.notPublished}</td>}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <SourceLine source={{ ...parish.source, method: "Counted by comparing the two published averages for each council" }} />
+      <p class="muted">Read from the MHCLG files on {longDate(parish.accessed)}.</p>
+      {parish.pendingNotes.map((note) => (
+        <p class="muted" data-mhclg-note={note.id}>MHCLG note {note.id}: {note.text}</p>
+      ))}
+    </div>
+    <p>
+      The parish precept line sits under the Band D figure on <a href="/councils/">each council's page</a>; the
+      area figures by band are on <a href="/council-tax/">council tax in England</a>.
+    </p>
+  </article>
+
+  <section class="section" id="changes" aria-labelledby="changes-heading">
+    <h2 id="changes-heading">What data has the site taken, and when?</h2>
+    <p>
+      One entry per data update, dated by the dataset's own edition, and one per note above. The same entries
+      are in the <a href="/rss.xml">feed</a>.
+    </p>
+    <ul class="updates">
+      {updates.map((u) => (
+        <li>
+          <p class="muted">{longDate(u.date)}</p>
+          <p><a href={u.path}>{u.title}</a></p>
+          <p>{u.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .updates { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; overflow-wrap: anywhere; }
+  .updates p { margin: 0; }
+</style>
