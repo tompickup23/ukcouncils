@@ -134,7 +134,7 @@ export async function renderOgCard(card: OgCard): Promise<Uint8Array<ArrayBuffer
 /** True only when the build asked for cards. Every OG route checks this. */
 export const buildOg = process.env.BUILD_OG === "1";
 
-export const HUB_CARDS = ["home", "councils", "council-tax", "rises"] as const;
+export const HUB_CARDS = ["home", "councils", "council-tax", "rises", "exceptional-financial-support"] as const;
 export type HubCard = (typeof HUB_CARDS)[number];
 
 export const hubCardPath = (card: HubCard) => `/og/${card}.png`;

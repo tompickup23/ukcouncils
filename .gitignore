@@ -6,6 +6,7 @@ dist
 coverage
 playwright-report
 test-results
+output/playwright/
 .cache
 
 # Downloaded source files. The committed JSON under data/ is the record; the raw

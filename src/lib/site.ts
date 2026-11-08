@@ -88,6 +88,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/compare/", label: "Compare councils", desc: "Compare the same band and year within a council type" },
       { href: INCREASES_PATH, label: "Rises by year", desc: `How much each council raised its own share, to ${yearLabel(CURRENT_YEAR)}` },
       { href: NEXT_YEAR_PATH, label: `Council tax ${yearLabel(NEXT_YEAR)}`, desc: "Not yet set: when the figures are published" },
+      { href: "/exceptional-financial-support/", label: "Exceptional Financial Support", desc: "MHCLG support by year and council, with every source" },
     ],
   },
   {

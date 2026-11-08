@@ -6,6 +6,7 @@ import SourceLine from "../components/SourceLine.astro";
 import EfsFigure from "../components/EfsFigure.astro";
 import { efs, pages, authorities, statements, multipleFigures, figuresByAuthority, type EfsTable } from "../lib/efs";
 import { efsYear, efsSource, efsTableHeading } from "../lib/efs-presentation";
+import { hubCardPath } from "../lib/og";
 import { longDate } from "../lib/sources";
 
 const years = Object.keys(pages).sort().reverse();
@@ -24,6 +25,8 @@ const collectionSource = {
   title={`Exceptional Financial Support for councils in England, ${period}`}
   description={`Exceptional Financial Support in England, by year and council. MHCLG figures, sources, markings and revision notes, ${period}.`}
   path="/exceptional-financial-support/"
+  ogImage={hubCardPath("exceptional-financial-support")}
+  ogImageAlt="Exceptional Financial Support"
 >
   <Breadcrumbs items={[{ label: "Exceptional Financial Support" }]} />
   <header class="page-head">

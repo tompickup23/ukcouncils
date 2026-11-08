@@ -21,6 +21,7 @@ function cards(): Record<HubCard, OgCard> {
       }
     : {};
   return {
+    "exceptional-financial-support": { eyebrow: "", heading: "Exceptional Financial Support", source: "" },
     home: { eyebrow: "Council tax, term dates, elections", heading: "Your council, from the official record", source: "Every figure from an official table, with its date" },
     councils: { eyebrow: "Councils", heading: "Every council in England", source: `MHCLG council tax tables, ${longDate(data.source.published)}` },
     "council-tax": { eyebrow: `Council tax ${year}`, heading: "Council tax in England", ...englandFigure, source },
