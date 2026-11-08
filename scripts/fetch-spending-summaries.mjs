@@ -2,8 +2,8 @@
  * What AI DOGE holds of each council's published spending, for the spending
  * section on a council page.
  *
- *   node scripts/fetch-spending-summaries.mjs            fetch and write
- *   node scripts/fetch-spending-summaries.mjs --offline  re-read .cache only
+ * Run with no options to fetch, offline to read the cache, or map only to
+ * add registry keys to the committed snapshot without refreshing its data.
  *
  * It reads three published files from AI DOGE's public data host:
  *
@@ -12,10 +12,10 @@
  *   v1/banks.json               the bodies with a searchable transaction bank
  *
  * and fetches a summary only for a body the council registry links to an AI
- * DOGE page (data/registry/councils.json, `sisters.aidoge`), keyed by the id
- * at the end of that URL. The downloads go to .cache/aidoge-summaries/
- * (gitignored); the committed record is data/spending/aidoge-summaries.json,
- * the same split as council tax: raw files fetched again by the script,
+ * DOGE page through sisters.aidoge. Each summary is stored under both the id
+ * at the end of that URL and the GSS code in the registry. Downloads stay in
+ * the ignored cache; the spending record uses the same split as council tax:
+ * raw files fetched again by the script,
  * derived JSON in git. The raw files sit outside data/ because AI DOGE's free
  * text carries dashes this repo's house style test would find there.
  *
@@ -26,12 +26,15 @@
  * never stored cannot reach a page.
  *
  * A body whose summary is missing (HTTP 404) is skipped with a log line. The
- * script refuses to write, and exits non-zero, when no body is left, when the
- * index or the bank list cannot be read, or when a summary does not carry the
- * fields a page relies on.
+ * script refuses to write, and exits with an error, when no body is left,
+ * when the index or bank list cannot be read, or when a summary does not
+ * carry the fields a page relies on. Unmapped bodies are kept and reported.
+ * Conflicting summaries or ambiguous registry mappings stop the write.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { pathToFileURL } from "node:url";
+import { isDeepStrictEqual } from "node:util";
 
 const ROOT = process.cwd();
 const BASE = "https://data.aidoge.co.uk/v1";
@@ -61,6 +64,65 @@ async function fetchJson(path) {
 function bodyId(url) {
   const segments = new URL(url).pathname.split("/").filter(Boolean);
   return segments.at(-1) ?? null;
+}
+
+/** Add both lookup keys using only the registry, keeping every existing entry. */
+export function mapBodyKeys(bodies, registry) {
+  const gssById = new Map();
+  for (const [key, council] of Object.entries(registry.councils)) {
+    if (typeof council.sisters?.aidoge !== "string") continue;
+    if (!/^[EWSN]\d{8}$/.test(council.gss) || key !== council.gss) {
+      throw new Error(`Invalid registry GSS code: ${key}`);
+    }
+    const id = bodyId(council.sisters.aidoge);
+    if (!id) throw new Error(`No AI DOGE body id for ${key}`);
+    if (gssById.has(id) && gssById.get(id) !== council.gss) {
+      throw new Error(`Ambiguous registry mapping for ${id}`);
+    }
+    gssById.set(id, council.gss);
+  }
+
+  const result = { ...bodies };
+  const unique = new Map();
+  for (const body of Object.values(bodies)) {
+    if (typeof body.id !== "string" || !body.id) throw new Error("Missing AI DOGE body id");
+    if (unique.has(body.id) && !isDeepStrictEqual(unique.get(body.id), body)) {
+      throw new Error(`Conflicting summaries for ${body.id}`);
+    }
+    unique.set(body.id, body);
+  }
+
+  const unmapped = [];
+  let mapped = 0;
+  for (const [id, body] of [...unique].sort(([a], [b]) => a.localeCompare(b))) {
+    const gss = gssById.get(id);
+    if (!gss) {
+      unmapped.push({ id, reason: "No matching AI DOGE URL id in the council registry" });
+      continue;
+    }
+    for (const key of [id, gss]) {
+      if (Object.hasOwn(result, key) && !isDeepStrictEqual(result[key], body)) {
+        throw new Error(`Conflicting summary at ${key}`);
+      }
+      Object.defineProperty(result, key, { value: body, enumerable: true, configurable: true, writable: true });
+    }
+    mapped += 1;
+  }
+  return {
+    bodies: Object.fromEntries(Object.keys(result).sort().map((key) => [key, result[key]])),
+    mapping: { source: "data/registry/councils.json", mapped, unmapped },
+  };
+}
+
+function writeMappedOutput(output, registry) {
+  const { bodies, mapping } = mapBodyKeys(output.bodies, registry);
+  output.bodies = bodies;
+  output.mapping = mapping;
+  output.source.rule = "Each council summary is keyed by its AI DOGE URL id and registry GSS code. Counts describe councils, not keys.";
+  mkdirSync(OUT_DIR, { recursive: true });
+  writeFileSync(OUT, `${JSON.stringify(output, null, 2)}\n`);
+  for (const { id, reason } of mapping.unmapped) console.log(`unmapped ${id}: ${reason}`);
+  console.log(`GSS mapping: ${mapping.mapped} bodies mapped, ${mapping.unmapped.length} bodies unmapped`);
 }
 
 const isCount = (value) => Number.isInteger(value) && value >= 0;
@@ -96,8 +158,13 @@ function headlineFrom(id, headline) {
 }
 
 async function main() {
-  mkdirSync(RAW, { recursive: true });
   const registry = JSON.parse(readFileSync(REGISTRY, "utf-8"));
+  if (process.argv.includes("--map-only")) {
+    const output = JSON.parse(readFileSync(OUT, "utf-8"));
+    writeMappedOutput(output, registry);
+    return;
+  }
+  mkdirSync(RAW, { recursive: true });
 
   const index = await fetchJson("summaries/index.json");
   if (!index || !Array.isArray(index.councils)) throw new Error("summaries/index.json could not be read");
@@ -168,15 +235,16 @@ async function main() {
     },
     bodies: sorted,
   };
-  mkdirSync(OUT_DIR, { recursive: true });
-  writeFileSync(OUT, `${JSON.stringify(output, null, 2)}\n`);
+  writeMappedOutput(output, registry);
   console.log(
     `wrote ${OUT}: ${count} of ${mapped.length} mapped councils, `
     + `${output.counts.headline} with a headline, ${output.counts.bank} with a bank, ${skipped.length} skipped`,
   );
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error instanceof Error ? error.message : error);
+    process.exit(1);
+  });
+}
