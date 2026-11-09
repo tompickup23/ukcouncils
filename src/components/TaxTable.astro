@@ -26,7 +26,7 @@ function change(current: number | undefined, previous: number | undefined) {
     <label class="field">Council type<select data-table-class><option value="">All types</option>{classes.map(([code,label]) => <option value={code}>{label}</option>)}</select></label>
     <label class="field">Sort<select data-table-sort><option value="name">Council name</option><option value="high" disabled>Annual charge, highest first</option><option value="low" disabled>Annual charge, lowest first</option></select></label>
   </fieldset>
-  <div class="action-links table-actions" data-pagefind-ignore><button class="button secondary" type="button" data-table-export disabled>Download shown rows as CSV</button><button class="button secondary" type="button" data-table-print disabled>Print</button></div>
+  <div class="action-links table-actions" data-pagefind-ignore><button class="button secondary" type="button" data-table-print disabled>Print</button></div>
   <p class="small muted" data-sort-note>Choose one council type to sort by annual charge.</p>
   <p class="small" data-table-status role="status">{rows.length} councils, Band {band}, {yearLabel(CURRENT_YEAR)}.</p>
   <div class="fact" data-fact>
@@ -50,14 +50,13 @@ function change(current: number | undefined, previous: number | undefined) {
     <SourceLine source={changeSource(PREVIOUS_YEAR, CURRENT_YEAR)} />
     <p class="caveat">Whole-area charges include average parish precepts. Your bill and discounts can differ. Monthly equivalents divide the annual charge by ten and round to pennies.</p>
   </div>
-  <script type="application/json" data-table-data set:html={jsonLd({rows, complete, caption, source})} />
+  <script type="application/json" data-table-data set:html={jsonLd({rows, complete, caption})} />
 </section>
 <script>
   import {moneyPence, monthlyPence, type TaxRow, type TaxBand} from '../lib/tax-view';
-  import {downloadTax, type ExportSource} from '../lib/tax-export';
   import {matchesCouncil} from '../lib/council-search';
   for (const root of document.querySelectorAll<HTMLElement>('[data-tax-table]')) {
-    const {rows, complete, caption, source} = JSON.parse(root.querySelector('[data-table-data]')!.textContent!) as {rows: TaxRow[]; complete: Record<string, Record<TaxBand, boolean>>; caption: string; source: ExportSource};
+    const {rows, complete, caption} = JSON.parse(root.querySelector('[data-table-data]')!.textContent!) as {rows: TaxRow[]; complete: Record<string, Record<TaxBand, boolean>>; caption: string};
     const year = root.dataset.year!; const previous = root.dataset.previous!;
     const body = root.querySelector('tbody')!;
     const elements = new Map([...body.querySelectorAll<HTMLTableRowElement>('tr')].map(row => [row.dataset.slug!, row]));
@@ -75,7 +74,6 @@ function change(current: number | undefined, previous: number | undefined) {
       const visible = rows.filter(row => (!type.value || row.classCode === type.value) && matchesCouncil(filter.value, row.name));
       visible.sort((a,c) => sort.value === 'name' ? a.name.localeCompare(c.name) : (sort.value === 'high' ? -1 : 1) * ((a.years[year][b] as number) - (c.years[year][b] as number)) || a.name.localeCompare(c.name));
       shown = visible;
-      root.querySelector<HTMLButtonElement>('[data-table-export]')!.disabled = !shown.length;
       for (const element of elements.values()) element.hidden = true;
       for (const row of visible) {
         const element = elements.get(row.slug)!; element.hidden = false;
@@ -96,9 +94,6 @@ function change(current: number | undefined, previous: number | undefined) {
       root.querySelector('[data-table-caption]')!.textContent = `${caption}: Band ${b}, ${year.replace('-', '/')}`;
     }
     root.querySelector<HTMLFieldSetElement>('fieldset')!.disabled = false;
-    const csv = root.querySelector<HTMLButtonElement>('[data-table-export]')!;
-    csv.disabled = false;
-    csv.addEventListener('click', () => downloadTax(shown, band.value as TaxBand, year, source, `council-tax-${year}-band-${band.value}.csv`));
     const print = root.querySelector<HTMLButtonElement>('[data-table-print]')!;
     print.disabled = false; print.addEventListener('click', () => window.print());
     filter.addEventListener('input', update);

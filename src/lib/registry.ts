@@ -78,6 +78,8 @@ export function sisterLinks(council: Council): SisterLink[] {
     // The private project is never linked from a public surface, even if an
     // older registry snapshot or a refresh still contains its mapping.
     if (site === "ukfoodhygiene") continue;
+    // No Asylum Stats link from UK Councils for now (Tom, 8 November 2026).
+    if (site === "asylumstats") continue;
     const url = council.sisters[site];
     if (typeof url === "string") links.push({ site, name: SISTER_SITES[site], url });
   }

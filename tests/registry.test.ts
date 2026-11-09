@@ -62,6 +62,10 @@ describe("the council registry", () => {
     for (const council of councils) expect(sisterLinks(council).some(link => link.site === 'ukfoodhygiene')).toBe(false);
   });
 
+  it("links no Asylum Stats page from UK Councils for now (Tom, 8 November 2026)", () => {
+    for (const council of councils) expect(sisterLinks(council).some(link => link.site === 'asylumstats')).toBe(false);
+  });
+
   it("finds a council by slug and lists its links in a fixed order", () => {
     const burnley = councilBySlug("burnley");
     expect(burnley?.gss).toBe("E07000117");
@@ -69,7 +73,6 @@ describe("the council registry", () => {
       "ukelections",
       "ukdemographics",
       "aidoge",
-      "asylumstats",
     ]);
   });
 });

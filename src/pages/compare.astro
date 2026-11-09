@@ -64,9 +64,8 @@ const sources = taxSources();
   </details>
 </BaseLayout>
 <script>
-  import {compareTax, comparisonQuery, moneyPence, monthlyPence, type TaxRow, type ComparisonState} from '../lib/tax-view';
+  import {compareTax, comparisonQuery, moneyPence, monthlyPence, type TaxRow, type ComparisonState, type ExportSource} from '../lib/tax-view';
   import {shareView} from '../lib/share';
-  import {downloadTax, type ExportSource} from '../lib/tax-export';
   import {matchesCouncil} from '../lib/council-search';
   const root = document.querySelector<HTMLElement>('[data-tax-compare]')!;
   const data = JSON.parse(root.querySelector('[data-comparison-data]')!.textContent!) as {site: string; rows: TaxRow[]; years: string[]; currentYear: string; sources: Record<string, ExportSource>};
@@ -120,15 +119,10 @@ const sources = taxSources();
     else { result.hidden = true; status.textContent = 'Choose two councils to see their published charges.'; }
   }
   const share = root.querySelector<HTMLButtonElement>('[data-share-view]')!;
-  const csv = root.querySelector<HTMLButtonElement>('[data-export-view]')!;
-  share.disabled = false; csv.disabled = false;
+  share.disabled = false;
   share.addEventListener('click', () => {
     const value = state(); if (!compareTax(data.rows, value, data.years).ok || result.hidden) return;
     void shareView(new URL(`/compare/?${comparisonQuery(value)}`, data.site).href, 'Compare council tax', root.querySelector('[data-share-status]')!, root.querySelector('[data-share-fallback]')!);
-  });
-  csv.addEventListener('click', () => {
-    const checked = compareTax(data.rows, state(), data.years); if (!checked.ok || result.hidden) return;
-    downloadTax([checked.a,checked.b], checked.band, checked.year, data.sources[checked.year], `council-tax-comparison-${checked.year}-band-${checked.band}.csv`);
   });
   fields.disabled = false; restore();
   for (const side of ['a','b']) filter(side).addEventListener('input', () => options(side, control(side).value));

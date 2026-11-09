@@ -1,6 +1,6 @@
 ---
 import ViewActions from './ViewActions.astro';
-import {taxRows, taxSources} from '../lib/tax-view-data';
+import {taxRows} from '../lib/tax-view-data';
 import {CURRENT_YEAR} from '../lib/council-tax';
 import {SITE_URL, jsonLd} from '../lib/site';
 interface Props {slug: string}
@@ -9,21 +9,18 @@ const row = taxRows().find(row => row.slug === slug)!;
 ---
 <div data-council-actions>
   <ViewActions id="council" />
-  <script type="application/json" data-council-export set:html={jsonLd({row, year: CURRENT_YEAR, source: taxSources()[CURRENT_YEAR], site: SITE_URL})} />
+  <script type="application/json" data-council-export set:html={jsonLd({row, year: CURRENT_YEAR, site: SITE_URL})} />
 </div>
 <script>
-  import {downloadTax, type ExportSource} from '../lib/tax-export';
   import {shareView} from '../lib/share';
   import {TAX_BANDS, type TaxBand, type TaxRow} from '../lib/tax-view';
   const root = document.querySelector<HTMLElement>('[data-council-actions]')!;
-  const {row, year, source, site} = JSON.parse(root.querySelector('[data-council-export]')!.textContent!) as {row: TaxRow; year: string; source: ExportSource; site: string};
+  const {row, year, site} = JSON.parse(root.querySelector('[data-council-export]')!.textContent!) as {row: TaxRow; year: string; site: string};
   const band = (): TaxBand => {
     const value = document.querySelector<HTMLInputElement>('[data-band]:checked')?.value;
     return TAX_BANDS.includes(value as TaxBand) ? value as TaxBand : 'D';
   };
   const share = root.querySelector<HTMLButtonElement>('[data-share-view]')!;
-  const csv = root.querySelector<HTMLButtonElement>('[data-export-view]')!;
-  share.disabled = false; csv.disabled = false;
+  share.disabled = false;
   share.addEventListener('click', () => void shareView(new URL(`/councils/${row.slug}/#band-${band()}`, site).href, `${row.name} council tax, Band ${band()}, ${year.replace('-', '/')}`, root.querySelector('[data-share-status]')!, root.querySelector('[data-share-fallback]')!));
-  csv.addEventListener('click', () => downloadTax([row], band(), year, source, `${row.slug}-band-${band()}-${year}.csv`));
 </script>

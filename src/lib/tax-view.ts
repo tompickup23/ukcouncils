@@ -36,3 +36,6 @@ export function completeClass(rows: TaxRow[], code: string, year: string, band: 
   const peers = rows.filter(row => row.classCode === code);
   return peers.length > 0 && peers.every(row => validPence(row.years[year]?.[band]));
 }
+
+/** The provenance of one year's published band table, as the pages print it. */
+export interface ExportSource { publisher: string; title: string; table?: string; url: string; date?: string | null; revised: string | null; licence: string; licenceUrl: string; files: {url: string; sha256: string}[] }
