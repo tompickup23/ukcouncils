@@ -1,4 +1,8 @@
 ---
+import {budget, budgetYear, budgetSource, RESERVES_CAVEAT} from '../lib/budget';
+import {reservesSource} from '../lib/council-budget';
+import {longDate} from '../lib/sources';
+import SourceLine from '../components/SourceLine.astro';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { CURRENT_YEAR, PREVIOUS_YEAR, loadYear, yearLabel } from "../lib/council-tax";
@@ -11,7 +15,7 @@ const ratios = data.source.bandTableNotes.find((n) => n.id === "ac")?.text ?? nu
 ---
 <BaseLayout
   title="Methodology: how UK Councils reads the council tax tables"
-  description="How UK Councils reads the MHCLG council tax tables, what each figure includes, and the two calculations the site makes."
+  description="How UK Councils reads the MHCLG council tax tables, what each figure includes, and how calculations are labelled."
   path="/methodology/"
 >
   <Breadcrumbs items={[{ label: "Methodology" }]} />
@@ -55,6 +59,22 @@ const ratios = data.source.bandTableNotes.find((n) => n.id === "ac")?.text ?? nu
       from 1 April 2025 and the estimate uses the old codes. The position strips place a council among councils of the same
       MHCLG class and rank nothing. An election year is printed only where the verified quoted source states it.
       Who runs each council is not shown because no source meets the site's standard yet.</p>
+    <h2>Council budgets</h2>
+    <p>The MHCLG RA {budgetYear} edition published on {longDate(budget.sources.raPart1.published)} supplies the budget tables.
+      Observed amounts retain their printed signs and are converted from whole thousands to pounds.
+      Service expenditure is net current expenditure, net of sales, fees, charges and transfers, excluding NHS-funded expenditure.
+      The budget return and published payment records cover different money.</p>
+    <p>Calculated funding groups rearrange the signed financing identity: revenue expenditure equals council tax requirement
+      less the other printed financing lines. Additions and deductions retain their direction.
+      RA and Table 10 are separate returns; the site checks their agreement against reviewed exceptions without adjusting either.</p>
+    <p>A district's county tables show the whole county council budget, joined by exact GSS code and never apportioned.
+      A missing billing return suppresses the entire budget section, including its county subsection. There is no prior year substitution.
+      Zero standalone rows are omitted. Zero cells in otherwise present reserves rows show n/a; stored figures remain unchanged.</p>
+    <p>Reserve balances use only other earmarked and unallocated reserves, lines 1015 and 1016, with their sum labelled as calculated.
+      {RESERVES_CAVEAT}</p>
+    <SourceLine source={budgetSource()} />
+    <SourceLine source={budgetSource('raPart2')} />
+    <SourceLine source={reservesSource} />
     <h2>Comparisons</h2>
     <p>
       The national page orders councils by area Band D within each class of council, because MHCLG publishes

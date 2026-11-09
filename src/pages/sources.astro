@@ -16,6 +16,7 @@ import { councilTaxLinks } from "../lib/council-tax-links";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
+const budgetLinks = JSON.parse(readFileSync(join(process.cwd(), "data/links/ukcounciltax-budget.json"), "utf8"));
 const spending = loadSpending().source;
 const holidays = JSON.parse(readFileSync(join(process.cwd(), "data/school-holidays/manifest.json"), "utf8")) as { sha256: string; authorityCount: number; snapshotDate: string };
 const efsPages = Object.entries(efs.pages).sort(([a], [b]) => a.localeCompare(b));
@@ -94,6 +95,12 @@ const registry = loadRegistry();
       {source.tables.join('; ')}. Retrieved {longDate(source.retrieved)}. {source.licence}.
       SHA-256: <code>{source.sha256}</code>.
     </li>)}</ul>
+    <p>Observed RA amounts retain their signs. Calculated funding groups reverse the financing signs except council tax requirement,
+      with Add and Deduct labels. County tables cover the whole county council budget; a missing billing return suppresses both tiers.
+      Other earmarked and unallocated reserves are shown with a labelled calculated total.
+      It is not possible to identify usable revenue reserves in the current release.</p>
+    <p>Budget game links are taken from the <a href={budgetLinks.source}>UK Council Tax sitemap</a>,
+      retrieved {longDate(budgetLinks.fetched.slice(0, 10))}, and printed only for available returns.</p>
     <h2>Spending</h2>
     <p>
       The spending record on council pages comes from {spending.publisher}'s published{" "}

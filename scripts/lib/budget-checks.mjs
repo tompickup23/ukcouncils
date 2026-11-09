@@ -5,6 +5,7 @@ export function budgetChecks(root, dist) {
   const json = path => JSON.parse(readFileSync(join(root, path), 'utf8'));
   const budget = json('data/budget/ra-2026-27.json');
   const tax = json('data/council-tax/england-2026-27.json');
+  const links = json('data/links/ukcounciltax-budget.json');
   const registry = json('data/registry/councils.json');
   const failures = [];
   const check = (ok, label) => {if (!ok) failures.push(label);};
@@ -35,6 +36,7 @@ export function budgetChecks(root, dist) {
       continue;
     }
     check(content.includes(`${tax.authorities[council.gss].name} council budget for 2026/27`), `Budget display name ${where}`);
+    check(html.includes(`href="${links.urlsByGss[council.gss]}"`), `Verified game URL ${where}`);
     check(!/<script|astro-island/.test(content), `Budget client script ${where}`);
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
     check(new Set(ids).size === ids.length, `Duplicate ids ${where}`);

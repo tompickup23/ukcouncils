@@ -1,4 +1,4 @@
-import {existsSync, readFileSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {budget, budgetSource, REVENUE_RELEASE, type BudgetCouncil} from './budget';
 import {CURRENT_YEAR, loadYear} from './council-tax';
@@ -42,6 +42,6 @@ export function councilBudget(council: Council): CouncilBudget | null {
   sources.push(budgetSource('raPart2'), reservesSource);
   if (county && (county.council.values.grantindsg ?? 0) > 0) sources.push(budgetSource('raGrants'));
   const path = join(process.cwd(), 'data/links/ukcounciltax-budget.json');
-  const links = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')).urlsByGss as Record<string, string> : {};
+  const links = JSON.parse(readFileSync(path, 'utf8')).urlsByGss as Record<string, string>;
   return {council: row, name: tax.name, county, sources, gameUrl: links[council.gss] ?? null};
 }
