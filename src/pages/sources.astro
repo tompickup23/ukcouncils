@@ -1,6 +1,6 @@
 ---
 import { budget, budgetYear } from "../lib/budget";
-import reorganisationSources from '../../data/reorganisation/sources.json';
+import {reorganisationSources, reorganisationData} from '../lib/reorganisation';
 import { population } from "../lib/population";
 import { collection } from "../lib/collection";
 import { elections } from "../lib/elections";
@@ -36,11 +36,16 @@ const registry = loadRegistry();
     <h1>Where the figures come from</h1>
   </header>
   <div class="prose">
+    <section data-reorganisation-documentation="sources">
     <h2>Local government reorganisation</h2>
+    <p>Checked against the saved MHCLG and legislation.gov.uk documents on {longDate(reorganisationData.checked)}.
+      The panel prints no costs, savings, funding or population figures.</p>
     <ul>{Object.values(reorganisationSources).filter(source => source.publisher !== 'Lancashire County Council').map(source => <li class="source-line">
       <a href={source.url}>{source.title}</a>, {source.publisher}, {longDate(source.date)}.
       <span class="small">Saved file SHA256: <code>{source.sha256}</code>.</span>
+      {source.files && <ul>{source.files.map(file => <li><a href={file.url}>{file.file.split('/').pop()}</a>, SHA256: <code>{file.sha256}</code>.</li>)}</ul>}
     </li>)}</ul>
+    </section>
     <h2>Council tax, England</h2>
     <ul>
       {years.map(({ year, source }) => (
