@@ -1,3 +1,4 @@
+import { budgetChecks } from './lib/budget-checks.mjs';
 import { heldWording } from './lib/held-wording.mjs';
 /**
  * Checks the built tree after `npm run build`. Run by `npm run test:dist`.
@@ -219,6 +220,10 @@ for (const asset of ["pagefind.js", "pagefind-worker.js"]) {
 const frontDoor = frontDoorChecks(process.cwd(), DIST);
 failures.push(...frontDoor.failures);
 console.log(`B2 coverage: ${JSON.stringify(frontDoor.counts)}`);
+
+const budgets = budgetChecks(process.cwd(), DIST);
+failures.push(...budgets.failures);
+console.log(`C3 coverage: ${JSON.stringify(budgets.counts)}`);
 
 if (failures.length) {
   console.error(`dist check: ${failures.length} failures\n${failures.map((f) => `  ${f}`).join("\n")}`);
