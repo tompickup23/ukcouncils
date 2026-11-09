@@ -1,0 +1,3101 @@
+{
+  "checked": "2026-11-09",
+  "programmeSource": "S1",
+  "areas": [
+    {
+      "id": "cambridgeshire-and-peterborough",
+      "name": "Cambridgeshire and Peterborough",
+      "collection": "https://www.gov.uk/government/collections/cambridgeshire-and-peterborough-local-government-reorganisation",
+      "source": "S2:cambridgeshire-and-peterborough",
+      "paragraph": "Title",
+      "status": "undecided",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000008",
+          "role": "district",
+          "source": "S3:cambridgeshire-and-peterborough",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000003",
+          "role": "county",
+          "source": "S3:cambridgeshire-and-peterborough",
+          "paragraph": "To: addressees",
+          "name": "Cambridgeshire County Council"
+        },
+        {
+          "gss": "E07000009",
+          "role": "district",
+          "source": "S3:cambridgeshire-and-peterborough",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000010",
+          "role": "district",
+          "source": "S3:cambridgeshire-and-peterborough",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000011",
+          "role": "district",
+          "source": "S3:cambridgeshire-and-peterborough",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000012",
+          "role": "district",
+          "source": "S3:cambridgeshire-and-peterborough",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000031",
+          "role": "unitary",
+          "source": "S3:cambridgeshire-and-peterborough",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Cambridge City Council, East Cambridgeshire District Council and South Cambridgeshire District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:cambridgeshire-and-peterborough",
+          "paragraph": "Proposal by Cambridge City Council, East Cambridgeshire District Council and South Cambridgeshire District Council"
+        },
+        {
+          "by": [
+            "Cambridgeshire County Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:cambridgeshire-and-peterborough",
+          "paragraph": "Proposal by Cambridgeshire County Council"
+        },
+        {
+          "by": [
+            "Huntingdonshire District Council"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:cambridgeshire-and-peterborough",
+          "paragraph": "Proposal by Huntingdonshire District Council"
+        },
+        {
+          "by": [
+            "Peterborough City Council and Fenland District Council"
+          ],
+          "councils": 3,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:cambridgeshire-and-peterborough",
+          "paragraph": "Proposal by Peterborough City Council and Fenland District Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:cambridgeshire-and-peterborough",
+      "invitationSource": "S3:cambridgeshire-and-peterborough",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S5",
+        "paragraph": "Timetable",
+        "page": 2
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Cambridgeshire and Peterborough",
+          "source": "S3:cambridgeshire-and-peterborough",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Cambridgeshire and Peterborough",
+          "source": "S15:cambridgeshire-and-peterborough",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "derbyshire-and-derby",
+      "name": "Derbyshire and Derby",
+      "collection": "https://www.gov.uk/government/collections/derbyshire-and-derby-local-government-reorganisation",
+      "source": "S2:derbyshire-and-derby",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000032",
+          "role": "district",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000033",
+          "role": "district",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000034",
+          "role": "district",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000007",
+          "role": "county",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees",
+          "name": "Derbyshire County Council"
+        },
+        {
+          "gss": "E07000035",
+          "role": "district",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000036",
+          "role": "district",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000037",
+          "role": "district",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000038",
+          "role": "district",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000039",
+          "role": "district",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000015",
+          "role": "unitary",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Derbyshire County Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:derbyshire-and-derby",
+          "paragraph": "Proposal by Derbyshire County Council"
+        },
+        {
+          "by": [
+            "Amber Valley Borough Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:derbyshire-and-derby",
+          "paragraph": "Proposal by Amber Valley Borough Council"
+        },
+        {
+          "by": [
+            "Bolsover District Council and North-East Derbyshire District Council"
+          ],
+          "councils": 2,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:derbyshire-and-derby",
+          "paragraph": "Proposal by Bolsover District Council and North-East Derbyshire District Council"
+        },
+        {
+          "by": [
+            "Chesterfield Borough Council, Derby City Council, Erewash Borough Council, and High Peak Borough Council"
+          ],
+          "councils": 2,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:derbyshire-and-derby",
+          "paragraph": "Proposal by Chesterfield Borough Council, Derby City Council, Erewash Borough Council, and High Peak Borough Council"
+        },
+        {
+          "by": [
+            "South Derbyshire District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:derbyshire-and-derby",
+          "paragraph": "Proposal by South Derbyshire District Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:derbyshire-and-derby",
+      "invitationSource": "S3:derbyshire-and-derby",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Derbyshire and Derby",
+          "source": "S3:derbyshire-and-derby",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Derbyshire and Derby",
+          "source": "S15:derbyshire-and-derby",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "devon-plymouth-and-torbay",
+      "name": "Devon, Plymouth and Torbay",
+      "collection": "https://www.gov.uk/government/collections/devon-plymouth-and-torbay-local-government-reorganisation",
+      "source": "S2:devon-plymouth-and-torbay",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E10000008",
+          "role": "county",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees",
+          "name": "Devon County Council"
+        },
+        {
+          "gss": "E07000040",
+          "role": "district",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000041",
+          "role": "district",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000042",
+          "role": "district",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000043",
+          "role": "district",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000044",
+          "role": "district",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000045",
+          "role": "district",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000046",
+          "role": "district",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000047",
+          "role": "district",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000026",
+          "role": "unitary",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000027",
+          "role": "unitary",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Devon County Council"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:devon-plymouth-and-torbay",
+          "paragraph": "Proposal by Devon County Council"
+        },
+        {
+          "by": [
+            "South Hams District Council, Teignbridge District Council, West Devon Borough Council"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:devon-plymouth-and-torbay",
+          "paragraph": "Proposal by South Hams District Council, Teignbridge District Council, West Devon Borough Council"
+        },
+        {
+          "by": [
+            "East Devon Borough Council, Mid Devon District Council, North Devon Council, Torridge District Council"
+          ],
+          "councils": 3,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:devon-plymouth-and-torbay",
+          "paragraph": "Proposal by East Devon Borough Council, Mid Devon District Council, North Devon Council, Torridge District Council"
+        },
+        {
+          "by": [
+            "Exeter City Council and Plymouth City Council"
+          ],
+          "councils": 4,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:devon-plymouth-and-torbay",
+          "paragraph": "Proposal by Exeter City Council and Plymouth City Council"
+        },
+        {
+          "by": [
+            "Torbay Council"
+          ],
+          "councils": 4,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:devon-plymouth-and-torbay",
+          "paragraph": "Proposal by Torbay Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:devon-plymouth-and-torbay",
+      "invitationSource": "S3:devon-plymouth-and-torbay",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Devon, Plymouth and Torbay",
+          "source": "S3:devon-plymouth-and-torbay",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Devon, Plymouth and Torbay",
+          "source": "S15:devon-plymouth-and-torbay",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "east-sussex-and-brighton-and-hove",
+      "name": "East Sussex and Brighton and Hove",
+      "collection": "https://www.gov.uk/government/collections/east-sussex-and-brighton-and-hove-local-government-reorganisation",
+      "source": "S2:east-sussex-and-brighton-and-hove",
+      "paragraph": "Title",
+      "status": "minded-to",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E10000011",
+          "role": "county",
+          "source": "S3:east-sussex-and-brighton-and-hove",
+          "paragraph": "To: addressees",
+          "name": "East Sussex County Council"
+        },
+        {
+          "gss": "E07000061",
+          "role": "district",
+          "source": "S3:east-sussex-and-brighton-and-hove",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000062",
+          "role": "district",
+          "source": "S3:east-sussex-and-brighton-and-hove",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000063",
+          "role": "district",
+          "source": "S3:east-sussex-and-brighton-and-hove",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000064",
+          "role": "district",
+          "source": "S3:east-sussex-and-brighton-and-hove",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000065",
+          "role": "district",
+          "source": "S3:east-sussex-and-brighton-and-hove",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000043",
+          "role": "unitary",
+          "source": "S3:east-sussex-and-brighton-and-hove",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "East Sussex County Council, Eastbourne Borough Council, Hastings Borough Council, Lewes District Council and Rother District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:east-sussex-and-brighton-and-hove",
+          "paragraph": "Proposal by East Sussex County Council, Eastbourne Borough Council, Hastings Borough Council, Lewes District Council and Rother District Council"
+        },
+        {
+          "by": [
+            "Brighton and Hove City Council"
+          ],
+          "councils": 5,
+          "split": true,
+          "submitted": "2025-09-26",
+          "source": "S15:east-sussex-and-brighton-and-hove",
+          "paragraph": "Proposal by Brighton and Hove City Council"
+        }
+      ],
+      "submitted": "2025-09-26",
+      "proposalSource": "S15:east-sussex-and-brighton-and-hove",
+      "invitationSource": "S3:east-sussex-and-brighton-and-hove",
+      "mindedTo": {
+        "date": "2026-10-29",
+        "quote": "the proposal submitted by Eastbourne Borough Council, East Sussex County Council, Hastings Borough Council, Lewes District Council and Rother District Council with modifications to the proposed boundary to expand Brighton and Hove by four wards",
+        "newCouncils": [
+          "East Sussex Council",
+          "Brighton and Hove Council"
+        ],
+        "statutoryPage": 10,
+        "source": "S6",
+        "paragraph": "Minded to decision",
+        "page": 1
+      },
+      "window": {
+        "opens": null,
+        "closes": null,
+        "minimum": "three weeks",
+        "quote": "This representation period will be for a minimum of three weeks.",
+        "source": "S6",
+        "paragraph": "Representation period",
+        "page": 9
+      },
+      "order": null,
+      "quotes": [
+        {
+          "text": "the proposal submitted by Eastbourne Borough Council, East Sussex County Council, Hastings Borough Council, Lewes District Council and Rother District Council with modifications to the proposed boundary to expand Brighton and Hove by four wards",
+          "source": "S6",
+          "paragraph": "Minded to decision",
+          "page": 1
+        },
+        {
+          "text": "This representation period will be for a minimum of three weeks.",
+          "source": "S6",
+          "paragraph": "Representation period",
+          "page": 9
+        }
+      ],
+      "vesting": {
+        "month": "2029-04",
+        "basis": "timetable",
+        "source": "S6",
+        "paragraph": "Timetable",
+        "page": 1
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: East Sussex and Brighton ",
+          "source": "S3:east-sussex-and-brighton-and-hove",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2025-11-19",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in East Sussex and Brighton and Hove, and West Sussex",
+          "source": "S15:east-sussex-and-brighton-and-hove",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "essex-southend-on-sea-and-thurrock",
+      "name": "Essex, Southend-on-Sea and Thurrock",
+      "collection": "https://www.gov.uk/government/collections/essex-southend-on-sea-and-thurrock-local-government-reorganisation",
+      "source": "S2:essex-southend-on-sea-and-thurrock",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-09",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000066",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000067",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000068",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000069",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000070",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000071",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000072",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000012",
+          "role": "county",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees",
+          "name": "Essex County Council"
+        },
+        {
+          "gss": "E07000073",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000074",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000075",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000076",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000077",
+          "role": "district",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000033",
+          "role": "unitary",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000034",
+          "role": "unitary",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Southend-on-Sea City Council, Chelmsford City Council, Basildon Borough Council, Brentwood Borough Council, Castle Point Borough Council, Colchester City Council, Harlow District Council, Maldon District Council, Tendring District Council and Uttlesford District Council"
+          ],
+          "councils": 5,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:essex-southend-on-sea-and-thurrock",
+          "paragraph": "Proposal by Southend-on-Sea City Council, Chelmsford City Council, Basildon Borough Council, Brentwood Borough Council, Castle Point Borough Council, Colchester City Council, Harlow District Council, Maldon District Council, Tendring District Council and Uttlesford District Council"
+        },
+        {
+          "by": [
+            "Essex County Council, Braintree District Council and Epping Forest District Council"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:essex-southend-on-sea-and-thurrock",
+          "paragraph": "Proposal by Essex County Council, Braintree District Council and Epping Forest District Council"
+        },
+        {
+          "by": [
+            "Rochford District Council"
+          ],
+          "councils": 4,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:essex-southend-on-sea-and-thurrock",
+          "paragraph": "Proposal by Rochford District Council"
+        },
+        {
+          "by": [
+            "Thurrock Council"
+          ],
+          "councils": 4,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:essex-southend-on-sea-and-thurrock",
+          "paragraph": "Proposal by Thurrock Council"
+        }
+      ],
+      "submitted": "2025-09-26",
+      "proposalSource": "S15:essex-southend-on-sea-and-thurrock",
+      "invitationSource": "S3:essex-southend-on-sea-and-thurrock",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S5",
+        "paragraph": "Timetable",
+        "page": 2
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Essex, Southend-on-Sea and Thurrock",
+          "source": "S3:essex-southend-on-sea-and-thurrock",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2025-11-19",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Essex, Southend-on-Sea and Thurrock",
+          "source": "S15:essex-southend-on-sea-and-thurrock",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "gloucestershire",
+      "name": "Gloucestershire",
+      "collection": "https://www.gov.uk/government/collections/gloucestershire-local-government-reorganisation",
+      "source": "S2:gloucestershire",
+      "paragraph": "Title",
+      "status": "minded-to",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000078",
+          "role": "district",
+          "source": "S3:gloucestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000079",
+          "role": "district",
+          "source": "S3:gloucestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000080",
+          "role": "district",
+          "source": "S3:gloucestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000081",
+          "role": "district",
+          "source": "S3:gloucestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000013",
+          "role": "county",
+          "source": "S3:gloucestershire",
+          "paragraph": "To: addressees",
+          "name": "Gloucestershire County Council"
+        },
+        {
+          "gss": "E07000082",
+          "role": "district",
+          "source": "S3:gloucestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000083",
+          "role": "district",
+          "source": "S3:gloucestershire",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Cotswold District Council, Gloucestershire County Council, Stroud District Council, and Tewkesbury Borough Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:gloucestershire",
+          "paragraph": "Proposal by Cotswold District Council, Gloucestershire County Council, Stroud District Council, and Tewkesbury Borough Council"
+        },
+        {
+          "by": [
+            "Cheltenham Borough Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:gloucestershire",
+          "paragraph": "Proposal by Cheltenham Borough Council"
+        },
+        {
+          "by": [
+            "Gloucester City Council"
+          ],
+          "councils": 2,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:gloucestershire",
+          "paragraph": "Proposal by Gloucester City Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:gloucestershire",
+      "invitationSource": "S3:gloucestershire",
+      "mindedTo": {
+        "date": "2026-10-29",
+        "quote": "the one unitary proposal submitted by Cotswold District Council, Gloucestershire County Council, Stroud District Council and Tewkesbury Borough Council",
+        "newCouncils": [
+          "Gloucestershire"
+        ],
+        "statutoryPage": 6,
+        "source": "S7",
+        "paragraph": "Minded to decision",
+        "page": 1
+      },
+      "window": {
+        "opens": null,
+        "closes": null,
+        "minimum": "three weeks",
+        "quote": "This representation period will be for a minimum of three weeks.",
+        "source": "S7",
+        "paragraph": "Representation period",
+        "page": 6
+      },
+      "order": null,
+      "quotes": [
+        {
+          "text": "the one unitary proposal submitted by Cotswold District Council, Gloucestershire County Council, Stroud District Council and Tewkesbury Borough Council",
+          "source": "S7",
+          "paragraph": "Minded to decision",
+          "page": 1
+        },
+        {
+          "text": "This representation period will be for a minimum of three weeks.",
+          "source": "S7",
+          "paragraph": "Representation period",
+          "page": 6
+        }
+      ],
+      "vesting": {
+        "month": "2029-04",
+        "basis": "timetable",
+        "source": "S7",
+        "paragraph": "Timetable",
+        "page": 1
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Gloucestershire",
+          "source": "S3:gloucestershire",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Gloucestershire",
+          "source": "S15:gloucestershire",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "hampshire-isle-of-wight-portsmouth-and-southampton",
+      "name": "Hampshire, Isle of Wight, Portsmouth and Southampton",
+      "collection": "https://www.gov.uk/government/collections/hampshire-isle-of-wight-portsmouth-and-southampton-local-government-reorganisation",
+      "source": "S2:hampshire-isle-of-wight-portsmouth-and-southampton",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-09",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000084",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000085",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000086",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000087",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000088",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000014",
+          "role": "county",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees",
+          "name": "Hampshire County Council"
+        },
+        {
+          "gss": "E07000089",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000090",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000091",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000092",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000093",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000094",
+          "role": "district",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000046",
+          "role": "unitary",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000044",
+          "role": "unitary",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000045",
+          "role": "unitary",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Hampshire County Council & East Hampshire District Council"
+          ],
+          "councils": 4,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "Proposal by Hampshire County Council & East Hampshire District Council"
+        },
+        {
+          "by": [
+            "Basingstoke and Deane Borough Council, New Forest District Council and Test Valley Borough Council"
+          ],
+          "councils": 5,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "Proposal by Basingstoke and Deane Borough Council, New Forest District Council and Test Valley Borough Council"
+        },
+        {
+          "by": [
+            "Eastleigh Borough Council, Fareham Borough Council, Hart District Council, Havant Borough Council, Portsmouth City Council, Rushmoor Borough Council and Southampton City Council"
+          ],
+          "councils": 5,
+          "split": true,
+          "submitted": "2025-09-26",
+          "source": "S15:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "Proposal by Eastleigh Borough Council, Fareham Borough Council, Hart District Council, Havant Borough Council, Portsmouth City Council, Rushmoor Borough Council and Southampton City Council"
+        },
+        {
+          "by": [
+            "Winchester City Council"
+          ],
+          "councils": 5,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "Proposal by Winchester City Council"
+        }
+      ],
+      "submitted": "2025-09-26",
+      "proposalSource": "S15:hampshire-isle-of-wight-portsmouth-and-southampton",
+      "invitationSource": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S5",
+        "paragraph": "Timetable",
+        "page": 2
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Hampshire, Isle of Wight, Portsmouth and Southampton",
+          "source": "S3:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2025-11-19",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Hampshire, Isle of Wight, Portsmouth and Southampton",
+          "source": "S15:hampshire-isle-of-wight-portsmouth-and-southampton",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "hertfordshire",
+      "name": "Hertfordshire",
+      "collection": "https://www.gov.uk/government/collections/hertfordshire-local-government-reorganisation",
+      "source": "S2:hertfordshire",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000095",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000096",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000242",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000015",
+          "role": "county",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees",
+          "name": "Hertfordshire County Council"
+        },
+        {
+          "gss": "E07000098",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000099",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000240",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000243",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000102",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000103",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000241",
+          "role": "district",
+          "source": "S3:hertfordshire",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Hertfordshire County Council and St Albans City and District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:hertfordshire",
+          "paragraph": "Proposal by Hertfordshire County Council and St Albans City and District Council"
+        },
+        {
+          "by": [
+            "East Hertfordshire District Council, Three Rivers District Council and Watford Borough Council"
+          ],
+          "councils": 3,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:hertfordshire",
+          "paragraph": "Proposal by East Hertfordshire District Council, Three Rivers District Council and Watford Borough Council"
+        },
+        {
+          "by": [
+            "Broxbourne Borough Council, Dacorum Borough Council, Hertsmere Borough Council, North Hertfordshire District Council, Stevenage Borough Council and Welwyn Hatfield Borough Council"
+          ],
+          "councils": 4,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:hertfordshire",
+          "paragraph": "Proposal by Broxbourne Borough Council, Dacorum Borough Council, Hertsmere Borough Council, North Hertfordshire District Council, Stevenage Borough Council and Welwyn Hatfield Borough Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:hertfordshire",
+      "invitationSource": "S3:hertfordshire",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Hertfordshire",
+          "source": "S3:hertfordshire",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Hertfordshire",
+          "source": "S15:hertfordshire",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "kent-and-medway",
+      "name": "Kent and Medway",
+      "collection": "https://www.gov.uk/government/collections/kent-and-medway-local-government-reorganisation",
+      "source": "S2:kent-and-medway",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000105",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000106",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000107",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000108",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000112",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000109",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000016",
+          "role": "county",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees",
+          "name": "Kent County Council"
+        },
+        {
+          "gss": "E07000110",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000111",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000113",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000114",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000115",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000116",
+          "role": "district",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000035",
+          "role": "unitary",
+          "source": "S3:kent-and-medway",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Kent County Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:kent-and-medway",
+          "paragraph": "Proposal by Kent County Council"
+        },
+        {
+          "by": [
+            "Folkestone and Hythe District Council, Maidstone Borough Council, Sevenoaks District Council, Tonbridge and Malling Borough Council, and Tunbridge Wells Borough Council"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:kent-and-medway",
+          "paragraph": "Proposal by Folkestone and Hythe District Council, Maidstone Borough Council, Sevenoaks District Council, Tonbridge and Malling Borough Council, and Tunbridge Wells Borough Council"
+        },
+        {
+          "by": [
+            "Dover District Council, Swale Borough Council, and Thanet District Council"
+          ],
+          "councils": 4,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:kent-and-medway",
+          "paragraph": "Proposal by Dover District Council, Swale Borough Council, and Thanet District Council"
+        },
+        {
+          "by": [
+            "Medway Council, Ashford Borough Council, and Canterbury City Council"
+          ],
+          "councils": 4,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:kent-and-medway",
+          "paragraph": "Proposal by Medway Council, Ashford Borough Council, and Canterbury City Council"
+        },
+        {
+          "by": [
+            "Dartford Borough Council and Gravesham Borough Council"
+          ],
+          "councils": 5,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:kent-and-medway",
+          "paragraph": "Proposal by Dartford Borough Council and Gravesham Borough Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:kent-and-medway",
+      "invitationSource": "S3:kent-and-medway",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Kent and Medway",
+          "source": "S3:kent-and-medway",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Kent and Medway",
+          "source": "S15:kent-and-medway",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "lancashire-blackburn-with-darwen-and-blackpool",
+      "name": "Lancashire, Blackburn with Darwen and Blackpool",
+      "collection": "https://www.gov.uk/government/collections/lancashire-blackburn-with-darwen-and-blackpool-local-government-reorganisation",
+      "source": "S2:lancashire-blackburn-with-darwen-and-blackpool",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": true,
+      "councils": [
+        {
+          "gss": "E07000117",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000118",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000119",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000120",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000017",
+          "role": "county",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees",
+          "name": "Lancashire County Council"
+        },
+        {
+          "gss": "E07000121",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000122",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000123",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000124",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000125",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000126",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000127",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000128",
+          "role": "district",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000008",
+          "role": "unitary",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000009",
+          "role": "unitary",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:lancashire-blackburn-with-darwen-and-blackpool",
+      "invitationSource": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "lancashireRule": {
+        "checked": "2026-11-09",
+        "documentsOnly": true,
+        "statusCheckSources": [
+          "S17",
+          "S18"
+        ]
+      },
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Lancashire, Blackburn and Blackpool",
+          "source": "S3:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Lancashire, Blackburn with Darwen and Blackpool",
+          "source": "S15:lancashire-blackburn-with-darwen-and-blackpool",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-07-16",
+          "kind": "decision",
+          "label": "Local government reorganisation: decision letter to Lancashire, Blackburn with Darwen and Blackpool council leaders",
+          "source": "S16:lancashire",
+          "paragraph": "Title",
+          "page": 1
+        },
+        {
+          "date": "2026-10-29",
+          "kind": "withdrawn",
+          "label": "Local government reorganisation: withdrawn letter to 9 areas",
+          "source": "S4",
+          "paragraph": "Title",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "leicestershire-leicester-and-rutland",
+      "name": "Leicestershire, Leicester and Rutland",
+      "collection": "https://www.gov.uk/government/collections/leicestershire-leicester-and-rutland-local-government-reorganisation",
+      "source": "S2:leicestershire-leicester-and-rutland",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000129",
+          "role": "district",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000130",
+          "role": "district",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000131",
+          "role": "district",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000132",
+          "role": "district",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000018",
+          "role": "county",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees",
+          "name": "Leicestershire County Council"
+        },
+        {
+          "gss": "E07000133",
+          "role": "district",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000134",
+          "role": "district",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000135",
+          "role": "district",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000016",
+          "role": "unitary",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000017",
+          "role": "unitary",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Leicester City Council"
+          ],
+          "councils": 2,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:leicestershire-leicester-and-rutland",
+          "paragraph": "Proposal by Leicester City Council"
+        },
+        {
+          "by": [
+            "Leicestershire County Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:leicestershire-leicester-and-rutland",
+          "paragraph": "Proposal by Leicestershire County Council"
+        },
+        {
+          "by": [
+            "Blaby District Council, Charnwood Borough Council, Harborough District Council, Hinckley and Bosworth Borough Council, Melton Borough Council, North West Leicestershire District Council, Oadby and Wigston Borough Council, and Rutland County Council"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:leicestershire-leicester-and-rutland",
+          "paragraph": "Proposal by Blaby District Council, Charnwood Borough Council, Harborough District Council, Hinckley and Bosworth Borough Council, Melton Borough Council, North West Leicestershire District Council, Oadby and Wigston Borough Council, and Rutland County Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:leicestershire-leicester-and-rutland",
+      "invitationSource": "S3:leicestershire-leicester-and-rutland",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Leicestershire, Leicester and Rutland",
+          "source": "S3:leicestershire-leicester-and-rutland",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Leicestershire, Leicester and Rutland",
+          "source": "S15:leicestershire-leicester-and-rutland",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+      "name": "Lincolnshire, North Lincolnshire and North East Lincolnshire",
+      "collection": "https://www.gov.uk/government/collections/lincolnshire-north-lincolnshire-and-north-east-lincolnshire-local-government-reorganisation",
+      "source": "S2:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000136",
+          "role": "district",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000138",
+          "role": "district",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000137",
+          "role": "district",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000019",
+          "role": "county",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees",
+          "name": "Lincolnshire County Council"
+        },
+        {
+          "gss": "E07000139",
+          "role": "district",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000140",
+          "role": "district",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000141",
+          "role": "district",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000142",
+          "role": "district",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000012",
+          "role": "unitary",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000013",
+          "role": "unitary",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Boston Borough Council, East Lindsey District Council and South Holland District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "Proposal by Boston Borough Council, East Lindsey District Council and South Holland District Council"
+        },
+        {
+          "by": [
+            "City of Lincoln Council"
+          ],
+          "councils": 4,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "Proposal by City of Lincoln Council"
+        },
+        {
+          "by": [
+            "Lincolnshire County Council (supported by North East Lincolnshire and North Lincolnshire)"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "Proposal by Lincolnshire County Council (supported by North East Lincolnshire and North Lincolnshire)"
+        },
+        {
+          "by": [
+            "North Kesteven District Council and South Kesteven District Council"
+          ],
+          "councils": 4,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "Proposal by North Kesteven District Council and South Kesteven District Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+      "invitationSource": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Lincolnshire, North Lincolnshire and North East Lincolnshire",
+          "source": "S3:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Lincolnshire, North Lincolnshire and North East Lincolnshire",
+          "source": "S15:lincolnshire-north-lincolnshire-and-north-east-lincolnshire",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "norfolk",
+      "name": "Norfolk",
+      "collection": "https://www.gov.uk/government/collections/norfolk-local-government-reorganisation",
+      "source": "S2:norfolk",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-09",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000143",
+          "role": "district",
+          "source": "S3:norfolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000144",
+          "role": "district",
+          "source": "S3:norfolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000145",
+          "role": "district",
+          "source": "S3:norfolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000146",
+          "role": "district",
+          "source": "S3:norfolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000020",
+          "role": "county",
+          "source": "S3:norfolk",
+          "paragraph": "To: addressees",
+          "name": "Norfolk County Council"
+        },
+        {
+          "gss": "E07000147",
+          "role": "district",
+          "source": "S3:norfolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000148",
+          "role": "district",
+          "source": "S3:norfolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000149",
+          "role": "district",
+          "source": "S3:norfolk",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Norfolk County Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:norfolk",
+          "paragraph": "Proposal by Norfolk County Council"
+        },
+        {
+          "by": [
+            "South Norfolk District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:norfolk",
+          "paragraph": "Proposal by South Norfolk District Council"
+        },
+        {
+          "by": [
+            "Breckland District Council, Broadland District Council, Great Yarmouth Borough Council, King’s Lynn and West Norfolk Borough Council, North Norfolk District Council, and Norwich City Council"
+          ],
+          "councils": 3,
+          "split": true,
+          "submitted": "2025-09-26",
+          "source": "S15:norfolk",
+          "paragraph": "Proposal by Breckland District Council, Broadland District Council, Great Yarmouth Borough Council, King’s Lynn and West Norfolk Borough Council, North Norfolk District Council, and Norwich City Council"
+        }
+      ],
+      "submitted": "2025-09-26",
+      "proposalSource": "S15:norfolk",
+      "invitationSource": "S3:norfolk",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S5",
+        "paragraph": "Timetable",
+        "page": 2
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Norfolk",
+          "source": "S3:norfolk",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2025-11-19",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Norfolk and Suffolk",
+          "source": "S15:norfolk",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "nottinghamshire-and-nottingham",
+      "name": "Nottinghamshire and Nottingham",
+      "collection": "https://www.gov.uk/government/collections/nottinghamshire-and-nottingham-local-government-reorganisation",
+      "source": "S2:nottinghamshire-and-nottingham",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000170",
+          "role": "district",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000171",
+          "role": "district",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000172",
+          "role": "district",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000173",
+          "role": "district",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000174",
+          "role": "district",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000175",
+          "role": "district",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000024",
+          "role": "county",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees",
+          "name": "Nottinghamshire County Council"
+        },
+        {
+          "gss": "E07000176",
+          "role": "district",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000018",
+          "role": "unitary",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Bassetlaw District Council, Gedling Borough Council, Mansfield District Council, Newark and Sherwood District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:nottinghamshire-and-nottingham",
+          "paragraph": "Proposal by Bassetlaw District Council, Gedling Borough Council, Mansfield District Council, Newark and Sherwood District Council"
+        },
+        {
+          "by": [
+            "Nottingham City Council"
+          ],
+          "councils": 2,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:nottinghamshire-and-nottingham",
+          "paragraph": "Proposal by Nottingham City Council"
+        },
+        {
+          "by": [
+            "Nottinghamshire County Council and Rushcliffe Borough Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:nottinghamshire-and-nottingham",
+          "paragraph": "Proposal by Nottinghamshire County Council and Rushcliffe Borough Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:nottinghamshire-and-nottingham",
+      "invitationSource": "S3:nottinghamshire-and-nottingham",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Nottinghamshire and Nottingham",
+          "source": "S3:nottinghamshire-and-nottingham",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Nottinghamshire and Nottingham",
+          "source": "S15:nottinghamshire-and-nottingham",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "oxfordshire",
+      "name": "Oxfordshire",
+      "collection": "https://www.gov.uk/government/collections/oxfordshire-local-government-reorganisation",
+      "source": "S2:oxfordshire",
+      "paragraph": "Title",
+      "status": "minded-to",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000177",
+          "role": "district",
+          "source": "S3:oxfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000178",
+          "role": "district",
+          "source": "S3:oxfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000025",
+          "role": "county",
+          "source": "S3:oxfordshire",
+          "paragraph": "To: addressees",
+          "name": "Oxfordshire County Council"
+        },
+        {
+          "gss": "E07000179",
+          "role": "district",
+          "source": "S3:oxfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000180",
+          "role": "district",
+          "source": "S3:oxfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000181",
+          "role": "district",
+          "source": "S3:oxfordshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000037",
+          "role": "unitary",
+          "via": "S8",
+          "source": "S8",
+          "paragraph": "Addressees",
+          "page": 1
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Oxfordshire County Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:oxfordshire",
+          "paragraph": "Proposal by Oxfordshire County Council"
+        },
+        {
+          "by": [
+            "Cherwell District Council, South Oxfordshire District Council, Vale of White Horse District Council, West Oxfordshire District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:oxfordshire",
+          "paragraph": "Proposal by Cherwell District Council, South Oxfordshire District Council, Vale of White Horse District Council, West Oxfordshire District Council"
+        },
+        {
+          "by": [
+            "Oxford City Council"
+          ],
+          "councils": 3,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:oxfordshire",
+          "paragraph": "Proposal by Oxford City Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:oxfordshire",
+      "invitationSource": "S3:oxfordshire",
+      "mindedTo": {
+        "date": "2026-10-29",
+        "quote": "the three unitary option submitted by Oxford City Council with modifications to the proposed boundaries to create Greater Oxford Council, Northern Oxfordshire Council and Ridgeway Council",
+        "newCouncils": [
+          "Greater Oxford Council",
+          "Northern Oxfordshire Council",
+          "Ridgeway Council"
+        ],
+        "statutoryPage": 12,
+        "source": "S8",
+        "paragraph": "Minded to decision",
+        "page": 1
+      },
+      "window": {
+        "opens": null,
+        "closes": null,
+        "minimum": "three weeks",
+        "quote": "There will be a period of three weeks minimum for further representations before final decisions are taken.",
+        "source": "S11",
+        "paragraph": "Representation period"
+      },
+      "order": null,
+      "quotes": [
+        {
+          "text": "the three unitary option submitted by Oxford City Council with modifications to the proposed boundaries to create Greater Oxford Council, Northern Oxfordshire Council and Ridgeway Council",
+          "source": "S8",
+          "paragraph": "Minded to decision",
+          "page": 1
+        },
+        {
+          "text": "There will be a period of three weeks minimum for further representations before final decisions are taken.",
+          "source": "S11",
+          "paragraph": "Representation period"
+        }
+      ],
+      "vesting": {
+        "month": "2029-04",
+        "basis": "timetable",
+        "source": "S8",
+        "paragraph": "Timetable",
+        "page": 1
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Oxfordshire",
+          "source": "S3:oxfordshire",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Oxfordshire",
+          "source": "S15:oxfordshire",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "staffordshire-and-stoke-on-trent",
+      "name": "Staffordshire and Stoke-on-Trent",
+      "collection": "https://www.gov.uk/government/collections/staffordshire-and-stoke-on-trent-local-government-reorganisation",
+      "source": "S2:staffordshire-and-stoke-on-trent",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-10",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000192",
+          "role": "district",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000193",
+          "role": "district",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000194",
+          "role": "district",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000195",
+          "role": "district",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000196",
+          "role": "district",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000197",
+          "role": "district",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000028",
+          "role": "county",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees",
+          "name": "Staffordshire County Council"
+        },
+        {
+          "gss": "E07000198",
+          "role": "district",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000199",
+          "role": "district",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E06000021",
+          "role": "unitary",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Cannock Chase District Council, East Staffordshire Borough Council, Stafford Borough Council, Stoke‑on‑Trent City Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:staffordshire-and-stoke-on-trent",
+          "paragraph": "Proposal by Cannock Chase District Council, East Staffordshire Borough Council, Stafford Borough Council, Stoke‑on‑Trent City Council"
+        },
+        {
+          "by": [
+            "Staffordshire County Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:staffordshire-and-stoke-on-trent",
+          "paragraph": "Proposal by Staffordshire County Council"
+        },
+        {
+          "by": [
+            "Staffordshire Moorlands District Council"
+          ],
+          "councils": 2,
+          "split": true,
+          "submitted": "2025-11-28",
+          "source": "S15:staffordshire-and-stoke-on-trent",
+          "paragraph": "Proposal by Staffordshire Moorlands District Council"
+        },
+        {
+          "by": [
+            "Lichfield District Council, South Staffordshire Borough Council, Tamworth Borough Council"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:staffordshire-and-stoke-on-trent",
+          "paragraph": "Proposal by Lichfield District Council, South Staffordshire Borough Council, Tamworth Borough Council"
+        },
+        {
+          "by": [
+            "Newcastle-under-Lyme Borough Council"
+          ],
+          "councils": 4,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:staffordshire-and-stoke-on-trent",
+          "paragraph": "Proposal by Newcastle-under-Lyme Borough Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:staffordshire-and-stoke-on-trent",
+      "invitationSource": "S3:staffordshire-and-stoke-on-trent",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S4",
+        "paragraph": "Timetable",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Staffordshire and Stoke-on-Trent",
+          "source": "S3:staffordshire-and-stoke-on-trent",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Staffordshire and Stoke-on-Trent",
+          "source": "S15:staffordshire-and-stoke-on-trent",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "suffolk",
+      "name": "Suffolk",
+      "collection": "https://www.gov.uk/government/collections/suffolk-local-government-reorganisation",
+      "source": "S2:suffolk",
+      "paragraph": "Title",
+      "status": "withdrawn-2026-09",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000200",
+          "role": "district",
+          "source": "S3:suffolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000244",
+          "role": "district",
+          "source": "S3:suffolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000202",
+          "role": "district",
+          "source": "S3:suffolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000203",
+          "role": "district",
+          "source": "S3:suffolk",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000029",
+          "role": "county",
+          "source": "S3:suffolk",
+          "paragraph": "To: addressees",
+          "name": "Suffolk County Council"
+        },
+        {
+          "gss": "E07000245",
+          "role": "district",
+          "source": "S3:suffolk",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Suffolk County Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:suffolk",
+          "paragraph": "Proposal by Suffolk County Council"
+        },
+        {
+          "by": [
+            "Babergh District Council, East Suffolk District Council, Ipswich Borough Council, Mid Suffolk District Council, and West Suffolk District Council"
+          ],
+          "councils": 3,
+          "split": true,
+          "submitted": "2025-09-26",
+          "source": "S15:suffolk",
+          "paragraph": "Proposal by Babergh District Council, East Suffolk District Council, Ipswich Borough Council, Mid Suffolk District Council, and West Suffolk District Council"
+        }
+      ],
+      "submitted": "2025-09-26",
+      "proposalSource": "S15:suffolk",
+      "invitationSource": "S3:suffolk",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S5",
+        "paragraph": "Timetable",
+        "page": 2
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Suffolk",
+          "source": "S3:suffolk",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2025-11-19",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Norfolk and Suffolk",
+          "source": "S15:suffolk",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "surrey",
+      "name": "​​Surrey",
+      "collection": "https://www.gov.uk/government/collections/surrey-local-government-reorganisation",
+      "source": "S2:surrey",
+      "paragraph": "Title",
+      "status": "order",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000207",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Elmbridge Borough Council",
+          "successor": "East Surrey Council",
+          "orderArticle": "4",
+          "orderPage": 3
+        },
+        {
+          "gss": "E07000208",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Epsom and Ewell Borough Council",
+          "successor": "East Surrey Council",
+          "orderArticle": "4",
+          "orderPage": 3
+        },
+        {
+          "gss": "E07000209",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Guildford Borough Council",
+          "successor": "West Surrey Council",
+          "orderArticle": "5",
+          "orderPage": 4
+        },
+        {
+          "gss": "E07000210",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Mole Valley District Council",
+          "successor": "East Surrey Council",
+          "orderArticle": "4",
+          "orderPage": 3
+        },
+        {
+          "gss": "E07000211",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Reigate and Banstead Borough Council",
+          "successor": "East Surrey Council",
+          "orderArticle": "4",
+          "orderPage": 3
+        },
+        {
+          "gss": "E07000212",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Runnymede Borough Council",
+          "successor": "West Surrey Council",
+          "orderArticle": "5",
+          "orderPage": 4
+        },
+        {
+          "gss": "E07000213",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Spelthorne Borough Council",
+          "successor": "West Surrey Council",
+          "orderArticle": "5",
+          "orderPage": 4
+        },
+        {
+          "gss": "E10000030",
+          "role": "county",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "name": "Surrey County Council"
+        },
+        {
+          "gss": "E07000214",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Surrey Heath Borough Council",
+          "successor": "West Surrey Council",
+          "orderArticle": "5",
+          "orderPage": 4
+        },
+        {
+          "gss": "E07000215",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Tandridge District Council",
+          "successor": "East Surrey Council",
+          "orderArticle": "4",
+          "orderPage": 3
+        },
+        {
+          "gss": "E07000216",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Waverley Borough Council",
+          "successor": "West Surrey Council",
+          "orderArticle": "5",
+          "orderPage": 4
+        },
+        {
+          "gss": "E07000217",
+          "role": "district",
+          "source": "S3:surrey",
+          "paragraph": "To: addressees",
+          "orderName": "Woking Borough Council",
+          "successor": "West Surrey Council",
+          "orderArticle": "5",
+          "orderPage": 4
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Elmbridge Borough Council, Mole Valley District Council and Surrey County Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-05-09",
+          "source": "S15:surrey",
+          "paragraph": "Proposal by Elmbridge Borough Council, Mole Valley District Council and Surrey County Council"
+        },
+        {
+          "by": [
+            "The Borough Councils of Epsom and Ewell, Guildford, Reigate and Banstead, Runnymede, Spelthorne, Surrey Heath, Waverley and Woking, and Tandridge District Council"
+          ],
+          "councils": 3,
+          "split": false,
+          "submitted": "2025-05-09",
+          "source": "S15:surrey",
+          "paragraph": "Proposal by The Borough Councils of Epsom and Ewell, Guildford, Reigate and Banstead, Runnymede, Spelthorne, Surrey Heath, Waverley and Woking, and Tandridge District Council"
+        }
+      ],
+      "submitted": "2025-05-09",
+      "proposalSource": "S15:surrey",
+      "invitationSource": "S3:surrey",
+      "mindedTo": null,
+      "window": null,
+      "order": {
+        "si": "2026/264",
+        "title": "The Surrey (Structural Changes) Order 2026",
+        "made": "2026-03-09",
+        "inForce": "2026-03-10",
+        "abolition": "2027-04-01",
+        "source": "S12",
+        "articles": {
+          "1(2)": {
+            "quote": "This Order comes into force on the day after the day on which it is made.",
+            "article": "1(2)",
+            "source": "S12",
+            "paragraph": "Article 1(2)",
+            "page": 1
+          },
+          "3": {
+            "quote": "the County of Surrey is abolished as a local government area;",
+            "article": "3",
+            "source": "S12",
+            "paragraph": "Article 3",
+            "page": 3
+          },
+          "4(5)": {
+            "quote": "the East Surrey councils are wound up and dissolved.",
+            "article": "4(5)",
+            "source": "S12",
+            "paragraph": "Article 4(5)",
+            "page": 3
+          },
+          "5(5)": {
+            "quote": "the West Surrey councils are wound up and dissolved.",
+            "article": "5(5)",
+            "source": "S12",
+            "paragraph": "Article 5(5)",
+            "page": 4
+          },
+          "2East": {
+            "quote": "the districts of Elmbridge, Epsom and Ewell, Mole Valley, Reigate and Banstead and Tandridge",
+            "councils": "Elmbridge Borough Council, Epsom and Ewell Borough Council, Mole Valley District Council, Reigate and Banstead Borough Council and Tandridge District Council",
+            "article": "2",
+            "source": "S12",
+            "paragraph": "Definitions",
+            "page": 2
+          },
+          "2West": {
+            "quote": "the districts of Guildford, Runnymede, Spelthorne, Surrey Heath, Waverley and Woking",
+            "councils": "Guildford Borough Council, Runnymede Borough Council, Spelthorne Borough Council, Surrey Heath Borough Council, Waverley Borough Council and Woking Borough Council",
+            "article": "2",
+            "source": "S12",
+            "paragraph": "Definitions",
+            "page": 3
+          }
+        }
+      },
+      "quotes": [],
+      "vesting": {
+        "date": "2027-04-01",
+        "basis": "order",
+        "article": "3",
+        "source": "S12",
+        "paragraph": "Article 3",
+        "page": 3
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Surrey",
+          "source": "S3:surrey",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2025-06-17",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Surrey",
+          "source": "S15:surrey",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "warwickshire",
+      "name": "Warwickshire",
+      "collection": "https://www.gov.uk/government/collections/warwickshire-local-government-reorganisation",
+      "source": "S2:warwickshire",
+      "paragraph": "Title",
+      "status": "minded-to",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000218",
+          "role": "district",
+          "source": "S3:warwickshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000219",
+          "role": "district",
+          "source": "S3:warwickshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000220",
+          "role": "district",
+          "source": "S3:warwickshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000221",
+          "role": "district",
+          "source": "S3:warwickshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000222",
+          "role": "district",
+          "source": "S3:warwickshire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000031",
+          "role": "county",
+          "source": "S3:warwickshire",
+          "paragraph": "To: addressees",
+          "name": "Warwickshire County Council"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Warwickshire County Council and Rugby Borough Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:warwickshire",
+          "paragraph": "Proposal by Warwickshire County Council and Rugby Borough Council"
+        },
+        {
+          "by": [
+            "North Warwickshire Borough Council, Nuneaton & Bedworth Borough Council, Stratford-on-Avon District Council, Warwick District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:warwickshire",
+          "paragraph": "Proposal by North Warwickshire Borough Council, Nuneaton & Bedworth Borough Council, Stratford-on-Avon District Council, Warwick District Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:warwickshire",
+      "invitationSource": "S3:warwickshire",
+      "mindedTo": {
+        "date": "2026-10-29",
+        "quote": "the two unitary proposal submitted by North Warwickshire Borough Council, Nuneaton and Bedworth Borough Council, Stratford-on-Avon District Council and Warwick District Council",
+        "newCouncils": [
+          "North Warwickshire",
+          "South Warwickshire"
+        ],
+        "statutoryPage": 7,
+        "source": "S9",
+        "paragraph": "Minded to decision",
+        "page": 1
+      },
+      "window": {
+        "opens": null,
+        "closes": null,
+        "minimum": "three weeks",
+        "quote": "This representation period will be for a minimum of three weeks.",
+        "source": "S9",
+        "paragraph": "Representation period",
+        "page": 7
+      },
+      "order": null,
+      "quotes": [
+        {
+          "text": "the two unitary proposal submitted by North Warwickshire Borough Council, Nuneaton and Bedworth Borough Council, Stratford-on-Avon District Council and Warwick District Council",
+          "source": "S9",
+          "paragraph": "Minded to decision",
+          "page": 1
+        },
+        {
+          "text": "This representation period will be for a minimum of three weeks.",
+          "source": "S9",
+          "paragraph": "Representation period",
+          "page": 7
+        }
+      ],
+      "vesting": {
+        "month": "2029-04",
+        "basis": "timetable",
+        "source": "S9",
+        "paragraph": "Timetable",
+        "page": 1
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Warwickshire",
+          "source": "S3:warwickshire",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Warwickshire",
+          "source": "S15:warwickshire",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "west-sussex",
+      "name": "West Sussex",
+      "collection": "https://www.gov.uk/government/collections/west-sussex-local-government-reorganisation",
+      "source": "S2:west-sussex",
+      "paragraph": "Title",
+      "status": "undecided",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000223",
+          "role": "district",
+          "source": "S3:west-sussex",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000224",
+          "role": "district",
+          "source": "S3:west-sussex",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000225",
+          "role": "district",
+          "source": "S3:west-sussex",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000226",
+          "role": "district",
+          "source": "S3:west-sussex",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000227",
+          "role": "district",
+          "source": "S3:west-sussex",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000228",
+          "role": "district",
+          "source": "S3:west-sussex",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000032",
+          "role": "county",
+          "source": "S3:west-sussex",
+          "paragraph": "To: addressees",
+          "name": "West Sussex County Council"
+        },
+        {
+          "gss": "E07000229",
+          "role": "district",
+          "source": "S3:west-sussex",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "West Sussex County Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:west-sussex",
+          "paragraph": "Proposal by West Sussex County Council"
+        },
+        {
+          "by": [
+            "Adur District Council, Arun District Council, Chichester District Council, Crawley Borough Council, Horsham District Council, Mid-Sussex District Council and Worthing Borough Councils"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-09-26",
+          "source": "S15:west-sussex",
+          "paragraph": "Proposal by Adur District Council, Arun District Council, Chichester District Council, Crawley Borough Council, Horsham District Council, Mid-Sussex District Council and Worthing Borough Councils"
+        }
+      ],
+      "submitted": "2025-09-26",
+      "proposalSource": "S15:west-sussex",
+      "invitationSource": "S3:west-sussex",
+      "mindedTo": null,
+      "window": null,
+      "order": null,
+      "quotes": [],
+      "vesting": {
+        "date": "2029-04-01",
+        "basis": "timetable",
+        "source": "S5",
+        "paragraph": "Timetable",
+        "page": 2
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: West Sussex",
+          "source": "S3:west-sussex",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2025-11-19",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in East Sussex and Brighton and Hove, and West Sussex",
+          "source": "S15:west-sussex",
+          "paragraph": "Title"
+        }
+      ]
+    },
+    {
+      "id": "worcestershire",
+      "name": "Worcestershire",
+      "collection": "https://www.gov.uk/government/collections/worcestershire-local-government-reorganisation",
+      "source": "S2:worcestershire",
+      "paragraph": "Title",
+      "status": "minded-to",
+      "documentsOnly": false,
+      "councils": [
+        {
+          "gss": "E07000234",
+          "role": "district",
+          "source": "S3:worcestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000235",
+          "role": "district",
+          "source": "S3:worcestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000236",
+          "role": "district",
+          "source": "S3:worcestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000237",
+          "role": "district",
+          "source": "S3:worcestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E10000034",
+          "role": "county",
+          "source": "S3:worcestershire",
+          "paragraph": "To: addressees",
+          "name": "Worcestershire County Council"
+        },
+        {
+          "gss": "E07000238",
+          "role": "district",
+          "source": "S3:worcestershire",
+          "paragraph": "To: addressees"
+        },
+        {
+          "gss": "E07000239",
+          "role": "district",
+          "source": "S3:worcestershire",
+          "paragraph": "To: addressees"
+        }
+      ],
+      "proposals": [
+        {
+          "by": [
+            "Worcestershire County Council and Wyre Forest District Council"
+          ],
+          "councils": 1,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:worcestershire",
+          "paragraph": "Proposal by Worcestershire County Council and Wyre Forest District Council"
+        },
+        {
+          "by": [
+            "Bromsgrove District Council, Malvern Hills District Council, Redditch Borough Council, Worcester City Council, Wychavon District Council"
+          ],
+          "councils": 2,
+          "split": false,
+          "submitted": "2025-11-28",
+          "source": "S15:worcestershire",
+          "paragraph": "Proposal by Bromsgrove District Council, Malvern Hills District Council, Redditch Borough Council, Worcester City Council, Wychavon District Council"
+        }
+      ],
+      "submitted": "2025-11-28",
+      "proposalSource": "S15:worcestershire",
+      "invitationSource": "S3:worcestershire",
+      "mindedTo": {
+        "date": "2026-10-29",
+        "quote": "the two unitary proposal submitted by Bromsgrove District Council, Malvern Hills District Council, Redditch Borough Council, Worcester City Council and Wychavon District Council",
+        "newCouncils": [
+          "North Worcestershire",
+          "South Worcestershire"
+        ],
+        "statutoryPage": 7,
+        "source": "S10",
+        "paragraph": "Minded to decision",
+        "page": 1
+      },
+      "window": {
+        "opens": null,
+        "closes": null,
+        "minimum": "three weeks",
+        "quote": "This representation period will be for a minimum of three weeks.",
+        "source": "S10",
+        "paragraph": "Representation period",
+        "page": 7
+      },
+      "order": null,
+      "quotes": [
+        {
+          "text": "the two unitary proposal submitted by Bromsgrove District Council, Malvern Hills District Council, Redditch Borough Council, Worcester City Council and Wychavon District Council",
+          "source": "S10",
+          "paragraph": "Minded to decision",
+          "page": 1
+        },
+        {
+          "text": "This representation period will be for a minimum of three weeks.",
+          "source": "S10",
+          "paragraph": "Representation period",
+          "page": 7
+        }
+      ],
+      "vesting": {
+        "month": "2029-04",
+        "basis": "timetable",
+        "source": "S10",
+        "paragraph": "Timetable",
+        "page": 1
+      },
+      "timeline": [
+        {
+          "date": "2025-02-05",
+          "kind": "invitation",
+          "label": "Letter: Worcestershire",
+          "source": "S3:worcestershire",
+          "paragraph": "Title"
+        },
+        {
+          "date": "2026-02-05",
+          "kind": "consultation",
+          "label": "Proposals for local government reorganisation in Worcestershire",
+          "source": "S15:worcestershire",
+          "paragraph": "Title"
+        }
+      ]
+    }
+  ]
+}
