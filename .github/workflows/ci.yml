@@ -92,6 +92,9 @@ jobs:
       - name: Check the built tree
         run: npm run test:dist
 
+      - name: Verify every rendered panel claim
+        run: npx vitest run tests/reorganisation-held.test.ts
+
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
@@ -106,6 +109,14 @@ jobs:
         with:
           name: c3-budget-screenshots-${{ github.sha }}
           path: output/playwright/c3/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Keep reorganisation captures for this commit
+        uses: actions/upload-artifact@v7
+        with:
+          name: b4-reorganisation-captures-${{ github.sha }}
+          path: output/playwright/b4/
           if-no-files-found: error
           retention-days: 30
 
