@@ -1,0 +1,19 @@
+---
+import {reorganisationSources, longDate, type Citation} from '../lib/reorganisation';
+interface Props extends Citation {}
+const {source: id,page,pages,also=[]}=Astro.props;
+const refs=[Astro.props,...also].map(ref=>({ref,source:reorganisationSources[ref.source]}));
+for(const {source} of refs) if (!source || source.publisher === 'Lancashire County Council') throw new Error(`Invalid panel citation ${id}`);
+---
+<p class="source-line" data-reorg-citation={id} data-page={page} data-pages={pages?.join(',')}>
+  {refs.map(({ref,source}) => <span class="citation">
+    Source: {source.publisher}, <a href={source.url}>{source.title}</a>, {longDate(source.date)}{ref.pages ? `, pages ${ref.pages.join(' and ')}` : ref.page ? `, page ${ref.page}` : ''}{ref.article ? `, article ${ref.article}` : ''}.
+    {source.files && <span class="saved-feeds">{source.files.map(file => <span><a href={file.url}>{file.file.split('/').pop()}</a><br /><span>SHA256: <code>{file.sha256}</code></span></span>)}</span>}
+  </span>)}
+</p>
+<style>
+  .citation {display:block;}
+  .saved-feeds {display:grid;gap:.5rem;margin-top:.5rem;}
+  code {overflow-wrap:anywhere;font-size:.75em;}
+  a {overflow-wrap:anywhere;}
+</style>

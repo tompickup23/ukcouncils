@@ -1,0 +1,92 @@
+---
+import {panelView, reorganisationSources, longDate} from '../lib/reorganisation';
+import {areaMap, boundarySource} from '../lib/boundaries';
+import ReorganisationSource from './ReorganisationSource.astro';
+interface Props {gss:string}
+const view=panelView(Astro.props.gss);
+const map=view ? areaMap(view.area.councils.filter(c=>c.role!=='county').map(c=>c.gss),Astro.props.gss) : null;
+---
+{view && map && <section class="section" id="reorganisation" aria-labelledby="reorganisation-heading" data-reorganisation-panel={view.area.id} data-reorganisation-status={view.area.status} data-documents-only={view.area.documentsOnly || undefined}>
+  <h2 id="reorganisation-heading" data-claim="heading" data-source={view.heading.source}>{view.heading.text}</h2>
+  <ReorganisationSource {...view.heading} />
+  {view.status.map(c => <>
+    <p data-claim={c.key} data-source={c.source} data-page={c.page}>{c.text}{c.quote && <> <q>{c.quote}</q></>}</p>
+    <ReorganisationSource {...c} />
+  </>)}
+  <ol class="reorg-rail">
+    {view.rail.map(c => <li data-step={c.step} data-state={c.state}>
+      <div data-claim={c.key} data-source={c.source} data-page={c.page}>
+        <strong>{c.label}</strong>
+        {c.text && <span>{c.text}</span>}
+        {c.date && <time datetime={c.date}>{longDate(c.date)}</time>}
+        {c.quote && <q>{c.quote}</q>}
+      </div>
+      <ReorganisationSource {...c} />
+    </li>)}
+  </ol>
+  {!view.area.documentsOnly && <>
+    {view.orderRequirement && <>
+      <p data-claim={view.orderRequirement.key} data-source={view.orderRequirement.source} data-page={view.orderRequirement.page}><q>{view.orderRequirement.quote}</q></p>
+      <ReorganisationSource {...view.orderRequirement} />
+    </>}
+    <p data-claim="checked" data-source={view.checked.source}>{view.checked.text}</p>
+    <ReorganisationSource {...view.checked} />
+    <h3>Proposals</h3>
+    {view.surreyProposal && <>
+      <p data-claim={view.surreyProposal.key} data-source={view.surreyProposal.source} data-page={view.surreyProposal.page}>{view.surreyProposal.text}</p>
+      <ReorganisationSource {...view.surreyProposal} />
+    </>}
+    <ul data-proposals>{view.proposals.map(c => <li>
+      <p data-claim={c.key} data-source={c.source}>{c.text}</p>
+      <ReorganisationSource {...c} />
+    </li>)}</ul>
+  </>}
+  {view.area.documentsOnly && <>
+    <h3>Documents</h3>
+    <ul data-documents>{view.area.timeline.map((c,i) => <li>
+      <p data-claim={`document-${i}`} data-source={c.source} data-page={c.page}><time datetime={c.date}>{longDate(c.date)}</time>: <a href={reorganisationSources[c.source].url}>{c.label}</a></p>
+      <ReorganisationSource {...c} />
+    </li>)}</ul>
+  </>}
+  <h3>Councils in this area</h3>
+  <ul data-area-councils>{view.councils.map(c => <li>
+    <p data-claim={`council-${c.gss}`} data-source={c.source} data-page={c.page}>
+      {c.href ? <a href={c.href}>{c.name}</a> : c.name}{c.current && ' (this council)'}
+    </p>
+    <ReorganisationSource {...c} />
+  </li>)}</ul>
+  <figure data-area-map>
+    <svg viewBox="0 0 600 360" role="img" aria-label={`${view.area.name}: area councils marked, ${view.name} outlined`}>
+      <path d={map.context} class="map-context" />
+      {map.members.map(member => <path d={member.path} class:list={['map-member',{'map-focus':member.focus}]} data-member={member.gss} />)}
+    </svg>
+    <figcaption data-claim="map" data-source={view.mapCitation.source}>{view.area.name}: area councils marked, {view.name} outlined</figcaption>
+    <ReorganisationSource {...view.mapCitation} />
+    <p class="source-line">Source: <a href={boundarySource.url}>Office for National Statistics, {boundarySource.date}</a>.</p>
+    <p class="small map-attribution">{boundarySource.attribution} Licensed under <a href={boundarySource.licenceUrl}>OGL v3.0</a>.</p>
+  </figure>
+</section>}
+<style>
+  .reorg-rail {list-style:none;display:grid;padding:0;margin:2rem 0;gap:1.25rem;}
+  .reorg-rail li {border-left:2px solid var(--border-strong);padding:0 0 0 1rem;min-width:0;position:relative;}
+  .reorg-rail li::before {content:'';position:absolute;left:-.4rem;top:.25rem;width:.65rem;height:.65rem;border:2px solid var(--border-strong);background:var(--bg);border-radius:50%;}
+  .reorg-rail [data-state="done"]::before {background:var(--accent);border-color:var(--accent);}
+  .reorg-rail [data-state="current"]::before {border-color:var(--accent);border-radius:0;}
+  .reorg-rail [data-state="future"]::before {border-style:dashed;}
+  .reorg-rail [data-state="none"]::before {border-radius:0;}
+  .reorg-rail strong,.reorg-rail span,.reorg-rail time,.reorg-rail q {display:block;margin-bottom:.5rem;}
+  .reorg-rail :global(.source-line) {font-size:.75rem;color:var(--text-muted);overflow-wrap:anywhere;}
+  [data-area-councils] {display:grid;gap:.75rem;padding-left:1.25rem;}
+  [data-area-councils] p {margin:.25rem 0;}
+  figure {margin:2rem 0 0;max-width:44rem;}
+  svg {display:block;width:100%;height:auto;background:var(--bg-subtle);}
+  .map-context {fill:var(--border);stroke:var(--bg);stroke-width:1;}
+  .map-member {fill:var(--accent-wash);stroke:var(--accent);stroke-width:1;}
+  .map-focus {fill:var(--accent);stroke:var(--text);stroke-width:2.5;}
+  @media (min-width:48rem) {
+    .reorg-rail {grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;}
+    .reorg-rail li {border-left:0;border-top:2px solid var(--border-strong);padding:1rem 0 0;}
+    .reorg-rail li::before {left:0;top:-.4rem;}
+    [data-area-councils] {grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+</style>

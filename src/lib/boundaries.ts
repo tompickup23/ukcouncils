@@ -33,3 +33,21 @@ export function boundaryMap(gss: string) {
   const path = geoPath(projection).digits(1);
   return {focal: path(focal)!, context: neighbours.map(area => path(area) ?? '').join(' ')};
 }
+
+/** Membership only: the invitation area and the council whose page is open. */
+export function areaMap(codes: string[], focus: string) {
+  const all = boundaryAreas();
+  const members = all.filter(area => codes.includes(area.properties.LAD26CD));
+  if (members.length !== codes.length || !codes.includes(focus)) throw new Error('Area map GSS join failed');
+  const collection: FeatureCollection<Polygon | MultiPolygon> = {type:'FeatureCollection',features:members};
+  const [[x0,y0],[x1,y1]] = geoBounds(collection);
+  const dx=(x1-x0)*0.15, dy=(y1-y0)*0.15;
+  const context = all.filter(area => {
+    if (codes.includes(area.properties.LAD26CD)) return false;
+    const [[a,b],[c,d]]=geoBounds(area);
+    return c>=x0-dx && a<=x1+dx && d>=y0-dy && b<=y1+dy;
+  });
+  const projection=geoMercator().fitExtent([[24,24],[576,336]],collection).clipExtent([[0,0],[600,360]]);
+  const path=geoPath(projection).digits(1);
+  return {context:context.map(a=>path(a)??'').join(' '),members:members.map(a=>({gss:a.properties.LAD26CD,path:path(a)!,focus:a.properties.LAD26CD===focus}))};
+}
