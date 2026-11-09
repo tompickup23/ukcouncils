@@ -47,3 +47,9 @@ Resume only after the owner resolves the quote suppression stop condition. Read 
 The owner resolved the stop condition in brief commit cd3535a. The helper and test now use `/re-?organi[sz]|unitary|abolish|structural change/i` and assert the seven named councils. Read all 174 quotes again: no further quote contains reorganisation or abolition wording in another spelling, and no quote names an individual. The seven retain their year and citation but their quotations will be withheld.
 
 Validation: `npm run check`, zero errors and warnings; `npm test`, 183 passed and 12 skipped.
+
+## Item 4
+
+Imported the pinned UK Places Local Links file after hash verification. Retained source, check date and service metadata verbatim, with provenance and exact GSS joins. Only councils with at least one service link are included. All counts and anchor URLs match, including the published HTTP Scilly bins URL.
+
+Validation: `npm run check`, zero errors and warnings; `npm test`, 186 passed and 12 skipped.
