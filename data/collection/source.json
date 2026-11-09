@@ -1,0 +1,19 @@
+{
+  "publisher": "Ministry of Housing, Communities and Local Government",
+  "title": "Collection rates for Council Tax and non-domestic rates in England, 2025 to 2026",
+  "edition": "2025 to 2026 release from the QRC4 returns, first published 24 June 2026 and revised 31 July 2026 to add Kensington & Chelsea and correct some arrears figures",
+  "published": "2026-06-24",
+  "revised": "2026-07-31",
+  "year": "2025-26",
+  "url": "https://www.gov.uk/government/statistics/collection-rates-for-council-tax-and-non-domestic-rates-in-england-2025-to-2026",
+  "fileUrl": "https://assets.publishing.service.gov.uk/media/6a6b302bbf4a7aca8f8976fe/Table_9_2025-26.ods",
+  "file": "collection-rates-table-9-2025-26.ods",
+  "sha256": "3937351a67bd12418301f97f504a5357566ecf3b6d375076119f1addb44d3d90",
+  "retrieved": "2026-11-05",
+  "tables": [
+    "Table 9a: Council tax - total receipts and arrears information, England, 2025-26",
+    "Notes"
+  ],
+  "precision": "Amounts in whole thousands of pounds as displayed; the in-year collection rate is a percentage to 2 decimal places as displayed; [x] marks a figure not available or suppressed",
+  "licence": "Open Government Licence v3.0"
+}
