@@ -1,3 +1,4 @@
+import {reorganisationChecks} from './lib/reorganisation-checks.mjs';
 import { budgetChecks } from './lib/budget-checks.mjs';
 import { heldWording, RA_906_LABEL } from './lib/held-wording.mjs';
 /**
@@ -226,6 +227,9 @@ for (const asset of ["pagefind.js", "pagefind-worker.js"]) {
   if (!existsSync(join(DIST, "pagefind", asset))) failures.push(`missing search asset ${asset}`);
 }
 
+const reorg = reorganisationChecks(process.cwd(), DIST);
+failures.push(...reorg.failures);
+console.log(`Reorganisation coverage: ${JSON.stringify(reorg.counts)}`);
 const frontDoor = frontDoorChecks(process.cwd(), DIST);
 failures.push(...frontDoor.failures);
 console.log(`B2 coverage: ${JSON.stringify(frontDoor.counts)}`);

@@ -1,4 +1,4 @@
-import { heldWording } from './held-wording.mjs';
+import { heldWording, outsideReorganisation } from './held-wording.mjs';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 const textOf = html => html.replace(/<[^>]+>/g, ' ').replace(/&#39;|&#x27;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
@@ -93,7 +93,7 @@ export function frontDoorChecks(root, dist) {
       const currentRow = rows.find(row => /data-current(?:[\s=>])/.test(row));
       check(Boolean(currentRow && (currentRow.match(/<strong\b/g) ?? []).length === 2), `${kind} current row emphasis ${where}`);
     }
-    const order = ['about', 'tax-summary', 'collection', 'exceptional-financial-support', 'elections', 'budget', 'county-budget', 'spending', 'school-holidays', 'sources'];
+    const order = ['about', 'tax-summary', 'collection', 'exceptional-financial-support', 'elections', 'reorganisation', 'budget', 'county-budget', 'spending', 'school-holidays', 'sources'];
     const present = order.filter(id => section(html, id));
     check(present.every((id, i) => i === 0 || html.indexOf(`id="${id}"`) > html.indexOf(`id="${present[i - 1]}"`)), `Profile order ${where}`);
     const contents = /<nav\b[^>]*aria-label="On this page"[\s\S]*?<\/nav>/.exec(html)?.[0];
@@ -128,7 +128,7 @@ export function frontDoorChecks(root, dist) {
   for (const slug of ['sheffield', 'westminster', 'woking']) check(!section(built.get(slug) ?? '', 'elections'), `Held elections ${slug}`);
   for (const slug of ['barnsley', 'sheffield']) check(!built.get(slug)?.includes('residents in mid-2025'), `Held population ${slug}`);
   check(!section(built.get('burnley') ?? '', 'exceptional-financial-support'), 'Unexpected Burnley EFS');
-  check(!built.get('woking')?.toLowerCase().includes('abolished'), 'Held Woking wording');
+  check(!outsideReorganisation(built.get('woking') ?? '').toLowerCase().includes('abolished'), 'Held Woking wording');
   check(!existsSync(join(dist, 'councils/lancashire/index.html')), 'Unexpected Lancashire page');
   const sources = readFileSync(join(dist, 'sources/index.html'), 'utf8');
   for (const needle of [population.source.title, collection.source.title, elections.source.title, links.source.name]) check(textOf(sources).includes(needle), `B2 source missing ${needle}`);
