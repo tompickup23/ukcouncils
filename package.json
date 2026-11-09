@@ -19,7 +19,8 @@
     "data:spending": "node scripts/fetch-spending-summaries.mjs",
     "data:registry": "node scripts/build-registry.mjs",
     "indexnow": "node scripts/indexnow.mjs",
-    "data:efs-check": "node scripts/check-efs-source.mjs"
+    "data:efs-check": "node scripts/check-efs-source.mjs",
+    "diff:numbers": "node scripts/diff-numbers.mjs"
   },
   "dependencies": {
     "@fontsource/source-sans-3": "^5.3.1",

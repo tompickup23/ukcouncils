@@ -13,6 +13,7 @@ name: CI
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
   workflow_dispatch:
 
 concurrency:
@@ -82,3 +83,183 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+
+  number-diff:
+    name: number diff
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check out the PR head
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: candidate
+          persist-credentials: false
+
+      - name: Check out main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          path: baseline
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: candidate/.nvmrc
+          cache: npm
+          cache-dependency-path: |
+            candidate/package-lock.json
+            baseline/package-lock.json
+
+      - name: Build main
+        working-directory: baseline
+        run: |
+          npm ci
+          env -u BUILD_OG npm run build
+
+      - name: Build the PR head
+        working-directory: candidate
+        run: |
+          npm ci
+          env -u BUILD_OG npm run build
+
+      - name: Compare page numbers
+        id: numbers
+        continue-on-error: true
+        working-directory: candidate
+        run: node .github/scripts/number-review.mjs ../baseline/dist dist ../number-diff.txt
+
+      - name: Keep the full number report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: number-diff
+          path: number-diff.txt*
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Update the number review comment
+        if: always() && github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const fs = require('node:fs');
+            const marker = '<!-- ukcouncils-number-diff -->';
+            const report = fs.existsSync('number-diff.txt.md')
+              ? fs.readFileSync('number-diff.txt.md', 'utf8')
+              : '## Number diff\n\nThe comparison could not complete. Read the job log.';
+            const run = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `${marker}\n${report}\n[Full output and job log](${run})`;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              ...context.repo, issue_number: context.issue.number, per_page: 100
+            });
+            const previous = comments.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith(marker));
+            if (previous) await github.rest.issues.updateComment({...context.repo, comment_id: previous.id, body});
+            else await github.rest.issues.createComment({...context.repo, issue_number: context.issue.number, body});
+
+      - name: Require an allowed number comparison
+        if: always() && steps.numbers.outcome != 'success'
+        run: |
+          echo 'The number comparison found unallowed differences or could not complete.'
+          exit 1
+
+  design-check:
+    name: design check
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: true
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check out the PR head
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install and build
+        run: |
+          npm ci
+          env -u BUILD_OG npm run build
+
+      # Unchanged copy from tompickup23/claude-config at the round five pin.
+      # ab80018a5cae2d0a492d793ee329eda3a9c9aa38 is on feat/design-check-2026-11,
+      # not an ancestor of main as checked on 9 November 2026. The private
+      # source repository cannot be read using this repository's CI token.
+      - name: Verify the pinned design checker
+        run: echo 'a304667cf7b5de3244bcb9d13bdb5c673a973053862520699ee1fdfcbb61d683  .github/design-check/design_check.py' | sha256sum --check
+
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          python-version: '3.12'
+          enable-cache: true
+          cache-dependency-glob: .github/design-check/design_check.py
+
+      - name: Install headless Chromium for the checker
+        run: uv run --with 'playwright>=1.50,<2' python -m playwright install --with-deps chromium
+
+      - name: Serve the built PR
+        run: |
+          npx astro preview --host 127.0.0.1 --port 4321 > "$RUNNER_TEMP/astro-preview.log" 2>&1 &
+          echo "$!" > "$RUNNER_TEMP/astro-preview.pid"
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4321/ > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo 'The built preview did not become ready.'
+          exit 1
+
+      - name: Capture both widths and themes
+        run: node .github/scripts/design-review.mjs "$RUNNER_TEMP/design-check"
+
+      - name: Keep the report and captures
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: design-check
+          path: |
+            ${{ runner.temp }}/design-check/
+            ${{ runner.temp }}/astro-preview.log
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Update the design review comment
+        if: always() && github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/github-script@v8
+        env:
+          DESIGN_SUMMARY: ${{ runner.temp }}/design-check/summary.md
+        with:
+          script: |
+            const fs = require('node:fs');
+            const marker = '<!-- ukcouncils-design-check -->';
+            const report = fs.existsSync(process.env.DESIGN_SUMMARY)
+              ? fs.readFileSync(process.env.DESIGN_SUMMARY, 'utf8').slice(0, 50000)
+              : '## Design check\n\nThe checker could not complete. Read the job log. No pass was recorded.';
+            const run = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `${marker}\n${report}\n[Full report and captures](${run})`;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              ...context.repo, issue_number: context.issue.number, per_page: 100
+            });
+            const previous = comments.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith(marker));
+            if (previous) await github.rest.issues.updateComment({...context.repo, comment_id: previous.id, body});
+            else await github.rest.issues.createComment({...context.repo, issue_number: context.issue.number, body});
+
+      - name: Stop the preview
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/astro-preview.pid" ]; then
+            kill "$(cat "$RUNNER_TEMP/astro-preview.pid")" || true
+          fi
