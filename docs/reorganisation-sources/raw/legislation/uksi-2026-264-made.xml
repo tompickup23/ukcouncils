@@ -1,0 +1,3113 @@
+<Legislation xmlns="http://www.legislation.gov.uk/namespaces/legislation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264" NumberOfProvisions="49" xsi:schemaLocation="http://www.legislation.gov.uk/namespaces/legislation http://www.legislation.gov.uk/schema/legislation.xsd" SchemaVersion="2.0"><ukm:Metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ukm="http://www.legislation.gov.uk/namespaces/metadata">
+					<dc:identifier>http://www.legislation.gov.uk/uksi/2026/264/made</dc:identifier><dc:title>The Surrey (Structural Changes) Order 2026</dc:title><dc:language>en</dc:language><dc:publisher>King's Printer of Acts of Parliament</dc:publisher><dc:modified>2026-03-12</dc:modified><dc:subject scheme="SIheading">LOCAL GOVERNMENT, ENGLAND</dc:subject>
+					<dc:description>This Order provides for the establishment, on 1st April 2027, of a single tier of local government in Surrey. Part 2 creates two new councils: West Surrey Council, for the same area as the existing districts of Guildford, Runnymede, Spelthorne, Surrey Heath, Waverley and Woking; and East Surrey Council, for the same area as the existing districts of Elmbridge, Epsom and Ewell, Mole Valley, Reigate and Banstead and Tandridge.</dc:description>
+					<atom:link rel="self" href="http://www.legislation.gov.uk/uksi/2026/264/made/data.xml" type="application/xml"/><atom:link rel="http://www.legislation.gov.uk/def/navigation/resources" href="http://www.legislation.gov.uk/uksi/2026/264/resources" title="More Resources"/>
+					
+					<atom:link rel="http://www.legislation.gov.uk/def/navigation/memorandum" href="http://www.legislation.gov.uk/uksi/2026/264/memorandum" title="Explanatory Memorandum"/><atom:link rel="http://www.legislation.gov.uk/def/navigation/memorandum/toc" href="http://www.legislation.gov.uk/uksi/2026/264/memorandum/contents" title="Explanatory Memorandum Table of Contents"/>
+					
+					<atom:link rel="http://www.legislation.gov.uk/def/navigation/act" href="http://www.legislation.gov.uk/uksi/2026/264/made" title="whole act"/><atom:link rel="http://www.legislation.gov.uk/def/navigation/introduction" href="http://www.legislation.gov.uk/uksi/2026/264/introduction/made" title="introduction"/><atom:link rel="http://www.legislation.gov.uk/def/navigation/signature" href="http://www.legislation.gov.uk/uksi/2026/264/signature/made" title="signature"/><atom:link rel="http://www.legislation.gov.uk/def/navigation/note" href="http://www.legislation.gov.uk/uksi/2026/264/note/made" title="note"/>
+					<atom:link rel="http://www.legislation.gov.uk/def/navigation/body" href="http://www.legislation.gov.uk/uksi/2026/264/body/made" title="body"/>
+					<atom:link rel="http://www.legislation.gov.uk/def/navigation/schedules" href="http://www.legislation.gov.uk/uksi/2026/264/schedules/made" title="schedules"/>
+					
+										
+					
+					
+					
+					<atom:link rel="alternate" type="application/rdf+xml" href="http://www.legislation.gov.uk/uksi/2026/264/made/data.rdf" title="RDF/XML"/><atom:link rel="alternate" type="application/akn+xml" href="http://www.legislation.gov.uk/uksi/2026/264/made/data.akn" title="AKN"/><atom:link rel="alternate" type="application/xhtml+xml" href="http://www.legislation.gov.uk/uksi/2026/264/made/data.xht" title="HTML snippet"/><atom:link rel="alternate" type="text/html" href="http://www.legislation.gov.uk/uksi/2026/264/made/data.htm" title="Website (XHTML) Default View"/><atom:link rel="alternate" type="text/csv" href="http://www.legislation.gov.uk/uksi/2026/264/made/data.csv" title="CSV"/><atom:link rel="alternate" type="application/pdf" href="http://www.legislation.gov.uk/uksi/2026/264/made/data.pdf" title="PDF"/>
+					<atom:link rel="alternate" type="application/akn+xhtml" href="http://www.legislation.gov.uk/uksi/2026/264/made/data.html" title="HTML5 snippet"/>
+
+					<atom:link rel="alternate" href="http://www.legislation.gov.uk/uksi/2026/264/pdfs/uksi_20260264_en.pdf" type="application/pdf" title="Original PDF"/>
+					<atom:link rel="http://purl.org/dc/terms/tableOfContents" hreflang="en" href="http://www.legislation.gov.uk/uksi/2026/264/contents/made" title="Table of Contents"/>
+					
+					
+					<atom:link rel="http://www.legislation.gov.uk/def/navigation/supersedes" href="http://www.legislation.gov.uk/id/ukdsi/2026/9780348278507" title="The Surrey (Structural Changes) Order 2026"/>
+					
+					<ukm:SecondaryMetadata><ukm:DocumentClassification>
+<ukm:DocumentCategory Value="secondary"/>
+<ukm:DocumentMainType Value="UnitedKingdomStatutoryInstrument"/>
+<ukm:DocumentStatus Value="final"/>
+<ukm:DocumentMinorType Value="order"/>
+</ukm:DocumentClassification><ukm:Year Value="2026"/><ukm:Number Value="264"/><ukm:Made Date="2026-03-09"/><ukm:ISBN Value="9780348280869"/></ukm:SecondaryMetadata>
+					<ukm:Supersedes URI="http://www.legislation.gov.uk/id/ukdsi/2026/9780348278507"><dc:title>The Surrey (Structural Changes) Order 2026</dc:title><ukm:DocumentMainType Value="UnitedKingdomDraftStatutoryInstrument"/><ukm:Year Value="2026"/><ukm:ISBN Value="9780348278507"/></ukm:Supersedes>
+
+                    
+									<ukm:Notes><ukm:Note IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/notes"/><ukm:Alternatives><ukm:Alternative URI="http://www.legislation.gov.uk/uksi/2026/264/pdfs/uksiem_20260264_en_001.pdf" Date="2026-03-12" Title="UK Explanatory Memorandum" Size="112282"/></ukm:Alternatives>       
+								</ukm:Notes> 
+					<ukm:Alternatives><ukm:Alternative URI="http://www.legislation.gov.uk/uksi/2026/264/pdfs/uksi_20260264_en.pdf" Date="2026-03-12" Size="415836" Print="true"/></ukm:Alternatives>
+					
+					<ukm:Statistics>
+									<ukm:TotalParagraphs Value="49"/>
+									<ukm:BodyParagraphs Value="49"/>
+									<ukm:ScheduleParagraphs Value="0"/>
+									<ukm:AttachmentParagraphs Value="0"/>
+									<ukm:TotalImages Value="0"/>
+								</ukm:Statistics>
+				</ukm:Metadata><Secondary>
+<SecondaryPrelims DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/introduction/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/introduction">
+<Number>2026 No. 264</Number>
+<SubjectInformation>
+<Subject>
+<Title>LOCAL GOVERNMENT, ENGLAND</Title>
+</Subject>
+</SubjectInformation>
+<Title>The Surrey (Structural Changes) Order 2026</Title>
+<MadeDate>
+<Text>Made</Text>
+<DateText>9th March 2026</DateText>
+</MadeDate>
+<ComingIntoForce>
+<Text>Coming into force in accordance with article 1(2)</Text>
+</ComingIntoForce>
+<SecondaryPreamble>
+<EnactingText>
+<Para>
+<Text>The Secretary of State makes this Order in exercise of the powers conferred by sections 7, 11, 12, 13 and 15(2) of the Local Government and Public Involvement in Health Act 2007 (“<Term id="term-the-2007-act">the 2007 Act</Term>”)<FootnoteRef Ref="f00001"/>.</Text>
+</Para>
+<Para>
+<Text>This Order implements a proposal, submitted to the Secretary of State in response to an invitation under section 2 of the 2007 Act, that there should be a single tier of local government for Surrey.</Text>
+</Para>
+<Para>
+<Text>In accordance with section 7(3) of that Act, the Secretary of State has consulted every authority affected by the proposal and such other persons as the Secretary of State considers appropriate.</Text>
+</Para>
+<Para>
+<Text>The proposal was made by Surrey County Council, Elmbridge Borough Council and Mole Valley District Council.</Text>
+</Para>
+<Para>
+<Text>A draft of this Order was laid before and approved by a resolution of each House of Parliament in accordance with section 240(6) of the 2007 Act.</Text>
+</Para>
+</EnactingText>
+</SecondaryPreamble>
+</SecondaryPrelims>
+<Body DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/body/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/body" NumberOfProvisions="49">
+<Part DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/1" NumberOfProvisions="2" id="part-1">
+<Number>Part 1</Number>
+<Title>GENERAL</Title>
+<P1group>
+<Title>Citation, commencement, extent and application</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/1" id="article-1">
+<Pnumber>1</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/1/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/1/1" id="article-1-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>This Order may be cited as the Surrey (Structural Changes) Order 2026.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/1/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/1/2" id="article-1-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>This Order comes into force on the day after the day on which it is made.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/1/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/1/3" id="article-1-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>This Order extends to England and Wales and applies in England only.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Interpretation</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/2" id="article-2">
+<Pnumber>2</Pnumber>
+<P1para>
+<Text>In this Order—</Text>
+<UnorderedList Class="Definition" Decoration="none">
+<ListItem id="p00106">
+<Para>
+<Text>“<Term id="term-the-1972-act">the 1972 Act</Term>” means the Local Government Act 1972<FootnoteRef Ref="f00002"/>;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00112">
+<Para>
+<Text>“<Term id="term-the-1989-act">the 1989 Act</Term>” means the Local Government and Housing Act 1989<FootnoteRef Ref="f00003"/>;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00118">
+<Para>
+<Text>“<Term id="term-the-2000-act">the 2000 Act</Term>” means the Local Government Act 2000<FootnoteRef Ref="f00004"/>;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00124">
+<Para>
+<Text>“<Term id="term-the-2007-act">the 2007 Act</Term>” means the Local Government and Public Involvement in Health Act 2007<FootnoteRef Ref="f00005"/>;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00130">
+<Para>
+<Text>“<Term id="term-the-2011-act">the 2011 Act</Term>” means the Localism Act 2011<FootnoteRef Ref="f00006"/>;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00136">
+<Para>
+<Text>“<Term id="term-the-2024-order">the 2024 Order</Term>” means the Surrey (Electoral Changes) Order 2024<FootnoteRef Ref="f00007"/>;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00142">
+<Para>
+<Text>“<Term id="term-2026-election">2026 election</Term>” means an election required by article 47(1)(a) or 49(1)(a) to be held in 2026;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00146">
+<Para>
+<Text>“<Term id="term-the-2026-election-day">the 2026 election day</Term>” means the ordinary day of election of councillors in 2026<FootnoteRef Ref="f00008"/>;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00152">
+<Para>
+<Text>“<Term id="term-the-article-11-functions">the article 11 functions</Term>” means the functions referred to in article 11;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00156">
+<Para>
+<Text>“<Term id="term-the-article-6-functions">the article 6 functions</Term>” means the functions referred to in article 6;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00160">
+<Para>
+<Text>“<Term id="term-the-article-7-functions">the article 7 functions</Term>” means the functions referred to in article 7;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00164">
+<Para>
+<Text>“<Term id="term-the-county-council">the county council</Term>” means the council of the county of Surrey;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00168">
+<Para>
+<Text>“<Term id="term-east-surrey-council">East Surrey Council</Term>” means the district council to be established by article 4(2);</Text>
+</Para>
+</ListItem>
+<ListItem id="p00172">
+<Para>
+<Text>“<Term id="term-the-east-surrey-councils">the East Surrey councils</Term>” means Elmbridge Borough Council, Epsom and Ewell Borough Council, Mole Valley District Council, Reigate and Banstead Borough Council and Tandridge District Council;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00176">
+<Para>
+<Text>“<Term id="term-the-east-surrey-districts">the East Surrey districts</Term>” means the districts of Elmbridge, Epsom and Ewell, Mole Valley, Reigate and Banstead and Tandridge;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00180">
+<Para>
+<Text>“<Term id="term-the-east-surrey-joint-committee">the East Surrey Joint Committee</Term>” is the committee to be established by article 8(1);</Text>
+</Para>
+</ListItem>
+<ListItem id="p00184">
+<Para>
+<Text>“<Term id="term-the-east-surrey-shadow-authority">the East Surrey shadow authority</Term>” has the meaning given in article 18;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00188">
+<Para>
+<Text>“<Term id="term-the-east-surrey-shadow-executive">the East Surrey shadow executive</Term>” has the meaning given in article 19(1);</Text>
+</Para>
+</ListItem>
+<ListItem id="p00192">
+<Para>
+<Text>“<Term id="term-the-implementation-team">the Implementation Team</Term>” means the team required to be formed under article 15(1);</Text>
+</Para>
+</ListItem>
+<ListItem id="p00196">
+<Para>
+<Text>“<Term id="term-ordinary-day-of-election-of-councillors">ordinary day of election of councillors</Term>” has the meaning given by section 37 of the Representation of the People Act 1983<FootnoteRef Ref="f00009"/>;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00202">
+<Para>
+<Text>“<Term id="term-the-proper-officer">the proper officer</Term>”, in relation to any purpose and any council, means the officer appointed for that purpose by that council;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00206">
+<Para>
+<Text>“<Term id="term-shadow-authority">shadow authority</Term>” means an authority (not being a local authority) that will become a local authority on 1st April 2027;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00210">
+<Para>
+<Text>“<Term id="term-the-shadow-period">the shadow period</Term>” means the period beginning with the fourth day after the 2026 election day and ending immediately before 1st April 2027;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00214">
+<Para>
+<Text>“<Term id="term-west-surrey-council">West Surrey Council</Term>” means the district council to be established by article 5(2);</Text>
+</Para>
+</ListItem>
+<ListItem id="p00218">
+<Para>
+<Text>“<Term id="term-the-west-surrey-councils">the West Surrey councils</Term>” means Guildford Borough Council, Runnymede Borough Council, Spelthorne Borough Council, Surrey Heath Borough Council, Waverley Borough Council and Woking Borough Council;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00222">
+<Para>
+<Text>“<Term id="term-the-west-surrey-districts">the West Surrey districts</Term>” means the districts of Guildford, Runnymede, Spelthorne, Surrey Heath, Waverley and Woking;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00226">
+<Para>
+<Text>“<Term id="term-the-west-surrey-joint-committee">the West Surrey Joint Committee</Term>” is the committee to be established by article 12(1);</Text>
+</Para>
+</ListItem>
+<ListItem id="p00230">
+<Para>
+<Text>“<Term id="term-the-west-surrey-shadow-authority">the West Surrey shadow authority</Term>” has the meaning given in article 30;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00234">
+<Para>
+<Text>“<Term id="term-the-west-surrey-shadow-executive">the West Surrey shadow executive</Term>” has the meaning given in article 31(1).</Text>
+</Para>
+</ListItem>
+</UnorderedList>
+</P1para>
+</P1>
+</P1group>
+</Part>
+<Part DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/2" NumberOfProvisions="3" id="part-2">
+<Number>Part 2</Number>
+<Title>ESTABLISHMENT OF SINGLE TIER OF LOCAL GOVERNMENT IN SURREY</Title>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/2/chapter/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/2/chapter/1" NumberOfProvisions="2" id="part-2-chapter-1">
+<Number>Chapter 1</Number>
+<Title>East Surrey</Title>
+<P1group>
+<Title>County of Surrey</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/3" id="article-3">
+<Pnumber>3</Pnumber>
+<P1para>
+<Text>On 1st April 2027—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/3/a" id="article-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the County of Surrey is abolished as a local government area;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/3/b" id="article-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the county council is wound up and dissolved.</Text>
+</P3para>
+</P3>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Single tier of local government in East Surrey</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4" id="article-4">
+<Pnumber>4</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/1" id="article-4-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>A new non-metropolitan county and a new non-metropolitan district, each to be known as East Surrey, are constituted comprising in each case the area of the East Surrey districts.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/2" id="article-4-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>A new district council, to be known as East Surrey Council, is established as the sole principal authority for the non-metropolitan district of East Surrey.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/3" id="article-4-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Except for the purposes of Part 5 of this Order (electoral matters), before 1st April 2027—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/3/a" id="article-4-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>East Surrey Council is not a local authority for the purposes of the 1972 Act or for any other enactment relating to local government; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/3/b" id="article-4-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>subsection (2) of section 2 of the 1972 Act (constitution of principal councils in England) has effect in relation to that council as if the words from “and the council” to the end of that subsection were omitted.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/4" id="article-4-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>In relation to the county of East Surrey, section 2(1) of the 1972 Act (which provides that every county must have a council) does not apply.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/5" id="article-4-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>On 1st April 2027—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/5/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/5/a" id="article-4-5-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the East Surrey districts are abolished as local government areas; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/4/5/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/4/5/b" id="article-4-5-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the East Surrey councils are wound up and dissolved.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/2/chapter/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/2/chapter/2" NumberOfProvisions="1" id="part-2-chapter-2">
+<Number>Chapter 2</Number>
+<Title>West Surrey</Title>
+<P1group>
+<Title>Single tier of local government in West Surrey</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5" id="article-5">
+<Pnumber>5</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/1" id="article-5-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>A new non-metropolitan county and a new non-metropolitan district, each to be known as West Surrey, are constituted comprising (in each case) the area of the West Surrey districts.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/2" id="article-5-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>A new district council, to be known as West Surrey Council, is established as the sole principal authority for the non-metropolitan district of West Surrey.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/3" id="article-5-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Except for the purposes of Part 5 of this Order (electoral matters), before 1st April 2027—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/3/a" id="article-5-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>West Surrey Council is not a local authority for the purposes of the 1972 Act or for any other enactment relating to local government; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/3/b" id="article-5-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>subsection (2) of section 2 of the 1972 Act (constitution of principal councils in England) has effect in relation to that council as if the words from “and the council” to the end of that subsection were omitted.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/4" id="article-5-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>In relation to the county of West Surrey, section 2(1) of the 1972 Act (which provides that every county must have a council) does not apply.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/5" id="article-5-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>On 1st April 2027—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/5/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/5/a" id="article-5-5-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the West Surrey districts are abolished as local government areas; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/5/5/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/5/5/b" id="article-5-5-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the West Surrey councils are wound up and dissolved.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+</Part>
+<Part DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/3" NumberOfProvisions="11" id="part-3">
+<Number>Part 3</Number>
+<Title>IMPLEMENTATION</Title>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/3/chapter/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/3/chapter/1" NumberOfProvisions="1" id="part-3-chapter-1">
+<Number>Chapter 1</Number>
+<Title>Surrey County Council</Title>
+<P1group>
+<Title>Functions of the county council</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/6" id="article-6">
+<Pnumber>6</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/6/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/6/1" id="article-6-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>There is added to the functions of the county council the function, which is exercisable only in the transitional period beginning on the coming into force of this Order and ending on the fourteenth day after the ordinary day of election of councillors in 2026, of preparing for and facilitating the economic, effective, efficient and timely transfer to East Surrey Council, of such of its functions, property, rights and liabilities as relate to East Surrey and its inhabitants.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/6/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/6/2" id="article-6-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>There is added to the functions of the county council the function, which is exercisable only in the transitional period beginning on the coming into force of this Order and ending on the fourteenth day after the ordinary day of election of councillors in 2026, of preparing for and facilitating the economic, effective, efficient and timely transfer to West Surrey Council, of such of its functions, property, rights and liabilities as relate to West Surrey and its inhabitants.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/3/chapter/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/3/chapter/2" NumberOfProvisions="4" id="part-3-chapter-2">
+<Number>Chapter 2</Number>
+<Title>East Surrey councils</Title>
+<P1group>
+<Title>Functions of the East Surrey councils</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/7/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/7" id="article-7">
+<Pnumber>7</Pnumber>
+<P1para>
+<Text>There is added to the functions of each of the East Surrey councils the function, which is exercisable only in the transitional period beginning on the coming into force of this Order and ending on the fourteenth day after the ordinary day of election of councillors in 2026, of preparing for and facilitating the economic, effective, efficient and timely transfer to East Surrey Council of its functions, property, rights and liabilities.</Text>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>East Surrey Joint Committee</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8" id="article-8">
+<Pnumber>8</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/1" id="article-8-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Not later than 14 days after the coming into force of this Order, the county council and the East Surrey councils must establish a joint committee under section 101(5) of the 1972 Act (arrangements for discharge of functions by local authorities) for the purpose of discharging, until the first meeting of the East Surrey shadow authority, the functions mentioned in paragraph (2) (“<Term id="term-the-east-surrey-joint-committee">the East Surrey Joint Committee</Term>”).</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/2" id="article-8-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>The functions are—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/2/a" id="article-8-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the article 6 functions;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/2/b" id="article-8-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the article 7 functions; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/2/c" id="article-8-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>the functions referred to in articles 9(1), 10 and 15(1).</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/3" id="article-8-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>The East Surrey Joint Committee is to consist of ten persons—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/3/a" id="article-8-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>five persons nominated by the county council, each of whom is for the time being a member of that council for an electoral division whose area is within the East Surrey districts; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/3/b" id="article-8-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>five persons nominated by the East Surrey councils (with each East Surrey council nominating one person), each of whom is for the time being a member of the nominating council.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/4" id="article-8-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>The county council and each of the East Surrey councils must co-operate in the establishment of the East Surrey Joint Committee.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/5" id="article-8-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>The East Surrey Joint Committee is to regulate its own proceedings, but a question to be decided by the committee is to be decided by the majority of those present and voting at the meeting at which the question is put, each member (including the chairman of the committee) having one vote.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/6" id="article-8-6">
+<Pnumber>6</Pnumber>
+<P2para>
+<Text>In the case of an equality of votes, the person presiding at the meeting (whether or not the chairman of the committee) has a casting vote, in addition to any other vote the person may have.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/8/7/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/8/7" id="article-8-7">
+<Pnumber>7</Pnumber>
+<P2para>
+<Text>The East Surrey Joint Committee is dissolved on the day following that on which the East Surrey shadow authority holds its first meeting.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Implementation Plan and further provisions relevant to the discharge of functions by East Surrey Joint Committee</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9" id="article-9">
+<Pnumber>9</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/1" id="article-9-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The East Surrey Joint Committee must prepare, keep under review, and revise as necessary, an Implementation Plan which must include—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/1/a" id="article-9-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>such plans and timetables as are, in the opinion of the Joint Committee, necessary to secure the economic, effective, efficient and timely discharge of the article 6 and article 7 functions; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/1/b" id="article-9-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>such budgets and plans as it considers necessary or desirable to facilitate the economic, effective, efficient and timely discharge, on and after 1st April 2027, of the functions that, before that date, are functions of the county council or the East Surrey councils.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/2" id="article-9-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>For the purposes of—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/2/a" id="article-9-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>preparing, reviewing and revising the Implementation Plan,</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/2/b" id="article-9-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>discharging the article 6 and article 7 functions, and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/2/c" id="article-9-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>discharging such other functions as may be conferred on it,</Text>
+</P3para>
+</P3>
+<Text>the East Surrey Joint Committee must have regard to the information supplied to the Secretary of State in support of the proposal for single tier local government in Surrey.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/3" id="article-9-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>The East Surrey Joint Committee may, by written notice to—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/3/a" id="article-9-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the proper officer of the county council, or</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/9/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/9/3/b" id="article-9-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the proper officer of any of the East Surrey councils,</Text>
+</P3para>
+</P3>
+<Text>require the council referred to in the notice to take such action relevant to any of the article 6 or article 7 functions as may be specified in the notice.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Function of East Surrey Joint Committee relevant to code of conduct</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/10/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/10" id="article-10">
+<Pnumber>10</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/10/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/10/1" id="article-10-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The East Surrey Joint Committee must formulate proposals for the code of conduct to be adopted by the East Surrey shadow authority in accordance with article 20(1) and present those proposals at the first meeting of the shadow authority.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/10/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/10/2" id="article-10-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>In formulating proposals under paragraph (1) the East Surrey Joint Committee must have regard to section 27 of the 2011 Act (duty to promote and maintain high standards of conduct) and section 28 (codes of conduct) of that Act.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/3/chapter/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/3/chapter/3" NumberOfProvisions="4" id="part-3-chapter-3">
+<Number>Chapter 3</Number>
+<Title>West Surrey councils</Title>
+<P1group>
+<Title>Functions of the West Surrey councils</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/11/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/11" id="article-11">
+<Pnumber>11</Pnumber>
+<P1para>
+<Text>There is added to the functions of each of the West Surrey councils the function, which is exercisable only in the transitional period beginning on the coming into force of this Order and ending on the fourteenth day after the ordinary day of election of councillors in 2026, of preparing for and facilitating the economic, effective, efficient and timely transfer to West Surrey Council of its functions, property, rights and liabilities.</Text>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>West Surrey Joint Committee</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12" id="article-12">
+<Pnumber>12</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/1" id="article-12-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Not later than 14 days after the coming into force of this Order, the county council and the West Surrey councils must establish a joint committee under section 101(5) of the 1972 Act (arrangements for discharge of functions by local authorities) for the purpose of discharging, until the first meeting of the West Surrey shadow authority, the functions mentioned in paragraph (2) (“<Term id="term-the-west-surrey-joint-committee">the West Surrey Joint Committee</Term>”).</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/2" id="article-12-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>The functions are—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/2/a" id="article-12-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the article 6 functions;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/2/b" id="article-12-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the article 11 functions; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/2/c" id="article-12-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>the functions referred to in articles 13(1), 14 and 15(1).</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/3" id="article-12-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>The West Surrey Joint Committee is to consist of twelve persons—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/3/a" id="article-12-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>six persons nominated by the county council, each of whom is for the time being a member of that council for an electoral division whose area is within the West Surrey districts; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/3/b" id="article-12-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>six persons nominated by the West Surrey councils (with each West Surrey council nominating one person), each of whom is for the time being a member of the nominating council.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/4" id="article-12-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>The county council and each of the West Surrey councils must co-operate in the establishment of the West Surrey Joint Committee.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/5" id="article-12-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>The West Surrey Joint Committee is to regulate its own proceedings, but a question to be decided by the committee is to be decided by the majority of those present and voting at the meeting at which the question is put, each member (including the chairman of the committee) having one vote.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/6" id="article-12-6">
+<Pnumber>6</Pnumber>
+<P2para>
+<Text>In the case of an equality of votes, the person presiding at the meeting (whether or not the chairman of the committee) has a casting vote, in addition to any other vote the person may have.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/12/7/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/12/7" id="article-12-7">
+<Pnumber>7</Pnumber>
+<P2para>
+<Text>The West Surrey Joint Committee is dissolved on the day following that on which the West Surrey shadow authority holds its first meeting.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Implementation Plan and further provisions relevant to the discharge of functions by West Surrey Joint Committee</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13" id="article-13">
+<Pnumber>13</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/1" id="article-13-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The West Surrey Joint Committee must prepare, keep under review, and revise as necessary, an Implementation Plan which must include—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/1/a" id="article-13-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>such plans and timetables as are, in the opinion of the Joint Committee, necessary to secure the economic, effective, efficient and timely discharge of the article 6 and article 11 functions; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/1/b" id="article-13-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>such budgets and plans as it considers necessary or desirable to facilitate the economic, effective, efficient and timely discharge, on and after 1st April 2027, of the functions that, before that date, are functions of the county council or the West Surrey councils.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/2" id="article-13-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>For the purposes of—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/2/a" id="article-13-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>preparing, reviewing and revising the Implementation Plan,</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/2/b" id="article-13-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>discharging the article 6 and article 11 functions, and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/2/c" id="article-13-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>discharging such other functions as may be conferred on it,</Text>
+</P3para>
+</P3>
+<Text>the West Surrey Joint Committee must have regard to the information supplied to the Secretary of State in support of the proposal for single tier local government in Surrey.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/3" id="article-13-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>For the same purposes as in paragraph (2), the West Surrey Joint Committee must also have regard to—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/3/a" id="article-13-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the Spelthorne Borough Council Best Value Inspection report dated 17th March 2025<FootnoteRef Ref="f00010"/>;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/3/b" id="article-13-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the Direction dated 8th May 2025 issued by the Secretary of State for Housing, Communities and Local Government to Spelthorne Borough Council under section 15(5) and (6) of the Local Government Act 1999<FootnoteRef Ref="f00011"/>;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/3/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/3/c" id="article-13-3-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>the report dated May 2023 following an external assurance review of Woking Borough Council commissioned by the Secretary of State for Levelling Up, Housing and Communities<FootnoteRef Ref="f00012"/><FootnoteRef Ref="f00013"/>;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/3/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/3/d" id="article-13-3-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>the Direction dated 25th May 2023 issued by the Secretary of State for Housing, Communities and Local Government to Woking Borough Council under section 15(5) and (6) of the Local Government Act 1999<FootnoteRef Ref="f00014"/>;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/3/e/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/3/e" id="article-13-3-e">
+<Pnumber>e</Pnumber>
+<P3para>
+<Text>the Woking Borough Council Commissioners’ reports dated 31st August 2023<FootnoteRef Ref="f00015"/>, 7th December 2023<FootnoteRef Ref="f00016"/>, 29th May 2024<FootnoteRef Ref="f00017"/> and 16th December 2024<FootnoteRef Ref="f00018"/>;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/3/f/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/3/f" id="article-13-3-f">
+<Pnumber>f</Pnumber>
+<P3para>
+<Text>any other Directions issued to Spelthorne Borough Council or Woking Borough Council by the Secretary of State for Housing, Communities and Local Government under section 15(5) and (6) of the Local Government Act 1999 on or after the date on which this Order comes into force;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/3/g/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/3/g" id="article-13-3-g">
+<Pnumber>g</Pnumber>
+<P3para>
+<Text>any other reports published by Spelthorne Borough Council Commissioners or Woking Borough Council Commissioners, whether before the date on which this Order comes into force or on or after that date.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/4" id="article-13-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>The West Surrey Joint Committee may, by written notice to—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/4/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/4/a" id="article-13-4-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the proper officer of the county council, or</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/13/4/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/13/4/b" id="article-13-4-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the proper officer of any of the West Surrey councils,</Text>
+</P3para>
+</P3>
+<Text>require the council referred to in the notice to take such action relevant to any of the article 6 or article 11 functions as may be specified in the notice.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Function of West Surrey Joint Committee relevant to code of conduct</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/14/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/14" id="article-14">
+<Pnumber>14</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/14/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/14/1" id="article-14-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The West Surrey Joint Committee must formulate proposals for the code of conduct to be adopted by the West Surrey shadow authority in accordance with article 32(1) and present those proposals at the first meeting of the shadow authority.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/14/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/14/2" id="article-14-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>In formulating proposals under paragraph (1) the West Surrey Joint Committee must have regard to section 27 of the 2011 Act (duty to promote and maintain high standards of conduct) and section 28 (codes of conduct) of that Act.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/3/chapter/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/3/chapter/4" NumberOfProvisions="2" id="part-3-chapter-4">
+<Number>Chapter 4</Number>
+<Title>Transitional duties - general</Title>
+<P1group>
+<Title>Implementation Team</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15" id="article-15">
+<Pnumber>15</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/1" id="article-15-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Not later than 21 days after the coming into force of this Order, the East Surrey Joint Committee and the West Surrey Joint Committee must form a single team of officers (“the Implementation Team”) for the purpose of assisting—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/1/a" id="article-15-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the relevant Joint Committee in the discharge of its functions under this Part; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/1/b" id="article-15-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>if, after the dissolution of the relevant Joint Committee, the relevant shadow authority so requires, that shadow authority.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/2" id="article-15-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>The members of the Implementation Team must include officers from the county council, and from each of the East Surrey councils and each of the West Surrey councils.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/3" id="article-15-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>The leader of the Implementation Team must be the person who is for the time being the Chief Executive of the county council.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/4" id="article-15-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>The deputy leaders of the Implementation Team are to be an officer of one of the East Surrey councils and an officer of one of the West Surrey councils.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/5" id="article-15-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>The county council and each of the East Surrey councils and each of the West Surrey councils must—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/5/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/5/a" id="article-15-5-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>co-operate in the formation of the Implementation Team, and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/5/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/5/b" id="article-15-5-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>release the officers concerned from their normal duties at such times or for such periods as the relevant Joint Committee or the relevant shadow authority may reasonably require.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/15/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/15/6" id="article-15-6">
+<Pnumber>6</Pnumber>
+<P2para>
+<Text>In this article—</Text>
+<UnorderedList Class="Definition" Decoration="none">
+<ListItem id="p00683">
+<Para>
+<Text>“<Term id="term-the-relevant-joint-committee">the relevant Joint Committee</Term>” means—</Text>
+<OrderedList Type="alpha" Decoration="parens">
+<ListItem id="p00686">
+<Para>
+<Text>as regards the East Surrey councils, the East Surrey Joint Committee;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00690">
+<Para>
+<Text>as regards the West Surrey councils, the West Surrey Joint Committee;</Text>
+</Para>
+</ListItem>
+</OrderedList>
+</Para>
+</ListItem>
+<ListItem id="p00695">
+<Para>
+<Text>“<Term id="term-the-relevant-shadow-authority">the relevant shadow authority</Term>” means—</Text>
+<OrderedList Type="alpha" Decoration="parens">
+<ListItem id="p00698">
+<Para>
+<Text>as regards the East Surrey councils, the East Surrey shadow authority;</Text>
+</Para>
+</ListItem>
+<ListItem id="p00702">
+<Para>
+<Text>as regards the West Surrey councils, the West Surrey shadow authority.</Text>
+</Para>
+</ListItem>
+</OrderedList>
+</Para>
+</ListItem>
+</UnorderedList>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>General transitional duties of the county council, the East Surrey councils and the West Surrey councils</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16" id="article-16">
+<Pnumber>16</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/1" id="article-16-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The county council, each of the East Surrey councils and each of the West Surrey councils must—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/1/a" id="article-16-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>consult and co-operate with one another and with the shadow authorities in order to secure the economic, effective, efficient and timely transfer of the county council’s and those councils’ functions, property, rights and liabilities; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/1/b" id="article-16-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>generally, exercise their functions so as to further the purposes of this Order.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/2" id="article-16-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>A relevant authority must provide such information relating to its functions as any other relevant authority may reasonably request for the purpose of giving effect to this Order.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/3" id="article-16-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>A relevant authority must, on request by a person authorised by another relevant authority in that behalf, at all reasonable times allow that person—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/3/a" id="article-16-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>to inspect any record belonging to or under the control of the authority to whom the request is made and relating to the authority or its functions; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/3/b" id="article-16-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>to take, or be supplied with, a copy of any such record or part of it.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/4" id="article-16-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>A relevant authority to whom a request is made under paragraph (3) may, before complying with the request, require the person making the request to produce evidence of the authorisation given by the other relevant authority.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/5" id="article-16-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>The rights conferred by paragraph (3) include the right to require any record which is not in legible form to be made available in legible form so that the authorised person may inspect or copy it or be supplied with copies.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/6" id="article-16-6">
+<Pnumber>6</Pnumber>
+<P2para>
+<Text>The information referred to in paragraph (2) must, in particular, include any information necessary for the exercise during the shadow period of any of the functions of a shadow authority.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7" id="article-16-7">
+<Pnumber>7</Pnumber>
+<P2para>
+<Text>In this article “<Term id="term-relevant-authority">relevant authority</Term>” means—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7/a" id="article-16-7-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>in the case of East Surrey—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/a/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7/a/i" id="article-16-7-a-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>the county council;</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/a/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7/a/ii" id="article-16-7-a-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>the East Surrey councils;</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/a/iii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7/a/iii" id="article-16-7-a-iii">
+<Pnumber>iii</Pnumber>
+<P4para>
+<Text>the East Surrey shadow authority;</Text>
+</P4para>
+</P4>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7/b" id="article-16-7-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>in the case of West Surrey—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/b/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7/b/i" id="article-16-7-b-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>the county council;</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/b/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7/b/ii" id="article-16-7-b-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>the West Surrey councils;</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/16/7/b/iii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/16/7/b/iii" id="article-16-7-b-iii">
+<Pnumber>iii</Pnumber>
+<P4para>
+<Text>the West Surrey shadow authority.</Text>
+</P4para>
+</P4>
+</P3para>
+</P3>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+</Part>
+<Part DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/4" NumberOfProvisions="25" id="part-4">
+<Number>Part 4</Number>
+<Title>SHADOW AUTHORITIES</Title>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/4/chapter/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/4/chapter/1" NumberOfProvisions="1" id="part-4-chapter-1">
+<Number>Chapter 1</Number>
+<Title>General</Title>
+<P1group>
+<Title>Total expenditure</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/17/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/17" id="article-17">
+<Pnumber>17</Pnumber>
+<P1para>
+<Text>The total of the expenditure properly incurred by the East Surrey shadow authority and the West Surrey shadow authority in relation to execution of their duties under this Order is to be divided among, and paid by, the county council, the East Surrey councils and the West Surrey councils in such proportions as may be agreed between them but, where the East Surrey shadow authority or the West Surrey shadow authority notifies the Secretary of State that there is no such agreement, the Secretary of State may—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/17/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/17/a" id="article-17-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>determine the proportions in which the expenditure is to be divided and paid; or</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/17/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/17/b" id="article-17-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>appoint an arbitrator for that purpose.</Text>
+</P3para>
+</P3>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/4/chapter/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/4/chapter/2" NumberOfProvisions="12" id="part-4-chapter-2">
+<Number>Chapter 2</Number>
+<Title>East Surrey</Title>
+<P1group>
+<Title>Shadow authority</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/18/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/18" id="article-18">
+<Pnumber>18</Pnumber>
+<P1para>
+<Text>During the shadow period East Surrey Council is to be a shadow authority (“<Term id="term-the-east-surrey-shadow-authority">the East Surrey shadow authority</Term>”) for the purposes of this Order.</Text>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Duties of the East Surrey shadow authority: executive arrangements</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19" id="article-19">
+<Pnumber>19</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19/1" id="article-19-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>At its first meeting, the East Surrey shadow authority must create a leader and cabinet executive within the meaning of Part 1A of the 2000 Act (arrangements with respect to local authority governance in England) (“the East Surrey shadow executive”).</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19/2" id="article-19-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>With the exception of Chapter 4 (changing governance arrangements) the provisions of Part 1A of the 2000 Act, to the extent that they relate to a leader and cabinet executive, have effect in relation to the East Surrey shadow authority as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19/2/a" id="article-19-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the East Surrey shadow executive were a leader and cabinet executive of a district council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19/2/b" id="article-19-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the executive arrangements that it makes were executive arrangements of a district council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19/2/c" id="article-19-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>section 9E (discharge of functions: general) authorised the East Surrey shadow executive to delegate functions not only to officers of the shadow authority but also to officers of the county council and the East Surrey councils.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19/3" id="article-19-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Chapter 7 of Part 1 of the 2011 Act (standards) applies in relation to the East Surrey shadow authority as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19/3/a" id="article-19-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>it were a district council (but not a principal authority in relation to a parish council); and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/19/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/19/3/b" id="article-19-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>references to co-opted members were omitted.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Duties of the East Surrey shadow authority: code of conduct</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/20/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/20" id="article-20">
+<Pnumber>20</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/20/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/20/1" id="article-20-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Subject to paragraph (2), the East Surrey shadow authority must at its first meeting adopt a code of conduct proposed pursuant to article 10.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/20/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/20/2" id="article-20-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>In complying with paragraph (1), the East Surrey shadow authority must make such amendments or modifications to the proposals submitted to it under article 10 as it considers necessary to secure that, when adopted, the code will satisfy the requirements of section 27 (duty to promote and maintain high standards of conduct) and section 28 (codes of conduct) of the 2011 Act.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Duties of the East Surrey shadow authority: appointment of certain officers</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21" id="article-21">
+<Pnumber>21</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/1" id="article-21-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>At its first meeting, the East Surrey shadow authority must designate on an interim basis—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/1/a" id="article-21-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>an officer of the county council or an officer of one of the East Surrey councils to be responsible for performing, in relation to the East Surrey shadow authority, the duties imposed by—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/1/a/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/1/a/i" id="article-21-1-a-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>subsections (2) and (3) of section 5 of the 1989 Act<FootnoteRef Ref="f00019"/> (designation and reports of monitoring officer); and</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/1/a/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/1/a/ii" id="article-21-1-a-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>subsections (2) and (5) of section 5A of the 1989 Act (reports of monitoring officer - local authorities operating executive arrangements),</Text>
+</P4para>
+</P4>
+<Text>as applied by paragraph (4) (the “interim monitoring officer”);</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/1/b" id="article-21-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>an officer of the county council or an officer of one of the East Surrey councils to be responsible for the administration of the financial affairs of the East Surrey shadow authority (the “interim chief finance officer”);</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/1/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/1/c" id="article-21-1-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>an officer of the county council or an officer of one of the East Surrey councils to be head of the East Surrey shadow authority’s paid service and, accordingly, to be responsible for performing, in relation to the East Surrey shadow authority, the duties imposed by subsections (2) and (4) of section 4 of the 1989 Act (designation and reports of head of paid service) (the “interim head of paid service”).</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/2" id="article-21-2">
+<Pnumber>2 </Pnumber>
+<P2para>
+<Text>The East Surrey shadow authority must before 31st December 2026 appoint—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/2/a" id="article-21-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>East Surrey Council’s monitoring officer,</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/2/b" id="article-21-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>East Surrey Council’s chief finance officer, and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/2/c" id="article-21-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>East Surrey Council’s head of paid service,</Text>
+</P3para>
+</P3>
+<Text>and each appointment is to take effect from the date of such appointment.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/3" id="article-21-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>A designation under paragraph (1) ceases to have effect on the day on which a person (who may be the same person as the designated officer) is appointed under paragraph (2) to discharge responsibilities equivalent to those of the designated officer.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/4" id="article-21-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>Subsections (2) to (7) of section 5 of the 1989 Act (designation and reports of monitoring officer) and subsections (2) and (5) of section 5A of that Act (reports of monitoring officer - local authorities operating executive arrangements) apply in relation to—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/4/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/4/a" id="article-21-4-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the East Surrey shadow authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/4/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/4/b" id="article-21-4-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>its interim monitoring officer; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/4/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/4/c" id="article-21-4-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>its executive arrangements,</Text>
+</P3para>
+</P3>
+<Text>as they apply in relation to a relevant authority and the monitoring officer and executive arrangements of a relevant authority as if references in those subsections to a relevant authority and the monitoring officer and executive arrangements of a relevant authority were references to the East Surrey shadow authority, its interim monitoring officer and the executive arrangements that it adopts pursuant to this Order.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/5" id="article-21-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>Sections 114, 115, 115B and 116 of the Local Government Finance Act 1988<FootnoteRef Ref="f00020"/> (financial administration, duties and functions) apply in relation to the East Surrey shadow authority and its interim chief finance officer as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/5/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/5/a" id="article-21-5-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>references to the chief finance officer of a relevant authority included references to the interim chief finance officer of the East Surrey shadow authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/5/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/5/b" id="article-21-5-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>references to a relevant authority included references to the East Surrey shadow authority; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/5/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/5/c" id="article-21-5-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>references to joint committees were omitted.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/21/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/21/6" id="article-21-6">
+<Pnumber>6</Pnumber>
+<P2para>
+<Text>Subsections (2) to (5) and (6) of section 4 of the 1989 Act (designation and reports of head of paid service) apply in relation to the East Surrey shadow authority and its interim head of paid service as they apply in relation to a relevant authority and its head of paid service as if references in those subsections to a relevant authority and its head of paid service were references to the East Surrey shadow authority and its interim head of paid service.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Duties of the East Surrey shadow authority: members’ allowances for East Surrey Council</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/22/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/22" id="article-22">
+<Pnumber>22</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/22/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/22/1" id="article-22-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The East Surrey shadow authority must formulate proposals for the scheme for the payment of members’ allowances to be adopted by East Surrey Council.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/22/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/22/2" id="article-22-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>The East Surrey shadow authority must prepare and adopt a scheme for the payment of allowances to its members.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/22/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/22/3" id="article-22-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>The Local Authorities (Members’ Allowances) (England) Regulations 2003<FootnoteRef Ref="f00021"/>, other than regulations 6 (allowances for members of Association of London Government) and 17 (transitional provisions) and Part 5 (parish councils), apply in relation to the East Surrey shadow authority and its members as they apply in relation to district councils and their members.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Functions of the East Surrey shadow authority: Implementation Plan</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23" id="article-23">
+<Pnumber>23</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/1" id="article-23-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>After the dissolution of the East Surrey Joint Committee, the East Surrey shadow authority must keep under review, and revise as necessary, the Implementation Plan prepared by that committee.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/2" id="article-23-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>Article 9(2) applies in relation to the East Surrey shadow authority as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/2/a" id="article-23-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the word “preparing” were omitted;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/2/b" id="article-23-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>for “the article 6 and article 7 functions”, there were substituted <InlineAmendment>“the main transitional functions”</InlineAmendment>; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/2/c" id="article-23-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>for “East Surrey Joint Committee”, there were substituted <InlineAmendment>“East Surrey shadow authority”</InlineAmendment>.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/3" id="article-23-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Article 9(3) applies in relation to the East Surrey shadow authority as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/3/a" id="article-23-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>for “East Surrey Joint Committee”, there were substituted <InlineAmendment>“East Surrey shadow authority”</InlineAmendment>; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/3/b" id="article-23-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>for “the article 6 or article 7 functions”, there were substituted <InlineAmendment>“the main transitional functions”</InlineAmendment>.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/23/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/23/4" id="article-23-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>In article 9(2) and (3), as applied by paragraphs (2) and (3), “<Term id="term-the-main-transitional-functions">the main transitional functions</Term>” means the functions referred to in article 25.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Other functions of the East Surrey shadow authority</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/24/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/24" id="article-24">
+<Pnumber>24</Pnumber>
+<P1para>
+<Text>During the shadow period the East Surrey shadow authority has, in addition to the functions specified or referred to in articles 19 to 23, the functions referred to or specified in articles 25 to 28.</Text>
+</P1para>
+</P1>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/25/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/25" id="article-25">
+<Pnumber>25</Pnumber>
+<P1para>
+<Text>The East Surrey shadow authority must take all such practicable steps as are necessary or expedient—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/25/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/25/a" id="article-25-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>to commence and sustain their running as a shadow authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/25/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/25/b" id="article-25-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>to prepare the authority for the assumption, as East Surrey Council, of local government functions and full local authority powers on 1st April 2027;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/25/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/25/c" id="article-25-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>to prepare any budgets or plans required by East Surrey Council when those functions are assumed;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/25/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/25/d" id="article-25-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>to liaise with the county council and the West Surrey shadow authority for the purpose of ensuring continuity of the delivery of public services on and after 1st April 2027; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/25/e/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/25/e" id="article-25-e">
+<Pnumber>e</Pnumber>
+<P3para>
+<Text>to liaise with the East Surrey councils for the purpose of ensuring continuity of the delivery of public services on and after 1st April 2027.</Text>
+</P3para>
+</P3>
+</P1para>
+</P1>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/26/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/26" id="article-26">
+<Pnumber>26</Pnumber>
+<P1para>
+<Text>Subject to article 27, the East Surrey shadow authority has all the other powers of a non-metropolitan county council and a non-metropolitan district council.</Text>
+</P1para>
+</P1>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/27/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/27" id="article-27">
+<Pnumber>27</Pnumber>
+<P1para>
+<Text>The powers conferred by article 26 may be exercised by the East Surrey shadow authority only—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/27/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/27/a" id="article-27-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>in the discharge of the functions specified or referred to in articles 19 to 23, 25 and 28;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/27/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/27/b" id="article-27-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>in the case of the powers of a non-metropolitan county council, in the same manner, and subject to the same conditions and limitations, as if it were a non-metropolitan county council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/27/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/27/c" id="article-27-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>in the case of the powers of a non-metropolitan district council, in the same manner, and subject to the same conditions and limitations, as if it were a non-metropolitan district council; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/27/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/27/d" id="article-27-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>where the exercise of the power would involve incurring expenditure or acquiring a liability which, before 1st April 2027—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/27/d/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/27/d/i" id="article-27-d-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>is the responsibility of the county council, with the prior consent of that council; or</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/27/d/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/27/d/ii" id="article-27-d-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>is the responsibility of a district council, with the prior consent of that council.</Text>
+</P4para>
+</P4>
+</P3para>
+</P3>
+</P1para>
+</P1>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28" id="article-28">
+<Pnumber>28</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1" id="article-28-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The following provisions apply in relation to the East Surrey shadow authority, notwithstanding that it does not have the functions and full powers of a local authority—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/a" id="article-28-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the following provisions of the Local Democracy, Economic Development and Construction Act 2009<FootnoteRef Ref="f00022"/>—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/a/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/a/i" id="article-28-1-a-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>section 109A (proposal for new combined authority)<FootnoteRef Ref="f00023"/>; and</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/a/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/a/ii" id="article-28-1-a-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>section 110 (requirements in connection with establishment of combined authority)<FootnoteRef Ref="f00024"/>;</Text>
+</P4para>
+</P4>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b" id="article-28-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the following provisions of the 1972 Act—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b/i" id="article-28-1-b-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>section 3 (chairman);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b/ii" id="article-28-1-b-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>section 5 (vice-chairman);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/iii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b/iii" id="article-28-1-b-iii">
+<Pnumber>iii</Pnumber>
+<P4para>
+<Text>Parts 5 and 5A (general provisions as to members and proceedings of local authorities, access to meetings and documents of certain authorities, committees and sub-committees);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/iv/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b/iv" id="article-28-1-b-iv">
+<Pnumber>iv</Pnumber>
+<P4para>
+<Text>section 103 (expenses of joint committees);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/v/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b/v" id="article-28-1-b-v">
+<Pnumber>v</Pnumber>
+<P4para>
+<Text>section 106 (standing orders);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/vi/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b/vi" id="article-28-1-b-vi">
+<Pnumber>vi</Pnumber>
+<P4para>
+<Text>section 146 (transfer of securities on alteration of area, etc.);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/vii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b/vii" id="article-28-1-b-vii">
+<Pnumber>vii</Pnumber>
+<P4para>
+<Text>section 178 (regulations as to allowances); and</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/1/b/viii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/1/b/viii" id="article-28-1-b-viii">
+<Pnumber>viii</Pnumber>
+<P4para>
+<Text>section 245 (status of certain districts, parishes and communities).</Text>
+</P4para>
+</P4>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/2" id="article-28-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>The East Surrey shadow authority, notwithstanding that it does not have the functions and full powers of a local authority, is to be treated—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/2/a" id="article-28-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>for the purposes of the Local Audit and Accountability Act 2014<FootnoteRef Ref="f00025"/> and any regulations made under that Act as if it were a district council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/2/b" id="article-28-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>for the purposes of section 101 of the 2000 Act (indemnification of members and officers of relevant authorities), as a relevant authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/2/c" id="article-28-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>for the purposes of Part 1 of the Local Government Act 2003<FootnoteRef Ref="f00026"/> (capital finance etc and accounts), as a local authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/2/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/2/d" id="article-28-2-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>for the purposes of the Local Authorities (Standing Orders) (England) Regulations 2001<FootnoteRef Ref="f00027"/>, as a relevant authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/2/e/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/2/e" id="article-28-2-e">
+<Pnumber>e</Pnumber>
+<P3para>
+<Text>for the purposes of the Data Protection Act 2018<FootnoteRef Ref="f00028"/>, as a public authority; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/28/2/f/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/28/2/f" id="article-28-2-f">
+<Pnumber>f</Pnumber>
+<P3para>
+<Text>for the purposes of the Freedom of Information Act 2000<FootnoteRef Ref="f00029"/>, as a public authority.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Discharge of the East Surrey shadow authority’s functions by the East Surrey shadow executive</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/29/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/29" id="article-29">
+<Pnumber>29</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/29/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/29/1" id="article-29-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Except to the extent that any provision of any Act, this Order, or regulations under section 9D of the 2000 Act (functions which are the responsibility of an executive), section 9DA of that Act (functions of an executive: further provision), or section 13<FootnoteRef Ref="f00030"/> of that Act (functions which are the responsibility of an executive) requires otherwise, the functions conferred on the East Surrey shadow authority by or under this Order are to be delegated to, and discharged by, the East Surrey shadow executive.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/29/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/29/2" id="article-29-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>Paragraph (1) does not prevent the East Surrey shadow executive from requesting the East Surrey shadow authority to discharge any function specified in a notice given by the shadow executive to the proper officer of the shadow authority, and the shadow authority must comply with any such request within such period as the shadow executive may specify.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/4/chapter/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/4/chapter/3" NumberOfProvisions="12" id="part-4-chapter-3">
+<Number>Chapter 3</Number>
+<Title>West Surrey</Title>
+<P1group>
+<Title>Shadow authority</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/30/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/30" id="article-30">
+<Pnumber>30</Pnumber>
+<P1para>
+<Text>During the shadow period West Surrey Council is to be a shadow authority (“<Term id="term-the-west-surrey-shadow-authority">the West Surrey shadow authority</Term>”) for the purposes of this Order.</Text>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Duties of the West Surrey shadow authority: executive arrangements</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31" id="article-31">
+<Pnumber>31</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31/1" id="article-31-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>At its first meeting, the West Surrey shadow authority must create a leader and cabinet executive within the meaning of Part 1A of the 2000 Act<FootnoteRef Ref="f00031"/> (arrangements with respect to local authority governance in England) (“the West Surrey shadow executive”).</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31/2" id="article-31-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>With the exception of Chapter 4 (changing governance arrangements) the provisions of Part 1A of the 2000 Act, to the extent that they relate to a leader and cabinet executive, have effect in relation to the West Surrey shadow authority as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31/2/a" id="article-31-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the West Surrey shadow executive were a leader and cabinet executive of a district council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31/2/b" id="article-31-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the executive arrangements that it makes were executive arrangements of a district council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31/2/c" id="article-31-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>section 9E (discharge of duties: general) authorised the West Surrey shadow executive to delegate functions not only to officers of the shadow authority but also to officers of the county council and the West Surrey councils.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31/3" id="article-31-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Chapter 7 of Part 1 of the 2011 Act (standards) applies in relation to the West Surrey shadow authority as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/3/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31/3/a" id="article-31-3-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>it were a district council (but not a principal authority in relation to a parish council); and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/31/3/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/31/3/b" id="article-31-3-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>references to co-opted members were omitted.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Duties of the West Surrey shadow authority: code of conduct</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/32/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/32" id="article-32">
+<Pnumber>32</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/32/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/32/1" id="article-32-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Subject to paragraph (2), the West Surrey shadow authority must at its first meeting adopt a code of conduct proposed pursuant to article 14.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/32/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/32/2" id="article-32-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>In complying with paragraph (1), the West Surrey shadow authority must make such amendments or modifications to the proposals submitted to it under article 14 as it considers necessary to secure that, when adopted, the code will satisfy the requirements of section 27 (duty to promote and maintain high standards of conduct) and section 28 (codes of conduct) of the 2011 Act.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Duties of the West Surrey shadow authority: appointment of certain officers</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33" id="article-33">
+<Pnumber>33</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/1" id="article-33-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>At its first meeting, the West Surrey shadow authority must designate on an interim basis—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/1/a" id="article-33-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>an officer of the county council or an officer of one of the West Surrey councils to be responsible for performing, in relation to the West Surrey shadow authority, the duties imposed by—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/1/a/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/1/a/i" id="article-33-1-a-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>subsections (2) and (3) of section 5 of the 1989 Act<FootnoteRef Ref="f00032"/> (designation and reports of monitoring officer); and</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/1/a/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/1/a/ii" id="article-33-1-a-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>subsections (2) and (5) of section 5A of the 1989 Act (reports of monitoring officer - local authorities operating executive arrangements),</Text>
+</P4para>
+</P4>
+<Text>as applied by paragraph (4) (the “interim monitoring officer”);</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/1/b" id="article-33-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>an officer of the county council or an officer of one of the West Surrey councils to be responsible for the administration of the financial affairs of the West Surrey shadow authority (the “interim chief finance officer”);</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/1/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/1/c" id="article-33-1-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>an officer of the county council or an officer of one of the West Surrey councils to be head of the West Surrey shadow authority’s paid service and, accordingly, to be responsible for performing, in relation to the West Surrey shadow authority, the duties imposed by subsections (2) and (4) of section 4 of the 1989 Act (designation and reports of head of paid service) (the “interim head of paid service”).</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/2" id="article-33-2">
+<Pnumber>2 </Pnumber>
+<P2para>
+<Text>The West Surrey shadow authority must before 31st December 2026 appoint—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/2/a" id="article-33-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>West Surrey Council’s monitoring officer,</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/2/b" id="article-33-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>West Surrey Council’s chief finance officer, and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/2/c" id="article-33-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>West Surrey Council’s head of paid service,</Text>
+</P3para>
+</P3>
+<Text>and each appointment is to take effect from the date of such appointment.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/3" id="article-33-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>A designation under paragraph (1) ceases to have effect on the day on which a person (who may be the same person as the designated officer) is appointed under paragraph (2) to discharge responsibilities equivalent to those of the designated officer.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/4" id="article-33-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>Subsections (2) to (7) of section 5 of the 1989 Act (designation and reports of monitoring officer) and subsections (2) and (5) of section 5A of that Act (reports of monitoring officer - local authorities operating executive arrangements) apply in relation to—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/4/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/4/a" id="article-33-4-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the West Surrey shadow authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/4/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/4/b" id="article-33-4-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>its interim monitoring officer; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/4/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/4/c" id="article-33-4-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>its executive arrangements,</Text>
+</P3para>
+</P3>
+<Text>as they apply in relation to a relevant authority and the monitoring officer and executive arrangements of a relevant authority as if references in those subsections to a relevant authority and the monitoring officer and executive arrangements of a relevant authority were references to the West Surrey shadow authority, its interim monitoring officer and the executive arrangements that it adopts pursuant to this Order.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/5" id="article-33-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>Sections 114, 115, 115B and 116 of the Local Government Finance Act 1988<FootnoteRef Ref="f00033"/> (financial administration, duties and functions) apply in relation to the West Surrey shadow authority and its interim chief finance officer as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/5/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/5/a" id="article-33-5-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>references to the chief finance officer of a relevant authority included references to the interim chief finance officer of the West Surrey shadow authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/5/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/5/b" id="article-33-5-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>references to a relevant authority included references to the West Surrey shadow authority; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/5/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/5/c" id="article-33-5-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>references to joint committees were omitted.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/33/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/33/6" id="article-33-6">
+<Pnumber>6</Pnumber>
+<P2para>
+<Text>Subsections (2) to (5) and (6) of section 4 of the 1989 Act (designation and reports of head of paid service) apply in relation to the West Surrey shadow authority and its interim head of paid service as they apply in relation to a relevant authority and its head of paid service as if references in those subsections to a relevant authority and its head of paid service were references to the West Surrey shadow authority and its interim head of paid service.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Duties of the West Surrey shadow authority: members’ allowances for West Surrey Council</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/34/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/34" id="article-34">
+<Pnumber>34</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/34/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/34/1" id="article-34-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The West Surrey shadow authority must formulate proposals for the scheme for the payment of members’ allowances to be adopted by West Surrey Council.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/34/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/34/2" id="article-34-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>The West Surrey shadow authority must prepare and adopt a scheme for the payment of allowances to its members.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/34/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/34/3" id="article-34-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>The Local Authorities (Members’ Allowances) (England) Regulations 2003<FootnoteRef Ref="f00034"/>, other than regulations 6 (allowances for members of Association of London Government) and 17 (transitional provisions) and Part 5 (parish councils), apply in relation to the West Surrey shadow authority and its members as they apply in relation to district councils and their members.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Functions of the West Surrey shadow authority: Implementation Plan</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35" id="article-35">
+<Pnumber>35</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/1" id="article-35-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>After the dissolution of the West Surrey Joint Committee, the West Surrey shadow authority must keep under review, and revise as necessary, the Implementation Plan prepared by that committee.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/2" id="article-35-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>Article 13(2) applies in relation to the West Surrey shadow authority as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/2/a" id="article-35-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the word “preparing” were omitted;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/2/b" id="article-35-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>for “the article 6 and article 11 functions”, there were substituted <InlineAmendment>“the main transitional functions”</InlineAmendment>; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/2/c" id="article-35-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>for “West Surrey Joint Committee”, there were substituted <InlineAmendment>“West Surrey shadow authority”</InlineAmendment>.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/3" id="article-35-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Article 13(3) applies in relation to the West Surrey shadow authority as if for “West Surrey Joint Committee” there were substituted <InlineAmendment>“West Surrey shadow authority”</InlineAmendment>.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/4" id="article-35-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>Article 13(4) applies in relation to the West Surrey shadow authority as if—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/4/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/4/a" id="article-35-4-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>for “West Surrey Joint Committee”, there were substituted <InlineAmendment>“West Surrey shadow authority”</InlineAmendment>; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/4/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/4/b" id="article-35-4-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>for “the article 6 or article 11 functions”, there were substituted <InlineAmendment>“the main transitional functions”</InlineAmendment>.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/35/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/35/5" id="article-35-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>In article 13(2) and (4), as applied by paragraphs (2) and (4), “<Term id="term-the-main-transitional-functions">the main transitional functions</Term>” means the functions referred to in article 37.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Other functions of the West Surrey shadow authority</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/36/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/36" id="article-36">
+<Pnumber>36</Pnumber>
+<P1para>
+<Text>During the shadow period the West Surrey shadow authority has, in addition to the functions specified or referred to in articles 31 to 35, the functions referred to or specified in articles 37 to 40.</Text>
+</P1para>
+</P1>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/37/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/37" id="article-37">
+<Pnumber>37</Pnumber>
+<P1para>
+<Text>The West Surrey shadow authority must take all such practicable steps as are necessary or expedient—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/37/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/37/a" id="article-37-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>to commence and sustain their running as a shadow authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/37/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/37/b" id="article-37-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>to prepare the authority for the assumption, as West Surrey Council, of local government functions and full local authority powers on 1st April 2027;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/37/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/37/c" id="article-37-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>to prepare any budgets or plans required by West Surrey Council when those functions are assumed;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/37/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/37/d" id="article-37-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>to liaise with the county council and the East Surrey shadow authority for the purpose of ensuring continuity of the delivery of public services on and after 1st April 2027; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/37/e/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/37/e" id="article-37-e">
+<Pnumber>e</Pnumber>
+<P3para>
+<Text>to liaise with the West Surrey councils for the purpose of ensuring continuity of the delivery of public services on and after 1st April 2027.</Text>
+</P3para>
+</P3>
+</P1para>
+</P1>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/38/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/38" id="article-38">
+<Pnumber>38</Pnumber>
+<P1para>
+<Text>Subject to article 39, the West Surrey shadow authority has all the other powers of a non-metropolitan county council and a non-metropolitan district council.</Text>
+</P1para>
+</P1>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/39/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/39" id="article-39">
+<Pnumber>39</Pnumber>
+<P1para>
+<Text>The powers conferred by article 38 may be exercised by the West Surrey shadow authority only—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/39/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/39/a" id="article-39-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>in the discharge of the functions specified or referred to in articles 31 to 35, 37 and 40;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/39/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/39/b" id="article-39-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>in the case of the powers of a non-metropolitan county council, in the same manner, and subject to the same conditions and limitations, as if it were a non-metropolitan county council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/39/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/39/c" id="article-39-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>in the case of the powers of a non-metropolitan district council, in the same manner, and subject to the same conditions and limitations, as if it were a non-metropolitan district council; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/39/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/39/d" id="article-39-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>where the exercise of the power would involve incurring expenditure or acquiring a liability which, before 1st April 2027—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/39/d/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/39/d/i" id="article-39-d-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>is the responsibility of the county council, with the prior consent of that council; or</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/39/d/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/39/d/ii" id="article-39-d-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>is the responsibility of a district council, with the prior consent of that council.</Text>
+</P4para>
+</P4>
+</P3para>
+</P3>
+</P1para>
+</P1>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40" id="article-40">
+<Pnumber>40</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1" id="article-40-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>The following provisions apply in relation to the West Surrey shadow authority, notwithstanding that it does not have the functions and full powers of a local authority—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/a" id="article-40-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the following provisions of the Local Democracy, Economic Development and Construction Act 2009<FootnoteRef Ref="f00035"/>—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/a/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/a/i" id="article-40-1-a-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>section 109A (proposal for new combined authority)<FootnoteRef Ref="f00036"/>; and</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/a/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/a/ii" id="article-40-1-a-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>section 110 (requirements in connection with establishment of combined authority)<FootnoteRef Ref="f00037"/>;</Text>
+</P4para>
+</P4>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b" id="article-40-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the following provisions of the 1972 Act—</Text>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/i/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b/i" id="article-40-1-b-i">
+<Pnumber>i</Pnumber>
+<P4para>
+<Text>section 3 (chairman);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/ii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b/ii" id="article-40-1-b-ii">
+<Pnumber>ii</Pnumber>
+<P4para>
+<Text>section 5 (vice-chairman);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/iii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b/iii" id="article-40-1-b-iii">
+<Pnumber>iii</Pnumber>
+<P4para>
+<Text>Parts 5 and 5A (general provisions as to members and proceedings of local authorities, access to meetings and documents of certain authorities, committees and sub-committees);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/iv/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b/iv" id="article-40-1-b-iv">
+<Pnumber>iv</Pnumber>
+<P4para>
+<Text>section 103 (expenses of joint committees);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/v/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b/v" id="article-40-1-b-v">
+<Pnumber>v</Pnumber>
+<P4para>
+<Text>section 106 (standing orders);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/vi/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b/vi" id="article-40-1-b-vi">
+<Pnumber>vi</Pnumber>
+<P4para>
+<Text>section 146 (transfer of securities on alteration of area, etc.);</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/vii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b/vii" id="article-40-1-b-vii">
+<Pnumber>vii</Pnumber>
+<P4para>
+<Text>section 178 (regulations as to allowances); and</Text>
+</P4para>
+</P4>
+<P4 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/1/b/viii/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/1/b/viii" id="article-40-1-b-viii">
+<Pnumber>viii</Pnumber>
+<P4para>
+<Text>section 245 (status of certain districts, parishes and communities).</Text>
+</P4para>
+</P4>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/2" id="article-40-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>The West Surrey shadow authority, notwithstanding that it does not have the functions and full powers of a local authority, is to be treated—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/2/a" id="article-40-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>for the purposes of the Local Audit and Accountability Act 2014<FootnoteRef Ref="f00038"/> and any regulations made under that Act as if it were a district council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/2/b" id="article-40-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>for the purposes of section 101 of the 2000 Act (indemnification of members and officers of relevant authorities), as a relevant authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/2/c" id="article-40-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>for the purposes of Part 1 of the Local Government Act 2003<FootnoteRef Ref="f00039"/> (capital finance etc and accounts), as a local authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/2/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/2/d" id="article-40-2-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>for the purposes of the Local Authorities (Standing Orders) (England) Regulations 2001<FootnoteRef Ref="f00040"/>, as a relevant authority;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/2/e/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/2/e" id="article-40-2-e">
+<Pnumber>e</Pnumber>
+<P3para>
+<Text>for the purposes of the Data Protection Act 2018<FootnoteRef Ref="f00041"/>, as a public authority; and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/40/2/f/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/40/2/f" id="article-40-2-f">
+<Pnumber>f</Pnumber>
+<P3para>
+<Text>for the purposes of the Freedom of Information Act 2000<FootnoteRef Ref="f00042"/>, as a public authority.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Discharge of the West Surrey shadow authority’s functions by the West Surrey shadow executive</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/41/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/41" id="article-41">
+<Pnumber>41</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/41/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/41/1" id="article-41-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Except to the extent that any provision of any Act, this Order, or regulations under section 9D of the 2000 Act (functions which are the responsibility of an executive), section 9DA of that Act (functions of an executive: further provision), or section 13<FootnoteRef Ref="f00043"/> of that Act (functions which are the responsibility of an executive) requires otherwise, the functions conferred on the West Surrey shadow authority by or under this Order are to be delegated to, and discharged by, the West Surrey shadow executive.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/41/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/41/2" id="article-41-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>Paragraph (1) does not prevent the West Surrey shadow executive from requesting the West Surrey shadow authority to discharge any function specified in a notice given by the shadow executive to the proper officer of the shadow authority, and the shadow authority must comply with any such request within such period as the shadow executive may specify.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+</Part>
+<Part DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/5" NumberOfProvisions="8" id="part-5">
+<Number>Part 5</Number>
+<Title>ELECTORAL MATTERS</Title>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/5/chapter/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/5/chapter/1" NumberOfProvisions="3" id="part-5-chapter-1">
+<Number>Chapter 1</Number>
+<Title>General</Title>
+<P1group>
+<Title>Amendment of the Surrey (Electoral Changes) Order 2024</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/42/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/42" id="article-42">
+<Pnumber>42</Pnumber>
+<P1para>
+<Text>In the Surrey (Electoral Changes) Order 2024<FootnoteRef Ref="f00044"/>, in article 1(3)(b), for “2026” substitute <InlineAmendment>“2027”</InlineAmendment>.</Text>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Consequential modifications: existing casual vacancies</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/43/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/43" id="article-43">
+<Pnumber>43</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/43/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/43/1" id="article-43-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>This article applies where—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/43/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/43/1/a" id="article-43-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>before the coming into force of this Order a casual vacancy occurs in the office of councillor of the county council or any of the East Surrey councils or the West Surrey councils, and</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/43/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/43/1/b" id="article-43-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>but for this Order, that vacancy would have been filled at the ordinary election of councillors in 2026 in accordance with section 89(3) of the 1972 Act.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/43/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/43/2" id="article-43-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>Where this article applies, section 89(1) of the 1972 Act applies in respect of that vacancy as if, in paragraphs (a) and (b), for the words “thirty-five days” to the end there were substituted <InlineAmendment>“the period beginning with 30th March 2026 and ending with 21st May 2026”</InlineAmendment>.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Expenditure</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/44/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/44" id="article-44">
+<Pnumber>44</Pnumber>
+<P1para>
+<Text>The total of the expenditure properly incurred by the East Surrey Council returning officer and the West Surrey Council returning officer in relation to the holding of the 2026 elections is to be divided among, and paid by, the county council, the East Surrey councils and the West Surrey councils in such proportions as may be agreed between them but, where the East Surrey Council returning officer or the West Surrey Council returning officer notifies the Secretary of State that there is no such agreement, the Secretary of State may—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/44/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/44/a" id="article-44-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>determine the proportions in which the expenditure is to be divided and paid; or</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/44/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/44/b" id="article-44-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>appoint an arbitrator for that purpose.</Text>
+</P3para>
+</P3>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/5/chapter/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/5/chapter/2" NumberOfProvisions="1" id="part-5-chapter-2">
+<Number>Chapter 2</Number>
+<Title>Surrey County Council</Title>
+<P1group>
+<Title>Surrey County Council and councillors of that Council</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/45/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/45" id="article-45">
+<Pnumber>45</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/45/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/45/1" id="article-45-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Notwithstanding section 7(1) of the 1972 Act (elections of councillors)—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/45/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/45/1/a" id="article-45-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>an ordinary election is not to be held in 2026 for the return of councillors to the county council;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/45/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/45/1/b" id="article-45-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the term of office of councillors serving as councillors of the county council ends on 1st April 2027.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/45/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/45/2" id="article-45-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>Subject to paragraph (3), nothing in section 89 of the 1972 Act (filling of casual vacancies in case of councillors) authorises the holding of an election to fill a casual vacancy in the office of councillor of the county council where that vacancy arises after 30th September 2026 and before 1st April 2027.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/45/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/45/3" id="article-45-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Where, on the occurrence of a vacancy mentioned in paragraph (2), or the occurrence of a number of simultaneous such vacancies, the total number of unfilled vacancies in the membership of the county council exceeds one third of the whole number of members of that council, an election to fill such vacancy or vacancies must be held in accordance with section 89 of the 1972 Act.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/45/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/45/4" id="article-45-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>Where, in the circumstances mentioned in paragraph (3), the declaration mentioned in section 89(1)(a) of the 1972 Act is made, or the notice in writing mentioned in section 89(1)(b) of the 1972 Act is given, within the period of thirty-five days ending with 1st April 2027, computed in accordance with section 243(4) of the 1972 Act (timing of elections), an election must not be held and any proceedings required by the Local Elections (Principal Areas) (England and Wales) Rules 2006<FootnoteRef Ref="f00045"/> must not be commenced.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/5/chapter/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/5/chapter/3" NumberOfProvisions="2" id="part-5-chapter-3">
+<Number>Chapter 3</Number>
+<Title>East Surrey</Title>
+<P1group>
+<Title>Cancellation of elections to East Surrey councils</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/46/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/46" id="article-46">
+<Pnumber>46</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/46/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/46/1" id="article-46-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Notwithstanding section 7(8) and (9) of the 1972 Act (elections of councillors)—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/46/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/46/1/a" id="article-46-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>ordinary elections are not to be held in 2026 for the return of councillors to the East Surrey councils;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/46/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/46/1/b" id="article-46-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the term of office of councillors serving as councillors of any of those councils ends on 1st April 2027.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/46/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/46/2" id="article-46-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>Subject to paragraph (3), nothing in section 89 of the 1972 Act (filling of casual vacancies in case of councillors) authorises the holding of an election to fill a casual vacancy in the office of councillor of any of the East Surrey councils where that vacancy arises after 30th September 2026 and before 1st April 2027.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/46/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/46/3" id="article-46-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Where, on the occurrence of a vacancy mentioned in paragraph (2), or the occurrence of a number of simultaneous such vacancies, the total number of unfilled vacancies in the membership of one of the East Surrey councils exceeds one third of the whole number of members of that council, an election to fill such vacancy or vacancies must be held in accordance with section 89 of the 1972 Act.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/46/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/46/4" id="article-46-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>Where, in the circumstances mentioned in paragraph (3), the declaration mentioned in section 89(1)(a) of the 1972 Act is made, or the notice in writing mentioned in section 89(1)(b) of the 1972 Act is given, within the period of thirty-five days ending with 1st April 2027, computed in accordance with section 243(4) of the 1972 Act, an election must not be held and any proceedings required by the Local Elections (Principal Areas) (England and Wales) Rules 2006<FootnoteRef Ref="f00046"/> must not be commenced.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Election of councillors of East Surrey Council in 2026 and subsequent years</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47" id="article-47">
+<Pnumber>47</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/1" id="article-47-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>A whole council election of councillors of East Surrey Council is to be held—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/1/a" id="article-47-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>on the ordinary day of election of councillors in 2026;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/1/b" id="article-47-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>on the ordinary day of election of councillors in 2031;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/1/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/1/c" id="article-47-1-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>every fourth year thereafter.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/2" id="article-47-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>For the purposes of the election of councillors of East Surrey Council—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/2/a" id="article-47-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>East Surrey is to be divided into wards;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/2/b" id="article-47-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the names of the new wards are those set out in column 1 of the table in Schedule 1 to this Order;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/2/c" id="article-47-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>the area of each new ward is to be the same as that of the county council electoral division of that name as provided in the 2024 Order<FootnoteRef Ref="f00047"/>, and as set out in the corresponding entry in column 2 of that table;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/2/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/2/d" id="article-47-2-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>each new ward is to return the number of councillors set out in column 3 of that table.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/3" id="article-47-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>For the 2026 election the returning officer for East Surrey is the head of paid service of Reigate &amp; Banstead Borough Council (“the East Surrey Council returning officer”).</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/4" id="article-47-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>The East Surrey Council returning officer must take such steps as are necessary or appropriate to prepare for the 2026 election.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/5" id="article-47-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>In relation to the 2026 election, “the appropriate officer” in Parts 1 and 2 of the Representation of the People Act 1983 does not have the meaning given by section 67(7) of that Act but means the East Surrey Council returning officer.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/6" id="article-47-6">
+<Pnumber>6</Pnumber>
+<P2para>
+<Text>Councillors elected in the 2026 election come into office on the fourth day after the day of the 2026 election.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/7/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/7" id="article-47-7">
+<Pnumber>7</Pnumber>
+<P2para>
+<Text>All councillors elected in 2026 or any later year are to retire on the fourth day after the ordinary day of election of councillors in the year of retirement and the newly-elected councillors are to come into office on the day on which their predecessors retire.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/8/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/8" id="article-47-8">
+<Pnumber>8</Pnumber>
+<P2para>
+<Text>In this article “the year of retirement”—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/8/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/8/a" id="article-47-8-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>in relation to councillors elected in 2026 means 2031;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/8/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/8/b" id="article-47-8-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>in relation to councillors elected in 2031 or in any later year means the fourth year after the year of election of those councillors.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/9/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/9" id="article-47-9">
+<Pnumber>9</Pnumber>
+<P2para>
+<Text>The East Surrey Council returning officer must convene, and make all necessary arrangements for, the first meeting of the East Surrey shadow authority, which must be held not later than the fourteenth day after the ordinary day of election of councillors in 2026.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/10/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/10" id="article-47-10">
+<Pnumber>10</Pnumber>
+<P2para>
+<Text>Where, during the shadow period, a casual vacancy occurs in the office of councillor for East Surrey Council and an election is required to be held in accordance with section 89 of the 1972 Act, the returning officer for that election is that council’s head of paid service or (if an appointment has not been made under article 21(2)(c)) the interim head of paid service of the shadow authority appointed in accordance with article 21(1)(c).</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/11/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/11" id="article-47-11">
+<Pnumber>11</Pnumber>
+<P2para>
+<Text>In relation to an election held to fill a casual vacancy in the circumstances referred to in paragraph (10) “the appropriate officer” in Parts 1 and 2 of the Representation of the People Act 1983 does not have the meaning given by section 67(7) of that Act but means—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/11/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/11/a" id="article-47-11-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the head of paid service of East Surrey Council; or</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/11/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/11/b" id="article-47-11-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the interim head of paid service of the East Surrey shadow authority.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/12/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/12" id="article-47-12">
+<Pnumber>12</Pnumber>
+<P2para>
+<Text>For the purposes of section 83(1) to (3) of the 1972 Act (declaration of acceptance of office), the proper officer of East Surrey Council for the 2026 election is the East Surrey Council returning officer.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/47/13/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/47/13" id="article-47-13">
+<Pnumber>13</Pnumber>
+<P2para>
+<Text>The East Surrey Council returning officer may authorise an officer of the county council or one of the East Surrey councils to discharge the functions of the proper officer mentioned in paragraph (12).</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+<Chapter DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/part/5/chapter/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/part/5/chapter/4" NumberOfProvisions="2" id="part-5-chapter-4">
+<Number>Chapter 4</Number>
+<Title>West Surrey</Title>
+<P1group>
+<Title>Cancellation of elections to West Surrey councils</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/48/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/48" id="article-48">
+<Pnumber>48</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/48/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/48/1" id="article-48-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>Notwithstanding section 7(8) and (9) of the 1972 Act (elections of councillors)—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/48/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/48/1/a" id="article-48-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>ordinary elections are not to be held in 2026 for the return of councillors to the West Surrey councils;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/48/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/48/1/b" id="article-48-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the term of office of councillors serving as councillors of any of those councils ends on 1st April 2027.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/48/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/48/2" id="article-48-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>Subject to paragraph (3), nothing in section 89 of the 1972 Act (filling of casual vacancies in case of councillors) authorises the holding of an election to fill a casual vacancy in the office of councillor of any of the West Surrey councils where that vacancy arises after 30th September 2026 and before 1st April 2027.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/48/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/48/3" id="article-48-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>Where, on the occurrence of a vacancy mentioned in paragraph (2), or the occurrence of a number of simultaneous such vacancies, the total number of unfilled vacancies in the membership of one of the West Surrey councils exceeds one third of the whole number of members of that council, an election to fill such vacancy or vacancies must be held in accordance with section 89 of the 1972 Act.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/48/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/48/4" id="article-48-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>Where, in the circumstances mentioned in paragraph (3), the declaration mentioned in section 89(1)(a) of the 1972 Act is made, or the notice in writing mentioned in section 89(1)(b) of the 1972 Act is given, within the period of thirty-five days ending with 1st April 2027, computed in accordance with section 243(4) of the 1972 Act, an election must not be held and any proceedings required by the Local Elections (Principal Areas) (England and Wales) Rules 2006<FootnoteRef Ref="f00048"/> must not be commenced.</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+<P1group>
+<Title>Election of councillors of West Surrey Council in 2026 and subsequent years</Title>
+<P1 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49" id="article-49">
+<Pnumber>49</Pnumber>
+<P1para>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/1" id="article-49-1">
+<Pnumber>1</Pnumber>
+<P2para>
+<Text>A whole council election of councillors of West Surrey Council is to be held—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/1/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/1/a" id="article-49-1-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>on the ordinary day of election of councillors in 2026;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/1/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/1/b" id="article-49-1-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>on the ordinary day of election of councillors in 2031;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/1/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/1/c" id="article-49-1-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>every fourth year thereafter.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/2" id="article-49-2">
+<Pnumber>2</Pnumber>
+<P2para>
+<Text>For the purposes of the election of councillors of West Surrey Council—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/2/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/2/a" id="article-49-2-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>West Surrey is to be divided into wards;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/2/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/2/b" id="article-49-2-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the names of the new wards are those set out in column 1 of the table in Schedule 2 to this Order;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/2/c/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/2/c" id="article-49-2-c">
+<Pnumber>c</Pnumber>
+<P3para>
+<Text>the area of each new ward is to be the same as that of the county council electoral division of that name as provided in the 2024 Order, and as set out in the corresponding entry in column 2 of that table;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/2/d/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/2/d" id="article-49-2-d">
+<Pnumber>d</Pnumber>
+<P3para>
+<Text>each new ward is to return the number of councillors set out in column 3 of that table.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/3/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/3" id="article-49-3">
+<Pnumber>3</Pnumber>
+<P2para>
+<Text>For the 2026 election the returning officer for West Surrey is the head of paid service of Runnymede Borough Council (“the West Surrey Council returning officer”).</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/4/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/4" id="article-49-4">
+<Pnumber>4</Pnumber>
+<P2para>
+<Text>The West Surrey Council returning officer must take such steps as are necessary or appropriate to prepare for the 2026 election.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/5/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/5" id="article-49-5">
+<Pnumber>5</Pnumber>
+<P2para>
+<Text>In relation to the 2026 election, “the appropriate officer” in Parts 1 and 2 of the Representation of the People Act 1983 does not have the meaning given by section 67(7) of that Act but means the West Surrey Council returning officer.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/6/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/6" id="article-49-6">
+<Pnumber>6</Pnumber>
+<P2para>
+<Text>Councillors elected in the 2026 election come into office on the fourth day after the day of the 2026 election.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/7/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/7" id="article-49-7">
+<Pnumber>7</Pnumber>
+<P2para>
+<Text>All councillors elected in 2026 or any later year are to retire on the fourth day after the ordinary day of election of councillors in the year of retirement and the newly-elected councillors are to come into office on the day on which their predecessors retire.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/8/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/8" id="article-49-8">
+<Pnumber>8</Pnumber>
+<P2para>
+<Text>In this article “the year of retirement”—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/8/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/8/a" id="article-49-8-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>in relation to councillors elected in 2026 means 2031;</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/8/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/8/b" id="article-49-8-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>in relation to councillors elected in 2031 or in any later year means the fourth year after the year of election of those councillors.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/9/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/9" id="article-49-9">
+<Pnumber>9</Pnumber>
+<P2para>
+<Text>The West Surrey Council returning officer must convene, and make all necessary arrangements for, the first meeting of the West Surrey shadow authority, which must be held not later than the fourteenth day after the ordinary day of election of councillors in 2026.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/10/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/10" id="article-49-10">
+<Pnumber>10</Pnumber>
+<P2para>
+<Text>Where, during the shadow period, a casual vacancy occurs in the office of councillor for West Surrey Council and an election is required to be held in accordance with section 89 of the 1972 Act, the returning officer for that election is that council’s head of paid service or (if an appointment has not been made under article 33(2)(c)) the interim head of paid service of the shadow authority appointed in accordance with article 33(1)(c).</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/11/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/11" id="article-49-11">
+<Pnumber>11</Pnumber>
+<P2para>
+<Text>In relation to an election held to fill a casual vacancy in the circumstances referred to in paragraph (10) “the appropriate officer” in Parts 1 and 2 of the Representation of the People Act 1983 does not have the meaning given by section 67(7) of that Act but means—</Text>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/11/a/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/11/a" id="article-49-11-a">
+<Pnumber>a</Pnumber>
+<P3para>
+<Text>the head of paid service of West Surrey Council; or</Text>
+</P3para>
+</P3>
+<P3 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/11/b/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/11/b" id="article-49-11-b">
+<Pnumber>b</Pnumber>
+<P3para>
+<Text>the interim head of paid service of the West Surrey shadow authority.</Text>
+</P3para>
+</P3>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/12/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/12" id="article-49-12">
+<Pnumber>12</Pnumber>
+<P2para>
+<Text>For the purposes of section 83(1) to (3) of the 1972 Act (declaration of acceptance of office), the proper officer of West Surrey Council for the 2026 election is the West Surrey Council returning officer.</Text>
+</P2para>
+</P2>
+<P2 DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/article/49/13/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/article/49/13" id="article-49-13">
+<Pnumber>13</Pnumber>
+<P2para>
+<Text>The West Surrey Council returning officer may authorise an officer of the county council or one of the West Surrey councils to discharge the functions of the proper officer mentioned in paragraph (12).</Text>
+</P2para>
+</P2>
+</P1para>
+</P1>
+</P1group>
+</Chapter>
+</Part>
+<SignedSection DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/signature/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/signature">
+<Signatory>
+<Para>
+<Text>Signed by authority of the Secretary of State for Housing, Communities and Local Government</Text>
+</Para>
+<Signee>
+<PersonName>Alison McGovern</PersonName>
+<JobTitle>Minister of State</JobTitle>
+<Department>Ministry of Housing, Communities and Local Government</Department>
+<DateSigned Date="2026-03-09">
+<DateText>9th March 2026</DateText>
+</DateSigned>
+</Signee>
+</Signatory>
+</SignedSection>
+</Body>
+<Schedules>
+<Title>Schedules</Title>
+<Schedule DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/schedule/1/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/schedule/1" id="schedule-1">
+<Number>Schedule 1</Number>
+<TitleBlock>
+<Title>Wards of East Surrey</Title>
+</TitleBlock>
+<Reference>Article 47(2)</Reference>
+<ScheduleBody>
+<Tabular Orientation="portrait">
+<table xmlns="http://www.w3.org/1999/xhtml" cols="3">
+<colgroup><col width="33.33%"/><col width="33.33%"/><col width="33.33%"/></colgroup>
+<thead><tr><th>New ward</th><th>Electoral division under the 2024 Order</th><th>Number of councillors</th></tr><tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr></thead>
+<tbody><tr><td>Ashtead</td><td>Ashtead</td><td>2</td></tr><tr><td>Banstead, Woodmansterne &amp; Chipstead</td><td>Banstead, Woodmansterne &amp; Chipstead</td><td>2</td></tr><tr><td>Bookham &amp; Fetcham West</td><td>Bookham &amp; Fetcham West</td><td>2</td></tr><tr><td>Caterham Hill</td><td>Caterham Hill</td><td>2</td></tr><tr><td>Caterham Valley</td><td>Caterham Valley</td><td>2</td></tr><tr><td>Cobham &amp; Oxshott South</td><td>Cobham &amp; Oxshott South</td><td>2</td></tr><tr><td>Dorking</td><td>Dorking</td><td>2</td></tr><tr><td>Dorking Hills</td><td>Dorking Hills</td><td>2</td></tr><tr><td>Dorking Rural</td><td>Dorking Rural</td><td>2</td></tr><tr><td>Earlswood &amp; Reigate South</td><td>Earlswood &amp; Reigate South</td><td>2</td></tr><tr><td>Epsom Town &amp; Downs</td><td>Epsom Town &amp; Downs</td><td>2</td></tr><tr><td>Epsom West</td><td>Epsom West</td><td>2</td></tr><tr><td>Esher, Claygate &amp; Oxshott North</td><td>Esher, Claygate &amp; Oxshott North</td><td>2</td></tr><tr><td>Ewell Court, Auriol &amp; Cuddington</td><td>Ewell Court, Auriol &amp; Cuddington</td><td>2</td></tr><tr><td>Ewell Village, Stoneleigh &amp; Nonsuch</td><td>Ewell Village, Stoneleigh &amp; Nonsuch</td><td>2</td></tr><tr><td>Godstone</td><td>Godstone</td><td>2</td></tr><tr><td>Hersham</td><td>Hersham</td><td>2</td></tr><tr><td>Horley East</td><td>Horley East</td><td>2</td></tr><tr><td>Horley West, Salfords &amp; Sidlow</td><td>Horley West, Salfords &amp; Sidlow</td><td>2</td></tr><tr><td>Leatherhead &amp; Fetcham East</td><td>Leatherhead &amp; Fetcham East</td><td>2</td></tr><tr><td>Lingfield</td><td>Lingfield</td><td>2</td></tr><tr><td>Long Ditton, Hinchley Wood &amp; Weston Green</td><td>Long Ditton, Hinchley Wood &amp; Weston Green</td><td>2</td></tr><tr><td>Merstham &amp; Banstead South</td><td>Merstham &amp; Banstead South</td><td>2</td></tr><tr><td>Nork &amp; Tattenhams</td><td>Nork &amp; Tattenhams</td><td>2</td></tr><tr><td>Oxted</td><td>Oxted</td><td>2</td></tr><tr><td>Redhill East &amp; North Earlswood</td><td>Redhill East &amp; North Earlswood</td><td>2</td></tr><tr><td>Redhill West &amp; Meadvale</td><td>Redhill West &amp; Meadvale</td><td>2</td></tr><tr><td>Reigate</td><td>Reigate</td><td>2</td></tr><tr><td>Tadworth, Walton &amp; Kingswood</td><td>Tadworth, Walton &amp; Kingswood</td><td>2</td></tr><tr><td>Thames Ditton &amp; East Molesey</td><td>Thames Ditton &amp; East Molesey</td><td>2</td></tr><tr><td>Walton</td><td>Walton</td><td>2</td></tr><tr><td>Walton South &amp; Oatlands</td><td>Walton South &amp; Oatlands</td><td>2</td></tr><tr><td>Warlingham</td><td>Warlingham</td><td>2</td></tr><tr><td>West Ewell</td><td>West Ewell</td><td>2</td></tr><tr><td>West Molesey</td><td>West Molesey</td><td>2</td></tr><tr><td>Weybridge</td><td>Weybridge</td><td>2</td></tr></tbody>
+</table>
+</Tabular>
+</ScheduleBody>
+</Schedule>
+<Schedule DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/schedule/2/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/schedule/2" id="schedule-2">
+<Number>Schedule 2</Number>
+<TitleBlock>
+<Title>Wards of West Surrey</Title>
+</TitleBlock>
+<Reference>Article 49(2)</Reference>
+<ScheduleBody>
+<Tabular Orientation="portrait">
+<table xmlns="http://www.w3.org/1999/xhtml" cols="3">
+<colgroup><col width="33.33%"/><col width="33.33%"/><col width="33.33%"/></colgroup>
+<thead><tr><th>New ward</th><th>Electoral division under the 2024 Order</th><th>Number of councillors</th></tr><tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr></thead>
+<tbody><tr><td>Addlestone</td><td>Addlestone</td><td>2</td></tr><tr><td>Ash</td><td>Ash</td><td>2</td></tr><tr><td>Ashford</td><td>Ashford</td><td>2</td></tr><tr><td>Bagshot, Windlesham &amp; Chobham</td><td>Bagshot, Windlesham &amp; Chobham</td><td>2</td></tr><tr><td>Camberley East</td><td>Camberley East</td><td>2</td></tr><tr><td>Camberley West &amp; Frimley</td><td>Camberley West &amp; Frimley</td><td>2</td></tr><tr><td>Chertsey</td><td>Chertsey</td><td>2</td></tr><tr><td>Cranleigh &amp; Ewhurst</td><td>Cranleigh &amp; Ewhurst</td><td>2</td></tr><tr><td>Egham</td><td>Egham</td><td>2</td></tr><tr><td>Englefield Green &amp; Virginia Water</td><td>Englefield Green &amp; Virginia Water</td><td>2</td></tr><tr><td>Farnham Central</td><td>Farnham Central</td><td>2</td></tr><tr><td>Farnham North</td><td>Farnham North</td><td>2</td></tr><tr><td>Farnham South</td><td>Farnham South</td><td>2</td></tr><tr><td>Frimley Green &amp; Mytchett</td><td>Frimley Green &amp; Mytchett</td><td>2</td></tr><tr><td>Godalming North</td><td>Godalming North</td><td>2</td></tr><tr><td>Godalming South, Milford &amp; Witley</td><td>Godalming South, Milford &amp; Witley</td><td>2</td></tr><tr><td>Goldsworth East &amp; Horsell Village</td><td>Goldsworth East &amp; Horsell Village</td><td>2</td></tr><tr><td>Guildford East</td><td>Guildford East</td><td>2</td></tr><tr><td>Guildford North</td><td>Guildford North</td><td>2</td></tr><tr><td>Guildford South East</td><td>Guildford South East</td><td>2</td></tr><tr><td>Guildford South West</td><td>Guildford South West</td><td>2</td></tr><tr><td>Guildford West</td><td>Guildford West</td><td>2</td></tr><tr><td>Haslemere</td><td>Haslemere</td><td>2</td></tr><tr><td>Heatherside &amp; Parkside</td><td>Heatherside &amp; Parkside</td><td>2</td></tr><tr><td>Horsleys</td><td>Horsleys</td><td>2</td></tr><tr><td>Knaphill &amp; Goldsworth West</td><td>Knaphill &amp; Goldsworth West</td><td>2</td></tr><tr><td>Laleham &amp; Shepperton</td><td>Laleham &amp; Shepperton</td><td>2</td></tr><tr><td>Lightwater, West End &amp; Bisley</td><td>Lightwater, West End &amp; Bisley</td><td>2</td></tr><tr><td>Lower Sunbury &amp; Halliford</td><td>Lower Sunbury &amp; Halliford</td><td>2</td></tr><tr><td>Shalford</td><td>Shalford</td><td>2</td></tr><tr><td>Shere</td><td>Shere</td><td>2</td></tr><tr><td>Staines</td><td>Staines</td><td>2</td></tr><tr><td>Staines South &amp; Ashford West</td><td>Staines South &amp; Ashford West</td><td>2</td></tr><tr><td>Stanwell, Stanwell Moor &amp; Ashford North</td><td>Stanwell, Stanwell Moor &amp; Ashford North</td><td>2</td></tr><tr><td>Sunbury Common &amp; Ashford Common</td><td>Sunbury Common &amp; Ashford Common</td><td>2</td></tr><tr><td>The Byfleets</td><td>The Byfleets</td><td>2</td></tr><tr><td>Thorpe, Longcross &amp; Ottershaw</td><td>Thorpe, Longcross &amp; Ottershaw</td><td>2</td></tr><tr><td>Waverley Eastern Villages</td><td>Waverley Eastern Villages</td><td>2</td></tr><tr><td>Waverley Western Villages</td><td>Waverley Western Villages</td><td>2</td></tr><tr><td>Woking North</td><td>Woking North</td><td>2</td></tr><tr><td>Woking South</td><td>Woking South</td><td>2</td></tr><tr><td>Woking South East</td><td>Woking South East</td><td>2</td></tr><tr><td>Woking South West</td><td>Woking South West</td><td>2</td></tr><tr><td>Woodham &amp; New Haw</td><td>Woodham &amp; New Haw</td><td>2</td></tr><tr><td>Worplesdon</td><td>Worplesdon</td><td>2</td></tr></tbody>
+</table>
+</Tabular>
+</ScheduleBody>
+</Schedule>
+</Schedules>
+<ExplanatoryNotes DocumentURI="http://www.legislation.gov.uk/uksi/2026/264/note/made" IdURI="http://www.legislation.gov.uk/id/uksi/2026/264/note">
+<Title>Explanatory Note</Title>
+<Comment>
+<Para>
+<Text>(This note is not part of the Order)</Text>
+</Para>
+</Comment>
+<P>
+<Text>This Order provides for the establishment, on 1st April 2027, of a single tier of local government in Surrey. Part 2 creates two new councils: West Surrey Council, for the same area as the existing districts of Guildford, Runnymede, Spelthorne, Surrey Heath, Waverley and Woking; and East Surrey Council, for the same area as the existing districts of Elmbridge, Epsom and Ewell, Mole Valley, Reigate and Banstead and Tandridge.</Text>
+</P>
+<P>
+<Text>The County of Surrey and the districts of Elmbridge, Epsom and Ewell, Mole Valley, Reigate and Banstead, Tandridge, Guildford, Runnymede, Spelthorne, Surrey Heath, Waverley and Woking are abolished as local government areas with effect from 1st April 2027. The county council and district councils in the county are wound up.</Text>
+</P>
+<P>
+<Text>Part 3 of the Order deals with transitional implementation duties, including duties on the county council and existing district councils, in particular to cooperate with each other and the shadow authorities and shadow executives and to create joint committees.</Text>
+</P>
+<P>
+<Text>The new councils, to which elections are to be held in 2026, will operate as “shadow authorities” until 1st April 2027. Part 4 of the Order contains the arrangements for the shadow authorities, including their functions which are principally to prepare for the transition to a single tier of local government on 1st April 2027.</Text>
+</P>
+<P>
+<Text>Part 5 of the Order deals with electoral matters. Elections for the new councils will take place on the ordinary day of elections in 2026, 2031 and every fourth year thereafter. Article 43 provides for the filling of certain casual vacancies by by-election where the casual vacancy occurred during the period of six months before the date on which the councillor whose office is vacant would otherwise have retired but for the coming into force of this Order.</Text>
+</P>
+<P>
+<Text>Schedules 1 and 2 set out the electoral wards of East Surrey Council and West Surrey Council respectively.</Text>
+</P>
+<P>
+<Text>A full regulatory impact assessment has not been prepared as this instrument will have no impact on the costs of business and the voluntary sector. The impact on the public sector is a simplification to the system of local government in Surrey.</Text>
+</P>
+</ExplanatoryNotes>
+</Secondary><Footnotes><Footnote id="f00001">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2007/28" id="c00001" Year="2007" Number="28" Class="UnitedKingdomPublicGeneralAct">2007 c. 28</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00002">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/1972/70" id="c00002" Year="1972" Number="70" Class="UnitedKingdomPublicGeneralAct">1972 c. 70</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00003">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/1989/42" id="c00003" Year="1989" Number="42" Class="UnitedKingdomPublicGeneralAct">1989 c. 42</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00004">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2000/22" id="c00004" Year="2000" Number="22" Class="UnitedKingdomPublicGeneralAct">2000 c. 22</Citation>. Parts 2 and 3 of that Act were amended by Part 3 of the Local Government and Public Involvement in Health Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2007/28" id="c00005" Year="2007" Number="28" Class="UnitedKingdomPublicGeneralAct">2007 (c. 28)</Citation>. Part 1A and Schedule A1 were inserted by Schedule 2 to the Localism Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2011/20" id="c00006" Year="2011" Number="20" Class="UnitedKingdomPublicGeneralAct">2011 (c. 20)</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00005">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2007/28" id="c00007" Year="2007" Number="28" Class="UnitedKingdomPublicGeneralAct">2007 c. 28</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00006">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2011/20" id="c00008" Year="2011" Number="20" Class="UnitedKingdomPublicGeneralAct">2011 c. 20</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00007">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2024/1177" id="c00009" Year="2024" Number="1177" Class="UnitedKingdomStatutoryInstrument">S.I. 2024/1177</Citation>, amended by article 5(1)(e) of the Local Authorities (Changes to Years of Ordinary Elections) (England) Order 2025 (<Citation URI="http://www.legislation.gov.uk/id/uksi/2025/137" id="c00010" Year="2025" Number="137" Class="UnitedKingdomStatutoryInstrument">S.I. 2025/137</Citation>).</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00008">
+<FootnoteText>
+<Para>
+<Text>See section 37 of the Representation of the People Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/1983/2" id="c00011" Year="1983" Number="2" Class="UnitedKingdomPublicGeneralAct">1983 (c. 2)</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00009">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/1983/2" id="c00012" Year="1983" Number="2" Class="UnitedKingdomPublicGeneralAct">1983 c. 2</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00010">
+<FootnoteText>
+<Para>
+<Text>In May 2024, the Secretary of State for Housing, Communities and Local Government appointed Lesley Seary, Mervyn Greer, Deborah McLaughlin and Peter Robinson to undertake an inspection of the compliance of Spelthorne Borough Council with the requirement of Part 1 of the Local Government Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/1999/27" id="c00013" Year="1999" Number="27" Class="UnitedKingdomPublicGeneralAct">1999 (c. 27)</Citation> (as amended) in relation to the specified functions of the Authority, namely: governance; section 151 requirements and the strength of associated audit, scrutiny and risk arrangements; the capacity and capability across the organisation, and whether it was sufficient to meet the Best Value Duty; the adequacy of the Authority’s plans and capacity to address the recommendations made by the Chartered Institute of Public Finance and Accountancy (CIPFA) to control its debt levels and reduce them over time; what an appropriate level of capital risk would be for the Authority; the Authority’s capacity to implement the new housing strategy; the impact the investment portfolio and its management had had on service delivery; and the prudence of financial decision making. The document is available at 
+<ExternalLink Title="GOV.UK website" URI="https://www.gov.uk/government/publications/spelthorne-borough-council-best-value-inspection-report">https://www.gov.uk/government/publications/spelthorne-borough-council-best-value-inspection-report</ExternalLink> or in hard copy from the Secretary of State on request to the Ministry of Housing, Communities and Local Government, 2 Marsham Street, London SW1P 4DF.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00011">
+<FootnoteText>
+<Para>
+<Text>The Secretary of State for Housing, Communities and Local Government issued a Direction to Spelthorne Borough Council on 8th May 2025 under sections 15(5) and (6) of the Local Government Act 1999 following an inspection and subsequent Best Value Inspection Report published on 17th March 2025. A copy of the Direction is available at 
+<ExternalLink URI="https://assets.publishing.service.gov.uk/media/681b78b9275cb67b18d87041/Spelthorne_Final_Directions.pdf">https://assets.publishing.service.gov.uk/media/681b78b9275cb67b18d87041/Spelthorne_Final_Directions.pdf</ExternalLink> or in hard copy from the Secretary of State on request.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00012">
+<FootnoteText>
+<Para>
+<Text>Functions of the Secretary of State for Levelling Up, Housing and Communities were transferred to the Secretary of State for Housing, Communities and Local Government by the Transfer of Functions (Secretary of State for Housing, Communities and Local Government) Order 2024 (<Citation URI="http://www.legislation.gov.uk/id/uksi/2024/991" id="c00014" Year="2024" Number="991" Class="UnitedKingdomStatutoryInstrument">S.I. 2024/991</Citation>), article 4.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00013">
+<FootnoteText>
+<Para>
+<Text>In January 2023 the Department for Levelling Up, Housing and Communities commissioned a non-statutory review of governance, finance and commercial aspects of the council’s business and appointed a review team of Jim Taylor, Carol Culley and Mervyn Greer. The review team was asked to provide an external assessment of the council’s governance arrangements, financial situation, commercial investments and capacity and capability to manage these in the immediate and longer term. A copy of the report is available at 
+<ExternalLink URI="https://assets.publishing.service.gov.uk/media/646f17077dd6e7000ca9b348/Woking_Borough_Council_-_External_Assurance_Review.pdf">https://assets.publishing.service.gov.uk/media/646f17077dd6e7000ca9b348/Woking_Borough_Council_-_External_Assurance_Review.pdf</ExternalLink> or in hard copy from the Secretary of State on request.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00014">
+<FootnoteText>
+<Para>
+<Text>The Secretary of State for Housing, Communities and Local Government issued a Direction to Woking Borough Council on 25th May 2025 under sections 15(5) and (6) of the Local Government Act 1999 following an external assurance review. A copy of the Direction is available at <ExternalLink URI="https://assets.publishing.service.gov.uk/media/646f3b077dd6e7000ca9b389/Woking_Borough_Council_-_Directions.pdf">https://assets.publishing.service.gov.uk/media/646f3b077dd6e7000ca9b389/Woking_Borough_Council_-_Directions.pdf</ExternalLink> or in hard copy from the Secretary of State on request.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00015">
+<FootnoteText>
+<Para>
+<Text>In May 2023 the Secretary of State for Levelling Up, Housing and Communities issued Directions to Woking Borough Council, including for specified functions of the council to be exercised by Commissioners nominated by the Secretary of State. The Directions were issued under sections 15(5) and (6) of the Local Government Act 1999 following an external assurance review. A copy of the first Commissioners’ report is available at <ExternalLink URI="https://assets.publishing.service.gov.uk/media/65313f370b5392000da92a1b/Woking_commissioners_first_report.pdf">https://assets.publishing.service.gov.uk/media/65313f370b5392000da92a1b/Woking_commissioners_first_report.pdf</ExternalLink> or in hard copy from the Secretary of State on request.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00016">
+<FootnoteText>
+<Para>
+<Text>A copy of the Commissioners’ second report is available at <ExternalLink URI="https://assets.publishing.service.gov.uk/media/65798630254aaa0010050bdb/Cmmrs_Second_Report_to_SoS.pdf">https://assets.publishing.service.gov.uk/media/65798630254aaa0010050bdb/Cmmrs_Second_Report_to_SoS.pdf</ExternalLink> or in hard copy from the Secretary of State on request.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00017">
+<FootnoteText>
+<Para>
+<Text>A copy of the Commissioners’ third report is available at <ExternalLink URI="https://assets.publishing.service.gov.uk/media/673c9c347e8a3c98a090fe54/Woking_Borough_Council_Commissioners__third_report.pdf">https://assets.publishing.service.gov.uk/media/673c9c347e8a3c98a090fe54/Woking_Borough_Council_Commissioners__third_report.pdf</ExternalLink> or in hard copy from the Secretary of State on request.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00018">
+<FootnoteText>
+<Para>
+<Text>A copy of the Commissioners’ fourth report is available at <ExternalLink URI="https://assets.publishing.service.gov.uk/media/67c961e0d0fba2f1334cf2de/Woking_Borough_Council_Commissioners__fourth_report.pdf">https://assets.publishing.service.gov.uk/media/67c961e0d0fba2f1334cf2de/Woking_Borough_Council_Commissioners__fourth_report.pdf</ExternalLink> or in hard copy from the Secretary of State on request.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00019">
+<FootnoteText>
+<Para>
+<Text>Relevant amendments, including the insertion of section 5A, were made by <Citation URI="http://www.legislation.gov.uk/id/uksi/2001/2237" id="c00015" Year="2001" Number="2237" Class="UnitedKingdomStatutoryInstrument">S.I. 2001/2237</Citation>, article 23.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00020">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/1988/41" id="c00016" Year="1988" Number="41" Class="UnitedKingdomPublicGeneralAct">1988 c. 41</Citation>. Relevant amendments were made by the Local Government and Housing Act 1989, section 139 and Schedule 5, and by the Local Government Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2003/26" id="c00017" Year="2003" Number="26" Class="UnitedKingdomPublicGeneralAct">2003 (c. 26)</Citation>, section 30 and <Citation URI="http://www.legislation.gov.uk/id/uksi/2001/2237" id="c00018" Year="2001" Number="2237" Class="UnitedKingdomStatutoryInstrument">S.I. 2001/2237</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00021">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2003/1021" id="c00019" Year="2003" Number="1021" Class="UnitedKingdomStatutoryInstrument">S.I. 2003/1021</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00022">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2009/20" id="c00020" Year="2009" Number="20" Class="UnitedKingdomPublicGeneralAct">2009 c. 20</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00023">
+<FootnoteText>
+<Para>
+<Text>Section 109A was added by the Levelling-up and Regeneration Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2023/55" id="c00021" Year="2023" Number="55" Class="UnitedKingdomPublicGeneralAct">2023 (c. 55)</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00024">
+<FootnoteText>
+<Para>
+<Text>Section 110 was amended by the Cities and Local Government Devolution Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2016/1" id="c00022" Year="2016" Number="1" Class="UnitedKingdomPublicGeneralAct">2016 (c. 1)</Citation>, and by the Levelling-up and Regeneration Act 2023.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00025">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2014/2" id="c00023" Year="2014" Number="2" Class="UnitedKingdomPublicGeneralAct">2014 c. 2</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00026">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2003/26" id="c00024" Year="2003" Number="26" Class="UnitedKingdomPublicGeneralAct">2003 c. 26</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00027">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2001/3384" id="c00025" Year="2001" Number="3384" Class="UnitedKingdomStatutoryInstrument">S.I. 2001/3384</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00028">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2018/12" id="c00026" Year="2018" Number="12" Class="UnitedKingdomPublicGeneralAct">2018 c. 12</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00029">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2000/36" id="c00027" Year="2000" Number="36" Class="UnitedKingdomPublicGeneralAct">2000 c. 36</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00030">
+<FootnoteText>
+<Para>
+<Text>Section 13 was amended by Schedule 3 of the Localism Act 2011 so that it applies to Wales only from 4th May 2012. The Local Authorities (Functions and Responsibilities) (England) Regulations 2000 (<Citation URI="http://www.legislation.gov.uk/id/uksi/2000/2853" id="c00028" Year="2000" Number="2853" Class="UnitedKingdomStatutoryInstrument">S.I. 2000/2853</Citation>) made under section 13 continue to apply to England.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00031">
+<FootnoteText>
+<Para>
+<Text>Part 1A was inserted by the Localism Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2011/20" id="c00029" Year="2011" Number="20" Class="UnitedKingdomPublicGeneralAct">2011 (c. 20)</Citation>, section 21 and Schedule 2.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00032">
+<FootnoteText>
+<Para>
+<Text>Relevant amendments, including the insertion of section 5A, were made by <Citation URI="http://www.legislation.gov.uk/id/uksi/2001/2237" id="c00030" Year="2001" Number="2237" Class="UnitedKingdomStatutoryInstrument">S.I. 2001/2237</Citation>, article 23.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00033">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/1988/41" id="c00031" Year="1988" Number="41" Class="UnitedKingdomPublicGeneralAct">1988 c. 41</Citation>. Relevant amendments were made by the Local Government and Housing Act 1989, section 139 and Schedule 5, and by the Local Government Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2003/26" id="c00032" Year="2003" Number="26" Class="UnitedKingdomPublicGeneralAct">2003 (c. 26)</Citation>, section 30 and <Citation URI="http://www.legislation.gov.uk/id/uksi/2001/2237" id="c00033" Year="2001" Number="2237" Class="UnitedKingdomStatutoryInstrument">S.I. 2001/2237</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00034">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2003/1021" id="c00034" Year="2003" Number="1021" Class="UnitedKingdomStatutoryInstrument">S.I. 2003/1021</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00035">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2009/20" id="c00035" Year="2009" Number="20" Class="UnitedKingdomPublicGeneralAct">2009 c. 20</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00036">
+<FootnoteText>
+<Para>
+<Text>Section 109A was added by the Levelling-up and Regeneration Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2023/55" id="c00036" Year="2023" Number="55" Class="UnitedKingdomPublicGeneralAct">2023 (c. 55)</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00037">
+<FootnoteText>
+<Para>
+<Text>Section 110 was amended by the Cities and Local Government Devolution Act <Citation URI="http://www.legislation.gov.uk/id/ukpga/2016/1" id="c00037" Year="2016" Number="1" Class="UnitedKingdomPublicGeneralAct">2016 (c. 1)</Citation>, and by the Levelling-up and Regeneration Act 2023.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00038">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2014/2" id="c00038" Year="2014" Number="2" Class="UnitedKingdomPublicGeneralAct">2014 c. 2</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00039">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2003/26" id="c00039" Year="2003" Number="26" Class="UnitedKingdomPublicGeneralAct">2003 c. 26</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00040">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2001/3384" id="c00040" Year="2001" Number="3384" Class="UnitedKingdomStatutoryInstrument">S.I. 2001/3384</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00041">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2018/12" id="c00041" Year="2018" Number="12" Class="UnitedKingdomPublicGeneralAct">2018 c. 12</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00042">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/ukpga/2000/36" id="c00042" Year="2000" Number="36" Class="UnitedKingdomPublicGeneralAct">2000 c. 36</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00043">
+<FootnoteText>
+<Para>
+<Text>Section 13 was amended by Schedule 3 of the Localism Act 2011 so that it applies to Wales only from 4th May 2012. The Local Authorities (Functions and Responsibilities) (England) Regulations 2000 (<Citation URI="http://www.legislation.gov.uk/id/uksi/2000/2853" id="c00043" Year="2000" Number="2853" Class="UnitedKingdomStatutoryInstrument">S.I. 2000/2853</Citation>) made under section 13 continue to apply to England.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00044">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2024/1177" id="c00044" Year="2024" Number="1177" Class="UnitedKingdomStatutoryInstrument">S.I. 2024/1177</Citation>. Article 1(3)(b) was amended by <Citation URI="http://www.legislation.gov.uk/id/uksi/2025/137" id="c00045" Year="2025" Number="137" Class="UnitedKingdomStatutoryInstrument">S.I. 2025/137</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00045">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2006/3304" id="c00046" Year="2006" Number="3304" Class="UnitedKingdomStatutoryInstrument">S.I. 2006/3304</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00046">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2006/3304" id="c00047" Year="2006" Number="3304" Class="UnitedKingdomStatutoryInstrument">S.I. 2006/3304</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00047">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2024/1177" id="c00048" Year="2024" Number="1177" Class="UnitedKingdomStatutoryInstrument">S.I. 2024/1177</Citation>. Article 3 and Schedule 1 of the Order made changes to electoral arrangements for Surrey following recommendations by the Local Government Boundary Commission for England. That Article and that Schedule came into force on 13th November 2024 for purposes relating to the election of councillors, and will come into force for all other purposes on 6th May 2027 (the “ordinary day of election”).</Text>
+</Para>
+</FootnoteText>
+</Footnote><Footnote id="f00048">
+<FootnoteText>
+<Para>
+<Text><Citation URI="http://www.legislation.gov.uk/id/uksi/2006/3304" id="c00049" Year="2006" Number="3304" Class="UnitedKingdomStatutoryInstrument">S.I. 2006/3304</Citation>.</Text>
+</Para>
+</FootnoteText>
+</Footnote></Footnotes></Legislation>
