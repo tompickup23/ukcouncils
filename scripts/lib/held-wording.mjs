@@ -1,7 +1,13 @@
 /** The 9 November 2026 ruling permits only the verbatim RA Part 1 line 906 cell. */
 export const RA_906_LABEL = 'Inter-authority transfers in respect of reorganisation';
 const HELD = /re[\s\-\u2010-\u2015]*organi[sz]|aboli(?:sh|tion)|structural changes?/i;
+export function outsideReorganisation(html) {
+  return html.replace(/<section\b[^>]*\bid="reorganisation"[^>]*>[\s\S]*?<\/section>/g, '')
+    .replace(/<a\b[^>]*href="#reorganisation"[^>]*>Local government reorganisation<\/a>/g, '')
+    .replace(/<section\b[^>]*data-reorganisation-documentation="(?:sources|methodology)"[^>]*>[\s\S]*?<\/section>/g, '');
+}
 export function heldWording(html) {
+  html = outsideReorganisation(html);
   if (!HELD.test(html)) return false;
   const masked = html.replace(/<table\b[^>]*\bdata-ra-financing(?:="[^"]*")?[^>]*>[\s\S]*?<\/table>/g, table =>
     table.replace(/<tr\b[^>]*\bdata-record-type="observation"[^>]*>[\s\S]*?<\/tr>/g, row =>
