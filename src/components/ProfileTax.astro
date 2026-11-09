@@ -1,0 +1,46 @@
+---
+/**
+ * Band D at a glance: the published figure, its change on last year as a
+ * calculation from two published tables, the parish precept caveat under
+ * each, and a link to every band on the same page.
+ */
+import Fact from "./Fact.astro";
+import { CURRENT_YEAR, PREVIOUS_YEAR, changePhrase, pounds, yearLabel } from "../lib/council-tax";
+import { regionPath } from "../lib/paths";
+import type { ProfileTax } from "../lib/council-profile";
+
+interface Props {
+  name: string;
+  region: string;
+  tax: ProfileTax;
+}
+
+const { name, region, tax } = Astro.props;
+const year = yearLabel(CURRENT_YEAR);
+const previous = yearLabel(PREVIOUS_YEAR);
+---
+<section class="section" id="tax-summary" aria-labelledby="tax-summary-heading" data-profile-section="tax-summary">
+  <h2 id="tax-summary-heading">Band D in {name} at a glance</h2>
+  <div class="fact-grid">
+    <div class="card">
+      <Fact label={`Band D, ${year}, for the year`} figure={pounds(tax.bandD)} source={tax.source} />
+      <p class="caveat">Area average including parish precepts. A home in a parish with its own precept pays a different amount.</p>
+    </div>
+    {tax.change && (
+      <div class="card">
+        <Fact
+          label={`Change on ${previous}, Band D`}
+          figure={changePhrase(tax.change)}
+          source={tax.changeSource}
+        >
+          <span class="fact-change">{pounds(tax.change.from)} in {previous}</span>
+        </Fact>
+        <p class="caveat">Both years include average parish precepts.</p>
+      </div>
+    )}
+  </div>
+  <p class="muted">
+    <a href="#council-tax">Every band from A to H in {name}</a>.
+    <a href={regionPath(region)}>Band D for every council in {region}</a>.
+  </p>
+</section>

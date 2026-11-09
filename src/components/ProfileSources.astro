@@ -1,0 +1,33 @@
+---
+/**
+ * One list of every table and file the council page drew on. Each entry is
+ * the same source a figure on the page cites under it.
+ */
+import { longDate } from "../lib/sources";
+import type { SourceRef } from "../lib/sources";
+
+interface Props {
+  name: string;
+  sources: SourceRef[];
+}
+
+const { name, sources } = Astro.props;
+---
+<section class="section" id="sources" aria-labelledby="sources-heading" data-profile-section="sources">
+  <h2 id="sources-heading">Sources for this page on {name}</h2>
+  <ul class="profile-sources" data-profile-sources>
+    {sources.map((source) => {
+      const date = longDate(source.date);
+      return (
+        <li>
+          <a href={source.url}>{source.publisher}, {source.title}</a>{source.table ? `, ${source.table}` : ""}{date ? `, ${date}` : ""}.
+        </li>
+      );
+    })}
+  </ul>
+</section>
+
+<style>
+  .profile-sources { padding-left: 1.1rem; font-size: 0.9rem; overflow-wrap: anywhere; }
+  .profile-sources li { margin: 0.3rem 0; }
+</style>
