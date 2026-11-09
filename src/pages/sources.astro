@@ -7,6 +7,7 @@ import { longDate } from "../lib/sources";
 import { loadSpending } from "../lib/spending";
 import { boundarySource } from "../lib/boundaries";
 import { efs } from "../lib/efs";
+import { councilTaxLinks } from "../lib/council-tax-links";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -47,9 +48,11 @@ const registry = loadRegistry();
     </p>
     <h2>Postcode lookup</h2>
     <p>The postcode door uses <a href="https://postcodes.io/">postcodes.io</a>, which is built on Office for National Statistics postcode data.</p>
+    <h2>Verified links to UK Council Tax</h2>
+    <p>Council links are checked against the <a href={councilTaxLinks.source}>UK Council Tax sitemap</a>, retrieved {longDate(councilTaxLinks.fetched.slice(0, 10))}. A council link is shown only when its address is in that saved sitemap.</p>
     <h2>Exceptional Financial Support</h2>
     <p>
-      The support figures on council pages and the Exceptional Financial Support page are read from the
+      The support figures on council pages and the Exceptional Financial Support page are read from the{" "}
       {efs.publisher}'s <a href={efs.collection}>guidance pages</a>, one per support year, exactly as printed,
       with the page body and each table cell hashed on {longDate(efs.curated)}. {efs.licence}.
     </p>
@@ -63,7 +66,7 @@ const registry = loadRegistry();
     </ul>
     <h2>Spending</h2>
     <p>
-      The spending record on council pages comes from {spending.publisher}'s published
+      The spending record on council pages comes from {spending.publisher}'s published{" "}
       <a href={spending.summaries.url}>council summaries</a>{spending.summaries.generated ? `, generated ${longDate(spending.summaries.generated)}` : ""},
       which AI DOGE compiles from each council's own published payment files. Each summary is keyed by the council's
       registry GSS code; counts describe councils, not keys.
@@ -77,7 +80,7 @@ const registry = loadRegistry();
     </p>
     <h2>Boundaries</h2>
     <p>
-      The locator maps use <a href={boundarySource.url}>{boundarySource.title}</a>, {boundarySource.publisher},
+      The locator maps use <a href={boundarySource.url}>{boundarySource.title}</a>, {boundarySource.publisher},{" "}
       {boundarySource.date}, under the Open Government Licence and with OS and ONS attribution on each map.
     </p>
   </div>
