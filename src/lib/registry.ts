@@ -75,8 +75,8 @@ export interface SisterLink {
 export function sisterLinks(council: Council): SisterLink[] {
   const links: SisterLink[] = [];
   for (const site of Object.keys(SISTER_SITES) as SisterSite[]) {
-    // The private project is never linked from a public surface, even if an
-    // older registry snapshot or a refresh still contains its mapping.
+    // Not linked from this site: the sister block is the four sites Tom confirmed on
+    // 8 November 2026 plus UK Council Tax. UK Food Hygiene has been public since 6 October 2026.
     if (site === "ukfoodhygiene") continue;
     // No Asylum Stats link from UK Councils for now (Tom, 8 November 2026).
     if (site === "asylumstats") continue;
