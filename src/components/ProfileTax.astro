@@ -4,6 +4,7 @@
  * calculation from two published tables, the parish precept caveat under
  * each, and a link to every band on the same page.
  */
+import PositionStrip from "./PositionStrip.astro";
 import Fact from "./Fact.astro";
 import { CURRENT_YEAR, PREVIOUS_YEAR, changePhrase, pounds, yearLabel } from "../lib/council-tax";
 import { regionPath } from "../lib/paths";
@@ -39,6 +40,10 @@ const previous = yearLabel(PREVIOUS_YEAR);
       </div>
     )}
   </div>
+  <PositionStrip id="band-d-position" kind="band-d" points={tax.points} currentGss={tax.currentGss}
+    format={pounds} title={`Band D in ${name} among ${tax.classLabel}`} classLabel={tax.classLabel}
+    basis={`Area Band D, ${year}, including average parish precepts`} source={tax.source}
+    caveat="Area average including parish precepts. A home in a parish with its own precept pays a different amount." />
   <p class="muted">
     <a href="#council-tax">Every band from A to H in {name}</a>.
     <a href={regionPath(region)}>Band D for every council in {region}</a>.

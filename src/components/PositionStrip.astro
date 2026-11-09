@@ -1,0 +1,64 @@
+---
+import SourceLine from "./SourceLine.astro";
+import { stripGeometry, type StripPoint } from "../lib/position-strip";
+import type { SourceRef } from "../lib/sources";
+interface Props {
+  id: string;
+  kind: "band-d" | "collection";
+  points: StripPoint[];
+  currentGss: string;
+  format: (n: number) => string;
+  title: string;
+  classLabel: string;
+  basis: string;
+  source: SourceRef;
+  caveat?: string;
+}
+const {id, kind, points, currentGss, format, title, classLabel, basis, source, caveat} = Astro.props;
+const g = stripGeometry(points, currentGss);
+const description = `Strip chart. ${basis} for the ${points.length} ${classLabel}, one mark each, from ${format(g.lowest.value)} (${g.lowest.name}) to ${format(g.highest.value)} (${g.highest.name}). ${g.current.name} is marked at ${format(g.current.value)}.`;
+const rows = [...points].sort((a, b) => a.name.localeCompare(b.name, "en-GB"));
+---
+<figure class="position-strip" data-position-strip={kind}>
+  <svg viewBox={`0 0 ${g.width} ${g.height}`} role="img" aria-labelledby={`${id}-title ${id}-desc`}>
+    <title id={`${id}-title`}>{title}</title>
+    <desc id={`${id}-desc`}>{description}</desc>
+    <line x1={g.plot.left} x2={g.plot.right} y1={g.axisY} y2={g.axisY} stroke="var(--border)" />
+    {g.peers.map(p => <line data-strip-peer x1={p.x} x2={p.x} y1="52" y2="76" stroke="var(--border-strong)" stroke-width="1.5"><title>{p.name}: {format(p.value)}</title></line>)}
+    <g data-strip-current data-value={g.current.value}>
+      <line x1={g.current.x} x2={g.current.x} y1="40" y2="88" stroke="var(--accent)" stroke-width="3" />
+      <circle cx={g.current.x} cy={g.axisY} r="6" fill="var(--accent)" />
+      <text x={g.current.x} y="30" text-anchor={g.current.labelAnchor} class="value">{format(g.current.value)}</text>
+    </g>
+    <text x={g.plot.left} y="106" text-anchor="start" class="tick">Lowest {format(g.lowest.value)}</text>
+    <text x={g.plot.right} y="106" text-anchor="end" class="tick">Highest {format(g.highest.value)}</text>
+  </svg>
+  <figcaption class="small">Each mark is one of the {points.length} {classLabel}. Lowest: {g.lowest.name}, {format(g.lowest.value)}. Highest: {g.highest.name}, {format(g.highest.value)}.</figcaption>
+  <SourceLine source={source} />
+  {caveat && <p class="caveat">{caveat}</p>}
+  <details>
+    <summary>View the figures in this chart as a table</summary>
+    <div class="table-wrap" tabindex="0" role="region" aria-label={title}>
+      <table class="data">
+        <caption>{title}</caption>
+        <thead><tr><th scope="col">Council</th><th scope="col" class="num">Figure</th></tr></thead>
+        <tbody>{rows.map(p => <tr data-current={p.gss === currentGss ? "" : undefined}>
+          <th scope="row">{p.gss === currentGss ? <strong>{p.name}</strong> : p.name}</th>
+          <td class="num">{p.gss === currentGss ? <strong>{format(p.value)}</strong> : format(p.value)}</td>
+        </tr>)}</tbody>
+      </table>
+    </div>
+  </details>
+</figure>
+<style>
+  .position-strip { margin: 1rem 0; max-width: 38rem; }
+  .position-strip svg { width: 100%; height: auto; display: block; }
+  .tick { fill: var(--text-muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .value { fill: var(--text); font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  figcaption { color: var(--text-muted); margin-top: 0.35rem; }
+  details { margin: 0.5rem 0 0.75rem; }
+  @media (max-width: 30rem) {
+    .tick { font-size: 17px; }
+    .value { font-size: 18px; }
+  }
+</style>

@@ -53,3 +53,13 @@ Validation: `npm run check`, zero errors and warnings; `npm test`, 183 passed an
 Imported the pinned UK Places Local Links file after hash verification. Retained source, check date and service metadata verbatim, with provenance and exact GSS joins. Only councils with at least one service link are included. All counts and anchor URLs match, including the published HTTP Scilly bins URL.
 
 Validation: `npm run check`, zero errors and warnings; `npm test`, 186 passed and 12 skipped.
+
+## Item 5
+
+Added pure strip geometry and a server rendered SVG component with an accessible description, source, caveat and name ordered figures table. ProfileTax supplies same class Band D points. Tests cover every specified real data endpoint, the City collection endpoint, equal values, missing councils, nonfinite values and absence of scripts and literal colours.
+
+Validation: `npm run check`, zero errors and warnings; `npm test`, 190 passed and 12 skipped.
+
+### Decisions taken
+
+* Tied endpoints use the first council name in en-GB order for both ends. Published values are never rounded; only SVG coordinates are rounded.

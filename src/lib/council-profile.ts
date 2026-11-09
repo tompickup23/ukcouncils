@@ -1,3 +1,4 @@
+import { CLASS_PLURAL, type StripPoint } from "./position-strip";
 import { boundaryAreas, boundarySource } from "./boundaries";
 import {
   CURRENT_YEAR,
@@ -43,6 +44,9 @@ export interface ProfileAbout {
 }
 
 export interface ProfileTax {
+  currentGss: string;
+  points: StripPoint[];
+  classLabel: string;
   bandD: number;
   source: SourceRef;
   change: { from: number; to: number; pounds: number; pct: number } | null;
@@ -113,6 +117,11 @@ export function profileTax(council: Council, tax: Authority): ProfileTax | null 
   if (typeof bandD !== "number" || bandD <= 0) return null;
   return {
     bandD,
+    currentGss: council.gss,
+    points: Object.entries(loadYear(CURRENT_YEAR).authorities)
+      .filter(([, row]) => row.classCode === tax.classCode && typeof row.bands.D === "number" && row.bands.D > 0)
+      .map(([gss, row]) => ({gss, name: row.name, value: row.bands.D!})),
+    classLabel: CLASS_PLURAL[tax.classCode],
     source: councilTaxSource(CURRENT_YEAR, loadYear(CURRENT_YEAR).source.bandTable),
     change: bandChange(council.gss, "D"),
     changeSource: changeSource(PREVIOUS_YEAR, CURRENT_YEAR),
