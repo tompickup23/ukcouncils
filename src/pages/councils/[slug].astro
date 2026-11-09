@@ -17,6 +17,8 @@ import HistoryBars from "../../components/HistoryBars.astro";
 import Fact from "../../components/Fact.astro";
 import SourceLine from "../../components/SourceLine.astro";
 import SpendingRecord from "../../components/SpendingRecord.astro";
+import CouncilEfs from "../../components/CouncilEfs.astro";
+import { councilEfs } from "../../lib/council-efs";
 import ProfileAbout from "../../components/ProfileAbout.astro";
 import ProfileTax from "../../components/ProfileTax.astro";
 import ProfileSources from "../../components/ProfileSources.astro";
@@ -167,6 +169,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   )}
   <PageContents items={[
     {id: 'about', label: 'What the council is'},
+    ...(councilEfs(council.slug) ? [{id: 'exceptional-financial-support', label: 'Exceptional Financial Support'}] : []),
     ...(profile.spending ? [{id: 'spending', label: 'Spending'}] : []),
     ...(profile.tax ? [{id: 'tax-summary', label: 'Band D at a glance'}] : []),
     ...(profile.termDates ? [{id: 'school-holidays', label: 'School holidays'}] : []),
@@ -177,6 +180,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   ]} />
 
   <ProfileAbout name={name} about={profile.about} />
+  <CouncilEfs slug={council.slug} />
 
   <SpendingRecord gss={council.gss} name={name} />
 

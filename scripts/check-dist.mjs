@@ -49,6 +49,8 @@ function* files(dir) {
 const failures = [];
 const rel = (path) => path.slice(DIST.length) || "/";
 let pages = 0;
+const efs = JSON.parse(readFileSync(join(process.cwd(), "data/efs/statements.json"), "utf8"));
+const efsBySlug = new Map(Object.entries(efs.authorities).filter(([, authority]) => authority.slug).map(([key, authority]) => [authority.slug, key]));
 
 for (const path of files(DIST)) {
   if (!/\.(html|xml|txt|json|js|css|svg|webmanifest)$|_headers$|_redirects$/.test(path)) continue;
@@ -74,6 +76,10 @@ for (const path of files(DIST)) {
     const expected = `https://ukcounciltax.co.uk/councils/${councilSlug}/`;
     const matches = [...text.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)].filter(match => match[1] === expected);
     if (matches.length !== 1) failures.push(`Expected one verified UK Council Tax link on ${rel(path)}; found ${matches.length}`);
+    const efsKey = efsBySlug.get(councilSlug);
+    const hasEfs = /id="efs-heading"[^>]*>Exceptional Financial Support<\/h2>/.test(text);
+    if (hasEfs !== Boolean(efsKey)) failures.push(`EFS section coverage differs from the data on ${rel(path)}`);
+    if (efsKey && !text.includes(`href="/exceptional-financial-support/#name-${efsKey}"`)) failures.push(`Missing EFS authority anchor on ${rel(path)}`);
   }
 
   const { problems } = unsourcedFigures(text);
