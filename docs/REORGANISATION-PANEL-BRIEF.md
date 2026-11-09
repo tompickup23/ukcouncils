@@ -38,11 +38,13 @@ On each of the 184 council pages in MHCLG's local government reorganisation prog
 
 Dry run result (source notes 8): refreshing from UK Places **as published on 5 November 2026 changes no name**: 0 changes to `slug`, `name` or `officialName`, 97 changes to `county`, 0 to `reorganisation`. The wrong names (E08000025 "Birmingham Council", E08000038 "Barnsley", E06000053 "Isles of Scilly Council", E07000112 "Shepway" and its `officialName` "Folkestone & Hythe Council") are wrong in UK Places too. So the refresh starts in UK Places.
 
-**1a. UK Places (`~/ukplaces`, its own branch from `origin/main`, its own PR).** Only after Tom has chosen the `officialName` source (decision D1 below).
+**1a. UK Places (`~/ukplaces`, its own branch from `origin/main`, its own PR).** D1 is decided: GOV.UK Local Links Manager (Tom, 9 November 2026).
 - `name` for E07000112 becomes "Folkestone and Hythe", from ONS `LAD26NM` (Local Authority Districts (May 2026) Boundaries UK BSC). Do not change any slug.
-- `officialName` from the source Tom names, joined by exact GSS, with the source title, edition and SHA-256 in the registry's source block. Where the source lacks a current code (the GOV.UK Local Links export lacks E08000038, E08000039, E06000065, E06000066 and four Scottish codes), keep the existing value and list the code in the PR body; never join through an old code silently.
+- `officialName` from the `Authority Name` column of GOV.UK Local Links Manager's export, `https://local-links-manager.publishing.service.gov.uk/data/links_to_services_provided_by_local_authorities.csv` (Open Government Licence v3.0), joined on its `GSS` column by exact code. UK Places already fetches this file in `scripts/build-local-links.mjs`; reuse that fetch. Pin the edition: record `last-modified`, retrieval date and SHA-256 in the registry's source block, and fail the build if a code yields two different names. The value is copied as GOV.UK prints it, with no tidying (it says "Middlesbrough Borough Council", "Hull City Council" and "Borough Council of Kings Lynn and West Norfolk"; those stand).
+- The export lacks 8 current codes: E08000038 Barnsley, E08000039 Sheffield, E06000065 North Yorkshire, E06000066 Somerset, S12000047 Fife, S12000048 Perth and Kinross, S12000049 Glasgow City, S12000050 North Lanarkshire. It holds them only under predecessor codes (E08000016, E08000019, E10000023, E10000027, S12000015, S12000024, S12000046, S12000044). For these 8 only, join through the predecessor code using UK Places' own `src/data/registry/gss-predecessors.json`, record `officialNameVia: "<old code>"` on the record, and list each in the PR body. Barnsley and Sheffield changed boundary in 2025 (SI 2024/1328), but the council is the same body, so the name carries; checked 9 November 2026, the predecessor file maps 6 of the 8 (Barnsley, Sheffield and the four Scottish codes) and does not map E06000065 North Yorkshire or E06000066 Somerset, whose predecessors are county council codes: those 2 keep their existing value and are listed. No other code joins through a predecessor.
+- Ignore export rows whose code is not one of UK Places' 361 places or 21 county councils (it still lists Christchurch and Poole). The 21 county councils' names in `county-councils.json` may take the export's name too, in the same way, listed separately.
 - Leave `reorganisation` exactly as it is (the hold is separate, decision 4). Leave `county` as PR 39 set it.
-- PR body: every changed `name` and `officialName` with old value, new value and source row. Expected by the dry run against the GOV.UK Local Links export: 284 `officialName` changes (`docs/reorganisation-sources/registry-names-comparison.tsv` in ukcouncils); the count will differ for another source.
+- PR body: every changed `name` and `officialName` with old value, new value and source row. Expected by the dry run of 9 November 2026 (`docs/reorganisation-sources/registry-names-comparison.tsv` in ukcouncils): 284 `officialName` changes among the 353 codes the export holds directly, plus up to 6 through predecessors. A different count is not a stop if every difference is explained by a newer export edition; list them.
 
 **1b. ukcouncils (branch `data/registry-refresh-<date>` from `origin/main`, its own PR).** After 1a is merged and UK Places has deployed.
 - Run `node scripts/build-registry.mjs`. Commit only `data/registry/councils.json`.
@@ -55,7 +57,7 @@ Dry run result (source notes 8): refreshing from UK Places **as published on 5 N
 - ukcounciltax prints `officialName` in JSON-LD (`src/pages/councils/[slug].astro`, `about.name`) and in the finder's `data-name`: list the changed pages in the PR body. `tests/registry.test.ts` line 62 (no UK Food Hygiene link renders) still passes, because rendering is gated elsewhere; if it fails, stop.
 - ukcounciltax has no reorganisation hold test. Add one (copy of ukcouncils' `tests/reorganisation-held.test.ts` as it is before item 6, adjusted for paths and the 361 count), in the same PR.
 
-If D1 is not decided when B4 starts, skip item 1 entirely and say so in the PR body. The panel does not depend on it: the GSS join is identical before and after (source notes 9).
+Item 1 may run before C3 and before the panel. The panel does not depend on it: the GSS join is identical before and after (source notes 9).
 
 ## Item 2: `data/reorganisation/` and its importer
 
@@ -178,11 +180,11 @@ Read every one of the 21 areas' rendered panels once against the source notes an
 - a line would need a figure, or a source other than MHCLG or legislation.gov.uk (S17 and S18 are status checks, never panel sources);
 - the kit question in item 4.6 cannot be answered from the vendored tag;
 - C3 has not merged, or the B2 section order has changed;
-- for item 1: D1 is not decided (skip item 1, do not stop the panel), the 1b diff holds anything other than the expected changes, or 1c is not byte identical to 1b.
+- for item 1: the export cannot be fetched or a code yields two names, the 1b diff holds anything other than the expected changes, or 1c is not byte identical to 1b.
 
 ## Decisions for Tom (not for Codex)
 
-- **D1. Source for `officialName`.** UK Places takes it from AI DOGE's display names. Candidates: GOV.UK Local Links Manager's `Authority Name` (GOV.UK, OGL, dated daily export; 284 differences; stale for 8 codes and two dissolved councils); each council's own name as on its website (no single dated source); or drop `officialName` from what the sites print and keep only the ONS `name`. Until decided, item 1 is skipped.
+- **D1. Source for `officialName`. Decided 9 November 2026: GOV.UK Local Links Manager's `Authority Name`** (Tom, in chat). Item 1a sets out the join, including the 8 codes reached through predecessors.
 - **D2. Surrey after vesting.** From 1 April 2027 the 11 district pages describe councils that no longer exist and East Surrey and West Surrey have no council tax row until MHCLG's 2027/28 tables. Whether the pages stay with a past tense panel or redirect is a 2027 decision; this brief prints future tense only and the data file's `checked` date.
 - **D3. The `reorganisation` registry field.** Once the panel ships, `scripts/build-registry.mjs` could stop copying the field. That is a change to the hold, so it is not in this brief.
 - **D4. Lancashire wording.** When the claim's status is known (the county Cabinet's next update report, under resolution (iii) of 1 October 2026), decide whether Lancashire pages get the same status sentence as the other eight withdrawn areas.
