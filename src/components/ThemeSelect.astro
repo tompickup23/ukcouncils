@@ -2,12 +2,11 @@
 /**
  * System, light or dark. The choice is stored under ukcouncils-theme and
  * public/theme-init.js applies it before first paint on the next load. Without
- * JavaScript the select does nothing and the system preference stands, which
- * is a correct page.
+ * JavaScript the select stays hidden and the system preference applies.
  */
 ---
 <label class="theme-select">
-  <span class="visually-hidden">Colour theme</span>
+  <span>Theme</span>
   <select data-theme-select>
     <option value="system">System theme</option>
     <option value="light">Light</option>
@@ -40,6 +39,8 @@
 </script>
 
 <style>
+  .theme-select { display: none; align-items: center; gap: 0.5rem; }
+  :global(html.js) .theme-select { display: inline-flex; }
   .theme-select select {
     font: inherit;
     font-size: 0.9rem;

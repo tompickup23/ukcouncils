@@ -50,6 +50,7 @@ function* files(dir) {
 }
 
 const failures = [];
+if (!existsSync(join(DIST, "apple-touch-icon.png"))) failures.push("missing Apple touch icon PNG");
 const rel = (path) => path.slice(DIST.length) || "/";
 let pages = 0;
 const efs = JSON.parse(readFileSync(join(process.cwd(), "data/efs/statements.json"), "utf8"));
@@ -67,6 +68,11 @@ for (const path of files(DIST)) {
     continue;
   }
   pages += 1;
+  const touchIcons = [...text.matchAll(/<link\b[^>]*\brel="apple-touch-icon"[^>]*>/g)];
+  if (touchIcons.length !== 1 || !touchIcons[0][0].includes('href="/apple-touch-icon.png"')
+    || !touchIcons[0][0].includes('sizes="180x180"')) {
+    failures.push(`missing 180 by 180 Apple touch icon link on ${rel(path)}`);
+  }
   if (heldWording(text)) failures.push(`held wording outside cited source text in ${rel(path)}`);
   const prose = text.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, "").replace(/<[^>]+>/g, " ");
   if (/\s-\s/.test(prose)) failures.push(`spaced hyphen in prose on ${rel(path)}`);
