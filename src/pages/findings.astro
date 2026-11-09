@@ -30,7 +30,7 @@ const showLower = parish.totals.lower > 0;
 const showMissing = parish.totals.notPublished > 0;
 ---
 <BaseLayout
-  title="Findings"
+  title={`Findings: council tax data notes, England ${yearLabel(year)}`}
   description={`Dated data notes on council tax in England for ${year}, each a count within a class of authority with its MHCLG source, and every data update the site has taken.`}
   path="/findings/"
 >
