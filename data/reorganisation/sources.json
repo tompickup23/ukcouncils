@@ -241,6 +241,38 @@
     "retrieved": "2026-11-09",
     "statusCheckOnly": true
   },
+  "L1": {
+    "id": "L1",
+    "publisher": "legislation.gov.uk",
+    "title": "UK Statutory Instruments and UK Draft Statutory Instruments, 2025 and 2026, titles containing Structural Changes",
+    "date": "2026-11-09",
+    "url": "https://www.legislation.gov.uk/uksi/2026/data.feed?title=structural%20changes",
+    "file": "docs/reorganisation-sources/raw/legislation/search-uksi-2026-structural-changes.feed.xml",
+    "sha256": "f237fea9242f63658edd84819dc85608d0d412768104654ee589069114260da0",
+    "retrieved": "2026-11-09",
+    "files": [
+      {
+        "file": "docs/reorganisation-sources/raw/legislation/search-uksi-2026-structural-changes.feed.xml",
+        "sha256": "f237fea9242f63658edd84819dc85608d0d412768104654ee589069114260da0",
+        "url": "https://www.legislation.gov.uk/uksi/2026/data.feed?title=structural%20changes"
+      },
+      {
+        "file": "docs/reorganisation-sources/raw/legislation/search-ukdsi-2026-structural-changes.feed.xml",
+        "sha256": "3bceae0788df0a64fc165e5cd624862c6289c873d1537a5c1709f91db80a03ca",
+        "url": "https://www.legislation.gov.uk/ukdsi/2026/data.feed?title=structural%20changes"
+      },
+      {
+        "file": "docs/reorganisation-sources/raw/legislation/search-uksi-2025-structural-changes.feed.xml",
+        "sha256": "90985e60a73d78ba06c2fbcc6fd3195f33c7dbfd1ee1a51ba8bc6cd69791b275",
+        "url": "https://www.legislation.gov.uk/uksi/2025/data.feed?title=structural%20changes"
+      },
+      {
+        "file": "docs/reorganisation-sources/raw/legislation/search-ukdsi-2025-structural-changes.feed.xml",
+        "sha256": "448fb01218b2e22bdaaaae64a909f4667c35474d49394f41da17fcb895d3e3a8",
+        "url": "https://www.legislation.gov.uk/ukdsi/2025/data.feed?title=structural%20changes"
+      }
+    ]
+  },
   "S2:cambridgeshire-and-peterborough": {
     "id": "S2:cambridgeshire-and-peterborough",
     "publisher": "Ministry of Housing, Communities and Local Government",

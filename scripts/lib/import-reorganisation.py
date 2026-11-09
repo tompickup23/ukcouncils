@@ -28,7 +28,7 @@ for line in (RAW / 'SHA256SUMS').read_text().splitlines():
     path = RAW / name
     require(path.is_file() and digest(path) == expected, f'Hash mismatch: {name}')
     manifest[path.resolve()] = expected
-require(len(manifest) == 128, 'Expected the 128 reviewed source files')
+require(len(manifest) == 132, 'Expected the 132 reviewed source files')
 
 def read(path):
     require(path.resolve() in manifest, f'Unregistered source: {path}')
@@ -101,6 +101,16 @@ pdf_source('S16:lancashire', 'Local_government_reorganisation_-_decision_letter_
 for sid, meeting, date in [('S17','16308','2026-10-01'), ('S18','16316','2026-11-05')]:
     source(sid, RAW/'lancashire'/f'lcc-cabinet-meeting-{meeting}.html', 'Cabinet, agenda and minutes', date,
            f'https://council.lancashire.gov.uk/ieListDocuments.aspx?CId=122&MId={meeting}&Ver=4', 'Lancashire County Council', statusCheckOnly=True)
+
+feeds = []
+for kind, year in [('uksi',2026),('ukdsi',2026),('uksi',2025),('ukdsi',2025)]:
+    path = RAW/'legislation'/f'search-{kind}-{year}-structural-changes.feed.xml'
+    require(path.resolve() in manifest, f'Unregistered source: {path}')
+    feeds.append(dict(file=str(path.relative_to(ROOT)),sha256=digest(path),
+        url=f'https://www.legislation.gov.uk/{kind}/{year}/data.feed?title=structural%20changes'))
+source('L1', ROOT/feeds[0]['file'],
+    'UK Statutory Instruments and UK Draft Statutory Instruments, 2025 and 2026, titles containing Structural Changes',
+    CHECKED, feeds[0]['url'], 'legislation.gov.uk', files=feeds)
 
 registry = json.loads((ROOT/'data/registry/councils.json').read_text())['councils']
 counties = read(RAW/'ukplaces/county-councils.json')
@@ -240,4 +250,4 @@ TEXT.mkdir(parents=True,exist_ok=True)
 for name,text in texts.items():(TEXT/name).write_text(text+'\n')
 (OUT/'sources.json').write_text(json.dumps(sources,indent=2,ensure_ascii=False)+'\n')
 (OUT/'areas.json').write_text(json.dumps(dict(checked=CHECKED,programmeSource='S1',areas=areas),indent=2,ensure_ascii=False)+'\n')
-print('Verified 128 hashes; 21 areas; 204 invited councils plus West Berkshire; 184 council pages.')
+print('Verified 132 hashes; 21 areas; 204 invited councils plus West Berkshire; 184 council pages.')
