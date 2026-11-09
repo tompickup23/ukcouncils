@@ -80,3 +80,9 @@ Copied the QRC4 collection wording and table, preserving printed precision and n
 * Use n/a in the table caveat to match the binding null cell rule. An absent rate has no sentence or strip.
 
 Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.
+
+## Item 8
+
+Added the elections section using only the 174 retained records. The seven held quotations are suppressed by the shared helper while their year sentence and citation remain. Pattern wording and the scheduled date caveat follow the brief. The optional results link comes only from sisterLinks. Page integration follows in item 9.
+
+Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.
