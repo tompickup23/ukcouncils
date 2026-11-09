@@ -1,0 +1,103 @@
+{
+  "source": "docs/BUDGET-GAME-SOURCE-NOTES.md, section 4, reviewed 8 November 2026; MHCLG RA 2026/27 line 990 and Table 10 2026/27",
+  "tolerancePercent": 0.05,
+  "fixtureTolerancePercentagePoints": 0.01,
+  "rows": [
+    {
+      "gss": "E07000146",
+      "name": "King's Lynn & West Norfolk",
+      "differencePercent": -26.79,
+      "note4": true
+    },
+    {
+      "gss": "E07000131",
+      "name": "Harborough",
+      "differencePercent": -20.47,
+      "note4": true
+    },
+    {
+      "gss": "E07000220",
+      "name": "Rugby",
+      "differencePercent": -15.6,
+      "note4": true
+    },
+    {
+      "gss": "E07000071",
+      "name": "Colchester",
+      "differencePercent": -15.32,
+      "note4": true
+    },
+    {
+      "gss": "E07000211",
+      "name": "Reigate & Banstead",
+      "differencePercent": -12.34,
+      "note4": true
+    },
+    {
+      "gss": "E09000010",
+      "name": "Enfield",
+      "differencePercent": -7.3,
+      "note4": true
+    },
+    {
+      "gss": "E07000173",
+      "name": "Gedling",
+      "differencePercent": 4.47,
+      "note4": false
+    },
+    {
+      "gss": "E07000114",
+      "name": "Thanet",
+      "differencePercent": -4.26,
+      "note4": false
+    },
+    {
+      "gss": "E09000003",
+      "name": "Barnet",
+      "differencePercent": -1.83,
+      "note4": true
+    },
+    {
+      "gss": "E07000133",
+      "name": "Melton",
+      "differencePercent": 0.96,
+      "note4": false
+    },
+    {
+      "gss": "E07000078",
+      "name": "Cheltenham",
+      "differencePercent": -0.66,
+      "note4": false
+    },
+    {
+      "gss": "E07000210",
+      "name": "Mole Valley",
+      "differencePercent": 0.61,
+      "note4": false
+    },
+    {
+      "gss": "E09000031",
+      "name": "Waltham Forest",
+      "differencePercent": 0.2,
+      "note4": false
+    },
+    {
+      "gss": "E09000004",
+      "name": "Bexley",
+      "differencePercent": -0.15,
+      "note4": false
+    },
+    {
+      "gss": "E06000041",
+      "name": "Wokingham",
+      "differencePercent": -0.13,
+      "note4": false
+    },
+    {
+      "gss": "E06000053",
+      "name": "Isles of Scilly",
+      "differencePercent": -0.08,
+      "note4": false
+    }
+  ]
+}

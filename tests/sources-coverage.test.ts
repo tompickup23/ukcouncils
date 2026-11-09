@@ -11,6 +11,7 @@ const citations: Record<string, string[]> = {
   geography: ["boundarySource.url", "boundarySource.publisher"],
   efs: ["efsPages", "page.title", "page.firstPublished"],
   links: ["councilTaxLinks.source", "councilTaxLinks.fetched", "localLinks.source"],
+  budget: ["budget.sources", "source.fileUrl", "source.sha256"],
   population: ["population.source"],
   collection: ["collection.source"],
   elections: ["elections.source"],

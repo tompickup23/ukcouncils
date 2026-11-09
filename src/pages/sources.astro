@@ -1,4 +1,5 @@
 ---
+import { budget, budgetYear } from "../lib/budget";
 import { population } from "../lib/population";
 import { collection } from "../lib/collection";
 import { elections } from "../lib/elections";
@@ -87,6 +88,12 @@ const registry = loadRegistry();
         </li>
       ))}
     </ul>
+    <h2>Council budgets, {budgetYear}</h2>
+    <ul>{Object.values(budget.sources).map(source => <li>
+      <a href={source.fileUrl}>{source.title}</a>, {source.publisher}, published {longDate(source.published)}.
+      {source.tables.join('; ')}. Retrieved {longDate(source.retrieved)}. {source.licence}.
+      SHA-256: <code>{source.sha256}</code>.
+    </li>)}</ul>
     <h2>Spending</h2>
     <p>
       The spending record on council pages comes from {spending.publisher}'s published{" "}

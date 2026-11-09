@@ -1,0 +1,63 @@
+{
+  "donorCommit": "85f7e33ef2cdc5c4f0a69b6c35209c86cc0cad5f",
+  "copies": [
+    {
+      "path": "src/lib/budget.ts",
+      "donorPath": "src/lib/budget.ts",
+      "donorSha256": "1f47d4b8541605a2983408426e1a0acdd7df0b2b9a69d00c8019c02fd8c49117",
+      "localSha256": "3ed89e6e4e06b271a87fced61d666899afbf6556569b4a0b02c47888a4b336ea"
+    },
+    {
+      "path": "src/lib/budget-game.ts",
+      "donorPath": "src/lib/budget-game.ts",
+      "donorSha256": "63495a1994b13bf0bd7cdaf06843719c45b0d18e648905cae4873729d4283190",
+      "localSha256": "06f7d3475f1e7c96777ff031d10b150264bef15e3f63294a9edce46a792f210a"
+    },
+    {
+      "path": "scripts/import-ra-budget.mjs",
+      "donorPath": "scripts/import-ra-budget.mjs",
+      "donorSha256": "08131bc741e1e23d3647637d117aa7268c7461f583fa37048d64df1c7cea71d4",
+      "localSha256": "3a7e783159ed2c0278c4d7508aea2429f5b2ae44327b6122cdccd251d3bd9531"
+    },
+    {
+      "path": "tests/budget.test.ts",
+      "donorPath": "tests/budget.test.ts",
+      "donorSha256": "d0b6dae5e35ca813e4e9b233228bf96e5ce71c8e6758aa109ab584c78ff098e4",
+      "localSha256": "88bdd1e76364c517dbd675536b777f297addd4dd13c624c1e0c80906387c4439"
+    },
+    {
+      "path": "tests/fixtures/budget-ct-reconciliation.json",
+      "donorPath": "tests/fixtures/budget-ct-reconciliation.json",
+      "donorSha256": "730a5ae7066eb22a2509974265779fa1d99ec7f83e5e46a7d07aab03ffac0e90",
+      "localSha256": "730a5ae7066eb22a2509974265779fa1d99ec7f83e5e46a7d07aab03ffac0e90"
+    },
+    {
+      "path": "data/budget/ra-2026-27.json",
+      "donorPath": "data/national/budget.json",
+      "donorSha256": "704c213738abbff846e9210a6fbb9eda058efb3d72beb5467fd7755cfeefdd0a",
+      "localSha256": "704c213738abbff846e9210a6fbb9eda058efb3d72beb5467fd7755cfeefdd0a"
+    },
+    {
+      "path": "data/budget/table-10-2026-27.json",
+      "donorPath": "data/national/england.json",
+      "donorSha256": "81e6926afd4f4e1c226a1333ee7e5c7be2aa4c2d6f6bbc4c87b52e80ebb36c0f",
+      "localSha256": "3ac031df8fcc6b7fb5dd3c870224669b504ebb9a26bed0a7eec8acc44cdf010c"
+    },
+    {
+      "path": "data/budget/sources.json",
+      "donorPath": "data/national/sources.json",
+      "donorSha256": "632b5edfea5847a70750188b5101fc4879253a958275c8c5c3fbe060f54be3c5",
+      "localSha256": "c82924073af558be62d388a7961aaa2aca93e659372015430cfd0496de451975"
+    },
+    {
+      "path": "tests/budget-game.test.ts",
+      "donorPath": "tests/budget-game.test.ts",
+      "donorSha256": "81e109c48685f10859af84c8c66a55e76e9e2e27f6482b00a068ac2ba695af17",
+      "localSha256": "b029413bad1d46527a4d71ab532a824eb3e3285e91d92e1790a1192bedef3e20"
+    }
+  ],
+  "decisions": [
+    "Pinned Table 10 source strings retain their original punctuation with explicit permission. No game is mounted.",
+    "The minimal RA catalogue citation accompanies the new data directory to keep the existing source coverage assertion passing. Item 5 adds the profile citations and method detail."
+  ]
+}
