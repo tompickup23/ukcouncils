@@ -11,7 +11,7 @@ const breaks = new Set('address article aside blockquote br dd div dl dt fieldse
 
 function decode(text) {
   return text.replace(/&(#x[\da-f]+|#\d+|[a-z][\da-z]+);/gi, (whole, entity) => {
-    if (!entity.startsWith('#')) return sax.ENTITIES[entity] ?? whole;
+    if (!entity.startsWith('#')) return ({ percnt: '%', comma: ',', period: '.', sol: '/' })[entity] ?? sax.ENTITIES[entity] ?? whole;
     const value = entity[1].toLowerCase() === 'x' ? parseInt(entity.slice(2), 16) : Number(entity.slice(1));
     return value > 0 && value <= 0x10ffff && !(value >= 0xd800 && value <= 0xdfff)
       ? String.fromCodePoint(value) : '\ufffd';
