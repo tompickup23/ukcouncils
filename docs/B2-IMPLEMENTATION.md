@@ -98,3 +98,38 @@ Integrated the components in the requested order and kept PageContents aligned. 
 * Keep the existing register name row unchanged, as required, while all new sentences use the tax table name.
 
 Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.
+
+## Item 10
+
+Added built profile checks against source presence and exact values, peer counts by class, citation placement, quote suppression, accessible SVG, absence of client code, current table rows, section and contents order, every fixed anchor and aggregate coverage. Extended the built prose scan to spaced hyphens. Added source ordering and conditional citation tests.
+
+Initial built coverage passed: collection 296, Band D strips 296, collection strips 296, population 294, elections 174, tax payment links 254 and EFS 51. The collection JSON still has the pinned output hash and is byte identical to the UK Council Tax copy.
+
+### Decisions taken
+
+* Rebased onto the merged B1 review follow-up at main 9ac807f. Kept its verified UK Council Tax source entry and extended its sources coverage test with the three new directories and Local Links. The item commits remain separate; rebase changed their hashes.
+* Profile word counts use rendered text in every data-profile-section and the type line. They include source lists, the visible QRC4 table and EFS statements, and exclude the council tax answer and collapsed chart tables. Burnley is 1,234 words and Birmingham 2,092, above the 400 to 600 target. Retain the specified content and citations without padding or shortening it.
+* Screenshots and local gate logs stay in ignored output/playwright/b2 and .cache/b2. Recaptured in an isolated headless session after the headed browser changed pages during capture.
+
+### Visual review
+
+Captured Burnley and Birmingham at 375 by 812 and 1440 by 1000, light and dark, with viewport and full page images and collection details. Captured the City of London collection strip at 375 pixels. Its 98.09% marker at the right end and its label are visible. Burnley's full Band D amount is visible at scroll position zero in both themes: the amount's bottom edge is 616.6 pixels in an 812 pixel viewport. No text was shortened.
+
+The first regular build passed, followed by a successful BUILD_OG build. The final build is being repeated after the main refresh using BUILD_OG in the subprocess env block. Full final gate results follow below.
+
+### Gate recovery
+
+Astro's configured test server exited early because its background preview daemon was already serving port 4322. Confirmed with `npx astro preview status` and ran the browser suite with E2E_PORT set to 4322. The initial Wrangler startup timed out; a fresh local instance on port 8790 served the completed build and all 42 CSP tests passed.
+
+The browser and CSP runs initially shared Playwright's output directory. Four browser tests reported missing trace files at context close while the concurrent CSP run cleaned that directory. Reran the browser suite on its own. The strip emphasis checker was also corrected to accept Astro's scoped attributes on strong elements; the rendered rows already contained both required strong elements.
+
+### Final gate
+
+* `npm run check`: zero errors and warnings.
+* `npm test`: 206 passed across 27 files, none skipped.
+* `npm run build` with BUILD_OG enabled in the env block: passed after the main refresh.
+* `npm run test:dist`: 329 pages, 328 sitemap URLs, all 329 pages point at a built share card; every B2 count and anchor passed.
+* `npm run test:e2e` with E2E_PORT 4322: 130 passed when run without a concurrent suite writing its artifacts.
+* `npm run test:csp` with CSP_PORT 8790: 42 passed against a fresh Wrangler instance serving the final build.
+
+The built tree passes the em dash, en dash and spaced hyphen prose checks. Read all 174 election quotes, with no named individual and no further reorganisation or abolition wording beyond the seven withheld quotations. The source placement checks cover every strip and population sentence, and the collection sentence and table each have an immediate citation. Missing data and held features remain absent. The final screenshots are the mobile viewport and full page files, desktop full page files and City collection strip in output/playwright/b2; earlier headed captures are under superseded.

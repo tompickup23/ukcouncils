@@ -10,7 +10,10 @@ const citations: Record<string, string[]> = {
   "school-holidays": ["data/school-holidays/manifest.json", "holidays.snapshotDate"],
   geography: ["boundarySource.url", "boundarySource.publisher"],
   efs: ["efsPages", "page.title", "page.firstPublished"],
-  links: ["councilTaxLinks.source", "councilTaxLinks.fetched"],
+  links: ["councilTaxLinks.source", "councilTaxLinks.fetched", "localLinks.source"],
+  population: ["population.source"],
+  collection: ["collection.source"],
+  elections: ["elections.source"],
 };
 
 describe("sources catalogue coverage", () => {
