@@ -4,6 +4,7 @@
  * site's own name and what it does.
  */
 import { SITE_NAME, FOOTER_SISTERS } from "../lib/site";
+import ThemeSelect from "./ThemeSelect.astro";
 
 const year = new Date().getUTCFullYear();
 ---
@@ -24,6 +25,7 @@ const year = new Date().getUTCFullYear();
       Government under the Open Government Licence v3.0. &copy; {year} {SITE_NAME}.
     </p>
     <p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/corrections/">Corrections</a> · <a href="/sources/">Sources</a> · <a href="/findings/">Findings</a></p>
+    <div class="footer-theme"><ThemeSelect /></div>
   </div>
 </footer>
 
@@ -57,4 +59,5 @@ const year = new Date().getUTCFullYear();
   .footer-sisters span { font-size: 0.85rem; }
   .footer-imprint { max-width: 48rem; margin: 0; line-height: 1.5; }
   .footer-links a { color: var(--ground-ink); }
+  .footer-theme { margin-top: 1rem; color: var(--ground-ink); }
 </style>

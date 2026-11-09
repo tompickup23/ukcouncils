@@ -11,6 +11,7 @@
  * through prefers-color-scheme, so nothing is written to the document then.
  */
 (function () {
+  document.documentElement.classList.add("js");
   try {
     var saved = localStorage.getItem("ukcouncils-theme");
     if (saved === "dark" || saved === "light") {

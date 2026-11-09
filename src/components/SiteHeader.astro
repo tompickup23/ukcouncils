@@ -6,7 +6,6 @@
  * opens the active group. Colours are tokens only. Search loads its index on demand.
  */
 import Search from "./Search.astro";
-import ThemeSelect from "./ThemeSelect.astro";
 import { NAV_GROUPS, SITE_NAME, SITE_TAGLINE, type NavGroup } from "../lib/site";
 
 const pathname = Astro.url.pathname;
@@ -59,7 +58,6 @@ function isActiveGroup(group: NavGroup): boolean {
         ))}
       </nav>
       <Search />
-      <ThemeSelect />
       <button class="mobile-menu-btn" type="button" data-mobile-menu-toggle aria-label="Open menu" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
@@ -155,7 +153,7 @@ function isActiveGroup(group: NavGroup): boolean {
     justify-content: space-between;
     gap: 0.75rem;
     min-height: 3.75rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
   .brand {
     display: inline-flex;
@@ -169,7 +167,7 @@ function isActiveGroup(group: NavGroup): boolean {
   .brand-copy { display: flex; flex-direction: column; min-width: 0; }
   .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; line-height: 1.1; }
   .brand-copy small { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .site-tools { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; max-width: 100%; }
+  .site-tools { display: flex; align-items: center; gap: 0.5rem; flex-wrap: nowrap; flex: none; }
 
   .site-nav-mega { display: inline-flex; align-items: center; gap: 0.15rem; }
   .mega-group { position: relative; }
