@@ -3,14 +3,8 @@
  * The footer. It names no person and takes no position: the imprint is the
  * site's own name and what it does.
  */
-import { SITE_NAME } from "../lib/site";
+import { SITE_NAME, FOOTER_SISTERS } from "../lib/site";
 
-const SISTERS = [
-  { name: "UK Elections", url: "https://ukelections.co.uk/", blurb: "Results and seats for every council" },
-  { name: "UK Demographics", url: "https://ukdemographics.co.uk/", blurb: "Population and census for every place" },
-  { name: "UK School Holiday Dates", url: "https://ukschoolholidaydates.co.uk/", blurb: "Term dates for every education authority" },
-  { name: "AI DOGE", url: "https://aidoge.co.uk/", blurb: "What public bodies publish about their spending" },
-];
 const year = new Date().getUTCFullYear();
 ---
 <footer class="site-footer">
@@ -18,7 +12,7 @@ const year = new Date().getUTCFullYear();
     <section aria-labelledby="footer-sisters">
       <h2 id="footer-sisters" class="footer-eyebrow">Sister sites</h2>
       <ul class="footer-sisters">
-        {SISTERS.map((s) => (
+        {FOOTER_SISTERS.map((s) => (
           <li><a href={s.url}>{s.name}</a><span>{s.blurb}</span></li>
         ))}
       </ul>
