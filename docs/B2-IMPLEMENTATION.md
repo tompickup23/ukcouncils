@@ -69,3 +69,14 @@ Validation: `npm run check`, zero errors and warnings; `npm test`, 190 passed an
 Extended the existing introduction in place with exact code population counts, the county's own count for shire districts, and the sourced service links. Each addition carries its source immediately below. Missing population and missing links produce no row. The original register name and source remain unchanged.
 
 Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.
+
+## Item 7
+
+Copied the QRC4 collection wording and table, preserving printed precision and notes. Added the same class collection strip. The component omits an absent record and never supplies a missing rate. Page integration follows in item 9.
+
+### Decisions taken
+
+* Repeat the source directly under the rate sentence and the figures table, as well as inside the strip and at the end. This applies the binding source placement rule to every figure.
+* Use n/a in the table caveat to match the binding null cell rule. An absent rate has no sentence or strip.
+
+Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.
