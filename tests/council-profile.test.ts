@@ -4,6 +4,7 @@ import { join, resolve } from "node:path";
 import { loadYear, CURRENT_YEAR } from "../src/lib/council-tax";
 import { PROFILE_SECTIONS, councilProfile } from "../src/lib/council-profile";
 import { councilPages, type CouncilPage } from "../src/lib/paths";
+import { budget } from "../src/lib/budget";
 import { collection } from "../src/lib/collection";
 import { elections } from "../src/lib/elections";
 import { councilEfs } from "../src/lib/council-efs";
@@ -58,6 +59,7 @@ function expectedSections(gss: string, parentGss: string | null): string[] {
   const calendar = FEED.authorities[parentGss || gss];
   const present: Record<string, boolean> = {
     about: true,
+    budget: budget.councils[gss]?.status === 'available',
     collection: Boolean(collection.councils[gss]),
     elections: Boolean(elections.councils[gss]),
     "exceptional-financial-support": Boolean(councilEfs(pages.find(p => p.council.gss === gss)!.council.slug)),

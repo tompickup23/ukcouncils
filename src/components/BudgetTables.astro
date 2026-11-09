@@ -1,0 +1,90 @@
+---
+import SourceLine from './SourceLine.astro';
+import {budgetYear, budget, budgetMoney, budgetSource, FINANCING_IDS, funding, nonRingfencedReserves, observation, services, RESERVES_CAVEAT, type BudgetCouncil} from '../lib/budget';
+import {reservesSource} from '../lib/council-budget';
+interface Props {council: BudgetCouncil; name: string; id: string; headingLevel?: 3 | 4}
+const {council, name, id, headingLevel = 3} = Astro.props;
+const Heading = `h${headingLevel}` as 'h3' | 'h4';
+const dsg = council.values.grantindsg;
+const present = (value: number | null) => value !== null && value !== 0;
+const rows = services(council).filter(row => present(row.value));
+const reserves = nonRingfencedReserves(council);
+const reserveRows = [{key: 'resoth', label: 'Other earmarked reserves', line: 1015}, {key: 'resunall', label: 'Unallocated reserves', line: 1016}]
+  .filter(({key}) => present(council.values[`${key}_strt`]) || present(council.values[`${key}_end`]));
+const reserveCell = (value: number | null) => present(value) ? budgetMoney(value) : 'n/a';
+const signed = (value: number | null) => value !== null && value < 0 ? `minus ${budgetMoney(Math.abs(value))}` : budgetMoney(value);
+const note4 = council.notes.raPart1.includes('[note 4]');
+const note8 = council.notes.raPart1.includes('[note 8]');
+---
+<div class="budget-tables">
+  {name !== council.name && <p class="source-line">Printed in the RA return as “{council.name}”.</p>}
+  <Heading id={`${id}-services`}>Service expenditure</Heading>
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby={`${id}-services`}>
+    <table class="data">
+      <caption>{name}: observed net current expenditure by service, {budgetYear}</caption>
+      <thead><tr><th scope="col">MHCLG service heading</th><th scope="col">RA line</th><th scope="col" class="num">Pounds</th></tr></thead>
+      <tbody>{rows.map(row => <tr data-record-type="observation" data-service={row.id}>
+        <th scope="row">{row.label}{row.id === 'edutot' && dsg !== null && dsg > 0 && <div class="small" data-dsg>
+          Most schools spending is paid for by the Dedicated Schools Grant, a ring-fenced government grant: {budgetMoney(dsg)} in {budgetYear}.
+          <SourceLine source={budgetSource('raGrants')} />
+        </div>}</th>
+        <td>{row.line}</td><td class="num">{signed(row.value)}{row.value! < 0 && <span class="income-label">net income</span>}</td>
+      </tr>)}</tbody>
+      {present(council.values.servicetot) && <tfoot><tr data-record-type="observation"><th scope="row">Total service expenditure</th><td>799</td><td class="num">{signed(council.values.servicetot)}</td></tr></tfoot>}
+    </table>
+  </div>
+  <SourceLine source={budgetSource()} />
+  <details><summary>Read the service sub-lines</summary>
+    {rows.filter(row => row.subLines.some(key => present(council.values[key]))).map(row => <div class="service-detail">
+      <div class="table-wrap" tabindex="0" role="region" aria-label={`${name}: ${row.label} sub-lines`}><table class="data">
+        <caption>{name}: {row.label}, {budgetYear} sub-lines</caption>
+        <thead><tr><th scope="col">Printed label</th><th scope="col">RA line</th><th scope="col" class="num">Pounds</th></tr></thead>
+        <tbody>{row.subLines.map(key => observation(council, key)).filter(cell => present(cell.value)).map(cell => <tr data-record-type="observation">
+          <th scope="row">{cell.label}{cell.id === 'eduspc' && <p class="caveat">SEND also sits in other education and transport lines; this return does not total it.</p>}</th>
+          <td>{cell.line}</td><td class="num">{signed(cell.value)}{cell.value! < 0 && <span class="income-label">net income</span>}</td>
+        </tr>)}</tbody>
+      </table></div><SourceLine source={budgetSource()} />
+    </div>)}
+  </details>
+
+  <Heading id={`${id}-funding`}>Where the money comes from</Heading>
+  <p>Funding groups rearrange the signed financing identity. Additions and deductions reconcile to revenue expenditure, a different measure from service expenditure.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby={`${id}-funding`}><table class="data">
+    <caption>{name}: calculated funding of revenue expenditure, {budgetYear}. Council tax requirement includes parish precepts.</caption>
+    <thead><tr><th scope="col">Funding item</th><th scope="col">RA lines</th><th scope="col">Direction</th><th scope="col" class="num">Pounds</th></tr></thead>
+    <tbody>{funding(council).filter(row => present(row.value)).map(row => <tr data-record-type="calculation">
+      <th scope="row">{row.label}{row.inputIds[0] === 'ctrtot' && note4 && <p class="caveat">MHCLG note 4: “{budget.sourceNotes.raPart1['[note 4]']}”</p>}</th>
+      <td>{row.lines.join(', ')}</td><td>{row.value! < 0 ? 'Deduct' : 'Add'}</td><td class="num">{budgetMoney(Math.abs(row.value!))}</td>
+    </tr>)}</tbody>
+    {present(council.values.revenuetot) && <tfoot><tr data-record-type="observation"><th scope="row">Revenue expenditure</th><td>900</td><td></td><td class="num">{signed(council.values.revenuetot)}</td></tr></tfoot>}
+  </table></div>
+  {note8 && <p class="caveat" data-note8>MHCLG note 8: “{budget.sourceNotes.raPart1['[note 8]']}”</p>}
+  <SourceLine source={budgetSource('raPart1', 'Calculated by grouping financing lines and reversing their signs, except the council tax requirement')} />
+  <details><summary>Read the financing lines as printed</summary>
+    <div class="table-wrap" tabindex="0" role="region" aria-label={`${name} printed financing lines`}><table class="data" data-ra-financing>
+      <caption>{name}: observed RA financing lines, {budgetYear}, preserving printed signs. RA and Table 10 are separate returns; neither is adjusted.</caption>
+      <thead><tr><th scope="col">Printed label</th><th scope="col">RA line</th><th scope="col" class="num">Pounds</th></tr></thead>
+      <tbody>{['revenuetot', ...FINANCING_IDS, 'ctrtot'].map(key => observation(council, key)).filter(cell => present(cell.value)).map(cell => <tr data-record-type="observation">
+        <th scope="row">{cell.label}{cell.id === 'ctrtot' && note4 && <p class="caveat">MHCLG note 4: “{budget.sourceNotes.raPart1['[note 4]']}”</p>}</th><td>{cell.line}</td><td class="num">{signed(cell.value)}</td>
+      </tr>)}</tbody>
+    </table></div><SourceLine source={budgetSource()} />
+  </details>
+
+  <Heading id={`${id}-reserves`}>Non-ringfenced reserves</Heading>
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby={`${id}-reserves`}><table class="data">
+    <caption>{name}: planned other earmarked and unallocated reserve balances, {budgetYear}, in pounds</caption>
+    <thead><tr><th scope="col">Reserve</th><th scope="col">RA line</th><th scope="col" class="num">Start of year</th><th scope="col" class="num">End of year</th></tr></thead>
+    <tbody>{reserveRows.map(({key, label, line}) => <tr data-record-type="observation"><th scope="row">{label}</th><td>{line}</td><td class="num">{reserveCell(council.values[`${key}_strt`])}</td><td class="num">{reserveCell(council.values[`${key}_end`])}</td></tr>)}</tbody>
+    {reserves.some(row => present(row.value)) && <tfoot><tr data-record-type="calculation"><th scope="row">Calculated total</th><td>1015 + 1016</td>{reserves.map(row => <td class="num">{reserveCell(row.value)}</td>)}</tr></tfoot>}
+  </table></div>
+  <p class="caveat">{RESERVES_CAVEAT}</p>
+  <SourceLine source={budgetSource('raPart2', 'Total calculated as other earmarked reserves plus unallocated reserves')} />
+  <SourceLine source={reservesSource} />
+</div>
+<style>
+  .income-label{display:block;font-size:.85rem;font-weight:400;white-space:normal}
+  .budget-tables :is(h3,h4){margin-top:2rem}.service-detail{margin-top:1rem}
+  .budget-tables th p,.budget-tables th .small{font-weight:400;min-width:10rem;max-width:36rem}
+  .budget-tables details{margin-block:1rem}.budget-tables summary{cursor:pointer;font-weight:600}
+  .budget-tables .num{white-space:normal;min-width:6rem}
+</style>

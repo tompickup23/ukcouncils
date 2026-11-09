@@ -1,3 +1,4 @@
+import { heldWording } from './lib/held-wording.mjs';
 /**
  * Checks the built tree after `npm run build`. Run by `npm run test:dist`.
  *
@@ -62,6 +63,7 @@ for (const path of files(DIST)) {
   if (/https?:\/\/ukfoodhygiene\.co\.uk\b/.test(text)) failures.push(`private sister link in ${rel(path)}`);
   if (!path.endsWith(".html")) continue;
   pages += 1;
+  if (heldWording(text)) failures.push(`held wording outside cited source text in ${rel(path)}`);
   const prose = text.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, "").replace(/<[^>]+>/g, " ");
   if (/\s-\s/.test(prose)) failures.push(`spaced hyphen in prose on ${rel(path)}`);
 

@@ -1,0 +1,20 @@
+---
+import BudgetTables from './BudgetTables.astro';
+import SourceLine from './SourceLine.astro';
+import {budgetSource, budgetYear} from '../lib/budget';
+import type {CouncilBudget} from '../lib/council-budget';
+interface Props {view: CouncilBudget}
+const {view} = Astro.props;
+---
+<section class="section" id="budget" data-profile-section="budget" aria-labelledby="budget-heading">
+  <h2 id="budget-heading">{view.name} council budget for {budgetYear}</h2>
+  <p>This is the budget returned to MHCLG; the spending record covers published payments. Service expenditure is net of sales, fees, charges and transfers, excluding NHS-funded expenditure. Pounds are converted from printed whole thousands.</p>
+  <SourceLine source={budgetSource()} />
+  <BudgetTables council={view.council} name={view.name} id="billing-budget" />
+  {view.county && <section id="county-budget" aria-labelledby="county-budget-heading">
+    <h3 id="county-budget-heading">{view.county.name} County Council budget for {budgetYear}</h3>
+    <p>The following tables cover the whole county council budget.</p>
+    <BudgetTables council={view.county.council} name={view.county.name} id="county-budget-tables" headingLevel={4} />
+  </section>}
+  {view.gameUrl && <p><a href={view.gameUrl}>Play the budget game for {view.name} on UK Council Tax</a></p>}
+</section>

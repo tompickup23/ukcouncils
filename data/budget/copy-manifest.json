@@ -54,10 +54,17 @@
       "donorPath": "tests/budget-game.test.ts",
       "donorSha256": "81e109c48685f10859af84c8c66a55e76e9e2e27f6482b00a068ac2ba695af17",
       "localSha256": "b029413bad1d46527a4d71ab532a824eb3e3285e91d92e1790a1192bedef3e20"
+    },
+    {
+      "path": "src/components/BudgetTables.astro",
+      "donorPath": "src/components/BudgetTables.astro",
+      "donorSha256": "d2c134cb9623da72d9aaebff676b27aca82260be4991337437b19ac35ee6202f",
+      "localSha256": "8da50cde1a4acdb3573b62095bdf0f5782a3ceb832b29eacb6067f8c3b78940a"
     }
   ],
   "decisions": [
     "Pinned Table 10 source strings retain their original punctuation with explicit permission. No game is mounted.",
-    "The minimal RA catalogue citation accompanies the new data directory to keep the existing source coverage assertion passing. Item 5 adds the profile citations and method detail."
+    "The minimal RA catalogue citation accompanies the new data directory to keep the existing source coverage assertion passing. Item 5 adds the profile citations and method detail.",
+    "The presentation commit also registers its source lines in profileSources so the existing page source coverage check remains intact. Item 5 supplies the link snapshot and explanatory documentation."
   ]
 }

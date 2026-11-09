@@ -1,3 +1,4 @@
+import { heldWording, RA_906_LABEL } from '../scripts/lib/held-wording.mjs';
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -44,8 +45,22 @@ describe("the held reorganisation field", () => {
     const hits: string[] = [];
     for (const path of htmlFiles(DIST)) {
       const html = readFileSync(path, "utf-8");
+      if (heldWording(html)) hits.push(`held wording in ${path.slice(DIST.length)}`);
       for (const phrase of HELD_PHRASES) if (html.includes(phrase)) hits.push(`${phrase} in ${path.slice(DIST.length)}`);
     }
     expect(hits).toEqual([]);
+  });
+});
+
+
+describe("the narrow RA line 906 exception", () => {
+  const row = `<tr data-record-type="observation"><th scope="row">${RA_906_LABEL}</th><td>906</td><td>£5,800,000</td></tr>`;
+  const table = `<table data-ra-financing><tbody>${row}</tbody></table>`;
+  it("accepts the verbatim label only in its original financing row", () => {
+    expect(heldWording(table)).toBe(false);
+    for (const html of [row, `<table>${row}</table>`, table.replace('906', '907'), table.replace('observation', 'calculation'), table.replace('respect of', 'connection with')]) expect(heldWording(html)).toBe(true);
+  });
+  it("rejects the same label in prose, metadata, citations and other tables", () => {
+    for (const html of [`<p>${RA_906_LABEL}</p>`, `<meta content="${RA_906_LABEL}">`, `<p class="source-line">${RA_906_LABEL}</p>`, `<ul data-profile-sources><li>${RA_906_LABEL}</li></ul>`, `<table><tr><td>${RA_906_LABEL}</td></tr></table>`, table + `<p>${RA_906_LABEL}</p>`, table.replace('</tbody>', `<tr><td>${RA_906_LABEL}</td></tr></tbody>`)]) expect(heldWording(html)).toBe(true);
   });
 });

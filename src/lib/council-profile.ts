@@ -1,3 +1,4 @@
+import {councilBudget, type CouncilBudget} from "./council-budget";
 import { collectionFor, collectionSource } from "./collection";
 import { electionFor, electionSourceLine } from "./elections";
 import { councilEfs } from "./council-efs";
@@ -36,7 +37,7 @@ import { spendingFor, spendingRecord, type SpendingRecord } from "./spending";
  */
 
 /** The section ids, in the order a council page prints them. */
-export const PROFILE_SECTIONS = ["about", "tax-summary", "collection", "exceptional-financial-support", "elections", "spending", "school-holidays", "sources"] as const;
+export const PROFILE_SECTIONS = ["about", "tax-summary", "collection", "exceptional-financial-support", "elections", "budget", "spending", "school-holidays", "sources"] as const;
 export type ProfileSection = (typeof PROFILE_SECTIONS)[number];
 
 export interface ProfileAbout {
@@ -81,6 +82,7 @@ export interface ProfileTermDates {
 
 export interface CouncilProfile {
   about: ProfileAbout;
+  budget: CouncilBudget | null;
   spending: SpendingRecord | null;
   tax: ProfileTax | null;
   termDates: ProfileTermDates | null;
@@ -203,6 +205,8 @@ export function profileSources(council: Council, tax: Authority, today = londonT
     const citation = electionSourceLine(election);
     add({publisher: "UK Elections", title: citation.label, url: citation.url, table: citation.attribution});
   }
+  const budgetView = councilBudget(council);
+  if (budgetView) for (const source of budgetView.sources) add(source);
   const spending = spendingRecord(tax.name, spendingFor(council.gss));
   if (spending) add(spending.source);
   const term = profileTermDates(council, today);
@@ -228,6 +232,7 @@ function hasBoundary(gss: string): boolean {
 
 export function councilProfile(council: Council, tax: Authority, today = londonToday()): CouncilProfile {
   const about = profileAbout(council);
+  const budget = councilBudget(council);
   const spending = spendingRecord(tax.name, spendingFor(council.gss));
   const taxAtAGlance = profileTax(council, tax);
   const termDates = profileTermDates(council, today);
@@ -237,6 +242,7 @@ export function councilProfile(council: Council, tax: Authority, today = londonT
     collection: collectionFor(council.gss) !== null,
     "exceptional-financial-support": councilEfs(council.slug) !== null,
     elections: electionFor(council.gss) !== null,
+    budget: budget !== null,
     spending: spending !== null,
     "tax-summary": taxAtAGlance !== null,
     "school-holidays": termDates !== null,
@@ -244,6 +250,7 @@ export function councilProfile(council: Council, tax: Authority, today = londonT
   };
   return {
     about,
+    budget,
     spending,
     tax: taxAtAGlance,
     termDates,

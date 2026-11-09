@@ -23,6 +23,7 @@ import ProfileCollection from "../../components/ProfileCollection.astro";
 import ProfileElections from "../../components/ProfileElections.astro";
 import { collectionFor } from "../../lib/collection";
 import { electionFor } from "../../lib/elections";
+import ProfileBudget from "../../components/ProfileBudget.astro";
 import ProfileAbout from "../../components/ProfileAbout.astro";
 import ProfileTax from "../../components/ProfileTax.astro";
 import ProfileSources from "../../components/ProfileSources.astro";
@@ -178,6 +179,8 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     ...(collectionFor(council.gss) ? [{id: 'collection', label: 'Council tax collection'}] : []),
     ...(councilEfs(council.slug) ? [{id: 'exceptional-financial-support', label: 'Exceptional Financial Support'}] : []),
     ...(electionFor(council.gss) ? [{id: 'elections', label: 'Elections'}] : []),
+    ...(profile.budget ? [{id: 'budget', label: 'Council budget'}] : []),
+    ...(profile.budget?.county ? [{id: 'county-budget', label: 'County budget'}] : []),
     ...(profile.spending ? [{id: 'spending', label: 'Spending'}] : []),
     ...(profile.termDates ? [{id: 'school-holidays', label: 'School holidays'}] : []),
     ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
@@ -191,6 +194,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   <ProfileCollection gss={council.gss} name={name} />
   <CouncilEfs slug={council.slug} />
   <ProfileElections council={council} name={name} />
+  {profile.budget && <ProfileBudget view={profile.budget} />}
   <SpendingRecord gss={council.gss} name={name} />
 
   <SchoolHolidays name={name} term={profile.termDates} />
