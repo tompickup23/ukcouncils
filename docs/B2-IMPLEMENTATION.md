@@ -76,7 +76,7 @@ Copied the QRC4 collection wording and table, preserving printed precision and n
 
 ### Decisions taken
 
-* Repeat the source directly under the rate sentence and the figures table, as well as inside the strip and at the end. This applies the binding source placement rule to every figure.
+* Repeat the source directly under the rate sentence and the figures table, as well as inside the strip. This applies the binding source placement rule to every figure. A fourth copy at the section end, after the caveat and notes, was removed in review on 9 November 2026 because the line above the caveat already cites the table.
 * Use n/a in the table caveat to match the binding null cell rule. An absent rate has no sentence or strip.
 
 Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.
