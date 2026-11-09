@@ -82,6 +82,13 @@ for (const path of files(DIST)) {
     if (efsKey && !text.includes(`href="/exceptional-financial-support/#name-${efsKey}"`)) failures.push(`Missing EFS authority anchor on ${rel(path)}`);
   }
 
+  if (rel(path) === "/findings/index.html" && !/<title>Findings: council tax data notes, England /.test(text)) failures.push("findings title does not carry the subject");
+  if (rel(path) === "/sources/index.html") {
+    for (const needle of ["AI DOGE", "UK School Holiday Dates", "Local Authority Districts (May 2026) Boundaries UK BSC", "Exceptional Financial Support for local authorities for 2026-27"]) {
+      if (!text.includes(needle)) failures.push(`sources page does not name ${needle}`);
+    }
+  }
+
   const { problems } = unsourcedFigures(text);
   for (const problem of new Set(problems)) failures.push(`${problem} on ${rel(path)}`);
 

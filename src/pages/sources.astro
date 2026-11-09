@@ -4,6 +4,15 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { YEARS, loadYear, yearLabel } from "../lib/council-tax";
 import { loadRegistry } from "../lib/registry";
 import { longDate } from "../lib/sources";
+import { loadSpending } from "../lib/spending";
+import { boundarySource } from "../lib/boundaries";
+import { efs } from "../lib/efs";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+const spending = loadSpending().source;
+const holidays = JSON.parse(readFileSync(join(process.cwd(), "data/school-holidays/manifest.json"), "utf8")) as { sha256: string; authorityCount: number; snapshotDate: string };
+const efsPages = Object.entries(efs.pages).sort(([a], [b]) => a.localeCompare(b));
 
 const years = [...YEARS].reverse().map((y) => ({ year: y, source: loadYear(y).source }));
 const registry = loadRegistry();
@@ -38,5 +47,38 @@ const registry = loadRegistry();
     </p>
     <h2>Postcode lookup</h2>
     <p>The postcode door uses <a href="https://postcodes.io/">postcodes.io</a>, which is built on Office for National Statistics postcode data.</p>
+    <h2>Exceptional Financial Support</h2>
+    <p>
+      The support figures on council pages and the Exceptional Financial Support page are read from the
+      {efs.publisher}'s <a href={efs.collection}>guidance pages</a>, one per support year, exactly as printed,
+      with the page body and each table cell hashed on {longDate(efs.curated)}. {efs.licence}.
+    </p>
+    <ul>
+      {efsPages.map(([, page]) => (
+        <li>
+          <a href={page.url}>{page.title}</a>, first published {longDate(page.firstPublished)}
+          {page.updated && page.updated !== page.firstPublished ? `, updated ${longDate(page.updated)}` : ""}.
+        </li>
+      ))}
+    </ul>
+    <h2>Spending</h2>
+    <p>
+      The spending record on council pages comes from {spending.publisher}'s published
+      <a href={spending.summaries.url}>council summaries</a>{spending.summaries.generated ? `, generated ${longDate(spending.summaries.generated)}` : ""},
+      which AI DOGE compiles from each council's own published payment files. Each summary is keyed by the council's
+      registry GSS code; counts describe councils, not keys.
+    </p>
+    <h2>School holidays</h2>
+    <p>
+      Term dates come from the <a href="https://ukschoolholidaydates.co.uk/">UK School Holiday Dates</a> partner
+      feed, snapshot of {longDate(holidays.snapshotDate)} covering {holidays.authorityCount} authorities
+      (SHA-256 <code>{holidays.sha256.slice(0, 12)}</code>), where every calendar is cited to the authority's own
+      published term dates; the council page names that source under the dates it shows.
+    </p>
+    <h2>Boundaries</h2>
+    <p>
+      The locator maps use <a href={boundarySource.url}>{boundarySource.title}</a>, {boundarySource.publisher},
+      {boundarySource.date}, under the Open Government Licence and with OS and ONS attribution on each map.
+    </p>
   </div>
 </BaseLayout>
