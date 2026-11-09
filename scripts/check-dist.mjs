@@ -20,6 +20,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { hashesIn, scriptSrcOf } from "./inject_csp_hashes.mjs";
+import { frontDoorChecks } from "./lib/front-door-checks.mjs";
 import { unsourcedFigures } from "./lib/figures.mjs";
 
 const DIST = resolve(process.cwd(), "dist");
@@ -61,6 +62,8 @@ for (const path of files(DIST)) {
   if (/https?:\/\/ukfoodhygiene\.co\.uk\b/.test(text)) failures.push(`private sister link in ${rel(path)}`);
   if (!path.endsWith(".html")) continue;
   pages += 1;
+  const prose = text.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, "").replace(/<[^>]+>/g, " ");
+  if (/\s-\s/.test(prose)) failures.push(`spaced hyphen in prose on ${rel(path)}`);
 
   const title = /<title>([^<]*)<\/title>/.exec(text)?.[1];
   if (!title) failures.push(`no title on ${rel(path)}`);
@@ -210,6 +213,10 @@ else {
 for (const asset of ["pagefind.js", "pagefind-worker.js"]) {
   if (!existsSync(join(DIST, "pagefind", asset))) failures.push(`missing search asset ${asset}`);
 }
+
+const frontDoor = frontDoorChecks(process.cwd(), DIST);
+failures.push(...frontDoor.failures);
+console.log(`B2 coverage: ${JSON.stringify(frontDoor.counts)}`);
 
 if (failures.length) {
   console.error(`dist check: ${failures.length} failures\n${failures.map((f) => `  ${f}`).join("\n")}`);

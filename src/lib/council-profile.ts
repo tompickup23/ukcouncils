@@ -1,3 +1,10 @@
+import { collectionFor, collectionSource } from "./collection";
+import { electionFor, electionSourceLine } from "./elections";
+import { councilEfs } from "./council-efs";
+import { efsSource } from "./efs-presentation";
+import { populationFor, populationSource } from "./population";
+import { ownPagesFor, localLinksSource, type OwnPages } from "./local-links";
+import { CLASS_PLURAL, type StripPoint } from "./position-strip";
 import { boundaryAreas, boundarySource } from "./boundaries";
 import {
   CURRENT_YEAR,
@@ -21,8 +28,7 @@ import { spendingFor, spendingRecord, type SpendingRecord } from "./spending";
  *
  * Two sections the plan names are not built, because no committed file holds
  * their data: who runs the council (seats by party and control) and its
- * elections (the last and the next scheduled date). They join when a sourced
- * file does; nothing here infers them from a sister site link.
+ * last election. Scheduled elections use only verified quoted years.
  *
  * No statutory basis for the services a type of council provides is named on
  * the methodology or sources pages, so the first section states the type as
@@ -30,10 +36,12 @@ import { spendingFor, spendingRecord, type SpendingRecord } from "./spending";
  */
 
 /** The section ids, in the order a council page prints them. */
-export const PROFILE_SECTIONS = ["about", "spending", "tax-summary", "school-holidays", "sources"] as const;
+export const PROFILE_SECTIONS = ["about", "tax-summary", "collection", "exceptional-financial-support", "elections", "spending", "school-holidays", "sources"] as const;
 export type ProfileSection = (typeof PROFILE_SECTIONS)[number];
 
 export interface ProfileAbout {
+  population: {council: number; county: {name: string; count: number} | null} | null;
+  ownPages: OwnPages | null;
   officialName: string;
   /** The type field of the register, as recorded. */
   type: string;
@@ -43,6 +51,9 @@ export interface ProfileAbout {
 }
 
 export interface ProfileTax {
+  currentGss: string;
+  points: StripPoint[];
+  classLabel: string;
   bandD: number;
   source: SourceRef;
   change: { from: number; to: number; pounds: number; pct: number } | null;
@@ -99,7 +110,13 @@ export function registrySource(): SourceRef {
 }
 
 export function profileAbout(council: Council): ProfileAbout {
+  const current = loadYear(CURRENT_YEAR);
+  const count = populationFor(council.gss);
+  const countyRow = current.authorities[council.gss]?.classCode === "SD" && council.parentGss ? current.counties[council.parentGss] : null;
+  const countyCount = countyRow && council.parentGss ? populationFor(council.parentGss) : null;
   return {
+    population: count === null ? null : {council: count, county: countyRow && countyCount !== null ? {name: countyRow.name, count: countyCount} : null},
+    ownPages: ownPagesFor(council.gss),
     officialName: council.officialName,
     type: council.type,
     county: council.county,
@@ -113,6 +130,11 @@ export function profileTax(council: Council, tax: Authority): ProfileTax | null 
   if (typeof bandD !== "number" || bandD <= 0) return null;
   return {
     bandD,
+    currentGss: council.gss,
+    points: Object.entries(loadYear(CURRENT_YEAR).authorities)
+      .filter(([, row]) => row.classCode === tax.classCode && typeof row.bands.D === "number" && row.bands.D > 0)
+      .map(([gss, row]) => ({gss, name: row.name, value: row.bands.D!})),
+    classLabel: CLASS_PLURAL[tax.classCode],
     source: councilTaxSource(CURRENT_YEAR, loadYear(CURRENT_YEAR).source.bandTable),
     change: bandChange(council.gss, "D"),
     changeSource: changeSource(PREVIOUS_YEAR, CURRENT_YEAR),
@@ -162,46 +184,38 @@ export function profileSources(council: Council, tax: Authority, today = londonT
   };
 
   const current = loadYear(CURRENT_YEAR);
-  // Band D for every year held, newest first; the band selector and the
-  // history read these.
+  add(councilTaxSource(CURRENT_YEAR, current.source.bandTable));
+  if (hasBoundary(council.gss)) {
+    add({publisher: boundarySource.publisher, title: boundarySource.title, url: boundarySource.url,
+      table: `${boundarySource.date} edition, publication date not recorded`, date: null});
+  }
+  add(registrySource());
+  const about = profileAbout(council);
+  if (about.population) add(populationSource());
+  if (about.ownPages) add(localLinksSource());
+  const summary = profileTax(council, tax);
+  if (summary?.change) add(summary.changeSource);
+  if (collectionFor(council.gss)) add(collectionSource());
+  const support = councilEfs(council.slug);
+  if (support) for (const {statement} of support.entries) add(efsSource(statement.page, statement.table));
+  const election = electionFor(council.gss);
+  if (election) {
+    const citation = electionSourceLine(election);
+    add({publisher: "UK Elections", title: citation.label, url: citation.url, table: citation.attribution});
+  }
+  const spending = spendingRecord(tax.name, spendingFor(council.gss));
+  if (spending) add(spending.source);
+  const term = profileTermDates(council, today);
+  if (term) add({publisher: term.authorityName, title: "official school term dates", url: term.sourceUrl,
+    table: `${term.academicYear} calendar, captured by UK School Holiday Dates`, date: term.retrievedAt});
+  if (current.england.areaBandD) add(councilTaxSource(CURRENT_YEAR, current.england.areaBandD.table));
   for (const year of [...YEARS].reverse()) {
     const data = loadYear(year);
     if (data.authorities[council.gss]) add(councilTaxSource(year, data.source.bandTable));
   }
-  const area = current.england.areaBandD;
-  if (area) add(councilTaxSource(CURRENT_YEAR, area.table));
   if (tax.own) add(councilTaxSource(CURRENT_YEAR, tax.own.table));
-  const county = tax.classCode === "SD" && council.parentGss ? current.counties[council.parentGss] ?? null : null;
+  const county = tax.classCode === "SD" && council.parentGss ? current.counties[council.parentGss] : null;
   if (county) add(councilTaxSource(CURRENT_YEAR, county.table));
-
-  add(registrySource());
-
-  const spending = spendingRecord(tax.name, spendingFor(council.gss));
-  if (spending) add(spending.source);
-
-  const term = profileTermDates(council, today);
-  if (term) {
-    add({
-      publisher: term.authorityName,
-      title: "official school term dates",
-      url: term.sourceUrl,
-      table: `${term.academicYear} calendar, captured by UK School Holiday Dates`,
-      date: term.retrievedAt,
-    });
-  }
-
-  // Whether the committed boundary file holds this council, by its GSS code
-  // alone: drawing the map only to learn that would project every area.
-  if (hasBoundary(council.gss)) {
-    add({
-      publisher: boundarySource.publisher,
-      title: boundarySource.title,
-      url: boundarySource.url,
-      // The file records its edition, not a publication date.
-      table: `${boundarySource.date} edition, publication date not recorded`,
-      date: null,
-    });
-  }
 
   return out;
 }
@@ -220,6 +234,9 @@ export function councilProfile(council: Council, tax: Authority, today = londonT
   const sources = profileSources(council, tax, today);
   const present: Record<ProfileSection, boolean> = {
     about: true,
+    collection: collectionFor(council.gss) !== null,
+    "exceptional-financial-support": councilEfs(council.slug) !== null,
+    elections: electionFor(council.gss) !== null,
     spending: spending !== null,
     "tax-summary": taxAtAGlance !== null,
     "school-holidays": termDates !== null,

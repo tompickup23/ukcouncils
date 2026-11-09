@@ -1,0 +1,22 @@
+---
+import { electionFor, electionQuoteIsHeld, electionSourceLine } from "../lib/elections";
+import { sisterLinks, type Council } from "../lib/registry";
+interface Props { council: Council; name: string }
+const {council, name} = Astro.props;
+const record = electionFor(council.gss);
+const source = record ? electionSourceLine(record) : null;
+const link = sisterLinks(council).find(link => link.site === "ukelections");
+const pattern = {
+  whole: "The whole council is elected together.",
+  thirds: "Councillors are elected by thirds.",
+  halves: "Councillors are elected by halves.",
+};
+---
+{record && source && <section class="section" id="elections" data-profile-section="elections" aria-labelledby="elections-heading">
+  <h2 id="elections-heading">Elections in {name}</h2>
+  <p>The next scheduled election to {name} council is in {record.dateLabel ?? record.nextYear}. {pattern[record.pattern]}</p>
+  {!electionQuoteIsHeld(record.quote) && <blockquote cite={record.sourceUrl}>{record.quote}</blockquote>}
+  <p class="source-line">Source: <a href={source.url}>{source.label}</a>, {source.attribution}.</p>
+  <p class="caveat">A scheduled date can be moved by statutory instrument.</p>
+  {link && <p><a href={link.url}>Results and seats on UK Elections</a>.</p>}
+</section>}

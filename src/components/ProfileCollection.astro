@@ -1,0 +1,82 @@
+---
+/** One English billing authority's in-year council tax collection rate and arrears, beside England, from MHCLG Table 9a (QRC4). */
+import PositionStrip from './PositionStrip.astro';
+import { CLASS_PLURAL } from '../lib/position-strip';
+import { CURRENT_YEAR, loadYear } from '../lib/council-tax';
+import SourceLine from './SourceLine.astro';
+import {collection,collectionFor,collectionSource,collectionYear,collectionYearEnd,collectionPriorYear,collectionAmount,collectionRate,shownNotes} from '../lib/collection';
+interface Props {gss:string;name:string}
+const {gss,name}=Astro.props;
+const row=collectionFor(gss);
+const current = loadYear(CURRENT_YEAR);
+const classCode = current.authorities[gss]?.classCode;
+const points = Object.entries(current.authorities)
+  .filter(([, authority]) => authority.classCode === classCode)
+  .flatMap(([code, authority]) => {
+    const rate = collectionFor(code)?.rate;
+    return typeof rate === 'number' ? [{gss: code, name: authority.name, value: rate}] : [];
+  });
+const england=collection.england;
+const source=collectionSource();
+const year=collectionYear();
+const end=collectionYearEnd();
+const prior=collectionPriorYear();
+const lines=row?[
+  {line:'1',label:`Council tax collectable for ${year}`,key:'collectable'},
+  {line:'4',label:`Collected for ${year} by ${end}`,key:'collected'},
+  {line:'23',label:`Arrears for ${year} outstanding at ${end}`,key:'yearArrears'},
+  {line:'20',label:`Arrears for ${prior} and earlier years outstanding at ${end}`,key:'olderArrears'},
+  {line:'24',label:`Total arrears outstanding at ${end}`,key:'totalArrears'},
+] as const:[];
+const notes=row?shownNotes(row):[];
+const englandNotes=row?shownNotes(england):[];
+---
+{row && (
+  <section class="section" id="collection" aria-labelledby="collection-heading" data-profile-section="collection">
+    <h2 id="collection-heading">How much council tax did {name} collect in {year}?</h2>
+    <p class="muted">
+      The council collects council tax for every body that sets a share of the bill, so these amounts cover the whole bill,
+      not only the council's own share. Figures are as the council reported them to MHCLG on its year end return.
+    </p>
+    <div class="fact" data-fact>
+      {row.rate !== null && <>
+        <p>
+          {name} collected <strong data-figure>{collectionRate(row.rate)}</strong> of the council tax due for {year} by {end},
+          against <strong data-figure>{collectionRate(england.rate)}</strong> across England.
+        </p>
+        <SourceLine source={source} />
+        <PositionStrip id="collection-position" kind="collection" points={points} currentGss={gss}
+          format={collectionRate} title={`Council tax collection in ${name} among ${CLASS_PLURAL[classCode]}`}
+          classLabel={CLASS_PLURAL[classCode]} basis={`In-year council tax collection rate, ${year}, as MHCLG prints it`}
+          source={source} />
+      </>}
+      <div class="table-wrap" tabindex="0" role="region" aria-label={`Council tax collection and arrears in ${name}, ${year}`}>
+        <table class="data">
+          <caption>Council tax collection and arrears, {name} and England, {year}</caption>
+          <thead>
+            <tr><th scope="col">QRC4 line</th><th scope="col" class="num">{name}</th><th scope="col" class="num">England</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">In-year collection rate (line 5)</th><td class="num" data-figure>{collectionRate(row.rate)}</td><td class="num" data-figure>{collectionRate(england.rate)}</td></tr>
+            {lines.map(l=>(
+              <tr><th scope="row">{l.label} (line {l.line})</th><td class="num" data-figure>{collectionAmount(row[l.key])}</td><td class="num" data-figure>{collectionAmount(england[l.key])}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <SourceLine source={source} />
+      <p class="caveat">
+        The in-year collection rate is line 4 divided by line 1, as calculated and printed by MHCLG to 2 decimal places.
+        Amounts are printed in thousands of pounds, rounded to the nearest thousand. Arrears are amounts not yet collected
+        at {end}; councils can still collect them in later years, so they are not amounts lost. The England column is the
+        total for all {Object.keys(collection.councils).length} billing authorities in England. A figure the table does not hold is shown as n/a, never as zero.
+      </p>
+      {(notes.length>0 || englandNotes.length>0) && (
+        <ul class="notes">
+          {notes.map(n=><li>MHCLG note: {n.text}</li>)}
+          {englandNotes.map(n=><li>MHCLG note for England: {n.text}</li>)}
+        </ul>
+      )}
+    </div>
+  </section>
+)}

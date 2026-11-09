@@ -1,4 +1,8 @@
 ---
+import { population } from "../lib/population";
+import { collection } from "../lib/collection";
+import { elections } from "../lib/elections";
+import { localLinks } from "../lib/local-links";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { YEARS, loadYear, yearLabel } from "../lib/council-tax";
@@ -46,6 +50,25 @@ const registry = loadRegistry();
       that site's own records name the council and the page is in that site's live sitemap; the check was
       last run on {longDate(registry.generated)}.
     </p>
+    <h2>Population</h2>
+    <p><a href={population.source.url}>{population.source.title}</a>, {population.source.publisher},
+      published {longDate(population.source.published)}. MYE25UK, MYE2 Persons, all ages.
+      {population.source.licence}.</p>
+    <h2>Council tax collection</h2>
+    <p><a href={collection.source.url}>{collection.source.title}</a>, {collection.source.publisher},
+      published {longDate(collection.source.published)}, revised {longDate(collection.source.revised)}.
+      Table 9a, QRC4 lines 1, 4, 5, 20, 23 and 24. {collection.source.licence}.</p>
+    <h2>Scheduled council elections</h2>
+    <p><a href={`https://github.com/tompickup23/ukelections/blob/${elections.source.commit}/${elections.source.file}`}>{elections.source.publisher}, {elections.source.title}</a>,
+      checked {longDate(elections.source.checked)}. {elections.source.method}</p>
+    <p>{elections.source.rule} A record that does not meet this rule has no elections section.
+      Quotations subject to the content hold are omitted while the year and citation remain.
+      Each printed record links to the primary statutory instrument or council page.</p>
+    <h2>The council's own service pages</h2>
+    <p><a href={localLinks.source.url}>{localLinks.source.name}, links to services provided by local authorities</a>,
+      export of {longDate(localLinks.source.exportDate)}, checked by UK Places on {longDate(localLinks.checkedOn)}.
+      {localLinks.source.licence}. The two services are Pay your Council Tax and Find out your rubbish collection day.
+      Only links retained in the dated UK Places export are printed.</p>
     <h2>Postcode lookup</h2>
     <p>The postcode door uses <a href="https://postcodes.io/">postcodes.io</a>, which is built on Office for National Statistics postcode data.</p>
     <h2>Verified links to UK Council Tax</h2>

@@ -1,0 +1,1588 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "publisher": "UK Elections",
+    "title": "council election register",
+    "file": "data/identity/council-next-elections.json",
+    "commit": "3cf7cf60b0bf7772f17dd743643ca680dd777199",
+    "sha256": "e24e7ed63284de8577e2f11d0991af8b1402e6d93ca1b5a20a0756d703d4e27f",
+    "checked": "2026-10-24",
+    "method": "Each record's year was read from the council's electoral change order on legislation.gov.uk, another statutory instrument, or the council's own election pages, quoted verbatim. Scottish and Welsh councils follow their statutory five-year cycle. Records marked unverified carry no year and are shown as 'Not verified'.",
+    "rule": "Printed only where the record is verified and the quoted text contains the year.",
+    "predecessors": {
+      "publisher": "Office for National Statistics",
+      "title": "Code History Database (June 2026), Changes table",
+      "via": "UK Places src/data/registry/gss-predecessors.json",
+      "commit": "b1a32625943981c9f5a1c97e1c8f89d2dadc1985",
+      "sha256": "4826532fd29bd7fe9cb6b71a218f6c79f6e7936e875ccb4427057b6f51991a87"
+    }
+  },
+  "councils": {
+    "E06000002": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Middlesbrough (Electoral Changes) Order 2025, SI 2025/1345, art.1(3)(b)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/1345/made",
+      "quote": "Article 3 comes into force ... for all other purposes, on the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E06000003": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Redcar and Cleveland Borough Council, Upcoming elections",
+      "sourceUrl": "https://www.redcar-cleveland.gov.uk/voting-and-elections/upcoming-elections",
+      "quote": "Upcoming planned elections | 2027: | Local Councillor Elections",
+      "joinedVia": null
+    },
+    "E06000004": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Stockton-on-Tees Borough Council, \"Elections and voting\"",
+      "sourceUrl": "https://www.stockton.gov.uk/elections-voting",
+      "quote": "The next scheduled elections in the Borough of Stockton-on-Tees are the Local Government and Parish Council Elections on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E06000005": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Darlington Borough Council, Current and future elections",
+      "sourceUrl": "https://www.darlington.gov.uk/elections/current-and-future-elections/",
+      "quote": "The next Local Government Elections will take place in May 2027 to elect:- Local Government (Borough Council) Councillors; and Parish Council Councillors.",
+      "joinedVia": null
+    },
+    "E06000007": {
+      "nextYear": 2028,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Warrington Borough Council, \"The different types of elections\"",
+      "sourceUrl": "https://www.warrington.gov.uk/different-types-elections",
+      "quote": "The next scheduled all‑out borough council election is expected to take place in May 2028.",
+      "joinedVia": null
+    },
+    "E06000010": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Hull City Council, Local elections (web page)",
+      "sourceUrl": "https://www.hull.gov.uk/elections-voting/local-elections",
+      "quote": "Councillors are elected 'by thirds' ... Local election 2027 The next Local election is scheduled for Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E06000011": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "East Riding of Yorkshire (Electoral Changes) Order 2026, SI 2026/53, art.1(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2026/53/made",
+      "quote": "Articles 3 and 4 come into force a for the purposes of proceedings preliminary or relating to the election of councillors, on 15th October 2026; b for all other purposes, on the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E06000012": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "North East Lincolnshire Council, Election dates and results (web page)",
+      "sourceUrl": "https://www.nelincs.gov.uk/your-council/elections-and-voting/election-dates-and-results/",
+      "quote": "The next scheduled elections ... North East Lincolnshire Council 6 May 2027",
+      "joinedVia": null
+    },
+    "E06000014": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "City of York Council, \"Elections\"",
+      "sourceUrl": "https://www.york.gov.uk/elections",
+      "quote": "The next local elections in York will be held in May 2027 .",
+      "joinedVia": null
+    },
+    "E06000015": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Derby City Council, Election information page",
+      "sourceUrl": "https://www.derby.gov.uk/council-and-democracy/councillors-democracy-elections/elections/election-information",
+      "quote": "Derby operates a four-year election cycle in which all councillors are elected at the same time, so polls do not take place every year. Our next scheduled elections are in May 2027.",
+      "joinedVia": null
+    },
+    "E06000016": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Leicester City Council, Local Government Reorganisation",
+      "sourceUrl": "https://www.leicester.gov.uk/local-government-reorganisation",
+      "quote": "Local elections will take place as planned in May 2027 using the existing council boundaries.",
+      "joinedVia": null
+    },
+    "E06000017": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Rutland County Council, \"Upcoming elections\"",
+      "sourceUrl": "https://www.rutland.gov.uk/elections-voting/upcoming-elections",
+      "quote": "The next scheduled elections in Rutland will be the county and parish elections in May 2027.",
+      "joinedVia": null
+    },
+    "E06000018": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Nottingham City Council, Upcoming elections (table)",
+      "sourceUrl": "https://nottinghamcity.gov.uk/your-council/voting-elections/upcoming-elections",
+      "quote": "Local Council Election | 4 Years | 6th May 2027",
+      "joinedVia": null
+    },
+    "E06000019": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Herefordshire Council, Upcoming elections and referendums",
+      "sourceUrl": "https://www.herefordshire.gov.uk/your-council/elections-and-voting/upcoming-elections-and-referendums/",
+      "quote": "We elect all of our councillors every four years. Our next scheduled polls are due to take place on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E06000020": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Telford & Wrekin Council newsroom, \"Telford & Wrekin Council launches review of polling stations\"",
+      "sourceUrl": "https://newsroom.telford.gov.uk/news/telford-wrekin-council-launches-review-of-polling-stations",
+      "quote": "Local elections are held every four years in Telford and Wrekin, with the last one being in 2023, therefore the new arrangements will then be introduced in time for the next scheduled local elections in Telford and Wrekin, in May 2027.",
+      "joinedVia": null
+    },
+    "E06000022": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Bath and North East Somerset Council, BNES council elections page",
+      "sourceUrl": "https://www.bathnes.gov.uk/bnes-council-elections",
+      "quote": "The last Council election was Thursday 4 May 2023, with the Liberal Democrats winning a commanding majority. The next Council election is in May 2027.",
+      "joinedVia": null
+    },
+    "E06000023": {
+      "nextYear": 2028,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Bristol City Council, Types of elections (Dates of elections table)",
+      "sourceUrl": "https://www.bristol.gov.uk/council/voting-and-elections/types-of-elections",
+      "quote": "Dates of elections Type of election Last election Next scheduled election Local elections 2 May 2024 May 2028",
+      "joinedVia": null
+    },
+    "E06000024": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "North Somerset Council, Upcoming and scheduled elections",
+      "sourceUrl": "https://n-somerset.gov.uk/council-democracy/voting-elections/upcoming-scheduled-elections",
+      "quote": "The next scheduled elections for North Somerset are the local government elections on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E06000026": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Plymouth City Council, Dates of upcoming polls (web page)",
+      "sourceUrl": "https://www.plymouth.gov.uk/dates-upcoming-elections",
+      "quote": "Plymouth holds elections by thirds. ... Next elections: Thursday 6 May 2027 Thursday 4 May 2028",
+      "joinedVia": null
+    },
+    "E06000027": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Torbay Council, \"Local elections\"",
+      "sourceUrl": "https://www.torbay.gov.uk/council/voting-and-elections/elections/local/",
+      "quote": "The next local election will be held on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E06000032": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Luton Borough Council, Upcoming elections",
+      "sourceUrl": "https://www.luton.gov.uk/upcomingelections",
+      "quote": "Luton Borough Council's next councillor elections will take place on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E06000034": {
+      "nextYear": 2030,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Local Authorities (Changes to Years of Ordinary Elections) (England) Order 2025, SI 2025/137, explanatory note",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/137/made",
+      "quote": "except for Thurrock Council for which subsequent ordinary elections of councillors are, as a result of this Order, to be held in 2030 and every four years thereafter.",
+      "joinedVia": null
+    },
+    "E06000035": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Medway Council, Elections and voting",
+      "sourceUrl": "https://www.medway.gov.uk/info/200168/elections_and_voting",
+      "quote": "Our last local election was in 2023. Our next local election is due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E06000036": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Bracknell Forest Council, Future elections",
+      "sourceUrl": "https://www.bracknell-forest.gov.uk/elections-and-voting/future-elections",
+      "quote": "Bracknell Forest Council elections Next election: 2027 Bracknell Forest holds 'all out' borough elections every 4 years.",
+      "joinedVia": null
+    },
+    "E06000037": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "West Berkshire Council, \"Local elections 2027\"",
+      "sourceUrl": "https://citizen.westberks.gov.uk/local-elections-2027",
+      "quote": "West Berkshire Council elects all 43 councillors every four years, with the next scheduled elections due in 2027.",
+      "joinedVia": null
+    },
+    "E06000041": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Wokingham (Electoral Changes) Order 2023, SI 2023/1271, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/1271/made",
+      "quote": "Of the councillors elected for a ward in 2024 [...] (a) one is to retire [...] in 2026; (b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027;",
+      "joinedVia": null
+    },
+    "E06000042": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Milton Keynes (Electoral Changes) Order 2025, SI 2025/1237, art.4(3) and Sch.2",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/1237/made",
+      "quote": "Schedule 2 Retirement of councillors elected in 2026 Article 4(3) City ward Number of councillors to retire in 2027 Number of councillors to retire in 2028 Number of councillors to retire in 2030",
+      "joinedVia": null
+    },
+    "E06000045": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Southampton (Electoral Changes) Order 2023, SI 2023/204, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/204/made",
+      "quote": "Of the councillors elected for a ward in 2023, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2024; b ... 2026; c ... 2027.",
+      "joinedVia": null
+    },
+    "E06000046": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Local Authorities (Changes to Years of Ordinary Elections) (England) Order 2025, SI 2025/137, art.3(2)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/137/made",
+      "quote": "A councillor of a specified local authority other than Thurrock Council who is elected on the ordinary day of election of councillors in 2026 ... retires on the fourth day after the ordinary day of election of councillors in 2029",
+      "joinedVia": null
+    },
+    "E06000049": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Cheshire East Council, Elections Thursday 6 May 2027",
+      "sourceUrl": "https://www.cheshireeast.gov.uk/council_and_democracy/voting_and_elections/elections/elections-thursday-6-may-2027.aspx",
+      "quote": "On 6 May 2027 the next local elections will take place for all of the Cheshire East Borough Wards, Town, Parish and Community Councils.",
+      "joinedVia": null
+    },
+    "E06000050": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Cheshire West and Chester Council, 2027 Elections",
+      "sourceUrl": "https://www.cheshirewestandchester.gov.uk/your-council/voting-and-elections/2027-elections",
+      "quote": "Residents will have the opportunity to vote in the local elections taking place on Thursday 6 May 2027 . These elections will determine who represents local communities on the Council",
+      "joinedVia": null
+    },
+    "E06000051": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Shropshire Council, \"Upcoming elections\"",
+      "sourceUrl": "https://next.shropshire.gov.uk/elections-and-electoral-registration/upcoming-elections",
+      "quote": "The last elections were held on Thursday 1 May 2025, and the next elections are scheduled for May 2029.",
+      "joinedVia": null
+    },
+    "E06000052": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Cornwall Council, Elections and referendums",
+      "sourceUrl": "https://www.cornwall.gov.uk/the-council-and-democracy/elections/elections-and-referendums/",
+      "quote": "Cornwall Council and Town and Parish Council Elections The full council elections are held every four years. They are next due on Thursday 3 May 2029.",
+      "joinedVia": null
+    },
+    "E06000053": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Council of the Isles of Scilly, Elections",
+      "sourceUrl": "https://www.scilly.gov.uk/elections",
+      "quote": "The Council is elected every four years. The next full council election is due on 3 May 2029.",
+      "joinedVia": null
+    },
+    "E06000054": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Wiltshire Council, \"Types of elections\"",
+      "sourceUrl": "https://www.wiltshire.gov.uk/elections-types",
+      "quote": "Local (Wiltshire Council and Parish) elections 1 May 2025 May 2029",
+      "joinedVia": null
+    },
+    "E06000057": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Northumberland County Council, Residents encouraged to take part in county-wide review (news)",
+      "sourceUrl": "https://www.northumberland.gov.uk/news/residents-encouraged-take-part-county-wide-review",
+      "quote": "Any agreed changes will be implemented for the next scheduled local elections in May 2029.",
+      "joinedVia": null
+    },
+    "E06000058": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "BCP Council, Upcoming elections and referendums and who can vote in them",
+      "sourceUrl": "https://www.bcpcouncil.gov.uk/elections-and-voting/upcoming-elections-and-referendums-and-who-can-vote-in-them",
+      "quote": "Type of election Last election Next scheduled election Local and Parish Council elections (excluding Bournemouth, Broadstone and Poole Town Council elections) 4 May 2023 6 May 2027",
+      "joinedVia": null
+    },
+    "E06000059": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Bournemouth, Dorset and Poole (Structural Changes) Order 2018, SI 2018/648, art.39(1)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2018/648/article/39",
+      "quote": "A whole council election of councillors of Dorset Council is to be held (a) on the 2019 election day; (b) on the ordinary day of election of councillors in 2024; (c) on the ordinary day of election of councillors in 2029",
+      "joinedVia": null
+    },
+    "E06000060": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Buckinghamshire Council, Elections page (Dates of elections table)",
+      "sourceUrl": "https://www.buckinghamshire.gov.uk/elections",
+      "quote": "Next scheduled election Local and Parish Council elections (Local elections in Buckinghamshire were last held on 1 May 2025 and take place every 4 years) 3 May 2029",
+      "joinedVia": null
+    },
+    "E06000061": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "North Northamptonshire Council, Election results",
+      "sourceUrl": "https://www.northnorthants.gov.uk/elections-and-voting/election-results",
+      "quote": "The second full elections for North Northamptonshire Council took place on 1 May 2025. The next set of scheduled local government elections will be held in May 2029.",
+      "joinedVia": null
+    },
+    "E06000062": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "West Northamptonshire Council, Election notices and future elections (web page)",
+      "sourceUrl": "https://www.westnorthants.gov.uk/elections-and-voting/election-notices-and-future-elections",
+      "quote": "Elections to West Northamptonshire Council are held every 4 years. The previous election was undertaken in May 2025. The next scheduled elections is expected to be held in May 2029",
+      "joinedVia": null
+    },
+    "E06000063": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Cumbria (Structural Changes) Order 2022, SI 2022/331, art.21(1)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/331/made",
+      "quote": "Whole council elections of councillors of Cumberland Council and Westmorland and Furness Council are to be held a on the ordinary day of election of councillors in 2022; b on the ordinary day of election of councillors in 2027; c every fourth year thereafter.",
+      "joinedVia": null
+    },
+    "E06000064": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Cumbria (Structural Changes) Order 2022, SI 2022/331, art.21(1)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/331/made",
+      "quote": "Whole council elections of councillors of Cumberland Council and Westmorland and Furness Council are to be held: (a) on the ordinary day of election of councillors in 2022; (b) on the ordinary day of election of councillors in 2027; (c) every fourth year thereafter.",
+      "joinedVia": null
+    },
+    "E06000065": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "North Yorkshire (Electoral Changes) Order 2026, SI 2026/1046, art.1(3)(b); North Yorkshire Council elections page",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2026/1046/made",
+      "quote": "Articles 3 to 6 come into force ... for all other purposes, on the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E06000066": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Somerset (Structural Changes) Order 2022, SI 2022/329, art.13(1)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/329/made",
+      "quote": "A whole council election of councillors of the Somerset Council is to be held, a on the 2022 election day; b on the ordinary day of election of councillors in 2027; c every fourth year thereafter.",
+      "joinedVia": null
+    },
+    "E07000008": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Cambridge City Council, Upcoming elections",
+      "sourceUrl": "https://www.cambridge.gov.uk/upcoming-elections",
+      "quote": "Thursday 6 May 2027 Cambridge City Council elections (14 of 42 seats) Thursday 4 May 2028 Cambridge City Council elections (14 of 42 seats)",
+      "joinedVia": null
+    },
+    "E07000009": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "East Cambridgeshire District Council, Become a district councillor",
+      "sourceUrl": "https://www.eastcambs.gov.uk/about-council/councillors-and-committees/become-district-councillor",
+      "quote": "The next District Council Election will be in May 2027.",
+      "joinedVia": null
+    },
+    "E07000010": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Fenland District Council, No Local Elections in Fenland in 2026",
+      "sourceUrl": "https://fenland.gov.uk/article/18787/No-Elections-in-Fenland-in-2026",
+      "quote": "The next scheduled district-wide elections in Fenland are in May 2027.",
+      "joinedVia": null
+    },
+    "E07000032": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Amber Valley Borough Council, Elections page",
+      "sourceUrl": "https://www.ambervalley.gov.uk/councillors-and-elections/elections",
+      "quote": "Upcoming elections The next borough elections will be held in 2027. The next parish elections will be held in 2027.",
+      "joinedVia": null
+    },
+    "E07000034": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Chesterfield Borough Council news, Candidates announced for Staveley by-elections",
+      "sourceUrl": "https://www.chesterfield.gov.uk/latest-news/candidates-announced-for-staveley-by-elections/",
+      "quote": "We elect all our 40 borough councillors every four years: the next scheduled polls are due to take place in 2027.",
+      "joinedVia": null
+    },
+    "E07000037": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "High Peak Borough Council, Voting and elections",
+      "sourceUrl": "https://www.highpeak.gov.uk/elections",
+      "quote": "Our next scheduled elections are due to take place in May 2027",
+      "joinedVia": null
+    },
+    "E07000038": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "North East Derbyshire District Council, No Scheduled Elections in 2026",
+      "sourceUrl": "https://www.ne-derbyshire.gov.uk/news-and-media/latest-news/no-scheduled-elections-in-may-2026-due-to-fallow-year",
+      "quote": "We elect all of our 53 Councillors every four years. Our next scheduled polls are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000039": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "South Derbyshire District Council, \"Current Elections\"",
+      "sourceUrl": "https://www.southderbyshire.gov.uk/our-services/voting-and-elections/current-elections",
+      "quote": "The next scheduled elections are to due to take place on 6th May 2027",
+      "joinedVia": null
+    },
+    "E07000040": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "East Devon District Council, Who is my councillor",
+      "sourceUrl": "https://eastdevon.gov.uk/council-and-democracy/who-is-my-councillor/",
+      "quote": "Councillors, or Members of the Council as they are sometimes called, normally serve a term of four years.We hold elections for all members every four years. The next election is May 2027.",
+      "joinedVia": null
+    },
+    "E07000045": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Teignbridge District Council, \"Dates of next elections\"",
+      "sourceUrl": "https://www.teignbridge.gov.uk/voting-and-elections/current-elections/dates-of-next-elections/",
+      "quote": "Future elections and referenda 2027: Teignbridge District, Town and Parish Councils",
+      "joinedVia": null
+    },
+    "E07000046": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Torridge District Council, \"Torridge District Council election results\"",
+      "sourceUrl": "https://torridge.gov.uk/article/12922/Torridge-District-Council-election-results",
+      "quote": "The Council has full elections every four years. The next full Council elections will be held on the 6 May 2027",
+      "joinedVia": null
+    },
+    "E07000061": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Lewes and Eastbourne Councils, Upcoming Elections",
+      "sourceUrl": "https://www.lewes-eastbourne.gov.uk/article/1925/Upcoming-Elections",
+      "quote": "Upcoming elections in Eastbourne Future ElectionsThe following elections are currently scheduled to take place in the coming years:May 2027 ... Eastbourne Borough Elections",
+      "joinedVia": null
+    },
+    "E07000064": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Rother District Council, Stand for election page",
+      "sourceUrl": "https://www.rother.gov.uk/elections-and-voting/stand-for-election/",
+      "quote": "As a result of this announcement, all 38 seats on Rother District Council are up for election on 6 May 2027 .",
+      "joinedVia": null
+    },
+    "E07000065": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Wealden District Council, \"About the elected council\"",
+      "sourceUrl": "https://wealden.gov.uk/councillors-and-committees/about-the-elected-council",
+      "quote": "Elections to the district council are held every four years for all seats, the next whole-district election is May 2027.",
+      "joinedVia": null
+    },
+    "E07000066": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Basildon (Electoral Changes) Order 2023, SI 2023/731, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/731/made",
+      "quote": "(b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E07000068": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Brentwood (Electoral Changes) Order 2023, SI 2023/732, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/732/made",
+      "quote": "(b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E07000069": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Castle Point (Electoral Changes) Order 2023, SI 2023/799, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/799/made",
+      "quote": "Of the councillors elected for a ward in 2024 a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2026; b one is to retire ... in England in 2027",
+      "joinedVia": null
+    },
+    "E07000070": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Chelmsford City Council, Upcoming elections",
+      "sourceUrl": "https://www.chelmsford.gov.uk/voting-and-elections/upcoming-elections/",
+      "quote": "City council elections The last full city council elections were in 2023 and the next are due in May 2027.",
+      "joinedVia": null
+    },
+    "E07000072": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Epping Forest (Electoral Changes) Order 2023, SI 2023/819, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/819/made",
+      "quote": "(b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E07000073": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Harlow (Electoral Changes) Order 2023, SI 2023/797, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/797/made",
+      "quote": "(b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E07000074": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Maldon District Council, Upcoming elections",
+      "sourceUrl": "https://www.maldon.gov.uk/info/20067/elections_and_voting/9332/upcoming_elections",
+      "quote": "Maldon District Council elections are due in May 2027.",
+      "joinedVia": null
+    },
+    "E07000075": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Rochford District Council, Upcoming Elections page (last updated 10 September 2026)",
+      "sourceUrl": "https://www.rochford.gov.uk/upcoming-elections",
+      "quote": "The next scheduled elections for Rochford District Council will take place on 6 th May 2027. There are 13 wards and one seat will be contested in each of these wards.",
+      "joinedVia": null
+    },
+    "E07000077": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Uttlesford District Council, \"Elections and voting\"",
+      "sourceUrl": "https://www.uttlesford.gov.uk/article/5012/Elections-and-voting",
+      "quote": "All-out district and parish council elections will take place on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000078": {
+      "nextYear": 2028,
+      "dateLabel": null,
+      "pattern": "halves",
+      "sourceLabel": "Cheltenham (Electoral Changes) Order 2023, SI 2023/820, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/820/made",
+      "quote": "(b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2028",
+      "joinedVia": null
+    },
+    "E07000079": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Cotswold District Council, Current and future elections",
+      "sourceUrl": "https://www.cotswold.gov.uk/about-the-council/elections-and-voting/current-and-future-elections/",
+      "quote": "The next scheduled elections in the Cotswold District will be the District and Parish/Town Council elections in May 2027.",
+      "joinedVia": null
+    },
+    "E07000080": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Forest of Dean District Council, Current and future elections",
+      "sourceUrl": "https://www.fdean.gov.uk/about-the-council/elections-and-voting/current-and-future-elections/",
+      "quote": "The next scheduled elections in the Forest of Dean will be the Local Elections, taking place on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000081": {
+      "nextYear": 2028,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Gloucester City Council, Upcoming elections (table of next elections)",
+      "sourceUrl": "https://gloucester.gov.uk/about-the-council/elections-and-voting/upcoming-elections",
+      "quote": "Gloucester City Council | Every 4 years | 2028",
+      "joinedVia": null
+    },
+    "E07000087": {
+      "nextYear": 2028,
+      "dateLabel": null,
+      "pattern": "halves",
+      "sourceLabel": "Fareham (Electoral Changes) Order 2023, SI 2023/796, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/796/made",
+      "quote": "(b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2028",
+      "joinedVia": null
+    },
+    "E07000090": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Havant (Electoral Changes) Order 2023, SI 2023/200, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/200/made",
+      "quote": "(b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E07000091": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "New Forest District Council, Election types",
+      "sourceUrl": "https://newforest.gov.uk/article/1208/Upcoming-elections",
+      "quote": "All council seats are re-elected every four years. The most recent election took place on 4 May 2023. The next scheduled elections are due to be held in May 2027.",
+      "joinedVia": null
+    },
+    "E07000093": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Test Valley Borough Council, \"Forthcoming Elections\"",
+      "sourceUrl": "https://www.testvalley.gov.uk/aboutyourcouncil/localdemocracy/elections/elections",
+      "quote": "The last elections were held on Thursday 4 May 2023 and the next elections are scheduled for May 2027, subject to Local Government Reorganisation.",
+      "joinedVia": null
+    },
+    "E07000096": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Dacorum Borough Council, Boundary reviews (electoral review timetable)",
+      "sourceUrl": "https://www.dacorum.gov.uk/home/council-democracy/elections-and-voting/boundary-reviews",
+      "quote": "Final recommendations publishedSpring 2025Order laidEarly summer 2025Order madeMay 2027 electionsChanges take effect",
+      "joinedVia": null
+    },
+    "E07000098": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Hertsmere Borough Council, Elections, Notices and Results",
+      "sourceUrl": "https://www.hertsmere.gov.uk/your-council/elections/election-notices",
+      "quote": "Type of election Held every Next election Borough Election Four Years May 2027",
+      "joinedVia": null
+    },
+    "E07000105": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Ashford Borough Council, Who is my elected representative",
+      "sourceUrl": "https://www.ashford.gov.uk/your-council/register-to-vote-and-elections/elections-and-referendums/who-is-my-elected-representative/",
+      "quote": "Borough Councillors Elections for the borough council take place every four years. The next election is in May 2027.",
+      "joinedVia": null
+    },
+    "E07000106": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Canterbury City Council, Upcoming elections",
+      "sourceUrl": "https://www.canterbury.gov.uk/voting-and-elections/upcoming-elections",
+      "quote": "The next scheduled local elections will take place on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000108": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Dover District Council, Future Elections",
+      "sourceUrl": "https://www.dover.gov.uk/Council--Democracy/Elections/Future-Elections.aspx",
+      "quote": "Future Elections The next scheduled elections are currently planned to take place on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000109": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Gravesham Borough Council, Future elections",
+      "sourceUrl": "https://www.gravesham.gov.uk/elections-voting/future-elections",
+      "quote": "We elect all of our 39 councillors every four years. Our next scheduled polls are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000111": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Sevenoaks District Council, \"Scheduled future elections and referendums\"",
+      "sourceUrl": "https://www.sevenoaks.gov.uk/info/20053/elections_and_voting/179/scheduled_future_elections_and_referendums",
+      "quote": "Thursday 6 May 2027: District Council and Town & Parish Council elections",
+      "joinedVia": null
+    },
+    "E07000112": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Folkestone and Hythe District Council, Upcoming elections",
+      "sourceUrl": "https://folkestone-hythe.gov.uk/elections/upcoming-elections",
+      "quote": "Folkestone & Hythe District Council and Parish Council elections are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000115": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Tonbridge and Malling Borough Council, \"Voting and elections\"",
+      "sourceUrl": "https://www.tmbc.gov.uk/voting-elections",
+      "quote": "Our next scheduled elections are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000116": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Tunbridge Wells (Electoral Changes) Order 2024, SI 2024/2, Schedule 2",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2024/2/made",
+      "quote": "SCHEDULE 2 Retirement of councillors elected in 2024 ... (2) Number of councillors to retire in 2026 (3) Number of councillors to retire in 2027 (4) Number of councillors to retire in 2028",
+      "joinedVia": null
+    },
+    "E07000117": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Burnley Borough Council, Postal Voting page",
+      "sourceUrl": "https://burnley.gov.uk/council-democracy/elections-voting/postal-voting/",
+      "quote": "When is the next scheduled election? The next scheduled elections are on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000118": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Chorley Council, Election of councillors in Chorley",
+      "sourceUrl": "https://chorley.gov.uk/elections-voting/Election-of-councillors-in-Chorley",
+      "quote": "Councillors are elected every year, over a 4 year cycle. ... The next scheduled local authority election will be held on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000120": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Hyndburn Borough Council, Hyndburn Borough Council Elections page",
+      "sourceUrl": "https://www.hyndburnbc.gov.uk/hyndburn-borough-council-elections/",
+      "quote": "The next elections are scheduled to take place on Thursday 6 May 2027 There are 12 out of the 16 Wards in Hyndburn with a scheduled election",
+      "joinedVia": null
+    },
+    "E07000121": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Lancaster City Council, Electoral vacancies and notices",
+      "sourceUrl": "https://www.lancaster.gov.uk/the-council-and-democracy/voting-and-elections/vacancies",
+      "quote": "OUR NEXT SCHEDULED ELECTIONS WILL BE IN MAY 2027.",
+      "joinedVia": null
+    },
+    "E07000123": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Preston City Council, Review of Local Government Reorganisation FAQs",
+      "sourceUrl": "https://preston.gov.uk/lgr/review-of-local-government-reorganisation-faqs",
+      "quote": "local elections scheduled for May 2027 will proceed on existing council boundaries. This means elections will take place for Preston City Council, with one councillor elected in each of the city's 16 wards.",
+      "joinedVia": null
+    },
+    "E07000124": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Ribble Valley Borough Council, Statement of Accounts 2024/25, p.15",
+      "sourceUrl": "https://www.ribblevalley.gov.uk/downloads/file/4642/statement-of-accounts-2024-25",
+      "quote": "The last full election for Ribble Valley Councillors was on 4 May 2023 and the next is due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000126": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "South Ribble Borough Council, \"Elections and voting\"",
+      "sourceUrl": "https://southribble.gov.uk/elections-voting",
+      "quote": "We have local elections once every 4 years, which means that all 50 borough seats are next up for election in May 2027.",
+      "joinedVia": null
+    },
+    "E07000127": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "West Lancashire (Electoral Changes) Order 2022, SI 2022/1179, art.4(3)(c)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/1179/made",
+      "quote": "one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E07000129": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Blaby District Council, Types of Elections",
+      "sourceUrl": "https://www.blaby.gov.uk/elections-and-voting/elections/types-of-elections/",
+      "quote": "District and Parish Council elections are held on the first Thursday in May, once every four years. The next election is due to take place on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000130": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Charnwood Borough Council, Elections coming up",
+      "sourceUrl": "https://www.charnwood.gov.uk/pages/elections_coming_up",
+      "quote": "The next scheduled elections taking place in this area will be on Thursday 6 May 2027 to elect councillors to: Charnwood Borough Council (all seats)",
+      "joinedVia": null
+    },
+    "E07000132": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Hinckley and Bosworth Borough Council, Borough council elections",
+      "sourceUrl": "https://www.hinckley-bosworth.gov.uk/info/200033/elections_and_voting/453/borough_council_elections",
+      "quote": "Borough council elections are held every four years. These elections are ‘all-out’ ... The next scheduled borough council elections are due to take place on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000133": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Melton Borough Council, Current and scheduled elections",
+      "sourceUrl": "https://www.melton.gov.uk/elections-and-voting/elections/current-and-scheduled-elections",
+      "quote": "Our next scheduled Borough Council elections are due in May 2027, unless a by‑election is required.",
+      "joinedVia": null
+    },
+    "E07000134": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "North West Leicestershire District Council, Boundary reviews",
+      "sourceUrl": "https://www.nwleics.gov.uk/pages/boundary_reviews",
+      "quote": "The order to for the new wards will then be laid before parliament fro 40 days and will come into effect for the next District and Parish Elections in May 2027.",
+      "joinedVia": null
+    },
+    "E07000136": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Boston Borough Council, Elections page",
+      "sourceUrl": "https://www.boston.gov.uk/elections",
+      "quote": "This is part of the normal local election cycle. We elect all our 30 councillors every four years. Our next scheduled polls are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000138": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "City of Lincoln Council, Forthcoming election and referendum dates",
+      "sourceUrl": "https://www.lincoln.gov.uk/voting-elections/forthcoming-election-referendum-dates",
+      "quote": "The next scheduled election dates are as follows: Election Date City of Lincoln Council May 2027",
+      "joinedVia": null
+    },
+    "E07000139": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "North Kesteven District Council, Becoming a Councillor",
+      "sourceUrl": "https://www.n-kesteven.gov.uk/council-democracy/how-council-works/your-councillors/becoming-councillor",
+      "quote": "Elections for North Kesteven District Council take place every four years and the next set of elections are scheduled to take place on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000140": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "South Holland District Council, \"Elections\"",
+      "sourceUrl": "https://www.sholland.gov.uk/elections",
+      "quote": "Our next scheduled polls are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000141": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "South Kesteven District Council, \"Scheduled elections and referendums\"",
+      "sourceUrl": "https://www.southkesteven.gov.uk/your-council-and-democracy/elections-and-voting/scheduled-elections-and-referendums",
+      "quote": "There are no scheduled elections due to take place in May 2026 in the South Kesteven area. Our next scheduled polls are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000142": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "West Lindsey District Council, \"Scheduled elections\"",
+      "sourceUrl": "https://www.west-lindsey.gov.uk/elections-voting/scheduled-elections",
+      "quote": "The election of district councillors is held once every four years on the first Thursday in May, namely 2023, 2027 and so on.",
+      "joinedVia": null
+    },
+    "E07000143": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Breckland Council, Become a district councillor",
+      "sourceUrl": "https://www.breckland.gov.uk/elections/become-district-councillor",
+      "quote": "District Elections are held every four years. In the Breckland District there are 49 councillors who are elected in 27 wards.The next elections will be held in May 2027.",
+      "joinedVia": null
+    },
+    "E07000144": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Broadland and South Norfolk councils (shared site), Working at elections",
+      "sourceUrl": "https://www.southnorfolkandbroadland.gov.uk/council/elections/working-elections",
+      "quote": "The next scheduled elections will be on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000146": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Borough Council of King's Lynn and West Norfolk, Upcoming elections",
+      "sourceUrl": "https://www.west-norfolk.gov.uk/info/20090/elections_and_voting/456/upcoming_elections",
+      "quote": "Borough Council elections The next election is due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000147": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "North Norfolk District Council, County council elections set for May (news, Feb 2026)",
+      "sourceUrl": "https://www.north-norfolk.gov.uk/news/2026/february/county-council-elections-set-for-may/",
+      "quote": "North Norfolk District Councillors continue to serve their four-year term until May 2027, having been elected in 2023.",
+      "joinedVia": null
+    },
+    "E07000170": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Ashfield District Council, Election notices (election cycle table)",
+      "sourceUrl": "https://www.ashfield.gov.uk/elections-and-voting/election-notices/",
+      "quote": "Ashfield District Council Elections 4 May 2023 4 years May 2027 Parish Council Elections 4 May 2023 4 years May 2027",
+      "joinedVia": null
+    },
+    "E07000171": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Bassetlaw District Council, Becoming a councillor (FAQ)",
+      "sourceUrl": "https://www.bassetlaw.gov.uk/council-and-democracy/elections-in-bassetlaw/elections-information/becoming-a-councillor/",
+      "quote": "When are the next local elections? The next local elections are scheduled to take place in 2027.",
+      "joinedVia": null
+    },
+    "E07000172": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Broxtowe Borough Council, Upcoming elections",
+      "sourceUrl": "https://www.broxtowe.gov.uk/for-you/elections-voting/upcoming-elections/",
+      "quote": "The next scheduled elections to take place are the Broxtowe Borough and Parish Council elections on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000173": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Gedling Borough Council, Become a Councillor",
+      "sourceUrl": "https://www.gedling.gov.uk/democracy-and-elections/your-councillors/become-councillor",
+      "quote": "It consists of 19 wards represented by 41 councillors. The next elections for our area will be held on the 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000174": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Mansfield District Council, Current elections",
+      "sourceUrl": "https://www.mansfield.gov.uk/elections-voting/current-elections",
+      "quote": "We elect all of our 36 councillors and Elected Mayor every four years. Our next scheduled polls are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000176": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Rushcliffe Borough Council, \"Elections: What and When?\"",
+      "sourceUrl": "https://www.rushcliffe.gov.uk/elections/elections-what-and-when",
+      "quote": "The next election is to be held on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000177": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Cherwell District Council, Upcoming Elections (Elections 2026 and 2027)",
+      "sourceUrl": "https://www.cherwell.gov.uk/info/11/elections/1319/elections-2026",
+      "quote": "One third of district council seats (one per ward) and one third of parishes have scheduled elections in May 2027",
+      "joinedVia": null
+    },
+    "E07000178": {
+      "nextYear": 2028,
+      "dateLabel": null,
+      "pattern": "halves",
+      "sourceLabel": "Oxford City Council, Oxford City Council elections 2026 page",
+      "sourceUrl": "https://www.oxford.gov.uk/elections-voting/oxford-city-council-elections-2026",
+      "quote": "Each ward has two councillors and one in each ward is being elected on 7 May. The other councillor in each ward will be due for re-election in May 2028 (local government reorganisation permitting).",
+      "joinedVia": null
+    },
+    "E07000179": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "South Oxfordshire District Council, \"Current and Upcoming Elections\"",
+      "sourceUrl": "https://www.southoxon.gov.uk/south-oxfordshire-district-council/local-democracy-and-elections/elections-and-voting/current-and-upcoming-elections/",
+      "quote": "The next scheduled elections District Council elections will be held on Thursday 6 May 2027, subject to any further changes resulting from local government re-organisation.",
+      "joinedVia": null
+    },
+    "E07000180": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Vale of White Horse District Council, \"Current and Upcoming Elections\"",
+      "sourceUrl": "https://www.whitehorsedc.gov.uk/?p=9011",
+      "quote": "The next scheduled elections District Council elections will be held on Thursday 6 May 2027, subject to any further changes resulting from local government re-organisation.",
+      "joinedVia": null
+    },
+    "E07000181": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "West Oxfordshire District Council, Current and future elections page",
+      "sourceUrl": "https://www.westoxon.gov.uk/about-the-council/elections-and-voting/current-and-future-elections/",
+      "quote": "Local elections will be held for a third of the District Council seats and Parish/Town Council elections for associated areas on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000192": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Cannock Chase (Electoral Changes) Order 2023, SI 2023/1023, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/1023/made",
+      "quote": "(b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E07000196": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "South Staffordshire Council, \"Forthcoming elections and results\"",
+      "sourceUrl": "https://www.sstaffs.gov.uk/elections/election-results.cfm?area=63",
+      "quote": "Local elections, and contested Parish elections Four Years 6th May 2027",
+      "joinedVia": null
+    },
+    "E07000197": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Stafford Borough Council, \"Elections\"",
+      "sourceUrl": "https://www.staffordbc.gov.uk/elections",
+      "quote": "The next scheduled election will be in May 2027 .",
+      "joinedVia": null
+    },
+    "E07000198": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Staffordshire Moorlands District Council, \"Voting and elections\"",
+      "sourceUrl": "https://www.staffsmoorlands.gov.uk/elections",
+      "quote": "Our next scheduled elections are due to take place in May 2027 .",
+      "joinedVia": null
+    },
+    "E07000199": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Tamworth Borough Council, Elections 2027 page",
+      "sourceUrl": "https://www.tamworth.gov.uk/elections-2027",
+      "quote": "Elections 2027 Local elections will take place on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000200": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Babergh District Council, Devolution and local government reorganisation page",
+      "sourceUrl": "https://www.babergh.gov.uk/w/devolution-and-local-government-reorganisation",
+      "quote": "This means district and borough council elections in Suffolk will take place in May 2027, using existing council boundaries. The planned shadow unitary council elections will not go ahead.",
+      "joinedVia": null
+    },
+    "E07000202": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Ipswich Borough Council, Current elections page",
+      "sourceUrl": "https://www.ipswich.gov.uk/your-council/elections-and-electoral-registration/current-elections",
+      "quote": "Ipswich Borough Council election to elect a third of members (16 councillors) is scheduled to be held on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000203": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Mid Suffolk District Council, LGR and devolution",
+      "sourceUrl": "https://www.midsuffolk.gov.uk/en/lgr-and-devolution",
+      "quote": "This means district and borough council elections in Suffolk will take place in May 2027, using existing council boundaries. The planned shadow unitary council elections will not go ahead.",
+      "joinedVia": null
+    },
+    "E07000218": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "North Warwickshire Borough Council, Upcoming elections",
+      "sourceUrl": "https://www.northwarks.gov.uk/elections-voting/elections-2-may-2024",
+      "quote": "Elections for all Borough Council seats are held every four years. The next scheduled elections will be on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E07000219": {
+      "nextYear": 2028,
+      "dateLabel": null,
+      "pattern": "halves",
+      "sourceLabel": "Nuneaton & Bedworth (Electoral Changes) Order 2024, SI 2024/3, art.4(3)(b)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2024/3/made",
+      "quote": "one is to retire on the fourth day after the ordinary day of election of councillors in England in 2028.",
+      "joinedVia": null
+    },
+    "E07000222": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Warwick District Council news, \"Local elections 2026: no elections scheduled for Warwick District\"",
+      "sourceUrl": "https://www.warwickdc.gov.uk/news/article/1433/local_elections_2026_-_no_elections_scheduled_for_warwick_district",
+      "quote": "Elections to the district and parish/town councils are currently held every four years. The next scheduled local government elections are currently due in May 2027.",
+      "joinedVia": null
+    },
+    "E07000224": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Arun District Council, Calendar of elections and referendums",
+      "sourceUrl": "https://www.arun.gov.uk/calendar-of-elections",
+      "quote": "Calendar of elections and referendums Year Election or referendum 2026 7 May ... West Sussex County Council elections 2027 6 May ... District, Town and Parish Council elections",
+      "joinedVia": null
+    },
+    "E07000225": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Chichester District Council, Future elections (table of scheduled future elections)",
+      "sourceUrl": "https://www.chichester.gov.uk/upcomingelections",
+      "quote": "Dates of scheduled future elections Year Election Date 2026 West Sussex County Council 7 May 2027 District and Parish Elections 6 May stc",
+      "joinedVia": null
+    },
+    "E07000227": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Horsham District Council, Elections: Upcoming elections",
+      "sourceUrl": "https://www.horsham.gov.uk/council-democracy-and-elections/elections/upcoming-elections",
+      "quote": "Future elections The following elections are scheduled to take place in the coming years: May 2027: District & Parish Elections",
+      "joinedVia": null
+    },
+    "E07000229": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Adur & Worthing Councils, Upcoming elections page",
+      "sourceUrl": "https://www.adur-worthing.gov.uk/elections-and-voting/upcoming-elections/",
+      "quote": "2027: 6th May 2027: Worthing Borough elections Shadow Authority (Unitary)",
+      "joinedVia": null
+    },
+    "E07000234": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Bromsgrove District Council, Current elections and referendums",
+      "sourceUrl": "https://www.bromsgrove.gov.uk/council/elections/current-elections-and-referendums/",
+      "quote": "This is part of the normal local election cycle. We elect all our local councillors every four years. Our next scheduled polls are due to take place in May 2027.",
+      "joinedVia": null
+    },
+    "E07000236": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Redditch (Electoral Changes) Order 2023, SI 2023/654, art.4(3)(b)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/654/made",
+      "quote": "one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027;",
+      "joinedVia": null
+    },
+    "E07000239": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Wyre Forest District Council, \"When do elections take place?\"",
+      "sourceUrl": "https://www.wyreforestdc.gov.uk/your-council/elections-and-voting/upcoming-elections-and-vacancies/when-do-elections-take-place/",
+      "quote": "District council elections take place every four years. The last elections to Wyre Forest District Council took place on Thursday, 4 May 2023. The next election will be in 2027.",
+      "joinedVia": null
+    },
+    "E07000240": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "St Albans City and District Council, Elections and results page",
+      "sourceUrl": "https://www.stalbans.gov.uk/elections-and-results",
+      "quote": "List of Elections and when they are held Thursday 6 May 2027 St Albans City and District Council elections Parish and Town Council elections",
+      "joinedVia": null
+    },
+    "E07000243": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Stevenage (Electoral Changes) Order 2023, SI 2023/653, art.4(3)(b)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2023/653/made",
+      "quote": "one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027;",
+      "joinedVia": null
+    },
+    "E07000244": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "East Suffolk Council, Become a councillor",
+      "sourceUrl": "https://www.eastsuffolk.gov.uk/your-council/councillors/become-councillor",
+      "quote": "In May 2027, East Suffolk Council will hold elections to choose the 55 councillors who will represent the district for the next four years.",
+      "joinedVia": null
+    },
+    "E07000245": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "West Suffolk Council, How to become a councillor: frequently asked questions",
+      "sourceUrl": "https://www.westsuffolk.gov.uk/Council/elections/how-to-become-a-councillor/frequently-asked-questions.cfm",
+      "quote": "Every councillor is elected for a four-year term. The last election took place on Thursday 4 May 2023 and the council term will be until Tuesday 11 May 2027.",
+      "joinedVia": null
+    },
+    "E08000001": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Bolton (Electoral Changes) Order 2022, SI 2022/964, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/964/made",
+      "quote": "Of the councillors elected for a ward in 2023 [...] (b) one is to retire [...] in 2026; (c) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E08000003": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Manchester City Council, The next election",
+      "sourceUrl": "https://www.manchester.gov.uk/the-council-and-democracy/elections-and-voting/elections/the-next-election",
+      "quote": "The next scheduled elections are the local elections taking place on 6 May 2027.",
+      "joinedVia": null
+    },
+    "E08000004": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Oldham (Electoral Changes) Order 2022, SI 2022/778, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/778/made",
+      "quote": "Of the councillors elected for a ward in 2023 [...] (b) one is to retire [...] in 2026; (c) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E08000005": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Rochdale Borough Council, Your next election: Local elections",
+      "sourceUrl": "https://www.rochdale.gov.uk/elections-voting/next-election",
+      "quote": "The next local election is scheduled to take place in 2027. The most recent local election was held on Thursday, 7 May 2026.",
+      "joinedVia": null
+    },
+    "E08000006": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Salford City Council, Future elections",
+      "sourceUrl": "https://www.salford.gov.uk/your-council/elections-and-voting/future-elections/",
+      "quote": "Future elections will be taking place as follows: Election date Election type 2027 Local Elections",
+      "joinedVia": null
+    },
+    "E08000007": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Stockport (Electoral Changes) Order 2022, SI 2022/1135, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/1135/made",
+      "quote": "Of the councillors elected for a ward in 2023 [...] (b) one is to retire [...] in 2026; (c) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E08000008": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Tameside (Electoral Changes) Order 2022, SI 2022/661, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/661/made",
+      "quote": "Of the councillors elected for a ward in 2023 [...] (b) one is to retire [...] in 2026; (c) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E08000009": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Trafford (Electoral Changes) Order 2022, SI 2022/1375, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/1375/made",
+      "quote": "Of the councillors elected for a ward in 2023 [...] (b) one is to retire [...] in 2026; (c) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E08000010": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Wigan (Electoral Changes) Order 2022, SI 2022/1372, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/1372/made",
+      "quote": "Of the councillors elected for a ward in 2023 [...] (b) one is to retire [...] in 2026; (c) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E08000014": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Sefton (Electoral Changes) Order 2024, SI 2024/1178, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2024/1178/made",
+      "quote": "Of the councillors elected for a ward in 2026 [...] (a) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027; (b) one is to retire [...] in 2028;",
+      "joinedVia": null
+    },
+    "E08000015": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Wirral Council, \"Local elections\"",
+      "sourceUrl": "https://www.wirral.gov.uk/elections-and-voting/elections/local-elections",
+      "quote": "The next local elections for all wards are due to take place on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E08000017": {
+      "nextYear": 2029,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "City of Doncaster Council, Upcoming elections",
+      "sourceUrl": "https://www.doncaster.gov.uk/services/the-council-democracy/upcoming-elections",
+      "quote": "The last all-out local Elections took place on 1 May 2025 therefore the next all-out elections will be 3 May 2029, unless any vacancies occur in the meantime causing a by-election.",
+      "joinedVia": null
+    },
+    "E08000018": {
+      "nextYear": 2028,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Rotherham Metropolitan Borough Council, Upcoming elections",
+      "sourceUrl": "https://www.rotherham.gov.uk/elections-voting/upcoming-elections",
+      "quote": "Rotherham has all-out elections ... every 4 years. The next all-out elections will take place on 4 May 2028.",
+      "joinedVia": null
+    },
+    "E08000021": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Newcastle upon Tyne (Electoral Changes) Order 2025, SI 2025/566, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/566/made",
+      "quote": "Of the councillors elected for a ward in 2026 [...] (a) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027; (b) one is to retire [...] in 2028;",
+      "joinedVia": null
+    },
+    "E08000022": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "North Tyneside (Electoral Changes) Order 2024, SI 2024/138, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2024/138/made",
+      "quote": "Of the councillors elected for a ward in 2024 [...] (a) one is to retire [...] in 2026; (b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027;",
+      "joinedVia": null
+    },
+    "E08000023": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "South Tyneside (Electoral Changes) Order 2025, SI 2025/816, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/816/made",
+      "quote": "Of the councillors elected for a ward in 2026, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E08000024": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Sunderland (Electoral Changes) Order 2025, SI 2025/564, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/564/made",
+      "quote": "Of the councillors elected for a ward in 2026, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E08000025": {
+      "nextYear": 2030,
+      "dateLabel": null,
+      "pattern": "whole",
+      "sourceLabel": "Birmingham City Council, Birmingham City Council election on 7 May 2026 (page updated 8 June 2026); corroborated by City of Birmingham (Scheme of Elections) Order 2015, SI 2015/43, art.2 as amended by SI 2015/666",
+      "sourceUrl": "https://www.birmingham.gov.uk/info/20097/elections_and_voting/3187/birmingham_city_council_election_on_7_may_2026",
+      "quote": "Each councillor has been elected for a 4-year term of office. The next local elections are scheduled to be on Thursday 2 May 2030.",
+      "joinedVia": null
+    },
+    "E08000026": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Coventry (Electoral Changes) Order 2024, SI 2024/1181, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2024/1181/made",
+      "quote": "Of the councillors elected for a ward in 2026 [...] (a) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027; (b) one is to retire [...] in 2028;",
+      "joinedVia": null
+    },
+    "E08000027": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Dudley (Electoral Changes) Order 2024, SI 2024/156, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2024/156/made",
+      "quote": "Of the councillors elected for a ward in 2024 [...] (a) one is to retire [...] in 2026; (b) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027;",
+      "joinedVia": null
+    },
+    "E08000028": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Sandwell (Electoral Changes) Order 2025, SI 2025/1344, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/1344/made",
+      "quote": "Of the councillors elected for a ward in 2026, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E08000029": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Solihull (Electoral Changes) Order 2025, SI 2025/868, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/868/made",
+      "quote": "Of the councillors elected for a ward in 2026 [...] (a) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027; (b) one is to retire [...] in 2028;",
+      "joinedVia": null
+    },
+    "E08000030": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Walsall (Electoral Changes) Order 2025, SI 2025/155, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/155/made",
+      "quote": "Of the councillors elected for a ward in 2026, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E08000031": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Wolverhampton (Electoral Changes) Order 2022, SI 2022/967, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2022/967/made",
+      "quote": "Of the councillors elected for a ward in 2023 [...] (b) one is to retire [...] in 2026; (c) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027.",
+      "joinedVia": null
+    },
+    "E08000032": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Bradford (Electoral Changes) Order 2025, SI 2025/461, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/461/made",
+      "quote": "Of the councillors elected for a ward in 2026 [...] (a) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027; (b) one is to retire [...] in 2028;",
+      "joinedVia": null
+    },
+    "E08000033": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Calderdale (Electoral Changes) Order 2024, SI 2024/1182, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2024/1182/made",
+      "quote": "Of the councillors elected for a ward in 2026, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E08000034": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Kirklees (Electoral Changes) Order 2025, SI 2025/565, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/565/made",
+      "quote": "Of the councillors elected for a ward in 2026 [...] (a) one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027; (b) one is to retire [...] in 2028;",
+      "joinedVia": null
+    },
+    "E08000035": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Leeds City Council, Leeds City Council elections",
+      "sourceUrl": "https://www.leeds.gov.uk/your-council/elections/leeds-city-council-elections",
+      "quote": "The next scheduled elections will be the Leeds City Council elections which will be held on Thursday 6 May 2027.",
+      "joinedVia": null
+    },
+    "E08000036": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Wakefield (Electoral Changes) Order 2025, SI 2025/459, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/459/made",
+      "quote": "Of the councillors elected for a ward in 2026, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E08000037": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Gateshead (Electoral Changes) Order 2024, SI 2024/1179, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2024/1179/made",
+      "quote": "Of the councillors elected for a ward in 2026, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": null
+    },
+    "E08000038": {
+      "nextYear": 2027,
+      "dateLabel": null,
+      "pattern": "thirds",
+      "sourceLabel": "Barnsley (Electoral Changes) Order 2025, SI 2025/460, art.4(3)",
+      "sourceUrl": "https://www.legislation.gov.uk/uksi/2025/460/made",
+      "quote": "Of the councillors elected for a ward in 2026, a one is to retire on the fourth day after the ordinary day of election of councillors in England in 2027",
+      "joinedVia": "E08000016"
+    },
+    "E09000001": {
+      "nextYear": 2029,
+      "dateLabel": "March 2029",
+      "pattern": "whole",
+      "sourceLabel": "City of London Corporation, Court of Common Council committee details (democracy.cityoflondon.gov.uk)",
+      "sourceUrl": "https://democracy.cityoflondon.gov.uk/mgCommitteeDetails.aspx?ID=223",
+      "quote": "The Common Councillors are elected every 4 years and the next elections will be held in March 2029.",
+      "joinedVia": null
+    }
+  }
+}
