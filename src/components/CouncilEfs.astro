@@ -5,7 +5,7 @@ import { efsRoles, efsSource, efsYear } from "../lib/efs-presentation";
 interface Props { slug: string }
 const support = councilEfs(Astro.props.slug);
 ---
-{support && <section class="section" id="exceptional-financial-support" aria-labelledby="efs-heading" data-council-efs>
+{support && <section class="section" id="exceptional-financial-support" aria-labelledby="efs-heading" data-council-efs data-profile-section="exceptional-financial-support">
   <h2 id="efs-heading">Exceptional Financial Support</h2>
   {support.entries.map(({ statement, figure }) => <div data-fact class="support-figure">
     <p>{statement.authorityAsPrinted}, {efsYear(figure.supportYear)}: {figure.amountGbpM === null

@@ -4,7 +4,7 @@
  * committed data in src/lib/council-profile.ts (what the council is, its
  * spending record, Band D at a glance, the next school break, and one list of
  * sources). A section whose data is missing is absent, not blank. Seats,
- * control and elections join when a sourced file holds them.
+ * control and last election dates remain held.
  */
 import SchoolHolidays from "../../components/SchoolHolidays.astro";
 import CouncilActions from "../../components/CouncilActions.astro";
@@ -19,6 +19,10 @@ import SourceLine from "../../components/SourceLine.astro";
 import SpendingRecord from "../../components/SpendingRecord.astro";
 import CouncilEfs from "../../components/CouncilEfs.astro";
 import { councilEfs } from "../../lib/council-efs";
+import ProfileCollection from "../../components/ProfileCollection.astro";
+import ProfileElections from "../../components/ProfileElections.astro";
+import { collectionFor } from "../../lib/collection";
+import { electionFor } from "../../lib/elections";
 import ProfileAbout from "../../components/ProfileAbout.astro";
 import ProfileTax from "../../components/ProfileTax.astro";
 import ProfileSources from "../../components/ProfileSources.astro";
@@ -170,9 +174,11 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   )}
   <PageContents items={[
     {id: 'about', label: 'What the council is'},
-    ...(councilEfs(council.slug) ? [{id: 'exceptional-financial-support', label: 'Exceptional Financial Support'}] : []),
-    ...(profile.spending ? [{id: 'spending', label: 'Spending'}] : []),
     ...(profile.tax ? [{id: 'tax-summary', label: 'Band D at a glance'}] : []),
+    ...(collectionFor(council.gss) ? [{id: 'collection', label: 'Council tax collection'}] : []),
+    ...(councilEfs(council.slug) ? [{id: 'exceptional-financial-support', label: 'Exceptional Financial Support'}] : []),
+    ...(electionFor(council.gss) ? [{id: 'elections', label: 'Elections'}] : []),
+    ...(profile.spending ? [{id: 'spending', label: 'Spending'}] : []),
     ...(profile.termDates ? [{id: 'school-holidays', label: 'School holidays'}] : []),
     ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
     ...(history.length > 1 ? [{id: 'history', label: 'Previous years'}] : []),
@@ -180,11 +186,12 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     ...(profile.sources.length > 0 ? [{id: 'sources', label: 'Sources'}] : []),
   ]} />
 
-  <CouncilEfs slug={council.slug} />
-
-  <SpendingRecord gss={council.gss} name={name} />
-
   {profile.tax && <ProfileTax name={name} region={tax.region} tax={profile.tax} />}
+
+  <ProfileCollection gss={council.gss} name={name} />
+  <CouncilEfs slug={council.slug} />
+  <ProfileElections council={council} name={name} />
+  <SpendingRecord gss={council.gss} name={name} />
 
   <SchoolHolidays name={name} term={profile.termDates} />
 

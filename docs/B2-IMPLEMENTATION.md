@@ -86,3 +86,15 @@ Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed an
 Added the elections section using only the 174 retained records. The seven held quotations are suppressed by the shared helper while their year sentence and citation remain. Pattern wording and the scheduled date caveat follow the brief. The optional results link comes only from sisterLinks. Page integration follows in item 9.
 
 Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.
+
+## Item 9
+
+Integrated the components in the requested order and kept PageContents aligned. Profile sources now follow first appearance on the page and include the new datasets once each, plus B1's EFS citations. Added the four datasets to Sources and the profile rules to Methodology. Held features remain absent.
+
+### Decisions taken
+
+* Retain B1's `exceptional-financial-support` id in PROFILE_SECTIONS and add the profile marker to its existing section.
+* The pinned election source has no licence field. Do not invent a licence; cite the register and each primary document.
+* Keep the existing register name row unchanged, as required, while all new sentences use the tax table name.
+
+Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.

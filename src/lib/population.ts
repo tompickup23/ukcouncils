@@ -4,7 +4,7 @@ import type { SourceRef } from "./sources";
 
 export interface PopulationArea { code: string; name: string; geography: string; allAges: number }
 export const population = JSON.parse(readFileSync(resolve(process.cwd(), "data/population/mye25-population.json"), "utf8")) as {
-  source: { publisher: string; title: string; url: string; published: string };
+  source: { publisher: string; title: string; url: string; published: string; licence: string };
   areas: Record<string, PopulationArea>;
 };
 export function populationFor(gss: string): number | null {

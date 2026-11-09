@@ -4,6 +4,9 @@ import { join, resolve } from "node:path";
 import { loadYear, CURRENT_YEAR } from "../src/lib/council-tax";
 import { PROFILE_SECTIONS, councilProfile } from "../src/lib/council-profile";
 import { councilPages, type CouncilPage } from "../src/lib/paths";
+import { collection } from "../src/lib/collection";
+import { elections } from "../src/lib/elections";
+import { councilEfs } from "../src/lib/council-efs";
 import { loadRegistry } from "../src/lib/registry";
 import { spendingFor, spendingRecord } from "../src/lib/spending";
 
@@ -55,6 +58,9 @@ function expectedSections(gss: string, parentGss: string | null): string[] {
   const calendar = FEED.authorities[parentGss || gss];
   const present: Record<string, boolean> = {
     about: true,
+    collection: Boolean(collection.councils[gss]),
+    elections: Boolean(elections.councils[gss]),
+    "exceptional-financial-support": Boolean(councilEfs(pages.find(p => p.council.gss === gss)!.council.slug)),
     spending: Boolean(SPENDING.bodies[gss]?.generated),
     "tax-summary": typeof bandD === "number" && bandD > 0,
     "school-holidays": Boolean(calendar && calendar.scope === "authority" && calendar.years[FEED.currentYear]),
@@ -145,7 +151,7 @@ describe.skipIf(!built)("the built Lancashire council pages", () => {
       const spending = /data-spending-record/.test(html) ? ["spending"] : [];
       const rendered = PROFILE_SECTIONS.filter((id) => found.includes(id) || spending.includes(id));
       expect(rendered, council.slug).toEqual(councilProfile(council, tax).sections);
-      for (const id of ["seats", "who-runs-it", "elections"]) expect(html).not.toContain(`id="${id}"`);
+      for (const id of ["seats", "who-runs-it", "last-election"]) expect(html).not.toContain(`id="${id}"`);
     }
   });
 
