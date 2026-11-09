@@ -1,0 +1,2018 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "publisher": "Office for National Statistics",
+    "title": "Population estimates for the UK, England, Wales, Scotland and Northern Ireland: mid-2025",
+    "release": "MYE25UK",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland",
+    "fileUrl": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland/mid2025/mye25tablesuk.xlsx",
+    "file": "mye25tablesuk.xlsx",
+    "sha256": "8ae244e3341257ecccaee55f4973fe12f46afe6656ead6c1a9ed3f4f8585e40f",
+    "published": "2026-10-01",
+    "reference": "mid-2025",
+    "licence": "Open Government Licence v3.0",
+    "sheet": "MYE2 - Persons",
+    "column": "All ages",
+    "retrieved": "2026-11-09"
+  },
+  "areas": {
+    "E92000001": {
+      "code": "E92000001",
+      "name": "ENGLAND",
+      "geography": "Country",
+      "allAges": 58834812
+    },
+    "E12000001": {
+      "code": "E12000001",
+      "name": "NORTH EAST",
+      "geography": "Region",
+      "allAges": 2762746
+    },
+    "E06000047": {
+      "code": "E06000047",
+      "name": "County Durham",
+      "geography": "Unitary Authority",
+      "allAges": 539146
+    },
+    "E06000005": {
+      "code": "E06000005",
+      "name": "Darlington",
+      "geography": "Unitary Authority",
+      "allAges": 113402
+    },
+    "E06000001": {
+      "code": "E06000001",
+      "name": "Hartlepool",
+      "geography": "Unitary Authority",
+      "allAges": 99656
+    },
+    "E06000002": {
+      "code": "E06000002",
+      "name": "Middlesbrough",
+      "geography": "Unitary Authority",
+      "allAges": 152795
+    },
+    "E06000057": {
+      "code": "E06000057",
+      "name": "Northumberland",
+      "geography": "Unitary Authority",
+      "allAges": 333975
+    },
+    "E06000003": {
+      "code": "E06000003",
+      "name": "Redcar and Cleveland",
+      "geography": "Unitary Authority",
+      "allAges": 139541
+    },
+    "E06000004": {
+      "code": "E06000004",
+      "name": "Stockton-on-Tees",
+      "geography": "Unitary Authority",
+      "allAges": 207158
+    },
+    "E11000007": {
+      "code": "E11000007",
+      "name": "Tyne and Wear (Met County)",
+      "geography": "Metropolitan County",
+      "allAges": 1177073
+    },
+    "E08000037": {
+      "code": "E08000037",
+      "name": "Gateshead",
+      "geography": "Metropolitan District",
+      "allAges": 202509
+    },
+    "E08000021": {
+      "code": "E08000021",
+      "name": "Newcastle upon Tyne",
+      "geography": "Metropolitan District",
+      "allAges": 320838
+    },
+    "E08000022": {
+      "code": "E08000022",
+      "name": "North Tyneside",
+      "geography": "Metropolitan District",
+      "allAges": 215401
+    },
+    "E08000023": {
+      "code": "E08000023",
+      "name": "South Tyneside",
+      "geography": "Metropolitan District",
+      "allAges": 151255
+    },
+    "E08000024": {
+      "code": "E08000024",
+      "name": "Sunderland",
+      "geography": "Metropolitan District",
+      "allAges": 287070
+    },
+    "E12000002": {
+      "code": "E12000002",
+      "name": "NORTH WEST",
+      "geography": "Region",
+      "allAges": 7772854
+    },
+    "E06000008": {
+      "code": "E06000008",
+      "name": "Blackburn with Darwen",
+      "geography": "Unitary Authority",
+      "allAges": 163801
+    },
+    "E06000009": {
+      "code": "E06000009",
+      "name": "Blackpool",
+      "geography": "Unitary Authority",
+      "allAges": 143492
+    },
+    "E06000049": {
+      "code": "E06000049",
+      "name": "Cheshire East",
+      "geography": "Unitary Authority",
+      "allAges": 425459
+    },
+    "E06000050": {
+      "code": "E06000050",
+      "name": "Cheshire West and Chester",
+      "geography": "Unitary Authority",
+      "allAges": 373951
+    },
+    "E06000063": {
+      "code": "E06000063",
+      "name": "Cumberland",
+      "geography": "Unitary Authority",
+      "allAges": 282343
+    },
+    "E06000006": {
+      "code": "E06000006",
+      "name": "Halton",
+      "geography": "Unitary Authority",
+      "allAges": 131912
+    },
+    "E06000007": {
+      "code": "E06000007",
+      "name": "Warrington",
+      "geography": "Unitary Authority",
+      "allAges": 215425
+    },
+    "E06000064": {
+      "code": "E06000064",
+      "name": "Westmorland and Furness",
+      "geography": "Unitary Authority",
+      "allAges": 231307
+    },
+    "E11000001": {
+      "code": "E11000001",
+      "name": "Greater Manchester (Met County)",
+      "geography": "Metropolitan County",
+      "allAges": 3017590
+    },
+    "E08000001": {
+      "code": "E08000001",
+      "name": "Bolton",
+      "geography": "Metropolitan District",
+      "allAges": 309732
+    },
+    "E08000002": {
+      "code": "E08000002",
+      "name": "Bury",
+      "geography": "Metropolitan District",
+      "allAges": 199271
+    },
+    "E08000003": {
+      "code": "E08000003",
+      "name": "Manchester",
+      "geography": "Metropolitan District",
+      "allAges": 588256
+    },
+    "E08000004": {
+      "code": "E08000004",
+      "name": "Oldham",
+      "geography": "Metropolitan District",
+      "allAges": 251915
+    },
+    "E08000005": {
+      "code": "E08000005",
+      "name": "Rochdale",
+      "geography": "Metropolitan District",
+      "allAges": 237641
+    },
+    "E08000006": {
+      "code": "E08000006",
+      "name": "Salford",
+      "geography": "Metropolitan District",
+      "allAges": 297004
+    },
+    "E08000007": {
+      "code": "E08000007",
+      "name": "Stockport",
+      "geography": "Metropolitan District",
+      "allAges": 304879
+    },
+    "E08000008": {
+      "code": "E08000008",
+      "name": "Tameside",
+      "geography": "Metropolitan District",
+      "allAges": 240822
+    },
+    "E08000009": {
+      "code": "E08000009",
+      "name": "Trafford",
+      "geography": "Metropolitan District",
+      "allAges": 240981
+    },
+    "E08000010": {
+      "code": "E08000010",
+      "name": "Wigan",
+      "geography": "Metropolitan District",
+      "allAges": 347089
+    },
+    "E10000017": {
+      "code": "E10000017",
+      "name": "Lancashire",
+      "geography": "County",
+      "allAges": 1308567
+    },
+    "E07000117": {
+      "code": "E07000117",
+      "name": "Burnley",
+      "geography": "Non-metropolitan District",
+      "allAges": 100946
+    },
+    "E07000118": {
+      "code": "E07000118",
+      "name": "Chorley",
+      "geography": "Non-metropolitan District",
+      "allAges": 121814
+    },
+    "E07000119": {
+      "code": "E07000119",
+      "name": "Fylde",
+      "geography": "Non-metropolitan District",
+      "allAges": 86689
+    },
+    "E07000120": {
+      "code": "E07000120",
+      "name": "Hyndburn",
+      "geography": "Non-metropolitan District",
+      "allAges": 86908
+    },
+    "E07000121": {
+      "code": "E07000121",
+      "name": "Lancaster",
+      "geography": "Non-metropolitan District",
+      "allAges": 145237
+    },
+    "E07000122": {
+      "code": "E07000122",
+      "name": "Pendle",
+      "geography": "Non-metropolitan District",
+      "allAges": 100203
+    },
+    "E07000123": {
+      "code": "E07000123",
+      "name": "Preston",
+      "geography": "Non-metropolitan District",
+      "allAges": 164498
+    },
+    "E07000124": {
+      "code": "E07000124",
+      "name": "Ribble Valley",
+      "geography": "Non-metropolitan District",
+      "allAges": 66938
+    },
+    "E07000125": {
+      "code": "E07000125",
+      "name": "Rossendale",
+      "geography": "Non-metropolitan District",
+      "allAges": 73688
+    },
+    "E07000126": {
+      "code": "E07000126",
+      "name": "South Ribble",
+      "geography": "Non-metropolitan District",
+      "allAges": 117554
+    },
+    "E07000127": {
+      "code": "E07000127",
+      "name": "West Lancashire",
+      "geography": "Non-metropolitan District",
+      "allAges": 123564
+    },
+    "E07000128": {
+      "code": "E07000128",
+      "name": "Wyre",
+      "geography": "Non-metropolitan District",
+      "allAges": 120528
+    },
+    "E11000002": {
+      "code": "E11000002",
+      "name": "Merseyside (Met County)",
+      "geography": "Metropolitan County",
+      "allAges": 1479007
+    },
+    "E08000011": {
+      "code": "E08000011",
+      "name": "Knowsley",
+      "geography": "Metropolitan District",
+      "allAges": 163723
+    },
+    "E08000012": {
+      "code": "E08000012",
+      "name": "Liverpool",
+      "geography": "Metropolitan District",
+      "allAges": 507915
+    },
+    "E08000014": {
+      "code": "E08000014",
+      "name": "Sefton",
+      "geography": "Metropolitan District",
+      "allAges": 287583
+    },
+    "E08000013": {
+      "code": "E08000013",
+      "name": "St. Helens",
+      "geography": "Metropolitan District",
+      "allAges": 189890
+    },
+    "E08000015": {
+      "code": "E08000015",
+      "name": "Wirral",
+      "geography": "Metropolitan District",
+      "allAges": 329896
+    },
+    "E12000003": {
+      "code": "E12000003",
+      "name": "YORKSHIRE AND THE HUMBER",
+      "geography": "Region",
+      "allAges": 5672166
+    },
+    "E06000011": {
+      "code": "E06000011",
+      "name": "East Riding of Yorkshire",
+      "geography": "Unitary Authority",
+      "allAges": 360334
+    },
+    "E06000010": {
+      "code": "E06000010",
+      "name": "Kingston upon Hull, City of",
+      "geography": "Unitary Authority",
+      "allAges": 273257
+    },
+    "E06000012": {
+      "code": "E06000012",
+      "name": "North East Lincolnshire",
+      "geography": "Unitary Authority",
+      "allAges": 160101
+    },
+    "E06000013": {
+      "code": "E06000013",
+      "name": "North Lincolnshire",
+      "geography": "Unitary Authority",
+      "allAges": 171421
+    },
+    "E06000065": {
+      "code": "E06000065",
+      "name": "North Yorkshire",
+      "geography": "Unitary Authority",
+      "allAges": 639133
+    },
+    "E06000014": {
+      "code": "E06000014",
+      "name": "York",
+      "geography": "Unitary Authority",
+      "allAges": 209118
+    },
+    "E11000003": {
+      "code": "E11000003",
+      "name": "South Yorkshire (Met County)",
+      "geography": "Metropolitan County",
+      "allAges": 1434478
+    },
+    "E08000016": {
+      "code": "E08000016",
+      "name": "Barnsley",
+      "geography": "Metropolitan District",
+      "allAges": 252784
+    },
+    "E08000017": {
+      "code": "E08000017",
+      "name": "Doncaster",
+      "geography": "Metropolitan District",
+      "allAges": 323016
+    },
+    "E08000018": {
+      "code": "E08000018",
+      "name": "Rotherham",
+      "geography": "Metropolitan District",
+      "allAges": 279161
+    },
+    "E08000019": {
+      "code": "E08000019",
+      "name": "Sheffield",
+      "geography": "Metropolitan District",
+      "allAges": 579517
+    },
+    "E11000006": {
+      "code": "E11000006",
+      "name": "West Yorkshire (Met County)",
+      "geography": "Metropolitan County",
+      "allAges": 2424324
+    },
+    "E08000032": {
+      "code": "E08000032",
+      "name": "Bradford",
+      "geography": "Metropolitan District",
+      "allAges": 557758
+    },
+    "E08000033": {
+      "code": "E08000033",
+      "name": "Calderdale",
+      "geography": "Metropolitan District",
+      "allAges": 210734
+    },
+    "E08000034": {
+      "code": "E08000034",
+      "name": "Kirklees",
+      "geography": "Metropolitan District",
+      "allAges": 445832
+    },
+    "E08000035": {
+      "code": "E08000035",
+      "name": "Leeds",
+      "geography": "Metropolitan District",
+      "allAges": 840550
+    },
+    "E08000036": {
+      "code": "E08000036",
+      "name": "Wakefield",
+      "geography": "Metropolitan District",
+      "allAges": 369450
+    },
+    "E12000004": {
+      "code": "E12000004",
+      "name": "EAST MIDLANDS",
+      "geography": "Region",
+      "allAges": 5085641
+    },
+    "E06000015": {
+      "code": "E06000015",
+      "name": "Derby",
+      "geography": "Unitary Authority",
+      "allAges": 275344
+    },
+    "E06000016": {
+      "code": "E06000016",
+      "name": "Leicester",
+      "geography": "Unitary Authority",
+      "allAges": 383116
+    },
+    "E06000061": {
+      "code": "E06000061",
+      "name": "North Northamptonshire",
+      "geography": "Unitary Authority",
+      "allAges": 379569
+    },
+    "E06000018": {
+      "code": "E06000018",
+      "name": "Nottingham",
+      "geography": "Unitary Authority",
+      "allAges": 325765
+    },
+    "E06000017": {
+      "code": "E06000017",
+      "name": "Rutland",
+      "geography": "Unitary Authority",
+      "allAges": 41629
+    },
+    "E06000062": {
+      "code": "E06000062",
+      "name": "West Northamptonshire",
+      "geography": "Unitary Authority",
+      "allAges": 444218
+    },
+    "E10000007": {
+      "code": "E10000007",
+      "name": "Derbyshire",
+      "geography": "County",
+      "allAges": 827217
+    },
+    "E07000032": {
+      "code": "E07000032",
+      "name": "Amber Valley",
+      "geography": "Non-metropolitan District",
+      "allAges": 131894
+    },
+    "E07000033": {
+      "code": "E07000033",
+      "name": "Bolsover",
+      "geography": "Non-metropolitan District",
+      "allAges": 84397
+    },
+    "E07000034": {
+      "code": "E07000034",
+      "name": "Chesterfield",
+      "geography": "Non-metropolitan District",
+      "allAges": 106419
+    },
+    "E07000035": {
+      "code": "E07000035",
+      "name": "Derbyshire Dales",
+      "geography": "Non-metropolitan District",
+      "allAges": 72028
+    },
+    "E07000036": {
+      "code": "E07000036",
+      "name": "Erewash",
+      "geography": "Non-metropolitan District",
+      "allAges": 113474
+    },
+    "E07000037": {
+      "code": "E07000037",
+      "name": "High Peak",
+      "geography": "Non-metropolitan District",
+      "allAges": 91676
+    },
+    "E07000038": {
+      "code": "E07000038",
+      "name": "North East Derbyshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 107888
+    },
+    "E07000039": {
+      "code": "E07000039",
+      "name": "South Derbyshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 119441
+    },
+    "E10000018": {
+      "code": "E10000018",
+      "name": "Leicestershire",
+      "geography": "County",
+      "allAges": 752448
+    },
+    "E07000129": {
+      "code": "E07000129",
+      "name": "Blaby",
+      "geography": "Non-metropolitan District",
+      "allAges": 108423
+    },
+    "E07000130": {
+      "code": "E07000130",
+      "name": "Charnwood",
+      "geography": "Non-metropolitan District",
+      "allAges": 189718
+    },
+    "E07000131": {
+      "code": "E07000131",
+      "name": "Harborough",
+      "geography": "Non-metropolitan District",
+      "allAges": 106577
+    },
+    "E07000132": {
+      "code": "E07000132",
+      "name": "Hinckley and Bosworth",
+      "geography": "Non-metropolitan District",
+      "allAges": 118240
+    },
+    "E07000133": {
+      "code": "E07000133",
+      "name": "Melton",
+      "geography": "Non-metropolitan District",
+      "allAges": 54694
+    },
+    "E07000134": {
+      "code": "E07000134",
+      "name": "North West Leicestershire",
+      "geography": "Non-metropolitan District",
+      "allAges": 113263
+    },
+    "E07000135": {
+      "code": "E07000135",
+      "name": "Oadby and Wigston",
+      "geography": "Non-metropolitan District",
+      "allAges": 61533
+    },
+    "E10000019": {
+      "code": "E10000019",
+      "name": "Lincolnshire",
+      "geography": "County",
+      "allAges": 794009
+    },
+    "E07000136": {
+      "code": "E07000136",
+      "name": "Boston",
+      "geography": "Non-metropolitan District",
+      "allAges": 72092
+    },
+    "E07000137": {
+      "code": "E07000137",
+      "name": "East Lindsey",
+      "geography": "Non-metropolitan District",
+      "allAges": 146756
+    },
+    "E07000138": {
+      "code": "E07000138",
+      "name": "Lincoln",
+      "geography": "Non-metropolitan District",
+      "allAges": 103351
+    },
+    "E07000139": {
+      "code": "E07000139",
+      "name": "North Kesteven",
+      "geography": "Non-metropolitan District",
+      "allAges": 123267
+    },
+    "E07000140": {
+      "code": "E07000140",
+      "name": "South Holland",
+      "geography": "Non-metropolitan District",
+      "allAges": 100758
+    },
+    "E07000141": {
+      "code": "E07000141",
+      "name": "South Kesteven",
+      "geography": "Non-metropolitan District",
+      "allAges": 148069
+    },
+    "E07000142": {
+      "code": "E07000142",
+      "name": "West Lindsey",
+      "geography": "Non-metropolitan District",
+      "allAges": 99716
+    },
+    "E10000024": {
+      "code": "E10000024",
+      "name": "Nottinghamshire",
+      "geography": "County",
+      "allAges": 862326
+    },
+    "E07000170": {
+      "code": "E07000170",
+      "name": "Ashfield",
+      "geography": "Non-metropolitan District",
+      "allAges": 130581
+    },
+    "E07000171": {
+      "code": "E07000171",
+      "name": "Bassetlaw",
+      "geography": "Non-metropolitan District",
+      "allAges": 126454
+    },
+    "E07000172": {
+      "code": "E07000172",
+      "name": "Broxtowe",
+      "geography": "Non-metropolitan District",
+      "allAges": 113963
+    },
+    "E07000173": {
+      "code": "E07000173",
+      "name": "Gedling",
+      "geography": "Non-metropolitan District",
+      "allAges": 121105
+    },
+    "E07000174": {
+      "code": "E07000174",
+      "name": "Mansfield",
+      "geography": "Non-metropolitan District",
+      "allAges": 113682
+    },
+    "E07000175": {
+      "code": "E07000175",
+      "name": "Newark and Sherwood",
+      "geography": "Non-metropolitan District",
+      "allAges": 128684
+    },
+    "E07000176": {
+      "code": "E07000176",
+      "name": "Rushcliffe",
+      "geography": "Non-metropolitan District",
+      "allAges": 127857
+    },
+    "E12000005": {
+      "code": "E12000005",
+      "name": "WEST MIDLANDS",
+      "geography": "Region",
+      "allAges": 6205854
+    },
+    "E06000019": {
+      "code": "E06000019",
+      "name": "Herefordshire, County of",
+      "geography": "Unitary Authority",
+      "allAges": 192539
+    },
+    "E06000051": {
+      "code": "E06000051",
+      "name": "Shropshire",
+      "geography": "Unitary Authority",
+      "allAges": 333162
+    },
+    "E06000021": {
+      "code": "E06000021",
+      "name": "Stoke-on-Trent",
+      "geography": "Unitary Authority",
+      "allAges": 272282
+    },
+    "E06000020": {
+      "code": "E06000020",
+      "name": "Telford and Wrekin",
+      "geography": "Unitary Authority",
+      "allAges": 199378
+    },
+    "E10000028": {
+      "code": "E10000028",
+      "name": "Staffordshire",
+      "geography": "County",
+      "allAges": 913073
+    },
+    "E07000192": {
+      "code": "E07000192",
+      "name": "Cannock Chase",
+      "geography": "Non-metropolitan District",
+      "allAges": 104299
+    },
+    "E07000193": {
+      "code": "E07000193",
+      "name": "East Staffordshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 131541
+    },
+    "E07000194": {
+      "code": "E07000194",
+      "name": "Lichfield",
+      "geography": "Non-metropolitan District",
+      "allAges": 113270
+    },
+    "E07000195": {
+      "code": "E07000195",
+      "name": "Newcastle-under-Lyme",
+      "geography": "Non-metropolitan District",
+      "allAges": 128093
+    },
+    "E07000196": {
+      "code": "E07000196",
+      "name": "South Staffordshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 114811
+    },
+    "E07000197": {
+      "code": "E07000197",
+      "name": "Stafford",
+      "geography": "Non-metropolitan District",
+      "allAges": 142903
+    },
+    "E07000198": {
+      "code": "E07000198",
+      "name": "Staffordshire Moorlands",
+      "geography": "Non-metropolitan District",
+      "allAges": 96764
+    },
+    "E07000199": {
+      "code": "E07000199",
+      "name": "Tamworth",
+      "geography": "Non-metropolitan District",
+      "allAges": 81392
+    },
+    "E10000031": {
+      "code": "E10000031",
+      "name": "Warwickshire",
+      "geography": "County",
+      "allAges": 644021
+    },
+    "E07000218": {
+      "code": "E07000218",
+      "name": "North Warwickshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 67688
+    },
+    "E07000219": {
+      "code": "E07000219",
+      "name": "Nuneaton and Bedworth",
+      "geography": "Non-metropolitan District",
+      "allAges": 144042
+    },
+    "E07000220": {
+      "code": "E07000220",
+      "name": "Rugby",
+      "geography": "Non-metropolitan District",
+      "allAges": 125594
+    },
+    "E07000221": {
+      "code": "E07000221",
+      "name": "Stratford-on-Avon",
+      "geography": "Non-metropolitan District",
+      "allAges": 148772
+    },
+    "E07000222": {
+      "code": "E07000222",
+      "name": "Warwick",
+      "geography": "Non-metropolitan District",
+      "allAges": 157925
+    },
+    "E11000005": {
+      "code": "E11000005",
+      "name": "West Midlands (Met County)",
+      "geography": "Metropolitan County",
+      "allAges": 3027190
+    },
+    "E08000025": {
+      "code": "E08000025",
+      "name": "Birmingham",
+      "geography": "Metropolitan District",
+      "allAges": 1176960
+    },
+    "E08000026": {
+      "code": "E08000026",
+      "name": "Coventry",
+      "geography": "Metropolitan District",
+      "allAges": 364766
+    },
+    "E08000027": {
+      "code": "E08000027",
+      "name": "Dudley",
+      "geography": "Metropolitan District",
+      "allAges": 333941
+    },
+    "E08000028": {
+      "code": "E08000028",
+      "name": "Sandwell",
+      "geography": "Metropolitan District",
+      "allAges": 352918
+    },
+    "E08000029": {
+      "code": "E08000029",
+      "name": "Solihull",
+      "geography": "Metropolitan District",
+      "allAges": 221449
+    },
+    "E08000030": {
+      "code": "E08000030",
+      "name": "Walsall",
+      "geography": "Metropolitan District",
+      "allAges": 295722
+    },
+    "E08000031": {
+      "code": "E08000031",
+      "name": "Wolverhampton",
+      "geography": "Metropolitan District",
+      "allAges": 281434
+    },
+    "E10000034": {
+      "code": "E10000034",
+      "name": "Worcestershire",
+      "geography": "County",
+      "allAges": 624209
+    },
+    "E07000234": {
+      "code": "E07000234",
+      "name": "Bromsgrove",
+      "geography": "Non-metropolitan District",
+      "allAges": 101973
+    },
+    "E07000235": {
+      "code": "E07000235",
+      "name": "Malvern Hills",
+      "geography": "Non-metropolitan District",
+      "allAges": 84380
+    },
+    "E07000236": {
+      "code": "E07000236",
+      "name": "Redditch",
+      "geography": "Non-metropolitan District",
+      "allAges": 87548
+    },
+    "E07000237": {
+      "code": "E07000237",
+      "name": "Worcester",
+      "geography": "Non-metropolitan District",
+      "allAges": 106954
+    },
+    "E07000238": {
+      "code": "E07000238",
+      "name": "Wychavon",
+      "geography": "Non-metropolitan District",
+      "allAges": 139175
+    },
+    "E07000239": {
+      "code": "E07000239",
+      "name": "Wyre Forest",
+      "geography": "Non-metropolitan District",
+      "allAges": 104179
+    },
+    "E12000006": {
+      "code": "E12000006",
+      "name": "EAST",
+      "geography": "Region",
+      "allAges": 6613801
+    },
+    "E06000055": {
+      "code": "E06000055",
+      "name": "Bedford",
+      "geography": "Unitary Authority",
+      "allAges": 196398
+    },
+    "E06000056": {
+      "code": "E06000056",
+      "name": "Central Bedfordshire",
+      "geography": "Unitary Authority",
+      "allAges": 321605
+    },
+    "E06000032": {
+      "code": "E06000032",
+      "name": "Luton",
+      "geography": "Unitary Authority",
+      "allAges": 236380
+    },
+    "E06000031": {
+      "code": "E06000031",
+      "name": "Peterborough",
+      "geography": "Unitary Authority",
+      "allAges": 224757
+    },
+    "E06000033": {
+      "code": "E06000033",
+      "name": "Southend-on-Sea",
+      "geography": "Unitary Authority",
+      "allAges": 185214
+    },
+    "E06000034": {
+      "code": "E06000034",
+      "name": "Thurrock",
+      "geography": "Unitary Authority",
+      "allAges": 181664
+    },
+    "E10000003": {
+      "code": "E10000003",
+      "name": "Cambridgeshire",
+      "geography": "County",
+      "allAges": 716983
+    },
+    "E07000008": {
+      "code": "E07000008",
+      "name": "Cambridge",
+      "geography": "Non-metropolitan District",
+      "allAges": 149872
+    },
+    "E07000009": {
+      "code": "E07000009",
+      "name": "East Cambridgeshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 94599
+    },
+    "E07000010": {
+      "code": "E07000010",
+      "name": "Fenland",
+      "geography": "Non-metropolitan District",
+      "allAges": 105930
+    },
+    "E07000011": {
+      "code": "E07000011",
+      "name": "Huntingdonshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 191941
+    },
+    "E07000012": {
+      "code": "E07000012",
+      "name": "South Cambridgeshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 174641
+    },
+    "E10000012": {
+      "code": "E10000012",
+      "name": "Essex",
+      "geography": "County",
+      "allAges": 1576125
+    },
+    "E07000066": {
+      "code": "E07000066",
+      "name": "Basildon",
+      "geography": "Non-metropolitan District",
+      "allAges": 193489
+    },
+    "E07000067": {
+      "code": "E07000067",
+      "name": "Braintree",
+      "geography": "Non-metropolitan District",
+      "allAges": 166471
+    },
+    "E07000068": {
+      "code": "E07000068",
+      "name": "Brentwood",
+      "geography": "Non-metropolitan District",
+      "allAges": 80104
+    },
+    "E07000069": {
+      "code": "E07000069",
+      "name": "Castle Point",
+      "geography": "Non-metropolitan District",
+      "allAges": 90613
+    },
+    "E07000070": {
+      "code": "E07000070",
+      "name": "Chelmsford",
+      "geography": "Non-metropolitan District",
+      "allAges": 190570
+    },
+    "E07000071": {
+      "code": "E07000071",
+      "name": "Colchester",
+      "geography": "Non-metropolitan District",
+      "allAges": 201163
+    },
+    "E07000072": {
+      "code": "E07000072",
+      "name": "Epping Forest",
+      "geography": "Non-metropolitan District",
+      "allAges": 138394
+    },
+    "E07000073": {
+      "code": "E07000073",
+      "name": "Harlow",
+      "geography": "Non-metropolitan District",
+      "allAges": 98543
+    },
+    "E07000074": {
+      "code": "E07000074",
+      "name": "Maldon",
+      "geography": "Non-metropolitan District",
+      "allAges": 70196
+    },
+    "E07000075": {
+      "code": "E07000075",
+      "name": "Rochford",
+      "geography": "Non-metropolitan District",
+      "allAges": 90760
+    },
+    "E07000076": {
+      "code": "E07000076",
+      "name": "Tendring",
+      "geography": "Non-metropolitan District",
+      "allAges": 159060
+    },
+    "E07000077": {
+      "code": "E07000077",
+      "name": "Uttlesford",
+      "geography": "Non-metropolitan District",
+      "allAges": 96762
+    },
+    "E10000015": {
+      "code": "E10000015",
+      "name": "Hertfordshire",
+      "geography": "County",
+      "allAges": 1239398
+    },
+    "E07000095": {
+      "code": "E07000095",
+      "name": "Broxbourne",
+      "geography": "Non-metropolitan District",
+      "allAges": 103130
+    },
+    "E07000096": {
+      "code": "E07000096",
+      "name": "Dacorum",
+      "geography": "Non-metropolitan District",
+      "allAges": 162316
+    },
+    "E07000242": {
+      "code": "E07000242",
+      "name": "East Hertfordshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 158033
+    },
+    "E07000098": {
+      "code": "E07000098",
+      "name": "Hertsmere",
+      "geography": "Non-metropolitan District",
+      "allAges": 110242
+    },
+    "E07000099": {
+      "code": "E07000099",
+      "name": "North Hertfordshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 137365
+    },
+    "E07000240": {
+      "code": "E07000240",
+      "name": "St Albans",
+      "geography": "Non-metropolitan District",
+      "allAges": 150757
+    },
+    "E07000243": {
+      "code": "E07000243",
+      "name": "Stevenage",
+      "geography": "Non-metropolitan District",
+      "allAges": 92081
+    },
+    "E07000102": {
+      "code": "E07000102",
+      "name": "Three Rivers",
+      "geography": "Non-metropolitan District",
+      "allAges": 96068
+    },
+    "E07000103": {
+      "code": "E07000103",
+      "name": "Watford",
+      "geography": "Non-metropolitan District",
+      "allAges": 107658
+    },
+    "E07000241": {
+      "code": "E07000241",
+      "name": "Welwyn Hatfield",
+      "geography": "Non-metropolitan District",
+      "allAges": 121748
+    },
+    "E10000020": {
+      "code": "E10000020",
+      "name": "Norfolk",
+      "geography": "County",
+      "allAges": 945427
+    },
+    "E07000143": {
+      "code": "E07000143",
+      "name": "Breckland",
+      "geography": "Non-metropolitan District",
+      "allAges": 148095
+    },
+    "E07000144": {
+      "code": "E07000144",
+      "name": "Broadland",
+      "geography": "Non-metropolitan District",
+      "allAges": 139652
+    },
+    "E07000145": {
+      "code": "E07000145",
+      "name": "Great Yarmouth",
+      "geography": "Non-metropolitan District",
+      "allAges": 100957
+    },
+    "E07000146": {
+      "code": "E07000146",
+      "name": "King's Lynn and West Norfolk",
+      "geography": "Non-metropolitan District",
+      "allAges": 156943
+    },
+    "E07000147": {
+      "code": "E07000147",
+      "name": "North Norfolk",
+      "geography": "Non-metropolitan District",
+      "allAges": 103708
+    },
+    "E07000148": {
+      "code": "E07000148",
+      "name": "Norwich",
+      "geography": "Non-metropolitan District",
+      "allAges": 145676
+    },
+    "E07000149": {
+      "code": "E07000149",
+      "name": "South Norfolk",
+      "geography": "Non-metropolitan District",
+      "allAges": 150396
+    },
+    "E10000029": {
+      "code": "E10000029",
+      "name": "Suffolk",
+      "geography": "County",
+      "allAges": 789850
+    },
+    "E07000200": {
+      "code": "E07000200",
+      "name": "Babergh",
+      "geography": "Non-metropolitan District",
+      "allAges": 97833
+    },
+    "E07000244": {
+      "code": "E07000244",
+      "name": "East Suffolk",
+      "geography": "Non-metropolitan District",
+      "allAges": 250106
+    },
+    "E07000202": {
+      "code": "E07000202",
+      "name": "Ipswich",
+      "geography": "Non-metropolitan District",
+      "allAges": 139457
+    },
+    "E07000203": {
+      "code": "E07000203",
+      "name": "Mid Suffolk",
+      "geography": "Non-metropolitan District",
+      "allAges": 113047
+    },
+    "E07000245": {
+      "code": "E07000245",
+      "name": "West Suffolk",
+      "geography": "Non-metropolitan District",
+      "allAges": 189407
+    },
+    "E12000007": {
+      "code": "E12000007",
+      "name": "LONDON",
+      "geography": "Region",
+      "allAges": 9122909
+    },
+    "E09000007": {
+      "code": "E09000007",
+      "name": "Camden",
+      "geography": "London Borough",
+      "allAges": 216658
+    },
+    "E09000001": {
+      "code": "E09000001",
+      "name": "City of London",
+      "geography": "London Borough",
+      "allAges": 15631
+    },
+    "E09000012": {
+      "code": "E09000012",
+      "name": "Hackney",
+      "geography": "London Borough",
+      "allAges": 266241
+    },
+    "E09000013": {
+      "code": "E09000013",
+      "name": "Hammersmith and Fulham",
+      "geography": "London Borough",
+      "allAges": 190216
+    },
+    "E09000014": {
+      "code": "E09000014",
+      "name": "Haringey",
+      "geography": "London Borough",
+      "allAges": 266218
+    },
+    "E09000019": {
+      "code": "E09000019",
+      "name": "Islington",
+      "geography": "London Borough",
+      "allAges": 224551
+    },
+    "E09000020": {
+      "code": "E09000020",
+      "name": "Kensington and Chelsea",
+      "geography": "London Borough",
+      "allAges": 145734
+    },
+    "E09000022": {
+      "code": "E09000022",
+      "name": "Lambeth",
+      "geography": "London Borough",
+      "allAges": 314298
+    },
+    "E09000023": {
+      "code": "E09000023",
+      "name": "Lewisham",
+      "geography": "London Borough",
+      "allAges": 301037
+    },
+    "E09000025": {
+      "code": "E09000025",
+      "name": "Newham",
+      "geography": "London Borough",
+      "allAges": 376542
+    },
+    "E09000028": {
+      "code": "E09000028",
+      "name": "Southwark",
+      "geography": "London Borough",
+      "allAges": 312366
+    },
+    "E09000030": {
+      "code": "E09000030",
+      "name": "Tower Hamlets",
+      "geography": "London Borough",
+      "allAges": 334240
+    },
+    "E09000032": {
+      "code": "E09000032",
+      "name": "Wandsworth",
+      "geography": "London Borough",
+      "allAges": 339859
+    },
+    "E09000033": {
+      "code": "E09000033",
+      "name": "Westminster",
+      "geography": "London Borough",
+      "allAges": 212367
+    },
+    "E09000002": {
+      "code": "E09000002",
+      "name": "Barking and Dagenham",
+      "geography": "London Borough",
+      "allAges": 238295
+    },
+    "E09000003": {
+      "code": "E09000003",
+      "name": "Barnet",
+      "geography": "London Borough",
+      "allAges": 408087
+    },
+    "E09000004": {
+      "code": "E09000004",
+      "name": "Bexley",
+      "geography": "London Borough",
+      "allAges": 257103
+    },
+    "E09000005": {
+      "code": "E09000005",
+      "name": "Brent",
+      "geography": "London Borough",
+      "allAges": 352201
+    },
+    "E09000006": {
+      "code": "E09000006",
+      "name": "Bromley",
+      "geography": "London Borough",
+      "allAges": 336048
+    },
+    "E09000008": {
+      "code": "E09000008",
+      "name": "Croydon",
+      "geography": "London Borough",
+      "allAges": 410085
+    },
+    "E09000009": {
+      "code": "E09000009",
+      "name": "Ealing",
+      "geography": "London Borough",
+      "allAges": 387072
+    },
+    "E09000010": {
+      "code": "E09000010",
+      "name": "Enfield",
+      "geography": "London Borough",
+      "allAges": 329400
+    },
+    "E09000011": {
+      "code": "E09000011",
+      "name": "Greenwich",
+      "geography": "London Borough",
+      "allAges": 301225
+    },
+    "E09000015": {
+      "code": "E09000015",
+      "name": "Harrow",
+      "geography": "London Borough",
+      "allAges": 272612
+    },
+    "E09000016": {
+      "code": "E09000016",
+      "name": "Havering",
+      "geography": "London Borough",
+      "allAges": 280787
+    },
+    "E09000017": {
+      "code": "E09000017",
+      "name": "Hillingdon",
+      "geography": "London Borough",
+      "allAges": 326671
+    },
+    "E09000018": {
+      "code": "E09000018",
+      "name": "Hounslow",
+      "geography": "London Borough",
+      "allAges": 299486
+    },
+    "E09000021": {
+      "code": "E09000021",
+      "name": "Kingston upon Thames",
+      "geography": "London Borough",
+      "allAges": 172761
+    },
+    "E09000024": {
+      "code": "E09000024",
+      "name": "Merton",
+      "geography": "London Borough",
+      "allAges": 218891
+    },
+    "E09000026": {
+      "code": "E09000026",
+      "name": "Redbridge",
+      "geography": "London Borough",
+      "allAges": 321829
+    },
+    "E09000027": {
+      "code": "E09000027",
+      "name": "Richmond upon Thames",
+      "geography": "London Borough",
+      "allAges": 196713
+    },
+    "E09000029": {
+      "code": "E09000029",
+      "name": "Sutton",
+      "geography": "London Borough",
+      "allAges": 213972
+    },
+    "E09000031": {
+      "code": "E09000031",
+      "name": "Waltham Forest",
+      "geography": "London Borough",
+      "allAges": 283713
+    },
+    "E12000008": {
+      "code": "E12000008",
+      "name": "SOUTH EAST",
+      "geography": "Region",
+      "allAges": 9691844
+    },
+    "E06000036": {
+      "code": "E06000036",
+      "name": "Bracknell Forest",
+      "geography": "Unitary Authority",
+      "allAges": 132145
+    },
+    "E06000043": {
+      "code": "E06000043",
+      "name": "Brighton and Hove",
+      "geography": "Unitary Authority",
+      "allAges": 284170
+    },
+    "E06000046": {
+      "code": "E06000046",
+      "name": "Isle of Wight",
+      "geography": "Unitary Authority",
+      "allAges": 140777
+    },
+    "E06000035": {
+      "code": "E06000035",
+      "name": "Medway",
+      "geography": "Unitary Authority",
+      "allAges": 292697
+    },
+    "E06000042": {
+      "code": "E06000042",
+      "name": "Milton Keynes",
+      "geography": "Unitary Authority",
+      "allAges": 308866
+    },
+    "E06000044": {
+      "code": "E06000044",
+      "name": "Portsmouth",
+      "geography": "Unitary Authority",
+      "allAges": 211475
+    },
+    "E06000038": {
+      "code": "E06000038",
+      "name": "Reading",
+      "geography": "Unitary Authority",
+      "allAges": 183762
+    },
+    "E06000039": {
+      "code": "E06000039",
+      "name": "Slough",
+      "geography": "Unitary Authority",
+      "allAges": 167450
+    },
+    "E06000045": {
+      "code": "E06000045",
+      "name": "Southampton",
+      "geography": "Unitary Authority",
+      "allAges": 259230
+    },
+    "E06000037": {
+      "code": "E06000037",
+      "name": "West Berkshire",
+      "geography": "Unitary Authority",
+      "allAges": 165523
+    },
+    "E06000040": {
+      "code": "E06000040",
+      "name": "Windsor and Maidenhead",
+      "geography": "Unitary Authority",
+      "allAges": 159776
+    },
+    "E06000041": {
+      "code": "E06000041",
+      "name": "Wokingham",
+      "geography": "Unitary Authority",
+      "allAges": 189024
+    },
+    "E06000060": {
+      "code": "E06000060",
+      "name": "Buckinghamshire",
+      "geography": "Unitary Authority",
+      "allAges": 584296
+    },
+    "E10000011": {
+      "code": "E10000011",
+      "name": "East Sussex",
+      "geography": "County",
+      "allAges": 561855
+    },
+    "E07000061": {
+      "code": "E07000061",
+      "name": "Eastbourne",
+      "geography": "Non-metropolitan District",
+      "allAges": 103894
+    },
+    "E07000062": {
+      "code": "E07000062",
+      "name": "Hastings",
+      "geography": "Non-metropolitan District",
+      "allAges": 90855
+    },
+    "E07000063": {
+      "code": "E07000063",
+      "name": "Lewes",
+      "geography": "Non-metropolitan District",
+      "allAges": 102648
+    },
+    "E07000064": {
+      "code": "E07000064",
+      "name": "Rother",
+      "geography": "Non-metropolitan District",
+      "allAges": 96150
+    },
+    "E07000065": {
+      "code": "E07000065",
+      "name": "Wealden",
+      "geography": "Non-metropolitan District",
+      "allAges": 168308
+    },
+    "E10000014": {
+      "code": "E10000014",
+      "name": "Hampshire",
+      "geography": "County",
+      "allAges": 1451703
+    },
+    "E07000084": {
+      "code": "E07000084",
+      "name": "Basingstoke and Deane",
+      "geography": "Non-metropolitan District",
+      "allAges": 194037
+    },
+    "E07000085": {
+      "code": "E07000085",
+      "name": "East Hampshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 130599
+    },
+    "E07000086": {
+      "code": "E07000086",
+      "name": "Eastleigh",
+      "geography": "Non-metropolitan District",
+      "allAges": 143710
+    },
+    "E07000087": {
+      "code": "E07000087",
+      "name": "Fareham",
+      "geography": "Non-metropolitan District",
+      "allAges": 115373
+    },
+    "E07000088": {
+      "code": "E07000088",
+      "name": "Gosport",
+      "geography": "Non-metropolitan District",
+      "allAges": 82618
+    },
+    "E07000089": {
+      "code": "E07000089",
+      "name": "Hart",
+      "geography": "Non-metropolitan District",
+      "allAges": 103335
+    },
+    "E07000090": {
+      "code": "E07000090",
+      "name": "Havant",
+      "geography": "Non-metropolitan District",
+      "allAges": 127362
+    },
+    "E07000091": {
+      "code": "E07000091",
+      "name": "New Forest",
+      "geography": "Non-metropolitan District",
+      "allAges": 175930
+    },
+    "E07000092": {
+      "code": "E07000092",
+      "name": "Rushmoor",
+      "geography": "Non-metropolitan District",
+      "allAges": 106185
+    },
+    "E07000093": {
+      "code": "E07000093",
+      "name": "Test Valley",
+      "geography": "Non-metropolitan District",
+      "allAges": 135698
+    },
+    "E07000094": {
+      "code": "E07000094",
+      "name": "Winchester",
+      "geography": "Non-metropolitan District",
+      "allAges": 136856
+    },
+    "E10000016": {
+      "code": "E10000016",
+      "name": "Kent",
+      "geography": "County",
+      "allAges": 1652769
+    },
+    "E07000105": {
+      "code": "E07000105",
+      "name": "Ashford",
+      "geography": "Non-metropolitan District",
+      "allAges": 142523
+    },
+    "E07000106": {
+      "code": "E07000106",
+      "name": "Canterbury",
+      "geography": "Non-metropolitan District",
+      "allAges": 162612
+    },
+    "E07000107": {
+      "code": "E07000107",
+      "name": "Dartford",
+      "geography": "Non-metropolitan District",
+      "allAges": 126297
+    },
+    "E07000108": {
+      "code": "E07000108",
+      "name": "Dover",
+      "geography": "Non-metropolitan District",
+      "allAges": 121055
+    },
+    "E07000112": {
+      "code": "E07000112",
+      "name": "Folkestone and Hythe",
+      "geography": "Non-metropolitan District",
+      "allAges": 112163
+    },
+    "E07000109": {
+      "code": "E07000109",
+      "name": "Gravesham",
+      "geography": "Non-metropolitan District",
+      "allAges": 111221
+    },
+    "E07000110": {
+      "code": "E07000110",
+      "name": "Maidstone",
+      "geography": "Non-metropolitan District",
+      "allAges": 191415
+    },
+    "E07000111": {
+      "code": "E07000111",
+      "name": "Sevenoaks",
+      "geography": "Non-metropolitan District",
+      "allAges": 123183
+    },
+    "E07000113": {
+      "code": "E07000113",
+      "name": "Swale",
+      "geography": "Non-metropolitan District",
+      "allAges": 160671
+    },
+    "E07000114": {
+      "code": "E07000114",
+      "name": "Thanet",
+      "geography": "Non-metropolitan District",
+      "allAges": 143618
+    },
+    "E07000115": {
+      "code": "E07000115",
+      "name": "Tonbridge and Malling",
+      "geography": "Non-metropolitan District",
+      "allAges": 137913
+    },
+    "E07000116": {
+      "code": "E07000116",
+      "name": "Tunbridge Wells",
+      "geography": "Non-metropolitan District",
+      "allAges": 120098
+    },
+    "E10000025": {
+      "code": "E10000025",
+      "name": "Oxfordshire",
+      "geography": "County",
+      "allAges": 769831
+    },
+    "E07000177": {
+      "code": "E07000177",
+      "name": "Cherwell",
+      "geography": "Non-metropolitan District",
+      "allAges": 172178
+    },
+    "E07000178": {
+      "code": "E07000178",
+      "name": "Oxford",
+      "geography": "Non-metropolitan District",
+      "allAges": 165940
+    },
+    "E07000179": {
+      "code": "E07000179",
+      "name": "South Oxfordshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 158084
+    },
+    "E07000180": {
+      "code": "E07000180",
+      "name": "Vale of White Horse",
+      "geography": "Non-metropolitan District",
+      "allAges": 152217
+    },
+    "E07000181": {
+      "code": "E07000181",
+      "name": "West Oxfordshire",
+      "geography": "Non-metropolitan District",
+      "allAges": 121412
+    },
+    "E10000030": {
+      "code": "E10000030",
+      "name": "Surrey",
+      "geography": "County",
+      "allAges": 1255255
+    },
+    "E07000207": {
+      "code": "E07000207",
+      "name": "Elmbridge",
+      "geography": "Non-metropolitan District",
+      "allAges": 142484
+    },
+    "E07000208": {
+      "code": "E07000208",
+      "name": "Epsom and Ewell",
+      "geography": "Non-metropolitan District",
+      "allAges": 83370
+    },
+    "E07000209": {
+      "code": "E07000209",
+      "name": "Guildford",
+      "geography": "Non-metropolitan District",
+      "allAges": 152148
+    },
+    "E07000210": {
+      "code": "E07000210",
+      "name": "Mole Valley",
+      "geography": "Non-metropolitan District",
+      "allAges": 88808
+    },
+    "E07000211": {
+      "code": "E07000211",
+      "name": "Reigate and Banstead",
+      "geography": "Non-metropolitan District",
+      "allAges": 159413
+    },
+    "E07000212": {
+      "code": "E07000212",
+      "name": "Runnymede",
+      "geography": "Non-metropolitan District",
+      "allAges": 93013
+    },
+    "E07000213": {
+      "code": "E07000213",
+      "name": "Spelthorne",
+      "geography": "Non-metropolitan District",
+      "allAges": 107188
+    },
+    "E07000214": {
+      "code": "E07000214",
+      "name": "Surrey Heath",
+      "geography": "Non-metropolitan District",
+      "allAges": 95094
+    },
+    "E07000215": {
+      "code": "E07000215",
+      "name": "Tandridge",
+      "geography": "Non-metropolitan District",
+      "allAges": 90322
+    },
+    "E07000216": {
+      "code": "E07000216",
+      "name": "Waverley",
+      "geography": "Non-metropolitan District",
+      "allAges": 137218
+    },
+    "E07000217": {
+      "code": "E07000217",
+      "name": "Woking",
+      "geography": "Non-metropolitan District",
+      "allAges": 106197
+    },
+    "E10000032": {
+      "code": "E10000032",
+      "name": "West Sussex",
+      "geography": "County",
+      "allAges": 921240
+    },
+    "E07000223": {
+      "code": "E07000223",
+      "name": "Adur",
+      "geography": "Non-metropolitan District",
+      "allAges": 64802
+    },
+    "E07000224": {
+      "code": "E07000224",
+      "name": "Arun",
+      "geography": "Non-metropolitan District",
+      "allAges": 172326
+    },
+    "E07000225": {
+      "code": "E07000225",
+      "name": "Chichester",
+      "geography": "Non-metropolitan District",
+      "allAges": 130224
+    },
+    "E07000226": {
+      "code": "E07000226",
+      "name": "Crawley",
+      "geography": "Non-metropolitan District",
+      "allAges": 124462
+    },
+    "E07000227": {
+      "code": "E07000227",
+      "name": "Horsham",
+      "geography": "Non-metropolitan District",
+      "allAges": 152016
+    },
+    "E07000228": {
+      "code": "E07000228",
+      "name": "Mid Sussex",
+      "geography": "Non-metropolitan District",
+      "allAges": 163566
+    },
+    "E07000229": {
+      "code": "E07000229",
+      "name": "Worthing",
+      "geography": "Non-metropolitan District",
+      "allAges": 113844
+    },
+    "E12000009": {
+      "code": "E12000009",
+      "name": "SOUTH WEST",
+      "geography": "Region",
+      "allAges": 5906997
+    },
+    "E06000022": {
+      "code": "E06000022",
+      "name": "Bath and North East Somerset",
+      "geography": "Unitary Authority",
+      "allAges": 200898
+    },
+    "E06000058": {
+      "code": "E06000058",
+      "name": "Bournemouth, Christchurch and Poole",
+      "geography": "Unitary Authority",
+      "allAges": 405829
+    },
+    "E06000023": {
+      "code": "E06000023",
+      "name": "Bristol, City of",
+      "geography": "Unitary Authority",
+      "allAges": 495260
+    },
+    "E06000052": {
+      "code": "E06000052",
+      "name": "Cornwall",
+      "geography": "Unitary Authority",
+      "allAges": 584782
+    },
+    "E06000059": {
+      "code": "E06000059",
+      "name": "Dorset",
+      "geography": "Unitary Authority",
+      "allAges": 391036
+    },
+    "E06000053": {
+      "code": "E06000053",
+      "name": "Isles of Scilly",
+      "geography": "Unitary Authority",
+      "allAges": 2299
+    },
+    "E06000024": {
+      "code": "E06000024",
+      "name": "North Somerset",
+      "geography": "Unitary Authority",
+      "allAges": 227160
+    },
+    "E06000026": {
+      "code": "E06000026",
+      "name": "Plymouth",
+      "geography": "Unitary Authority",
+      "allAges": 271361
+    },
+    "E06000066": {
+      "code": "E06000066",
+      "name": "Somerset",
+      "geography": "Unitary Authority",
+      "allAges": 590972
+    },
+    "E06000025": {
+      "code": "E06000025",
+      "name": "South Gloucestershire",
+      "geography": "Unitary Authority",
+      "allAges": 308787
+    },
+    "E06000030": {
+      "code": "E06000030",
+      "name": "Swindon",
+      "geography": "Unitary Authority",
+      "allAges": 245286
+    },
+    "E06000027": {
+      "code": "E06000027",
+      "name": "Torbay",
+      "geography": "Unitary Authority",
+      "allAges": 139486
+    },
+    "E06000054": {
+      "code": "E06000054",
+      "name": "Wiltshire",
+      "geography": "Unitary Authority",
+      "allAges": 526392
+    },
+    "E10000008": {
+      "code": "E10000008",
+      "name": "Devon",
+      "geography": "County",
+      "allAges": 845541
+    },
+    "E07000040": {
+      "code": "E07000040",
+      "name": "East Devon",
+      "geography": "Non-metropolitan District",
+      "allAges": 159637
+    },
+    "E07000041": {
+      "code": "E07000041",
+      "name": "Exeter",
+      "geography": "Non-metropolitan District",
+      "allAges": 137894
+    },
+    "E07000042": {
+      "code": "E07000042",
+      "name": "Mid Devon",
+      "geography": "Non-metropolitan District",
+      "allAges": 85593
+    },
+    "E07000043": {
+      "code": "E07000043",
+      "name": "North Devon",
+      "geography": "Non-metropolitan District",
+      "allAges": 101281
+    },
+    "E07000044": {
+      "code": "E07000044",
+      "name": "South Hams",
+      "geography": "Non-metropolitan District",
+      "allAges": 93171
+    },
+    "E07000045": {
+      "code": "E07000045",
+      "name": "Teignbridge",
+      "geography": "Non-metropolitan District",
+      "allAges": 138607
+    },
+    "E07000046": {
+      "code": "E07000046",
+      "name": "Torridge",
+      "geography": "Non-metropolitan District",
+      "allAges": 70378
+    },
+    "E07000047": {
+      "code": "E07000047",
+      "name": "West Devon",
+      "geography": "Non-metropolitan District",
+      "allAges": 58980
+    },
+    "E10000013": {
+      "code": "E10000013",
+      "name": "Gloucestershire",
+      "geography": "County",
+      "allAges": 671908
+    },
+    "E07000078": {
+      "code": "E07000078",
+      "name": "Cheltenham",
+      "geography": "Non-metropolitan District",
+      "allAges": 121452
+    },
+    "E07000079": {
+      "code": "E07000079",
+      "name": "Cotswold",
+      "geography": "Non-metropolitan District",
+      "allAges": 91563
+    },
+    "E07000080": {
+      "code": "E07000080",
+      "name": "Forest of Dean",
+      "geography": "Non-metropolitan District",
+      "allAges": 90157
+    },
+    "E07000081": {
+      "code": "E07000081",
+      "name": "Gloucester",
+      "geography": "Non-metropolitan District",
+      "allAges": 138565
+    },
+    "E07000082": {
+      "code": "E07000082",
+      "name": "Stroud",
+      "geography": "Non-metropolitan District",
+      "allAges": 126418
+    },
+    "E07000083": {
+      "code": "E07000083",
+      "name": "Tewkesbury",
+      "geography": "Non-metropolitan District",
+      "allAges": 103753
+    }
+  }
+}
