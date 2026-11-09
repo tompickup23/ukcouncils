@@ -25,3 +25,25 @@ Validation: `npm run check`, zero errors. `npm test`, 179 passed and 12 skipped.
 
 * Collection null cells use `n/a`, as the binding site rule requires.
 * The reader takes the collection filename year from its source manifest, preserving the existing year label guard.
+
+## Stopped during item 3
+
+Both pinned election inputs matched. The importer produced 174 records with the specified year and pattern counts. The item 3 work is uncommitted. Its checks passed: `npm run check`, zero errors; `npm test`, 183 passed and 12 skipped.
+
+Reading all 174 quotes exposed the stop condition: new text other than a cited document title would print reorganisation content. South Oxfordshire (`E07000179`) and Vale of White Horse (`E07000180`) both quote: "The next scheduled elections District Council elections will be held on Thursday 6 May 2027, subject to any further changes resulting from local government re-organisation."
+
+The brief's suppression expression matches five quotes but misses both hyphenated instances. Including these gives seven quotes containing held content. The expression has not been changed, no election component has been built, and work stopped before item 4. The full build and browser gates, screenshots, push and PR were not reached.
+
+## Archive handoff
+
+Saved at the user's request on 9 November 2026. Worktree: `/Users/tompickup/wt/ukc-front-door`. Branch: `feat/front-door-content`. Completed item commits: population `aa02a86`, collection `da127bb`.
+
+The item 3 importer, pinned JSON helper, election data, reader and tests remain saved on disk but uncommitted, together with the council profile test adjustment and this handoff. No partial item commit was made. Validation logs are in `.cache/b2/`; downloaded workbooks are in ignored `data/raw/`.
+
+Resume only after the owner resolves the quote suppression stop condition. Read `CLAUDE.md`, the binding source notes, the brief and this record first. Preserve the current uncommitted work. Resolve item 3 under the revised instructions, rerun checks and commit that item before starting item 4. Items 4 to 10, full validation, screenshot review, push and PR remain outstanding. Keep all held features absent and retain the first screen Band D check. Do not merge or deploy.
+
+## Item 3 resumed
+
+The owner resolved the stop condition in brief commit cd3535a. The helper and test now use `/re-?organi[sz]|unitary|abolish|structural change/i` and assert the seven named councils. Read all 174 quotes again: no further quote contains reorganisation or abolition wording in another spelling, and no quote names an individual. The seven retain their year and citation but their quotations will be withheld.
+
+Validation: `npm run check`, zero errors and warnings; `npm test`, 183 passed and 12 skipped.

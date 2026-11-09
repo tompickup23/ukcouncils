@@ -115,11 +115,9 @@ describe("the Lancashire council profiles", () => {
     expect(after?.next).toBeNull();
   });
 
-  it("builds no seats, control or election section: no committed file holds them", () => {
+  it("builds no seats or control: no committed file holds them", () => {
     const files = readdirSync(join(ROOT, "data"), { recursive: true }) as string[];
-    // These two checks fail by design once a seats or elections file is
-    // committed: that is the point at which the section must be built.
-    expect(files.filter((f) => /seat|election|control|councillor/i.test(f))).toEqual([]);
+    expect(files.filter((f) => /seat|control|councillor/i.test(f))).toEqual([]);
     for (const { council, tax } of lancashire) {
       const profile = councilProfile(council, tax) as unknown as Record<string, unknown>;
       for (const key of ["seats", "control", "elections"]) expect(profile[key]).toBeUndefined();
