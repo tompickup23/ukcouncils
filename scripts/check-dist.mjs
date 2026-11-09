@@ -69,6 +69,13 @@ for (const path of files(DIST)) {
     if (/\s-\s/.test(title)) failures.push(`hyphen separator in title on ${rel(path)}: ${title}`);
   }
 
+  const councilSlug = /^\/councils\/([^/]+)\/index\.html$/.exec(rel(path))?.[1];
+  if (councilSlug) {
+    const expected = `https://ukcounciltax.co.uk/councils/${councilSlug}/`;
+    const matches = [...text.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)].filter(match => match[1] === expected);
+    if (matches.length !== 1) failures.push(`Expected one verified UK Council Tax link on ${rel(path)}; found ${matches.length}`);
+  }
+
   const { problems } = unsourcedFigures(text);
   for (const problem of new Set(problems)) failures.push(`${problem} on ${rel(path)}`);
 

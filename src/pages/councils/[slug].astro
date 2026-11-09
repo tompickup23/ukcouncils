@@ -41,6 +41,7 @@ import { sisterLinks, type Council } from "../../lib/registry";
 import { INCREASES_PATH, OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
 import { councilTaxSource } from "../../lib/sources";
+import { councilTaxLink } from "../../lib/council-tax-links";
 import { councilProfile } from "../../lib/council-profile";
 
 export function getStaticPaths() {
@@ -101,6 +102,7 @@ const question = `How much is council tax in ${name} in ${year}?`;
 const bands = bandLinks(council, tax.region);
 const similar = similarCouncils(council);
 const profile = councilProfile(council, tax);
+const taxLink = councilTaxLink(council.slug);
 
 /** The title's subject, before the pipe. The H1 prints the same words. */
 const title = `${name} council tax bands ${year}`;
@@ -131,6 +133,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
       Choose your band for the published yearly charge, before discounts.
     </p>
     <BandSelector ons={council.gss} authority={tax} />
+    {taxLink && <p>Every band, the twelve month figure and what makes up the bill: <a href={taxLink}>{name} on UK Council Tax</a>.</p>}
     <p class="small muted">Monthly equivalents divide the annual charge by ten and round to pennies. Actual bill instalments can differ.</p>
     <p class="caveat">
       Every band includes the share of every body that sets council tax here, such as the police and,
