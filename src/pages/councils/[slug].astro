@@ -153,6 +153,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
 
   <MiniMap gss={council.gss} name={name} />
   </div>
+  <ProfileAbout name={name} about={profile.about} />
   <div class="action-links" aria-label="Council tax next steps">
     <a class="button" data-council-compare href={`/compare/?a=${council.slug}&band=D&year=${CURRENT_YEAR}`}>Compare this council</a>
     <a href={OFFICIAL_BAND_CHECK}>Find your property band on GOV.UK</a>
@@ -179,7 +180,6 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     ...(profile.sources.length > 0 ? [{id: 'sources', label: 'Sources'}] : []),
   ]} />
 
-  <ProfileAbout name={name} about={profile.about} />
   <CouncilEfs slug={council.slug} />
 
   <SpendingRecord gss={council.gss} name={name} />
