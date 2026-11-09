@@ -1,0 +1,3135 @@
+{
+ "schema": "ukcouncils-efs-v1",
+ "curated": "2026-11-08",
+ "curatedBy": "Claude Code, from the GOV.UK content API (details.body tables), reviewed by hand",
+ "publisher": "Ministry of Housing, Communities and Local Government",
+ "collection": "https://www.gov.uk/government/collections/exceptional-financial-support-for-local-authorities",
+ "licence": "Open Government Licence v3.0",
+ "units": "GBP million as printed",
+ "pages": {
+  "2020-21": {
+   "title": "Exceptional Financial Support for local authorities for 2020-21",
+   "url": "https://www.gov.uk/guidance/exceptional-financial-support-for-local-authorities-for-2020-21",
+   "contentApi": "https://www.gov.uk/api/content/guidance/exceptional-financial-support-for-local-authorities-for-2020-21",
+   "firstPublished": "2024-02-29",
+   "updated": "2025-03-13",
+   "changeHistory": [
+    {
+     "date": "2025-03-13",
+     "note": "Added varied directions for: Bexley, Eastbourne, Luton, Nottingham, Peterborough and Wirral."
+    },
+    {
+     "date": "2024-02-29",
+     "note": "First published."
+    }
+   ],
+   "bodySha256": "65ff0ed9701762fa4bfe154d8d36af544e4859ff9738685929c604458668a5cb",
+   "proseCount": "agreed to provide 7 councils",
+   "rawFile": "data/efs/raw/efs-2020-21.body.html"
+  },
+  "2021-22": {
+   "title": "Exceptional Financial Support for local authorities for 2021-22",
+   "url": "https://www.gov.uk/guidance/exceptional-financial-support-for-local-authorities-for-2021-22",
+   "contentApi": "https://www.gov.uk/api/content/guidance/exceptional-financial-support-for-local-authorities-for-2021-22",
+   "firstPublished": "2024-02-29",
+   "updated": "2025-03-13",
+   "changeHistory": [
+    {
+     "date": "2025-03-13",
+     "note": "Added varied directions for: Copeland, Eastbourne and Wirral."
+    },
+    {
+     "date": "2024-02-29",
+     "note": "First published."
+    }
+   ],
+   "bodySha256": "9e1e61b9f5b0a4b4690a604a21f389db88d5b9fd5680551bcaedaedc282652e7",
+   "proseCount": "provided 4 councils",
+   "rawFile": "data/efs/raw/efs-2021-22.body.html"
+  },
+  "2022-23": {
+   "title": "Exceptional Financial Support for local authorities for 2022-23",
+   "url": "https://www.gov.uk/guidance/exceptional-financial-support-for-local-authorities-for-2022-23",
+   "contentApi": "https://www.gov.uk/api/content/guidance/exceptional-financial-support-for-local-authorities-for-2022-23",
+   "firstPublished": "2024-02-29",
+   "updated": "2026-02-23",
+   "changeHistory": [
+    {
+     "date": "2026-02-23",
+     "note": "Revised figures and new capitalisation directions added"
+    },
+    {
+     "date": "2025-03-13",
+     "note": "Added varied direction for Kensington and Chelsea Council."
+    },
+    {
+     "date": "2024-02-29",
+     "note": "First published."
+    }
+   ],
+   "bodySha256": "4d7d1bf2e6dc6da7978a1cdf7ef16ffcaa938fe917cabff814d51da44c46cd58",
+   "proseCount": "agreed to provide 5 councils",
+   "rawFile": "data/efs/raw/efs-2022-23.body.html"
+  },
+  "2023-24": {
+   "title": "Exceptional Financial Support for local authorities for 2023-24",
+   "url": "https://www.gov.uk/guidance/exceptional-financial-support-for-local-authorities-for-2023-24",
+   "contentApi": "https://www.gov.uk/api/content/guidance/exceptional-financial-support-for-local-authorities-for-2023-24",
+   "firstPublished": "2024-02-29",
+   "updated": "2026-03-05",
+   "changeHistory": [
+    {
+     "date": "2026-03-05",
+     "note": "Adds Cumberland capitalisation direction PDF"
+    },
+    {
+     "date": "2026-02-23",
+     "note": "Adds new figures and capitalisation directions"
+    },
+    {
+     "date": "2025-03-13",
+     "note": "Added external assurance reviews for Cumberland and Westmorland & Furness. Added Westmorland & Furness 2023-24 direction and Croydon direction 2019-20."
+    },
+    {
+     "date": "2024-05-16",
+     "note": "Added Lambeth Council capitalisation direction and assurance review."
+    },
+    {
+     "date": "2024-02-29",
+     "note": "First published."
+    }
+   ],
+   "bodySha256": "6b593df4c59c9a825dafc23c88e5d6e4318530b32f7c017aa5c3c287e605cdc9",
+   "proseCount": "agreed to provide 8 councils",
+   "rawFile": "data/efs/raw/efs-2023-24.body.html"
+  },
+  "2024-25": {
+   "title": "Exceptional Financial Support for local authorities for 2024-25",
+   "url": "https://www.gov.uk/guidance/exceptional-financial-support-for-local-authorities-for-2024-25",
+   "contentApi": "https://www.gov.uk/api/content/guidance/exceptional-financial-support-for-local-authorities-for-2024-25",
+   "firstPublished": "2024-02-29",
+   "updated": "2026-03-05",
+   "changeHistory": [
+    {
+     "date": "2026-03-05",
+     "note": "This adds files for Cumberland capitalisation direction 2024-25, Norfolk capitalisation direction 2024-25 and Slough capitalisation direction"
+    },
+    {
+     "date": "2026-02-23",
+     "note": "Revised front page figures and added capitalisation directions"
+    },
+    {
+     "date": "2025-03-20",
+     "note": "Added CIPFA local government finance review: Plymouth."
+    },
+    {
+     "date": "2025-03-13",
+     "note": "Added directions for Croydon 2019-20 and Bradford, Stoke, Havering 2023-24 (also reflected in table). Added external assurance reviews for Bradford, Cheshire East, Cumberland, Eastbourne, Havering, Medway, Middlesbrough, Somerset, Southampton, Stoke and West Northamptonshire."
+    },
+    {
+     "date": "2024-02-29",
+     "note": "First published."
+    }
+   ],
+   "bodySha256": "10d4c7eedaf474a029947acfe3bd9ac3923ac425798eb569dd4d8ca7611568bd",
+   "proseCount": "agreed to provide 19 councils",
+   "rawFile": "data/efs/raw/efs-2024-25.body.html"
+  },
+  "2025-26": {
+   "title": "Exceptional Financial Support for local authorities for 2025-26",
+   "url": "https://www.gov.uk/guidance/exceptional-financial-support-for-local-authorities-for-2025-26",
+   "contentApi": "https://www.gov.uk/api/content/guidance/exceptional-financial-support-for-local-authorities-for-2025-26",
+   "firstPublished": "2025-02-20",
+   "updated": "2026-08-18",
+   "changeHistory": [
+    {
+     "date": "2026-08-18",
+     "note": "Added 2025-26 capitalisation directions for: Bradford, Enfield, Haringey, Solihull, Stoke-on-Trent, Worcestershire."
+    },
+    {
+     "date": "2026-02-23",
+     "note": "Amends financial annual figures and adds capitalisation directions"
+    },
+    {
+     "date": "2025-12-17",
+     "note": "Adding confirmation of a new capitalisation direction to be issued to South Yorkshire Mayoral Combined Authority."
+    },
+    {
+     "date": "2025-02-20",
+     "note": "First published."
+    }
+   ],
+   "bodySha256": "0b8e265d6154d868006a73d3adab7fe26cb7bda27fc8e004a0f09c912b826230",
+   "proseCount": "agreed to provide 30 councils",
+   "rawFile": "data/efs/raw/efs-2025-26.body.html"
+  },
+  "2026-27": {
+   "title": "Exceptional Financial Support for local authorities for 2026-27",
+   "url": "https://www.gov.uk/guidance/exceptional-financial-support-for-local-authorities-for-2026-27",
+   "contentApi": "https://www.gov.uk/api/content/guidance/exceptional-financial-support-for-local-authorities-for-2026-27",
+   "firstPublished": "2026-02-23",
+   "updated": "2026-08-18",
+   "changeHistory": [
+    {
+     "date": "2026-08-18",
+     "note": "Updated page: 2026-27 external assurance reviews added: Barnet, Cheshire, Cumberland, East Sussex, Enfield, Gloucester, Halton, Medway, Peterborough, Shropshire, Wirral, Worcestershire, Worthing. 2025-26 Capitalisation Directions added: Kent Police and Crime Commissioner, Peterborough."
+    },
+    {
+     "date": "2026-07-30",
+     "note": "Added CIPFA local government finance reviews for Hillingdon Council and Somerset Council."
+    },
+    {
+     "date": "2026-02-23",
+     "note": "First published."
+    }
+   ],
+   "bodySha256": "3c8887b6f86d1044d577f806a757c59f5a867692ea096c99664abd4fa5b3084f",
+   "proseCount": null,
+   "rawFile": "data/efs/raw/efs-2026-27.body.html"
+  }
+ },
+ "authorities": {
+  "E09000004": {
+   "gss": "E09000004",
+   "slug": "bexley",
+   "type": "London borough",
+   "name": "Bexley"
+  },
+  "E09000008": {
+   "gss": "E09000008",
+   "slug": "croydon",
+   "type": "London borough",
+   "name": "Croydon"
+  },
+  "E07000061": {
+   "gss": "E07000061",
+   "slug": "eastbourne",
+   "type": "Non-metropolitan district",
+   "name": "Eastbourne"
+  },
+  "E09000022": {
+   "gss": "E09000022",
+   "slug": "lambeth",
+   "type": "London borough",
+   "name": "Lambeth"
+  },
+  "E06000032": {
+   "gss": "E06000032",
+   "slug": "luton",
+   "type": "Unitary authority",
+   "name": "Luton"
+  },
+  "E06000018": {
+   "gss": "E06000018",
+   "slug": "nottingham",
+   "type": "Unitary authority",
+   "name": "Nottingham"
+  },
+  "E06000031": {
+   "gss": "E06000031",
+   "slug": "peterborough",
+   "type": "Unitary authority",
+   "name": "Peterborough"
+  },
+  "E06000003": {
+   "gss": "E06000003",
+   "slug": "redcar-and-cleveland",
+   "type": "Unitary authority",
+   "name": "Redcar and Cleveland"
+  },
+  "E08000015": {
+   "gss": "E08000015",
+   "slug": "wirral",
+   "type": "Metropolitan district",
+   "name": "Wirral"
+  },
+  "other:copeland": {
+   "gss": null,
+   "slug": null,
+   "type": "Former district council; no current UK Councils page",
+   "name": "Copeland"
+  },
+  "E06000058": {
+   "gss": "E06000058",
+   "slug": "bournemouth-christchurch-and-poole",
+   "type": "Unitary authority",
+   "name": "Bournemouth, Christchurch and Poole"
+  },
+  "E09000020": {
+   "gss": "E09000020",
+   "slug": "kensington-and-chelsea",
+   "type": "London borough",
+   "name": "Kensington and Chelsea"
+  },
+  "E06000039": {
+   "gss": "E06000039",
+   "slug": "slough",
+   "type": "Unitary authority",
+   "name": "Slough"
+  },
+  "E06000063": {
+   "gss": "E06000063",
+   "slug": "cumberland",
+   "type": "Unitary authority",
+   "name": "Cumberland"
+  },
+  "E06000034": {
+   "gss": "E06000034",
+   "slug": "thurrock",
+   "type": "Unitary authority",
+   "name": "Thurrock"
+  },
+  "E06000064": {
+   "gss": "E06000064",
+   "slug": "westmorland-and-furness",
+   "type": "Unitary authority",
+   "name": "Westmorland and Furness"
+  },
+  "E06000062": {
+   "gss": "E06000062",
+   "slug": "west-northamptonshire",
+   "type": "Unitary authority",
+   "name": "West Northamptonshire"
+  },
+  "E08000025": {
+   "gss": "E08000025",
+   "slug": "birmingham",
+   "type": "Metropolitan district",
+   "name": "Birmingham"
+  },
+  "E08000032": {
+   "gss": "E08000032",
+   "slug": "bradford",
+   "type": "Metropolitan district",
+   "name": "Bradford"
+  },
+  "E06000049": {
+   "gss": "E06000049",
+   "slug": "cheshire-east",
+   "type": "Unitary authority",
+   "name": "Cheshire East"
+  },
+  "E09000016": {
+   "gss": "E09000016",
+   "slug": "havering",
+   "type": "London borough",
+   "name": "Havering"
+  },
+  "E06000035": {
+   "gss": "E06000035",
+   "slug": "medway",
+   "type": "Unitary authority",
+   "name": "Medway"
+  },
+  "E06000002": {
+   "gss": "E06000002",
+   "slug": "middlesbrough",
+   "type": "Unitary authority",
+   "name": "Middlesbrough"
+  },
+  "E06000061": {
+   "gss": "E06000061",
+   "slug": "north-northamptonshire",
+   "type": "Unitary authority",
+   "name": "North Northamptonshire"
+  },
+  "E06000026": {
+   "gss": "E06000026",
+   "slug": "plymouth",
+   "type": "Unitary authority",
+   "name": "Plymouth"
+  },
+  "E06000066": {
+   "gss": "E06000066",
+   "slug": "somerset",
+   "type": "Unitary authority",
+   "name": "Somerset"
+  },
+  "E06000045": {
+   "gss": "E06000045",
+   "slug": "southampton",
+   "type": "Unitary authority",
+   "name": "Southampton"
+  },
+  "E06000021": {
+   "gss": "E06000021",
+   "slug": "stoke-on-trent",
+   "type": "Unitary authority",
+   "name": "Stoke-on-Trent"
+  },
+  "E07000217": {
+   "gss": "E07000217",
+   "slug": "woking",
+   "type": "Non-metropolitan district",
+   "name": "Woking"
+  },
+  "E10000020": {
+   "gss": "E10000020",
+   "slug": null,
+   "type": "County council",
+   "name": "Norfolk"
+  },
+  "E09000003": {
+   "gss": "E09000003",
+   "slug": "barnet",
+   "type": "London borough",
+   "name": "Barnet"
+  },
+  "E09000010": {
+   "gss": "E09000010",
+   "slug": "enfield",
+   "type": "London borough",
+   "name": "Enfield"
+  },
+  "E06000006": {
+   "gss": "E06000006",
+   "slug": "halton",
+   "type": "Unitary authority",
+   "name": "Halton"
+  },
+  "E09000014": {
+   "gss": "E09000014",
+   "slug": "haringey",
+   "type": "London borough",
+   "name": "Haringey"
+  },
+  "E09000025": {
+   "gss": "E09000025",
+   "slug": "newham",
+   "type": "London borough",
+   "name": "Newham"
+  },
+  "E06000051": {
+   "gss": "E06000051",
+   "slug": "shropshire",
+   "type": "Unitary authority",
+   "name": "Shropshire"
+  },
+  "E08000029": {
+   "gss": "E08000029",
+   "slug": "solihull",
+   "type": "Metropolitan district",
+   "name": "Solihull"
+  },
+  "E06000030": {
+   "gss": "E06000030",
+   "slug": "swindon",
+   "type": "Unitary authority",
+   "name": "Swindon"
+  },
+  "E08000009": {
+   "gss": "E08000009",
+   "slug": "trafford",
+   "type": "Metropolitan district",
+   "name": "Trafford"
+  },
+  "E06000037": {
+   "gss": "E06000037",
+   "slug": "west-berkshire",
+   "type": "Unitary authority",
+   "name": "West Berkshire"
+  },
+  "E06000040": {
+   "gss": "E06000040",
+   "slug": "windsor-and-maidenhead",
+   "type": "Unitary authority",
+   "name": "Windsor and Maidenhead"
+  },
+  "E10000034": {
+   "gss": "E10000034",
+   "slug": null,
+   "type": "County council",
+   "name": "Worcestershire"
+  },
+  "E07000229": {
+   "gss": "E07000229",
+   "slug": "worthing",
+   "type": "Non-metropolitan district",
+   "name": "Worthing"
+  },
+  "other:south-yorkshire-mayoral-combined-authority": {
+   "gss": null,
+   "slug": null,
+   "type": "Mayoral combined authority (police and crime commissioner functions)",
+   "name": "South Yorkshire Mayoral Combined Authority"
+  },
+  "E06000055": {
+   "gss": "E06000055",
+   "slug": "bedford",
+   "type": "Unitary authority",
+   "name": "Bedford"
+  },
+  "E06000043": {
+   "gss": "E06000043",
+   "slug": "brighton-and-hove",
+   "type": "Unitary authority",
+   "name": "Brighton and Hove"
+  },
+  "E10000011": {
+   "gss": "E10000011",
+   "slug": null,
+   "type": "County council",
+   "name": "East Sussex"
+  },
+  "E07000081": {
+   "gss": "E07000081",
+   "slug": "gloucester",
+   "type": "Non-metropolitan district",
+   "name": "Gloucester"
+  },
+  "E09000017": {
+   "gss": "E09000017",
+   "slug": "hillingdon",
+   "type": "London borough",
+   "name": "Hillingdon"
+  },
+  "E06000046": {
+   "gss": "E06000046",
+   "slug": "isle-of-wight",
+   "type": "Unitary authority",
+   "name": "Isle of Wight"
+  },
+  "E06000053": {
+   "gss": "E06000053",
+   "slug": "isles-of-scilly",
+   "type": "Unitary authority",
+   "name": "Isles of Scilly"
+  },
+  "E09000026": {
+   "gss": "E09000026",
+   "slug": "redbridge",
+   "type": "London borough",
+   "name": "Redbridge"
+  },
+  "E08000014": {
+   "gss": "E08000014",
+   "slug": "sefton",
+   "type": "Metropolitan district",
+   "name": "Sefton"
+  },
+  "E09000031": {
+   "gss": "E09000031",
+   "slug": "waltham-forest",
+   "type": "London borough",
+   "name": "Waltham Forest"
+  },
+  "E06000007": {
+   "gss": "E06000007",
+   "slug": "warrington",
+   "type": "Unitary authority",
+   "name": "Warrington"
+  },
+  "E09000001": {
+   "gss": "E09000001",
+   "slug": "city-of-london",
+   "type": "London borough",
+   "name": "City of London"
+  },
+  "other:kent-police-and-crime-commissioner": {
+   "gss": null,
+   "slug": null,
+   "type": "Police and crime commissioner",
+   "name": "Kent Police and Crime Commissioner"
+  }
+ },
+ "statements": [
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Bexley",
+   "cellSha256": "526c0a6d510d0b0fd37343b069c409166d364f58f454b7ffd55fbfcb3af4251c",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": null,
+     "marking": "Council provided with in-principle support but withdrew its request",
+     "role": "withdrawn"
+    }
+   ],
+   "authority": "E09000004"
+  },
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Croydon",
+   "cellSha256": "f8a3188b85d9959f7b986c6189e128baa91f577dac38aca0c1f9aad0e7af70ad",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "70.0",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000008"
+  },
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Eastbourne",
+   "cellSha256": "c1c5e092e3409c2f79d6a277b3167b8c340b2fc1c136effa0c345db64bdcd81b",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "6.8",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E07000061"
+  },
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Lambeth",
+   "cellSha256": "01f80505afabc6c40f763b3cce85116a550cffef1661dd5d5e2ea05012f0b326",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "125",
+     "marking": null,
+     "role": "stated",
+     "note": "Printed as an extension: original capitalisation of £100m in 2017-18 extended by £25m"
+    }
+   ],
+   "authority": "E09000022"
+  },
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Luton",
+   "cellSha256": "c04dc21f5c5eaec0eed0cb4acdaf4521883a632e60106a9b9b1c3588ade02657",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "35.0",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000032"
+  },
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Nottingham",
+   "cellSha256": "8ff4729db18c712be8f2b98ccc66ed23ef9077e74ce9dfc7d6e28982ebf5e993",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "20.0",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000018"
+  },
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Peterborough",
+   "cellSha256": "526c0a6d510d0b0fd37343b069c409166d364f58f454b7ffd55fbfcb3af4251c",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": null,
+     "marking": "Council provided with in-principle support but withdrew its request",
+     "role": "withdrawn"
+    }
+   ],
+   "authority": "E06000031"
+  },
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Redcar & Cleveland",
+   "cellSha256": "2c257886d216637fd7038943df89f0eeb57953fbfd959700d209efbd8cfa4890",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "3.7",
+     "marking": "in the form of grant",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000003"
+  },
+  {
+   "page": "2020-21",
+   "table": "main",
+   "authorityAsPrinted": "Wirral",
+   "cellSha256": "b9e0059b1454fbd1fa1534cc03fca9179e6c7b5bd2092954758b370a1c884fba",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "9.0",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E08000015"
+  },
+  {
+   "page": "2021-22",
+   "table": "main",
+   "authorityAsPrinted": "Bexley",
+   "cellSha256": "526c0a6d510d0b0fd37343b069c409166d364f58f454b7ffd55fbfcb3af4251c",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": null,
+     "marking": "Council provided with in-principle support but withdrew its request",
+     "role": "withdrawn"
+    }
+   ],
+   "authority": "E09000004"
+  },
+  {
+   "page": "2021-22",
+   "table": "main",
+   "authorityAsPrinted": "Copeland",
+   "cellSha256": "7e61de4a65529a3d4a40a4099179aacbdba76183cb0b268e47b95b7a783e6d17",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "1.5",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "other:copeland"
+  },
+  {
+   "page": "2021-22",
+   "table": "main",
+   "authorityAsPrinted": "Croydon",
+   "cellSha256": "bea197ce47b42ac5ce1550ba98c8b66e1863b9957a989f686fe7abf9f841326d",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "50.0",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000008"
+  },
+  {
+   "page": "2021-22",
+   "table": "main",
+   "authorityAsPrinted": "Eastbourne",
+   "cellSha256": "cd480055550364cff8fed1cc25d030cc59b54e36cb61bd72ccd5314a967b68fc",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "4.4",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E07000061"
+  },
+  {
+   "page": "2021-22",
+   "table": "main",
+   "authorityAsPrinted": "Luton",
+   "cellSha256": "526c0a6d510d0b0fd37343b069c409166d364f58f454b7ffd55fbfcb3af4251c",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": null,
+     "marking": "Council provided with in-principle support but withdrew its request",
+     "role": "withdrawn"
+    }
+   ],
+   "authority": "E06000032"
+  },
+  {
+   "page": "2021-22",
+   "table": "main",
+   "authorityAsPrinted": "Nottingham",
+   "cellSha256": "526c0a6d510d0b0fd37343b069c409166d364f58f454b7ffd55fbfcb3af4251c",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": null,
+     "marking": "Council provided with in-principle support but withdrew its request",
+     "role": "withdrawn"
+    }
+   ],
+   "authority": "E06000018"
+  },
+  {
+   "page": "2021-22",
+   "table": "main",
+   "authorityAsPrinted": "Peterborough",
+   "cellSha256": "526c0a6d510d0b0fd37343b069c409166d364f58f454b7ffd55fbfcb3af4251c",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": null,
+     "marking": "Council provided with in-principle support but withdrew its request",
+     "role": "withdrawn"
+    }
+   ],
+   "authority": "E06000031"
+  },
+  {
+   "page": "2021-22",
+   "table": "main",
+   "authorityAsPrinted": "Wirral",
+   "cellSha256": "6600e772d1242a766acd256659164b611ba2baad542b2ed60450845289fb9417",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "6.4",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E08000015"
+  },
+  {
+   "page": "2022-23",
+   "table": "main",
+   "authorityAsPrinted": "Bournemouth, Christchurch and Poole",
+   "cellSha256": "526c0a6d510d0b0fd37343b069c409166d364f58f454b7ffd55fbfcb3af4251c",
+   "figures": [
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": null,
+     "marking": "Council provided with in-principle support but withdrew its request",
+     "role": "withdrawn"
+    }
+   ],
+   "authority": "E06000058"
+  },
+  {
+   "page": "2022-23",
+   "table": "main",
+   "authorityAsPrinted": "Copeland",
+   "cellSha256": "7e61de4a65529a3d4a40a4099179aacbdba76183cb0b268e47b95b7a783e6d17",
+   "figures": [
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "1.5",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "other:copeland"
+  },
+  {
+   "page": "2022-23",
+   "table": "main",
+   "authorityAsPrinted": "Croydon",
+   "cellSha256": "d30fb5c66e1fc5a32d22d891d9b2d7a05381a17555cdf57fb1ba327e8f434cc4",
+   "figures": [
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "25.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000008"
+  },
+  {
+   "page": "2022-23",
+   "table": "main",
+   "authorityAsPrinted": "Kensington and Chelsea",
+   "cellSha256": "7ad4fc3cce3f91fbef611087a26b127d60cd9fe6c143fd74463120a3441f1e08",
+   "figures": [
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "23.2",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000020"
+  },
+  {
+   "page": "2022-23",
+   "table": "main",
+   "authorityAsPrinted": "Slough",
+   "cellSha256": "007b119758ba6008ad5f6acda147c7b9c56dfbcabcd47cb495330a08a221a337",
+   "figures": [
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "56.614",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2018-19 to 2021-22",
+     "amountGbpM": "210.458",
+     "marking": null,
+     "role": "covering_total"
+    },
+    {
+     "supportYear": "2018-19",
+     "amountGbpM": "78.015",
+     "marking": null,
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2019-20",
+     "amountGbpM": "47.536",
+     "marking": null,
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "24.941",
+     "marking": null,
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "59.966",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000039"
+  },
+  {
+   "page": "2023-24",
+   "table": "main",
+   "authorityAsPrinted": "Croydon",
+   "cellSha256": "f20fca64c9ec5ea87b4cc7a38fe6552294f776e733b3d9adcaf47c217523a200",
+   "figures": [
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "63.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "50.0",
+     "marking": "support agreed in-principle for 2023-24",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2019-20",
+     "amountGbpM": "126",
+     "marking": null,
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "10",
+     "marking": null,
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "14.4",
+     "marking": null,
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "11.2",
+     "marking": "agreed in-principle for 2022-23",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E09000008"
+  },
+  {
+   "page": "2023-24",
+   "table": "main",
+   "authorityAsPrinted": "Cumberland",
+   "cellSha256": "c0cec443bb88e7128afd9c03bc03ecff4803ff6b1ce31034f39d23efddb2aeb2",
+   "figures": [
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "10.636",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000063"
+  },
+  {
+   "page": "2023-24",
+   "table": "main",
+   "authorityAsPrinted": "Kensington and Chelsea",
+   "cellSha256": "0fab5f9fc7ffe1fb9079c5531d758323b15fe873e2c6000c0598078292619c74",
+   "figures": [
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "51.8",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000020"
+  },
+  {
+   "page": "2023-24",
+   "table": "main",
+   "authorityAsPrinted": "Lambeth",
+   "cellSha256": "03d36b36fd9d50a9882ad712ff518b60582f314774643ade5d54b2340855d822",
+   "figures": [
+    {
+     "supportYear": "2023-24 to 2024-25",
+     "amountGbpM": "50.0",
+     "marking": "covering 2023-24 to 2024-25",
+     "role": "covering_total"
+    }
+   ],
+   "authority": "E09000022"
+  },
+  {
+   "page": "2023-24",
+   "table": "main",
+   "authorityAsPrinted": "Slough",
+   "cellSha256": "851c297e6aac82f650bb9a6ee571f984e31cb619de72a078a35dc8b58a56889c",
+   "figures": [
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "46.325",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000039"
+  },
+  {
+   "page": "2023-24",
+   "table": "main",
+   "authorityAsPrinted": "Thurrock",
+   "cellSha256": "817add890af22d3a7847ec3c7bb0ed424184b007aec94518ab4256a750d1f576",
+   "figures": [
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "180.17",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "452.491",
+     "marking": "agreed in-principle for 2022-23",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "40.0",
+     "marking": "agreed in-principle for 2022-23 (February 2024)",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "130",
+     "marking": "agreed in-principle for 2022-23 (February 2025)",
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "234.5",
+     "marking": "agreed in-principle for 2023-24 (February 2024)",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "184.0",
+     "marking": "agreed in-principle for 2023-24 (February 2025)",
+     "role": "revision_note",
+     "note": "The same cell also prints £180.17m (support agreed in-principle) as the 2023-24 figure"
+    }
+   ],
+   "authority": "E06000034"
+  },
+  {
+   "page": "2023-24",
+   "table": "main",
+   "authorityAsPrinted": "Westmorland and Furness",
+   "cellSha256": "bf150997540c52520906dc1a2cabe5559b327d3b30ed4abd12eadb7d6734a79d",
+   "figures": [
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "11.0",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000064"
+  },
+  {
+   "page": "2023-24",
+   "table": "main",
+   "authorityAsPrinted": "West Northamptonshire",
+   "cellSha256": "d3cfa1e46fda279e6808c0009aae1ff99a5644af931eb908d3ee22413d77ffce",
+   "figures": [
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "6.6",
+     "marking": "agreed in-principle for 2023-24",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "6.52",
+     "marking": "reprofiled to 2024-25",
+     "role": "prior_year",
+     "note": "Printed as reprofiled from 2023-24 to 2024-25"
+    }
+   ],
+   "authority": "E06000062"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Birmingham",
+   "cellSha256": "2a3d12e2f1b11d7e1ef25263ba0872b9b8e05d4ec0b49f15e96b982c75916e72",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "685.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "490.0",
+     "marking": "support agreed in-principle for 2024-25",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2020-21 to 2022-23",
+     "amountGbpM": "570.1",
+     "marking": "agreed in-principle covering 2020-21 to 2022-23",
+     "role": "covering_total"
+    },
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "288.4",
+     "marking": null,
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "109.5",
+     "marking": null,
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "172.2",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E08000025"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Bradford",
+   "cellSha256": "7c44cda0c4111b2e099c59d5f8d81ca36fef2f6bf5883d965e886d14fdd9d2c5",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "120",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "80.0",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E08000032"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Cheshire East",
+   "cellSha256": "b2bd3f9cbbbc6c0fef4b98d40c46928f8543d5a346b0a26fa781aa08ff644e2d",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "17.6",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000049"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Croydon",
+   "cellSha256": "a6019a2c78aae7ca3bb3b6c802338c2c9eb75ba949bbf94fe67009670d6e6795",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "38.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "51.0",
+     "marking": "support agreed in-principle for 2024-25",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2019-20",
+     "amountGbpM": "9.4",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E09000008"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Cumberland",
+   "cellSha256": "4f0ad5527929b91fc059bfc543b7c7cbe085c852a0c4a47949a084beafcb4f66",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "22.582",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000063"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Eastbourne",
+   "cellSha256": "f76d9060ce7a2f1fcc897539887851dd8dac0ed4edd5f805c77de450ecbe00c0",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "3.0",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "3.0",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E07000061"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Havering",
+   "cellSha256": "b854270d11f6f7a7272d2a230032e814e39c907ed1a91f30e434747eaf353ef3",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "30.4",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "18.14",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E09000016"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Medway",
+   "cellSha256": "9319f944f3721754bef7b4dd98a42f562f0435a985936194bd6aca48ff027f68",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "20.239",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000035"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Middlesbrough",
+   "cellSha256": "97bc2c164f7800a14d131139d0255620f804965d7d07f2e5562b6fccb5a93214",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "2.443",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000002"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "North Northamptonshire",
+   "cellSha256": "526c0a6d510d0b0fd37343b069c409166d364f58f454b7ffd55fbfcb3af4251c",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": null,
+     "marking": "Council provided with in-principle support but withdrew its request",
+     "role": "withdrawn"
+    }
+   ],
+   "authority": "E06000061"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Nottingham",
+   "cellSha256": "f4e44620eaafbe750b49b95c32f8899dc5e5de98a535a5cfc3446573cb0e5c91",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "7.737",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "17.6",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000018"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Plymouth",
+   "cellSha256": "663bc396ae0d03d015b14ee609585d71e012489303a41a92e9f0b56217d2fcc8",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "72.0",
+     "marking": "for 2025-26",
+     "role": "later_year"
+    }
+   ],
+   "authority": "E06000026"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Slough",
+   "cellSha256": "771f6b4d3e4dbea13449638d64e61c6bf6b1fca9aa34c02759a319fb1603e36d",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "23.078",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000039"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Somerset",
+   "cellSha256": "f7b759a19766b7e4f22d6e7987bacc78dbb77ff6bd5e9195280a33e3bd7b0217",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "44.766",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000066"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Southampton",
+   "cellSha256": "6157f6e7dd76d7d6ecb318abe54972616d1cb41f4cb45bb6aa17cc30964e521d",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "121.58",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000045"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Stoke-on-Trent",
+   "cellSha256": "1acf68e50d5934ba99be1e177faac07ab008eccd76189a8b89fd5a7a0322e5e1",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "21.371",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "20.5",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000021"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Thurrock",
+   "cellSha256": "32bed31d928a180b26258077ec18ca2b6f69f026a18ed4cc5daaea7180fa484a",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "68.6",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "73.02",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000034"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "West Northamptonshire",
+   "cellSha256": "fc8435b63a98f3f3eff139b6c9c181b64afda9409d97343aecbeaf063ec3d9b4",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "6.52",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000062"
+  },
+  {
+   "page": "2024-25",
+   "table": "main",
+   "authorityAsPrinted": "Woking",
+   "cellSha256": "a7604ba15c9ab4642f9313e558821e447a13566f3094f99f1013482d4238a651",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "95.6",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "93.6",
+     "marking": "support agreed in-principle for 2024-25",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "235.1",
+     "marking": "agreed in-principle for 2023-24",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E07000217"
+  },
+  {
+   "page": "2024-25",
+   "table": "later",
+   "authorityAsPrinted": "Norfolk",
+   "cellSha256": "cdb31fc2626cfa0cd9667b0fd7f3ce3a14b947821e9a7088975580215211ee73",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "36.063",
+     "marking": "support agreed in February 2026",
+     "role": "stated"
+    }
+   ],
+   "authority": "E10000020"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Barnet",
+   "cellSha256": "abc2a7a4792a6b5298830673aca53e81664a69bf283588cc96bbf396c1a102b1",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "55.7",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000003"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Birmingham",
+   "cellSha256": "bf9242115047c80efe6908f8168de59345ff15e176db17d5ab02afedcb9c344f",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "180.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "490.0",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "685.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E08000025"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Bradford",
+   "cellSha256": "98f302cb708ab42e321be29fef3543ad487448e8173e3ef5e008eb573874e84a",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "113.0",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E08000032"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Cheshire East",
+   "cellSha256": "69fee914ede6d3e463ec588502a894ead1dd90136b9d0e74b8e6aac0775216c2",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "25.3",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "17.6",
+     "marking": "support agreed in principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "6",
+     "marking": "support agreed in principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E06000049"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Croydon",
+   "cellSha256": "f024c6405b22294fcc0b02109e885d0891f1c4c1eba38256b3174c92c688920b",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "136.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "110.3",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "50.0",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "63.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "51",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "38",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E09000008"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Cumberland",
+   "cellSha256": "5e34fa3ddf8de13e6f8975dc2c23ac4ae0f964f47cebb5f12e73baf324995c82",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "23.439",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000063"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Eastbourne",
+   "cellSha256": "eba10be8387320d1e2061d6685334fea0a47b15047b2139e29a94b636aff2ecb",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "2.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E07000061"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Enfield",
+   "cellSha256": "58f2ee7eb84e4045087999cc7e36e854ab2741f9acb0c7eb0cf7d370f10aecfa",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "10.0",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "20.0",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E09000010"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Halton",
+   "cellSha256": "6ffcb38ecf6c6988d5d71867bcca812aa35be1772b6620ae9d275f6951557feb",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "32.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "10",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000006"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Haringey",
+   "cellSha256": "2a7f4ea9da7cc807ef3320e1e9cca92bcc05865217f770572dbdd76c6b7f48e3",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "40.6",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "10",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E09000014"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Havering",
+   "cellSha256": "171cb4ab1c68254e7964e0d2d03c06f8ef1fea1fd4093c4b4c4184494210ba5e",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "88.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000016"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Medway",
+   "cellSha256": "bcd27a3b5f56efd37118728f1ff0456c912d25bead40772b3cbdbca1673c582c",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "18.484",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "28.469",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000035"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Newham",
+   "cellSha256": "c084058ec838282b2e1a7e2ad724ae1fdf6e1f6c554716b2f051034847846712",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "51.2",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "15.969",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E09000025"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Nottingham",
+   "cellSha256": "d30fb5c66e1fc5a32d22d891d9b2d7a05381a17555cdf57fb1ba327e8f434cc4",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "25.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000018"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Shropshire",
+   "cellSha256": "67ecbd4c00093ea5816fb083c6c6b8fb9acb3f0541d01d5dd4dbab64bd20522b",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "26.9",
+     "marking": "for 2024-25",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000051"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Slough",
+   "cellSha256": "b343688fb5ba39f5170b9ded8a3e06e460c3627eeeeed0c7bed39ad203241fa8",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "15.709",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000039"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Solihull",
+   "cellSha256": "111feec7e496dbf2f96da9edcdc1514333a6c2ea68cb8f8c9ec07b9c457c95a3",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "32.658",
+     "marking": null,
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "15.615",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E08000029"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Somerset",
+   "cellSha256": "8836ab63b83155d8583f763d4dc2ac69c6f386b46c7ac536ac44b444b4073e46",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "63.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "45.118",
+     "marking": "support agreed in-principle",
+     "role": "stated",
+     "note": "MHCLG note: provisionally includes revised support agreed in 2024-25, subject to final confirmation"
+    }
+   ],
+   "authority": "E06000066"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Southampton",
+   "cellSha256": "7189491d9d3c5bcd1940096a3ef7dfcc8a08c4446e5b392f050fc6aa8874434b",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "89.9",
+     "marking": "support agreed in-principle",
+     "role": "stated",
+     "note": "MHCLG note: provisionally includes revised support agreed in 2024-25, subject to final confirmation"
+    }
+   ],
+   "authority": "E06000045"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Stoke-on-Trent",
+   "cellSha256": "5aa29a720c047a1bf7fecc719b584091b0bac37b41aacfa0ddff00e01fd60db9",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "16.8",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000021"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Swindon",
+   "cellSha256": "75e1f2c056699037e7972e150e7503abcdf8ed1fedb9b28d339ae65dcc691fe9",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "14.7",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000030"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Thurrock",
+   "cellSha256": "9c07297850d0ab88e25028c94dddaf77da51bad6a242b155774dda94f65b39ab",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "72.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "62.11",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "130.0",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "40.0",
+     "marking": "agreed in February 2024",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "184.0",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "234.5",
+     "marking": "agreed in February 2024",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "96.0",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "68.6",
+     "marking": "agreed in February 2024",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E06000034"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Trafford",
+   "cellSha256": "599c8d55092797e68b9015e7429f6eacf46c257306ce3a9b076455c224bcdf1a",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "9.6",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E08000009"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "West Berkshire",
+   "cellSha256": "6acb6798e0c0e722e5ba653f131c8634c899d60f2c47c24b2b319e05c2338b14",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "3.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "20.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "13.0",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000037"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Windsor & Maidenhead",
+   "cellSha256": "108040978ea6fdadd427ff5dcf1929300235d556a8beb42fcc4cc8d8cef4bfcf",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "41.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "62.0",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000040"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Wirral",
+   "cellSha256": "46c912c137ce6b40f3515476979d2dcb55e45b2706507d4efbe004a3b4c72003",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "7.5",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "18.641",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E08000015"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Woking",
+   "cellSha256": "1c3020fedc3b98275b41f6fe43c04deb3f64ea9373fb0e6c7ac3c3ede69917e8",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "74.6",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "93.6",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "95.6",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E07000217"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Worcestershire",
+   "cellSha256": "96fb62fd62cf0f81eb36c193ddd5708d2104696f1e6754a18f378ead21050fc1",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "33.6",
+     "marking": null,
+     "role": "stated"
+    }
+   ],
+   "authority": "E10000034"
+  },
+  {
+   "page": "2025-26",
+   "table": "main",
+   "authorityAsPrinted": "Worthing",
+   "cellSha256": "60a73ee4def5b51ca6c626a37307dcd60fde19e5fe5116b463ad5265fbfe77a3",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "2.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "4.75",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E07000229"
+  },
+  {
+   "page": "2025-26",
+   "table": "hra",
+   "authorityAsPrinted": "Lambeth",
+   "cellSha256": "27d0bb05e04eed02c7f49573419e8dcaf37cba418d08906b3a603fe2c9c8312e",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "40.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000022"
+  },
+  {
+   "page": "2025-26",
+   "table": "police",
+   "authorityAsPrinted": "South Yorkshire Mayoral Combined Authority",
+   "cellSha256": "24fac6e21f12745383f375e8e68d1243c495976e124428b020a608a2c8d9b458",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "17.0",
+     "marking": "support agreed for 2024-25",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "other:south-yorkshire-mayoral-combined-authority"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Barnet",
+   "cellSha256": "0be7b7bd7c2ad546802cde66436bf66a111de326a0323af2d79e47689c2b6387",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "79.6",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000003"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Bedford",
+   "cellSha256": "ecf9606d0a2174c593a15f83823928fc070485a374724c494b4170ee16e3483e",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "58.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "22.0",
+     "marking": "support agreed in-principle for 2025-26",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000055"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Bradford",
+   "cellSha256": "38873b2df8aada0eb5b6fdeaf05bddcc912eb94520e3addc71f767b504270673",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "78.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E08000032"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Brighton and Hove",
+   "cellSha256": "1faaeba0829fb84bf2189b58efd64cbf48655f330700e9905bc95a30fa5b672b",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "15.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000043"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Cheshire East",
+   "cellSha256": "23d5418dccaf8b8a8edc33d30e56d8cd50a406bf99232155e803a40aba4799d5",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "35.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000049"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Croydon",
+   "cellSha256": "c449c92f5ab5d6afeb4eefbcd0e03bfc3bc83d60c624d2ce31947625e43a204a",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "119.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "110.3",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "136.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E09000008"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Cumberland",
+   "cellSha256": "cac9a53d6ac015435f4173828a9c981863a3b096422edf655fbf30bfd8c9ff85",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "11.834",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000063"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "East Sussex",
+   "cellSha256": "d1b6fbd4badff5f87bdf477c9fcd1dd16a8b29b18a053684e5a75d6977e231a7",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "70.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E10000011"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Gloucester",
+   "cellSha256": "3b87255a98f83d4fbb9e6fbfbf7c234b3687c981e2b63ae88c5b2f80d1f62fba",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "9.05",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "2.56",
+     "marking": "support agreed in-principle for 2025-26",
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "3.89",
+     "marking": "support agreed in-principle for 2024-25",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E07000081"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Halton",
+   "cellSha256": "23d5418dccaf8b8a8edc33d30e56d8cd50a406bf99232155e803a40aba4799d5",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "35.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000006"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Haringey",
+   "cellSha256": "54120cf2293a710d48a236f4b342e6d0824f0027c19bafb9e38417bf64235b75",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "84.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000014"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Havering",
+   "cellSha256": "7838a60c84794252a87de84b3fe465a939ff4590a754ee3bf75a83c7f0e77434",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "77.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000016"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Hillingdon",
+   "cellSha256": "fcdb9c94586892cbcf9fa681ad67daadc41ab17ed64615a7964bcafcd6b6f0bd",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "62.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "88.0",
+     "marking": "support agreed in-principle for 2025-26",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E09000017"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Isle of Wight",
+   "cellSha256": "085afad0fcff62d2856e2a157ec6d28fb6d0cdc0b7dfe6c09674ee12b3c0ba53",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "12.9",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000046"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Isles of Scilly",
+   "cellSha256": "bc027b8b61904e21eea418672be4e4c80975e9a832d34d84e648dabc3575b3f9",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "0.926",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "1.195",
+     "marking": "support agreed in-principle for 2025-26",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000053"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Lambeth",
+   "cellSha256": "c50c54d154bad36f8b927349e4e0d5afce892bbd45161a2e1b8f4522a41c7d9c",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "20.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "46.0",
+     "marking": "support agreed in-principle for 2025-26",
+     "role": "prior_year"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "50.0",
+     "marking": "support agreed in-principle for 2024-25",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E09000022"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Medway",
+   "cellSha256": "924fa68493601d1aeecb563e10360d766553499879eaccf2272b6aed17719b46",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "10.126",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "28.469",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "18.484",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E06000035"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Peterborough",
+   "cellSha256": "ce16e9a147a54bb2a6955cb3d88776c6fc6e9e48f2c8f4095c5db50ee650d310",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "5.68",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "4.039",
+     "marking": null,
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000031"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Redbridge",
+   "cellSha256": "d1b6fbd4badff5f87bdf477c9fcd1dd16a8b29b18a053684e5a75d6977e231a7",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "70.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000026"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Redcar and Cleveland",
+   "cellSha256": "18aedf7abddcddc7c2d1ede026d22bfa1a79e97452a260bd80f2c9f32d17b5a5",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "18.451",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000003"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Sefton",
+   "cellSha256": "9129107dfa57031cc3f223a1d8ee54b9dbc876a23f79d25a0c019be6b6d8a6da",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "12.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E08000014"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Shropshire",
+   "cellSha256": "917fe87ee6ad0fb0ff9129fb691279a246856a0f978f8a052d58b2d6e575f323",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "121.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "71.4",
+     "marking": "support agreed in-principle for 2025-26",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000051"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Slough",
+   "cellSha256": "dd087650caf8fabac46ee6a5611adee842e70a94ed4601631f646376ec7d6ab9",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "42.899",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000039"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Somerset",
+   "cellSha256": "cbffe86894201804347179816e7a3c3dcbc07f92ecdaa649a132291a16dbb2a3",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "30",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "45.118",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "63.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E06000066"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Stoke-on-Trent",
+   "cellSha256": "ec1be4f32ebe594446a4795bfa7f7f23297bba54ac7f99831a74c2e82087c924",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "10.5",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000021"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Swindon",
+   "cellSha256": "d9af76c759360cd74155cebbfea5e0a35bd1bf0238254ea22327df89562afdac",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "22.3",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000030"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Thurrock",
+   "cellSha256": "a2dfcbded5c71d909dc09f68a4ad47f61f34610a13c0aee4a3a7027d2cf82611",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "68.91",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "73.02",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "96",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "62.11",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "72",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E06000034"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Trafford",
+   "cellSha256": "f37ed74a29ea1a4a08f64af3b422322f8a298013e04a3861618fab44871a547e",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "12.65",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E08000009"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Waltham Forest",
+   "cellSha256": "10fbdfdd047f2941ecacf2c49353557184d02b3448c84e73bbd41df516297fea",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "19.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000031"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Warrington",
+   "cellSha256": "7979f3f7c5b9aef8fe9478a468769079bb33232e81c94dc39985fe875f69fe45",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "92.047",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "87.029",
+     "marking": "support agreed in-principle for 2025-26",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "E06000007"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "West Berkshire",
+   "cellSha256": "c5e31930c56434ed68a350035df5f483a84efe81e9ddad8f7535c832aa5eb373",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "30.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "20.0",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "3.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E06000037"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Windsor and Maidenhead",
+   "cellSha256": "c699a2201c6b2d357f5f2c6c21ec9789f9a00ead3cce9e9fb6ae6ced2d20e4f8",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "48.754",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E06000040"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Wirral",
+   "cellSha256": "823e8e557ef4f0b675201d989e418a0f39444d0ae9f13f232723f652f8071582",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "6.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E08000015"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Woking",
+   "cellSha256": "49de3c3f2a9986a71ffdf5a48d7e4376059f94ebde28a26b976ff47c460602a2",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "58.1",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E07000217"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Worcestershire",
+   "cellSha256": "62b97e2ff1c53ca9f283ab2c8d3e4e547a3d0b9a7ec43b856e02dfbb724d5990",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "59.933",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E10000034"
+  },
+  {
+   "page": "2026-27",
+   "table": "main",
+   "authorityAsPrinted": "Worthing",
+   "cellSha256": "6c69225d3e6a7dc42b29fa436329342b484c839a7e86e4f0cdb61cb6435e1a58",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "5.0",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "4.75",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "2.0",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E07000229"
+  },
+  {
+   "page": "2026-27",
+   "table": "hra",
+   "authorityAsPrinted": "City of London",
+   "cellSha256": "dd97a91719be3677c2e5d0f8203cc22aaeeebe1b78d4d1842b246110d1ac8935",
+   "figures": [
+    {
+     "supportYear": "2026-27",
+     "amountGbpM": "2.65",
+     "marking": "support agreed in-principle",
+     "role": "stated"
+    }
+   ],
+   "authority": "E09000001"
+  },
+  {
+   "page": "2026-27",
+   "table": "police",
+   "authorityAsPrinted": "Kent Police and Crime Commissioner",
+   "cellSha256": "0c5b35145f0fdcdb2f3198d9d82ec0b66eef00cb612143cd784f76434f16487c",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "29.0",
+     "marking": "for 2025-26",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "other:kent-police-and-crime-commissioner"
+  },
+  {
+   "page": "2026-27",
+   "table": "police",
+   "authorityAsPrinted": "South Yorkshire Mayoral Combined Authority",
+   "cellSha256": "32c327c5f02e30246bad3c3d52341f7c6ff23c3b672cf4635ade4aaea8b858c4",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "6.6",
+     "marking": "support agreed in-principle for 2025-26",
+     "role": "prior_year"
+    }
+   ],
+   "authority": "other:south-yorkshire-mayoral-combined-authority"
+  },
+  {
+   "page": "2026-27",
+   "table": "birmingham_revised",
+   "authorityAsPrinted": "Birmingham",
+   "cellSha256": "cd1ac3514bfd49d718815d9577422e439a5e5806d2e3b3f9f1dc3092bc43a5d4",
+   "figures": [
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "99.5",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2020-21",
+     "amountGbpM": "288.4",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E08000025"
+  },
+  {
+   "page": "2026-27",
+   "table": "birmingham_revised",
+   "authorityAsPrinted": "Birmingham",
+   "cellSha256": "f41db4db2160cf79d3d0e5600affae60a527cc7f667059d62deffcebf98ed2ff",
+   "figures": [
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "97.4",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2021-22",
+     "amountGbpM": "109.5",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E08000025"
+  },
+  {
+   "page": "2026-27",
+   "table": "birmingham_revised",
+   "authorityAsPrinted": "Birmingham",
+   "cellSha256": "4a9c0ff2bbe6d4038742371c2f07d4d5c191a0e9086df9d7855bec45c24584d3",
+   "figures": [
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "169.6",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2022-23",
+     "amountGbpM": "172.2",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E08000025"
+  },
+  {
+   "page": "2026-27",
+   "table": "birmingham_revised",
+   "authorityAsPrinted": "Birmingham",
+   "cellSha256": "300e305b43d4d7ddc6bc14303161eef3725de5773847c870c88d90ce4f7f0494",
+   "figures": [
+    {
+     "supportYear": "2023-24",
+     "amountGbpM": "188.5",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    }
+   ],
+   "authority": "E08000025"
+  },
+  {
+   "page": "2026-27",
+   "table": "birmingham_revised",
+   "authorityAsPrinted": "Birmingham",
+   "cellSha256": "26eb8d1ec4a53255ede6b6c68267f4e7b58f835736d47b89011b99af7fc7faab",
+   "figures": [
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "405.7",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2024-25",
+     "amountGbpM": "491.1",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E08000025"
+  },
+  {
+   "page": "2026-27",
+   "table": "birmingham_revised",
+   "authorityAsPrinted": "Birmingham",
+   "cellSha256": "1c5d6db4860c871f174f7de55d752ba1a98ff7d517c8d6ebe87bf893fda5c06e",
+   "figures": [
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "36.7",
+     "marking": "support agreed in-principle",
+     "role": "revision_note"
+    },
+    {
+     "supportYear": "2025-26",
+     "amountGbpM": "180",
+     "marking": "support agreed in-principle",
+     "role": "superseded"
+    }
+   ],
+   "authority": "E08000025"
+  }
+ ],
+ "multipleFigures": [
+  {
+   "authority": "E06000034",
+   "account": "general",
+   "supportYear": "2023-24",
+   "byPage": {
+    "2023-24": [
+     "180.17",
+     "184.0"
+    ],
+    "2025-26": [
+     "184.0"
+    ]
+   },
+   "relation": "not clear: the 2023-24 page prints £180.17m as the year figure and, in the same cell, a reprofiled £184.0m"
+  },
+  {
+   "authority": "E06000034",
+   "account": "general",
+   "supportYear": "2024-25",
+   "byPage": {
+    "2024-25": [
+     "73.02"
+    ],
+    "2025-26": [
+     "96.0"
+    ],
+    "2026-27": [
+     "73.02"
+    ]
+   },
+   "relation": "revised: the 2025-26 and 2026-27 pages each print a revision note"
+  },
+  {
+   "authority": "E08000025",
+   "account": "general",
+   "supportYear": "2020-21",
+   "byPage": {
+    "2024-25": [
+     "288.4"
+    ],
+    "2026-27": [
+     "99.5"
+    ]
+   },
+   "relation": "revised: the 2026-27 page says the government agreed in February 2026 to alter the previously agreed profile"
+  },
+  {
+   "authority": "E08000025",
+   "account": "general",
+   "supportYear": "2021-22",
+   "byPage": {
+    "2024-25": [
+     "109.5"
+    ],
+    "2026-27": [
+     "97.4"
+    ]
+   },
+   "relation": "revised: the 2026-27 page says the government agreed in February 2026 to alter the previously agreed profile"
+  },
+  {
+   "authority": "E08000025",
+   "account": "general",
+   "supportYear": "2022-23",
+   "byPage": {
+    "2024-25": [
+     "172.2"
+    ],
+    "2026-27": [
+     "169.6"
+    ]
+   },
+   "relation": "revised: the 2026-27 page says the government agreed in February 2026 to alter the previously agreed profile"
+  },
+  {
+   "authority": "E08000025",
+   "account": "general",
+   "supportYear": "2024-25",
+   "byPage": {
+    "2024-25": [
+     "490.0"
+    ],
+    "2025-26": [
+     "490.0"
+    ],
+    "2026-27": [
+     "405.7"
+    ]
+   },
+   "relation": "revised: the 2026-27 page says the government agreed in February 2026 to alter the previously agreed profile. Its revised row gives the earlier figure as £491.1m, while the 2024-25 and 2025-26 pages print £490.0m"
+  },
+  {
+   "authority": "E08000025",
+   "account": "general",
+   "supportYear": "2025-26",
+   "byPage": {
+    "2025-26": [
+     "180.0"
+    ],
+    "2026-27": [
+     "36.7"
+    ]
+   },
+   "relation": "revised: the 2026-27 page says the government agreed in February 2026 to alter the previously agreed profile"
+  },
+  {
+   "authority": "E09000008",
+   "account": "general",
+   "supportYear": "2019-20",
+   "byPage": {
+    "2023-24": [
+     "126"
+    ],
+    "2024-25": [
+     "9.4"
+    ]
+   },
+   "relation": "not stated: MHCLG does not say whether these figures add together or replace each other"
+  },
+  {
+   "authority": "E09000008",
+   "account": "general",
+   "supportYear": "2020-21",
+   "byPage": {
+    "2020-21": [
+     "70.0"
+    ],
+    "2023-24": [
+     "10"
+    ]
+   },
+   "relation": "not stated: MHCLG does not say whether these figures add together or replace each other"
+  },
+  {
+   "authority": "E09000008",
+   "account": "general",
+   "supportYear": "2021-22",
+   "byPage": {
+    "2021-22": [
+     "50.0"
+    ],
+    "2023-24": [
+     "14.4"
+    ]
+   },
+   "relation": "not stated: MHCLG does not say whether these figures add together or replace each other"
+  },
+  {
+   "authority": "E09000008",
+   "account": "general",
+   "supportYear": "2022-23",
+   "byPage": {
+    "2022-23": [
+     "25.0"
+    ],
+    "2023-24": [
+     "11.2"
+    ]
+   },
+   "relation": "not stated: MHCLG does not say whether these figures add together or replace each other"
+  }
+ ]
+}
