@@ -1,0 +1,106 @@
+{
+  "donorCommit": "85f7e33ef2cdc5c4f0a69b6c35209c86cc0cad5f",
+  "budgetSha256": "704c213738abbff846e9210a6fbb9eda058efb3d72beb5467fd7755cfeefdd0a",
+  "nationalSha256": "81e6926afd4f4e1c226a1333ee7e5c7be2aa4c2d6f6bbc4c87b52e80ebb36c0f",
+  "fixtureSha256": "730a5ae7066eb22a2509974265779fa1d99ec7f83e5e46a7d07aab03ffac0e90",
+  "retained": 317,
+  "available": 308,
+  "billingAvailable": 287,
+  "countySections": 160,
+  "countyBodies": 21,
+  "negativeServiceBodies": 150,
+  "displayNameDifferences": 22,
+  "note4": [
+    "E09000003",
+    "E07000071",
+    "E09000010",
+    "E07000131",
+    "E07000146",
+    "E07000211",
+    "E07000220"
+  ],
+  "note8": [
+    "E07000212",
+    "E06000040"
+  ],
+  "missing": {
+    "E07000069": "Castle Point",
+    "E08000026": "Coventry",
+    "E06000063": "Cumberland",
+    "E08000027": "Dudley",
+    "E07000072": "Epping Forest",
+    "E09000011": "Greenwich",
+    "E07000209": "Guildford",
+    "E06000025": "South Gloucestershire",
+    "E07000222": "Warwick"
+  },
+  "anchors": {
+    "E07000117": {
+      "servicetot": 17246,
+      "revenuetot": 25831,
+      "ctrtot": 8832,
+      "edutot": 0,
+      "eduspc": 0,
+      "asctot": 2,
+      "csctot": 0,
+      "transtot": -343,
+      "grantindsg": 0,
+      "resoth_strt": 19978,
+      "resoth_end": 17829,
+      "resunall_strt": 1379,
+      "resunall_end": 1379
+    },
+    "E08000025": {
+      "servicetot": 2700482,
+      "revenuetot": 2970775,
+      "ctrtot": 560016,
+      "edutot": 1117292,
+      "eduspc": 268053,
+      "asctot": 573142,
+      "csctot": 410088,
+      "transtot": 161402,
+      "grantindsg": 884812,
+      "resoth_strt": 574278,
+      "resoth_end": 531445,
+      "resunall_strt": 156722,
+      "resunall_end": 157323
+    },
+    "E09000033": {
+      "servicetot": 552973,
+      "revenuetot": 525414,
+      "ctrtot": 83475,
+      "edutot": 147311,
+      "eduspc": 7946,
+      "asctot": 113839,
+      "csctot": 55445,
+      "transtot": -63028,
+      "grantindsg": 116704,
+      "resoth_strt": 255423,
+      "resoth_end": 235416,
+      "resunall_strt": 59671,
+      "resunall_end": 49831
+    },
+    "E10000017": {
+      "servicetot": 2759432,
+      "revenuetot": 2826392,
+      "ctrtot": 717078,
+      "edutot": 1409030,
+      "eduspc": 221200,
+      "asctot": 683126,
+      "csctot": 325214,
+      "transtot": 57581,
+      "grantindsg": 1174566,
+      "resoth_strt": 245022,
+      "resoth_end": 229961,
+      "resunall_strt": 66250,
+      "resunall_end": 66250
+    }
+  },
+  "scenarioPositiveBaseThousands": {
+    "E08000025": 2703694,
+    "E07000117": 18015,
+    "E10000017": 2759432,
+    "E09000033": 618398
+  },
+  "assertions": "All data, identity, raw hash and scenario arithmetic assertions passed. Future UI and CI checks are acceptance criteria, not completed implementation tests."
+}

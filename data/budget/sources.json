@@ -1,0 +1,53 @@
+{
+  "raPart1": {
+    "publisher": "Ministry of Housing, Communities and Local Government",
+    "title": "Local authority revenue expenditure and financing England: 2026 to 2027 budget individual local authority data",
+    "url": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2026-to-2027-budget-individual-local-authority-data",
+    "fileUrl": "https://assets.publishing.service.gov.uk/media/6a2962166d178a6fb7e32089/RA_2026-27_data_Part_1.ods",
+    "file": "RA_2026-27_data_Part_1.ods",
+    "sha256": "3ea4d4c2218bc9f49bbf59a6fc82481acb6a3494d5b0f4e114cdb945730653db",
+    "published": "2026-06-11",
+    "retrieved": "2026-11-08",
+    "year": "2026-27",
+    "tables": [
+      "RA_LA_Data_2026-27",
+      "Notes"
+    ],
+    "precision": "Displayed integer GBP thousands; missing markers remain null",
+    "licence": "Open Government Licence v3.0"
+  },
+  "raPart2": {
+    "publisher": "Ministry of Housing, Communities and Local Government",
+    "title": "Local authority revenue expenditure and financing England: 2026 to 2027 budget individual local authority data",
+    "url": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2026-to-2027-budget-individual-local-authority-data",
+    "fileUrl": "https://assets.publishing.service.gov.uk/media/6a281185e371d9d2c0052b0a/RA_2026-27_data_Part_2.ods",
+    "file": "RA_2026-27_data_Part_2.ods",
+    "sha256": "55c34505c69513fcba446f3484061d2bd115c4ce06bb5bafba7b36e330be4d65",
+    "published": "2026-06-11",
+    "retrieved": "2026-11-08",
+    "year": "2026-27",
+    "tables": [
+      "RA_LA_Data_2026-27",
+      "Notes"
+    ],
+    "precision": "Displayed integer GBP thousands; missing markers remain null",
+    "licence": "Open Government Licence v3.0"
+  },
+  "raGrants": {
+    "publisher": "Ministry of Housing, Communities and Local Government",
+    "title": "Local authority revenue expenditure and financing England: 2026 to 2027 budget individual local authority data",
+    "url": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2026-to-2027-budget-individual-local-authority-data",
+    "fileUrl": "https://assets.publishing.service.gov.uk/media/6a28119b6d178a6fb7e31f7f/SG_2026-27.ods",
+    "file": "SG_2026-27.ods",
+    "sha256": "6150792dcea97ca58b912a5fbf9fdc99562ba782fb7d6f5c8885e6ca1a17e3b5",
+    "published": "2026-06-11",
+    "retrieved": "2026-11-08",
+    "year": "2026-27",
+    "tables": [
+      "SG_LA_Data_2026-27",
+      "Notes"
+    ],
+    "precision": "Displayed integer GBP thousands; missing markers remain null",
+    "licence": "Open Government Licence v3.0"
+  }
+}

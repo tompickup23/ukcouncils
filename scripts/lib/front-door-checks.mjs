@@ -1,3 +1,4 @@
+import { heldWording } from './held-wording.mjs';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 const textOf = html => html.replace(/<[^>]+>/g, ' ').replace(/&#39;|&#x27;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
@@ -26,6 +27,7 @@ export function frontDoorChecks(root, dist) {
     const html = readFileSync(path, 'utf8');
     built.set(council.slug, html);
     const where = council.slug;
+    check(!heldWording(html), `Held wording outside cited source text ${where}`);
     const about = section(html, 'about');
     const collectionSection = section(html, 'collection');
     const electionSection = section(html, 'elections');
@@ -91,7 +93,7 @@ export function frontDoorChecks(root, dist) {
       const currentRow = rows.find(row => /data-current(?:[\s=>])/.test(row));
       check(Boolean(currentRow && (currentRow.match(/<strong\b/g) ?? []).length === 2), `${kind} current row emphasis ${where}`);
     }
-    const order = ['about', 'tax-summary', 'collection', 'exceptional-financial-support', 'elections', 'spending', 'school-holidays', 'sources'];
+    const order = ['about', 'tax-summary', 'collection', 'exceptional-financial-support', 'elections', 'budget', 'county-budget', 'spending', 'school-holidays', 'sources'];
     const present = order.filter(id => section(html, id));
     check(present.every((id, i) => i === 0 || html.indexOf(`id="${id}"`) > html.indexOf(`id="${present[i - 1]}"`)), `Profile order ${where}`);
     const contents = /<nav\b[^>]*aria-label="On this page"[\s\S]*?<\/nav>/.exec(html)?.[0];

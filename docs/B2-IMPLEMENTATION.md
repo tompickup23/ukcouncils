@@ -44,7 +44,7 @@ Resume only after the owner resolves the quote suppression stop condition. Read 
 
 ## Item 3 resumed
 
-The owner resolved the stop condition in brief commit cd3535a. The helper and test now use `/re-?organi[sz]|unitary|abolish|structural change/i` and assert the seven named councils. Read all 174 quotes again: no further quote contains reorganisation or abolition wording in another spelling, and no quote names an individual. The seven retain their year and citation but their quotations will be withheld.
+The owner resolved the stop condition in brief commit ce1408f. The helper and test now use `/re-?organi[sz]|unitary|abolish|structural change/i` and assert the seven named councils. Read all 174 quotes again: no further quote contains reorganisation or abolition wording in another spelling, and no quote names an individual. The seven retain their year and citation but their quotations will be withheld.
 
 Validation: `npm run check`, zero errors and warnings; `npm test`, 183 passed and 12 skipped.
 
