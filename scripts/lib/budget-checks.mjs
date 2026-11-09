@@ -42,7 +42,10 @@ export function budgetChecks(root, dist) {
     check(new Set(ids).size === ids.length, `Duplicate ids ${where}`);
     if (row.notes.raPart1.includes('[note 4]')) check((content.match(/MHCLG note 4:/g) ?? []).length === 2, `Note 4 beside both rows ${where}`);
     if (row.notes.raPart1.includes('[note 8]')) check(/<\/table><\/div>\s*<p[^>]*data-note8/.test(content), `Note 8 under funding ${where}`);
-    check(content.includes('It is not possible to identify usable revenue reserves in the current release.'), `Reserves caveat ${where}`);
+    const hasReserves = ['resoth_strt', 'resoth_end', 'resunall_strt', 'resunall_end'].some(key => row.values[key] !== null && row.values[key] !== 0);
+    check(content.includes('id="billing-budget-reserves"') === hasReserves, `Reserves subsection presence ${where}`);
+    if (!hasReserves && !county) check(!content.includes('planned other earmarked and unallocated reserve balances'), `No empty reserves table ${where}`);
+    if (hasReserves) check(content.includes('It is not possible to identify usable revenue reserves in the current release.'), `Reserves caveat ${where}`);
     if (where === 'burnley') for (const value of ['£17,246,000', '£2,759,432,000', 'minus £343,000', 'minus £426,000', 'Lancashire County Council budget']) check(content.includes(value), `Burnley anchor ${value}`);
     if (where === 'birmingham') check(content.includes('£2,700,482,000'), 'Birmingham service total');
     if (where === 'dorset') check(content.includes('Dorset UA'), 'Dorset source name');

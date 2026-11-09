@@ -38,6 +38,31 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Read pinned RA cache hashes
+        id: ra-sources
+        run: |
+          node --input-type=module <<'NODE' >> "$GITHUB_OUTPUT"
+          import {readFileSync} from 'node:fs';
+          const sources = JSON.parse(readFileSync('data/budget/sources.json', 'utf8'));
+          const hashes = ['raPart1', 'raPart2', 'raGrants'].map(key => sources[key].sha256);
+          if (hashes.some(hash => !/^[a-f0-9]{64}$/.test(hash))) throw new Error('Invalid pinned RA hash');
+          console.log(`hashes=${hashes.join('-')}`);
+          NODE
+
+      - name: Restore pinned RA workbooks
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/raw/RA_2026-27_data_Part_1.ods
+            data/raw/RA_2026-27_data_Part_2.ods
+            data/raw/SG_2026-27.ods
+          key: ${{ runner.os }}-ra-${{ steps.ra-sources.outputs.hashes }}
+
+      - name: Rehash and reproduce the pinned RA edition
+        run: |
+          node scripts/import-ra-budget.mjs
+          git diff --exit-code -- data/budget/ra-2026-27.json
+
       - name: Type check
         run: npm run check
 
@@ -74,6 +99,14 @@ jobs:
 
       - name: Security headers against the built tree
         run: npm run test:csp
+
+      - name: Keep budget screenshots for this commit
+        uses: actions/upload-artifact@v7
+        with:
+          name: c3-budget-screenshots-${{ github.sha }}
+          path: output/playwright/c3/
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Keep the report when a spec failed
         if: failure()

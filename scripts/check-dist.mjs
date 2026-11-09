@@ -1,5 +1,5 @@
 import { budgetChecks } from './lib/budget-checks.mjs';
-import { heldWording } from './lib/held-wording.mjs';
+import { heldWording, RA_906_LABEL } from './lib/held-wording.mjs';
 /**
  * Checks the built tree after `npm run build`. Run by `npm run test:dist`.
  *
@@ -62,7 +62,10 @@ for (const path of files(DIST)) {
   // The withdrawn Lancashire reorganisation note is held: see "Held data" in CLAUDE.md.
   for (const phrase of HELD_PHRASES) if (text.includes(phrase)) failures.push(`held reorganisation text "${phrase}" in ${rel(path)}`);
   if (/https?:\/\/ukfoodhygiene\.co\.uk\b/.test(text)) failures.push(`private sister link in ${rel(path)}`);
-  if (!path.endsWith(".html")) continue;
+  if (!path.endsWith(".html")) {
+    if (text.includes(RA_906_LABEL)) failures.push(`RA label outside financing markup in ${rel(path)}`);
+    continue;
+  }
   pages += 1;
   if (heldWording(text)) failures.push(`held wording outside cited source text in ${rel(path)}`);
   const prose = text.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, "").replace(/<[^>]+>/g, " ");

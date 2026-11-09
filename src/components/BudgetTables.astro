@@ -61,7 +61,7 @@ const note8 = council.notes.raPart1.includes('[note 8]');
   {note8 && <p class="caveat" data-note8>MHCLG note 8: “{budget.sourceNotes.raPart1['[note 8]']}”</p>}
   <SourceLine source={budgetSource('raPart1', 'Calculated by grouping financing lines and reversing their signs, except the council tax requirement')} />
   <details><summary>Read the financing lines as printed</summary>
-    <div class="table-wrap" tabindex="0" role="region" aria-label={`${name} printed financing lines`}><table class="data" data-ra-financing>
+    <div class="table-wrap" tabindex="0" role="region" aria-label={`${name} printed financing lines`}><table class="data" data-ra-financing data-pagefind-ignore>
       <caption>{name}: observed RA financing lines, {budgetYear}, preserving printed signs. RA and Table 10 are separate returns; neither is adjusted.</caption>
       <thead><tr><th scope="col">Printed label</th><th scope="col">RA line</th><th scope="col" class="num">Pounds</th></tr></thead>
       <tbody>{['revenuetot', ...FINANCING_IDS, 'ctrtot'].map(key => observation(council, key)).filter(cell => present(cell.value)).map(cell => <tr data-record-type="observation">
@@ -70,6 +70,7 @@ const note8 = council.notes.raPart1.includes('[note 8]');
     </table></div><SourceLine source={budgetSource()} />
   </details>
 
+  {reserveRows.length > 0 && <>
   <Heading id={`${id}-reserves`}>Non-ringfenced reserves</Heading>
   <div class="table-wrap" tabindex="0" role="region" aria-labelledby={`${id}-reserves`}><table class="data">
     <caption>{name}: planned other earmarked and unallocated reserve balances, {budgetYear}, in pounds</caption>
@@ -80,6 +81,7 @@ const note8 = council.notes.raPart1.includes('[note 8]');
   <p class="caveat">{RESERVES_CAVEAT}</p>
   <SourceLine source={budgetSource('raPart2', 'Total calculated as other earmarked reserves plus unallocated reserves')} />
   <SourceLine source={reservesSource} />
+  </>}
 </div>
 <style>
   .income-label{display:block;font-size:.85rem;font-weight:400;white-space:normal}

@@ -59,7 +59,7 @@
       "path": "src/components/BudgetTables.astro",
       "donorPath": "src/components/BudgetTables.astro",
       "donorSha256": "d2c134cb9623da72d9aaebff676b27aca82260be4991337437b19ac35ee6202f",
-      "localSha256": "8da50cde1a4acdb3573b62095bdf0f5782a3ceb832b29eacb6067f8c3b78940a"
+      "localSha256": "46ba92e0a4ee65dad0f744fe036fafe0bca51737805415bdb62a90b6e1d06d73"
     }
   ],
   "decisions": [

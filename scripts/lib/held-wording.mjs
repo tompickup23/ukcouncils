@@ -10,5 +10,7 @@ export function heldWording(html) {
   if (masked.includes(RA_906_LABEL)) return true;
   const withoutCitations = masked.replace(/<(p|li)\b[^>]*class="source-line[^\"]*"[^>]*>[\s\S]*?<\/\1>/g, '')
     .replace(/<ul\b[^>]*data-profile-sources[^>]*>[\s\S]*?<\/ul>/g, '');
-  return HELD.test(withoutCitations.replace(/<[^>]+>/g, ' '));
+  // B2 quotes retain their primary document URL even when its title uses held wording.
+  const withoutCitationUrls = withoutCitations.replace(/(<blockquote\b[^>]*?)\bcite="https?:\/\/[^"]*"([^>]*>)/g, '$1$2');
+  return HELD.test(withoutCitationUrls);
 }

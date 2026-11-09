@@ -58,9 +58,28 @@ describe("the narrow RA line 906 exception", () => {
   const table = `<table data-ra-financing><tbody>${row}</tbody></table>`;
   it("accepts the verbatim label only in its original financing row", () => {
     expect(heldWording(table)).toBe(false);
+    expect(heldWording('<blockquote cite="https://council.example/reorganisation">The next election is in 2027.</blockquote>')).toBe(false);
     for (const html of [row, `<table>${row}</table>`, table.replace('906', '907'), table.replace('observation', 'calculation'), table.replace('respect of', 'connection with')]) expect(heldWording(html)).toBe(true);
   });
   it("rejects the same label in prose, metadata, citations and other tables", () => {
-    for (const html of [`<p>${RA_906_LABEL}</p>`, `<meta content="${RA_906_LABEL}">`, `<p class="source-line">${RA_906_LABEL}</p>`, `<ul data-profile-sources><li>${RA_906_LABEL}</li></ul>`, `<table><tr><td>${RA_906_LABEL}</td></tr></table>`, table + `<p>${RA_906_LABEL}</p>`, table.replace('</tbody>', `<tr><td>${RA_906_LABEL}</td></tr></tbody>`)]) expect(heldWording(html)).toBe(true);
+    for (const html of [`<p>${RA_906_LABEL}</p>`, `<meta content="${RA_906_LABEL}">`, `<meta content="${RA_906_LABEL.replace('-', '&#45;')}">`, `<p class="source-line">${RA_906_LABEL}</p>`, `<ul data-profile-sources><li>${RA_906_LABEL}</li></ul>`, `<table><tr><td>${RA_906_LABEL}</td></tr></table>`, table + `<p>${RA_906_LABEL}</p>`, table.replace('</tbody>', `<tr><td>${RA_906_LABEL}</td></tr></tbody>`)]) expect(heldWording(html)).toBe(true);
   });
+});
+
+
+it.skipIf(!existsSync(DIST))("prints line 906 only on the three source returns and excludes its table from search snippets", () => {
+  const found: string[] = [];
+  for (const name of readdirSync(join(DIST, 'councils'))) {
+    const path = join(DIST, 'councils', name, 'index.html');
+    if (!existsSync(path)) continue;
+    const html = readFileSync(path, 'utf8');
+    if (!html.includes(RA_906_LABEL)) continue;
+    found.push(name);
+    const tables = html.match(/<table\b[^>]*data-ra-financing[^>]*>[\s\S]*?<\/table>/g) ?? [];
+    expect(tables.some(table => table.includes(RA_906_LABEL) && table.includes('data-pagefind-ignore') && /<td[^>]*>906<\/td>/.test(table))).toBe(true);
+    expect(heldWording(html)).toBe(false);
+    expect(heldWording(html.replace(RA_906_LABEL, 'Inter-authority transfers in respect of REORGANISATION'))).toBe(true);
+    expect(heldWording(html + `<p>${RA_906_LABEL}</p>`)).toBe(true);
+  }
+  expect(found.sort()).toEqual(['bromsgrove', 'buckinghamshire', 'redditch']);
 });

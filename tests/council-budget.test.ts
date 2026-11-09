@@ -26,6 +26,11 @@ describe('the council budget profile adapter', () => {
     const burnley = councilBudget(loadRegistry().councils.E07000117)!;
     expect(burnley.county!.name).toBe('Lancashire');
   });
+  it('retains the four printed zero reserve balances for Bradford', () => {
+    const row = budget.councils.E08000032;
+    expect(row.status).toBe('available');
+    expect(['resoth_strt', 'resoth_end', 'resunall_strt', 'resunall_end'].map(key => row.values[key])).toEqual([0, 0, 0, 0]);
+  });
   it('has no section outside England or without a current billing record', () => {
     for (const council of Object.values(loadRegistry().councils).filter(row => row.country !== 'England')) expect(councilBudget(council)).toBeNull();
     const council = loadRegistry().councils.E07000117;
