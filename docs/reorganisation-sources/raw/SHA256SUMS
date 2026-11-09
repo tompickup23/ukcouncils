@@ -126,3 +126,7 @@ dab46836c595e3803f06853ceb305b9cd5dd5d76cdb5db96a044d482f4689654  ./mhclg/govuk-
 f4542acac2a7db44baf93f7b2eb56513aa471a748fa37d52f1f107154bd6ea3f  ./mhclg/surrey-lgr-secretary-of-state-letter-to-surrey-leaders.pdf
 33039457ef4fe47d75d76c0567d3195befbe2e22bb89bd100c68771a939aa6c5  ./ukplaces/county-councils.json
 73b8c35dbce7e056aa1215f1059e2619f36941bc10ee89058356c13a5f55fa1e  ./ukplaces/places.json
+448fb01218b2e22bdaaaae64a909f4667c35474d49394f41da17fcb895d3e3a8  ./legislation/search-ukdsi-2025-structural-changes.feed.xml
+3bceae0788df0a64fc165e5cd624862c6289c873d1537a5c1709f91db80a03ca  ./legislation/search-ukdsi-2026-structural-changes.feed.xml
+90985e60a73d78ba06c2fbcc6fd3195f33c7dbfd1ee1a51ba8bc6cd69791b275  ./legislation/search-uksi-2025-structural-changes.feed.xml
+f237fea9242f63658edd84819dc85608d0d412768104654ee589069114260da0  ./legislation/search-uksi-2026-structural-changes.feed.xml
