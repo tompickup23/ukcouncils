@@ -49,6 +49,8 @@ function* files(dir) {
 const failures = [];
 const rel = (path) => path.slice(DIST.length) || "/";
 let pages = 0;
+const efs = JSON.parse(readFileSync(join(process.cwd(), "data/efs/statements.json"), "utf8"));
+const efsBySlug = new Map(Object.entries(efs.authorities).filter(([, authority]) => authority.slug).map(([key, authority]) => [authority.slug, key]));
 
 for (const path of files(DIST)) {
   if (!/\.(html|xml|txt|json|js|css|svg|webmanifest)$|_headers$|_redirects$/.test(path)) continue;
@@ -67,6 +69,24 @@ for (const path of files(DIST)) {
       failures.push(`title without the pipe and site name on ${rel(path)}: ${title}`);
     }
     if (/\s-\s/.test(title)) failures.push(`hyphen separator in title on ${rel(path)}: ${title}`);
+  }
+
+  const councilSlug = /^\/councils\/([^/]+)\/index\.html$/.exec(rel(path))?.[1];
+  if (councilSlug) {
+    const expected = `https://ukcounciltax.co.uk/councils/${councilSlug}/`;
+    const matches = [...text.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)].filter(match => match[1] === expected);
+    if (matches.length !== 1) failures.push(`Expected one verified UK Council Tax link on ${rel(path)}; found ${matches.length}`);
+    const efsKey = efsBySlug.get(councilSlug);
+    const hasEfs = /id="efs-heading"[^>]*>Exceptional Financial Support<\/h2>/.test(text);
+    if (hasEfs !== Boolean(efsKey)) failures.push(`EFS section coverage differs from the data on ${rel(path)}`);
+    if (efsKey && !text.includes(`href="/exceptional-financial-support/#name-${efsKey}"`)) failures.push(`Missing EFS authority anchor on ${rel(path)}`);
+  }
+
+  if (rel(path) === "/findings/index.html" && !/<title>Findings: council tax data notes, England /.test(text)) failures.push("findings title does not carry the subject");
+  if (rel(path) === "/sources/index.html") {
+    for (const needle of ["AI DOGE", "UK School Holiday Dates", "Local Authority Districts (May 2026) Boundaries UK BSC", "Exceptional Financial Support for local authorities for 2026-27"]) {
+      if (!text.includes(needle)) failures.push(`sources page does not name ${needle}`);
+    }
   }
 
   const { problems } = unsourcedFigures(text);

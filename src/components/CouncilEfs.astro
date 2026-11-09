@@ -1,0 +1,22 @@
+---
+import SourceLine from "./SourceLine.astro";
+import { councilEfs } from "../lib/council-efs";
+import { efsRoles, efsSource, efsYear } from "../lib/efs-presentation";
+interface Props { slug: string }
+const support = councilEfs(Astro.props.slug);
+---
+{support && <section class="section" id="exceptional-financial-support" aria-labelledby="efs-heading" data-council-efs>
+  <h2 id="efs-heading">Exceptional Financial Support</h2>
+  {support.entries.map(({ statement, figure }) => <div data-fact class="support-figure">
+    <p>{statement.authorityAsPrinted}, {efsYear(figure.supportYear)}: {figure.amountGbpM === null
+      ? "no amount published"
+      : <strong data-figure>£{figure.amountGbpM}m</strong>}{figure.marking ? `; ${figure.marking}` : ""} ({efsRoles[figure.role]}).</p>
+    <SourceLine source={efsSource(statement.page, statement.table)} />
+    {figure.note && <p class="caveat">{figure.note}</p>}
+  </div>)}
+  <p><a href={`/exceptional-financial-support/#name-${support.key}`}>The full list for every year</a></p>
+</section>}
+<style>
+  .support-figure { margin: 1rem 0; }
+  .support-figure > p:first-child { margin-bottom: 0; }
+</style>

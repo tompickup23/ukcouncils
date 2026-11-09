@@ -134,3 +134,12 @@ export function pageTitle(title?: string): string {
 export function jsonLd(data: unknown): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
+
+/** The footer sister sites, in the agreed order. */
+export const FOOTER_SISTERS = [
+  { name: "UK Elections", url: "https://ukelections.co.uk/", blurb: "Results and seats for every council" },
+  { name: "UK Council Tax", url: "https://ukcounciltax.co.uk/", blurb: "Every band, bill components and local precepts" },
+  { name: "UK Demographics", url: "https://ukdemographics.co.uk/", blurb: "Population and census for every place" },
+  { name: "UK School Holiday Dates", url: "https://ukschoolholidaydates.co.uk/", blurb: "Term dates for every education authority" },
+  { name: "AI DOGE", url: "https://aidoge.co.uk/", blurb: "What public bodies publish about their spending" },
+];
