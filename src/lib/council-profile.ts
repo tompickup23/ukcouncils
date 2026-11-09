@@ -1,3 +1,5 @@
+import { populationFor } from "./population";
+import { ownPagesFor, type OwnPages } from "./local-links";
 import { CLASS_PLURAL, type StripPoint } from "./position-strip";
 import { boundaryAreas, boundarySource } from "./boundaries";
 import {
@@ -35,6 +37,8 @@ export const PROFILE_SECTIONS = ["about", "spending", "tax-summary", "school-hol
 export type ProfileSection = (typeof PROFILE_SECTIONS)[number];
 
 export interface ProfileAbout {
+  population: {council: number; county: {name: string; count: number} | null} | null;
+  ownPages: OwnPages | null;
   officialName: string;
   /** The type field of the register, as recorded. */
   type: string;
@@ -103,7 +107,13 @@ export function registrySource(): SourceRef {
 }
 
 export function profileAbout(council: Council): ProfileAbout {
+  const current = loadYear(CURRENT_YEAR);
+  const count = populationFor(council.gss);
+  const countyRow = current.authorities[council.gss]?.classCode === "SD" && council.parentGss ? current.counties[council.parentGss] : null;
+  const countyCount = countyRow && council.parentGss ? populationFor(council.parentGss) : null;
   return {
+    population: count === null ? null : {council: count, county: countyRow && countyCount !== null ? {name: countyRow.name, count: countyCount} : null},
+    ownPages: ownPagesFor(council.gss),
     officialName: council.officialName,
     type: council.type,
     county: council.county,

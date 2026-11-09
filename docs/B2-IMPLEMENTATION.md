@@ -63,3 +63,9 @@ Validation: `npm run check`, zero errors and warnings; `npm test`, 190 passed an
 ### Decisions taken
 
 * Tied endpoints use the first council name in en-GB order for both ends. Published values are never rounded; only SVG coordinates are rounded.
+
+## Item 6
+
+Extended the existing introduction in place with exact code population counts, the county's own count for shire districts, and the sourced service links. Each addition carries its source immediately below. Missing population and missing links produce no row. The original register name and source remain unchanged.
+
+Validation: `npm run check`, zero errors and warnings; `npm test`, 192 passed and 12 skipped.
