@@ -1,3 +1,5 @@
+import { budgetChecks } from './lib/budget-checks.mjs';
+import { heldWording, RA_906_LABEL } from './lib/held-wording.mjs';
 /**
  * Checks the built tree after `npm run build`. Run by `npm run test:dist`.
  *
@@ -60,8 +62,12 @@ for (const path of files(DIST)) {
   // The withdrawn Lancashire reorganisation note is held: see "Held data" in CLAUDE.md.
   for (const phrase of HELD_PHRASES) if (text.includes(phrase)) failures.push(`held reorganisation text "${phrase}" in ${rel(path)}`);
   if (/https?:\/\/ukfoodhygiene\.co\.uk\b/.test(text)) failures.push(`private sister link in ${rel(path)}`);
-  if (!path.endsWith(".html")) continue;
+  if (!path.endsWith(".html")) {
+    if (text.includes(RA_906_LABEL)) failures.push(`RA label outside financing markup in ${rel(path)}`);
+    continue;
+  }
   pages += 1;
+  if (heldWording(text)) failures.push(`held wording outside cited source text in ${rel(path)}`);
   const prose = text.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, "").replace(/<[^>]+>/g, " ");
   if (/\s-\s/.test(prose)) failures.push(`spaced hyphen in prose on ${rel(path)}`);
 
@@ -217,6 +223,10 @@ for (const asset of ["pagefind.js", "pagefind-worker.js"]) {
 const frontDoor = frontDoorChecks(process.cwd(), DIST);
 failures.push(...frontDoor.failures);
 console.log(`B2 coverage: ${JSON.stringify(frontDoor.counts)}`);
+
+const budgets = budgetChecks(process.cwd(), DIST);
+failures.push(...budgets.failures);
+console.log(`C3 coverage: ${JSON.stringify(budgets.counts)}`);
 
 if (failures.length) {
   console.error(`dist check: ${failures.length} failures\n${failures.map((f) => `  ${f}`).join("\n")}`);
