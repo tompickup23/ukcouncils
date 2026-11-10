@@ -50,6 +50,7 @@ const englandNotes=row?shownNotes(england):[];
           classLabel={CLASS_PLURAL[classCode]} basis={`In-year council tax collection rate, ${year}, as MHCLG prints it`}
           source={source} />
       </>}
+      <details data-collection-drawer><summary>Read the collection and arrears table for {name} and England</summary>
       <div class="table-wrap" tabindex="0" role="region" aria-label={`Council tax collection and arrears in ${name}, ${year}`}>
         <table class="data">
           <caption>Council tax collection and arrears, {name} and England, {year}</caption>
@@ -77,6 +78,7 @@ const englandNotes=row?shownNotes(england):[];
           {englandNotes.map(n=><li>MHCLG note for England: {n.text}</li>)}
         </ul>
       )}
+      </details>
     </div>
   </section>
 )}
