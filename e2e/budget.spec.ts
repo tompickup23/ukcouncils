@@ -58,9 +58,12 @@ for (const theme of ['light', 'dark'] as const) {
       } else {
         await page.locator('#budget-heading').evaluate(element => element.scrollIntoView({block: 'start'}));
         await page.screenshot({path: `${prefix}-intro.png`});
+        await expect(page.locator('[data-budget-drawer]')).not.toHaveAttribute('open');
+        await page.locator('[data-budget-drawer] > summary').click();
+        await expect(page.locator('#billing-budget-services')).toBeVisible();
         await page.locator('#billing-budget-services').evaluate(element => element.scrollIntoView({block: 'start'}));
         await page.screenshot({path: `${prefix}-services.png`});
-        await page.locator('#budget > .budget-tables .table-wrap').first().evaluate(element => {element.scrollTop = element.scrollHeight;});
+        await page.locator('#budget > [data-budget-drawer] > .budget-tables .table-wrap').first().evaluate(element => {element.scrollTop = element.scrollHeight;});
         await page.screenshot({path: `${prefix}-service-total.png`});
         await page.locator('#billing-budget-funding').evaluate(element => element.scrollIntoView({block: 'start'}));
         await page.screenshot({path: `${prefix}-funding.png`});
@@ -69,6 +72,9 @@ for (const theme of ['light', 'dark'] as const) {
         if (slug === 'burnley') {
           await page.locator('#county-budget-heading').evaluate(element => element.scrollIntoView({block: 'start'}));
           await page.screenshot({path: `${prefix}-county.png`});
+          await expect(page.locator('[data-county-budget-drawer]')).not.toHaveAttribute('open');
+          await page.locator('[data-county-budget-drawer] > summary').click();
+          await expect(page.locator('#county-budget-tables-services')).toBeVisible();
           await page.locator('#county-budget-tables-services').evaluate(element => element.scrollIntoView({block: 'start'}));
           await page.locator('#county-budget .table-wrap').first().evaluate(element => {element.scrollTop = element.scrollHeight;});
           await page.screenshot({path: `${prefix}-county-total.png`});
@@ -79,6 +85,7 @@ for (const theme of ['light', 'dark'] as const) {
   test(`funding caveat screenshot in ${theme}`, async ({page}, testInfo) => {
     await page.emulateMedia({colorScheme: theme});
     await page.goto('/councils/runnymede/');
+    await page.locator('[data-budget-drawer] > summary').click();
     await page.locator('[data-note8]').evaluate(element => element.scrollIntoView({block: 'center'}));
     mkdirSync('output/playwright/c3', {recursive: true});
     await page.screenshot({path: `output/playwright/c3/runnymede-${testInfo.project.name}-${theme}-note8.png`});
@@ -89,7 +96,7 @@ test('budget prose stays below 250 words and the first screen retains Band D', a
   const counts: Record<string, number> = {};
   for (const slug of ['burnley', 'birmingham']) {
     await page.goto(`/councils/${slug}/`);
-    if (slug === 'burnley' && testInfo.project.name === 'mobile') {
+    if (testInfo.project.name === 'mobile') {
       // The first screen rule: Band D for the year is on the first phone screen. Since the
       // summary row (D1) it is the row's first tile, with its source and parish caveat; the
       // band answer follows directly under the row.

@@ -35,18 +35,16 @@ test('search index failures show a browse fallback and retry succeeds', async ({
   blocked = false; await page.locator('[data-search-retry]').click();
   await expect(page.locator('[data-search-results] a[href="/councils/burnley/"]')).toBeVisible();
 });
-test('council share fallback strips unrelated parameters and follows the selected band', async ({page}) => {
-  await page.addInitScript(() => {
-    Object.defineProperty(navigator,'share',{configurable:true,value:undefined});
-    Object.defineProperty(navigator,'clipboard',{value:{writeText:async()=>{throw new Error('denied');}}});
-  });
+test('council actions expose the bill, held pay page and selected band comparison', async ({page}) => {
   await page.goto('/councils/burnley/?postcode=BB11#band-H');
-  await page.getByRole('button',{name:'Share this view'}).click();
-  await expect(page.getByLabel('Link to this view')).toHaveValue('https://ukcouncils.co.uk/councils/burnley/#band-H');
-  await expect(page.getByLabel('Link to this view')).toBeFocused();
+  const actions = page.locator('[data-council-actions]');
+  await expect(actions.getByRole('link')).toHaveCount(3);
+  await expect(actions.getByRole('button')).toHaveCount(0);
+  await expect(actions.locator('[data-council-compare]')).toHaveAttribute('href', /band=H/);
+  await expect(actions.getByRole('link', {name: "Burnley's bill on UK Council Tax"})).toHaveAttribute('href', 'https://ukcounciltax.co.uk/councils/burnley/');
+  await expect(actions.getByRole('link', {name: 'Pay council tax to Burnley'})).toHaveAttribute('href', /^https?:/);
   await page.locator('[data-band-label="A"]').click();
-  await page.getByRole('button',{name:'Share this view'}).click();
-  await expect(page.getByLabel('Link to this view')).toHaveValue(/#band-A$/);
+  await expect(actions.locator('[data-council-compare]')).toHaveAttribute('href', /band=A/);
 });
 test('comparison sharing copies validated state and cancellation stays distinct', async ({page}) => {
   await page.addInitScript(() => {
@@ -69,7 +67,7 @@ test('maps and print preserve the selected answer and source without interactive
   await page.emulateMedia({media:'print'});
   await expect(page.locator('[data-band-panel="H"]')).toBeVisible(); await expect(page.locator('[data-band-panel="D"]')).toBeHidden();
   await expect(page.locator('[data-band-panel="H"] .source-line').first()).toBeVisible();
-  await expect(page.locator('.site-header-bar')).toBeHidden(); await expect(page.locator('.view-actions')).toBeHidden();
+  await expect(page.locator('.site-header-bar')).toBeHidden(); await expect(page.locator('[data-council-actions]')).toBeHidden();
   if (test.info().project.name==='desktop') await page.pdf({path:'/tmp/ukcouncils-phase-two-print.pdf',format:'A4'});
 });
 test('comparison print retains the selected year and table print expands scrolling', async ({page}) => {
