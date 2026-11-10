@@ -1,6 +1,6 @@
 import {describe, expect, it} from 'vitest';
 import {taxRows, taxSources} from '../src/lib/tax-view-data';
-import {compareTax, completeClass, comparisonQuery, monthlyPence, type TaxRow} from '../src/lib/tax-view';
+import {compareTax, completeClass, comparisonQuery, heldYear, monthlyPence, normaliseState, type TaxRow} from '../src/lib/tax-view';
 import {loadYear, YEARS} from '../src/lib/council-tax';
 import {matchesCouncil} from '../src/lib/council-search';
 const rows = taxRows();
@@ -29,6 +29,37 @@ describe('published council tax comparisons', () => {
     {b: 'burnley'}, {b: 'does-not-exist'}, {b: 'manchester'}, {band: 'I'}, {year: '2030-31'},
   ])('rejects an invalid request %j', patch => {
     expect(compareTax(rows, {...state, ...patch}, YEARS).ok).toBe(false);
+  });
+  it('compares inner and outer London boroughs as one group, as the ranked pages do', () => {
+    const result = compareTax(rows, {...state, a: 'camden', b: 'barnet'}, YEARS);
+    expect(result.ok).toBe(true);
+    expect(compareTax(rows, {...state, a: 'city-of-london', b: 'barnet'}, YEARS).ok).toBe(true);
+  });
+  it('names both types when it refuses a pair, and never blames a mixed basis that is not there', () => {
+    const result = compareTax(rows, {...state, b: 'manchester'}, YEARS);
+    expect(result.ok).toBe(false);
+    if (result.ok) return;
+    expect(result.message).toBe('Manchester is a metropolitan district and Burnley is a shire district. Compare works within one type of council, so choose another shire district.');
+    expect(result.message).not.toMatch(/shares cannot be mixed/);
+  });
+  it('asks for the second council when only the first is given', () => {
+    const result = compareTax(rows, {...state, b: ''}, YEARS);
+    expect(!result.ok && result.message).toBe('Now choose another shire district to compare with Burnley.');
+    const london = compareTax(rows, {...state, a: 'camden', b: ''}, YEARS);
+    expect(!london.ok && london.message).toBe('Now choose another London borough or the City of London to compare with Camden.');
+  });
+  it('reads a shared link as typed: band in any case, the year as shown', () => {
+    expect(normaliseState({a: ' Burnley ', b: 'pendle', band: 'h', year: '2026/27'}, '2026-27')).toEqual({a: 'burnley', b: 'pendle', band: 'H', year: '2026-27'});
+    expect(normaliseState({}, '2026-27')).toEqual({a: '', b: '', band: 'D', year: '2026-27'});
+    expect(compareTax(rows, normaliseState({a: 'burnley', b: 'pendle', band: 'h', year: '2026/27'}, '2026-27'), YEARS).ok).toBe(true);
+  });
+  it('names the council with no figure under its current code, and holds no carried figure', () => {
+    const result = compareTax(rows, {a: 'barnsley', b: 'leeds', band: 'D', year: '2024-25'}, YEARS);
+    expect(!result.ok && result.message).toMatch(/^No published Band D figure for 2024\/25 is held for Barnsley under its current authority code\./);
+    const barnsley = rows.find(row => row.slug === 'barnsley')!;
+    expect(heldYear(barnsley, '2024-25')).toBe(false);
+    expect(heldYear(barnsley, '2025-26')).toBe(true);
+    expect(heldYear(undefined, '2024-25')).toBe(true);
   });
   it('does not turn missing, zero or invalid figures into a comparison', () => {
     for (const value of [undefined, 0, NaN, -1]) {

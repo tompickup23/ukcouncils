@@ -68,6 +68,46 @@ for (const query of ['a=burnley&b=manchester', 'a=burnley&b=burnley', 'a=unknown
   });
 }
 
+test('compare: arriving from a council page asks for the second council, not an error', async ({page}) => {
+  await page.goto('/compare/?a=burnley&band=D&year=2026-27');
+  await expect(page.locator('[data-comparison-status]')).toHaveText('Now choose another shire district to compare with Burnley.');
+  await page.goto('/compare/?utm_source=test');
+  await expect(page.locator('[data-comparison-status]')).toHaveText('Choose two councils to see their published charges.');
+});
+
+test('compare: London is one group and a typed link still works', async ({page}) => {
+  await page.goto('/compare/?a=camden&b=barnet&band=h&year=2026/27');
+  await expect(page.locator('[data-comparison-results]')).toBeVisible();
+  await expect(page.locator('[data-comparison-heading]')).toHaveText('Band H, 2026/27');
+  await expect(page.locator('#council-b option[value="barnet"]')).toHaveCount(1);
+  await page.goto('/compare/?a=burnley&b=manchester');
+  await expect(page.locator('[data-comparison-status]')).toContainText('Manchester is a metropolitan district and Burnley is a shire district.');
+});
+
+test('compare: the result takes focus after Compare, and band or year changes update it in place', async ({page}) => {
+  await page.goto('/compare/?a=burnley&b=pendle&band=D&year=2026-27');
+  await page.getByRole('button', {name: 'Compare', exact: true}).click();
+  await expect(page.locator('[data-comparison-heading]')).toBeFocused();
+  await page.getByLabel('Band', {exact: true}).selectOption('A');
+  await expect(page.locator('[data-comparison-results]')).toBeVisible();
+  await expect(page.locator('[data-result-side="a"]')).toContainText('£1,699.61');
+  await expect(page).toHaveURL(/band=A/);
+  await page.getByLabel('Second council', {exact: true}).selectOption('hyndburn');
+  await expect(page.locator('[data-comparison-results]')).toBeHidden();
+});
+
+test('compare: a year a council does not hold under its current code is greyed out and explained', async ({page}) => {
+  await page.goto('/compare/?a=barnsley&b=leeds&band=D&year=2024-25');
+  await expect(page.locator('[data-comparison-status]')).toContainText('held for Barnsley under its current authority code');
+  await expect(page.locator('#compare-year option[value="2024-25"]')).toBeDisabled();
+  await expect(page.locator('#compare-year option[value="2025-26"]')).toBeEnabled();
+});
+
+test('footer imprint keeps the space between its sentences', async ({page}) => {
+  await page.goto('/compare/');
+  await expect(page.locator('.footer-imprint')).toContainText('government service. UK Councils republishes');
+});
+
 test('regional table keeps a selected band, filters, and only sorts one class', async ({page}) => {
   await page.goto('/council-tax/north-west/');
   const table = page.locator('[data-tax-table]');
