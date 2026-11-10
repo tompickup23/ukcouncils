@@ -39,7 +39,7 @@ const sources = taxSources();
     </form>
     <p role="status" data-comparison-status>Choose two councils to see their published charges.</p>
     <section hidden data-comparison-results aria-label="Comparison result">
-      <h2 data-comparison-heading>Compare two councils</h2>
+      <h2 data-comparison-heading tabindex="-1">Compare two councils</h2>
       <div class="task-grid">
         {['a','b'].map(side => <div class="card fact" data-fact data-result-side={side}>
           <h3><a data-result-name></a></h3><p class="fact-label" data-result-label></p>
@@ -64,7 +64,7 @@ const sources = taxSources();
   </details>
 </BaseLayout>
 <script>
-  import {compareTax, comparisonQuery, moneyPence, monthlyPence, type TaxRow, type ComparisonState, type ExportSource} from '../lib/tax-view';
+  import {compareTax, comparisonQuery, compareGroup, groupLabel, heldYear, normaliseState, moneyPence, monthlyPence, type TaxRow, type ComparisonState, type ExportSource} from '../lib/tax-view';
   import {shareView} from '../lib/share';
   import {matchesCouncil} from '../lib/council-search';
   const root = document.querySelector<HTMLElement>('[data-tax-compare]')!;
@@ -78,18 +78,23 @@ const sources = taxSources();
   const filter = (side: string) => root.querySelector<HTMLInputElement>(`[data-picker-filter="${side}"]`)!;
   function options(side: string, selected: string) {
     const first = data.rows.find(row => row.slug === control('a').value);
-    const choices = data.rows.filter(row => (side === 'a' || (first && row.classCode === first.classCode && row.gss !== first.gss)) && (row.slug === selected || matchesCouncil(filter(side).value, row.name)));
+    const choices = data.rows.filter(row => (side === 'a' || (first && compareGroup(row.classCode) === compareGroup(first.classCode) && row.gss !== first.gss)) && (row.slug === selected || matchesCouncil(filter(side).value, row.name)));
     control(side).replaceChildren(new Option('Choose a council', ''), ...choices.map(row => new Option(`${row.name} (${row.classLabel})`, row.slug)));
     control(side).value = choices.some(row => row.slug === selected) ? selected : '';
     control(side).disabled = side === 'b' && !first;
-    root.querySelector('[data-comparison-rule]')!.textContent = first ? `Choose another ${first.classLabel.toLowerCase()}. Other council types are excluded.` : "Choose the first council to see eligible comparisons.";
+    root.querySelector('[data-comparison-rule]')!.textContent = first ? `Choose another ${groupLabel(first)}. Other types of council are excluded.` : "Choose the first council to see eligible comparisons.";
   }
   function sourceLine(target: Element, year: string, calculated = false) {
     const source = data.sources[year];
     const a = document.createElement('a'); a.href = source.url; a.textContent = `${source.publisher}, ${source.table}, ${year.replace('-', '/')}`;
     target.replaceChildren(document.createTextNode(calculated ? 'Calculated from published area charges. Source: ' : 'Source: '), a, document.createTextNode(source.date ? `, published ${source.date}.` : '.'));
   }
-  function show(value: ComparisonState) {
+  /** Greys out a year that either chosen council does not hold under its current code. */
+  function years() {
+    const chosen = ['a', 'b'].map(side => data.rows.find(row => row.slug === control(side).value));
+    for (const option of control('year').options) option.disabled = !chosen.every(row => heldYear(row, option.value));
+  }
+  function show(value: ComparisonState, focus = false) {
     const checked = compareTax(data.rows, value, data.years);
     result.hidden = !checked.ok;
     if (!checked.ok) {status.textContent = checked.message; return;}
@@ -108,14 +113,17 @@ const sources = taxSources();
     root.querySelector('[data-result-difference]')!.textContent = checked.differencePence === 0 ? 'Both areas have the same published annual charge.' : `${checked.b.name} is ${moneyPence(Math.abs(checked.differencePence))} ${checked.differencePence > 0 ? 'more' : 'less'} a year than ${checked.a.name}.`;
     sourceLine(root.querySelector('[data-difference-source]')!, checked.year, true);
     root.querySelector<HTMLAnchorElement>('[data-comparison-link]')!.href = `/compare/?${comparisonQuery(value)}`;
+    // On a phone the result sits below the form: take the reader to it.
+    if (focus) root.querySelector<HTMLElement>('[data-comparison-heading]')!.focus();
   }
   function restore() {
     const params = new URLSearchParams(location.search);
-    const value = {a: params.get('a') ?? '', b: params.get('b') ?? '', band: params.get('band') ?? 'D', year: params.get('year') ?? data.currentYear};
+    const value = normaliseState({a: params.get('a'), b: params.get('b'), band: params.get('band'), year: params.get('year')}, data.currentYear);
     filter('a').value = ''; filter('b').value = '';
     options('a', value.a); options('b', value.b);
     control('band').value = value.band; control('year').value = value.year;
-    if (params.size) show(value);
+    years();
+    if (params.has('a') || params.has('b')) show(value);
     else { result.hidden = true; status.textContent = 'Choose two councils to see their published charges.'; }
   }
   const share = root.querySelector<HTMLButtonElement>('[data-share-view]')!;
@@ -128,9 +136,14 @@ const sources = taxSources();
   for (const side of ['a','b']) filter(side).addEventListener('input', () => options(side, control(side).value));
   form.addEventListener('change', event => {
     if (event.target === control('a')) {filter('b').value = ''; options('b', control('b').value);}
-    result.hidden = true; status.textContent = 'Choose Compare to update the result.';
+    years();
+    // A new band or year for a pair already shown updates the answer in place.
+    if ((event.target === control('band') || event.target === control('year')) && !result.hidden) {
+      const value = state(); history.replaceState(null, '', `/compare/?${comparisonQuery(value)}`); show(value); return;
+    }
+    if (event.target === control('a') || event.target === control('b')) {result.hidden = true; status.textContent = 'Choose Compare to update the result.';}
   });
-  form.addEventListener('submit', event => { event.preventDefault(); const value = state(); history.pushState(null, '', `/compare/?${comparisonQuery(value)}`); show(value); });
+  form.addEventListener('submit', event => { event.preventDefault(); const value = state(); history.pushState(null, '', `/compare/?${comparisonQuery(value)}`); show(value, true); });
   root.querySelector('[data-swap]')!.addEventListener('click', () => {
     const value = state(); const checked = compareTax(data.rows, value, data.years);
     if (!checked.ok) {show(value); return;}
