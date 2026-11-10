@@ -20,6 +20,10 @@ const description = `Strip chart. ${basis} for the ${points.length} ${classLabel
 const rows = [...points].sort((a, b) => a.name.localeCompare(b.name, "en-GB"));
 ---
 <figure class="position-strip" data-position-strip={kind}>
+  {kind === "band-d" && <>
+  <figcaption class="small">Each mark is one of the {points.length} {classLabel}. Lowest: {g.lowest.name}, {format(g.lowest.value)}. Highest: {g.highest.name}, {format(g.highest.value)}.</figcaption>
+  <SourceLine source={source} />
+  </>}
   <svg viewBox={`0 0 ${g.width} ${g.height}`} role="img" aria-labelledby={`${id}-title ${id}-desc`}>
     <title id={`${id}-title`}>{title}</title>
     <desc id={`${id}-desc`}>{description}</desc>
@@ -33,11 +37,13 @@ const rows = [...points].sort((a, b) => a.name.localeCompare(b.name, "en-GB"));
     <text x={g.plot.left} y="106" text-anchor="start" class="tick">Lowest {format(g.lowest.value)}</text>
     <text x={g.plot.right} y="106" text-anchor="end" class="tick">Highest {format(g.highest.value)}</text>
   </svg>
+  {kind !== "band-d" && <>
   <figcaption class="small">Each mark is one of the {points.length} {classLabel}. Lowest: {g.lowest.name}, {format(g.lowest.value)}. Highest: {g.highest.name}, {format(g.highest.value)}.</figcaption>
   <SourceLine source={source} />
+  </>}
   {caveat && <p class="caveat">{caveat}</p>}
-  <details>
-    <summary>View the figures in this chart as a table</summary>
+  <details data-position-drawer>
+    <summary>Read the {kind === "band-d" ? "Band D" : "collection rate"} table for {g.current.name} and councils of the same type</summary>
     <div class="table-wrap" tabindex="0" role="region" aria-label={title}>
       <table class="data">
         <caption>{title}</caption>

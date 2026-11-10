@@ -162,7 +162,7 @@ it.skipIf(!existsSync(DIST))('accounts for every panel text node and verifies ev
       for(const digits of text(node).match(/\d{3,}/g)??[])expect(digits).toMatch(/^(202[4-9]|264)$/);
     }
     // Any added sentence outside a claim or a verified source line fails here.
-    const permittedStatic=new Set(['Proposals','Documents','Councils in this area','Source:',`Office for National Statistics, ${boundarySource.date}`,'.',`${boundarySource.attribution} Licensed under`,'OGL v3.0']);
+    const permittedStatic=new Set([`The published documents cover ${view.area.name}.`,`Read the reorganisation stages, proposals and area councils for ${view.name}`,'Proposals','Documents','Councils in this area','Source:',`Office for National Statistics, ${boundarySource.date}`,'.',`${boundarySource.attribution} Licensed under`,'OGL v3.0']);
     walkSync(root,(node)=>{
       if(node.type!==TEXT_NODE || !collapse(text(node)))return;
       let parent=node.parent;

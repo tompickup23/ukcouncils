@@ -20,6 +20,8 @@ for(const theme of ['light','dark'] as const) {
         await expect(panel.locator('[data-step]')).toHaveCount(documentsOnly?0:5);
         await expect(panel.locator('.reorg-rail')).toHaveCount(documentsOnly?0:1);
         expect(await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth),council.slug).toBeLessThanOrEqual(2);
+        await expect(panel.locator('[data-reorganisation-drawer]')).not.toHaveAttribute('open');
+        await panel.locator('[data-reorganisation-drawer] > summary').click();
         if(!documentsOnly)expect(await panel.locator('.reorg-rail').evaluate(el=>el.scrollWidth-el.clientWidth),council.slug).toBeLessThanOrEqual(2);
         expect(await panel.locator('svg').getAttribute('aria-label')).toContain(reorganisationFor(council.gss)!.area.name);
       }
@@ -38,6 +40,8 @@ for(const theme of ['light','dark'] as const) {
       else {
         const panel=page.locator('#reorganisation');
         await panel.screenshot({path:`${prefix}-panel.png`,style:'.site-header-bar { visibility: hidden; }'});
+        await expect(panel.locator('[data-reorganisation-drawer]')).not.toHaveAttribute('open');
+        await panel.locator('[data-reorganisation-drawer] > summary').click();
         if(await panel.locator('.reorg-rail').count())await panel.locator('.reorg-rail').screenshot({path:`${prefix}-rail.png`,style:'.site-header-bar { visibility: hidden; }'});
       }
       if(slug==='burnley' && testInfo.project.name==='mobile') {
@@ -58,6 +62,7 @@ test('save one rendered panel per area for source review',async({page},testInfo)
   for(const area of reorganisationData.areas) {
     const council=pages.find(p=>area.councils.some(c=>c.gss===p.council.gss))!.council;
     await page.goto(`/councils/${council.slug}/`);
+    await page.locator('[data-reorganisation-drawer] > summary').click();
     review.push({area:area.id,council:council.slug,text:await page.locator('#reorganisation').innerText()});
   }
   mkdirSync(folder,{recursive:true});

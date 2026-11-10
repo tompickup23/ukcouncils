@@ -7,7 +7,15 @@ const support = councilEfs(Astro.props.slug);
 ---
 {support && <section class="section" id="exceptional-financial-support" aria-labelledby="efs-heading" data-council-efs data-profile-section="exceptional-financial-support">
   <h2 id="efs-heading">Exceptional Financial Support</h2>
-  {support.entries.map(({ statement, figure }) => <div data-fact class="support-figure">
+  {support.entries.slice(0, 1).map(({ statement, figure }) => <div data-fact class="support-figure">
+    <p>{statement.authorityAsPrinted}, {efsYear(figure.supportYear)}: {figure.amountGbpM === null
+      ? "no amount published"
+      : <strong data-figure>£{figure.amountGbpM}m</strong>}{figure.marking ? `; ${figure.marking}` : ""} ({efsRoles[figure.role]}).</p>
+    <SourceLine source={efsSource(statement.page, statement.table)} />
+    {figure.note && <p class="caveat">{figure.note}</p>}
+  </div>)}
+  <details data-efs-drawer><summary>Read the published support entries for {support.entries[0].statement.authorityAsPrinted}</summary>
+  {support.entries.slice(1).map(({ statement, figure }) => <div data-fact class="support-figure">
     <p>{statement.authorityAsPrinted}, {efsYear(figure.supportYear)}: {figure.amountGbpM === null
       ? "no amount published"
       : <strong data-figure>£{figure.amountGbpM}m</strong>}{figure.marking ? `; ${figure.marking}` : ""} ({efsRoles[figure.role]}).</p>
@@ -15,6 +23,7 @@ const support = councilEfs(Astro.props.slug);
     {figure.note && <p class="caveat">{figure.note}</p>}
   </div>)}
   <p><a href={`/exceptional-financial-support/#name-${support.key}`}>The full list for every year</a></p>
+  </details>
 </section>}
 <style>
   .support-figure { margin: 1rem 0; }
