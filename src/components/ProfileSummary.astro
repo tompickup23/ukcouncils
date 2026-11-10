@@ -1,0 +1,108 @@
+---
+/**
+ * The summary row: what the page holds about this council, at a glance, Band D
+ * first (the first screen rule) until the canonicals reverse. Each tile is a
+ * digest of a section further down: it repeats one published value, carries a
+ * short source line, and links to the section, where the full citation sits
+ * under the same value. A fact the data does not hold has no tile.
+ */
+import { CURRENT_YEAR, pounds, yearLabel, type Authority } from "../lib/council-tax";
+import { councilTaxSource } from "../lib/sources";
+import { longDate, type SourceRef } from "../lib/sources";
+import { loadYear } from "../lib/council-tax";
+import { populationFor, populationSource } from "../lib/population";
+import { collectionFor, collectionRate, collectionSource, collectionYear } from "../lib/collection";
+import { electionFor } from "../lib/elections";
+import { councilEfs } from "../lib/council-efs";
+import type { Council } from "../lib/registry";
+
+interface Props {
+  council: Council;
+  tax: Authority;
+}
+
+const { council, tax } = Astro.props;
+const year = yearLabel(CURRENT_YEAR);
+const whole = new Intl.NumberFormat("en-GB");
+
+/**
+ * The short source: publisher, the table's own name and the publication date, linked to
+ * the publication itself. The document title stays with the full line in the section and
+ * in the page's sources list, which tests/council-profile.test.ts requires to hold every
+ * cited address.
+ */
+function short(source: SourceRef): { text: string; url: string } {
+  const table = source.table ? source.table.split(/[,(]/)[0].trim() : "";
+  const date = longDate(source.date);
+  return { text: [source.publisher, table, date].filter(Boolean).join(", "), url: source.url };
+}
+
+interface Tile { label: string; value: string; figure: boolean; href: string; more: string; source: { text: string; url: string } | null; caveat?: string }
+const tiles: Tile[] = [];
+
+tiles.push({
+  label: `Band D, ${year}`,
+  value: pounds(tax.bands.D),
+  figure: true,
+  href: "#council-tax",
+  more: "Every band",
+  source: short(councilTaxSource(CURRENT_YEAR, loadYear(CURRENT_YEAR).source.bandTable)),
+  caveat: "Area average including parish precepts.",
+});
+
+const residents = populationFor(council.gss);
+if (residents !== null) tiles.push({ label: "Residents, mid-2025", value: whole.format(residents), figure: true, href: "#about", more: "About the council", source: short(populationSource()) });
+
+const collected = collectionFor(council.gss);
+if (collected && collected.rate !== null) tiles.push({ label: `Council tax collected in year, ${collectionYear()}`, value: collectionRate(collected.rate), figure: true, href: "#collection", more: "Collection and arrears", source: short(collectionSource()) });
+
+const election = electionFor(council.gss);
+if (election) tiles.push({ label: "Next scheduled election", value: String(election.dateLabel ?? election.nextYear), figure: true, href: "#elections", more: "Elections", source: { text: election.sourceLabel.split(";")[0].split(", ").slice(0, 2).join(", "), url: election.sourceUrl } });
+
+if (councilEfs(council.slug)) tiles.push({ label: "Exceptional Financial Support", value: "On MHCLG's published list", figure: false, href: "#exceptional-financial-support", more: "The published entries", source: null });
+---
+<section class="profile-summary" aria-label={`${tax.name} at a glance`} data-profile-summary>
+  <ul>
+    {tiles.map((tile) => (
+      <li class="summary-tile" data-fact={tile.figure ? "" : undefined} data-summary-tile={tile.href.slice(1)}>
+        <span class="summary-label">{tile.label}</span>
+        {tile.figure
+          ? <span class="summary-value" data-figure>{tile.value}</span>
+          : <span class="summary-value summary-text">{tile.value}</span>}
+        {tile.source && <p class="source-line source-short">Source: <a href={tile.source.url}>{tile.source.text}</a>.</p>}
+        {tile.caveat && <p class="caveat">{tile.caveat}</p>}
+        <p class="summary-more"><a href={tile.href}>{tile.more}</a></p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .profile-summary { margin: 1rem 0 0.5rem; }
+  .profile-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (min-width: 720px) { .profile-summary ul { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1100px) { .profile-summary ul { grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); } }
+  .summary-tile {
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 8px);
+    background: var(--bg-card);
+    padding: 0.7rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+  .summary-label { color: var(--text-muted); font-size: 0.85rem; line-height: 1.25; }
+  .summary-value { font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .summary-text { font-size: 1.05rem; }
+  .summary-tile .source-line, .summary-tile .caveat, .summary-more { margin: 0; font-size: 0.78rem; line-height: 1.3; overflow-wrap: anywhere; }
+  .summary-tile .source-line { padding-top: 0.25rem; }
+  .summary-more { margin-top: auto; padding-top: 0.3rem; font-size: 0.85rem; }
+</style>

@@ -2,7 +2,7 @@
 /**
  * One page per council: the council tax answer, then the profile built from
  * committed data in src/lib/council-profile.ts (what the council is, its
- * spending record, Band D at a glance, the next school break, and one list of
+ * spending record, Band D among councils of its type, the next school break, and one list of
  * sources). A section whose data is missing is absent, not blank. Seats,
  * control and last election dates remain held.
  */
@@ -29,6 +29,7 @@ import ProfileBudget from "../../components/ProfileBudget.astro";
 import ProfileAbout from "../../components/ProfileAbout.astro";
 import ProfileTax from "../../components/ProfileTax.astro";
 import ProfileSources from "../../components/ProfileSources.astro";
+import ProfileSummary from "../../components/ProfileSummary.astro";
 import {
   AREA_TYPE_LABEL,
   CURRENT_YEAR,
@@ -135,6 +136,8 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     <p class="muted">{typeLine}</p>
   </header>
 
+  <ProfileSummary council={council} tax={tax} />
+
   <div class="council-answer">
   <section class="section" id="council-tax" aria-labelledby="council-tax-heading">
     <h2 id="council-tax-heading">{question}</h2>
@@ -177,7 +180,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   )}
   <PageContents items={[
     {id: 'about', label: 'What the council is'},
-    ...(profile.tax ? [{id: 'tax-summary', label: 'Band D at a glance'}] : []),
+    ...(profile.tax ? [{id: 'tax-summary', label: 'Band D among similar councils'}] : []),
     ...(collectionFor(council.gss) ? [{id: 'collection', label: 'Council tax collection'}] : []),
     ...(councilEfs(council.slug) ? [{id: 'exceptional-financial-support', label: 'Exceptional Financial Support'}] : []),
     ...(electionFor(council.gss) ? [{id: 'elections', label: 'Elections'}] : []),

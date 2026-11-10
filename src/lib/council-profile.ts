@@ -22,7 +22,7 @@ import { spendingFor, spendingRecord, type SpendingRecord } from "./spending";
 
 /**
  * The profile of one council: what it is, what it publishes about its
- * spending, Band D at a glance, the next school break and one list of every
+ * spending, Band D among councils of its type, the next school break and one list of every
  * table and file the page drew on. Built from committed data only, so every
  * council gets the same sections wherever its data exists, and a section with
  * no data is null: the page leaves it out, with no placeholder.
