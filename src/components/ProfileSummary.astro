@@ -65,10 +65,11 @@ if (councilEfs(council.slug)) tiles.push({ label: "Exceptional Financial Support
   <ul>
     {tiles.map((tile) => (
       <li class="summary-tile" data-fact={tile.figure ? "" : undefined} data-summary-tile={tile.href.slice(1)}>
-        <span class="summary-label">{tile.label}</span>
+        <span class="summary-label">{tile.label}</span>{" "}
         {tile.figure
           ? <span class="summary-value" data-figure>{tile.value}</span>
           : <span class="summary-value summary-text">{tile.value}</span>}
+        {" "}
         {tile.source && <p class="source-line source-short">Source: <a href={tile.source.url}>{tile.source.text}</a>.</p>}
         {tile.caveat && <p class="caveat">{tile.caveat}</p>}
         <p class="summary-more"><a href={tile.href}>{tile.more}</a></p>
