@@ -103,6 +103,20 @@ export function frontDoorChecks(root, dist) {
       const listed = [...contents.matchAll(/href="#([^"]+)"/g)].map(m => m[1]).filter(id => order.includes(id));
       check(JSON.stringify(listed) === JSON.stringify(present), `Contents order ${where}`);
     }
+    // The summary row (D1). Its short source lines are allowed only because the full
+    // citation is on the same page: every address a short line cites must be in the
+    // page's own sources list, and each tile must point at a section that exists
+    // (decision S1, 9 November 2026). The row leads with Band D (decision S2).
+    const summary = /<section\b[^>]*data-profile-summary[\s\S]*?<\/section>/.exec(html)?.[0] ?? '';
+    check(summary !== '', `Summary row missing ${where}`);
+    const tileIds = [...summary.matchAll(/data-summary-tile="([^"]+)"/g)].map(m => m[1]);
+    check(tileIds[0] === 'council-tax', `Summary row does not lead with Band D ${where}`);
+    for (const id of tileIds) check(html.includes(`id="${id}"`), `Summary tile points at a missing section ${where} ${id}`);
+    const sourcesList = /<ul\b[^>]*data-profile-sources[\s\S]*?<\/ul>/.exec(html)?.[0] ?? '';
+    const listedSources = new Set([...sourcesList.matchAll(/href="([^"]+)"/g)].map(m => m[1]));
+    for (const m of summary.matchAll(/class="source-line source-short"[^>]*>[\s\S]*?<a href="([^"]+)"/g)) {
+      check(listedSources.has(m[1]), `Short source with no full entry on the page ${where} ${m[1]}`);
+    }
     const newSections = section(html, 'tax-summary') + collectionSection + electionSection + popBlock + ownBlock;
     const withoutLabels = newSections.replace(/<(text|figcaption|desc)\b[\s\S]*?<\/\1>/g, '');
     check(!/\bhighest\b|\blowest\b/i.test(textOf(withoutLabels)), `Ordinal wording outside strip labels ${where}`);
