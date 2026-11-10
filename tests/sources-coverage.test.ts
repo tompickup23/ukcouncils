@@ -15,6 +15,7 @@ const citations: Record<string, string[]> = {
   population: ["population.source"],
   collection: ["collection.source"],
   elections: ["elections.source"],
+  reorganisation: ["reorganisationSources", "source.sha256"],
 };
 
 describe("sources catalogue coverage", () => {

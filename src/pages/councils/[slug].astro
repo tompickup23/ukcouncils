@@ -6,6 +6,8 @@
  * sources). A section whose data is missing is absent, not blank. Seats,
  * control and last election dates remain held.
  */
+import ReorganisationPanel from "../../components/ReorganisationPanel.astro";
+import {reorganisationFor} from "../../lib/reorganisation";
 import SchoolHolidays from "../../components/SchoolHolidays.astro";
 import CouncilActions from "../../components/CouncilActions.astro";
 import MiniMap from "../../components/MiniMap.astro";
@@ -179,6 +181,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     ...(collectionFor(council.gss) ? [{id: 'collection', label: 'Council tax collection'}] : []),
     ...(councilEfs(council.slug) ? [{id: 'exceptional-financial-support', label: 'Exceptional Financial Support'}] : []),
     ...(electionFor(council.gss) ? [{id: 'elections', label: 'Elections'}] : []),
+    ...(reorganisationFor(council.gss) ? [{id: 'reorganisation', label: 'Local government reorganisation'}] : []),
     ...(profile.budget ? [{id: 'budget', label: 'Council budget'}] : []),
     ...(profile.budget?.county ? [{id: 'county-budget', label: 'County budget'}] : []),
     ...(profile.spending ? [{id: 'spending', label: 'Spending'}] : []),
@@ -194,6 +197,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   <ProfileCollection gss={council.gss} name={name} />
   <CouncilEfs slug={council.slug} />
   <ProfileElections council={council} name={name} />
+  <ReorganisationPanel gss={council.gss} />
   {profile.budget && <ProfileBudget view={profile.budget} />}
   <SpendingRecord gss={council.gss} name={name} />
 

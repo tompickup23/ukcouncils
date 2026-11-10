@@ -1,4 +1,8 @@
-import { heldWording, RA_906_LABEL } from '../scripts/lib/held-wording.mjs';
+import {parse, walkSync, TEXT_NODE, ELEMENT_NODE, type Node, type ElementNode} from 'ultrahtml';
+import {panelView, reorganisationData, reorganisationSources, longDate, type PanelClaim} from '../src/lib/reorganisation';
+import {boundarySource} from '../src/lib/boundaries';
+import {councilPages} from '../src/lib/paths';
+import { heldWording, RA_906_LABEL, outsideReorganisation } from '../scripts/lib/held-wording.mjs';
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -41,7 +45,7 @@ describe("the held reorganisation field", () => {
     expect(readers).toEqual([]);
   });
 
-  it.skipIf(!existsSync(DIST))("appears on no built page under dist", () => {
+  it.skipIf(!existsSync(DIST))("permits sourced panels while the registry wording appears nowhere", () => {
     const hits: string[] = [];
     for (const path of htmlFiles(DIST)) {
       const html = readFileSync(path, "utf-8");
@@ -82,4 +86,147 @@ it.skipIf(!existsSync(DIST))("prints line 906 only on the three source returns a
     expect(heldWording(html + `<p>${RA_906_LABEL}</p>`)).toBe(true);
   }
   expect(found.sort()).toEqual(['bromsgrove', 'buckinghamshire', 'redditch']);
+});
+
+
+const collapse = (s: string) => s.replace(/\s+/g,' ').replace(/\s+([,:.])/g,'$1').trim();
+const decode = (s: string) => s.replace(/&#(?:x([\da-f]+)|(\d+));/gi,(_,h,d)=>String.fromCodePoint(parseInt(h??d,h?16:10))).replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&apos;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+function text(node: Node): string {return node.type === TEXT_NODE ? decode(node.value) : (node.children ?? []).map(text).join(' ');}
+function elements(node: Node): ElementNode[] {const found: ElementNode[]=[];walkSync(node,n=>{if(n.type===ELEMENT_NODE)found.push(n);});return found;}
+const panelOf = (html: string) => /<section\b[^>]*\bid="reorganisation"[^>]*>[\s\S]*?<\/section>/.exec(html)?.[0] ?? '';
+
+it.skipIf(!existsSync(DIST))('renders exactly the reviewed council page joins, with no county pages', () => {
+  const rows=readFileSync(resolve('docs/reorganisation-sources/gss-join-dry-run.tsv'),'utf8').trim().split('\n').slice(1).map(r=>r.split('\t'));
+  const header=readFileSync(resolve('docs/reorganisation-sources/gss-join-dry-run.tsv'),'utf8').split('\n')[0].split('\t');
+  const gssColumn=header.indexOf('gss');
+  const expected=new Set(rows.map(r=>r[gssColumn]).filter(gss=>!gss.startsWith('E10')));
+  const found:string[]=[];
+  for(const {council} of councilPages()) {
+    const panel=panelOf(readFileSync(join(DIST,'councils',council.slug,'index.html'),'utf8'));
+    expect(Boolean(panel),council.slug).toBe(expected.has(council.gss));
+    if(panel)found.push(council.gss);
+  }
+  expect(found.sort()).toEqual([...expected].sort()); expect(found).toHaveLength(184);
+  for(const area of reorganisationData.areas) {
+    const county=area.councils.find(c=>c.role==='county')!;
+    const slug=county.name!.replace(/ County Council$/, '').toLowerCase().replaceAll(' ','-');
+    expect(existsSync(join(DIST,'councils',slug,'index.html')),slug).toBe(false);
+  }
+  for(const path of htmlFiles(DIST)) if(!path.includes('/councils/')) expect(panelOf(readFileSync(path,'utf8'))).toBe('');
+});
+
+it.skipIf(!existsSync(DIST))('accounts for every panel text node and verifies every claim and quotation against saved sources', () => {
+  for(const {council} of councilPages()) {
+    const view=panelView(council.gss); if(!view)continue;
+    const html=readFileSync(join(DIST,'councils',council.slug,'index.html'),'utf8');
+    const panel=panelOf(html); const root=parse(panel); const nodes=elements(root);
+    const expected=new Map<string,PanelClaim>();
+    const add=(c:PanelClaim)=>expected.set(c.key,c);
+    add(view.heading);view.status.forEach(add);
+    view.rail.forEach(c=>add({...c,text:collapse([c.label,c.text,c.date?longDate(c.date):''].join(' '))}));
+    if(!view.area.documentsOnly) {
+      add(view.checked);view.proposals.forEach(add);
+      if(view.orderRequirement)add(view.orderRequirement);
+      if(view.surreyProposal)add(view.surreyProposal);
+    } else view.area.timeline.forEach((c,i)=>add({...c,key:`document-${i}`,text:`${longDate(c.date)}: ${c.label}`}));
+    view.councils.forEach(c=>add({...c,key:`council-${c.gss}`,text:c.name+(c.current?' (this council)':'')}));
+    add({key:'map',...view.mapCitation,text:`${view.area.name}: area councils marked, ${view.name} outlined`});
+    const claims=nodes.filter(n=>'data-claim' in n.attributes);
+    expect(nodes.filter(n=>'data-reorg-citation' in n.attributes)).toHaveLength(claims.length);
+    expect(nodes.find(n=>n.name==='svg')?.attributes['aria-label']).toBe(`${view.area.name}: area councils marked, ${view.name} outlined`);
+    expect(claims.map(n=>n.attributes['data-claim']).sort(),council.slug).toEqual([...expected.keys()].sort());
+    for(const node of claims) {
+      const key=node.attributes['data-claim'];const c=expected.get(key)!;
+      expect(node.attributes['data-source'],key).toBe(c.source);
+      const source=reorganisationSources[c.source];
+      expect(['Ministry of Housing, Communities and Local Government','legislation.gov.uk']).toContain(source.publisher);
+      expect(collapse(text(node)),`${council.slug} ${key}`).toBe(collapse([c.text,c.quote??''].join(' '))+(key==='order-requirement'?'.':''));
+      const index=nodes.indexOf(node);
+      const following=nodes.slice(index+1).find(n=>'data-reorg-citation' in n.attributes || 'data-claim' in n.attributes);
+      expect(following?.attributes['data-reorg-citation'],key).toBe(c.source);
+      expect(following?.attributes['data-page'] || undefined).toBe(c.page ? String(c.page) : undefined);
+      expect(elements(following!).some(n=>n.name==='a' && decode(n.attributes.href??'')===source.url)).toBe(true);
+      const citationText=[c,...c.also??[]].map(ref=>{
+        const item=reorganisationSources[ref.source];
+        return `Source: ${item.publisher}, ${item.title}, ${longDate(item.date)}${ref.pages ? `, pages ${ref.pages.join(' and ')}` : ref.page ? `, page ${ref.page}` : ''}${ref.article ? `, article ${ref.article}` : ''}.`
+          + (item.files ? ' '+item.files.map(file=>`${file.file.split('/').pop()} SHA256: ${file.sha256}`).join(' ') : '');
+      }).join(' ');
+      expect(following?.attributes['data-pages'] || undefined).toBe(c.pages?.join(','));
+      expect(collapse(text(following!)),`${council.slug} citation ${key}`).toBe(collapse(citationText));
+      for(const q of elements(node).filter(n=>n.name==='q'||n.name==='blockquote')) {
+        const filename=c.page ? source.pageTexts?.[String(c.page)] : source.text;
+        expect(filename,`${c.source} page ${c.page}`).toBeTruthy();
+        expect(collapse(readFileSync(resolve('docs/reorganisation-sources/text',filename!),'utf8'))).toContain(collapse(text(q)));
+      }
+      expect(collapse(text(node))).not.toMatch(/£|%|population|saving|cost|funding|cancel|scrap|delay/i);
+      for(const digits of text(node).match(/\d{3,}/g)??[])expect(digits).toMatch(/^(202[4-9]|264)$/);
+    }
+    // Any added sentence outside a claim or a verified source line fails here.
+    const permittedStatic=new Set(['Proposals','Documents','Councils in this area','Source:',`Office for National Statistics, ${boundarySource.date}`,'.',`${boundarySource.attribution} Licensed under`,'OGL v3.0']);
+    walkSync(root,(node)=>{
+      if(node.type!==TEXT_NODE || !collapse(text(node)))return;
+      let parent=node.parent;
+      while(parent && parent.type===ELEMENT_NODE) {
+        if('data-claim' in parent.attributes || 'data-reorg-citation' in parent.attributes)return;
+        parent=parent.parent;
+      }
+      expect(permittedStatic.has(collapse(text(node))),`${council.slug}: unsourced text ${text(node)}`).toBe(true);
+    });
+    for(const citation of nodes.filter(n=>'data-reorg-citation' in n.attributes)) {
+      const source=reorganisationSources[citation.attributes['data-reorg-citation']];
+      expect(collapse(text(citation))).toContain(collapse(source.title));
+      expect(collapse(text(citation))).toContain(source.publisher);
+      for(const file of source.files??[]) {
+        expect(collapse(text(citation))).toContain(file.sha256);
+        expect(elements(citation).some(n=>n.name==='a'&&decode(n.attributes.href??'')===file.url)).toBe(true);
+      }
+    }
+    expect(panel).not.toMatch(/[\u2013\u2014]|&mdash;|&ndash;|&#821[12];|\x20-\x20/);
+    if(view.area.documentsOnly) {
+      expect(nodes.some(n=>['q','blockquote'].includes(n.name)||'data-proposals' in n.attributes)).toBe(false);
+      expect(view.rail).toEqual([]);
+      expect(nodes.some(n=>'data-step' in n.attributes || n.attributes.class==='reorg-rail')).toBe(false);
+      expect(html).not.toMatch(/New councils start|Not yet dated/);
+      const prose=claims.filter(n=>!n.attributes['data-claim'].startsWith('document-')).map(text).join(' ');
+      expect(prose).not.toMatch(/withdraw|claim|court|review|decision/i);
+    }
+    expect(outsideReorganisation(html)).not.toContain('government-decided');
+  }
+}, 30000);
+
+it('holds unitary wording outside the permitted sourced panel and citations', () => {
+  expect(heldWording('<p>A unitary council.</p>')).toBe(true);
+  expect(heldWording('<section id="reorganisation"><p>A unitary council.</p></section>')).toBe(false);
+  expect(heldWording('<p class="source-line"><a href="https://www.gov.uk/">A unitary council</a></p>')).toBe(false);
+});
+
+it('preserves only existing classification labels in their original markup', () => {
+  const labels = [
+    '<p class="muted">A unitary authority in North West.</p>',
+    '<dd data-council-type>Unitary authority</dd>',
+    '<span class="row-detail">Unitary authority</span>',
+    '<span>Unitary authority · North West</span>',
+    '<option value="blackpool">Blackpool (Unitary authority)</option>',
+    '<option value="UA">Unitary authority</option>',
+    '<th scope="row">Shire Unitary Authorities [r]</th>',
+    '<th scope="colgroup">Unitary authority (63 councils)</th>',
+    '<span class="fact-label">Average area Band D for unitary areas, 2026/27</span>',
+    '<p class="muted">Other unitary authorities in North West, by council type in the UK Places register.</p>',
+    '<section id="2026-27-unitary" aria-labelledby="2026-27-unitary-heading"><h3 id="2026-27-unitary-heading">How much did London boroughs, metropolitan districts and unitary authorities raise their share?</h3></section>',
+    '<caption>London boroughs, metropolitan districts and unitary authorities, own Band D 2026/27, change on 2025/26, largest first</caption>',
+    '<script type="application/json">{"classCode":"UA","classLabel":"Unitary authority"}</script>',
+    '<figure data-position-strip="band-d"><title>Band D in Blackpool among unitary authorities in England</title><div aria-label="Band D in Blackpool among unitary authorities in England"></div></figure>',
+  ];
+  for (const html of labels) {
+    expect(heldWording(html), html).toBe(false);
+    expect(heldWording(html + '<p>A new unitary council is proposed.</p>')).toBe(true);
+    expect(heldWording(html.replace(/unitary/i, 'new unitary')), html).toBe(true);
+  }
+  for (const html of [
+    '<p>Unitary authority</p>',
+    '<dd data-council-type>A new unitary council is proposed.</dd>',
+    '<p class="muted">A unitary authority in North West. A new unitary council is proposed.</p>',
+    '<figure data-position-strip="band-d"><p>A new unitary council is proposed.</p></figure>',
+    '<script type="application/json">{"classCode":"UA","classLabel":"Unitary authority","note":"A new unitary council"}</script>',
+  ]) expect(heldWording(html), html).toBe(true);
 });

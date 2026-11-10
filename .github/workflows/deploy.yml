@@ -92,6 +92,9 @@ jobs:
       - name: Check the built tree
         run: npm run test:dist
 
+      - name: Verify every rendered panel claim
+        run: npx vitest run tests/reorganisation-held.test.ts
+
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 

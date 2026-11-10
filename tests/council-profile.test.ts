@@ -1,3 +1,4 @@
+import {outsideReorganisation} from '../scripts/lib/held-wording.mjs';
 import { describe, expect, it } from "vitest";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -211,7 +212,7 @@ describe.skipIf(!built)("the built Lancashire council pages", () => {
       const list = /<ul[^>]*data-profile-sources[\s\S]*?<\/ul>/.exec(html)?.[0] ?? "";
       const listed = new Set([...list.matchAll(/href="([^"]+)"/g)].map((m) => m[1]));
       const cited = new Set(
-        [...html.matchAll(/class="source-line[^"]*"[^>]*>[\s\S]*?<a href="([^"]+)"/g)].map((m) => m[1]),
+        [...outsideReorganisation(html).matchAll(/class="source-line[^"]*"[^>]*>[\s\S]*?<a href="([^"]+)"/g)].map((m) => m[1]),
       );
       const missing = [...cited].filter((href) => !listed.has(href));
       expect(missing, council.slug).toEqual([]);
