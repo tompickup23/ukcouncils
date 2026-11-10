@@ -112,19 +112,13 @@ export function panelView(gss: string) {
     if (gss === 'E06000037') status.push({...claim('berkshire',templates.berkshire,'S8'),pages:[1,3],also:[{source:area.invitationSource}]});
     if (gss === 'E06000046') status.push(claim('island','',area.source,undefined,templates.island));
   }
-  const rail: RailStep[] = [
+  const rail: RailStep[] = area.documentsOnly ? [] : [
     {...claim('rail-proposals','',area.proposalSource),step:'proposals',state:'done',label:'Proposals submitted',date:area.submitted},
     {...claim('rail-minded',area.mindedTo || area.order ? '' : 'No minded to decision',area.mindedTo?.source ?? 'S1',area.mindedTo ? 1 : undefined),step:'minded-to',state:area.mindedTo || area.order ? 'done' : 'none',label:area.order ? 'Decision' : 'Minded to decision',date:area.mindedTo?.date ?? (area.order ? '2025-10-28' : undefined)},
     {...claim('rail-window',area.window ? 'Not yet dated by MHCLG' : '',area.window?.source ?? 'S1',area.window?.page,area.window?.quote),step:'window',state:area.window ? 'current' : area.order ? 'none' : 'future',label:'Representation window'},
     {...claim('rail-order',area.order ? 'Made' : templates.noOrder,area.order ? 'S12' : 'L1',area.order ? 1 : undefined),step:'order',state:area.order ? 'done' : 'future',label:'Structural changes order',date:area.order?.made},
     {...claim('rail-vesting',area.order ? '' : area.vesting.month ? 'April 2029, the date the government gives for new councils' : "1 April 2029, the government's stated timetable",area.vesting.source,area.vesting.page),step:'vesting',state:'future',label:'New councils start',date:area.order ? area.vesting.date : undefined},
   ];
-  // The sub judice rule permits labels and dates only in Lancashire's rail.
-  if (area.documentsOnly) for (const step of rail) {
-    step.text = step.date ? '' : 'Not yet dated by MHCLG';
-    step.quote = undefined;
-    if (step.step === 'vesting') {step.date=area.vesting.date; step.text='';}
-  }
   const proposals = area.proposals.map((p,i) => claim(`proposal-${i}`,fillTemplate(templates.proposal,{
     by:new Intl.ListFormat('en-GB',{style:'long',type:'conjunction'}).format(p.by),councils:p.councils,
     noun:p.councils === 1 ? 'council' : 'councils',split:p.split ? ' with a request to split existing district areas' : '',

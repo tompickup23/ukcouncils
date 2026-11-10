@@ -32,3 +32,11 @@ it('gives every minded to order quotation the permitted subject', () => {
       .toBe('Any change would need to be provided for in a structural changes order.');
   }
 });
+
+it('omits the rail for every documents only council and keeps the other rails', () => {
+  for (const area of reorganisationData.areas) {
+    for (const council of area.councils.filter(c => c.role !== 'county')) {
+      expect(panelView(council.gss)!.rail).toHaveLength(area.documentsOnly ? 0 : 5);
+    }
+  }
+});

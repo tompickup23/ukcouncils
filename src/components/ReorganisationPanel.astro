@@ -13,7 +13,7 @@ const map=view ? areaMap(view.area.councils.filter(c=>c.role!=='county').map(c=>
     <p data-claim={c.key} data-source={c.source} data-page={c.page}>{c.text}{c.quote && <> <q>{c.quote}</q></>}</p>
     <ReorganisationSource {...c} />
   </>)}
-  <ol class="reorg-rail">
+  {view.rail.length > 0 && <ol class="reorg-rail">
     {view.rail.map(c => <li data-step={c.step} data-state={c.state}>
       <div data-claim={c.key} data-source={c.source} data-page={c.page}>
         <strong>{c.label}</strong>
@@ -23,7 +23,7 @@ const map=view ? areaMap(view.area.councils.filter(c=>c.role!=='county').map(c=>
       </div>
       <ReorganisationSource {...c} />
     </li>)}
-  </ol>
+  </ol>}
   {!view.area.documentsOnly && <>
     {view.orderRequirement && <>
       <p data-claim={view.orderRequirement.key} data-source={view.orderRequirement.source} data-page={view.orderRequirement.page}>{view.orderRequirement.text} <q>{view.orderRequirement.quote}</q>.</p>

@@ -184,8 +184,10 @@ it.skipIf(!existsSync(DIST))('accounts for every panel text node and verifies ev
     expect(panel).not.toMatch(/[\u2013\u2014]|&mdash;|&ndash;|&#821[12];|\x20-\x20/);
     if(view.area.documentsOnly) {
       expect(nodes.some(n=>['q','blockquote'].includes(n.name)||'data-proposals' in n.attributes)).toBe(false);
-      for(const step of view.rail)expect(step.quote).toBeUndefined();
-      const prose=claims.filter(n=>!n.attributes['data-claim'].startsWith('document-')&&!n.attributes['data-claim'].startsWith('rail-')).map(text).join(' ');
+      expect(view.rail).toEqual([]);
+      expect(nodes.some(n=>'data-step' in n.attributes || n.attributes.class==='reorg-rail')).toBe(false);
+      expect(html).not.toMatch(/New councils start|Not yet dated/);
+      const prose=claims.filter(n=>!n.attributes['data-claim'].startsWith('document-')).map(text).join(' ');
       expect(prose).not.toMatch(/withdraw|claim|court|review|decision/i);
     }
     expect(outsideReorganisation(html)).not.toContain('government-decided');
