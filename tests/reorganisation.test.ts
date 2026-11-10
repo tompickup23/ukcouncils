@@ -1,7 +1,7 @@
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {describe, expect, it} from 'vitest';
-import {reorganisationFor, reorganisationData, reorganisationSources, validateReorganisation} from '../src/lib/reorganisation';
+import {panelView, templates, reorganisationFor, reorganisationData, reorganisationSources, validateReorganisation} from '../src/lib/reorganisation';
 describe('the sourced panel loader', () => {
   it('joins 184 pages and omits counties and councils outside the programme', () => {
     const councils = reorganisationData.areas.flatMap(a => a.councils);
@@ -19,4 +19,16 @@ describe('the sourced panel loader', () => {
     expect(new Set(reorganisationSources.L1.files!.map(f => f.sha256)).size).toBe(4);
     for(const file of reorganisationSources.L1.files!) expect(createHash('sha256').update(readFileSync(file.file)).digest('hex')).toBe(file.sha256);
   });
+});
+
+it('gives every minded to order quotation the permitted subject', () => {
+  for (const area of reorganisationData.areas.filter(a => a.mindedTo)) {
+    const view = panelView(area.councils.find(c => c.role !== 'county')!.gss)!;
+    expect(view.orderRequirement).toMatchObject({
+      text: templates.neededOrderLead, quote: templates.neededOrder,
+      source: area.mindedTo!.source, page: area.mindedTo!.statutoryPage,
+    });
+    expect(`${view.orderRequirement!.text} ${view.orderRequirement!.quote}.`)
+      .toBe('Any change would need to be provided for in a structural changes order.');
+  }
 });

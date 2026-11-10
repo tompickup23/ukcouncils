@@ -79,6 +79,7 @@ export const templates = {
   proposal: '{by} proposed {councils} unitary {noun}{split}',
   surreyProposal: 'The order implements the proposal made by Surrey County Council, Elmbridge Borough Council and Mole Valley District Council.',
   noOrder: 'None made by 9 November 2026',
+  neededOrderLead: 'Any change',
   neededOrder: 'would need to be provided for in a structural changes order',
   checked: 'Checked against MHCLG and legislation.gov.uk on {date}.',
 } as const;
@@ -134,7 +135,7 @@ export function panelView(gss: string) {
     mapCitation:{source:area.invitationSource,also:area.councils.some(c=>c.via==='S8') ? [{source:'S8',page:1}] : undefined},
     heading:claim('heading',fillTemplate(templates.heading,{area:area.name}),area.source),
     checked:claim('checked',fillTemplate(templates.checked,{date:longDate(reorganisationData.checked)!}),'S1'),
-    orderRequirement:area.mindedTo ? claim('order-requirement','',area.mindedTo.source,area.mindedTo.statutoryPage,templates.neededOrder) : null,
+    orderRequirement:area.mindedTo ? claim('order-requirement',templates.neededOrderLead,area.mindedTo.source,area.mindedTo.statutoryPage,templates.neededOrder) : null,
     surreyProposal:area.order ? claim('surrey-proposal',templates.surreyProposal,'S12',1) : null,
   };
 }

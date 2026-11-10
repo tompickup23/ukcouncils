@@ -26,7 +26,7 @@ const map=view ? areaMap(view.area.councils.filter(c=>c.role!=='county').map(c=>
   </ol>
   {!view.area.documentsOnly && <>
     {view.orderRequirement && <>
-      <p data-claim={view.orderRequirement.key} data-source={view.orderRequirement.source} data-page={view.orderRequirement.page}><q>{view.orderRequirement.quote}</q></p>
+      <p data-claim={view.orderRequirement.key} data-source={view.orderRequirement.source} data-page={view.orderRequirement.page}>{view.orderRequirement.text} <q>{view.orderRequirement.quote}</q>.</p>
       <ReorganisationSource {...view.orderRequirement} />
     </>}
     <p data-claim="checked" data-source={view.checked.source}>{view.checked.text}</p>

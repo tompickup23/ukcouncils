@@ -140,7 +140,7 @@ it.skipIf(!existsSync(DIST))('accounts for every panel text node and verifies ev
       expect(node.attributes['data-source'],key).toBe(c.source);
       const source=reorganisationSources[c.source];
       expect(['Ministry of Housing, Communities and Local Government','legislation.gov.uk']).toContain(source.publisher);
-      expect(collapse(text(node)),`${council.slug} ${key}`).toBe(collapse([c.text,c.quote??''].join(' ')));
+      expect(collapse(text(node)),`${council.slug} ${key}`).toBe(collapse([c.text,c.quote??''].join(' '))+(key==='order-requirement'?'.':''));
       const index=nodes.indexOf(node);
       const following=nodes.slice(index+1).find(n=>'data-reorg-citation' in n.attributes || 'data-claim' in n.attributes);
       expect(following?.attributes['data-reorg-citation'],key).toBe(c.source);
