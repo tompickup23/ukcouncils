@@ -64,7 +64,12 @@ test('maps and print preserve the selected answer and source without interactive
   await expect(page.locator('[data-boundary-map]')).toHaveAttribute('data-boundary-map','E07000117');
   const bounds = await page.locator('[data-map-focal]').evaluate(el=>{const b=(el as SVGGraphicsElement).getBBox();return {width:b.width,height:b.height};});
   expect(bounds.width).toBeGreaterThan(50); expect(bounds.height).toBeGreaterThan(50); expect(bounds.width).toBeLessThan(299);
+  const drawerTables = page.locator('main details:not([open]) table');
+  expect(await drawerTables.count()).toBeGreaterThan(0);
+  await expect(page.locator('[data-history-drawer] table')).toBeHidden();
   await page.emulateMedia({media:'print'});
+  for (const table of await drawerTables.all()) await expect(table).toBeVisible();
+  await expect(page.locator('[data-history-drawer] .source-line')).toBeVisible();
   await expect(page.locator('[data-band-panel="H"]')).toBeVisible(); await expect(page.locator('[data-band-panel="D"]')).toBeHidden();
   await expect(page.locator('[data-band-panel="H"] .source-line').first()).toBeVisible();
   await expect(page.locator('.site-header-bar')).toBeHidden(); await expect(page.locator('[data-council-actions]')).toBeHidden();
