@@ -25,6 +25,7 @@ import { join, resolve } from "node:path";
 import { hashesIn, scriptSrcOf } from "./inject_csp_hashes.mjs";
 import { frontDoorChecks } from "./lib/front-door-checks.mjs";
 import { unsourcedFigures } from "./lib/figures.mjs";
+import { dossierChecks } from "./lib/dossier-checks.mjs";
 
 const DIST = resolve(process.cwd(), "dist");
 const SITE_NAME = "UK Councils";
@@ -51,6 +52,7 @@ function* files(dir) {
 }
 
 const failures = [];
+const dossierCounts = {};
 if (!existsSync(join(DIST, "apple-touch-icon.png"))) failures.push("missing Apple touch icon PNG");
 const rel = (path) => path.slice(DIST.length) || "/";
 let pages = 0;
@@ -89,6 +91,9 @@ for (const path of files(DIST)) {
 
   const councilSlug = /^\/councils\/([^/]+)\/index\.html$/.exec(rel(path))?.[1];
   if (councilSlug) {
+    const dossier = dossierChecks(text);
+    failures.push(...dossier.failures.map(failure => `${failure} on ${rel(path)}`));
+    for (const [key, count] of Object.entries(dossier.counts)) dossierCounts[key] = (dossierCounts[key] ?? 0) + count;
     const expected = `https://ukcounciltax.co.uk/councils/${councilSlug}/`;
     const matches = [...text.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)].filter(match => match[1] === expected);
     if (matches.length !== 1) failures.push(`Expected one verified UK Council Tax link on ${rel(path)}; found ${matches.length}`);
@@ -237,6 +242,7 @@ console.log(`B2 coverage: ${JSON.stringify(frontDoor.counts)}`);
 const budgets = budgetChecks(process.cwd(), DIST);
 failures.push(...budgets.failures);
 console.log(`C3 coverage: ${JSON.stringify(budgets.counts)}`);
+console.log(`Dossier coverage: ${JSON.stringify(dossierCounts)}`);
 
 if (failures.length) {
   console.error(`dist check: ${failures.length} failures\n${failures.map((f) => `  ${f}`).join("\n")}`);

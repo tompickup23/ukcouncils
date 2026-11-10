@@ -16,7 +16,7 @@ const { name, sources } = Astro.props;
 <section class="section" id="sources" aria-labelledby="sources-heading" data-profile-section="sources">
   <h2 id="sources-heading">Sources for this page on {name}</h2>
   <p class="muted">Every table and file a figure on this page cites, {sources.length} in all. Each figure also carries its own source line.</p>
-  <details data-sources-drawer><summary>Read the {sources.length} sources</summary>
+  <details data-sources-drawer><summary>Read the {sources.length} sources for {name}</summary>
   <ul class="profile-sources" data-profile-sources>
     {sources.map((source) => {
       const date = longDate(source.date);

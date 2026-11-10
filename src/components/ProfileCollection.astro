@@ -34,10 +34,6 @@ const englandNotes=row?shownNotes(england):[];
 {row && (
   <section class="section" id="collection" aria-labelledby="collection-heading" data-profile-section="collection">
     <h2 id="collection-heading">How much council tax did {name} collect in {year}?</h2>
-    <p class="muted">
-      The council collects council tax for every body that sets a share of the bill, so these amounts cover the whole bill,
-      not only the council's own share. Figures are as the council reported them to MHCLG on its year end return.
-    </p>
     <div class="fact" data-fact>
       {row.rate !== null && <>
         <p>
@@ -51,6 +47,10 @@ const englandNotes=row?shownNotes(england):[];
           source={source} />
       </>}
       <details data-collection-drawer><summary>Read the collection and arrears table for {name} and England</summary>
+    <p class="muted">
+      The council collects council tax for every body that sets a share of the bill, so these amounts cover the whole bill,
+      not only the council's own share. Figures are as the council reported them to MHCLG on its year end return.
+    </p>
       <div class="table-wrap" tabindex="0" role="region" aria-label={`Council tax collection and arrears in ${name}, ${year}`}>
         <table class="data">
           <caption>Council tax collection and arrears, {name} and England, {year}</caption>

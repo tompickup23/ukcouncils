@@ -474,6 +474,10 @@ table.data thead th:first-child { left: 0; z-index: 3; }
   main { padding: 0; }
   .card, .fact, figure { box-shadow: none; break-inside: avoid; }
   .council-answer { display: block !important; }
+  /* Closed dossier drawers print open: a printed profile keeps every table and source line. */
+  details::details-content { content-visibility: visible; display: block; }
+  details > summary { list-style: none; font-weight: 600; }
+  details > summary::-webkit-details-marker { display: none; }
   .council-map { max-width: 16rem; }
   .table-wrap { overflow: visible !important; max-height: none !important; border: 0; }
   table.data { min-width: 0 !important; width: 100%; font-size: 9pt; }

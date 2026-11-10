@@ -28,7 +28,12 @@ export function reorganisationChecks(root,dist) {
     const prose=p.replace(/<p\b[^>]*class="source-line[^\"]*"[^>]*>[\s\S]*?<\/p>/g,'');
     check(!/£|%|population|saving|cost|funding|cancel|scrap|delay|chaos|blow|U-turn/i.test(text(prose)),`Restricted panel wording ${c.slug}`);
     check(!/[\u2013\u2014]|&(?:m|n)dash;|&#821[12];|\x20-\x20/.test(p),`Panel house style ${c.slug}`);
-    check(!/<script|<astro-island|<details/.test(p),`Static visible panel ${c.slug}`);
+    check(!/<script|<astro-island/.test(p),`Static panel ${c.slug}`);
+    const drawer = /<details\b[^>]*data-reorganisation-drawer[^>]*>[\s\S]*?<\/details>/.exec(p)?.[0] ?? '';
+    check((p.match(/<details\b/g) ?? []).length === 1 && drawer !== '' && !/<details\b[^>]*\bopen(?:[\s=>])/.test(drawer),`Closed evidence drawer ${c.slug}`);
+    check(text(/<summary\b[^>]*>([\s\S]*?)<\/summary>/.exec(drawer)?.[1] ?? '') === `Read the reorganisation stages, proposals and area councils for ${tax[c.gss].name}`,`Named evidence summary ${c.slug}`);
+    const visible = p.replace(drawer, '');
+    check(visible.includes('data-claim="heading"') && visible.includes('data-area-map') && (area.documentsOnly ? visible.includes(`The published documents cover ${area.name}.`) : /data-claim="status/.test(visible)),`Visible panel headline and map ${c.slug}`);
     const members=[...p.matchAll(/data-member="([^"]+)"/g)].map(m=>m[1]).sort();
     check(JSON.stringify(members)===JSON.stringify(area.councils.filter(c=>c.role!=='county').map(c=>c.gss).sort()),`Map membership ${c.slug}`);
   }

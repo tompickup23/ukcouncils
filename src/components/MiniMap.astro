@@ -13,7 +13,7 @@ const map = boundaryMap(gss);
     <span class="source-line">Source: <a href={boundarySource.url}>Office for National Statistics, {boundarySource.date}</a>.</span>
     <p class="small muted">Illustrative area boundary. Parish charges and individual property bands vary within it.</p>
     <p class="small map-attribution">{boundarySource.attribution} Licensed under <a href={boundarySource.licenceUrl}>OGL v3.0</a>.</p>
-    <details><summary>Map detail</summary><p class="small">{boundarySource.method}</p></details>
+    <details data-map-drawer><summary>Map detail for {name}</summary><p class="small">{boundarySource.method}</p></details>
   </figcaption>
 </figure>}
 <style>

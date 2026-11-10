@@ -171,10 +171,11 @@ describe.skipIf(!built)("the built Lancashire council pages", () => {
         .format(new Date(`${record.source.date}T00:00:00Z`));
       const expected = [
         record.heading,
-        ...record.sentences,
+        record.sentences[0],
+        `Source: ${record.source.publisher}, ${record.source.title}, ${record.source.table}, published ${date}.`,
+        ...record.sentences.slice(1),
         ...(record.caveat ? [record.caveat] : []),
         `${record.link.text}.`,
-        `Source: ${record.source.publisher}, ${record.source.title}, ${record.source.table}, published ${date}.`,
       ].join(" ");
       expect(text(match![0]).replace(/ \./g, ".").replace(/ ,/g, ","), council.slug).toBe(expected);
     }

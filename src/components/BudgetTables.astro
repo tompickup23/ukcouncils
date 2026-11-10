@@ -34,7 +34,7 @@ const note8 = council.notes.raPart1.includes('[note 8]');
     </table>
   </div>
   <SourceLine source={budgetSource()} />
-  <details><summary>Read the service sub-lines</summary>
+  <details data-budget-services-drawer><summary>Read the service sub-lines for {name}</summary>
     {rows.filter(row => row.subLines.some(key => present(council.values[key]))).map(row => <div class="service-detail">
       <div class="table-wrap" tabindex="0" role="region" aria-label={`${name}: ${row.label} sub-lines`}><table class="data">
         <caption>{name}: {row.label}, {budgetYear} sub-lines</caption>
@@ -60,7 +60,7 @@ const note8 = council.notes.raPart1.includes('[note 8]');
   </table></div>
   {note8 && <p class="caveat" data-note8>MHCLG note 8: “{budget.sourceNotes.raPart1['[note 8]']}”</p>}
   <SourceLine source={budgetSource('raPart1', 'Calculated by grouping financing lines and reversing their signs, except the council tax requirement')} />
-  <details><summary>Read the financing lines as printed</summary>
+  <details data-budget-financing-drawer><summary>Read the financing lines as printed for {name}</summary>
     <div class="table-wrap" tabindex="0" role="region" aria-label={`${name} printed financing lines`}><table class="data" data-ra-financing data-pagefind-ignore>
       <caption>{name}: observed RA financing lines, {budgetYear}, preserving printed signs. RA and Table 10 are separate returns; neither is adjusted.</caption>
       <thead><tr><th scope="col">Printed label</th><th scope="col">RA line</th><th scope="col" class="num">Pounds</th></tr></thead>

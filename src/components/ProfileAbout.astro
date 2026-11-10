@@ -19,23 +19,28 @@ const { name, about } = Astro.props;
 <section class="section" id="about" aria-labelledby="about-heading" data-profile-section="about">
   <h2 id="about-heading">What is {name} council?</h2>
   <div class="profile-about">
+    {about.population && <div data-profile-population>
+      <p>{name} had {about.population.council.toLocaleString("en-GB")} residents in mid-2025{about.population.county && `, while ${about.population.county.name} County Council's area had ${about.population.county.count.toLocaleString("en-GB")}`}.</p>
+      <SourceLine source={populationSource()} />
+    </div>}
+    {!about.population && <>
+      <p>{about.officialName} is recorded as {about.type} in the register.</p>
+      <SourceLine source={about.source} />
+    </>}
+    <details data-about-drawer><summary>Read the council register and service links for {name}</summary>
     <dl class="profile-list">
       <div><dt>Name in the register</dt><dd>{about.officialName}</dd></div>
       <div><dt>Type</dt><dd data-council-type>{about.type}</dd></div>
       {about.county && <div><dt>County</dt><dd>{about.county}</dd></div>}
     </dl>
-    <SourceLine source={about.source} />
-    {about.population && <div data-profile-population>
-      <p>{name} had {about.population.council.toLocaleString("en-GB")} residents in mid-2025.
-        {about.population.county && ` ${about.population.county.name} County Council's area had ${about.population.county.count.toLocaleString("en-GB")}.`}</p>
-      <SourceLine source={populationSource()} />
-    </div>}
+    {about.population && <SourceLine source={about.source} />}
     {about.ownPages && <div data-profile-own-pages>
       <dl class="profile-list"><div><dt>The council's own pages</dt><dd>
         {localLinks.services.filter(service => about.ownPages?.[service.id]).map(service => <a class="own-page" href={about.ownPages![service.id]}>{service.title}</a>)}
       </dd></div></dl>
       <SourceLine source={localLinksSource()} />
     </div>}
+    </details>
   </div>
 </section>
 
