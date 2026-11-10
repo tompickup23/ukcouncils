@@ -42,7 +42,8 @@ for(const theme of ['light','dark'] as const) {
       }
       if(slug==='burnley' && testInfo.project.name==='mobile') {
         await page.evaluate(()=>window.scrollTo(0,0));
-        const amount=page.locator('#council-tax [data-band-panel="D"] [data-figure]').first();
+        // First screen rule, as in e2e/budget.spec.ts: the summary row's Band D tile (D1).
+        const amount=page.locator('[data-profile-summary] [data-summary-tile="council-tax"] [data-figure]').first();
         const box=await amount.boundingBox();
         expect(box).toBeTruthy();
         expect(box!.y+box!.height).toBeLessThanOrEqual(812);

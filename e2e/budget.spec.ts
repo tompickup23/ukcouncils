@@ -90,7 +90,10 @@ test('budget prose stays below 250 words and the first screen retains Band D', a
   for (const slug of ['burnley', 'birmingham']) {
     await page.goto(`/councils/${slug}/`);
     if (slug === 'burnley' && testInfo.project.name === 'mobile') {
-      const figure = page.locator('.council-answer [data-band-panel="D"] [data-figure]').first();
+      // The first screen rule: Band D for the year is on the first phone screen. Since the
+      // summary row (D1) it is the row's first tile, with its source and parish caveat; the
+      // band answer follows directly under the row.
+      const figure = page.locator('[data-profile-summary] [data-summary-tile="council-tax"] [data-figure]').first();
       const bounds = await figure.boundingBox();
       expect(bounds).not.toBeNull();
       expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(812);
