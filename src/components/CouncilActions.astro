@@ -1,26 +1,14 @@
 ---
-import ViewActions from './ViewActions.astro';
-import {taxRows} from '../lib/tax-view-data';
 import {CURRENT_YEAR} from '../lib/council-tax';
-import {SITE_URL, jsonLd} from '../lib/site';
-interface Props {slug: string}
-const {slug} = Astro.props;
-const row = taxRows().find(row => row.slug === slug)!;
+interface Props {slug: string; name: string; taxLink: string | null; payLink?: string}
+const {slug, name, taxLink, payLink} = Astro.props;
 ---
-<div data-council-actions>
-  <ViewActions id="council" />
-  <script type="application/json" data-council-export set:html={jsonLd({row, year: CURRENT_YEAR, site: SITE_URL})} />
-</div>
-<script>
-  import {shareView} from '../lib/share';
-  import {TAX_BANDS, type TaxBand, type TaxRow} from '../lib/tax-view';
-  const root = document.querySelector<HTMLElement>('[data-council-actions]')!;
-  const {row, year, site} = JSON.parse(root.querySelector('[data-council-export]')!.textContent!) as {row: TaxRow; year: string; site: string};
-  const band = (): TaxBand => {
-    const value = document.querySelector<HTMLInputElement>('[data-band]:checked')?.value;
-    return TAX_BANDS.includes(value as TaxBand) ? value as TaxBand : 'D';
-  };
-  const share = root.querySelector<HTMLButtonElement>('[data-share-view]')!;
-  share.disabled = false;
-  share.addEventListener('click', () => void shareView(new URL(`/councils/${row.slug}/#band-${band()}`, site).href, `${row.name} council tax, Band ${band()}, ${year.replace('-', '/')}`, root.querySelector('[data-share-status]')!, root.querySelector('[data-share-fallback]')!));
-</script>
+<nav class="action-links" aria-label="Council next steps" data-council-actions>
+  <a class="button" data-council-compare href={`/compare/?a=${slug}&band=D&year=${CURRENT_YEAR}`}>Compare this council</a>
+  {taxLink && <a href={taxLink}>{name}'s bill on UK Council Tax</a>}
+  {payLink && <a href={payLink}>Pay council tax to {name}</a>}
+</nav>
+
+<style>
+  @media print { [data-council-actions] { display: none; } }
+</style>

@@ -19,10 +19,11 @@ const record = spendingRecord(name, spendingFor(gss));
   <section class="section" id="spending" aria-labelledby="spending-heading" data-spending-record>
     <h2 id="spending-heading">{record.heading}</h2>
     <div class="fact spending-fact" data-fact>
-      {record.sentences.map((sentence) => <p>{sentence}</p>)}
+      <p>{record.sentences[0]}</p>
+      <SourceLine source={record.source} />
+      {record.sentences.slice(1).map((sentence) => <p>{sentence}</p>)}
       {record.caveat && <p class="caveat">{record.caveat}</p>}
       <p><a href={record.link.href} data-spending-link>{record.link.text}</a>.</p>
-      <SourceLine source={record.source} />
     </div>
   </section>
 )}

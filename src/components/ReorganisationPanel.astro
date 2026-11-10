@@ -8,8 +8,14 @@ const map=view ? areaMap(view.area.councils.filter(c=>c.role!=='county').map(c=>
 ---
 {view && map && <section class="section" id="reorganisation" aria-labelledby="reorganisation-heading" data-reorganisation-panel={view.area.id} data-reorganisation-status={view.area.status} data-documents-only={view.area.documentsOnly || undefined}>
   <h2 id="reorganisation-heading" data-claim="heading" data-source={view.heading.source}>{view.heading.text}</h2>
+  {view.area.documentsOnly && <p>The published documents cover {view.area.name}.</p>}
   <ReorganisationSource {...view.heading} />
-  {view.status.map(c => <>
+  {view.status.slice(0, 1).map(c => <>
+    <p data-claim={c.key} data-source={c.source} data-page={c.page}>{c.text}{c.quote && <> <q>{c.quote}</q></>}</p>
+    <ReorganisationSource {...c} />
+  </>)}
+  <details data-reorganisation-drawer><summary>Read the reorganisation stages, proposals and area councils for {view.name}</summary>
+  {view.status.slice(1).map(c => <>
     <p data-claim={c.key} data-source={c.source} data-page={c.page}>{c.text}{c.quote && <> <q>{c.quote}</q></>}</p>
     <ReorganisationSource {...c} />
   </>)}
@@ -55,6 +61,7 @@ const map=view ? areaMap(view.area.councils.filter(c=>c.role!=='county').map(c=>
     </p>
     <ReorganisationSource {...c} />
   </li>)}</ul>
+  </details>
   <figure data-area-map>
     <svg viewBox="0 0 600 360" role="img" aria-label={`${view.area.name}: area councils marked, ${view.name} outlined`}>
       <path d={map.context} class="map-context" />

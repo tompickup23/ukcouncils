@@ -16,7 +16,6 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import BandSelector from "../../components/BandSelector.astro";
 import PageContents from "../../components/PageContents.astro";
 import HistoryBars from "../../components/HistoryBars.astro";
-import Fact from "../../components/Fact.astro";
 import SourceLine from "../../components/SourceLine.astro";
 import SpendingRecord from "../../components/SpendingRecord.astro";
 import CouncilEfs from "../../components/CouncilEfs.astro";
@@ -48,7 +47,7 @@ import {
 import { councilPages, councilPath, regionPath } from "../../lib/paths";
 import { bandLinks, similarCouncils } from "../../lib/council-links";
 import { sisterLinks, type Council } from "../../lib/registry";
-import { INCREASES_PATH, OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../../lib/site";
+import { INCREASES_PATH } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
 import { councilTaxSource } from "../../lib/sources";
 import { councilTaxLink } from "../../lib/council-tax-links";
@@ -145,7 +144,6 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
       Choose your band for the published yearly charge, before discounts.
     </p>
     <BandSelector ons={council.gss} authority={tax} />
-    {taxLink && <p>Every band, the twelve month figure and what makes up the bill: <a href={taxLink}>{name} on UK Council Tax</a>.</p>}
     <p class="small muted">Monthly equivalents divide the annual charge by ten and round to pennies. Actual bill instalments can differ.</p>
     <p class="caveat">
       Every band includes the share of every body that sets council tax here, such as the police and,
@@ -164,12 +162,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   <MiniMap gss={council.gss} name={name} />
   </div>
   <ProfileAbout name={name} about={profile.about} />
-  <div class="action-links" aria-label="Council tax next steps">
-    <a class="button" data-council-compare href={`/compare/?a=${council.slug}&band=D&year=${CURRENT_YEAR}`}>Compare this council</a>
-    <a href={OFFICIAL_BAND_CHECK}>Find your property band on GOV.UK</a>
-    <a href={OFFICIAL_COUNCIL_LOOKUP}>Find your council for your exact bill</a>
-  </div>
-  <CouncilActions slug={council.slug} />
+  <CouncilActions slug={council.slug} name={name} taxLink={taxLink} payLink={profile.about.ownPages?.councilTax} />
   {bands.length > 0 && (
     <nav class="band-links" aria-labelledby="band-links-heading">
       <h2 id="band-links-heading" class="small-heading">Bands A to H for every council, with {name} in its region</h2>
@@ -209,30 +202,23 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   {englandArea && areaSource && (
     <section class="section" id="compared" aria-labelledby="compared-heading">
       <h2 id="compared-heading">How does Band D in {name} compare?</h2>
-      <div class="fact-grid">
-        <div class="card">
-          <Fact
-            label={`England average area Band D, ${year}`}
-            figure={wholePounds(englandArea.england.pounds)}
-            change={`up ${percent(englandArea.england.changePct)} on ${previous}`}
-            source={areaSource}
-          />
-          <p class="caveat">Includes parish and adult social care precepts.</p>
-        </div>
-        <div class="card">
-          <Fact
-            label={`Average area Band D for ${AREA_TYPE_LABEL[areaType]}, ${year}`}
-            figure={wholePounds(englandArea.byAreaType[areaType].pounds)}
-            change={`up ${percent(englandArea.byAreaType[areaType].changePct)} on ${previous}`}
-            source={areaSource}
-          />
-          <p class="caveat">Includes parish and adult social care precepts.</p>
-        </div>
+      <div data-fact>
+        <p>England average area Band D, {year}, is <strong data-figure>{wholePounds(englandArea.england.pounds)}</strong>, up {percent(englandArea.england.changePct)} on {previous}.</p>
+        <SourceLine source={areaSource} />
+        <p class="caveat">Includes parish and adult social care precepts.</p>
       </div>
+      <details data-compared-drawer>
+        <summary>Read the area average comparison for {name}</summary>
+        <div data-fact>
+          <p><span class="fact-label">Average area Band D for {AREA_TYPE_LABEL[areaType]}, {year}</span> is <strong data-figure>{wholePounds(englandArea.byAreaType[areaType].pounds)}</strong>, up {percent(englandArea.byAreaType[areaType].changePct)} on {previous}.</p>
+          <SourceLine source={areaSource} />
+          <p class="caveat">Includes parish and adult social care precepts.</p>
+        </div>
       <p class="muted">
         Both averages include parish and adult social care precepts, the same basis as the {name} figure.
         <a href={regionPath(tax.region)}>Band D for every council in {tax.region}</a>.
       </p>
+      </details>
     </section>
   )}
 
@@ -240,9 +226,12 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     <section class="section" id="history" aria-labelledby="history-heading">
       <h2 id="history-heading">How has Band D in {name} changed?</h2>
       <div class="fact" data-fact>
-        <HistoryBars rows={history.map(row => ({label: yearLabel(row.year), value: row.bandD}))} format={pounds} caption={`Published area Band D in ${name} by year`} />
+        <p>The published history records the area Band D charge in {name}.</p>
         <SourceLine source={historySource} />
         <p class="caveat">Cash figures, not adjusted for inflation. Includes average parish precepts.</p>
+        <HistoryBars rows={history.map(row => ({label: yearLabel(row.year), value: row.bandD}))} format={pounds} caption={`Published area Band D in ${name} by year`} />
+        <details data-history-drawer>
+        <summary>Read the annual Band D history table for {name}</summary>
         <div class="table-wrap" tabindex="0" role="region" aria-label="Council tax history table">
           <table class="data">
             <caption>Area Band D in {name}, as published each year</caption>
@@ -261,6 +250,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
           </table>
         </div>
         <SourceLine source={historySource} />
+        </details>
       </div>
     </section>
   )}
@@ -268,41 +258,30 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   {own && ownSource && (
     <section class="section" id="who-sets-it" aria-labelledby="who-sets-heading">
       <h2 id="who-sets-heading">Who sets council tax in {name}?</h2>
-      <p class="muted">
-        The Band D bill is made up of shares set by different bodies. MHCLG publishes each body's own
-        average Band D; the police, fire and parish shares are published by precepting body, not by
-        billing area, so they are not listed here.
-      </p>
-      <div class="fact-grid">
-        {typeof own.bandD === "number" && (
-          <div class="card">
-            <Fact
-              label={`${name} council's own Band D, ${year}`}
-              figure={pounds(own.bandD)}
-              change={typeof own.changePct === "number" ? `${own.changePct >= 0 ? "up" : "down"} ${percent(Math.abs(own.changePct), 2)} on ${previous}, as published` : null}
-              source={ownSource}
-            />
-            <p class="caveat">The council's own share, excluding parish precepts, as MHCLG publishes it.</p>
-          </div>
-        )}
-        {county && countySource && typeof county.bandD === "number" && (
-          <div class="card">
-            <Fact
-              label={`${county.name} County Council's Band D, ${year}`}
-              figure={pounds(county.bandD)}
-              change={typeof county.changePct === "number" ? `${county.changePct >= 0 ? "up" : "down"} ${percent(Math.abs(county.changePct), 2)} on ${previous}, as published` : null}
-              source={countySource}
-            />
-            <p class="caveat">The county council's own share, excluding parish precepts, as MHCLG publishes it.</p>
-          </div>
-        )}
-      </div>
+      {typeof own.bandD === "number" && <div data-fact>
+        <p>{name} council's own Band D, {year}, is <strong data-figure>{pounds(own.bandD)}</strong>{typeof own.changePct === "number" ? `, ${own.changePct >= 0 ? "up" : "down"} ${percent(Math.abs(own.changePct), 2)} on ${previous}, as published` : ""}.</p>
+        <SourceLine source={ownSource} />
+        <p class="caveat">The council's own share, excluding parish precepts, as MHCLG publishes it.</p>
+      </div>}
+      <details data-who-sets-it-drawer>
+        <summary>Read the council tax shares and notes for {name}</summary>
+        <p class="muted">
+          The Band D bill is made up of shares set by different bodies. MHCLG publishes each body's own
+          average Band D; the police, fire and parish shares are published by precepting body, not by
+          billing area, so they are not listed here.
+        </p>
+        {county && countySource && typeof county.bandD === "number" && <div data-fact>
+          <p>{county.name} County Council's Band D, {year}, is <strong data-figure>{pounds(county.bandD)}</strong>{typeof county.changePct === "number" ? `, ${county.changePct >= 0 ? "up" : "down"} ${percent(Math.abs(county.changePct), 2)} on ${previous}, as published` : ""}.</p>
+          <SourceLine source={countySource} />
+          <p class="caveat">The county council's own share, excluding parish precepts, as MHCLG publishes it.</p>
+        </div>}
       {own.notes.length > 0 && (
         <ul class="notes">
           {own.notes.map((note) => <li>MHCLG note: {note.text}</li>)}
         </ul>
       )}
       <p class="muted"><a href={INCREASES_PATH}>How much every council raised its own share this year</a>.</p>
+      </details>
     </section>
   )}
 
@@ -314,11 +293,13 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     <section class="section" id="similar" aria-labelledby="similar-heading">
       <h2 id="similar-heading">Similar councils</h2>
       <p class="muted">{similar.heading}, by council type in the UK Places register.</p>
+      <details data-similar-drawer><summary>Read the similar councils list for {name}</summary>
       <ul class="sister-links" data-similar-councils>
         {similar.pages.map(({ council: other, tax: otherTax }) => (
           <li><a href={councilPath(other)}>{otherTax.name}</a></li>
         ))}
       </ul>
+      </details>
     </section>
   )}
 
