@@ -62,3 +62,15 @@ describe('the reviewed reorganisation sources', () => {
     }
   });
 });
+
+it('contains no zero width characters in any generated data string', () => {
+  function visit(value: unknown): void {
+    if (typeof value === 'string') expect(value).not.toMatch(/[\u200b-\u200d\u2060\ufeff]/);
+    else if (Array.isArray(value)) value.forEach(visit);
+    else if (value && typeof value === 'object') {
+      for (const [key, child] of Object.entries(value)) {visit(key); visit(child);}
+    }
+  }
+  visit(data);
+  visit(register);
+});

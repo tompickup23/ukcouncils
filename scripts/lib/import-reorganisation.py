@@ -126,6 +126,8 @@ areas = []
 for slug, proposal_count in zip(slugs, expected):
     collection_id = 'S2:'+slug
     collection = api_source(collection_id, API/'collections'/f'{slug}.json')
+    collection['title'] = collection['title'].replace('\u200b', '')
+    sources[collection_id]['title'] = collection['title']
     letter = {'east-sussex-and-brighton-and-hove':'letter-east-sussex-and-brighton',
       'lancashire-blackburn-with-darwen-and-blackpool':'letter-lancashire-blackburn-and-blackpool',
       'nottinghamshire-and-nottingham':'nottinghamshire-and-nottingham'}.get(slug, 'letter-'+slug)
