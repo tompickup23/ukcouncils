@@ -193,3 +193,40 @@ it.skipIf(!existsSync(DIST))('accounts for every panel text node and verifies ev
     expect(outsideReorganisation(html)).not.toContain('government-decided');
   }
 }, 30000);
+
+it('holds unitary wording outside the permitted sourced panel and citations', () => {
+  expect(heldWording('<p>A unitary council.</p>')).toBe(true);
+  expect(heldWording('<section id="reorganisation"><p>A unitary council.</p></section>')).toBe(false);
+  expect(heldWording('<p class="source-line"><a href="https://www.gov.uk/">A unitary council</a></p>')).toBe(false);
+});
+
+it('preserves only existing classification labels in their original markup', () => {
+  const labels = [
+    '<p class="muted">A unitary authority in North West.</p>',
+    '<dd data-council-type>Unitary authority</dd>',
+    '<span class="row-detail">Unitary authority</span>',
+    '<span>Unitary authority · North West</span>',
+    '<option value="blackpool">Blackpool (Unitary authority)</option>',
+    '<option value="UA">Unitary authority</option>',
+    '<th scope="row">Shire Unitary Authorities [r]</th>',
+    '<th scope="colgroup">Unitary authority (63 councils)</th>',
+    '<span class="fact-label">Average area Band D for unitary areas, 2026/27</span>',
+    '<p class="muted">Other unitary authorities in North West, by council type in the UK Places register.</p>',
+    '<section id="2026-27-unitary" aria-labelledby="2026-27-unitary-heading"><h3 id="2026-27-unitary-heading">How much did London boroughs, metropolitan districts and unitary authorities raise their share?</h3></section>',
+    '<caption>London boroughs, metropolitan districts and unitary authorities, own Band D 2026/27, change on 2025/26, largest first</caption>',
+    '<script type="application/json">{"classCode":"UA","classLabel":"Unitary authority"}</script>',
+    '<figure data-position-strip="band-d"><title>Band D in Blackpool among unitary authorities in England</title><div aria-label="Band D in Blackpool among unitary authorities in England"></div></figure>',
+  ];
+  for (const html of labels) {
+    expect(heldWording(html), html).toBe(false);
+    expect(heldWording(html + '<p>A new unitary council is proposed.</p>')).toBe(true);
+    expect(heldWording(html.replace(/unitary/i, 'new unitary')), html).toBe(true);
+  }
+  for (const html of [
+    '<p>Unitary authority</p>',
+    '<dd data-council-type>A new unitary council is proposed.</dd>',
+    '<p class="muted">A unitary authority in North West. A new unitary council is proposed.</p>',
+    '<figure data-position-strip="band-d"><p>A new unitary council is proposed.</p></figure>',
+    '<script type="application/json">{"classCode":"UA","classLabel":"Unitary authority","note":"A new unitary council"}</script>',
+  ]) expect(heldWording(html), html).toBe(true);
+});

@@ -40,3 +40,16 @@ it('omits the rail for every documents only council and keeps the other rails', 
     }
   }
 });
+
+it('takes the order absence date from the checked data date', () => {
+  const checked = reorganisationData.checked;
+  try {
+    reorganisationData.checked = '2026-11-10';
+    expect(panelView('E07000078')!.rail.find(step => step.step === 'order')!.text)
+      .toBe('None made by 10 November 2026');
+    expect(panelView('E07000217')!.rail.find(step => step.step === 'order')!.text).toBe('Made');
+    expect(panelView('E07000117')!.rail).toEqual([]);
+  } finally {
+    reorganisationData.checked = checked;
+  }
+});

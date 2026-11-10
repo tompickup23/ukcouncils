@@ -78,7 +78,7 @@ export const templates = {
   island: 'No changes have been proposed for the Isle of Wight, an existing unitary council.',
   proposal: '{by} proposed {councils} unitary {noun}{split}',
   surreyProposal: 'The order implements the proposal made by Surrey County Council, Elmbridge Borough Council and Mole Valley District Council.',
-  noOrder: 'None made by 9 November 2026',
+  noOrder: 'None made by {date}',
   neededOrderLead: 'Any change',
   neededOrder: 'would need to be provided for in a structural changes order',
   checked: 'Checked against MHCLG and legislation.gov.uk on {date}.',
@@ -116,7 +116,7 @@ export function panelView(gss: string) {
     {...claim('rail-proposals','',area.proposalSource),step:'proposals',state:'done',label:'Proposals submitted',date:area.submitted},
     {...claim('rail-minded',area.mindedTo || area.order ? '' : 'No minded to decision',area.mindedTo?.source ?? 'S1',area.mindedTo ? 1 : undefined),step:'minded-to',state:area.mindedTo || area.order ? 'done' : 'none',label:area.order ? 'Decision' : 'Minded to decision',date:area.mindedTo?.date ?? (area.order ? '2025-10-28' : undefined)},
     {...claim('rail-window',area.window ? 'Not yet dated by MHCLG' : '',area.window?.source ?? 'S1',area.window?.page,area.window?.quote),step:'window',state:area.window ? 'current' : area.order ? 'none' : 'future',label:'Representation window'},
-    {...claim('rail-order',area.order ? 'Made' : templates.noOrder,area.order ? 'S12' : 'L1',area.order ? 1 : undefined),step:'order',state:area.order ? 'done' : 'future',label:'Structural changes order',date:area.order?.made},
+    {...claim('rail-order',area.order ? 'Made' : fillTemplate(templates.noOrder,{date:longDate(reorganisationData.checked)!}),area.order ? 'S12' : 'L1',area.order ? 1 : undefined),step:'order',state:area.order ? 'done' : 'future',label:'Structural changes order',date:area.order?.made},
     {...claim('rail-vesting',area.order ? '' : area.vesting.month ? 'April 2029, the date the government gives for new councils' : "1 April 2029, the government's stated timetable",area.vesting.source,area.vesting.page),step:'vesting',state:'future',label:'New councils start',date:area.order ? area.vesting.date : undefined},
   ];
   const proposals = area.proposals.map((p,i) => claim(`proposal-${i}`,fillTemplate(templates.proposal,{
