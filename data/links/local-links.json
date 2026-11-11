@@ -2,10 +2,10 @@
   "source": {
     "name": "GOV.UK Local Links Manager",
     "url": "https://local-links-manager.publishing.service.gov.uk/data/links_to_services_provided_by_local_authorities.csv",
-    "exportDate": "2026-10-05",
+    "exportDate": "2026-11-11",
     "licence": "Open Government Licence v3.0"
   },
-  "checkedOn": "2026-10-05",
+  "checkedOn": "2026-11-11",
   "services": [
     {
       "id": "councilTax",
@@ -36,8 +36,8 @@
   "via": {
     "publisher": "UK Places",
     "file": "src/data/local-links.json",
-    "commit": "b1a32625943981c9f5a1c97e1c8f89d2dadc1985",
-    "sha256": "5c9e6a32e96fa0307ed077711ffb357922fa0c56052d368365ae68e488e181f9"
+    "commit": "2bea52dbe74c7a689a500b3b73ff63dcefb900b6",
+    "sha256": "085eb3b0511aca0f3fad79a9aa3f0decd5a7b5529240229ceed7731b3fb0b617"
   },
   "councils": {
     "E06000001": {
@@ -52,15 +52,12 @@
       "councilTax": "https://www.darlington.gov.uk/council-tax/",
       "bins": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
     },
-    "E06000006": {
-      "councilTax": "https://www3.halton.gov.uk/Pages/CouncilandBenefits/Pay-Council-Tax.aspx"
-    },
     "E06000007": {
       "councilTax": "https://www.warrington.gov.uk/directdebit",
       "bins": "https://www.warrington.gov.uk/your-next-bin-collection-day"
     },
     "E06000008": {
-      "councilTax": "https://www.blackburn.gov.uk/council-tax/paying-your-council-tax",
+      "councilTax": "https://www.blackburn.gov.uk/council-tax/paying-your-council-tax/",
       "bins": "https://www.blackburn.gov.uk/waste-and-recycling/bins"
     },
     "E06000009": {
@@ -188,7 +185,7 @@
       "bins": "https://www.milton-keynes.gov.uk/waste-recycling/collection-days"
     },
     "E06000043": {
-      "councilTax": "https://www.brighton-hove.gov.uk/council-tax/paying-your-council-tax",
+      "councilTax": "https://www.brighton-hove.gov.uk/council-tax/paying-your-council-tax/",
       "bins": "https://www.brighton-hove.gov.uk/node/321871"
     },
     "E06000044": {
@@ -197,6 +194,9 @@
     "E06000045": {
       "councilTax": "https://www.southampton.gov.uk/council-tax/your-council-tax/pay-your-council-tax/",
       "bins": "https://www.southampton.gov.uk/bins-recycling/bins/"
+    },
+    "E06000046": {
+      "councilTax": "https://www.iow.gov.uk/ctinfo"
     },
     "E06000047": {
       "councilTax": "https://www.durham.gov.uk/article/3447/Pay-your-Council-Tax",
@@ -223,6 +223,7 @@
       "bins": "http://www.scilly.gov.uk/waste"
     },
     "E06000054": {
+      "councilTax": "https://www.wiltshire.gov.uk/article/7067/Paying-your-council-tax",
       "bins": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index"
     },
     "E06000055": {
@@ -261,6 +262,12 @@
       "councilTax": "https://www.cambridge.gov.uk/paying-your-council-tax",
       "bins": "https://www.cambridge.gov.uk/check-when-your-bin-will-be-emptied"
     },
+    "E07000009": {
+      "councilTax": "https://eastcambs.gov.uk/council-tax-benefits-and-business-rates/council-tax/pay-your-council-tax/"
+    },
+    "E07000010": {
+      "councilTax": "https://www.fenland.gov.uk/counciltax"
+    },
     "E07000011": {
       "councilTax": "https://www.huntingdonshire.gov.uk/contact-us/make-a-payment/",
       "bins": "http://applications.huntingdonshire.gov.uk/applications/RefuseCalendarMVC"
@@ -273,8 +280,16 @@
       "councilTax": "https://www.ambervalley.gov.uk/council-tax/paying-your-bill/",
       "bins": "https://www.ambervalley.gov.uk/rubbish-waste-and-recycling"
     },
+    "E07000033": {
+      "councilTax": "https://www.bolsover.gov.uk/services/c/council-tax/how-to-pay",
+      "bins": "https://www.bolsover.gov.uk/index.php?option=com_content&view=article&id=139"
+    },
     "E07000034": {
       "councilTax": "https://www.chesterfield.gov.uk/i-want-to/i-want-to-pay/pay-council-rent-council-tax-or-business-rates/"
+    },
+    "E07000035": {
+      "councilTax": "https://www.derbyshiredales.gov.uk/council-tax/pay-council-tax",
+      "bins": "http://www.derbyshiredales.gov.uk/environment-and-waste/bins-recycling/when-is-my-collection"
     },
     "E07000036": {
       "councilTax": "https://www.erewash.gov.uk/council-tax/how-pay-your-council-tax",
@@ -284,16 +299,20 @@
       "councilTax": "https://www.highpeak.gov.uk/payments",
       "bins": "http://www.highpeak.gov.uk/hp/bins"
     },
+    "E07000038": {
+      "councilTax": "https://www.ne-derbyshire.gov.uk/council-tax/how-to-pay",
+      "bins": "https://www.ne-derbyshire.gov.uk/bins-and-recycling/bin-collection-dates"
+    },
     "E07000039": {
       "councilTax": "https://www.southderbyshire.gov.uk/our-services/council-tax/ways-to-pay",
       "bins": "https://www.southderbyshire.gov.uk/our-services/recycling-bins-and-waste/bin-collection-dates"
     },
     "E07000040": {
-      "councilTax": "https://eastdevon.gov.uk/council-tax/paying-council-tax/",
+      "councilTax": "https://eastdevon.gov.uk/council-tax/paying-council-tax",
       "bins": "http://eastdevon.gov.uk/recycling-and-rubbish/when-is-my-bin-collected/"
     },
     "E07000041": {
-      "councilTax": "https://exeter.gov.uk/council-tax/paying-your-council-tax/pay-your-council-tax/"
+      "councilTax": "https://exeter.gov.uk/council-tax/paying-your-council-tax/pay-your-council-tax"
     },
     "E07000042": {
       "councilTax": "https://www.middevon.gov.uk/residents/council-tax/how-can-i-pay-my-council-tax/",
@@ -304,11 +323,11 @@
       "bins": "http://www.northdevon.gov.uk/bins-and-recycling/collection-dates/"
     },
     "E07000044": {
-      "councilTax": "https://www.southhams.gov.uk/council-tax",
+      "councilTax": "https://www.southhams.gov.uk/council-tax/",
       "bins": "https://www.southhams.gov.uk/recyclingwaste"
     },
     "E07000045": {
-      "councilTax": "https://www.teignbridge.gov.uk/council-tax/paying-council-tax/ways-to-pay-for-your-council-tax/pay-council-tax-online/",
+      "councilTax": "https://www.teignbridge.gov.uk/council-tax/paying-council-tax/ways-to-pay-for-your-council-tax/pay-council-tax-online",
       "bins": "http://www.teignbridge.gov.uk/bins"
     },
     "E07000046": {
@@ -316,10 +335,17 @@
       "bins": "https://www.torridge.gov.uk/forms/firmstep/wastecalendar.html"
     },
     "E07000047": {
-      "councilTax": "https://www.westdevon.gov.uk/council-tax"
+      "councilTax": "https://www.westdevon.gov.uk/council-tax/"
+    },
+    "E07000061": {
+      "councilTax": "https://www.lewes-eastbourne.gov.uk/pay-your-council-tax"
     },
     "E07000062": {
       "councilTax": "https://www.hastings.gov.uk/council-tax/pay/"
+    },
+    "E07000063": {
+      "councilTax": "https://www.lewes-eastbourne.gov.uk/pay-your-council-tax",
+      "bins": "https://www.lewes-eastbourne.gov.uk/article/1163/Household-waste-collection-service"
     },
     "E07000064": {
       "councilTax": "https://www.rother.gov.uk/council-tax/pay-business-rates/",
@@ -393,7 +419,7 @@
       "bins": "https://www.tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection"
     },
     "E07000084": {
-      "councilTax": "https://www.basingstoke.gov.uk/paymyctax"
+      "councilTax": "https://www.basingstoke.gov.uk/paymyctax/"
     },
     "E07000085": {
       "councilTax": "https://www.easthants.gov.uk/council-tax/paying-your-council-tax",
@@ -414,6 +440,10 @@
       "councilTax": "https://www.havant.gov.uk/pay",
       "bins": "http://www.havant.gov.uk/rubbish-and-recycling"
     },
+    "E07000091": {
+      "councilTax": "https://www.newforest.gov.uk/paycounciltax",
+      "bins": "https://www.newforest.gov.uk/rubbish"
+    },
     "E07000092": {
       "councilTax": "https://www.rushmoor.gov.uk/council-tax/paying-your-council-tax/how-to-pay-your-council-tax/",
       "bins": "http://www.rushmoor.gov.uk/article/2061/Information-about-your-bins-and-collections"
@@ -430,7 +460,7 @@
       "councilTax": "https://www.broxbourne.gov.uk/council-tax/pay-council-tax/1"
     },
     "E07000096": {
-      "councilTax": "https://www.dacorum.gov.uk/home/council-tax",
+      "councilTax": "https://www.dacorum.gov.uk/home/council-tax/",
       "bins": "http://www.dacorum.gov.uk/home/environment-street-care/recycling-refuse-waste/household-waste-recycling/your-waste-collection-calendar"
     },
     "E07000098": {
@@ -496,7 +526,7 @@
       "councilTax": "https://www.hyndburnbc.gov.uk/ctaxandbenefits/"
     },
     "E07000121": {
-      "councilTax": "https://www.lancaster.gov.uk/council-tax/pay-your-council-tax"
+      "councilTax": "https://www.lancaster.gov.uk/council-tax/pay-your-council-tax/"
     },
     "E07000122": {
       "councilTax": "https://www.pendle.gov.uk/info/20102/your_council_tax_bill/303/pay_your_council_tax",
@@ -551,6 +581,12 @@
       "councilTax": "https://www.oadby-wigston.gov.uk/pages/how_to_pay_council_tax",
       "bins": "https://www.oadby-wigston.gov.uk/pages/household_waste_collection"
     },
+    "E07000136": {
+      "councilTax": "https://www.boston.gov.uk/PayYourCouncilTax"
+    },
+    "E07000137": {
+      "bins": "https://www.e-lindsey.gov.uk/mywastecollections"
+    },
     "E07000138": {
       "councilTax": "https://www.lincoln.gov.uk/online/pay-council-tax-online",
       "bins": "https://www.lincoln.gov.uk/bins-recycling"
@@ -572,6 +608,9 @@
     },
     "E07000144": {
       "councilTax": "https://www.southnorfolkandbroadland.gov.uk/council-tax/pay-council-tax"
+    },
+    "E07000145": {
+      "bins": "http://www.great-yarmouth.gov.uk/rubbish-and-recycling"
     },
     "E07000146": {
       "councilTax": "https://www.west-norfolk.gov.uk/info/20115/how_to_pay_your_Council_Tax",
@@ -636,7 +675,7 @@
       "councilTax": "https://www.cannockchasedc.gov.uk/residents/council-tax/how-pay-your-council-tax"
     },
     "E07000193": {
-      "councilTax": "https://www.eaststaffsbc.gov.uk/council-tax/ways-pay-your-council-tax"
+      "councilTax": "https://www.eaststaffsbc.gov.uk/council-tax/ways-pay-your-council-tax/"
     },
     "E07000194": {
       "councilTax": "https://www.lichfielddc.gov.uk/council-tax/pay-council-tax/1",
@@ -671,7 +710,7 @@
     },
     "E07000207": {
       "councilTax": "https://www.elmbridge.gov.uk/council-tax/pay-your-council-tax",
-      "bins": "https://www.elmbridge.gov.uk/waste-and-recycling/missed-bins/"
+      "bins": "https://www.elmbridge.gov.uk/bins-waste-and-recycling"
     },
     "E07000208": {
       "councilTax": "https://www.epsom-ewell.gov.uk/residents/council-tax/paying-you-council-tax",
@@ -679,32 +718,34 @@
     },
     "E07000209": {
       "councilTax": "https://www.guildford.gov.uk/article/25772/Pay-your-council-tax-by-direct-debit",
-      "bins": "http://www.guildford.gov.uk/yourguildford"
+      "bins": "https://www.guildford.gov.uk/recycling"
     },
     "E07000210": {
       "councilTax": "https://www.molevalley.gov.uk/council-tax/paying-your-council-tax/"
     },
     "E07000211": {
       "councilTax": "https://www.reigate-banstead.gov.uk/pay-council-tax",
-      "bins": "http://www.reigate-banstead.gov.uk/environment/recycling_rubbish_and_waste/proposals/index.asp"
+      "bins": "https://www.reigate-banstead.gov.uk/info/20062/waste_and_recycling/105/report_a_missed_bin"
     },
     "E07000212": {
-      "councilTax": "https://www.runnymede.gov.uk/council-tax-11/council-tax-3"
+      "councilTax": "https://www.runnymede.gov.uk/council-tax/council-tax-annual-bill-info",
+      "bins": "https://www.runnymede.gov.uk/household-collections-1"
     },
     "E07000213": {
       "councilTax": "https://www.spelthorne.gov.uk/pay-online",
       "bins": "https://www.spelthorne.gov.uk/rubbish"
     },
     "E07000214": {
-      "councilTax": "https://www.surreyheath.gov.uk/council-tax/pay-your-council-tax"
+      "councilTax": "https://www.surreyheath.gov.uk/council-tax",
+      "bins": "https://www.surreyheath.gov.uk/bins-recycling-and-waste"
     },
     "E07000215": {
       "councilTax": "https://www.tandridge.gov.uk/Council-tax",
       "bins": "https://www.tandridge.gov.uk/Recycling-and-rubbish/Has-your-bin-been-missed"
     },
     "E07000216": {
-      "councilTax": "https://www.waverley.gov.uk/Services/Council-Tax/Pay-Council-Tax",
-      "bins": "https://www.waverley.gov.uk/bins"
+      "councilTax": "https://www.waverley.gov.uk/council-tax",
+      "bins": "https://www.waverley.gov.uk/bins-garden-waste-and-recycling"
     },
     "E07000217": {
       "councilTax": "https://www.woking.gov.uk/council-tax/council-tax-payments-refunds/pay-your-council-tax",
@@ -848,6 +889,9 @@
     "E08000021": {
       "councilTax": "https://new.newcastle.gov.uk/council-tax/ways-pay-your-council-tax-bill"
     },
+    "E08000023": {
+      "bins": "https://www.southtyneside.gov.uk/article/935/Bins-and-recycling"
+    },
     "E08000025": {
       "councilTax": "https://www.birmingham.gov.uk/info/20005/council_tax/223/pay_your_council_tax",
       "bins": "https://www.birmingham.gov.uk/info/20009/rubbish_and_recycling"
@@ -893,6 +937,9 @@
       "councilTax": "https://www.wakefield.gov.uk/council-tax/how-to-pay-your-council-tax",
       "bins": "http://www.wakefield.gov.uk/site/where-i-live"
     },
+    "E08000037": {
+      "councilTax": "https://www.gateshead.gov.uk/article/2760/Pay-your-Council-Tax"
+    },
     "E08000038": {
       "councilTax": "https://www.barnsley.gov.uk/services/council-tax/how-to-pay-your-council-tax/",
       "bins": "https://www.barnsley.gov.uk/pid524"
@@ -921,6 +968,10 @@
     },
     "E09000006": {
       "councilTax": "https://www.bromley.gov.uk/council-tax/paying-council-tax"
+    },
+    "E09000007": {
+      "councilTax": "https://www.camden.gov.uk/pay-council-tax",
+      "bins": "https://www.camden.gov.uk/check-collection-day"
     },
     "E09000008": {
       "councilTax": "https://www.croydon.gov.uk/council-tax/paying-your-council-tax/ways-pay-your-council-tax",
