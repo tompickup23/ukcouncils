@@ -9,9 +9,9 @@ describe("pinned Local Links", () => {
   });
   it("includes only sourced links for council pages", () => {
     const rows = Object.values(localLinks.councils);
-    expect(rows).toHaveLength(258);
-    expect(rows.filter(r => r.councilTax)).toHaveLength(254);
-    expect(rows.filter(r => r.bins)).toHaveLength(207);
+    expect(rows).toHaveLength(272);
+    expect(rows.filter(r => r.councilTax)).toHaveLength(266);
+    expect(rows.filter(r => r.bins)).toHaveLength(218);
     const codes = new Set(councilPages().map(p => p.council.gss));
     for (const [gss, row] of Object.entries(localLinks.councils)) {
       expect(codes.has(gss)).toBe(true);
@@ -19,6 +19,8 @@ describe("pinned Local Links", () => {
       for (const url of Object.values(row)) expect(url).toMatch(/^https?:\/\//);
     }
     expect(ownPagesFor("missing")).toBeNull();
+    expect(ownPagesFor("E06000006")?.councilTax).toBeUndefined();
+    expect(ownPagesFor("E09000007")?.councilTax).toBe("https://www.camden.gov.uk/pay-council-tax");
   });
   it("preserves the anchor URLs including the published HTTP link", () => {
     expect(ownPagesFor("E07000117")?.councilTax).toBe("https://burnley.gov.uk/counciltax/paying-your-council-tax/");
