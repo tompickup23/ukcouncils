@@ -17,7 +17,7 @@
   <p class="small muted">Search runs in your browser. <a href="/councils/">Browse all councils</a> or <a href="/your-area/">find your area by postcode</a>.</p>
 </dialog>
 <script>
-  import { COUNCILS_SHOWN, matchesCouncil, normalise, searchStatus } from "../lib/council-search";
+  import { COUNCILS_SHOWN, matchesCouncil, normalise, rankCouncils, searchStatus } from "../lib/council-search";
   import type { CouncilIndexRow } from "../lib/council-index";
   import { pageTypeLabel } from "../lib/page-type";
   type Hit = {data: () => Promise<{url: string; meta: {title?: string; type?: string}; excerpt: string}>};
@@ -44,8 +44,7 @@
       }).catch(error => { councils = undefined; throw error; });
       const rows = await councils;
       if (token !== sequence || !dialog.open) return null;
-      const matches = rows.filter(row => matchesCouncil(query, row.name, row.officialName))
-        .sort((a, b) => normalise(a.name) === query ? -1 : normalise(b.name) === query ? 1 : 0);
+      const matches = rankCouncils(query, rows.filter(row => matchesCouncil(query, row.name, row.officialName)));
       for (const row of matches.slice(0, COUNCILS_SHOWN)) {
         const item = document.createElement('li');
         const link = document.createElement('a');

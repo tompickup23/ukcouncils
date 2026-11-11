@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { councilIndex } from '../src/lib/council-index';
 import { councilPages, councilPath, programmaticPaths } from '../src/lib/paths';
-import { matchesCouncil, normalise, searchStatus } from '../src/lib/council-search';
+import { councilRank, matchesCouncil, normalise, rankCouncils, searchStatus } from '../src/lib/council-search';
 import { pageTypeFor, pageTypeLabel } from '../src/lib/page-type';
 import { GET } from '../src/pages/council-index.json';
 
@@ -73,5 +73,22 @@ describe('search status line', () => {
 
   it('never says no pages match while a council is listed', () => {
     for (const councils of [1, 2, 5, 6, 40]) expect(searchStatus(councils, 0)).not.toContain('No matching');
+  });
+});
+
+describe('council list ranking', () => {
+  it('puts the exact name first, then starts, then word starts, then the rest, each A to Z', () => {
+    const rows = ['North York Moors', 'Yorkshire Dales', 'York', 'East Riding of Yorkshire', 'New York', 'Beyork'].map(name => ({ name }));
+    expect(rankCouncils('york', rows).map(row => row.name)).toEqual([
+      'York', 'Yorkshire Dales', 'East Riding of Yorkshire', 'New York', 'North York Moors', 'Beyork',
+    ]);
+  });
+
+  it('ranks real councils for a few queries', () => {
+    const names = (query: string) => rankCouncils(query, councilIndex().filter(row => matchesCouncil(query, row.name, row.officialName))).map(row => row.name);
+    expect(names('york')[0]).toBe('York');
+    expect(names('bur')[0]).toMatch(/^Bur/);
+    expect(councilRank('hampton', 'Wolverhampton')).toBe(3);
+    expect(councilRank('lynn', "King's Lynn and West Norfolk")).toBe(2);
   });
 });
