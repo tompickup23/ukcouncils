@@ -49,6 +49,15 @@ test('full text results retain their links and excerpts with a type label', asyn
   await expect(hit.locator('p').last()).not.toBeEmpty();
 });
 
+test('the status line announces the council list as well as the pages', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('[data-search-open]').click();
+  await page.getByLabel('Council, region or topic').fill('Burnley');
+  await expect(page.locator('[data-search-status]')).toHaveText(/^1 matching council and \d+ matching pages?\.$/);
+  await page.getByLabel('Council, region or topic').fill('shire');
+  await expect(page.locator('[data-search-status]')).toContainText('the first five listed');
+});
+
 test('Search links to the council directory with scripts off', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
   const page = await context.newPage();

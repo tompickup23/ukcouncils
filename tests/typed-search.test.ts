@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { councilIndex } from '../src/lib/council-index';
 import { councilPages, councilPath, programmaticPaths } from '../src/lib/paths';
-import { matchesCouncil, normalise } from '../src/lib/council-search';
+import { matchesCouncil, normalise, searchStatus } from '../src/lib/council-search';
 import { pageTypeFor } from '../src/lib/page-type';
 import { GET } from '../src/pages/council-index.json';
 
@@ -42,4 +42,25 @@ it('classifies each kind of page using the path supplied to BaseLayout', () => {
   expect(pageTypeFor('/methodology/')).toBe('guide');
   expect(pageTypeFor('/councils/')).toBe('hub');
   expect(pageTypeFor('/404/')).toBe('other');
+});
+
+describe('search status line', () => {
+  it('accounts for the council list as well as the full text results', () => {
+    expect(searchStatus(1, 0)).toBe('1 matching council. No other pages match.');
+    expect(searchStatus(1, 33)).toBe('1 matching council and 33 matching pages.');
+    expect(searchStatus(3, 1)).toBe('3 matching councils and 1 matching page.');
+    expect(searchStatus(12, 40)).toBe('12 matching councils (the first five listed) and 40 matching pages.');
+    expect(searchStatus(0, 8)).toBe('8 matching pages.');
+    expect(searchStatus(null, 8)).toBe('8 matching pages.');
+    expect(searchStatus(0, 0)).toBe('No matching pages or councils. Try a council name or a broader topic.');
+  });
+
+  it('keeps the council count when page search fails to load', () => {
+    expect(searchStatus(2, null)).toBe('2 matching councils. Page search could not load. Retry or use the council directory below.');
+    expect(searchStatus(0, null)).toBe('Page search could not load. Retry or use the council directory below.');
+  });
+
+  it('never says no pages match while a council is listed', () => {
+    for (const councils of [1, 2, 5, 6, 40]) expect(searchStatus(councils, 0)).not.toContain('No matching');
+  });
 });

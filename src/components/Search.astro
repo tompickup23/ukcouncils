@@ -17,7 +17,7 @@
   <p class="small muted">Search runs in your browser. <a href="/councils/">Browse all councils</a> or <a href="/your-area/">find your area by postcode</a>.</p>
 </dialog>
 <script>
-  import { matchesCouncil, normalise } from "../lib/council-search";
+  import { COUNCILS_SHOWN, matchesCouncil, normalise, searchStatus } from "../lib/council-search";
   import type { CouncilIndexRow } from "../lib/council-index";
   import { PAGE_TYPE_LABELS, type PageType } from "../lib/page-type";
   type Hit = {data: () => Promise<{url: string; meta: {title?: string; type?: string}; excerpt: string}>};
@@ -33,27 +33,30 @@
   const councilResults = dialog.querySelector<HTMLUListElement>('[data-search-council-results]')!;
   let councils: Promise<CouncilIndexRow[]> | undefined;
   let index: Index | undefined;
-  async function councilSearch(term: string, token: number) {
+  /** Lists matching councils and resolves to how many matched; null when the index could not load. */
+  async function councilSearch(term: string, token: number): Promise<number | null> {
     const query = normalise(term);
-    if (query.length < 2) return;
+    if (query.length < 2) return 0;
     try {
       councils ??= fetch('/council-index.json').then(response => {
         if (!response.ok) throw new Error('Council index unavailable');
         return response.json() as Promise<CouncilIndexRow[]>;
       }).catch(error => { councils = undefined; throw error; });
       const rows = await councils;
-      if (token !== sequence || !dialog.open) return;
+      if (token !== sequence || !dialog.open) return null;
       const matches = rows.filter(row => matchesCouncil(query, row.name, row.officialName))
         .sort((a, b) => normalise(a.name) === query ? -1 : normalise(b.name) === query ? 1 : 0);
-      for (const row of matches.slice(0, 5)) {
+      for (const row of matches.slice(0, COUNCILS_SHOWN)) {
         const item = document.createElement('li');
         const link = document.createElement('a');
         link.href = row.url; link.textContent = row.name;
         item.append(link); councilResults.append(item);
       }
       councilsSection.hidden = !councilResults.childElementCount;
+      return matches.length;
     } catch {
       // Full text search and the directory remain available if this fetch fails.
+      return null;
     }
   }
   let hits: Hit[] = []; let offset = 0; let sequence = 0; let timer: ReturnType<typeof setTimeout>;
@@ -78,7 +81,7 @@
     councilResults.replaceChildren(); councilsSection.hidden = true;
     results.replaceChildren(); more.hidden = true; retry.hidden = true; hits = []; offset = 0;
     if (!term) {status.textContent = 'Type to search council pages and guides.'; return;}
-    void councilSearch(term, token);
+    const councilCount = councilSearch(term, token);
     status.textContent = 'Searching…';
     try {
       const modulePath = '/pagefind/pagefind.js';
@@ -88,11 +91,15 @@
       hits = found.results;
       await page(token);
       if (token !== sequence || !dialog.open) return;
-      status.textContent = hits.length ? `${hits.length} matching pages.` : 'No matching pages. Try a council name or a broader topic.';
+      const count = await councilCount;
+      if (token !== sequence || !dialog.open) return;
+      status.textContent = searchStatus(count, hits.length);
     } catch {
       if (token !== sequence || !dialog.open) return;
       results.replaceChildren(); more.hidden = true;
-      status.textContent = 'Search could not load. Retry or use the council directory below.'; retry.hidden = false;
+      const count = await councilCount;
+      if (token !== sequence || !dialog.open) return;
+      status.textContent = searchStatus(count, null); retry.hidden = false;
     }
   }
   function open() {focusBefore = document.activeElement as HTMLElement; dialog.showModal(); input.focus(); if (input.value) void search();}
