@@ -48,7 +48,9 @@
       for (const row of matches.slice(0, COUNCILS_SHOWN)) {
         const item = document.createElement('li');
         const link = document.createElement('a');
-        link.href = row.url; link.textContent = row.name;
+        const detail = document.createElement('span');
+        detail.textContent = `${row.classLabel} · ${row.region}`;
+        link.href = row.url; link.append(row.name, detail);
         item.append(link); councilResults.append(item);
       }
       councilsSection.hidden = !councilResults.childElementCount;

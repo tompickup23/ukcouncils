@@ -505,4 +505,10 @@ table.data thead th:first-child { left: 0; z-index: 3; }
     font-weight: 600;
     overflow-wrap: anywhere;
   }
+  & span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
 }

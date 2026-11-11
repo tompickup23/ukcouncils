@@ -49,6 +49,13 @@ test('full text results retain their links and excerpts with a type label', asyn
   await expect(hit.locator('p').last()).not.toBeEmpty();
 });
 
+test('each council shows its class and region as CouncilFinder prints them', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('[data-search-open]').click();
+  await page.getByLabel('Council, region or topic').fill('Burnley');
+  await expect(page.locator('[data-search-council-results] a').first().locator('span')).toHaveText('Shire district · North West');
+});
+
 test('the status line announces the council list as well as the pages', async ({ page }) => {
   await page.goto('/');
   await page.locator('[data-search-open]').click();

@@ -15,7 +15,7 @@ describe('council index', () => {
     for (const { council, tax } of councilPages()) {
       expect(rows.find(row => row.url === councilPath(council))).toEqual({
         name: tax.name, officialName: council.officialName, slug: council.slug,
-        region: council.region, type: council.type, url: councilPath(council),
+        classLabel: tax.class, region: tax.region, url: councilPath(council),
       });
     }
   });
