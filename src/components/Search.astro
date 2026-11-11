@@ -7,13 +7,20 @@
   <h2 id="search-title">Search UK Councils</h2>
   <label class="field" for="site-search-input">Council, region or topic<input id="site-search-input" type="search" autocomplete="off" placeholder="Try Burnley or council tax" /></label>
   <p role="status" data-search-status>Type to search council pages and guides.</p>
+  <section data-search-councils hidden aria-labelledby="search-councils-title">
+    <h3 id="search-councils-title">Councils</h3>
+    <ul class="search-councils" data-search-council-results></ul>
+  </section>
   <ol data-search-results></ol>
   <button type="button" class="button secondary" data-search-more hidden>Show more results</button>
   <button type="button" class="button secondary" data-search-retry hidden>Retry search</button>
   <p class="small muted">Search runs in your browser. <a href="/councils/">Browse all councils</a> or <a href="/your-area/">find your area by postcode</a>.</p>
 </dialog>
 <script>
-  type Hit = {data: () => Promise<{url: string; meta: {title?: string}; excerpt: string}>};
+  import { matchesCouncil, normalise } from "../lib/council-search";
+  import type { CouncilIndexRow } from "../lib/council-index";
+  import { PAGE_TYPE_LABELS, type PageType } from "../lib/page-type";
+  type Hit = {data: () => Promise<{url: string; meta: {title?: string; type?: string}; excerpt: string}>};
   type Index = {destroy: () => Promise<void>; search: (term: string) => Promise<{results: Hit[]}>};
   const trigger = document.querySelector<HTMLAnchorElement>('[data-search-open]')!;
   const dialog = document.querySelector<HTMLDialogElement>('[data-site-search]')!;
@@ -22,7 +29,33 @@
   const results = dialog.querySelector<HTMLOListElement>('[data-search-results]')!;
   const retry = dialog.querySelector<HTMLButtonElement>('[data-search-retry]')!;
   const more = dialog.querySelector<HTMLButtonElement>('[data-search-more]')!;
+  const councilsSection = dialog.querySelector<HTMLElement>('[data-search-councils]')!;
+  const councilResults = dialog.querySelector<HTMLUListElement>('[data-search-council-results]')!;
+  let councils: Promise<CouncilIndexRow[]> | undefined;
   let index: Index | undefined;
+  async function councilSearch(term: string, token: number) {
+    const query = normalise(term);
+    if (query.length < 2) return;
+    try {
+      councils ??= fetch('/council-index.json').then(response => {
+        if (!response.ok) throw new Error('Council index unavailable');
+        return response.json() as Promise<CouncilIndexRow[]>;
+      }).catch(error => { councils = undefined; throw error; });
+      const rows = await councils;
+      if (token !== sequence || !dialog.open) return;
+      const matches = rows.filter(row => matchesCouncil(query, row.name, row.officialName))
+        .sort((a, b) => normalise(a.name) === query ? -1 : normalise(b.name) === query ? 1 : 0);
+      for (const row of matches.slice(0, 5)) {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = row.url; link.textContent = row.name;
+        item.append(link); councilResults.append(item);
+      }
+      councilsSection.hidden = !councilResults.childElementCount;
+    } catch {
+      // Full text search and the directory remain available if this fetch fails.
+    }
+  }
   let hits: Hit[] = []; let offset = 0; let sequence = 0; let timer: ReturnType<typeof setTimeout>;
   let focusBefore: HTMLElement | null = null;
   async function page(token: number) {
@@ -33,14 +66,19 @@
       link.href = hit.url; link.textContent = hit.meta.title ?? hit.url;
       const excerpt = document.createElement('p');
       excerpt.textContent = new DOMParser().parseFromString(hit.excerpt, 'text/html').body.textContent;
-      item.append(link, excerpt); results.append(item);
+      const label = document.createElement('p');
+      label.dataset.searchType = hit.meta.type ?? 'other';
+      label.textContent = PAGE_TYPE_LABELS[hit.meta.type as PageType] ?? PAGE_TYPE_LABELS.other;
+      item.append(link, label, excerpt); results.append(item);
     }
     offset += slice.length; more.hidden = offset >= hits.length;
   }
   async function search() {
     const token = ++sequence; const term = input.value.trim();
+    councilResults.replaceChildren(); councilsSection.hidden = true;
     results.replaceChildren(); more.hidden = true; retry.hidden = true; hits = []; offset = 0;
     if (!term) {status.textContent = 'Type to search council pages and guides.'; return;}
+    void councilSearch(term, token);
     status.textContent = 'Searching…';
     try {
       const modulePath = '/pagefind/pagefind.js';
@@ -61,7 +99,7 @@
   trigger.addEventListener('click', event => {event.preventDefault(); open();});
   dialog.addEventListener('keydown', event => {if (event.key === 'Escape') {event.preventDefault(); event.stopPropagation(); dialog.close();}});
   dialog.addEventListener('close', () => {sequence++; clearTimeout(timer); focusBefore?.focus();});
-  input.addEventListener('input', () => {sequence++; clearTimeout(timer); timer = setTimeout(() => void search(), 180);});
+  input.addEventListener('input', () => {sequence++; councilResults.replaceChildren(); councilsSection.hidden = true; clearTimeout(timer); timer = setTimeout(() => void search(), 180);});
   retry.addEventListener('click', async () => {retry.disabled = true; try {await index?.destroy(); index = undefined; await search();} finally {retry.disabled = false;}});
   more.addEventListener('click', async () => {
     more.disabled = true;

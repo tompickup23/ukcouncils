@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { pageTypeFor } from "../lib/page-type";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import {
@@ -109,7 +110,7 @@ const nodes = [
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <SiteHeader />
-    <main id="main" class="shell" data-pagefind-body>
+    <main id="main" class="shell" data-pagefind-body data-pagefind-meta={`type:${pageTypeFor(path)}`}>
       <slot />
     </main>
     <SiteFooter />

@@ -145,3 +145,22 @@ test("_headers allows exactly the inline scripts the built tree has", async () =
   const needed = [...hashesIn(join(ROOT, "dist")).keys()].sort();
   expect(allowed).toEqual(needed);
 });
+
+
+test("council and full text search run under the policy", async ({ page }) => {
+  const found = await watch(page);
+  await page.goto("/");
+  await page.locator("[data-search-open]").click();
+  await page.getByLabel("Council, region or topic").fill("Burnley");
+  await expect(page.locator("[data-search-council-results] a").first()).toHaveAttribute("href", "/councils/burnley/");
+  await expect(page.locator('[data-search-results] li').filter({ has: page.locator('a[href="/councils/burnley/"]') }).locator('[data-search-type]')).toHaveText("Council");
+  expect(found, describe(found)).toEqual([]);
+});
+
+test("the 404 council finder runs under the policy", async ({ page }) => {
+  const found = await watch(page);
+  await page.goto("/missing-council-search-page/");
+  await page.getByLabel("Find your council by name").fill("Burnley");
+  await expect(page.locator('[data-council-finder] li:visible a')).toHaveAttribute("href", "/councils/burnley/#council-tax");
+  expect(found, describe(found)).toEqual([]);
+});

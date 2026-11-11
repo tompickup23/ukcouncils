@@ -9,7 +9,7 @@ const rows = councilPages();
     <input id={id} type="search" placeholder="e.g. Burnley" autocomplete="off" disabled aria-controls={`${id}-results`} aria-describedby={`${id}-status`} />
   </label>
   <p id={`${id}-status`} class="muted small" role="status" data-finder-status>Enter at least two letters. Search covers councils in England.</p>
-  <ul id={`${id}-results`} class="finder-results" hidden>
+  <ul id={`${id}-results`} class="finder-results" hidden data-pagefind-ignore>
     {rows.map(({council, tax}) => <li hidden data-name={`${tax.name} ${council.officialName}`}>
       <a href={`${councilPath(council)}#council-tax`}>{tax.name}<span>{tax.class} · {tax.region}</span></a>
     </li>)}
