@@ -96,7 +96,14 @@ jobs:
         run: npx vitest run tests/reorganisation-held.test.ts
 
       - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+        run: |
+          # The browser comes from Playwright's own host. Its system packages come from
+          # Ubuntu's package servers, which could not be resolved on 11 November 2026 and
+          # failed every run. They are tried for three minutes and are not required: the
+          # runner image already holds Chrome's libraries, and a missing one fails the
+          # browser tests that follow, loudly.
+          npx playwright install chromium
+          timeout --kill-after=10 180 npx playwright install-deps chromium || echo "::warning::Chromium system packages were not installed because the Ubuntu package servers could not be reached. The run continues with the packages the runner image holds."
 
       - name: Browser tests, mobile and desktop
         run: npm run test:e2e
