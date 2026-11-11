@@ -193,6 +193,20 @@ if (existsSync(bandFile)) {
   }
 }
 
+// Like rss.xml, this static endpoint is outside the HTML sitemap and Pagefind.
+const councilIndexFile = join(DIST, "council-index.json");
+if (!existsSync(councilIndexFile)) failures.push("council-index.json missing");
+else {
+  const rows = JSON.parse(readFileSync(councilIndexFile, "utf8"));
+  const routes = [...files(join(DIST, "councils"))]
+    .filter(path => /\/councils\/[^/]+\/index\.html$/.test(path))
+    .map(path => rel(path).replace(/index\.html$/, ""));
+  const urls = rows.map(row => row.url);
+  if (new Set(urls).size !== urls.length) failures.push("duplicate council index route");
+  for (const route of routes) if (!urls.includes(route)) failures.push(`profile without index row: ${route}`);
+  for (const url of urls) if (!routes.includes(url)) failures.push(`index row without profile: ${url}`);
+}
+
 // When the build rendered cards (BUILD_OG=1), every og:image must resolve to
 // a card in the tree. An iteration build renders none and skips this.
 if (existsSync(join(DIST, "og"))) {

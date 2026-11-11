@@ -45,7 +45,7 @@ const rows = [...points].sort((a, b) => a.name.localeCompare(b.name, "en-GB"));
   <details data-position-drawer>
     <summary>Read the {kind === "band-d" ? "Band D" : "collection rate"} table for {g.current.name} and councils of the same type</summary>
     <div class="table-wrap" tabindex="0" role="region" aria-label={title}>
-      <table class="data">
+      <table class="data" data-pagefind-ignore>
         <caption>{title}</caption>
         <thead><tr><th scope="col">Council</th><th scope="col" class="num">Figure</th></tr></thead>
         <tbody>{rows.map(p => <tr data-current={p.gss === currentGss ? "" : undefined}>

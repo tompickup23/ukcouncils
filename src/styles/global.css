@@ -492,3 +492,8 @@ table.data thead th:first-child { left: 0; z-index: 3; }
   .page-head { margin-bottom: 1rem; }
   .section { margin-top: 1rem; }
 }
+
+/* Council profile links above the full text search results. */
+.search-councils { list-style: none; padding: 0; margin: 0 0 1rem; }
+.search-councils a { display: block; padding: 0.65rem 0; border-top: 1px solid var(--border); font-weight: 600; overflow-wrap: anywhere; }
+.search-councils span { display: block; color: var(--text-muted); font-size: 0.85rem; font-weight: 400; }

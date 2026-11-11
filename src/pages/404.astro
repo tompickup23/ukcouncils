@@ -1,9 +1,11 @@
 ---
+import CouncilFinder from "../components/CouncilFinder.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Page not found" path="/404/" noindex>
   <section class="wrap" style="padding-top: 2.5rem;">
     <h1>Page not found</h1>
     <p>There is no page at this address. <a href="/">Go to the home page</a>.</p>
+    <CouncilFinder />
   </section>
 </BaseLayout>

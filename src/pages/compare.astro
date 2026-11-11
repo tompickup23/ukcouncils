@@ -23,7 +23,7 @@ const sources = taxSources();
           {['a','b'].map((side, i) => <div>
             <label class="field">Filter {i === 0 ? 'first' : 'second'} council names<input type="search" data-picker-filter={side} autocomplete="off" /></label>
             <label class="field" for={`council-${side}`}>{i === 0 ? 'First council' : 'Second council'}</label>
-            <select id={`council-${side}`} name={side} aria-describedby="comparison-rule" required>
+            <select id={`council-${side}`} name={side} aria-describedby="comparison-rule" required data-pagefind-ignore>
               <option value="">Choose a council</option>
               {rows.map(row => <option value={row.slug}>{row.name} ({row.classLabel})</option>)}
             </select>
