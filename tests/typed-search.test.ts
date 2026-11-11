@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { councilIndex } from '../src/lib/council-index';
 import { councilPages, councilPath, programmaticPaths } from '../src/lib/paths';
 import { matchesCouncil, normalise, searchStatus } from '../src/lib/council-search';
-import { pageTypeFor } from '../src/lib/page-type';
+import { pageTypeFor, pageTypeLabel } from '../src/lib/page-type';
 import { GET } from '../src/pages/council-index.json';
 
 describe('council index', () => {
@@ -40,8 +40,19 @@ it('classifies each kind of page using the path supplied to BaseLayout', () => {
   expect(pageTypeFor('/council-tax/north-west/')).toBe('region');
   expect(pageTypeFor('/council-tax/increases/')).toBe('guide');
   expect(pageTypeFor('/methodology/')).toBe('guide');
+  expect(pageTypeFor('/your-area/')).toBe('tool');
+  expect(pageTypeFor('/compare/')).toBe('tool');
   expect(pageTypeFor('/councils/')).toBe('hub');
   expect(pageTypeFor('/404/')).toBe('other');
+});
+
+it('labels results in reader words and leaves other pages unlabelled', () => {
+  expect(pageTypeLabel('council')).toBe('Council');
+  expect(pageTypeLabel('hub')).toBe('Overview');
+  expect(pageTypeLabel('tool')).toBe('Tool');
+  expect(pageTypeLabel('other')).toBeNull();
+  expect(pageTypeLabel(undefined)).toBeNull();
+  expect(pageTypeLabel('toString')).toBeNull();
 });
 
 describe('search status line', () => {

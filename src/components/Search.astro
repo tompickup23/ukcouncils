@@ -19,7 +19,7 @@
 <script>
   import { COUNCILS_SHOWN, matchesCouncil, normalise, searchStatus } from "../lib/council-search";
   import type { CouncilIndexRow } from "../lib/council-index";
-  import { PAGE_TYPE_LABELS, type PageType } from "../lib/page-type";
+  import { pageTypeLabel } from "../lib/page-type";
   type Hit = {data: () => Promise<{url: string; meta: {title?: string; type?: string}; excerpt: string}>};
   type Index = {destroy: () => Promise<void>; search: (term: string) => Promise<{results: Hit[]}>};
   const trigger = document.querySelector<HTMLAnchorElement>('[data-search-open]')!;
@@ -69,10 +69,15 @@
       link.href = hit.url; link.textContent = hit.meta.title ?? hit.url;
       const excerpt = document.createElement('p');
       excerpt.textContent = new DOMParser().parseFromString(hit.excerpt, 'text/html').body.textContent;
-      const label = document.createElement('p');
-      label.dataset.searchType = hit.meta.type ?? 'other';
-      label.textContent = PAGE_TYPE_LABELS[hit.meta.type as PageType] ?? PAGE_TYPE_LABELS.other;
-      item.append(link, label, excerpt); results.append(item);
+      item.append(link);
+      const type = pageTypeLabel(hit.meta.type);
+      if (type) {
+        const label = document.createElement('p');
+        label.dataset.searchType = hit.meta.type;
+        label.textContent = type;
+        item.append(label);
+      }
+      item.append(excerpt); results.append(item);
     }
     offset += slice.length; more.hidden = offset >= hits.length;
   }
