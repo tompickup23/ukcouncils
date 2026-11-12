@@ -3,6 +3,9 @@
 const region = '(?:East Midlands|East of England|North East|North West|South East|South West|West Midlands|Yorkshire and [Tt]he Humber)';
 const year = '\\d{4}/\\d{2}';
 const rules = [
+  new RegExp(`<span\\b[^>]*class="picker-meta"[^>]*>Unitary authority · Single tier · ${region}<\\/span>`, 'g'),
+  /<td\b[^>]*data-cell="type"[^>]*>Unitary authority<span\b[^>]*class="picker-county"[^>]*>Single tier<\/span><\/td>/g,
+  /<button\b(?=[^>]*data-chip="type")(?=[^>]*data-value="unitary-authority")[^>]*>Unitary authority<\/button>/g,
   new RegExp(`<p\\b[^>]*class="muted"[^>]*>A unitary authority in ${region}\\.<\\/p>`, 'g'),
   /<dd\b[^>]*data-council-type(?:="[^"]*")?[^>]*>Unitary authority<\/dd>/g,
   /<span\b[^>]*class="row-detail"[^>]*>Unitary authority<\/span>/g,
@@ -19,6 +22,10 @@ const rules = [
 const maskWord = value => value.replace(/\bunitary\b/i, 'classification');
 export function maskExistingClassifications(html) {
   for (const rule of rules) html = html.replace(rule, element => element.replace(/>([^<]*)</, (_, body) => `>${maskWord(body)}<`));
+  html = html.replace(/<tr\b(?=[^>]*\bdata-row(?:\s|=|>))[^>]*>/g,
+    tag => tag.replace(/data-type="unitary-authority"/g, maskWord));
+  html = html.replace(/<button\b(?=[^>]*data-chip="type")[^>]*>/g,
+    tag => tag.replace(/data-value="unitary-authority"/g, maskWord));
   html = html.replace(/<(?:section|h3)\b[^>]*>/g,
     tag => tag.replace(/\b(?:id|aria-labelledby)="\d{4}-\d{2}-unitary(?:-heading)?"/g, maskWord));
   html = html.replace(/<script\b[^>]*type="application\/json"[^>]*>[\s\S]*?<\/script>/g,

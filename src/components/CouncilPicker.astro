@@ -1,0 +1,361 @@
+---
+/**
+ * The council picker (NV1, navigation brief of 11 November 2026). One box for
+ * a postcode or a name over a real table of every council, with region and
+ * type chips and sortable headers.
+ *
+ * Without JavaScript the table is complete, in A to Z order, and every row is
+ * a working link; the box, chips, count and sort buttons are hidden until
+ * public/theme-init.js has put the js class on the html element, so nothing
+ * shifts and nothing shows that would not work. Nothing is stored: not the
+ * query, not the postcode, not the council chosen.
+ *
+ * Below 600 px the table has no scroll of its own (W7, 11 November 2026): a
+ * list that scrolls inside a page that scrolls traps the thumb. With script,
+ * a list longer than PHONE_ROWS shows that many and a button for the rest;
+ * without script the whole table sits in the page.
+ *
+ * A postcode goes to api.postcodes.io from the browser, as the postcode door
+ * does, and nowhere else. The district code that comes back is matched to a
+ * row in this table, so a postcode lands on the same destination as a click.
+ */
+import SourceLine from "./SourceLine.astro";
+import type { SourceRef } from "../lib/sources";
+import { pickerTypes, type PickerRow } from "../lib/council-picker";
+import { REGIONS, slugify } from "../lib/paths";
+
+interface Figure {
+  heading: string;
+  /** The printed figure and its sort value for each row, by GSS code. Null prints the missing label. */
+  values: Record<string, { text: string; sort: number } | null>;
+  missing: string;
+  source: SourceRef;
+}
+
+interface Props {
+  id: string;
+  rows: PickerRow[];
+  caption: string;
+  /** The words over the box. */
+  label?: string;
+  /** One figure per row, with its source line. Leave it out to print none. */
+  figure?: Figure;
+  /** The heading over the rows that sort to the end, when any are marked. */
+  tailHeading?: string;
+  /** What the box says about a postcode outside the rows. */
+  outside?: string;
+}
+
+const {
+  id,
+  rows,
+  caption,
+  label = "Postcode or council name",
+  figure,
+  tailHeading,
+  outside = "That postcode is not in a council listed here.",
+} = Astro.props;
+const head = rows.filter((row) => !row.noReturn);
+const tail = rows.filter((row) => row.noReturn);
+const regionOrder: string[] = [...REGIONS, "Scotland", "Wales"];
+const regions = regionOrder.map(region => rows.find(row => slugify(row.region) === slugify(region))?.region)
+  .filter((region): region is string => Boolean(region));
+const extraTypes = [...new Set(rows.map((row) => row.type))].filter((type) => type.endsWith(" council"));
+const types = [...pickerTypes(rows), ...extraTypes.map((type) => ({ label: type, value: slugify(type) }))];
+const columns = 3 + (figure ? 1 : 0);
+const firstInRegion = new Map(regions.map(region => [region, rows.find(row => row.region === region)?.gss]));
+---
+<section class="council-picker" data-council-picker data-total={rows.length} data-outside={outside} aria-labelledby={`${id}-caption`}>
+  <form class="picker-controls" role="search" data-picker-form novalidate>
+    <div class="picker-box">
+      <label class="picker-label" for={`${id}-q`}>{label}</label>
+      <div class="picker-input-row">
+        <input id={`${id}-q`} type="search" autocomplete="off" spellcheck="false" placeholder="e.g. BB11 1DU or Lancashire" aria-describedby={`${id}-count ${id}-note`} data-picker-input />
+        <button type="submit" class="button picker-submit" data-picker-submit>Find</button>
+      </div>
+    </div>
+    <p class="small muted picker-note" id={`${id}-note`}>A postcode is sent to postcodes.io and not stored. <a href="/privacy/">Privacy</a></p>
+    <p class="picker-count" id={`${id}-count`} aria-live="polite" data-picker-count></p>
+    <details class="picker-filters" data-picker-filters>
+      <summary>Filter by region or type <span class="picker-filter-count" data-filter-count>(none on)</span></summary>
+      <div class="picker-chips" role="group" aria-label="Region">
+        <button type="button" class="chip" aria-pressed="true" data-chip="region" data-value="">All regions</button>
+        {regions.map((region) => <button type="button" class="chip" aria-pressed="false" data-chip="region" data-value={slugify(region)}>{region}</button>)}
+      </div>
+      <div class="picker-chips" role="group" aria-label="Council type">
+        <button type="button" class="chip" aria-pressed="true" data-chip="type" data-value="">All types</button>
+        {types.map((type) => <button type="button" class="chip" aria-pressed="false" data-chip="type" data-value={type.value}>{type.label}</button>)}
+      </div>
+    </details>
+  </form>
+  <div class:list={["picker-table-box", { fact: figure }]} data-fact={figure ? "" : undefined}>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby={`${id}-caption`} data-pagefind-ignore>
+      <table class="data picker-table">
+        <caption id={`${id}-caption`}>{caption}</caption>
+        <thead>
+          <tr>
+            <th scope="col" aria-sort="ascending" data-sort-key="name"><span class="nojs-only">Council</span><button type="button" class="sort-button js-only" data-sort="name">Council</button></th>
+            <th scope="col" class="wide-only" data-sort-key="region"><span class="nojs-only">Region</span><button type="button" class="sort-button js-only" data-sort="region">Region</button></th>
+            <th scope="col" class="wide-only" data-sort-key="type"><span class="nojs-only">Type</span><button type="button" class="sort-button js-only" data-sort="type">Type</button></th>
+            {figure && <th scope="col" class="num" data-sort-key="figure"><span class="nojs-only">{figure.heading}</span><button type="button" class="sort-button js-only" data-sort="figure">{figure.heading}</button></th>}
+          </tr>
+        </thead>
+        {[head, tail].map((group, index) => group.length > 0 && (
+          <tbody data-picker-group={index}>
+            {index === 1 && tailHeading && <tr class="picker-tail-head" data-picker-tail><th scope="rowgroup" colspan={columns}>{tailHeading}</th></tr>}
+            {group.map((row) => {
+              const value = figure ? figure.values[row.gss] : undefined;
+              return (
+                <tr id={firstInRegion.get(row.region) === row.gss ? slugify(row.region) : undefined} data-row data-gss={row.gss} data-search={row.search} data-region={slugify(row.region)} data-type={slugify(row.type)} data-figure-sort={value ? value.sort : undefined}>
+                  <th scope="row"><a href={row.href}>{row.name}</a><span class="picker-meta">{row.type} · {row.tier}{row.county ? `, ${row.county}` : ""} · {row.region}</span></th>
+                  <td class="wide-only" data-cell="region">{row.region}</td>
+                  <td class="wide-only" data-cell="type">{row.type}<span class="picker-county">{row.tier}</span>{row.county && <span class="picker-county">{row.county}</span>}</td>
+                  {figure && <td class="num">{value ? <span data-figure>{value.text}</span> : <span class="muted">{figure.missing}</span>}</td>}
+                </tr>
+              );
+            })}
+          </tbody>
+        ))}
+      </table>
+    </div>
+    <button type="button" class="button secondary picker-more" data-picker-more hidden></button>
+    {figure && <SourceLine source={figure.source} />}
+  </div>
+</section>
+
+<script>
+  import { matchesCouncil, matchingRegion, normalise } from "../lib/council-search";
+
+  const POSTCODE = /^[A-Z]{1,2}[0-9][A-Z0-9]?\s?[0-9][A-Z]{2}$/;
+  const collator = new Intl.Collator("en-GB");
+  /** The most rows a phone lists before the button for the rest. */
+  const PHONE_ROWS = 12;
+
+  for (const picker of document.querySelectorAll<HTMLElement>("[data-council-picker]")) {
+    const form = picker.querySelector<HTMLFormElement>("[data-picker-form]")!;
+    const input = picker.querySelector<HTMLInputElement>("[data-picker-input]")!;
+    const count = picker.querySelector<HTMLElement>("[data-picker-count]")!;
+    const table = picker.querySelector<HTMLTableElement>("table")!;
+    const groups = [...table.querySelectorAll<HTMLTableSectionElement>("tbody[data-picker-group]")];
+    const tailHead = table.querySelector<HTMLTableRowElement>("[data-picker-tail]");
+    const rows = [...table.querySelectorAll<HTMLTableRowElement>("tr[data-row]")];
+    const total = rows.length;
+    const more = picker.querySelector<HTMLButtonElement>("[data-picker-more]");
+    const wide = window.matchMedia("(min-width: 600px)");
+    let expanded = false;
+    const chosen = { region: "", type: "" };
+    let sortKey = "name";
+    let direction = 1;
+
+    const name = (row: HTMLTableRowElement) => row.querySelector("a")?.textContent ?? "";
+    const text = (row: HTMLTableRowElement, key: string) =>
+      key === "name" ? name(row) : row.querySelector(`[data-cell="${key}"]`)?.firstChild?.textContent ?? "";
+
+    const filter = () => {
+      const query = normalise(input.value);
+      const regionQuery = matchingRegion(query, rows.map(row => row.dataset.region ?? ''));
+      const postcode = POSTCODE.test(input.value.toUpperCase().trim());
+      // In the order on the page, so the rows kept on a phone are the first under the current sort.
+      const matched = [...table.querySelectorAll<HTMLTableRowElement>("tr[data-row]")].filter(
+        (row) =>
+          (!chosen.region || row.dataset.region === chosen.region) &&
+          (!chosen.type || row.dataset.type === chosen.type) &&
+          (postcode || query.length === 0 || (matchesCouncil(query, row.dataset.search ?? "")
+            && (!regionQuery || normalise(row.dataset.region ?? '') === regionQuery))),
+      );
+      const capped = !wide.matches && !expanded && matched.length > PHONE_ROWS;
+      const listed = new Set(capped ? matched.slice(0, PHONE_ROWS) : matched);
+      for (const row of rows) row.hidden = !listed.has(row);
+      if (tailHead) tailHead.hidden = !rows.some((row) => !row.hidden && row.parentElement === tailHead.parentElement);
+      if (more) {
+        more.hidden = !capped;
+        more.textContent = matched.length === total ? `Show all ${total} councils` : `Show all ${matched.length} matching councils`;
+      }
+      if (!capped) count.textContent = `${matched.length} of ${total} shown`;
+      else if (matched.length === total) count.textContent = `First ${PHONE_ROWS} of ${total} listed`;
+      else count.textContent = `${matched.length} of ${total} match, first ${PHONE_ROWS} listed`;
+    };
+
+    // A new query or chip starts from the short list again.
+    const refilter = () => {
+      expanded = false;
+      filter();
+    };
+
+    more?.addEventListener("click", () => {
+      const before = new Set(rows.filter((row) => !row.hidden));
+      expanded = true;
+      filter();
+      [...table.querySelectorAll<HTMLTableRowElement>("tr[data-row]")].find((row) => !row.hidden && !before.has(row))?.querySelector("a")?.focus();
+    });
+
+    const sort = () => {
+      for (const group of groups) {
+        const members = [...group.querySelectorAll<HTMLTableRowElement>("tr[data-row]")];
+        members.sort((a, b) => {
+          if (sortKey === "figure") {
+            const x = a.dataset.figureSort, y = b.dataset.figureSort;
+            if (!x !== !y) return x ? -1 : 1;
+            const difference = x && y ? (Number(x) - Number(y)) * direction : 0;
+            return difference || collator.compare(text(a, "name"), text(b, "name"));
+          }
+          return collator.compare(text(a, sortKey), text(b, sortKey)) * direction || collator.compare(text(a, "name"), text(b, "name"));
+        });
+        group.append(...members);
+      }
+      for (const th of table.querySelectorAll<HTMLTableCellElement>("th[data-sort-key]")) {
+        if (th.dataset.sortKey === sortKey) th.setAttribute("aria-sort", direction === 1 ? "ascending" : "descending");
+        else th.removeAttribute("aria-sort");
+      }
+      filter();
+    };
+
+    for (const button of picker.querySelectorAll<HTMLButtonElement>("[data-sort]")) {
+      button.addEventListener("click", () => {
+        const key = button.dataset.sort!;
+        direction = key === sortKey ? -direction : 1;
+        sortKey = key;
+        sort();
+      });
+    }
+
+    // The chips sit in a closed drawer on a phone, so the rows stay near the box,
+    // and open above the table from 600 px wide. The drawer says how many are on.
+    const filters = picker.querySelector<HTMLDetailsElement>("[data-picker-filters]");
+    const filterCount = picker.querySelector<HTMLElement>("[data-filter-count]");
+    const fitFilters = () => {
+      if (filters) filters.open = wide.matches;
+    };
+    fitFilters();
+    wide.addEventListener("change", () => {
+      fitFilters();
+      filter();
+    });
+
+    for (const chip of picker.querySelectorAll<HTMLButtonElement>("[data-chip]")) {
+      chip.addEventListener("click", () => {
+        const kind = chip.dataset.chip as "region" | "type";
+        chosen[kind] = chip.dataset.value ?? "";
+        for (const other of picker.querySelectorAll<HTMLButtonElement>(`[data-chip="${kind}"]`)) other.setAttribute("aria-pressed", String(other === chip));
+        const on = [chosen.region, chosen.type].filter(Boolean).length;
+        if (filterCount) filterCount.textContent = on === 0 ? "(none on)" : `(${on} on)`;
+        refilter();
+      });
+    }
+
+    const selectRegion = (region: string) => {
+      input.value = '';
+      chosen.region = region;
+      chosen.type = '';
+      for (const chip of picker.querySelectorAll<HTMLButtonElement>('[data-chip]')) {
+        chip.setAttribute('aria-pressed', String(chip.dataset.value === chosen[chip.dataset.chip as 'region' | 'type']));
+      }
+      if (filterCount) filterCount.textContent = '(1 on)';
+      refilter();
+    };
+    const jumps = [...document.querySelectorAll<HTMLAnchorElement>('[data-picker-region-jump]')];
+    for (const jump of jumps) jump.addEventListener('click', () => selectRegion(jump.dataset.pickerRegionJump ?? ''));
+    const restoreRegion = () => {
+      const region = window.location.hash.slice(1);
+      if (jumps.some(jump => jump.dataset.pickerRegionJump === region)) selectRegion(region);
+    };
+    restoreRegion();
+    window.addEventListener('hashchange', restoreRegion);
+    input.addEventListener("input", refilter);
+    filter();
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const postcode = input.value.toUpperCase().replace(/\s+/g, " ").trim();
+      if (!POSTCODE.test(postcode)) {
+        const first = table.querySelector<HTMLAnchorElement>("tr[data-row]:not([hidden]) a");
+        if (first) first.focus();
+        return;
+      }
+      count.textContent = "Finding the council for that postcode...";
+      let code: string | undefined;
+      try {
+        const response = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(postcode)}`);
+        if (response.status === 404) {
+          count.textContent = "postcodes.io does not know that postcode. Check it, or type the council's name.";
+          return;
+        }
+        if (!response.ok) throw new Error(String(response.status));
+        const body = (await response.json()) as { result?: { codes?: { admin_district?: string } } };
+        code = body.result?.codes?.admin_district;
+      } catch {
+        count.textContent = "The postcode lookup did not answer. Try again, or type the council's name.";
+        return;
+      }
+      const row = rows.find((candidate) => candidate.dataset.gss === code);
+      const link = row?.querySelector<HTMLAnchorElement>("a");
+      if (!row || !link) {
+        count.textContent = picker.dataset.outside ?? "That postcode is not in a council listed here.";
+        return;
+      }
+      count.textContent = `Opening ${name(row)}...`;
+      window.location.assign(link.href);
+    });
+  }
+</script>
+
+<style is:global>
+  .council-picker { margin-top: var(--space-md, 1rem); }
+  .council-picker .picker-controls { display: none; gap: 0.6rem; margin-bottom: 0.75rem; }
+  html.js .council-picker .picker-controls { display: grid; }
+  .council-picker .picker-box { display: grid; gap: 0.4rem; max-width: 34rem; }
+  .council-picker .picker-label { font-weight: 600; }
+  .council-picker .picker-input-row { display: flex; gap: 0.5rem; }
+  .council-picker .picker-input-row input {
+    flex: 1 1 auto; min-width: 0; min-height: 48px; font: inherit; padding: 0.65rem 0.75rem;
+    border: 1px solid var(--border-strong); border-radius: var(--radius-sm); color: var(--text); background: var(--bg);
+  }
+  .council-picker .picker-submit { flex: 0 0 auto; min-height: 48px; min-width: 4.5rem; }
+  .council-picker .picker-note { margin: 0; max-width: 44rem; }
+  .council-picker .picker-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .council-picker .picker-chips + .picker-chips { margin-top: 0.4rem; }
+  .council-picker .picker-filters > summary {
+    cursor: pointer; font-weight: 600; color: var(--accent); min-height: 44px; display: flex; align-items: center; gap: 0.35rem;
+  }
+  .council-picker .picker-filters[open] > summary { margin-bottom: 0.4rem; }
+  .council-picker .picker-filter-count { font-weight: 400; color: var(--text-muted); }
+  .council-picker .chip {
+    font: inherit; font-size: 0.88rem; line-height: 1.2; padding: 0.45rem 0.75rem; min-height: 36px;
+    border: 1px solid var(--border); border-radius: 999px; background: var(--bg-card); color: var(--text); cursor: pointer;
+  }
+  .council-picker .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .council-picker .chip[aria-pressed="true"] { background: var(--accent-wash); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .council-picker .picker-count { margin: 0; font-weight: 600; min-height: 1.5em; }
+  .council-picker .picker-table-box .table-wrap { max-height: 38rem; }
+  .council-picker .picker-more { margin-top: 0.6rem; min-height: 48px; width: 100%; }
+  .council-picker .picker-more[hidden] { display: none; }
+  .council-picker .picker-table th[scope="row"] a { font-weight: 600; }
+  /* The table fits its box at every width, so the name column need not stick, and the row stripes run across it. */
+  .council-picker .picker-table tbody th[scope="row"] { position: static; background: transparent; min-width: 0; max-width: none; }
+  .council-picker .picker-meta, .council-picker .picker-county { display: block; font-size: 0.82rem; font-weight: 400; color: var(--text-muted); }
+  .council-picker .picker-tail-head th { background: var(--bg-subtle); font-weight: 600; }
+  .council-picker .sort-button {
+    font: inherit; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 0.15em;
+  }
+  .council-picker th[aria-sort="ascending"] .sort-button::after { content: " \2191"; }
+  .council-picker th[aria-sort="descending"] .sort-button::after { content: " \2193"; }
+  .council-picker .js-only { display: none; }
+  html.js .council-picker .js-only { display: inline; }
+  html.js .council-picker .nojs-only { display: none; }
+  @media (min-width: 600px) {
+  .council-picker .picker-meta { display: none; }
+  .council-picker .picker-filters > summary { display: none; }
+  }
+  /* Shown before the script opens the drawer, so nothing moves on a wide screen. */
+  @media (min-width: 600px) {
+  .council-picker .picker-filters::details-content { content-visibility: visible; display: block; }
+  }
+  @media (max-width: 599px) {
+  .council-picker .wide-only { display: none; }
+  /* No scroll inside the page's scroll on a phone: the list runs in the page. */
+  .council-picker .picker-table-box .table-wrap { max-height: none; }
+  }
+  @media print {
+  .council-picker .picker-controls { display: none !important; }
+  }
+</style>
