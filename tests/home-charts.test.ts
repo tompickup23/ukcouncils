@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest';
-import { homeCharts } from '../src/lib/home-charts';
+import { homeCharts, spaceYearLabels } from '../src/lib/home-charts';
 import { CURRENT_YEAR, loadYear } from '../src/lib/council-tax';
 import { NAV_GROUPS, FOOTER_LINKS } from '../src/lib/site';
 it('draws every held England history value without altering the series', () => {
@@ -16,4 +16,9 @@ it('keeps every header destination and every band accessible in the footer', () 
   const footer = new Set(FOOTER_LINKS.map(link => link.href));
   for (const link of header) expect(footer.has(link.href)).toBe(true);
   for (const band of 'abcdefgh') expect(footer.has(`/council-tax/band-${band}/`)).toBe(true);
+});
+it('stops the build when the year labels in the chart cannot all be found', () => {
+  const svg = '<text x="1">2024/25</text><text x="2">2025/26</text><text x="3">2026/27</text>';
+  expect(spaceYearLabels(svg, 3)).toBe(svg);
+  expect(() => spaceYearLabels(svg, 4)).toThrow(/expected 4 year labels, found 3/);
 });

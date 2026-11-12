@@ -31,6 +31,27 @@ const { name, sources } = Astro.props;
   </details>
 </section>
 
+<script>
+  // A repeated source line links to its full entry inside the closed drawer.
+  // Not every browser opens a closed details element for a link into it, so open it here.
+  const drawer = document.querySelector<HTMLDetailsElement>("[data-sources-drawer]");
+  function reveal(hash: string) {
+    if (!drawer || !hash.startsWith("#citation-")) return;
+    const entry = document.getElementById(hash.slice(1));
+    if (!entry || !drawer.contains(entry)) return;
+    drawer.open = true;
+    entry.scrollIntoView();
+  }
+  if (drawer) {
+    document.addEventListener("click", (event) => {
+      const link = (event.target as Element | null)?.closest?.('a[href^="#citation-"]');
+      if (link) reveal(link.getAttribute("href")!);
+    });
+    window.addEventListener("hashchange", () => reveal(location.hash));
+    reveal(location.hash);
+  }
+</script>
+
 <style>
   .profile-sources { padding-left: 1.1rem; font-size: 0.9rem; overflow-wrap: anywhere; }
   .profile-sources li { margin: 0.3rem 0; }

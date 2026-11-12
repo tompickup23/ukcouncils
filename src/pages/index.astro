@@ -34,15 +34,6 @@ const count = councilPages().length;
     <a class="card" href="/compare/">{charts && <span class="task-thumb" aria-hidden="true" set:html={charts.thumbs[1]} />}<strong>Compare councils</strong><span>Put the same band and year side by side.</span></a>
     <a class="card" href={INCREASES_PATH}>{charts && <span class="task-thumb" aria-hidden="true" set:html={charts.thumbs[2]} />}<strong>Understand the increase</strong><span>See how each council changed its own share.</span></a>
   </nav>
-  <section class="section" aria-labelledby="home-council-record">
-    <h2 id="home-council-record">Explore your council</h2>
-    <div class="task-nav council-task-nav">
-      <a class="card" href="/councils/"><strong>Who runs the council</strong><span>Find a council, then read its published political control and seats.</span></a>
-      <a class="card" href="/councils/"><strong>Council budgets</strong><span>Find the services, funding and reserves returned to MHCLG.</span></a>
-      <a class="card" href="/exceptional-financial-support/"><strong>Exceptional Financial Support</strong><span>Published support by council and year.</span></a>
-      <a class="card" href="/councils/"><strong>School holidays</strong><span>Find a council and its verified term-date links where held.</span></a>
-    </div>
-  </section>
   {area && (
     <section class="section" aria-labelledby="home-average">
       <h2 id="home-average">How much is council tax in England in {year}?</h2>
@@ -91,5 +82,4 @@ const count = councilPages().length;
   .home-history :global(svg) { width: 100%; height: auto; }
   .home-hero { padding: 1.5rem 0 0.5rem;  }
   .home-hero h1 { font-size: clamp(2rem, 7vw, 3rem); margin: 0 0 0.75rem; }
-  @media (min-width: 900px) { .council-task-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 </style>
