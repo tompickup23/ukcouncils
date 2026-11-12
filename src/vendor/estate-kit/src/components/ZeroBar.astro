@@ -1,0 +1,11 @@
+---
+/** Bars from zero for one series figure. Takes the figure by key; see src/charts/zeroBar.ts. */
+import ChartFigure, { type Props as ChartFigureProps } from "./ChartFigure.astro";
+import { zeroBar, type ZeroBarOptions } from "../../dist/src/index.js";
+
+type Props = ZeroBarOptions & { tableOpen?: boolean; class?: string; id?: string; actions?: ChartFigureProps["actions"] };
+
+const { tableOpen, class: className, id, actions, ...opts } = Astro.props;
+const out = zeroBar(opts);
+---
+<ChartFigure out={out} keys={[opts.figure]} tableOpen={tableOpen} class={className} id={id} actions={actions} />

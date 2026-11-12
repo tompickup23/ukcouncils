@@ -1,0 +1,6 @@
+---
+/** Three to six source linked facts, wrapping to the space available. */
+import { summaryRowHtml, type SummaryRowOptions } from "../../dist/src/index.js";
+type Props = SummaryRowOptions;
+---
+<Fragment set:html={summaryRowHtml(Astro.props)} />

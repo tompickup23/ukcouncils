@@ -1,0 +1,28 @@
+---
+/**
+ * One figure, what it counts, a perspective clause and its source line, as HTML. The
+ * source comes from the figure record, so it cannot be left off. A money figure needs a
+ * perspective: the perspective prop (with figure slots) or the perspective slot, or
+ * perspectiveWaived with the reason. statTile() in src/charts/statTile.ts draws the same
+ * tile as SVG for cards.
+ */
+import ChartFigure from "./ChartFigure.astro";
+import { statTile, statTileParts, type StatTileOptions } from "../../dist/src/index.js";
+
+type Props = StatTileOptions & { class?: string };
+
+const { class: className, ...opts } = Astro.props;
+const hasSlot = Astro.slots.has("perspective");
+const parts = statTileParts(opts, undefined, hasSlot);
+---
+{opts.sourcePlacement === "drawing" ? (
+  <ChartFigure out={statTile(opts)} keys={parts.keys} class={className} />
+) : (
+<div class:list={["ek-stat", className]} data-fact data-figure={parts.keys.join(" ")}>
+  <span class="ek-stat-label">{parts.label}</span>
+  <span class="ek-stat-value" data-figure>{parts.value}</span>
+  {parts.perspective && <span class="ek-stat-perspective">{parts.perspective}</span>}
+  {!parts.perspective && hasSlot && <span class="ek-stat-perspective"><slot name="perspective" /></span>}
+  <p class="ek-source" set:html={parts.captionHtml} />
+</div>
+)}

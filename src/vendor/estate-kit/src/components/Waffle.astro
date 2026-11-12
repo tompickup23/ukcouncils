@@ -1,0 +1,11 @@
+---
+/** A hundred squares for one percentage figure or a split between parts; see src/charts/waffle.ts. */
+import ChartFigure, { type Props as ChartFigureProps } from "./ChartFigure.astro";
+import { waffle, type WaffleOptions } from "../../dist/src/index.js";
+
+type Props = WaffleOptions & { tableOpen?: boolean; class?: string; id?: string; actions?: ChartFigureProps["actions"] };
+
+const { tableOpen, class: className, id, actions, ...opts } = Astro.props;
+const out = waffle(opts);
+---
+<ChartFigure out={out} keys={opts.parts ?? (opts.figure ? [opts.figure] : [])} tableOpen={tableOpen} class={className} id={id} actions={actions} />

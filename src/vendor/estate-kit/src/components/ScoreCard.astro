@@ -1,0 +1,11 @@
+---
+/** The score card variant of the stat tile: a total and one bar per round; see scoreCard() in src/charts/statTile.ts. */
+import ChartFigure, { type Props as ChartFigureProps } from "./ChartFigure.astro";
+import { scoreCard, type ScoreCardOptions } from "../../dist/src/index.js";
+
+type Props = ScoreCardOptions & { tableOpen?: boolean; class?: string; id?: string; actions?: ChartFigureProps["actions"] };
+
+const { tableOpen, class: className, id, actions, ...opts } = Astro.props;
+const out = scoreCard(opts);
+---
+<ChartFigure out={out} keys={opts.rows.flatMap((r) => (r.figure ? [r.figure] : []))} tableOpen={tableOpen} class={className} id={id} actions={actions} />

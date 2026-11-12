@@ -21,3 +21,6 @@ data/raw/
 
 # Local editor and agent settings
 .claude/
+
+# The versioned Estate Kit build is part of the source tree.
+!src/vendor/estate-kit/dist/
