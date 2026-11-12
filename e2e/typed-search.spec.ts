@@ -1,3 +1,4 @@
+import {councilPages} from '../src/lib/paths';
 import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -24,7 +25,7 @@ for (const name of ['Burnley', 'Birmingham', 'Camden', 'Barnet', 'Manchester', '
   });
 }
 
-test('council links require two letters, match all words and stop at five', async ({ page }) => {
+test('council links require two letters, match all words and initially list twelve', async ({ page }) => {
   await page.goto('/');
   await page.locator('[data-search-open]').click();
   const input = page.getByLabel('Council, region or topic');
@@ -34,7 +35,7 @@ test('council links require two letters, match all words and stop at five', asyn
   await input.fill('ley burn');
   await expect(page.locator('[data-search-council-results] a')).toHaveAttribute('href', '/councils/burnley/');
   await input.fill('shire');
-  await expect(page.locator('[data-search-council-results] a')).toHaveCount(5);
+  await expect(page.locator('[data-search-council-results] a')).toHaveCount(12);
   await input.fill('zxqvnomatchingplace');
   await expect(page.locator('[data-search-status]')).toContainText('No matching pages');
   await expect(page.locator('[data-search-councils]')).toBeHidden();
@@ -62,7 +63,7 @@ test('the status line announces the council list as well as the pages', async ({
   await page.getByLabel('Council, region or topic').fill('Burnley');
   await expect(page.locator('[data-search-status]')).toHaveText(/^1 matching council and \d+ matching pages?\.$/);
   await page.getByLabel('Council, region or topic').fill('shire');
-  await expect(page.locator('[data-search-status]')).toContainText('the first five listed');
+  await expect(page.locator('[data-search-status]')).toContainText('12 listed');
 });
 
 test('Search links to the council directory with scripts off', async ({ browser, baseURL }) => {
@@ -85,4 +86,37 @@ test('the 404 finder finds Burnley', async ({ page }) => {
   await expect(link).toHaveAttribute('href', '/councils/burnley/#council-tax');
   await link.click();
   await expect(page).toHaveURL(/\/councils\/burnley\/#council-tax$/);
+});
+
+for (const query of ['lancashire', 'north west']) {
+  test(`${query} uses county and exact region matching in the dialog`, async ({page}) => {
+    const expected = query === 'lancashire' ? 12 : councilPages().filter(row => row.council.region === 'North West').length;
+    await page.goto('/');
+    await page.locator('[data-search-open]').click();
+    await page.getByLabel('Council, region or topic').fill(query);
+    await expect(page.locator('[data-search-status]')).toContainText(`${expected} matching councils`);
+    await expect(page.locator('[data-search-council-results] a')).toHaveCount(Math.min(expected, 12));
+    if (expected > 12) await page.locator('[data-search-councils-more]').click();
+    await expect(page.locator('[data-search-council-results] a')).toHaveCount(expected);
+    if (query === 'north west') {
+      for (const detail of await page.locator('[data-search-council-results] span').allTextContents()) expect(detail).toContain('North West');
+      await expect(page.locator('[data-search-council-results]')).not.toContainText('North West Leicestershire');
+    }
+  });
+}
+
+test('region jump pills filter the picker and the 404 finder applies the same rule', async ({page}) => {
+  const expected = councilPages().filter(row => row.council.region === 'North West').length;
+  await page.goto('/councils/');
+  if ((page.viewportSize()?.width ?? 1280) < 600) await page.locator('.directory-regions summary').click();
+  await page.locator('[data-picker-region-jump="north-west"]').click();
+  await expect(page.locator('[data-picker-count]')).toContainText(`${expected} of 296`);
+  if ((page.viewportSize()?.width ?? 1280) < 600) await page.locator('[data-picker-more]').click();
+  await expect(page.locator('tr[data-row]:visible')).toHaveCount(expected);
+  await page.reload();
+  await expect(page.locator('[data-picker-count]')).toContainText(`${expected} of 296`);
+  await page.goto('/missing-region-search/');
+  await page.getByLabel('Find your council by name').fill('north west');
+  await expect(page.locator('[data-finder-status]')).toContainText(`${expected} matching councils`);
+  await expect(page.locator('[data-council-finder] li:visible')).not.toContainText(['North West Leicestershire']);
 });

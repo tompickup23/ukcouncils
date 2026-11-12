@@ -1,8 +1,8 @@
 ---
-import { councilPages, councilPath } from "../lib/paths";
+import { councilIndex } from "../lib/council-index";
 interface Props { id?: string }
 const { id = "council-name" } = Astro.props;
-const rows = councilPages();
+const rows = councilIndex();
 ---
 <section class="card council-finder" data-council-finder>
   <label class="field" for={id}><span>Find your council by name</span>
@@ -10,14 +10,14 @@ const rows = councilPages();
   </label>
   <p id={`${id}-status`} class="muted small" role="status" data-finder-status>Enter at least two letters. Search covers councils in England.</p>
   <ul id={`${id}-results`} class="finder-results" hidden data-pagefind-ignore>
-    {rows.map(({council, tax}) => <li hidden data-name={`${tax.name} ${council.officialName}`}>
-      <a href={`${councilPath(council)}#council-tax`}>{tax.name}<span>{tax.class} · {tax.region}</span></a>
+    {rows.map(row => <li hidden data-name={row.search} data-region={row.region}>
+      <a href={`${row.url}#council-tax`}>{row.name}<span>{row.classLabel} · {row.region}</span></a>
     </li>)}
   </ul>
   <noscript><p>Name search needs JavaScript. <a href="/councils/">Browse all councils</a>.</p></noscript>
 </section>
 <script>
-  import { matchesCouncil, normalise } from "../lib/council-search";
+  import { matchesCouncil, matchingRegion, normalise } from "../lib/council-search";
   for (const finder of document.querySelectorAll<HTMLElement>('[data-council-finder]')) {
     const input = finder.querySelector<HTMLInputElement>('input')!;
     const list = finder.querySelector<HTMLUListElement>('ul')!;
@@ -26,7 +26,8 @@ const rows = councilPages();
     input.disabled = false;
     input.addEventListener('input', () => {
       const query = normalise(input.value);
-      const matches = query.length < 2 ? [] : rows.filter(row => matchesCouncil(query, row.dataset.name ?? ''));
+      const region = matchingRegion(query, rows.map(row => row.dataset.region ?? ''));
+      const matches = query.length < 2 ? [] : rows.filter(row => matchesCouncil(query, row.dataset.name ?? '') && (!region || normalise(row.dataset.region ?? '') === region));
       matches.sort((a,b) => Number(normalise(b.querySelector('a')!.firstChild!.textContent!) === query) - Number(normalise(a.querySelector('a')!.firstChild!.textContent!) === query));
       const visible = new Set(matches.slice(0,8));
       rows.forEach(row => { row.hidden = !visible.has(row); });

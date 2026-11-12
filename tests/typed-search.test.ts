@@ -16,6 +16,8 @@ describe('council index', () => {
       expect(rows.find(row => row.url === councilPath(council))).toEqual({
         name: tax.name, officialName: council.officialName, slug: council.slug,
         classLabel: tax.class, region: tax.region, url: councilPath(council),
+        county: council.type === 'Non-metropolitan district' ? council.county : null,
+        search: [tax.name, council.officialName, council.type === 'Non-metropolitan district' ? council.county : null, council.region].filter(Boolean).join(' '),
       });
     }
   });
@@ -60,7 +62,9 @@ describe('search status line', () => {
     expect(searchStatus(1, 0)).toBe('1 matching council. No other pages match.');
     expect(searchStatus(1, 33)).toBe('1 matching council and 33 matching pages.');
     expect(searchStatus(3, 1)).toBe('3 matching councils and 1 matching page.');
-    expect(searchStatus(12, 40)).toBe('12 matching councils (the first five listed) and 40 matching pages.');
+    expect(searchStatus(12, 40)).toBe('12 matching councils and 40 matching pages.');
+    expect(searchStatus(35, 40)).toBe('35 matching councils (12 listed) and 40 matching pages.');
+    expect(searchStatus(35, 40, 35)).toBe('35 matching councils and 40 matching pages.');
     expect(searchStatus(0, 8)).toBe('8 matching pages.');
     expect(searchStatus(null, 8)).toBe('8 matching pages.');
     expect(searchStatus(0, 0)).toBe('No matching pages or councils. Try a council name or a broader topic.');

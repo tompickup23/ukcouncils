@@ -10,6 +10,7 @@
   <section data-search-councils hidden aria-labelledby="search-councils-title">
     <h3 id="search-councils-title">Councils</h3>
     <ul class="search-councils" data-search-council-results></ul>
+    <button type="button" class="button secondary" data-search-councils-more hidden>Show all matching councils</button>
   </section>
   <ol data-search-results></ol>
   <button type="button" class="button secondary" data-search-more hidden>Show more results</button>
@@ -17,7 +18,7 @@
   <p class="small muted">Search runs in your browser. <a href="/councils/">Browse all councils</a> or <a href="/your-area/">find your area by postcode</a>.</p>
 </dialog>
 <script>
-  import { COUNCILS_SHOWN, matchesCouncil, normalise, rankCouncils, searchStatus } from "../lib/council-search";
+  import { COUNCILS_SHOWN, matchesCouncil, matchingRegion, normalise, rankCouncils, searchStatus } from "../lib/council-search";
   import type { CouncilIndexRow } from "../lib/council-index";
   import { pageTypeLabel } from "../lib/page-type";
   type Hit = {data: () => Promise<{url: string; meta: {title?: string; type?: string}; excerpt: string}>};
@@ -33,6 +34,27 @@
   const councilResults = dialog.querySelector<HTMLUListElement>('[data-search-council-results]')!;
   let councils: Promise<CouncilIndexRow[]> | undefined;
   let index: Index | undefined;
+  const councilsMore = dialog.querySelector<HTMLButtonElement>('[data-search-councils-more]')!;
+  let councilMatches: CouncilIndexRow[] = [];
+  let pageCount: number | null | undefined;
+  function appendCouncils(rows: CouncilIndexRow[]) {
+    for (const row of rows) {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      const detail = document.createElement('span');
+      detail.textContent = `${row.classLabel} · ${row.region}`;
+      link.href = row.url; link.append(row.name, detail);
+      item.append(link); councilResults.append(item);
+    }
+    councilsSection.hidden = !councilResults.childElementCount;
+    councilsMore.hidden = councilResults.childElementCount >= councilMatches.length;
+  }
+  councilsMore.addEventListener('click', () => {
+    const listed = councilResults.childElementCount;
+    appendCouncils(councilMatches.slice(listed));
+    councilResults.children[listed]?.querySelector('a')?.focus();
+    if (pageCount !== undefined) status.textContent = searchStatus(councilMatches.length, pageCount, councilResults.childElementCount);
+  });
   /** Lists matching councils and resolves to how many matched; null when the index could not load. */
   async function councilSearch(term: string, token: number): Promise<number | null> {
     const query = normalise(term);
@@ -44,17 +66,11 @@
       }).catch(error => { councils = undefined; throw error; });
       const rows = await councils;
       if (token !== sequence || !dialog.open) return null;
-      const matches = rankCouncils(query, rows.filter(row => matchesCouncil(query, row.name, row.officialName)));
-      for (const row of matches.slice(0, COUNCILS_SHOWN)) {
-        const item = document.createElement('li');
-        const link = document.createElement('a');
-        const detail = document.createElement('span');
-        detail.textContent = `${row.classLabel} · ${row.region}`;
-        link.href = row.url; link.append(row.name, detail);
-        item.append(link); councilResults.append(item);
-      }
-      councilsSection.hidden = !councilResults.childElementCount;
-      return matches.length;
+      const region = matchingRegion(query, rows.map(row => row.region));
+      councilMatches = rankCouncils(query, rows.filter(row => matchesCouncil(query, row.search)
+        && (!region || normalise(row.region) === region)));
+      appendCouncils(councilMatches.slice(0, COUNCILS_SHOWN));
+      return councilMatches.length;
     } catch {
       // Full text search and the directory remain available if this fetch fails.
       return null;
@@ -84,7 +100,7 @@
   }
   async function search() {
     const token = ++sequence; const term = input.value.trim();
-    councilResults.replaceChildren(); councilsSection.hidden = true;
+    councilResults.replaceChildren(); councilsSection.hidden = true; councilsMore.hidden = true; councilMatches = []; pageCount = undefined;
     results.replaceChildren(); more.hidden = true; retry.hidden = true; hits = []; offset = 0;
     if (!term) {status.textContent = 'Type to search council pages and guides.'; return;}
     const councilCount = councilSearch(term, token);
@@ -99,20 +115,22 @@
       if (token !== sequence || !dialog.open) return;
       const count = await councilCount;
       if (token !== sequence || !dialog.open) return;
-      status.textContent = searchStatus(count, hits.length);
+      pageCount = hits.length;
+      status.textContent = searchStatus(count, hits.length, councilResults.childElementCount);
     } catch {
       if (token !== sequence || !dialog.open) return;
       results.replaceChildren(); more.hidden = true;
       const count = await councilCount;
       if (token !== sequence || !dialog.open) return;
-      status.textContent = searchStatus(count, null); retry.hidden = false;
+      pageCount = null;
+      status.textContent = searchStatus(count, null, councilResults.childElementCount); retry.hidden = false;
     }
   }
   function open() {focusBefore = document.activeElement as HTMLElement; dialog.showModal(); input.focus(); if (input.value) void search();}
   trigger.addEventListener('click', event => {event.preventDefault(); open();});
   dialog.addEventListener('keydown', event => {if (event.key === 'Escape') {event.preventDefault(); event.stopPropagation(); dialog.close();}});
   dialog.addEventListener('close', () => {sequence++; clearTimeout(timer); focusBefore?.focus();});
-  input.addEventListener('input', () => {sequence++; councilResults.replaceChildren(); councilsSection.hidden = true; clearTimeout(timer); timer = setTimeout(() => void search(), 180);});
+  input.addEventListener('input', () => {sequence++; councilResults.replaceChildren(); councilsSection.hidden = true; councilsMore.hidden = true; councilMatches = []; pageCount = undefined; clearTimeout(timer); timer = setTimeout(() => void search(), 180);});
   retry.addEventListener('click', async () => {retry.disabled = true; try {await index?.destroy(); index = undefined; await search();} finally {retry.disabled = false;}});
   more.addEventListener('click', async () => {
     more.disabled = true;

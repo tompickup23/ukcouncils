@@ -28,11 +28,17 @@ export function rankCouncils<T extends { name: string }>(query: string, rows: T[
 }
 
 /** How many councils the site search dialog lists above the full text results. */
-export const COUNCILS_SHOWN = 5;
+export const COUNCILS_SHOWN = 12;
 
-function councilPhrase(count: number): string {
+/** An exact region name excludes similar words in a council name. */
+export function matchingRegion(query: string, regions: Iterable<string>): string | undefined {
+  const wanted = normalise(query);
+  return wanted && [...regions].some(region => normalise(region) === wanted) ? wanted : undefined;
+}
+
+function councilPhrase(count: number, shown: number): string {
   if (count === 1) return '1 matching council';
-  return count > COUNCILS_SHOWN ? `${count} matching councils (the first five listed)` : `${count} matching councils`;
+  return count > shown ? `${count} matching councils (${shown} listed)` : `${count} matching councils`;
 }
 
 /**
@@ -40,8 +46,8 @@ function councilPhrase(count: number): string {
  * the full text results. A null council count means the council index did not
  * load; a null page count means full text search did not load.
  */
-export function searchStatus(councilCount: number | null, pageCount: number | null): string {
-  const councils = councilCount ? councilPhrase(councilCount) : '';
+export function searchStatus(councilCount: number | null, pageCount: number | null, shown = COUNCILS_SHOWN): string {
+  const councils = councilCount ? councilPhrase(councilCount, shown) : '';
   if (pageCount === null) return `${councils ? `${councils}. ` : ''}Page search could not load. Retry or use the council directory below.`;
   const pages = pageCount === 1 ? '1 matching page' : `${pageCount} matching pages`;
   if (!councils) return pageCount ? `${pages}.` : 'No matching pages or councils. Try a council name or a broader topic.';

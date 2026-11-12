@@ -200,6 +200,19 @@ it('holds unitary wording outside the permitted sourced panel and citations', ()
   expect(heldWording('<p class="source-line"><a href="https://www.gov.uk/">A unitary council</a></p>')).toBe(false);
 });
 
+it('permits only the existing classification in picker controls and rows', () => {
+  const rows = [
+    '<tr data-row data-type="unitary-authority"><td data-cell="type">Unitary authority<span class="picker-county">Single tier</span></td></tr>',
+    '<button data-chip="type" data-value="unitary-authority">Unitary authority</button>',
+    '<span class="picker-meta">Unitary authority · Single tier · North West</span>',
+  ];
+  for (const row of rows) {
+    expect(heldWording(row)).toBe(false);
+    expect(heldWording(row + '<p>A new unitary council is proposed.</p>')).toBe(true);
+    expect(heldWording(row.replace('Unitary authority', 'A new unitary authority'))).toBe(true);
+  }
+});
+
 it('preserves only existing classification labels in their original markup', () => {
   const labels = [
     '<p class="muted">A unitary authority in North West.</p>',
