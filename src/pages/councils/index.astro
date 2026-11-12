@@ -1,41 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CouncilPicker from "../../components/CouncilPicker.astro";
+import { englishRows } from "../../lib/council-picker";
 import { hubCardPath } from "../../lib/og";
-import { REGIONS, councilPages, councilPath, slugify } from "../../lib/paths";
-
+import { REGIONS, councilPages, slugify } from "../../lib/paths";
+import { CURRENT_YEAR, loadYear, pounds, yearLabel } from "../../lib/council-tax";
+import { councilTaxSource } from "../../lib/sources";
 const pages = councilPages();
-const byRegion = REGIONS.map((region) => ({
-  region,
-  rows: pages.filter((p) => p.tax.region === region),
-}));
+const rows = englishRows();
+const year = yearLabel(CURRENT_YEAR);
+const values = Object.fromEntries(pages.map(({council, tax}) => [council.gss, tax.bands.D == null ? null : {text: pounds(tax.bands.D), sort: tax.bands.D}]));
 ---
-<BaseLayout
-  title="Every council in England, by region"
-  description={`All ${pages.length} councils in England that set council tax, by region, each with its council tax bands for the year and where the figures come from.`}
-  path="/councils/"
-  ogImage={hubCardPath("councils")}
->
-  <Breadcrumbs items={[{ label: "Councils" }]} />
+<BaseLayout title="Every council in England, by region" description={`All ${pages.length} councils in England that set council tax, by region, each with its council tax bands for the year and where the figures come from.`} path="/councils/" ogImage={hubCardPath("councils")}>
+  <Breadcrumbs items={[{label: "Councils"}]} />
   <header class="page-head">
-    <p class="eyebrow">Councils</p>
-    <h1>Every council in England</h1>
-    <p class="lede">
-      The {pages.length} councils in England that bill council tax. Each page answers what the council
-      charges and where the figures come from. Councils in Scotland, Wales and Northern Ireland follow.
-    </p>
+    <p class="eyebrow">Councils</p><h1>Every council in England</h1>
+    <p class="lede">The {pages.length} councils in England that bill council tax. Find a council by name, county, region or postcode, then read its published figures and sources.</p>
   </header>
-  <nav aria-label="Jump to a region">
-    <ul class="pill-nav">
-      {REGIONS.map((region) => <li><a href={`#${slugify(region)}`}>{region}</a></li>)}
-    </ul>
-  </nav>
-  {byRegion.map(({ region, rows }) => (
-    <section class="section" id={slugify(region)} aria-labelledby={`${slugify(region)}-heading`}>
-      <h2 id={`${slugify(region)}-heading`}>Councils in {region}</h2>
-      <ul class="link-list">
-        {rows.map(({ council, tax }) => <li><a href={councilPath(council)}>{tax.name}</a></li>)}
-      </ul>
-    </section>
-  ))}
+  <details class="directory-regions"><summary>Jump to a region</summary><nav aria-label="Jump to a region"><ul class="pill-nav">
+    {REGIONS.map(region => <li><a href={`#${slugify(region)}`} data-picker-region-jump={slugify(region)}>{region}</a></li>)}
+  </ul></nav></details>
+  <CouncilPicker id="council-directory" rows={rows} caption={`Councils in England and area Band D, ${year}`} figure={{heading: 'Area Band D', values, missing: 'n/a', source: councilTaxSource(CURRENT_YEAR, loadYear(CURRENT_YEAR).source.bandTable)}} />
+  <p class="caveat">Area averages include adult social care and average parish precepts. Your exact bill varies by parish and discounts. The figure is the annual Band D charge, not the council's own share.</p>
 </BaseLayout>
+<style>
+  .directory-regions summary { min-height: 44px; cursor: pointer; color: var(--accent); font-weight: 600; }
+  @media (min-width: 600px) {
+    .directory-regions summary { display: none; }
+    .directory-regions::details-content { content-visibility: visible; display: block; }
+  }
+</style>

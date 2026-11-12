@@ -1,4 +1,5 @@
 import { councilPages, councilPath } from "./paths";
+import { englishRows } from "./council-picker";
 
 export interface CouncilIndexRow {
   name: string;
@@ -9,6 +10,8 @@ export interface CouncilIndexRow {
   /** The region as CouncilFinder prints it. */
   region: string;
   url: string;
+  county: string | null;
+  search: string;
 }
 
 /**
@@ -18,6 +21,7 @@ export interface CouncilIndexRow {
  * the page).
  */
 export function councilIndex(): CouncilIndexRow[] {
+  const picker = new Map(englishRows().map(row => [row.gss, row]));
   return councilPages().map(({ council, tax }) => ({
     name: tax.name,
     officialName: council.officialName,
@@ -25,5 +29,7 @@ export function councilIndex(): CouncilIndexRow[] {
     classLabel: tax.class,
     region: tax.region,
     url: councilPath(council),
+    county: picker.get(council.gss)!.county,
+    search: picker.get(council.gss)!.search,
   }));
 }
