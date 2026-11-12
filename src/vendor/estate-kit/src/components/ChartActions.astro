@@ -1,0 +1,16 @@
+---
+/**
+ * The actions under a kit chart: a PNG per theme (prebuilt, plain links) and the table
+ * twin, with "Copy table" as the one script enhancement. See src/output/actions.ts for how
+ * each differs from UK Demographics' ChartActions.
+ */
+import { chartActionsHtml, type ChartActionsOptions } from "../../dist/src/output/actions.js";
+
+type Props = ChartActionsOptions;
+const html = chartActionsHtml(Astro.props);
+---
+<Fragment set:html={html} />
+<script>
+  import { enhanceChartActions } from "./chartActions.client.ts";
+  enhanceChartActions(document, navigator.clipboard);
+</script>

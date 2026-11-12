@@ -1,0 +1,11 @@
+---
+/** One bill split by the bodies that charge it, reconciled to the published total; see src/charts/billAnatomy.ts. */
+import ChartFigure, { type Props as ChartFigureProps } from "./ChartFigure.astro";
+import { billAnatomy, type BillAnatomyOptions } from "../../dist/src/index.js";
+
+type Props = BillAnatomyOptions & { tableOpen?: boolean; class?: string; id?: string; actions?: ChartFigureProps["actions"] };
+
+const { tableOpen, class: className, id, actions, ...opts } = Astro.props;
+const out = billAnatomy(opts);
+---
+<ChartFigure out={out} keys={[...opts.parts, opts.total]} tableOpen={tableOpen} class={className} id={id} actions={actions} />

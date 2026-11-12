@@ -9,6 +9,8 @@ function walk(dir: string, pattern: RegExp, out: string[] = []): string[] {
   if (!existsSync(dir)) return out;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const path = join(dir, entry.name);
+    // Vendor bytes are checked against the release in vendor.test.ts.
+    if (entry.isDirectory() && path === join(ROOT, "src", "vendor")) continue;
     if (entry.isDirectory()) walk(path, pattern, out);
     else if (pattern.test(entry.name)) out.push(path);
   }

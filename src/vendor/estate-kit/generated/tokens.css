@@ -1,0 +1,280 @@
+/* estate-tokens:start
+   Generated from tokens/tokens.json by scripts/build-tokens.mjs. Do not hand edit: run npm run tokens.
+   Default site: ukdemographics. Version 0.3.0. */
+
+:root, [data-theme="light"] {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --bg-subtle: #f5f6f7;
+  --bg-card: #ffffff;
+  --border: #dbdfe3;
+  --border-strong: #c2c8ce;
+  --text: #171b1f;
+  --text-muted: #545c63;
+  --text-faint: #616970;
+  --ground: #0f1317;
+  --ground-ink: #f4f6f7;
+  --ground-muted: #98a3ac;
+  --accent-ink: #ffffff;
+  --positive: #1f6f4f;
+  --warning: #8a5a10;
+  --critical: #b42318;
+  --series-1: #166ea5;
+  --series-2: #b6550f;
+  --series-3: #6e24da;
+  --series-4: #9d1c5c;
+  --series-neutral: #6b7280;
+  --series-neutral-soft: #8b939c;
+  --tooltip-bg: #111827;
+  --tooltip-fg: #ffffff;
+  --accent: #4338ca;
+  --accent-bright: #7b74f2;
+  --accent-wash: #eeeefc;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-soft: 0 1px 2px rgba(23, 27, 31, 0.05);
+  --shadow: 0 1px 2px rgba(23, 27, 31, 0.06), 0 8px 24px rgba(23, 27, 31, 0.06);
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --text-xs: 0.78rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-md: 1.1875rem;
+  --text-lg: clamp(1.3rem, 1.16rem + 0.62vw, 1.6rem);
+  --text-xl: clamp(1.65rem, 1.36rem + 1.28vw, 2.3rem);
+  --text-2xl: clamp(2rem, 1.55rem + 2vw, 3rem);
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+}
+
+:root[data-theme="dark"], [data-theme="dark"] {
+  --bg: #0f1317;
+  --bg-subtle: #171c21;
+  --bg-card: #141a1f;
+  --border: #2a3138;
+  --border-strong: #3d464e;
+  --text: #f4f6f7;
+  --text-muted: #b6c0c8;
+  --text-faint: #98a3ac;
+  --ground: #05080a;
+  --ground-ink: #f4f6f7;
+  --ground-muted: #98a3ac;
+  --accent-ink: #0f1317;
+  --positive: #6fcf9a;
+  --warning: #f0b03e;
+  --critical: #f2857a;
+  --series-1: #5599cc;
+  --series-2: #cf7a48;
+  --series-3: #966bfe;
+  --series-4: #f83b9b;
+  --series-neutral: #9aa2ab;
+  --series-neutral-soft: #7b838c;
+  --tooltip-bg: #e6edf3;
+  --tooltip-fg: #0d1117;
+  --accent: #7b74f2;
+  --accent-bright: #7b74f2;
+  --accent-wash: #1c1b3a;
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.32);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1317;
+    --bg-subtle: #171c21;
+    --bg-card: #141a1f;
+    --border: #2a3138;
+    --border-strong: #3d464e;
+    --text: #f4f6f7;
+    --text-muted: #b6c0c8;
+    --text-faint: #98a3ac;
+    --ground: #05080a;
+    --ground-ink: #f4f6f7;
+    --ground-muted: #98a3ac;
+    --accent-ink: #0f1317;
+    --positive: #6fcf9a;
+    --warning: #f0b03e;
+    --critical: #f2857a;
+    --series-1: #5599cc;
+    --series-2: #cf7a48;
+    --series-3: #966bfe;
+    --series-4: #f83b9b;
+    --series-neutral: #9aa2ab;
+    --series-neutral-soft: #7b838c;
+    --tooltip-bg: #e6edf3;
+    --tooltip-fg: #0d1117;
+    --accent: #7b74f2;
+    --accent-bright: #7b74f2;
+    --accent-wash: #1c1b3a;
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.32);
+  }
+}
+
+[data-site="ukdemographics"] {
+  --accent: #4338ca;
+  --accent-bright: #7b74f2;
+  --accent-wash: #eeeefc;
+}
+
+:root[data-theme="dark"] [data-site="ukdemographics"], [data-site="ukdemographics"][data-theme="dark"] {
+  --accent: #7b74f2;
+  --accent-bright: #7b74f2;
+  --accent-wash: #1c1b3a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-site="ukdemographics"] {
+    --accent: #7b74f2;
+    --accent-bright: #7b74f2;
+    --accent-wash: #1c1b3a;
+  }
+}
+
+[data-site="ukelections"] {
+  --accent: #6b5334;
+  --accent-bright: #e3d9c3;
+  --accent-wash: #f6f2ea;
+}
+
+:root[data-theme="dark"] [data-site="ukelections"], [data-site="ukelections"][data-theme="dark"] {
+  --accent: #e3d9c3;
+  --accent-bright: #e3d9c3;
+  --accent-wash: #221d14;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-site="ukelections"] {
+    --accent: #e3d9c3;
+    --accent-bright: #e3d9c3;
+    --accent-wash: #221d14;
+  }
+}
+
+[data-site="ukfoodhygiene"] {
+  --accent: #1f5c4a;
+  --accent-bright: #3fb492;
+  --accent-wash: #edf6f3;
+}
+
+:root[data-theme="dark"] [data-site="ukfoodhygiene"], [data-site="ukfoodhygiene"][data-theme="dark"] {
+  --accent: #3fb492;
+  --accent-bright: #3fb492;
+  --accent-wash: #0e2620;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-site="ukfoodhygiene"] {
+    --accent: #3fb492;
+    --accent-bright: #3fb492;
+    --accent-wash: #0e2620;
+  }
+}
+
+[data-site="ukschoolholidaydates"] {
+  --accent: #8a5a10;
+  --accent-bright: #f0b03e;
+  --accent-wash: #fdf3e3;
+}
+
+:root[data-theme="dark"] [data-site="ukschoolholidaydates"], [data-site="ukschoolholidaydates"][data-theme="dark"] {
+  --accent: #f0b03e;
+  --accent-bright: #f0b03e;
+  --accent-wash: #2b1f0c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-site="ukschoolholidaydates"] {
+    --accent: #f0b03e;
+    --accent-bright: #f0b03e;
+    --accent-wash: #2b1f0c;
+  }
+}
+
+[data-site="asylumstats"] {
+  --accent: #2f5773;
+  --accent-bright: #82abcb;
+  --accent-wash: #eef3f7;
+}
+
+:root[data-theme="dark"] [data-site="asylumstats"], [data-site="asylumstats"][data-theme="dark"] {
+  --accent: #82abcb;
+  --accent-bright: #82abcb;
+  --accent-wash: #122430;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-site="asylumstats"] {
+    --accent: #82abcb;
+    --accent-bright: #82abcb;
+    --accent-wash: #122430;
+  }
+}
+
+[data-site="aidoge"] {
+  --accent: #1c6e8a;
+  --accent-bright: #63c3dc;
+  --accent-wash: #e4eff4;
+}
+
+:root[data-theme="dark"] [data-site="aidoge"], [data-site="aidoge"][data-theme="dark"] {
+  --accent: #63c3dc;
+  --accent-bright: #63c3dc;
+  --accent-wash: #123441;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-site="aidoge"] {
+    --accent: #63c3dc;
+    --accent-bright: #63c3dc;
+    --accent-wash: #123441;
+  }
+}
+
+[data-site="ukcounciltax"] {
+  --accent: #23664f;
+  --accent-bright: #94d7b5;
+  --accent-wash: #edf6f0;
+}
+
+:root[data-theme="dark"] [data-site="ukcounciltax"], [data-site="ukcounciltax"][data-theme="dark"] {
+  --accent: #94d7b5;
+  --accent-bright: #94d7b5;
+  --accent-wash: #112d25;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-site="ukcounciltax"] {
+    --accent: #94d7b5;
+    --accent-bright: #94d7b5;
+    --accent-wash: #112d25;
+  }
+}
+
+[data-site="councilintel"] {
+  --accent: #0a5f70;
+  --accent-bright: #3fc8dd;
+  --accent-wash: #e8f7fa;
+}
+
+:root[data-theme="dark"] [data-site="councilintel"], [data-site="councilintel"][data-theme="dark"] {
+  --accent: #3fc8dd;
+  --accent-bright: #3fc8dd;
+  --accent-wash: #2a3f45;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-site="councilintel"] {
+    --accent: #3fc8dd;
+    --accent-bright: #3fc8dd;
+    --accent-wash: #2a3f45;
+  }
+}
+
+/* estate-tokens:end */

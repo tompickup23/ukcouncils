@@ -211,7 +211,10 @@ describe.skipIf(!built)("the built Lancashire council pages", () => {
     for (const { council } of lancashire) {
       const html = page(council.slug);
       const list = /<ul[^>]*data-profile-sources[\s\S]*?<\/ul>/.exec(html)?.[0] ?? "";
-      const listed = new Set([...list.matchAll(/href="([^"]+)"/g)].map((m) => m[1]));
+      const listed = new Set([
+        ...[...list.matchAll(/href="([^"]+)"/g)].map((m) => m[1]),
+        ...[...list.matchAll(/\bid="([^"]+)"/g)].map((m) => `#${m[1]}`),
+      ]);
       const cited = new Set(
         [...outsideReorganisation(html).matchAll(/class="source-line[^"]*"[^>]*>[\s\S]*?<a href="([^"]+)"/g)].map((m) => m[1]),
       );

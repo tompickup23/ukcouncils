@@ -5,7 +5,7 @@ import { BANDS, CURRENT_YEAR, loadYear } from "../src/lib/council-tax";
 import { bandLinks, similarCouncils } from "../src/lib/council-links";
 import { councilLastmod, councilTaxRelease, newest, sitemapEntries } from "../src/lib/lastmod";
 import { REGIONS, bandPath, councilPages, councilPath, slugify } from "../src/lib/paths";
-import { INCREASES_PATH, NAV_GROUPS, NEXT_YEAR_PATH, SITE_NAME } from "../src/lib/site";
+import { INCREASES_PATH, NAV_GROUPS, FOOTER_LINKS, NEXT_YEAR_PATH, SITE_NAME } from "../src/lib/site";
 import { spendingFor, spendingRecord } from "../src/lib/spending";
 import { sitemapPaths } from "../src/pages/sitemap.xml";
 
@@ -129,8 +129,8 @@ describe("structured data", () => {
 describe("the menu", () => {
   const items = NAV_GROUPS.flatMap((g) => g.items);
 
-  it("lists every band page, A to H", () => {
-    for (const band of BANDS) expect(items.map((i) => i.href)).toContain(bandPath(band));
+  it("keeps every band page in the footer, A to H", () => {
+    for (const band of BANDS) expect(FOOTER_LINKS.map((i) => i.href)).toContain(bandPath(band));
     expect(new Set(items.map((i) => i.href)).size).toBe(items.length);
   });
 

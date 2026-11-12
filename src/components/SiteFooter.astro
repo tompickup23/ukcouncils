@@ -3,7 +3,7 @@
  * The footer. It names no person and takes no position: the imprint is the
  * site's own name and what it does.
  */
-import { SITE_NAME, FOOTER_SISTERS } from "../lib/site";
+import { SITE_NAME, FOOTER_SISTERS, FOOTER_LINKS } from "../lib/site";
 import ThemeSelect from "./ThemeSelect.astro";
 
 const year = new Date().getUTCFullYear();
@@ -24,7 +24,7 @@ const year = new Date().getUTCFullYear();
       source and date. Council tax figures are from the Ministry of Housing, Communities and Local
       Government under the Open Government Licence v3.0. &copy; {year} {SITE_NAME}.
     </p>
-    <p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/corrections/">Corrections</a> · <a href="/sources/">Sources</a> · <a href="/findings/">Findings</a></p>
+    <nav class="footer-links" aria-label="Site pages">{FOOTER_LINKS.map(link => <a href={link.href}>{link.label}</a>)}</nav>
     <div class="footer-theme"><ThemeSelect /></div>
   </div>
 </footer>
@@ -58,6 +58,7 @@ const year = new Date().getUTCFullYear();
   .footer-sisters a { color: var(--ground-ink); font-weight: 600; }
   .footer-sisters span { font-size: 0.85rem; }
   .footer-imprint { max-width: 48rem; margin: 0; line-height: 1.5; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-block: 1rem; }
   .footer-links a { color: var(--ground-ink); }
   .footer-theme { margin-top: 1rem; color: var(--ground-ink); }
 </style>

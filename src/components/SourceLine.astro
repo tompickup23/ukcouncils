@@ -3,6 +3,7 @@
  * The line under a figure that says where it came from. Every figure on the
  * site has one, directly under it, never only on a methodology page.
  */
+import { citationKey } from "../lib/citation-key";
 import { longDate, type SourceRef } from "../lib/sources";
 
 interface Props {
@@ -12,6 +13,6 @@ interface Props {
 const { source } = Astro.props;
 const date = longDate(source.date);
 ---
-<p class="source-line">
+<p class="source-line" data-citation-key={citationKey(source)} data-citation-record={JSON.stringify(source)}>
   {source.method ? `${source.method}. ` : ""}Source: <a href={source.url}>{source.publisher}, {source.title}</a>{source.table ? `, ${source.table}` : ""}{date ? `, published ${date}` : ""}.
 </p>

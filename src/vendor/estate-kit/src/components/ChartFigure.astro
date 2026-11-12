@@ -1,0 +1,42 @@
+---
+/**
+ * The wrapper every kit chart renders through: the inline SVG, which carries its own
+ * source line, the actions (when asked for), then the table twin in a details element.
+ * The chart has direct labels on every key value, so nothing essential sits behind the
+ * click.
+ */
+import type { ChartOutput } from "../../dist/src/index.js";
+import ChartActions from "./ChartActions.astro";
+
+export interface Props {
+  out: ChartOutput;
+  keys: string[];
+  tableOpen?: boolean;
+  class?: string;
+  /** The twin's id. Defaults to one built from the keys; pass one when a chart repeats on a page. */
+  id?: string;
+  /** Draw the actions row: true for the table alone, or the chart's prebuilt PNGs too. */
+  actions?: boolean | { png?: { light: string; dark: string }; label?: string };
+}
+
+const { out, keys, tableOpen = false, class: className, actions } = Astro.props;
+const id = Astro.props.id ?? `ek-twin-${keys.join("-").replace(/[^A-Za-z0-9-]+/g, "-")}`;
+const act = actions ? (actions === true ? {} : actions) : null;
+// A thumb is marks only and aria-hidden: no figure, no twin, no actions; the card around it speaks.
+const thumb = out.svg.includes('class="ek-chart ek-thumb"');
+---
+{thumb ? (
+  <span class:list={["ek-thumb-slot", className]} data-figure={keys.join(" ")}><Fragment set:html={out.svg} /></span>
+) : (
+  <figure class:list={["ek-figure", className]} data-figure={keys.join(" ")}>
+    <Fragment set:html={out.svg} />
+    {out.sourceHtml && <figcaption class="ek-source" set:html={out.sourceHtml} />}
+    {act && <ChartActions twinId={id} label={act.label ?? out.title ?? out.alt} png={act.png} />}
+    {out.table && (
+      <details class="ek-twin" id={id} open={tableOpen}>
+        <summary>The figures as a table</summary>
+        <Fragment set:html={out.table} />
+      </details>
+    )}
+  </figure>
+)}

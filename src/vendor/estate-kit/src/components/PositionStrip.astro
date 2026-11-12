@@ -1,0 +1,11 @@
+---
+/** Where one place's value sits within its class; see src/charts/positionStrip.ts. */
+import ChartFigure, { type Props as ChartFigureProps } from "./ChartFigure.astro";
+import { positionStrip, type PositionStripOptions } from "../../dist/src/index.js";
+
+type Props = PositionStripOptions & { tableOpen?: boolean; class?: string; id?: string; actions?: ChartFigureProps["actions"] };
+
+const { tableOpen, class: className, id, actions, ...opts } = Astro.props;
+const out = positionStrip(opts);
+---
+<ChartFigure out={out} keys={[opts.figure, opts.distribution]} tableOpen={tableOpen} class={className} id={id} actions={actions} />

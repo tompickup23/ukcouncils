@@ -75,7 +75,7 @@ export type NavGroup = { label: string; items: NavItem[] };
 /** The mega menu. A page not listed here is reachable only by link. */
 export const NAV_GROUPS: NavGroup[] = [
   {
-    label: "Councils",
+    label: "Find your council",
     items: [
       { href: "/your-area/", label: "Your area", desc: "Find your council by postcode" },
       { href: "/councils/", label: "Every council", desc: "All 296 councils in England, by region" },
@@ -88,18 +88,12 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/compare/", label: "Compare councils", desc: "Compare the same band and year within a council type" },
       { href: INCREASES_PATH, label: "Rises by year", desc: `How much each council raised its own share, to ${yearLabel(CURRENT_YEAR)}` },
       { href: NEXT_YEAR_PATH, label: `Council tax ${yearLabel(NEXT_YEAR)}`, desc: "Not yet set: when the figures are published" },
-      { href: "/exceptional-financial-support/", label: "Exceptional Financial Support", desc: "MHCLG support by year and council, with every source" },
+      { href: bandPath("D"), label: "By band", desc: "Published charges for each band" },
     ],
   },
   {
-    label: "Bands",
-    // The band pages, A to H. Band D sits here with the others, not on its own
-    // in the council tax group.
-    items: BANDS.map((band) => ({
-      href: bandPath(band),
-      label: `Band ${band}`,
-      desc: `Band ${band} for every council, by region`,
-    })),
+    label: "Council finances",
+    items: [{ href: "/exceptional-financial-support/", label: "Exceptional Financial Support", desc: "MHCLG support by year and council, with every source" }],
   },
   {
     label: "About",
@@ -142,4 +136,11 @@ export const FOOTER_SISTERS = [
   { name: "UK Demographics", url: "https://ukdemographics.co.uk/", blurb: "Population and census for every place" },
   { name: "UK School Holiday Dates", url: "https://ukschoolholidaydates.co.uk/", blurb: "Term dates for every education authority" },
   { name: "AI DOGE", url: "https://aidoge.co.uk/", blurb: "What public bodies publish about their spending" },
+];
+
+/** Every former header destination stays reachable from every footer. */
+export const FOOTER_LINKS = [
+  ...NAV_GROUPS.flatMap(group => group.items),
+  ...BANDS.filter(band => band !== 'D').map(band => ({href: bandPath(band), label: `Band ${band}`})),
+  {href: '/findings/', label: 'Findings'},
 ];

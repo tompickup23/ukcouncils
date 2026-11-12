@@ -1,0 +1,50 @@
+/* The kit's component styles. Every value is a token from generated/tokens.css, so a site
+   that carries the estate-tokens block needs nothing else. */
+.ek-figure { margin: 0 0 var(--space-lg); max-width: 40rem; }
+.ek-chart { display: block; width: 100%; height: auto; overflow: visible; }
+.ek-thumb-slot { display: block; width: 160px; max-width: 100%; }
+.ek-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2xs) var(--space-xs); margin-top: var(--space-xs); font-family: var(--font-sans); font-size: var(--text-sm); }
+.ek-action { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 var(--space-xs); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--bg); color: var(--accent); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.ek-action:hover { border-color: var(--accent); }
+.ek-action:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.ek-action[hidden] { display: none; }
+.ek-action-status { color: var(--text-muted); }
+.ek-twin { margin-top: var(--space-xs); font-family: var(--font-sans); font-size: var(--text-sm); color: var(--text-muted); }
+.ek-twin summary { cursor: pointer; color: var(--accent); }
+.ek-table { border-collapse: collapse; margin-top: var(--space-xs); width: 100%; color: var(--text); }
+.ek-table caption { text-align: left; font-weight: 600; padding-bottom: var(--space-2xs); color: var(--text); }
+.ek-table th, .ek-table td { padding: var(--space-2xs) var(--space-xs); border-bottom: 1px solid var(--border); text-align: left; }
+.ek-table thead th { color: var(--text-faint); font-weight: 600; }
+.ek-table .ek-num { text-align: right; font-variant-numeric: tabular-nums; }
+.ek-table tfoot td { color: var(--text-muted); border-bottom: 0; padding-top: var(--space-xs); }
+
+.ek-stat {
+  display: flex; flex-direction: column; gap: var(--space-2xs);
+  padding: var(--space-md) var(--space-lg); max-width: 26rem;
+  background: var(--accent-wash); border-radius: var(--radius);
+  font-family: var(--font-sans); color: var(--text);
+}
+.ek-stat-label { font-size: var(--text-sm); font-weight: 600; color: var(--text-muted); }
+.ek-stat-value { font-family: var(--font-display); font-weight: 600; font-size: var(--text-2xl); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.ek-stat-perspective { font-size: var(--text-base); }
+.ek-source { margin: var(--space-xs) 0 0; font-size: var(--text-xs); color: var(--text-muted); }
+.ek-source a { color: inherit; }
+
+/* The grid only waffle (waffle({ grid: true })): one class per square, sq-p0 to sq-p11 or
+   sq-empty, so a script recolours a server drawn grid by class alone. The paints follow
+   WAFFLE_PAINTS in src/charts/waffleRule.ts: the four series, then the four with a diagonal
+   stroke, then with a cross. tests/grid.test.ts checks these rules against it. */
+.ek-waffle-grid .ek-sq > rect { fill: var(--bg-subtle); stroke: var(--border); }
+.ek-waffle-grid .ek-sq .ek-hatch { visibility: hidden; }
+.ek-waffle-grid .sq-p0 > rect, .ek-waffle-grid .sq-p4 > rect, .ek-waffle-grid .sq-p8 > rect { fill: var(--series-1); stroke: none; }
+.ek-waffle-grid .sq-p1 > rect, .ek-waffle-grid .sq-p5 > rect, .ek-waffle-grid .sq-p9 > rect { fill: var(--series-2); stroke: none; }
+.ek-waffle-grid .sq-p2 > rect, .ek-waffle-grid .sq-p6 > rect, .ek-waffle-grid .sq-p10 > rect { fill: var(--series-3); stroke: none; }
+.ek-waffle-grid .sq-p3 > rect, .ek-waffle-grid .sq-p7 > rect, .ek-waffle-grid .sq-p11 > rect { fill: var(--series-4); stroke: none; }
+.ek-waffle-grid :is(.sq-p4, .sq-p5, .sq-p6, .sq-p7, .sq-p8, .sq-p9, .sq-p10, .sq-p11) .ek-hatch-d { visibility: visible; }
+.ek-waffle-grid :is(.sq-p8, .sq-p9, .sq-p10, .sq-p11) .ek-hatch-x { visibility: visible; }
+
+.ek-source { overflow-wrap: anywhere; }
+
+.ek-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: var(--space-sm); margin-block: var(--space-md); }
+.ek-summary-fact { min-width: 0; background: var(--accent-wash); border-radius: var(--radius); overflow: hidden; }
+.ek-summary-fact .ek-source { padding: 0 var(--space-sm) var(--space-sm); margin-top: 0; }

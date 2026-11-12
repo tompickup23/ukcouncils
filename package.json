@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && pagefind --site dist && node scripts/inject_csp_hashes.mjs",
+    "build": "astro build && node scripts/shorten-citations.mjs && pagefind --site dist && node scripts/inject_csp_hashes.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run",
@@ -25,10 +25,12 @@
   "dependencies": {
     "@fontsource/source-sans-3": "^5.3.1",
     "@fontsource/source-serif-4": "^5.3.1",
-    "@resvg/resvg-js": "^2.6.2",
+    "@resvg/resvg-js": "2.6.2",
     "astro": "^7.4.5",
-    "d3-geo": "^3.1.1",
-    "satori": "^0.63.2"
+    "d3-geo": "3.1.1",
+    "satori": "^0.63.2",
+    "@observablehq/plot": "0.6.17",
+    "jsdom": "29.1.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",

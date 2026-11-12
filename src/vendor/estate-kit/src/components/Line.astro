@@ -1,0 +1,11 @@
+---
+/** One to four series figures as lines, drawn by Observable Plot at build; see src/charts/line.ts. */
+import ChartFigure, { type Props as ChartFigureProps } from "./ChartFigure.astro";
+import { line, type LineOptions } from "../../dist/src/index.js";
+
+type Props = LineOptions & { tableOpen?: boolean; class?: string; id?: string; actions?: ChartFigureProps["actions"] };
+
+const { tableOpen, class: className, id, actions, ...opts } = Astro.props;
+const out = line(opts);
+---
+<ChartFigure out={out} keys={opts.series} tableOpen={tableOpen} class={className} id={id} actions={actions} />
