@@ -3,6 +3,7 @@
  * One list of every table and file the council page drew on. Each entry is
  * the same source a figure on the page cites under it.
  */
+import { citationKey } from "../lib/citation-key";
 import { longDate } from "../lib/sources";
 import type { SourceRef } from "../lib/sources";
 
@@ -21,7 +22,7 @@ const { name, sources } = Astro.props;
     {sources.map((source) => {
       const date = longDate(source.date);
       return (
-        <li>
+        <li data-citation-entry={citationKey(source)}>
           <a href={source.url}>{source.publisher}, {source.title}</a>{source.table ? `, ${source.table}` : ""}{date ? `, ${date}` : ""}.
         </li>
       );

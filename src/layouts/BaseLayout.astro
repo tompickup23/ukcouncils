@@ -1,5 +1,9 @@
 ---
 import "../styles/global.css";
+// Load the first-screen faces before paint to avoid citation and fact rewrapping.
+import serif600 from "@fontsource/source-serif-4/files/source-serif-4-latin-600-normal.woff2?url";
+import sans400 from "@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2?url";
+import sans600 from "@fontsource/source-sans-3/files/source-sans-3-latin-600-normal.woff2?url";
 import { pageTypeFor } from "../lib/page-type";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -85,6 +89,7 @@ const nodes = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {[serif600, sans400, sans600].map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />

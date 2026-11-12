@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && pagefind --site dist && node scripts/inject_csp_hashes.mjs",
+    "build": "astro build && node scripts/shorten-citations.mjs && pagefind --site dist && node scripts/inject_csp_hashes.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run",

@@ -25,6 +25,8 @@ import { join, resolve } from "node:path";
 import { hashesIn, scriptSrcOf } from "./inject_csp_hashes.mjs";
 import { frontDoorChecks } from "./lib/front-door-checks.mjs";
 import { unsourcedFigures } from "./lib/figures.mjs";
+import { citationErrors } from './lib/citations.mjs';
+import { setImmediate } from 'node:timers/promises';
 import { dossierChecks } from "./lib/dossier-checks.mjs";
 
 const DIST = resolve(process.cwd(), "dist");
@@ -91,6 +93,8 @@ for (const path of files(DIST)) {
 
   const councilSlug = /^\/councils\/([^/]+)\/index\.html$/.exec(rel(path))?.[1];
   if (councilSlug) {
+    failures.push(...citationErrors(text).map(error => `${error} on ${rel(path)}`));
+    await setImmediate();
     const dossier = dossierChecks(text);
     failures.push(...dossier.failures.map(failure => `${failure} on ${rel(path)}`));
     for (const [key, count] of Object.entries(dossier.counts)) dossierCounts[key] = (dossierCounts[key] ?? 0) + count;
