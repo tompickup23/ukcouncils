@@ -39,3 +39,20 @@ share-card build and two browser checks encountered local disk pressure; the
 full build and failed browser checks passed after space recovered. The number
 comparison has 274 changed pages, all limited to the citation dates and approved
 source counts, with no added or removed pages and no SVG figure changes.
+
+## Nearby and alike, 13 November 2026
+
+Round two prompt 5 adds an open onward-navigation section to all 296 profiles.
+It lists shared-point boundary neighbours from the pinned ONS map, other
+districts of the same county from exact parent GSS joins, and the existing
+similar councils. A district's county and similar lists are identical and
+are displayed once. Names and types are shown without additional tax figures.
+The original similar-section anchors remain, the contents links to the block,
+and Pagefind ignores it. Scripts are not needed. Island gaps and the
+coastline-clipped boundary method are explained beside the list.
+
+All existing money tokens, anchors and similar links are preserved across
+the 329 built pages; all 302 PNGs remain byte-identical. The only numerical
+text addition is the year in the repeated ONS source title on each profile.
+The review report, dry-run hash, measurements and verification record are in
+`docs/NEARBY-AND-ALIKE-2026-11-13.md`. Prepared for review, not deployed.
