@@ -20,7 +20,7 @@ const groups = [
       <h3>{group.heading}</h3>
       {group.id === 'boundary' ? (
         <>
-          <p class="small muted">Areas sharing a boundary point in the England map. Areas separated by the sea, an estuary or a tidal river may not appear.</p>
+          <p class="small muted">Areas whose outlines touch or cross in the England map. The map is simplified and clipped to the coastline, so a short shared border, or an area across the sea, an estuary or a tidal river, may not appear.</p>
           <p class="source-line">Source: <a href={boundarySource.url}>{boundarySource.publisher}, {boundarySource.title}</a>.</p>
         </>
       ) : group.id === 'county'
@@ -29,10 +29,10 @@ const groups = [
       {group.councils.length > 0 ? (
         <ul class="nearby-links" data-similar-councils={group.id !== 'boundary' ? '' : undefined}>
           {group.councils.map(other => (
-            <li><a href={other.href} data-nearby-gss={other.gss}><span>{other.name}</span><span class="row-detail">{other.type}</span></a></li>
+            <li><a href={other.href} data-nearby-gss={other.gss}><span>{other.name}</span>{group.id !== 'county' && <span class="row-detail">{other.type}</span>}</a></li>
           ))}
         </ul>
-      ) : <p>No neighbouring council area shares a boundary point in this map.</p>}
+      ) : <p>No neighbouring council area touches this one in this map.</p>}
     </div>
   ))}
 </section>

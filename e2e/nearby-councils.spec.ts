@@ -21,8 +21,12 @@ for (const theme of ['light', 'dark'] as const) {
         await expect(block.locator('[data-nearby-group="county"] [data-nearby-gss]')).toHaveCount(11);
         await expect(block.locator('[data-nearby-group="similar"]')).toHaveCount(0);
         await expect(block.getByRole('link', { name: 'Calderdale Metropolitan district', exact: true })).toBeVisible();
+        // The county heading already says these are districts, so the type is not repeated on each link.
+        await expect(block.locator('[data-nearby-group="county"] .row-detail')).toHaveCount(0);
+        await expect(block.getByRole('link', { name: 'Pendle', exact: true }).first()).toBeVisible();
       }
-      if (slug === 'isle-of-wight') await expect(block.getByText('No neighbouring council area shares a boundary point in this map.')).toBeVisible();
+      if (slug === 'cornwall') await expect(block.getByText('touch or cross in the England map')).toBeVisible();
+      if (slug === 'isle-of-wight') await expect(block.getByText('No neighbouring council area touches this one in this map.')).toBeVisible();
       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(2);
       expect((await new AxeBuilder({ page }).include('[data-nearby-councils]').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
       const first = block.locator('[data-nearby-gss]').first();

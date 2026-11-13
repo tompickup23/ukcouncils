@@ -6,9 +6,10 @@ prepared for review. It does not authorise a merge or deployment.
 
 ## Result
 
-Every council profile has an open Nearby and alike section. Neighbours come
-from shared boundary points at five decimal places in the pinned ONS England
-file, using the approach already taken by UK Council Tax's game neighbours.
+Every council profile has an open Nearby and alike section. Neighbours are
+the areas whose outlines touch or cross in the pinned ONS England file (see
+the review fix below; the first build matched identical points only, the
+approach taken by UK Council Tax's game neighbours).
 The existing boundary loader supplies the file; no sibling checkout is read
 when building. County membership uses the registry's exact parent GSS code.
 Every link shows the published council name and its registry type.
@@ -24,35 +25,36 @@ Small design decisions: links carry names and types without optional Band D
 figures. This is an onward-navigation section and makes no financial comparison.
 Lists remain fully open with or without scripts, using columns where space
 allows. The source and coastline limitation are beside the boundary list.
-An island with no shared point says so explicitly and retains its regional
+An island that touches no other outline says so explicitly and retains its regional
 similar-council links. No distance, travel connection or cross-water neighbour
 is inferred.
 
 ## Dry run
 
 `NEARBY-AND-ALIKE-DRY-RUN-2026-11-13.json` records every council's neighbour
-and same-county GSS list and counts. An independent Python traversal of the
-raw pinned GeoJSON produced it before implementation. Unit tests reproduce
-every row using the TypeScript adapter and verify the input checksum.
+and same-county GSS list and counts. `scripts/nearby-dry-run.py` produces it with Shapely line intersection, a
+different implementation from the site's own integer segment test. Unit
+tests reproduce every row using the TypeScript adapter and verify the input
+checksum.
 
-SHA256: `083856841a45426914b2cf5c38dcaef75e2d54b2c5bd4af5b9dcd07b86d21527`.
+SHA256: `ffe3d197f7de454af01d377271b902b973a7757c297376bf4d5ac5241bd06d9e`.
 
 | Measure | Count |
 | --- | ---: |
 | Council profiles | 296 |
-| Directed boundary links | 1,494 |
-| Reciprocal boundary pairs | 747 |
+| Directed boundary links | 1,506 |
+| Reciprocal boundary pairs | 753 |
 | Shire districts with same-county links | 164 |
 | Directed same-county links | 1,244 |
 | Boundary neighbours per council | 0 to 15 |
 
 Burnley has five boundary neighbours and eleven other Lancashire districts.
-Cornwall has two shared-point neighbours, Torridge and West Devon. The City
+Cornwall has two neighbours, Torridge and West Devon. The City
 of London has five: Camden, Hackney, Islington, Tower Hamlets and Westminster.
 The Isle of Wight and Isles of Scilly are the only councils with neither
 boundary neighbours nor a same-county district list. The coastline-clipped
 file does not connect opposite shores of tidal water, so the lists are
-labelled by the exact shared-point method rather than as all nearby places.
+labelled by the exact method rather than as all nearby places.
 
 ## Verification
 
@@ -96,3 +98,57 @@ All 370 browser tests pass with two workers, including the eighteen new
 phone and desktop cases. All 57 actual-header CSP tests pass. No assertion,
 timeout or security gate was relaxed. Owned preview servers and the manual
 browser session were stopped after verification.
+
+## Review fix, 13 November 2026
+
+A review recomputed the neighbours from the same pinned file by polygon
+geometry. All 747 pairs of the first build were confirmed. Six further pairs
+touch or slightly overlap in the file but share no identical point, so the
+first build gave them no link:
+
+- Bexley and Sevenoaks
+- Castle Point and Thurrock
+- Hammersmith and Fulham and Richmond upon Thames
+- Kensington and Chelsea and Wandsworth
+- North Kesteven and South Holland
+- North Northamptonshire and South Kesteven
+
+The cause is in the source record (`data/geography/source.json`): the file
+was requested with a generalisation tolerance of 0.001 degrees, applied to
+each outline on its own, so two councils with a common border do not always
+keep the same points. The method is now: two areas are neighbours when their
+outlines touch or cross. Coordinates are scaled to whole units of 0.00001
+degrees so the test is exact integer arithmetic. The result is 753 pairs
+(1,506 directed links): the 747 plus these six, with none removed.
+
+The first dry run was a second implementation of the same matching-points
+method, so it could not have caught this. The dry run is now produced by
+`scripts/nearby-dry-run.py` with Shapely, and a unit test also requires that
+every matching-points pair is kept and that exactly the six pairs above are
+added.
+
+Limits that remain, and are stated beside the list on the page:
+
+- No gap is bridged. Five pairs lie within about 110 metres of each other in
+  the file without touching (Brent and Camden, Bromley and Lambeth, Rutland
+  and Peterborough, Croydon and Southwark, Wandsworth and Westminster). Some
+  of these may be true neighbours that the simplification pulled apart. They
+  are not linked, because a distance rule would be an inference.
+- Seventeen linked pairs meet at a single point only.
+- A complete list would need an adjacency table built from a boundary file
+  that keeps shared borders identical between neighbours. That is a new
+  pinned source and a decision for Tom, not part of this fix.
+
+Two smaller changes in the same pass: the type label is no longer repeated
+on each link under "Other districts in" a county, since the heading says it;
+and the empty-list sentence now reads "No neighbouring council area touches
+this one in this map."
+
+After the fix the Burnley profile measures 10,222 px at 375 wide (10,431 in
+the first build, 8,945 before the section was opened) and 6,770 px at 1440
+(6,811 and 6,275). Sevenoaks now lists Bexley among eight neighbours. Neither
+page overflows sideways at either width.
+
+Checks on the fix: Astro check with zero errors and warnings; a full
+`BUILD_OG=1` build; all 316 unit tests with none skipped; the distribution
+check for 329 pages and 328 sitemap URLs; and the browser suite.

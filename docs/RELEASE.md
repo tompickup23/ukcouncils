@@ -43,7 +43,9 @@ source counts, with no added or removed pages and no SVG figure changes.
 ## Nearby and alike, 13 November 2026
 
 Round two prompt 5 adds an open onward-navigation section to all 296 profiles.
-It lists shared-point boundary neighbours from the pinned ONS map, other
+It lists boundary neighbours (outlines that touch or cross in the pinned
+ONS map: 753 pairs after the review fix recorded in
+`docs/NEARBY-AND-ALIKE-2026-11-13.md`), other
 districts of the same county from exact parent GSS joins, and the existing
 similar councils. A district's county and similar lists are identical and
 are displayed once. Names and types are shown without additional tax figures.

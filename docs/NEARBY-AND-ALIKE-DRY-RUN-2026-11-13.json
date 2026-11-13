@@ -1,6 +1,6 @@
 {
   "sourceSha256": "b2c54790c27cbacad55228ec574926d855eacfe0d7cab3f2990af85acc888a23",
-  "method": "Shared boundary points at five decimal places in the pinned coastline-clipped England file. County joins use registry parentGss for shire districts.",
+  "method": "Outlines that touch or cross in the pinned coastline-clipped England file, tested on coordinates scaled to whole units of 0.00001 degrees. County joins use registry parentGss for shire districts.",
   "councils": [
     {
       "gss": "E07000223",
@@ -313,9 +313,10 @@
       "gss": "E09000004",
       "name": "Bexley",
       "slug": "bexley",
-      "boundaryCount": 3,
+      "boundaryCount": 4,
       "boundaryGss": [
         "E07000107",
+        "E07000111",
         "E09000006",
         "E09000011"
       ],
@@ -918,9 +919,10 @@
       "gss": "E07000069",
       "name": "Castle Point",
       "slug": "castle-point",
-      "boundaryCount": 3,
+      "boundaryCount": 4,
       "boundaryGss": [
         "E06000033",
+        "E06000034",
         "E07000066",
         "E07000075"
       ],
@@ -2240,12 +2242,13 @@
       "gss": "E09000013",
       "name": "Hammersmith and Fulham",
       "slug": "hammersmith-and-fulham",
-      "boundaryCount": 5,
+      "boundaryCount": 6,
       "boundaryGss": [
         "E09000005",
         "E09000009",
         "E09000018",
         "E09000020",
+        "E09000027",
         "E09000032"
       ],
       "county": "Inner London",
@@ -2701,10 +2704,11 @@
       "gss": "E09000020",
       "name": "Kensington and Chelsea",
       "slug": "kensington-and-chelsea",
-      "boundaryCount": 3,
+      "boundaryCount": 4,
       "boundaryGss": [
         "E09000005",
         "E09000013",
+        "E09000032",
         "E09000033"
       ],
       "county": "Inner London",
@@ -3486,11 +3490,12 @@
       "gss": "E07000139",
       "name": "North Kesteven",
       "slug": "north-kesteven",
-      "boundaryCount": 6,
+      "boundaryCount": 7,
       "boundaryGss": [
         "E07000136",
         "E07000137",
         "E07000138",
+        "E07000140",
         "E07000141",
         "E07000142",
         "E07000175"
@@ -3548,7 +3553,7 @@
       "gss": "E06000061",
       "name": "North Northamptonshire",
       "slug": "north-northamptonshire",
-      "boundaryCount": 7,
+      "boundaryCount": 8,
       "boundaryGss": [
         "E06000017",
         "E06000031",
@@ -3556,7 +3561,8 @@
         "E06000055",
         "E06000062",
         "E07000011",
-        "E07000131"
+        "E07000131",
+        "E07000141"
       ],
       "county": null,
       "sameCountyCount": 0,
@@ -4017,10 +4023,11 @@
       "gss": "E09000027",
       "name": "Richmond upon Thames",
       "slug": "richmond-upon-thames",
-      "boundaryCount": 5,
+      "boundaryCount": 6,
       "boundaryGss": [
         "E07000207",
         "E07000213",
+        "E09000013",
         "E09000018",
         "E09000021",
         "E09000032"
@@ -4307,7 +4314,7 @@
       "gss": "E07000111",
       "name": "Sevenoaks",
       "slug": "sevenoaks",
-      "boundaryCount": 7,
+      "boundaryCount": 8,
       "boundaryGss": [
         "E07000065",
         "E07000107",
@@ -4315,6 +4322,7 @@
         "E07000115",
         "E07000116",
         "E07000215",
+        "E09000004",
         "E09000006"
       ],
       "county": "Kent",
@@ -4512,11 +4520,12 @@
       "gss": "E07000140",
       "name": "South Holland",
       "slug": "south-holland",
-      "boundaryCount": 5,
+      "boundaryCount": 6,
       "boundaryGss": [
         "E06000031",
         "E07000010",
         "E07000136",
+        "E07000139",
         "E07000141",
         "E07000146"
       ],
@@ -4535,10 +4544,11 @@
       "gss": "E07000141",
       "name": "South Kesteven",
       "slug": "south-kesteven",
-      "boundaryCount": 6,
+      "boundaryCount": 7,
       "boundaryGss": [
         "E06000017",
         "E06000031",
+        "E06000061",
         "E07000133",
         "E07000139",
         "E07000140",
@@ -5294,10 +5304,11 @@
       "gss": "E06000034",
       "name": "Thurrock",
       "slug": "thurrock",
-      "boundaryCount": 3,
+      "boundaryCount": 4,
       "boundaryGss": [
         "E07000066",
         "E07000068",
+        "E07000069",
         "E09000016"
       ],
       "county": null,
@@ -5533,9 +5544,10 @@
       "gss": "E09000032",
       "name": "Wandsworth",
       "slug": "wandsworth",
-      "boundaryCount": 5,
+      "boundaryCount": 6,
       "boundaryGss": [
         "E09000013",
+        "E09000020",
         "E09000021",
         "E09000022",
         "E09000024",

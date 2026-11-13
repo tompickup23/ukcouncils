@@ -3,7 +3,8 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'ultrahtml';
-import { nearbyCouncils, touchingAreas } from '../src/lib/council-neighbours';
+import { nearbyCouncils, segmentsMeet, touchingAreas } from '../src/lib/council-neighbours';
+import { boundaryAreas } from '../src/lib/boundaries';
 import { councilPages, councilPath } from '../src/lib/paths';
 import dryRun from '../docs/NEARBY-AND-ALIKE-DRY-RUN-2026-11-13.json';
 
@@ -47,6 +48,47 @@ describe('nearby and alike', () => {
     const city = pages.find(({ council }) => council.slug === 'city-of-london')!;
     expect(nearbyCouncils(city.council).neighbours.map(other => other.name)).toEqual(['Camden', 'Hackney', 'Islington', 'Tower Hamlets', 'Westminster']);
     expect(() => nearbyCouncils({ ...city.council, gss: 'UNKNOWN' })).toThrow('No pinned boundary');
+  });
+});
+
+describe('touching outlines', () => {
+  it('treats crossing, end to end and point on segment contact as meeting, and a gap as apart', () => {
+    expect(segmentsMeet([0, 0], [10, 10], [0, 10], [10, 0])).toBe(true);
+    expect(segmentsMeet([0, 0], [10, 0], [10, 0], [20, 5])).toBe(true);
+    expect(segmentsMeet([0, 0], [10, 0], [5, 0], [5, 9])).toBe(true);
+    expect(segmentsMeet([0, 0], [10, 0], [4, 0], [20, 0])).toBe(true);
+    expect(segmentsMeet([0, 0], [10, 0], [11, 0], [20, 0])).toBe(false);
+    expect(segmentsMeet([0, 0], [10, 0], [5, 1], [5, 9])).toBe(false);
+    expect(segmentsMeet([0, 0], [10, 10], [1, 0], [11, 10])).toBe(false);
+  });
+
+  it('keeps every pair that shares a point and adds the pairs whose simplified outlines cross', () => {
+    const names = new Map(boundaryAreas().map(area => [area.properties.LAD26CD, area.properties.LAD26NM]));
+    const points = new Map<string, Set<string>>();
+    for (const area of boundaryAreas()) {
+      const polygons = area.geometry.type === 'Polygon' ? [area.geometry.coordinates] : area.geometry.coordinates;
+      for (const polygon of polygons) for (const ring of polygon) for (const [x, y] of ring) {
+        const key = `${x.toFixed(5)},${y.toFixed(5)}`;
+        points.set(key, (points.get(key) ?? new Set()).add(area.properties.LAD26CD));
+      }
+    }
+    const shared = new Set<string>();
+    for (const codes of points.values()) for (const a of codes) for (const b of codes) if (a < b) shared.add(`${a} ${b}`);
+    const touching = touchingAreas();
+    const pairs = new Set<string>();
+    for (const [a, others] of touching) for (const b of others) if (a < b) pairs.add(`${a} ${b}`);
+    for (const pair of shared) expect(pairs.has(pair), pair).toBe(true);
+    const crossingOnly = [...pairs].filter(pair => !shared.has(pair))
+      .map(pair => pair.split(' ').map(code => names.get(code)).sort().join(' and ')).sort();
+    expect(crossingOnly).toEqual([
+      'Bexley and Sevenoaks',
+      'Castle Point and Thurrock',
+      'Hammersmith and Fulham and Richmond upon Thames',
+      'Kensington and Chelsea and Wandsworth',
+      'North Kesteven and South Holland',
+      'North Northamptonshire and South Kesteven',
+    ]);
+    expect(pairs.size).toBe(753);
   });
 });
 
