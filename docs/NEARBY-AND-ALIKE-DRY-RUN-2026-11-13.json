@@ -1,0 +1,6174 @@
+{
+  "sourceSha256": "b2c54790c27cbacad55228ec574926d855eacfe0d7cab3f2990af85acc888a23",
+  "method": "Outlines that touch or cross in the pinned coastline-clipped England file, tested on coordinates scaled to whole units of 0.00001 degrees. County joins use registry parentGss for shire districts.",
+  "councils": [
+    {
+      "gss": "E07000223",
+      "name": "Adur",
+      "slug": "adur",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000043",
+        "E07000224",
+        "E07000227",
+        "E07000229"
+      ],
+      "county": "West Sussex",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000224",
+        "E07000225",
+        "E07000226",
+        "E07000227",
+        "E07000228",
+        "E07000229"
+      ]
+    },
+    {
+      "gss": "E07000032",
+      "name": "Amber Valley",
+      "slug": "amber-valley",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000015",
+        "E07000033",
+        "E07000035",
+        "E07000036",
+        "E07000038",
+        "E07000039",
+        "E07000170",
+        "E07000172"
+      ],
+      "county": "Derbyshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000033",
+        "E07000034",
+        "E07000035",
+        "E07000036",
+        "E07000037",
+        "E07000038",
+        "E07000039"
+      ]
+    },
+    {
+      "gss": "E07000224",
+      "name": "Arun",
+      "slug": "arun",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000223",
+        "E07000225",
+        "E07000227",
+        "E07000229"
+      ],
+      "county": "West Sussex",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000223",
+        "E07000225",
+        "E07000226",
+        "E07000227",
+        "E07000228",
+        "E07000229"
+      ]
+    },
+    {
+      "gss": "E07000170",
+      "name": "Ashfield",
+      "slug": "ashfield",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000018",
+        "E07000032",
+        "E07000033",
+        "E07000172",
+        "E07000173",
+        "E07000174",
+        "E07000175"
+      ],
+      "county": "Nottinghamshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000171",
+        "E07000172",
+        "E07000173",
+        "E07000174",
+        "E07000175",
+        "E07000176"
+      ]
+    },
+    {
+      "gss": "E07000105",
+      "name": "Ashford",
+      "slug": "ashford",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000064",
+        "E07000106",
+        "E07000110",
+        "E07000112",
+        "E07000113",
+        "E07000116"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E07000200",
+      "name": "Babergh",
+      "slug": "babergh",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000067",
+        "E07000071",
+        "E07000076",
+        "E07000202",
+        "E07000203",
+        "E07000245"
+      ],
+      "county": "Suffolk",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000202",
+        "E07000203",
+        "E07000244",
+        "E07000245"
+      ]
+    },
+    {
+      "gss": "E09000002",
+      "name": "Barking and Dagenham",
+      "slug": "barking-and-dagenham",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E09000016",
+        "E09000025",
+        "E09000026"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000003",
+      "name": "Barnet",
+      "slug": "barnet",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000098",
+        "E09000005",
+        "E09000007",
+        "E09000010",
+        "E09000014",
+        "E09000015"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000038",
+      "name": "Barnsley",
+      "slug": "barnsley",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000037",
+        "E08000017",
+        "E08000018",
+        "E08000034",
+        "E08000036",
+        "E08000039"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000066",
+      "name": "Basildon",
+      "slug": "basildon",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000034",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000075"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E07000084",
+      "name": "Basingstoke and Deane",
+      "slug": "basingstoke-and-deane",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000037",
+        "E06000041",
+        "E07000085",
+        "E07000089",
+        "E07000093",
+        "E07000094"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000088",
+        "E07000089",
+        "E07000090",
+        "E07000091",
+        "E07000092",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E07000171",
+      "name": "Bassetlaw",
+      "slug": "bassetlaw",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000013",
+        "E07000033",
+        "E07000142",
+        "E07000174",
+        "E07000175",
+        "E08000017",
+        "E08000018"
+      ],
+      "county": "Nottinghamshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000170",
+        "E07000172",
+        "E07000173",
+        "E07000174",
+        "E07000175",
+        "E07000176"
+      ]
+    },
+    {
+      "gss": "E06000022",
+      "name": "Bath and North East Somerset",
+      "slug": "bath-and-north-east-somerset",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000023",
+        "E06000024",
+        "E06000025",
+        "E06000054",
+        "E06000066"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000055",
+      "name": "Bedford",
+      "slug": "bedford",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000042",
+        "E06000056",
+        "E06000061",
+        "E07000011"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000004",
+      "name": "Bexley",
+      "slug": "bexley",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000107",
+        "E07000111",
+        "E09000006",
+        "E09000011"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000025",
+      "name": "Birmingham",
+      "slug": "birmingham",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000194",
+        "E07000218",
+        "E07000234",
+        "E08000027",
+        "E08000028",
+        "E08000029",
+        "E08000030"
+      ],
+      "county": "West Midlands",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000129",
+      "name": "Blaby",
+      "slug": "blaby",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000016",
+        "E07000130",
+        "E07000131",
+        "E07000132",
+        "E07000135",
+        "E07000220"
+      ],
+      "county": "Leicestershire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000130",
+        "E07000131",
+        "E07000132",
+        "E07000133",
+        "E07000134",
+        "E07000135"
+      ]
+    },
+    {
+      "gss": "E06000008",
+      "name": "Blackburn with Darwen",
+      "slug": "blackburn-with-darwen",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000118",
+        "E07000120",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E08000001",
+        "E08000002"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000009",
+      "name": "Blackpool",
+      "slug": "blackpool",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000119",
+        "E07000128"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000033",
+      "name": "Bolsover",
+      "slug": "bolsover",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000032",
+        "E07000034",
+        "E07000038",
+        "E07000170",
+        "E07000171",
+        "E07000174",
+        "E08000018"
+      ],
+      "county": "Derbyshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000032",
+        "E07000034",
+        "E07000035",
+        "E07000036",
+        "E07000037",
+        "E07000038",
+        "E07000039"
+      ]
+    },
+    {
+      "gss": "E08000001",
+      "name": "Bolton",
+      "slug": "bolton",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000008",
+        "E07000118",
+        "E08000002",
+        "E08000006",
+        "E08000010"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000136",
+      "name": "Boston",
+      "slug": "boston",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000137",
+        "E07000139",
+        "E07000140"
+      ],
+      "county": "Lincolnshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000137",
+        "E07000138",
+        "E07000139",
+        "E07000140",
+        "E07000141",
+        "E07000142"
+      ]
+    },
+    {
+      "gss": "E06000058",
+      "name": "Bournemouth, Christchurch and Poole",
+      "slug": "bournemouth-christchurch-and-poole",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E06000059",
+        "E07000091"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000036",
+      "name": "Bracknell Forest",
+      "slug": "bracknell-forest",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000040",
+        "E06000041",
+        "E07000089",
+        "E07000214"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000032",
+      "name": "Bradford",
+      "slug": "bradford",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000065",
+        "E07000122",
+        "E08000033",
+        "E08000034",
+        "E08000035"
+      ],
+      "county": "West Yorkshire",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000067",
+      "name": "Braintree",
+      "slug": "braintree",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000012",
+        "E07000070",
+        "E07000071",
+        "E07000074",
+        "E07000077",
+        "E07000200",
+        "E07000245"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E07000143",
+      "name": "Breckland",
+      "slug": "breckland",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000144",
+        "E07000146",
+        "E07000147",
+        "E07000149",
+        "E07000203",
+        "E07000245"
+      ],
+      "county": "Norfolk",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000144",
+        "E07000145",
+        "E07000146",
+        "E07000147",
+        "E07000148",
+        "E07000149"
+      ]
+    },
+    {
+      "gss": "E09000005",
+      "name": "Brent",
+      "slug": "brent",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E09000003",
+        "E09000009",
+        "E09000013",
+        "E09000015",
+        "E09000020",
+        "E09000033"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000068",
+      "name": "Brentwood",
+      "slug": "brentwood",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000034",
+        "E07000066",
+        "E07000070",
+        "E07000072",
+        "E09000016"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E06000043",
+      "name": "Brighton and Hove",
+      "slug": "brighton-and-hove",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000063",
+        "E07000223",
+        "E07000227",
+        "E07000228"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000023",
+      "name": "Bristol",
+      "slug": "bristol-city-of",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000022",
+        "E06000024",
+        "E06000025"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000144",
+      "name": "Broadland",
+      "slug": "broadland",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000143",
+        "E07000145",
+        "E07000147",
+        "E07000148",
+        "E07000149"
+      ],
+      "county": "Norfolk",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000143",
+        "E07000145",
+        "E07000146",
+        "E07000147",
+        "E07000148",
+        "E07000149"
+      ]
+    },
+    {
+      "gss": "E09000006",
+      "name": "Bromley",
+      "slug": "bromley",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000111",
+        "E07000215",
+        "E09000004",
+        "E09000008",
+        "E09000011",
+        "E09000023",
+        "E09000028"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000234",
+      "name": "Bromsgrove",
+      "slug": "bromsgrove",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E07000196",
+        "E07000221",
+        "E07000236",
+        "E07000238",
+        "E07000239",
+        "E08000025",
+        "E08000027",
+        "E08000029"
+      ],
+      "county": "Worcestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000235",
+        "E07000236",
+        "E07000237",
+        "E07000238",
+        "E07000239"
+      ]
+    },
+    {
+      "gss": "E07000095",
+      "name": "Broxbourne",
+      "slug": "broxbourne",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000072",
+        "E07000241",
+        "E07000242",
+        "E09000010"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000096",
+        "E07000098",
+        "E07000099",
+        "E07000102",
+        "E07000103",
+        "E07000240",
+        "E07000241",
+        "E07000242",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E07000172",
+      "name": "Broxtowe",
+      "slug": "broxtowe",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000018",
+        "E07000032",
+        "E07000036",
+        "E07000170",
+        "E07000176"
+      ],
+      "county": "Nottinghamshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000170",
+        "E07000171",
+        "E07000173",
+        "E07000174",
+        "E07000175",
+        "E07000176"
+      ]
+    },
+    {
+      "gss": "E06000060",
+      "name": "Buckinghamshire",
+      "slug": "buckinghamshire",
+      "boundaryCount": 11,
+      "boundaryGss": [
+        "E06000039",
+        "E06000040",
+        "E06000041",
+        "E06000042",
+        "E06000056",
+        "E06000062",
+        "E07000096",
+        "E07000102",
+        "E07000177",
+        "E07000179",
+        "E09000017"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000117",
+      "name": "Burnley",
+      "slug": "burnley",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000120",
+        "E07000122",
+        "E07000124",
+        "E07000125",
+        "E08000033"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E08000002",
+      "name": "Bury",
+      "slug": "bury",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000008",
+        "E07000125",
+        "E08000001",
+        "E08000003",
+        "E08000005",
+        "E08000006"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000033",
+      "name": "Calderdale",
+      "slug": "calderdale",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000117",
+        "E07000122",
+        "E07000125",
+        "E08000004",
+        "E08000005",
+        "E08000032",
+        "E08000034"
+      ],
+      "county": "West Yorkshire",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000008",
+      "name": "Cambridge",
+      "slug": "cambridge",
+      "boundaryCount": 1,
+      "boundaryGss": [
+        "E07000012"
+      ],
+      "county": "Cambridgeshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000009",
+        "E07000010",
+        "E07000011",
+        "E07000012"
+      ]
+    },
+    {
+      "gss": "E09000007",
+      "name": "Camden",
+      "slug": "camden",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E09000001",
+        "E09000003",
+        "E09000014",
+        "E09000019",
+        "E09000033"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000192",
+      "name": "Cannock Chase",
+      "slug": "cannock-chase",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000194",
+        "E07000196",
+        "E07000197",
+        "E08000030"
+      ],
+      "county": "Staffordshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000193",
+        "E07000194",
+        "E07000195",
+        "E07000196",
+        "E07000197",
+        "E07000198",
+        "E07000199"
+      ]
+    },
+    {
+      "gss": "E07000106",
+      "name": "Canterbury",
+      "slug": "canterbury",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000105",
+        "E07000108",
+        "E07000112",
+        "E07000113",
+        "E07000114"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E07000069",
+      "name": "Castle Point",
+      "slug": "castle-point",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000033",
+        "E06000034",
+        "E07000066",
+        "E07000075"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E06000056",
+      "name": "Central Bedfordshire",
+      "slug": "central-bedfordshire",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E06000032",
+        "E06000042",
+        "E06000055",
+        "E06000060",
+        "E07000011",
+        "E07000012",
+        "E07000096",
+        "E07000099",
+        "E07000240"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000130",
+      "name": "Charnwood",
+      "slug": "charnwood",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000016",
+        "E07000129",
+        "E07000131",
+        "E07000132",
+        "E07000133",
+        "E07000134",
+        "E07000176"
+      ],
+      "county": "Leicestershire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000129",
+        "E07000131",
+        "E07000132",
+        "E07000133",
+        "E07000134",
+        "E07000135"
+      ]
+    },
+    {
+      "gss": "E07000070",
+      "name": "Chelmsford",
+      "slug": "chelmsford",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000072",
+        "E07000074",
+        "E07000075",
+        "E07000077"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E07000078",
+      "name": "Cheltenham",
+      "slug": "cheltenham",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000079",
+        "E07000083"
+      ],
+      "county": "Gloucestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000079",
+        "E07000080",
+        "E07000081",
+        "E07000082",
+        "E07000083"
+      ]
+    },
+    {
+      "gss": "E07000177",
+      "name": "Cherwell",
+      "slug": "cherwell",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000060",
+        "E06000062",
+        "E07000178",
+        "E07000179",
+        "E07000180",
+        "E07000181",
+        "E07000221"
+      ],
+      "county": "Oxfordshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000178",
+        "E07000179",
+        "E07000180",
+        "E07000181"
+      ]
+    },
+    {
+      "gss": "E06000049",
+      "name": "Cheshire East",
+      "slug": "cheshire-east",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E06000007",
+        "E06000050",
+        "E06000051",
+        "E07000037",
+        "E07000195",
+        "E07000198",
+        "E08000003",
+        "E08000007",
+        "E08000009"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000050",
+      "name": "Cheshire West and Chester",
+      "slug": "cheshire-west-and-chester",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000006",
+        "E06000007",
+        "E06000049",
+        "E06000051",
+        "E08000015"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000034",
+      "name": "Chesterfield",
+      "slug": "chesterfield",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000033",
+        "E07000038"
+      ],
+      "county": "Derbyshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000032",
+        "E07000033",
+        "E07000035",
+        "E07000036",
+        "E07000037",
+        "E07000038",
+        "E07000039"
+      ]
+    },
+    {
+      "gss": "E07000225",
+      "name": "Chichester",
+      "slug": "chichester",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000085",
+        "E07000090",
+        "E07000216",
+        "E07000224",
+        "E07000227"
+      ],
+      "county": "West Sussex",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000223",
+        "E07000224",
+        "E07000226",
+        "E07000227",
+        "E07000228",
+        "E07000229"
+      ]
+    },
+    {
+      "gss": "E07000118",
+      "name": "Chorley",
+      "slug": "chorley",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000008",
+        "E07000126",
+        "E07000127",
+        "E08000001",
+        "E08000010"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E09000001",
+      "name": "City of London",
+      "slug": "city-of-london",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E09000007",
+        "E09000012",
+        "E09000019",
+        "E09000030",
+        "E09000033"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000071",
+      "name": "Colchester",
+      "slug": "colchester",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000067",
+        "E07000074",
+        "E07000076",
+        "E07000200"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E06000052",
+      "name": "Cornwall",
+      "slug": "cornwall",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000046",
+        "E07000047"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000079",
+      "name": "Cotswold",
+      "slug": "cotswold",
+      "boundaryCount": 10,
+      "boundaryGss": [
+        "E06000025",
+        "E06000030",
+        "E06000054",
+        "E07000078",
+        "E07000082",
+        "E07000083",
+        "E07000180",
+        "E07000181",
+        "E07000221",
+        "E07000238"
+      ],
+      "county": "Gloucestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000078",
+        "E07000080",
+        "E07000081",
+        "E07000082",
+        "E07000083"
+      ]
+    },
+    {
+      "gss": "E08000026",
+      "name": "Coventry",
+      "slug": "coventry",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000218",
+        "E07000219",
+        "E07000220",
+        "E07000222",
+        "E08000029"
+      ],
+      "county": "West Midlands",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000226",
+      "name": "Crawley",
+      "slug": "crawley",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000210",
+        "E07000211",
+        "E07000215",
+        "E07000227",
+        "E07000228"
+      ],
+      "county": "West Sussex",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000223",
+        "E07000224",
+        "E07000225",
+        "E07000227",
+        "E07000228",
+        "E07000229"
+      ]
+    },
+    {
+      "gss": "E09000008",
+      "name": "Croydon",
+      "slug": "croydon",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000211",
+        "E07000215",
+        "E09000006",
+        "E09000022",
+        "E09000024",
+        "E09000029"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000063",
+      "name": "Cumberland",
+      "slug": "cumberland",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E06000057",
+        "E06000064"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000096",
+      "name": "Dacorum",
+      "slug": "dacorum",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000056",
+        "E06000060",
+        "E07000102",
+        "E07000240"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000098",
+        "E07000099",
+        "E07000102",
+        "E07000103",
+        "E07000240",
+        "E07000241",
+        "E07000242",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E06000005",
+      "name": "Darlington",
+      "slug": "darlington",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000004",
+        "E06000047",
+        "E06000065"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000107",
+      "name": "Dartford",
+      "slug": "dartford",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000109",
+        "E07000111",
+        "E09000004"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E06000015",
+      "name": "Derby",
+      "slug": "derby",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000032",
+        "E07000036",
+        "E07000039"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000035",
+      "name": "Derbyshire Dales",
+      "slug": "derbyshire-dales",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000032",
+        "E07000037",
+        "E07000038",
+        "E07000039",
+        "E07000193",
+        "E07000198",
+        "E08000039"
+      ],
+      "county": "Derbyshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000032",
+        "E07000033",
+        "E07000034",
+        "E07000036",
+        "E07000037",
+        "E07000038",
+        "E07000039"
+      ]
+    },
+    {
+      "gss": "E08000017",
+      "name": "Doncaster",
+      "slug": "doncaster",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000011",
+        "E06000013",
+        "E06000065",
+        "E07000171",
+        "E08000018",
+        "E08000036",
+        "E08000038"
+      ],
+      "county": "South Yorkshire",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000059",
+      "name": "Dorset",
+      "slug": "dorset",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000054",
+        "E06000058",
+        "E06000066",
+        "E07000040",
+        "E07000091"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000108",
+      "name": "Dover",
+      "slug": "dover",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000106",
+        "E07000112",
+        "E07000114"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E08000027",
+      "name": "Dudley",
+      "slug": "dudley",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000196",
+        "E07000234",
+        "E08000025",
+        "E08000028",
+        "E08000031"
+      ],
+      "county": "West Midlands",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000047",
+      "name": "Durham",
+      "slug": "county-durham",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000001",
+        "E06000004",
+        "E06000005",
+        "E06000057",
+        "E06000064",
+        "E06000065",
+        "E08000024",
+        "E08000037"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000009",
+      "name": "Ealing",
+      "slug": "ealing",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E09000005",
+        "E09000013",
+        "E09000015",
+        "E09000017",
+        "E09000018"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000009",
+      "name": "East Cambridgeshire",
+      "slug": "east-cambridgeshire",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000010",
+        "E07000011",
+        "E07000012",
+        "E07000146",
+        "E07000245"
+      ],
+      "county": "Cambridgeshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000008",
+        "E07000010",
+        "E07000011",
+        "E07000012"
+      ]
+    },
+    {
+      "gss": "E07000040",
+      "name": "East Devon",
+      "slug": "east-devon",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000059",
+        "E06000066",
+        "E07000041",
+        "E07000042",
+        "E07000045"
+      ],
+      "county": "Devon",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000041",
+        "E07000042",
+        "E07000043",
+        "E07000044",
+        "E07000045",
+        "E07000046",
+        "E07000047"
+      ]
+    },
+    {
+      "gss": "E07000085",
+      "name": "East Hampshire",
+      "slug": "east-hampshire",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000084",
+        "E07000089",
+        "E07000090",
+        "E07000094",
+        "E07000216",
+        "E07000225"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000086",
+        "E07000087",
+        "E07000088",
+        "E07000089",
+        "E07000090",
+        "E07000091",
+        "E07000092",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E07000242",
+      "name": "East Hertfordshire",
+      "slug": "east-hertfordshire",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000072",
+        "E07000073",
+        "E07000077",
+        "E07000095",
+        "E07000099",
+        "E07000241",
+        "E07000243"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000096",
+        "E07000098",
+        "E07000099",
+        "E07000102",
+        "E07000103",
+        "E07000240",
+        "E07000241",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E07000137",
+      "name": "East Lindsey",
+      "slug": "east-lindsey",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000012",
+        "E07000136",
+        "E07000139",
+        "E07000142"
+      ],
+      "county": "Lincolnshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000136",
+        "E07000138",
+        "E07000139",
+        "E07000140",
+        "E07000141",
+        "E07000142"
+      ]
+    },
+    {
+      "gss": "E06000011",
+      "name": "East Riding of Yorkshire",
+      "slug": "east-riding-of-yorkshire",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000010",
+        "E06000013",
+        "E06000014",
+        "E06000065",
+        "E08000017"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000193",
+      "name": "East Staffordshire",
+      "slug": "east-staffordshire",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000035",
+        "E07000039",
+        "E07000194",
+        "E07000197",
+        "E07000198"
+      ],
+      "county": "Staffordshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000192",
+        "E07000194",
+        "E07000195",
+        "E07000196",
+        "E07000197",
+        "E07000198",
+        "E07000199"
+      ]
+    },
+    {
+      "gss": "E07000244",
+      "name": "East Suffolk",
+      "slug": "east-suffolk",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000145",
+        "E07000149",
+        "E07000202",
+        "E07000203"
+      ],
+      "county": "Suffolk",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000200",
+        "E07000202",
+        "E07000203",
+        "E07000245"
+      ]
+    },
+    {
+      "gss": "E07000061",
+      "name": "Eastbourne",
+      "slug": "eastbourne",
+      "boundaryCount": 1,
+      "boundaryGss": [
+        "E07000065"
+      ],
+      "county": "East Sussex",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000062",
+        "E07000063",
+        "E07000064",
+        "E07000065"
+      ]
+    },
+    {
+      "gss": "E07000086",
+      "name": "Eastleigh",
+      "slug": "eastleigh",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000045",
+        "E07000087",
+        "E07000093",
+        "E07000094"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000087",
+        "E07000088",
+        "E07000089",
+        "E07000090",
+        "E07000091",
+        "E07000092",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E07000207",
+      "name": "Elmbridge",
+      "slug": "elmbridge",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000209",
+        "E07000210",
+        "E07000212",
+        "E07000213",
+        "E07000217",
+        "E09000021",
+        "E09000027"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000208",
+        "E07000209",
+        "E07000210",
+        "E07000211",
+        "E07000212",
+        "E07000213",
+        "E07000214",
+        "E07000215",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E09000010",
+      "name": "Enfield",
+      "slug": "enfield",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000072",
+        "E07000095",
+        "E07000098",
+        "E07000241",
+        "E09000003",
+        "E09000014",
+        "E09000031"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000072",
+      "name": "Epping Forest",
+      "slug": "epping-forest",
+      "boundaryCount": 10,
+      "boundaryGss": [
+        "E07000068",
+        "E07000070",
+        "E07000073",
+        "E07000077",
+        "E07000095",
+        "E07000242",
+        "E09000010",
+        "E09000016",
+        "E09000026",
+        "E09000031"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E07000208",
+      "name": "Epsom and Ewell",
+      "slug": "epsom-and-ewell",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000210",
+        "E07000211",
+        "E09000021",
+        "E09000029"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000209",
+        "E07000210",
+        "E07000211",
+        "E07000212",
+        "E07000213",
+        "E07000214",
+        "E07000215",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E07000036",
+      "name": "Erewash",
+      "slug": "erewash",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000015",
+        "E07000032",
+        "E07000039",
+        "E07000134",
+        "E07000172",
+        "E07000176"
+      ],
+      "county": "Derbyshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000032",
+        "E07000033",
+        "E07000034",
+        "E07000035",
+        "E07000037",
+        "E07000038",
+        "E07000039"
+      ]
+    },
+    {
+      "gss": "E07000041",
+      "name": "Exeter",
+      "slug": "exeter",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000040",
+        "E07000045"
+      ],
+      "county": "Devon",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000040",
+        "E07000042",
+        "E07000043",
+        "E07000044",
+        "E07000045",
+        "E07000046",
+        "E07000047"
+      ]
+    },
+    {
+      "gss": "E07000087",
+      "name": "Fareham",
+      "slug": "fareham",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000044",
+        "E07000086",
+        "E07000088",
+        "E07000094"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000088",
+        "E07000089",
+        "E07000090",
+        "E07000091",
+        "E07000092",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E07000010",
+      "name": "Fenland",
+      "slug": "fenland",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000031",
+        "E07000009",
+        "E07000011",
+        "E07000140",
+        "E07000146"
+      ],
+      "county": "Cambridgeshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000008",
+        "E07000009",
+        "E07000011",
+        "E07000012"
+      ]
+    },
+    {
+      "gss": "E07000112",
+      "name": "Folkestone and Hythe",
+      "slug": "shepway",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000064",
+        "E07000105",
+        "E07000106",
+        "E07000108"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000113",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E07000080",
+      "name": "Forest of Dean",
+      "slug": "forest-of-dean",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000019",
+        "E07000082",
+        "E07000083",
+        "E07000235"
+      ],
+      "county": "Gloucestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000078",
+        "E07000079",
+        "E07000081",
+        "E07000082",
+        "E07000083"
+      ]
+    },
+    {
+      "gss": "E07000119",
+      "name": "Fylde",
+      "slug": "fylde",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000009",
+        "E07000123",
+        "E07000128"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E08000037",
+      "name": "Gateshead",
+      "slug": "gateshead",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000047",
+        "E06000057",
+        "E08000021",
+        "E08000023",
+        "E08000024"
+      ],
+      "county": "Tyne and Wear",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000173",
+      "name": "Gedling",
+      "slug": "gedling",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000018",
+        "E07000170",
+        "E07000175",
+        "E07000176"
+      ],
+      "county": "Nottinghamshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000170",
+        "E07000171",
+        "E07000172",
+        "E07000174",
+        "E07000175",
+        "E07000176"
+      ]
+    },
+    {
+      "gss": "E07000081",
+      "name": "Gloucester",
+      "slug": "gloucester",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000082",
+        "E07000083"
+      ],
+      "county": "Gloucestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000078",
+        "E07000079",
+        "E07000080",
+        "E07000082",
+        "E07000083"
+      ]
+    },
+    {
+      "gss": "E07000088",
+      "name": "Gosport",
+      "slug": "gosport",
+      "boundaryCount": 1,
+      "boundaryGss": [
+        "E07000087"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000089",
+        "E07000090",
+        "E07000091",
+        "E07000092",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E07000109",
+      "name": "Gravesham",
+      "slug": "gravesham",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000035",
+        "E07000107",
+        "E07000111",
+        "E07000115"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E07000145",
+      "name": "Great Yarmouth",
+      "slug": "great-yarmouth",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000144",
+        "E07000147",
+        "E07000149",
+        "E07000244"
+      ],
+      "county": "Norfolk",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000143",
+        "E07000144",
+        "E07000146",
+        "E07000147",
+        "E07000148",
+        "E07000149"
+      ]
+    },
+    {
+      "gss": "E09000011",
+      "name": "Greenwich",
+      "slug": "greenwich",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E09000004",
+        "E09000006",
+        "E09000023"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000209",
+      "name": "Guildford",
+      "slug": "guildford",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000092",
+        "E07000207",
+        "E07000210",
+        "E07000214",
+        "E07000216",
+        "E07000217"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000210",
+        "E07000211",
+        "E07000212",
+        "E07000213",
+        "E07000214",
+        "E07000215",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E09000012",
+      "name": "Hackney",
+      "slug": "hackney",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E09000001",
+        "E09000014",
+        "E09000019",
+        "E09000025",
+        "E09000030",
+        "E09000031"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000006",
+      "name": "Halton",
+      "slug": "halton",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000007",
+        "E06000050",
+        "E08000011",
+        "E08000012",
+        "E08000013"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000013",
+      "name": "Hammersmith and Fulham",
+      "slug": "hammersmith-and-fulham",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E09000005",
+        "E09000009",
+        "E09000018",
+        "E09000020",
+        "E09000027",
+        "E09000032"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000131",
+      "name": "Harborough",
+      "slug": "harborough",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E06000016",
+        "E06000017",
+        "E06000061",
+        "E06000062",
+        "E07000129",
+        "E07000130",
+        "E07000133",
+        "E07000135",
+        "E07000220"
+      ],
+      "county": "Leicestershire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000129",
+        "E07000130",
+        "E07000132",
+        "E07000133",
+        "E07000134",
+        "E07000135"
+      ]
+    },
+    {
+      "gss": "E09000014",
+      "name": "Haringey",
+      "slug": "haringey",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E09000003",
+        "E09000007",
+        "E09000010",
+        "E09000012",
+        "E09000019",
+        "E09000031"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000073",
+      "name": "Harlow",
+      "slug": "harlow",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000072",
+        "E07000242"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000074",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E09000015",
+      "name": "Harrow",
+      "slug": "harrow",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000098",
+        "E07000102",
+        "E09000003",
+        "E09000005",
+        "E09000009",
+        "E09000017"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000089",
+      "name": "Hart",
+      "slug": "hart",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000036",
+        "E06000041",
+        "E07000084",
+        "E07000085",
+        "E07000092",
+        "E07000214",
+        "E07000216"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000088",
+        "E07000090",
+        "E07000091",
+        "E07000092",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E06000001",
+      "name": "Hartlepool",
+      "slug": "hartlepool",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E06000004",
+        "E06000047"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000062",
+      "name": "Hastings",
+      "slug": "hastings",
+      "boundaryCount": 1,
+      "boundaryGss": [
+        "E07000064"
+      ],
+      "county": "East Sussex",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000061",
+        "E07000063",
+        "E07000064",
+        "E07000065"
+      ]
+    },
+    {
+      "gss": "E07000090",
+      "name": "Havant",
+      "slug": "havant",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000044",
+        "E07000085",
+        "E07000094",
+        "E07000225"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000088",
+        "E07000089",
+        "E07000091",
+        "E07000092",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E09000016",
+      "name": "Havering",
+      "slug": "havering",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000034",
+        "E07000068",
+        "E07000072",
+        "E09000002",
+        "E09000026"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000019",
+      "name": "Herefordshire",
+      "slug": "herefordshire-county-of",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000051",
+        "E07000080",
+        "E07000235"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000098",
+      "name": "Hertsmere",
+      "slug": "hertsmere",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000102",
+        "E07000103",
+        "E07000240",
+        "E07000241",
+        "E09000003",
+        "E09000010",
+        "E09000015"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000096",
+        "E07000099",
+        "E07000102",
+        "E07000103",
+        "E07000240",
+        "E07000241",
+        "E07000242",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E07000037",
+      "name": "High Peak",
+      "slug": "high-peak",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E06000049",
+        "E07000035",
+        "E07000198",
+        "E08000004",
+        "E08000007",
+        "E08000008",
+        "E08000034",
+        "E08000038",
+        "E08000039"
+      ],
+      "county": "Derbyshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000032",
+        "E07000033",
+        "E07000034",
+        "E07000035",
+        "E07000036",
+        "E07000038",
+        "E07000039"
+      ]
+    },
+    {
+      "gss": "E09000017",
+      "name": "Hillingdon",
+      "slug": "hillingdon",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000039",
+        "E06000060",
+        "E07000102",
+        "E07000213",
+        "E09000009",
+        "E09000015",
+        "E09000018"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000132",
+      "name": "Hinckley and Bosworth",
+      "slug": "hinckley-and-bosworth",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000129",
+        "E07000130",
+        "E07000134",
+        "E07000218",
+        "E07000219",
+        "E07000220"
+      ],
+      "county": "Leicestershire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000129",
+        "E07000130",
+        "E07000131",
+        "E07000133",
+        "E07000134",
+        "E07000135"
+      ]
+    },
+    {
+      "gss": "E07000227",
+      "name": "Horsham",
+      "slug": "horsham",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000043",
+        "E07000210",
+        "E07000216",
+        "E07000223",
+        "E07000224",
+        "E07000225",
+        "E07000226",
+        "E07000228"
+      ],
+      "county": "West Sussex",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000223",
+        "E07000224",
+        "E07000225",
+        "E07000226",
+        "E07000228",
+        "E07000229"
+      ]
+    },
+    {
+      "gss": "E09000018",
+      "name": "Hounslow",
+      "slug": "hounslow",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000213",
+        "E09000009",
+        "E09000013",
+        "E09000017",
+        "E09000027"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000011",
+      "name": "Huntingdonshire",
+      "slug": "huntingdonshire",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000031",
+        "E06000055",
+        "E06000056",
+        "E06000061",
+        "E07000009",
+        "E07000010",
+        "E07000012"
+      ],
+      "county": "Cambridgeshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000008",
+        "E07000009",
+        "E07000010",
+        "E07000012"
+      ]
+    },
+    {
+      "gss": "E07000120",
+      "name": "Hyndburn",
+      "slug": "hyndburn",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000008",
+        "E07000117",
+        "E07000124",
+        "E07000125"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E07000202",
+      "name": "Ipswich",
+      "slug": "ipswich",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000200",
+        "E07000203",
+        "E07000244"
+      ],
+      "county": "Suffolk",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000200",
+        "E07000203",
+        "E07000244",
+        "E07000245"
+      ]
+    },
+    {
+      "gss": "E06000046",
+      "name": "Isle of Wight",
+      "slug": "isle-of-wight",
+      "boundaryCount": 0,
+      "boundaryGss": [],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000053",
+      "name": "Isles of Scilly",
+      "slug": "isles-of-scilly",
+      "boundaryCount": 0,
+      "boundaryGss": [],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000019",
+      "name": "Islington",
+      "slug": "islington",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E09000001",
+        "E09000007",
+        "E09000012",
+        "E09000014"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000020",
+      "name": "Kensington and Chelsea",
+      "slug": "kensington-and-chelsea",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E09000005",
+        "E09000013",
+        "E09000032",
+        "E09000033"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000146",
+      "name": "Kings Lynn and West Norfolk",
+      "slug": "king-s-lynn-and-west-norfolk",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000009",
+        "E07000010",
+        "E07000140",
+        "E07000143",
+        "E07000147",
+        "E07000245"
+      ],
+      "county": "Norfolk",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000143",
+        "E07000144",
+        "E07000145",
+        "E07000147",
+        "E07000148",
+        "E07000149"
+      ]
+    },
+    {
+      "gss": "E06000010",
+      "name": "Kingston upon Hull",
+      "slug": "kingston-upon-hull-city-of",
+      "boundaryCount": 1,
+      "boundaryGss": [
+        "E06000011"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000021",
+      "name": "Kingston upon Thames",
+      "slug": "kingston-upon-thames",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000207",
+        "E07000208",
+        "E07000210",
+        "E09000024",
+        "E09000027",
+        "E09000029",
+        "E09000032"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000034",
+      "name": "Kirklees",
+      "slug": "kirklees",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000037",
+        "E08000004",
+        "E08000032",
+        "E08000033",
+        "E08000035",
+        "E08000036",
+        "E08000038"
+      ],
+      "county": "West Yorkshire",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000011",
+      "name": "Knowsley",
+      "slug": "knowsley",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000006",
+        "E07000127",
+        "E08000012",
+        "E08000013",
+        "E08000014"
+      ],
+      "county": "Merseyside",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000022",
+      "name": "Lambeth",
+      "slug": "lambeth",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E09000008",
+        "E09000024",
+        "E09000028",
+        "E09000032"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000121",
+      "name": "Lancaster",
+      "slug": "lancaster",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000064",
+        "E06000065",
+        "E07000124",
+        "E07000128"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E08000035",
+      "name": "Leeds",
+      "slug": "leeds",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000065",
+        "E08000032",
+        "E08000034",
+        "E08000036"
+      ],
+      "county": "West Yorkshire",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000016",
+      "name": "Leicester",
+      "slug": "leicester",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000129",
+        "E07000130",
+        "E07000131",
+        "E07000135"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000063",
+      "name": "Lewes",
+      "slug": "lewes",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000043",
+        "E07000065",
+        "E07000228"
+      ],
+      "county": "East Sussex",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000061",
+        "E07000062",
+        "E07000064",
+        "E07000065"
+      ]
+    },
+    {
+      "gss": "E09000023",
+      "name": "Lewisham",
+      "slug": "lewisham",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E09000006",
+        "E09000011",
+        "E09000028"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000194",
+      "name": "Lichfield",
+      "slug": "lichfield",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E07000039",
+        "E07000134",
+        "E07000192",
+        "E07000193",
+        "E07000197",
+        "E07000199",
+        "E07000218",
+        "E08000025",
+        "E08000030"
+      ],
+      "county": "Staffordshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000192",
+        "E07000193",
+        "E07000195",
+        "E07000196",
+        "E07000197",
+        "E07000198",
+        "E07000199"
+      ]
+    },
+    {
+      "gss": "E07000138",
+      "name": "Lincoln",
+      "slug": "lincoln",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000139",
+        "E07000142"
+      ],
+      "county": "Lincolnshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000136",
+        "E07000137",
+        "E07000139",
+        "E07000140",
+        "E07000141",
+        "E07000142"
+      ]
+    },
+    {
+      "gss": "E08000012",
+      "name": "Liverpool",
+      "slug": "liverpool",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000006",
+        "E08000011",
+        "E08000014"
+      ],
+      "county": "Merseyside",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000032",
+      "name": "Luton",
+      "slug": "luton",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E06000056",
+        "E07000099"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000110",
+      "name": "Maidstone",
+      "slug": "maidstone",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000035",
+        "E07000105",
+        "E07000113",
+        "E07000115",
+        "E07000116"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E07000074",
+      "name": "Maldon",
+      "slug": "maldon",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000067",
+        "E07000070",
+        "E07000071"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000075",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E07000235",
+      "name": "Malvern Hills",
+      "slug": "malvern-hills",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000019",
+        "E06000051",
+        "E07000080",
+        "E07000083",
+        "E07000237",
+        "E07000238",
+        "E07000239"
+      ],
+      "county": "Worcestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000234",
+        "E07000236",
+        "E07000237",
+        "E07000238",
+        "E07000239"
+      ]
+    },
+    {
+      "gss": "E08000003",
+      "name": "Manchester",
+      "slug": "manchester",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000049",
+        "E08000002",
+        "E08000004",
+        "E08000005",
+        "E08000006",
+        "E08000007",
+        "E08000008",
+        "E08000009"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000174",
+      "name": "Mansfield",
+      "slug": "mansfield",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000033",
+        "E07000170",
+        "E07000171",
+        "E07000175"
+      ],
+      "county": "Nottinghamshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000170",
+        "E07000171",
+        "E07000172",
+        "E07000173",
+        "E07000175",
+        "E07000176"
+      ]
+    },
+    {
+      "gss": "E06000035",
+      "name": "Medway",
+      "slug": "medway",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000109",
+        "E07000110",
+        "E07000113",
+        "E07000115"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000133",
+      "name": "Melton",
+      "slug": "melton",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000017",
+        "E07000130",
+        "E07000131",
+        "E07000141",
+        "E07000175",
+        "E07000176"
+      ],
+      "county": "Leicestershire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000129",
+        "E07000130",
+        "E07000131",
+        "E07000132",
+        "E07000134",
+        "E07000135"
+      ]
+    },
+    {
+      "gss": "E09000024",
+      "name": "Merton",
+      "slug": "merton",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E09000008",
+        "E09000021",
+        "E09000022",
+        "E09000029",
+        "E09000032"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000042",
+      "name": "Mid Devon",
+      "slug": "mid-devon",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000066",
+        "E07000040",
+        "E07000043",
+        "E07000045",
+        "E07000046",
+        "E07000047"
+      ],
+      "county": "Devon",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000040",
+        "E07000041",
+        "E07000043",
+        "E07000044",
+        "E07000045",
+        "E07000046",
+        "E07000047"
+      ]
+    },
+    {
+      "gss": "E07000203",
+      "name": "Mid Suffolk",
+      "slug": "mid-suffolk",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000143",
+        "E07000149",
+        "E07000200",
+        "E07000202",
+        "E07000244",
+        "E07000245"
+      ],
+      "county": "Suffolk",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000200",
+        "E07000202",
+        "E07000244",
+        "E07000245"
+      ]
+    },
+    {
+      "gss": "E07000228",
+      "name": "Mid Sussex",
+      "slug": "mid-sussex",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000043",
+        "E07000063",
+        "E07000065",
+        "E07000215",
+        "E07000226",
+        "E07000227"
+      ],
+      "county": "West Sussex",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000223",
+        "E07000224",
+        "E07000225",
+        "E07000226",
+        "E07000227",
+        "E07000229"
+      ]
+    },
+    {
+      "gss": "E06000002",
+      "name": "Middlesbrough",
+      "slug": "middlesbrough",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000003",
+        "E06000004",
+        "E06000065"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000042",
+      "name": "Milton Keynes",
+      "slug": "milton-keynes",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000055",
+        "E06000056",
+        "E06000060",
+        "E06000061",
+        "E06000062"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000210",
+      "name": "Mole Valley",
+      "slug": "mole-valley",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000211",
+        "E07000216",
+        "E07000226",
+        "E07000227",
+        "E09000021"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000211",
+        "E07000212",
+        "E07000213",
+        "E07000214",
+        "E07000215",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E07000091",
+      "name": "New Forest",
+      "slug": "new-forest",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000045",
+        "E06000054",
+        "E06000058",
+        "E06000059",
+        "E07000093"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000088",
+        "E07000089",
+        "E07000090",
+        "E07000092",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E07000175",
+      "name": "Newark and Sherwood",
+      "slug": "newark-and-sherwood",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E07000133",
+        "E07000139",
+        "E07000141",
+        "E07000142",
+        "E07000170",
+        "E07000171",
+        "E07000173",
+        "E07000174",
+        "E07000176"
+      ],
+      "county": "Nottinghamshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000170",
+        "E07000171",
+        "E07000172",
+        "E07000173",
+        "E07000174",
+        "E07000176"
+      ]
+    },
+    {
+      "gss": "E08000021",
+      "name": "Newcastle upon Tyne",
+      "slug": "newcastle-upon-tyne",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000057",
+        "E08000022",
+        "E08000037"
+      ],
+      "county": "Tyne and Wear",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000195",
+      "name": "Newcastle-under-Lyme",
+      "slug": "newcastle-under-lyme",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000021",
+        "E06000049",
+        "E06000051",
+        "E07000197",
+        "E07000198"
+      ],
+      "county": "Staffordshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000192",
+        "E07000193",
+        "E07000194",
+        "E07000196",
+        "E07000197",
+        "E07000198",
+        "E07000199"
+      ]
+    },
+    {
+      "gss": "E09000025",
+      "name": "Newham",
+      "slug": "newham",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E09000002",
+        "E09000012",
+        "E09000026",
+        "E09000030",
+        "E09000031"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000043",
+      "name": "North Devon",
+      "slug": "north-devon",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000066",
+        "E07000042",
+        "E07000046"
+      ],
+      "county": "Devon",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000040",
+        "E07000041",
+        "E07000042",
+        "E07000044",
+        "E07000045",
+        "E07000046",
+        "E07000047"
+      ]
+    },
+    {
+      "gss": "E07000038",
+      "name": "North East Derbyshire",
+      "slug": "north-east-derbyshire",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000032",
+        "E07000033",
+        "E07000034",
+        "E07000035",
+        "E08000018",
+        "E08000039"
+      ],
+      "county": "Derbyshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000032",
+        "E07000033",
+        "E07000034",
+        "E07000035",
+        "E07000036",
+        "E07000037",
+        "E07000039"
+      ]
+    },
+    {
+      "gss": "E06000012",
+      "name": "North East Lincolnshire",
+      "slug": "north-east-lincolnshire",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000013",
+        "E07000137",
+        "E07000142"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000099",
+      "name": "North Hertfordshire",
+      "slug": "north-hertfordshire",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000032",
+        "E06000056",
+        "E07000012",
+        "E07000077",
+        "E07000240",
+        "E07000241",
+        "E07000242",
+        "E07000243"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000096",
+        "E07000098",
+        "E07000102",
+        "E07000103",
+        "E07000240",
+        "E07000241",
+        "E07000242",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E07000139",
+      "name": "North Kesteven",
+      "slug": "north-kesteven",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000136",
+        "E07000137",
+        "E07000138",
+        "E07000140",
+        "E07000141",
+        "E07000142",
+        "E07000175"
+      ],
+      "county": "Lincolnshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000136",
+        "E07000137",
+        "E07000138",
+        "E07000140",
+        "E07000141",
+        "E07000142"
+      ]
+    },
+    {
+      "gss": "E06000013",
+      "name": "North Lincolnshire",
+      "slug": "north-lincolnshire",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000011",
+        "E06000012",
+        "E07000142",
+        "E07000171",
+        "E08000017"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000147",
+      "name": "North Norfolk",
+      "slug": "north-norfolk",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000143",
+        "E07000144",
+        "E07000145",
+        "E07000146"
+      ],
+      "county": "Norfolk",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000143",
+        "E07000144",
+        "E07000145",
+        "E07000146",
+        "E07000148",
+        "E07000149"
+      ]
+    },
+    {
+      "gss": "E06000061",
+      "name": "North Northamptonshire",
+      "slug": "north-northamptonshire",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000017",
+        "E06000031",
+        "E06000042",
+        "E06000055",
+        "E06000062",
+        "E07000011",
+        "E07000131",
+        "E07000141"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000024",
+      "name": "North Somerset",
+      "slug": "north-somerset",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000022",
+        "E06000023",
+        "E06000066"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000022",
+      "name": "North Tyneside",
+      "slug": "north-tyneside",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E06000057",
+        "E08000021"
+      ],
+      "county": "Tyne and Wear",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000218",
+      "name": "North Warwickshire",
+      "slug": "north-warwickshire",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E07000132",
+        "E07000134",
+        "E07000194",
+        "E07000199",
+        "E07000219",
+        "E08000025",
+        "E08000026",
+        "E08000029"
+      ],
+      "county": "Warwickshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000219",
+        "E07000220",
+        "E07000221",
+        "E07000222"
+      ]
+    },
+    {
+      "gss": "E07000134",
+      "name": "North West Leicestershire",
+      "slug": "north-west-leicestershire",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000036",
+        "E07000039",
+        "E07000130",
+        "E07000132",
+        "E07000176",
+        "E07000194",
+        "E07000218"
+      ],
+      "county": "Leicestershire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000129",
+        "E07000130",
+        "E07000131",
+        "E07000132",
+        "E07000133",
+        "E07000135"
+      ]
+    },
+    {
+      "gss": "E06000065",
+      "name": "North Yorkshire",
+      "slug": "north-yorkshire",
+      "boundaryCount": 15,
+      "boundaryGss": [
+        "E06000002",
+        "E06000003",
+        "E06000004",
+        "E06000005",
+        "E06000011",
+        "E06000014",
+        "E06000047",
+        "E06000064",
+        "E07000121",
+        "E07000122",
+        "E07000124",
+        "E08000017",
+        "E08000032",
+        "E08000035",
+        "E08000036"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000057",
+      "name": "Northumberland",
+      "slug": "northumberland",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000047",
+        "E06000063",
+        "E06000064",
+        "E08000021",
+        "E08000022",
+        "E08000037"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000148",
+      "name": "Norwich",
+      "slug": "norwich",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000144",
+        "E07000149"
+      ],
+      "county": "Norfolk",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000143",
+        "E07000144",
+        "E07000145",
+        "E07000146",
+        "E07000147",
+        "E07000149"
+      ]
+    },
+    {
+      "gss": "E06000018",
+      "name": "Nottingham",
+      "slug": "nottingham",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000170",
+        "E07000172",
+        "E07000173",
+        "E07000176"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000219",
+      "name": "Nuneaton and Bedworth",
+      "slug": "nuneaton-and-bedworth",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000132",
+        "E07000218",
+        "E07000220",
+        "E08000026"
+      ],
+      "county": "Warwickshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000218",
+        "E07000220",
+        "E07000221",
+        "E07000222"
+      ]
+    },
+    {
+      "gss": "E07000135",
+      "name": "Oadby and Wigston",
+      "slug": "oadby-and-wigston",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000016",
+        "E07000129",
+        "E07000131"
+      ],
+      "county": "Leicestershire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000129",
+        "E07000130",
+        "E07000131",
+        "E07000132",
+        "E07000133",
+        "E07000134"
+      ]
+    },
+    {
+      "gss": "E08000004",
+      "name": "Oldham",
+      "slug": "oldham",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000037",
+        "E08000003",
+        "E08000005",
+        "E08000008",
+        "E08000033",
+        "E08000034"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000178",
+      "name": "Oxford",
+      "slug": "oxford",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000177",
+        "E07000179",
+        "E07000180"
+      ],
+      "county": "Oxfordshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000177",
+        "E07000179",
+        "E07000180",
+        "E07000181"
+      ]
+    },
+    {
+      "gss": "E07000122",
+      "name": "Pendle",
+      "slug": "pendle",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000065",
+        "E07000117",
+        "E07000124",
+        "E08000032",
+        "E08000033"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E06000031",
+      "name": "Peterborough",
+      "slug": "peterborough",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000061",
+        "E07000010",
+        "E07000011",
+        "E07000140",
+        "E07000141"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000026",
+      "name": "Plymouth",
+      "slug": "plymouth",
+      "boundaryCount": 1,
+      "boundaryGss": [
+        "E07000044"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000044",
+      "name": "Portsmouth",
+      "slug": "portsmouth",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000087",
+        "E07000090",
+        "E07000094"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000123",
+      "name": "Preston",
+      "slug": "preston",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000119",
+        "E07000124",
+        "E07000126",
+        "E07000128"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E06000038",
+      "name": "Reading",
+      "slug": "reading",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000037",
+        "E06000041",
+        "E07000179"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000026",
+      "name": "Redbridge",
+      "slug": "redbridge",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000072",
+        "E09000002",
+        "E09000016",
+        "E09000025",
+        "E09000031"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000003",
+      "name": "Redcar and Cleveland",
+      "slug": "redcar-and-cleveland",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E06000002",
+        "E06000065"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000236",
+      "name": "Redditch",
+      "slug": "redditch",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000221",
+        "E07000234",
+        "E07000238"
+      ],
+      "county": "Worcestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000234",
+        "E07000235",
+        "E07000237",
+        "E07000238",
+        "E07000239"
+      ]
+    },
+    {
+      "gss": "E07000211",
+      "name": "Reigate and Banstead",
+      "slug": "reigate-and-banstead",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000208",
+        "E07000210",
+        "E07000215",
+        "E07000226",
+        "E09000008",
+        "E09000029"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000210",
+        "E07000212",
+        "E07000213",
+        "E07000214",
+        "E07000215",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E07000124",
+      "name": "Ribble Valley",
+      "slug": "ribble-valley",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E06000008",
+        "E06000065",
+        "E07000117",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000126",
+        "E07000128"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000125",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E09000027",
+      "name": "Richmond upon Thames",
+      "slug": "richmond-upon-thames",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000207",
+        "E07000213",
+        "E09000013",
+        "E09000018",
+        "E09000021",
+        "E09000032"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000005",
+      "name": "Rochdale",
+      "slug": "rochdale",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000125",
+        "E08000002",
+        "E08000003",
+        "E08000004",
+        "E08000033"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000075",
+      "name": "Rochford",
+      "slug": "rochford",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000033",
+        "E07000066",
+        "E07000069",
+        "E07000070"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000076",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E07000125",
+      "name": "Rossendale",
+      "slug": "rossendale",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000008",
+        "E07000117",
+        "E07000120",
+        "E08000002",
+        "E08000005",
+        "E08000033"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000126",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E07000064",
+      "name": "Rother",
+      "slug": "rother",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000062",
+        "E07000065",
+        "E07000105",
+        "E07000112",
+        "E07000116"
+      ],
+      "county": "East Sussex",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000061",
+        "E07000062",
+        "E07000063",
+        "E07000065"
+      ]
+    },
+    {
+      "gss": "E08000018",
+      "name": "Rotherham",
+      "slug": "rotherham",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000033",
+        "E07000038",
+        "E07000171",
+        "E08000017",
+        "E08000038",
+        "E08000039"
+      ],
+      "county": "South Yorkshire",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000220",
+      "name": "Rugby",
+      "slug": "rugby",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000062",
+        "E07000129",
+        "E07000131",
+        "E07000132",
+        "E07000219",
+        "E07000221",
+        "E07000222",
+        "E08000026"
+      ],
+      "county": "Warwickshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000218",
+        "E07000219",
+        "E07000221",
+        "E07000222"
+      ]
+    },
+    {
+      "gss": "E07000212",
+      "name": "Runnymede",
+      "slug": "runnymede",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000040",
+        "E07000207",
+        "E07000213",
+        "E07000214",
+        "E07000217"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000210",
+        "E07000211",
+        "E07000213",
+        "E07000214",
+        "E07000215",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E07000176",
+      "name": "Rushcliffe",
+      "slug": "rushcliffe",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000018",
+        "E07000036",
+        "E07000130",
+        "E07000133",
+        "E07000134",
+        "E07000172",
+        "E07000173",
+        "E07000175"
+      ],
+      "county": "Nottinghamshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000170",
+        "E07000171",
+        "E07000172",
+        "E07000173",
+        "E07000174",
+        "E07000175"
+      ]
+    },
+    {
+      "gss": "E07000092",
+      "name": "Rushmoor",
+      "slug": "rushmoor",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000089",
+        "E07000209",
+        "E07000214",
+        "E07000216"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000088",
+        "E07000089",
+        "E07000090",
+        "E07000091",
+        "E07000093",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E06000017",
+      "name": "Rutland",
+      "slug": "rutland",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000061",
+        "E07000131",
+        "E07000133",
+        "E07000141"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000006",
+      "name": "Salford",
+      "slug": "salford",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000007",
+        "E08000001",
+        "E08000002",
+        "E08000003",
+        "E08000009",
+        "E08000010"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000028",
+      "name": "Sandwell",
+      "slug": "sandwell",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E08000025",
+        "E08000027",
+        "E08000030",
+        "E08000031"
+      ],
+      "county": "West Midlands",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000014",
+      "name": "Sefton",
+      "slug": "sefton",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000127",
+        "E08000011",
+        "E08000012"
+      ],
+      "county": "Merseyside",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000111",
+      "name": "Sevenoaks",
+      "slug": "sevenoaks",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E07000065",
+        "E07000107",
+        "E07000109",
+        "E07000115",
+        "E07000116",
+        "E07000215",
+        "E09000004",
+        "E09000006"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E08000039",
+      "name": "Sheffield",
+      "slug": "sheffield",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000035",
+        "E07000037",
+        "E07000038",
+        "E08000018",
+        "E08000038"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000051",
+      "name": "Shropshire",
+      "slug": "shropshire",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E06000019",
+        "E06000020",
+        "E06000049",
+        "E06000050",
+        "E07000195",
+        "E07000196",
+        "E07000197",
+        "E07000235",
+        "E07000239"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000039",
+      "name": "Slough",
+      "slug": "slough",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000040",
+        "E06000060",
+        "E07000213",
+        "E09000017"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000029",
+      "name": "Solihull",
+      "slug": "solihull",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000218",
+        "E07000221",
+        "E07000222",
+        "E07000234",
+        "E08000025",
+        "E08000026"
+      ],
+      "county": "West Midlands",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000066",
+      "name": "Somerset",
+      "slug": "somerset",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000022",
+        "E06000024",
+        "E06000054",
+        "E06000059",
+        "E07000040",
+        "E07000042",
+        "E07000043"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000012",
+      "name": "South Cambridgeshire",
+      "slug": "south-cambridgeshire",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000056",
+        "E07000008",
+        "E07000009",
+        "E07000011",
+        "E07000067",
+        "E07000077",
+        "E07000099",
+        "E07000245"
+      ],
+      "county": "Cambridgeshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000008",
+        "E07000009",
+        "E07000010",
+        "E07000011"
+      ]
+    },
+    {
+      "gss": "E07000039",
+      "name": "South Derbyshire",
+      "slug": "south-derbyshire",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000015",
+        "E07000032",
+        "E07000035",
+        "E07000036",
+        "E07000134",
+        "E07000193",
+        "E07000194"
+      ],
+      "county": "Derbyshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000032",
+        "E07000033",
+        "E07000034",
+        "E07000035",
+        "E07000036",
+        "E07000037",
+        "E07000038"
+      ]
+    },
+    {
+      "gss": "E06000025",
+      "name": "South Gloucestershire",
+      "slug": "south-gloucestershire",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000022",
+        "E06000023",
+        "E06000054",
+        "E07000079",
+        "E07000082"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000044",
+      "name": "South Hams",
+      "slug": "south-hams",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000026",
+        "E06000027",
+        "E07000045",
+        "E07000047"
+      ],
+      "county": "Devon",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000040",
+        "E07000041",
+        "E07000042",
+        "E07000043",
+        "E07000045",
+        "E07000046",
+        "E07000047"
+      ]
+    },
+    {
+      "gss": "E07000140",
+      "name": "South Holland",
+      "slug": "south-holland",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000031",
+        "E07000010",
+        "E07000136",
+        "E07000139",
+        "E07000141",
+        "E07000146"
+      ],
+      "county": "Lincolnshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000136",
+        "E07000137",
+        "E07000138",
+        "E07000139",
+        "E07000141",
+        "E07000142"
+      ]
+    },
+    {
+      "gss": "E07000141",
+      "name": "South Kesteven",
+      "slug": "south-kesteven",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000017",
+        "E06000031",
+        "E06000061",
+        "E07000133",
+        "E07000139",
+        "E07000140",
+        "E07000175"
+      ],
+      "county": "Lincolnshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000136",
+        "E07000137",
+        "E07000138",
+        "E07000139",
+        "E07000140",
+        "E07000142"
+      ]
+    },
+    {
+      "gss": "E07000149",
+      "name": "South Norfolk",
+      "slug": "south-norfolk",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000143",
+        "E07000144",
+        "E07000145",
+        "E07000148",
+        "E07000203",
+        "E07000244"
+      ],
+      "county": "Norfolk",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000143",
+        "E07000144",
+        "E07000145",
+        "E07000146",
+        "E07000147",
+        "E07000148"
+      ]
+    },
+    {
+      "gss": "E07000179",
+      "name": "South Oxfordshire",
+      "slug": "south-oxfordshire",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000037",
+        "E06000038",
+        "E06000041",
+        "E06000060",
+        "E07000177",
+        "E07000178",
+        "E07000180"
+      ],
+      "county": "Oxfordshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000177",
+        "E07000178",
+        "E07000180",
+        "E07000181"
+      ]
+    },
+    {
+      "gss": "E07000126",
+      "name": "South Ribble",
+      "slug": "south-ribble",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000008",
+        "E07000118",
+        "E07000123",
+        "E07000124",
+        "E07000127"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000127",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E07000196",
+      "name": "South Staffordshire",
+      "slug": "south-staffordshire",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E06000020",
+        "E06000051",
+        "E07000192",
+        "E07000197",
+        "E07000234",
+        "E07000239",
+        "E08000027",
+        "E08000030",
+        "E08000031"
+      ],
+      "county": "Staffordshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000192",
+        "E07000193",
+        "E07000194",
+        "E07000195",
+        "E07000197",
+        "E07000198",
+        "E07000199"
+      ]
+    },
+    {
+      "gss": "E08000023",
+      "name": "South Tyneside",
+      "slug": "south-tyneside",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E08000024",
+        "E08000037"
+      ],
+      "county": "Tyne and Wear",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000045",
+      "name": "Southampton",
+      "slug": "southampton",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000086",
+        "E07000091",
+        "E07000093"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000033",
+      "name": "Southend-on-Sea",
+      "slug": "southend-on-sea",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000069",
+        "E07000075"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000028",
+      "name": "Southwark",
+      "slug": "southwark",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E09000006",
+        "E09000022",
+        "E09000023"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000213",
+      "name": "Spelthorne",
+      "slug": "spelthorne",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000039",
+        "E06000040",
+        "E07000207",
+        "E07000212",
+        "E09000017",
+        "E09000018",
+        "E09000027"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000210",
+        "E07000211",
+        "E07000212",
+        "E07000214",
+        "E07000215",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E07000240",
+      "name": "St Albans",
+      "slug": "st-albans",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000056",
+        "E07000096",
+        "E07000098",
+        "E07000099",
+        "E07000102",
+        "E07000103",
+        "E07000241"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000096",
+        "E07000098",
+        "E07000099",
+        "E07000102",
+        "E07000103",
+        "E07000241",
+        "E07000242",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E08000013",
+      "name": "St Helens",
+      "slug": "st-helens",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000006",
+        "E06000007",
+        "E07000127",
+        "E08000010",
+        "E08000011"
+      ],
+      "county": "Merseyside",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000197",
+      "name": "Stafford",
+      "slug": "stafford",
+      "boundaryCount": 9,
+      "boundaryGss": [
+        "E06000020",
+        "E06000021",
+        "E06000051",
+        "E07000192",
+        "E07000193",
+        "E07000194",
+        "E07000195",
+        "E07000196",
+        "E07000198"
+      ],
+      "county": "Staffordshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000192",
+        "E07000193",
+        "E07000194",
+        "E07000195",
+        "E07000196",
+        "E07000198",
+        "E07000199"
+      ]
+    },
+    {
+      "gss": "E07000198",
+      "name": "Staffordshire Moorlands",
+      "slug": "staffordshire-moorlands",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000021",
+        "E06000049",
+        "E07000035",
+        "E07000037",
+        "E07000193",
+        "E07000195",
+        "E07000197"
+      ],
+      "county": "Staffordshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000192",
+        "E07000193",
+        "E07000194",
+        "E07000195",
+        "E07000196",
+        "E07000197",
+        "E07000199"
+      ]
+    },
+    {
+      "gss": "E07000243",
+      "name": "Stevenage",
+      "slug": "stevenage",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000099",
+        "E07000242"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000096",
+        "E07000098",
+        "E07000099",
+        "E07000102",
+        "E07000103",
+        "E07000240",
+        "E07000241",
+        "E07000242"
+      ]
+    },
+    {
+      "gss": "E08000007",
+      "name": "Stockport",
+      "slug": "stockport",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000049",
+        "E07000037",
+        "E08000003",
+        "E08000008"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000004",
+      "name": "Stockton-on-Tees",
+      "slug": "stockton-on-tees",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000001",
+        "E06000002",
+        "E06000005",
+        "E06000047",
+        "E06000065"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000021",
+      "name": "Stoke-on-Trent",
+      "slug": "stoke-on-trent",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000195",
+        "E07000197",
+        "E07000198"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000221",
+      "name": "Stratford-on-Avon",
+      "slug": "stratford-on-avon",
+      "boundaryCount": 10,
+      "boundaryGss": [
+        "E06000062",
+        "E07000079",
+        "E07000177",
+        "E07000181",
+        "E07000220",
+        "E07000222",
+        "E07000234",
+        "E07000236",
+        "E07000238",
+        "E08000029"
+      ],
+      "county": "Warwickshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000218",
+        "E07000219",
+        "E07000220",
+        "E07000222"
+      ]
+    },
+    {
+      "gss": "E07000082",
+      "name": "Stroud",
+      "slug": "stroud",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000025",
+        "E07000079",
+        "E07000080",
+        "E07000081",
+        "E07000083"
+      ],
+      "county": "Gloucestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000078",
+        "E07000079",
+        "E07000080",
+        "E07000081",
+        "E07000083"
+      ]
+    },
+    {
+      "gss": "E08000024",
+      "name": "Sunderland",
+      "slug": "sunderland",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000047",
+        "E08000023",
+        "E08000037"
+      ],
+      "county": "Tyne and Wear",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000214",
+      "name": "Surrey Heath",
+      "slug": "surrey-heath",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000036",
+        "E06000040",
+        "E07000089",
+        "E07000092",
+        "E07000209",
+        "E07000212",
+        "E07000217"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000210",
+        "E07000211",
+        "E07000212",
+        "E07000213",
+        "E07000215",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E09000029",
+      "name": "Sutton",
+      "slug": "sutton",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E07000208",
+        "E07000211",
+        "E09000008",
+        "E09000021",
+        "E09000024"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000113",
+      "name": "Swale",
+      "slug": "swale",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000035",
+        "E07000105",
+        "E07000106",
+        "E07000110"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000114",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E06000030",
+      "name": "Swindon",
+      "slug": "swindon",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000054",
+        "E07000079",
+        "E07000180"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000008",
+      "name": "Tameside",
+      "slug": "tameside",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000037",
+        "E08000003",
+        "E08000004",
+        "E08000007"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000199",
+      "name": "Tamworth",
+      "slug": "tamworth",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000194",
+        "E07000218"
+      ],
+      "county": "Staffordshire",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000192",
+        "E07000193",
+        "E07000194",
+        "E07000195",
+        "E07000196",
+        "E07000197",
+        "E07000198"
+      ]
+    },
+    {
+      "gss": "E07000215",
+      "name": "Tandridge",
+      "slug": "tandridge",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000065",
+        "E07000111",
+        "E07000211",
+        "E07000226",
+        "E07000228",
+        "E09000006",
+        "E09000008"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000210",
+        "E07000211",
+        "E07000212",
+        "E07000213",
+        "E07000214",
+        "E07000216",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E07000045",
+      "name": "Teignbridge",
+      "slug": "teignbridge",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000027",
+        "E07000040",
+        "E07000041",
+        "E07000042",
+        "E07000044",
+        "E07000047"
+      ],
+      "county": "Devon",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000040",
+        "E07000041",
+        "E07000042",
+        "E07000043",
+        "E07000044",
+        "E07000046",
+        "E07000047"
+      ]
+    },
+    {
+      "gss": "E06000020",
+      "name": "Telford and Wrekin",
+      "slug": "telford-and-wrekin",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E06000051",
+        "E07000196",
+        "E07000197"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000076",
+      "name": "Tendring",
+      "slug": "tendring",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000071",
+        "E07000200"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000077"
+      ]
+    },
+    {
+      "gss": "E07000093",
+      "name": "Test Valley",
+      "slug": "test-valley",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000037",
+        "E06000045",
+        "E06000054",
+        "E07000084",
+        "E07000086",
+        "E07000091",
+        "E07000094"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000088",
+        "E07000089",
+        "E07000090",
+        "E07000091",
+        "E07000092",
+        "E07000094"
+      ]
+    },
+    {
+      "gss": "E07000083",
+      "name": "Tewkesbury",
+      "slug": "tewkesbury",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000078",
+        "E07000079",
+        "E07000080",
+        "E07000081",
+        "E07000082",
+        "E07000235",
+        "E07000238"
+      ],
+      "county": "Gloucestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000078",
+        "E07000079",
+        "E07000080",
+        "E07000081",
+        "E07000082"
+      ]
+    },
+    {
+      "gss": "E07000114",
+      "name": "Thanet",
+      "slug": "thanet",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000106",
+        "E07000108"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000115",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E07000102",
+      "name": "Three Rivers",
+      "slug": "three-rivers",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000060",
+        "E07000096",
+        "E07000098",
+        "E07000103",
+        "E07000240",
+        "E09000015",
+        "E09000017"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000096",
+        "E07000098",
+        "E07000099",
+        "E07000103",
+        "E07000240",
+        "E07000241",
+        "E07000242",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E06000034",
+      "name": "Thurrock",
+      "slug": "thurrock",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000066",
+        "E07000068",
+        "E07000069",
+        "E09000016"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000115",
+      "name": "Tonbridge and Malling",
+      "slug": "tonbridge-and-malling",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000035",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000116"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000116"
+      ]
+    },
+    {
+      "gss": "E06000027",
+      "name": "Torbay",
+      "slug": "torbay",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000044",
+        "E07000045"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000046",
+      "name": "Torridge",
+      "slug": "torridge",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000052",
+        "E07000042",
+        "E07000043",
+        "E07000047"
+      ],
+      "county": "Devon",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000040",
+        "E07000041",
+        "E07000042",
+        "E07000043",
+        "E07000044",
+        "E07000045",
+        "E07000047"
+      ]
+    },
+    {
+      "gss": "E09000030",
+      "name": "Tower Hamlets",
+      "slug": "tower-hamlets",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E09000001",
+        "E09000012",
+        "E09000025"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000009",
+      "name": "Trafford",
+      "slug": "trafford",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E06000007",
+        "E06000049",
+        "E08000003",
+        "E08000006"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000116",
+      "name": "Tunbridge Wells",
+      "slug": "tunbridge-wells",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000064",
+        "E07000065",
+        "E07000105",
+        "E07000110",
+        "E07000111",
+        "E07000115"
+      ],
+      "county": "Kent",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000105",
+        "E07000106",
+        "E07000107",
+        "E07000108",
+        "E07000109",
+        "E07000110",
+        "E07000111",
+        "E07000112",
+        "E07000113",
+        "E07000114",
+        "E07000115"
+      ]
+    },
+    {
+      "gss": "E07000077",
+      "name": "Uttlesford",
+      "slug": "uttlesford",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000012",
+        "E07000067",
+        "E07000070",
+        "E07000072",
+        "E07000099",
+        "E07000242"
+      ],
+      "county": "Essex",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000066",
+        "E07000067",
+        "E07000068",
+        "E07000069",
+        "E07000070",
+        "E07000071",
+        "E07000072",
+        "E07000073",
+        "E07000074",
+        "E07000075",
+        "E07000076"
+      ]
+    },
+    {
+      "gss": "E07000180",
+      "name": "Vale of White Horse",
+      "slug": "vale-of-white-horse",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000030",
+        "E06000037",
+        "E06000054",
+        "E07000079",
+        "E07000177",
+        "E07000178",
+        "E07000179",
+        "E07000181"
+      ],
+      "county": "Oxfordshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000177",
+        "E07000178",
+        "E07000179",
+        "E07000181"
+      ]
+    },
+    {
+      "gss": "E08000036",
+      "name": "Wakefield",
+      "slug": "wakefield",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000065",
+        "E08000017",
+        "E08000034",
+        "E08000035",
+        "E08000038"
+      ],
+      "county": "West Yorkshire",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000030",
+      "name": "Walsall",
+      "slug": "walsall",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000192",
+        "E07000194",
+        "E07000196",
+        "E08000025",
+        "E08000028",
+        "E08000031"
+      ],
+      "county": "West Midlands",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000031",
+      "name": "Waltham Forest",
+      "slug": "waltham-forest",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000072",
+        "E09000010",
+        "E09000012",
+        "E09000014",
+        "E09000025",
+        "E09000026"
+      ],
+      "county": "Outer London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E09000032",
+      "name": "Wandsworth",
+      "slug": "wandsworth",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E09000013",
+        "E09000020",
+        "E09000021",
+        "E09000022",
+        "E09000024",
+        "E09000027"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000007",
+      "name": "Warrington",
+      "slug": "warrington",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000006",
+        "E06000049",
+        "E06000050",
+        "E08000006",
+        "E08000009",
+        "E08000010",
+        "E08000013"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000222",
+      "name": "Warwick",
+      "slug": "warwick",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000220",
+        "E07000221",
+        "E08000026",
+        "E08000029"
+      ],
+      "county": "Warwickshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000218",
+        "E07000219",
+        "E07000220",
+        "E07000221"
+      ]
+    },
+    {
+      "gss": "E07000103",
+      "name": "Watford",
+      "slug": "watford",
+      "boundaryCount": 3,
+      "boundaryGss": [
+        "E07000098",
+        "E07000102",
+        "E07000240"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000096",
+        "E07000098",
+        "E07000099",
+        "E07000102",
+        "E07000240",
+        "E07000241",
+        "E07000242",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E07000216",
+      "name": "Waverley",
+      "slug": "waverley",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000085",
+        "E07000089",
+        "E07000092",
+        "E07000209",
+        "E07000210",
+        "E07000225",
+        "E07000227"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000210",
+        "E07000211",
+        "E07000212",
+        "E07000213",
+        "E07000214",
+        "E07000215",
+        "E07000217"
+      ]
+    },
+    {
+      "gss": "E07000065",
+      "name": "Wealden",
+      "slug": "wealden",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000061",
+        "E07000063",
+        "E07000064",
+        "E07000111",
+        "E07000116",
+        "E07000215",
+        "E07000228"
+      ],
+      "county": "East Sussex",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000061",
+        "E07000062",
+        "E07000063",
+        "E07000064"
+      ]
+    },
+    {
+      "gss": "E07000241",
+      "name": "Welwyn Hatfield",
+      "slug": "welwyn-hatfield",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000095",
+        "E07000098",
+        "E07000099",
+        "E07000240",
+        "E07000242",
+        "E09000010"
+      ],
+      "county": "Hertfordshire",
+      "sameCountyCount": 9,
+      "sameCountyGss": [
+        "E07000095",
+        "E07000096",
+        "E07000098",
+        "E07000099",
+        "E07000102",
+        "E07000103",
+        "E07000240",
+        "E07000242",
+        "E07000243"
+      ]
+    },
+    {
+      "gss": "E06000037",
+      "name": "West Berkshire",
+      "slug": "west-berkshire",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000038",
+        "E06000041",
+        "E06000054",
+        "E07000084",
+        "E07000093",
+        "E07000179",
+        "E07000180"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000047",
+      "name": "West Devon",
+      "slug": "west-devon",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000052",
+        "E07000042",
+        "E07000044",
+        "E07000045",
+        "E07000046"
+      ],
+      "county": "Devon",
+      "sameCountyCount": 7,
+      "sameCountyGss": [
+        "E07000040",
+        "E07000041",
+        "E07000042",
+        "E07000043",
+        "E07000044",
+        "E07000045",
+        "E07000046"
+      ]
+    },
+    {
+      "gss": "E07000127",
+      "name": "West Lancashire",
+      "slug": "west-lancashire",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E07000118",
+        "E07000126",
+        "E08000010",
+        "E08000011",
+        "E08000013",
+        "E08000014"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000128"
+      ]
+    },
+    {
+      "gss": "E07000142",
+      "name": "West Lindsey",
+      "slug": "west-lindsey",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000012",
+        "E06000013",
+        "E07000137",
+        "E07000138",
+        "E07000139",
+        "E07000171",
+        "E07000175"
+      ],
+      "county": "Lincolnshire",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000136",
+        "E07000137",
+        "E07000138",
+        "E07000139",
+        "E07000140",
+        "E07000141"
+      ]
+    },
+    {
+      "gss": "E06000062",
+      "name": "West Northamptonshire",
+      "slug": "west-northamptonshire",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000042",
+        "E06000060",
+        "E06000061",
+        "E07000131",
+        "E07000177",
+        "E07000220",
+        "E07000221"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000181",
+      "name": "West Oxfordshire",
+      "slug": "west-oxfordshire",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000079",
+        "E07000177",
+        "E07000180",
+        "E07000221"
+      ],
+      "county": "Oxfordshire",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000177",
+        "E07000178",
+        "E07000179",
+        "E07000180"
+      ]
+    },
+    {
+      "gss": "E07000245",
+      "name": "West Suffolk",
+      "slug": "west-suffolk",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E07000009",
+        "E07000012",
+        "E07000067",
+        "E07000143",
+        "E07000146",
+        "E07000200",
+        "E07000203"
+      ],
+      "county": "Suffolk",
+      "sameCountyCount": 4,
+      "sameCountyGss": [
+        "E07000200",
+        "E07000202",
+        "E07000203",
+        "E07000244"
+      ]
+    },
+    {
+      "gss": "E09000033",
+      "name": "Westminster",
+      "slug": "westminster",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E09000001",
+        "E09000005",
+        "E09000007",
+        "E09000020"
+      ],
+      "county": "Inner London",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000064",
+      "name": "Westmorland and Furness",
+      "slug": "westmorland-and-furness",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000047",
+        "E06000057",
+        "E06000063",
+        "E06000065",
+        "E07000121"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000010",
+      "name": "Wigan",
+      "slug": "wigan",
+      "boundaryCount": 6,
+      "boundaryGss": [
+        "E06000007",
+        "E07000118",
+        "E07000127",
+        "E08000001",
+        "E08000006",
+        "E08000013"
+      ],
+      "county": "Greater Manchester",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E06000054",
+      "name": "Wiltshire",
+      "slug": "wiltshire",
+      "boundaryCount": 10,
+      "boundaryGss": [
+        "E06000022",
+        "E06000025",
+        "E06000030",
+        "E06000037",
+        "E06000059",
+        "E06000066",
+        "E07000079",
+        "E07000091",
+        "E07000093",
+        "E07000180"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000094",
+      "name": "Winchester",
+      "slug": "winchester",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000044",
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000090",
+        "E07000093"
+      ],
+      "county": "Hampshire",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000084",
+        "E07000085",
+        "E07000086",
+        "E07000087",
+        "E07000088",
+        "E07000089",
+        "E07000090",
+        "E07000091",
+        "E07000092",
+        "E07000093"
+      ]
+    },
+    {
+      "gss": "E06000040",
+      "name": "Windsor and Maidenhead",
+      "slug": "windsor-and-maidenhead",
+      "boundaryCount": 7,
+      "boundaryGss": [
+        "E06000036",
+        "E06000039",
+        "E06000041",
+        "E06000060",
+        "E07000212",
+        "E07000213",
+        "E07000214"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000015",
+      "name": "Wirral",
+      "slug": "wirral",
+      "boundaryCount": 1,
+      "boundaryGss": [
+        "E06000050"
+      ],
+      "county": "Merseyside",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000217",
+      "name": "Woking",
+      "slug": "woking",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000207",
+        "E07000209",
+        "E07000212",
+        "E07000214"
+      ],
+      "county": "Surrey",
+      "sameCountyCount": 10,
+      "sameCountyGss": [
+        "E07000207",
+        "E07000208",
+        "E07000209",
+        "E07000210",
+        "E07000211",
+        "E07000212",
+        "E07000213",
+        "E07000214",
+        "E07000215",
+        "E07000216"
+      ]
+    },
+    {
+      "gss": "E06000041",
+      "name": "Wokingham",
+      "slug": "wokingham",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E06000036",
+        "E06000037",
+        "E06000038",
+        "E06000040",
+        "E06000060",
+        "E07000084",
+        "E07000089",
+        "E07000179"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E08000031",
+      "name": "Wolverhampton",
+      "slug": "wolverhampton",
+      "boundaryCount": 4,
+      "boundaryGss": [
+        "E07000196",
+        "E08000027",
+        "E08000028",
+        "E08000030"
+      ],
+      "county": "West Midlands",
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    },
+    {
+      "gss": "E07000237",
+      "name": "Worcester",
+      "slug": "worcester",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000235",
+        "E07000238"
+      ],
+      "county": "Worcestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000234",
+        "E07000235",
+        "E07000236",
+        "E07000238",
+        "E07000239"
+      ]
+    },
+    {
+      "gss": "E07000229",
+      "name": "Worthing",
+      "slug": "worthing",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E07000223",
+        "E07000224"
+      ],
+      "county": "West Sussex",
+      "sameCountyCount": 6,
+      "sameCountyGss": [
+        "E07000223",
+        "E07000224",
+        "E07000225",
+        "E07000226",
+        "E07000227",
+        "E07000228"
+      ]
+    },
+    {
+      "gss": "E07000238",
+      "name": "Wychavon",
+      "slug": "wychavon",
+      "boundaryCount": 8,
+      "boundaryGss": [
+        "E07000079",
+        "E07000083",
+        "E07000221",
+        "E07000234",
+        "E07000235",
+        "E07000236",
+        "E07000237",
+        "E07000239"
+      ],
+      "county": "Worcestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000234",
+        "E07000235",
+        "E07000236",
+        "E07000237",
+        "E07000239"
+      ]
+    },
+    {
+      "gss": "E07000128",
+      "name": "Wyre",
+      "slug": "wyre",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000009",
+        "E07000119",
+        "E07000121",
+        "E07000123",
+        "E07000124"
+      ],
+      "county": "Lancashire",
+      "sameCountyCount": 11,
+      "sameCountyGss": [
+        "E07000117",
+        "E07000118",
+        "E07000119",
+        "E07000120",
+        "E07000121",
+        "E07000122",
+        "E07000123",
+        "E07000124",
+        "E07000125",
+        "E07000126",
+        "E07000127"
+      ]
+    },
+    {
+      "gss": "E07000239",
+      "name": "Wyre Forest",
+      "slug": "wyre-forest",
+      "boundaryCount": 5,
+      "boundaryGss": [
+        "E06000051",
+        "E07000196",
+        "E07000234",
+        "E07000235",
+        "E07000238"
+      ],
+      "county": "Worcestershire",
+      "sameCountyCount": 5,
+      "sameCountyGss": [
+        "E07000234",
+        "E07000235",
+        "E07000236",
+        "E07000237",
+        "E07000238"
+      ]
+    },
+    {
+      "gss": "E06000014",
+      "name": "York",
+      "slug": "york",
+      "boundaryCount": 2,
+      "boundaryGss": [
+        "E06000011",
+        "E06000065"
+      ],
+      "county": null,
+      "sameCountyCount": 0,
+      "sameCountyGss": []
+    }
+  ]
+}

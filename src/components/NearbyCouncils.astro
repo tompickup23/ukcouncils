@@ -1,0 +1,47 @@
+---
+import { boundarySource } from '../lib/boundaries';
+import { nearbyCouncils } from '../lib/council-neighbours';
+import type { Council } from '../lib/registry';
+
+interface Props { council: Council }
+const { council } = Astro.props;
+const nearby = nearbyCouncils(council);
+const groups = [
+  { id: 'boundary', heading: 'Neighbouring council areas', councils: nearby.neighbours },
+  ...(nearby.county ? [{ id: 'county', heading: `Other districts in ${nearby.county}`, councils: nearby.sameCounty }] : []),
+  ...(!nearby.county && nearby.similar ? [{ id: 'similar', heading: 'Councils of the same type', councils: nearby.similar.councils }] : []),
+];
+---
+<section class="section nearby" id="similar" aria-labelledby="similar-heading" data-pagefind-ignore data-nearby-councils>
+  <h2 id="similar-heading">Nearby and alike</h2>
+  <p class="muted">Explore neighbouring areas and councils of the same type.</p>
+  {groups.map(group => (
+    <div class="nearby-group" data-nearby-group={group.id}>
+      <h3>{group.heading}</h3>
+      {group.id === 'boundary' ? (
+        <>
+          <p class="small muted">Areas whose outlines touch or cross in the England map. The map is simplified and clipped to the coastline, so a short shared border, or an area across the sea, an estuary or a tidal river, may not appear.</p>
+          <p class="source-line">Source: <a href={boundarySource.url}>{boundarySource.publisher}, {boundarySource.title}</a>.</p>
+        </>
+      ) : group.id === 'county'
+        ? <p class="small muted">The other districts of the same county are also the similar councils listed here. County and type come from the UK Places register.</p>
+        : <p class="muted">{nearby.similar!.heading}, by council type in the UK Places register.</p>}
+      {group.councils.length > 0 ? (
+        <ul class="nearby-links" data-similar-councils={group.id !== 'boundary' ? '' : undefined}>
+          {group.councils.map(other => (
+            <li><a href={other.href} data-nearby-gss={other.gss}><span>{other.name}</span>{group.id !== 'county' && <span class="row-detail">{other.type}</span>}</a></li>
+          ))}
+        </ul>
+      ) : <p>No neighbouring council area touches this one in this map.</p>}
+    </div>
+  ))}
+</section>
+
+<style>
+  .nearby-group { margin-top: 1.5rem; }
+  h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+  .nearby-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 0.5rem 1rem; list-style: none; padding: 0; }
+  .nearby-links li { min-width: 0; }
+  .nearby-links a { display: flex; flex-direction: column; justify-content: center; min-height: 44px; padding: 0.5rem 0; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+  .row-detail { color: var(--text-muted); font-size: 0.875rem; font-weight: 400; }
+</style>

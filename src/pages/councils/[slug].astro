@@ -29,6 +29,7 @@ import ProfileAbout from "../../components/ProfileAbout.astro";
 import ProfileTax from "../../components/ProfileTax.astro";
 import ProfileSources from "../../components/ProfileSources.astro";
 import ProfileSummary from "../../components/ProfileSummary.astro";
+import NearbyCouncils from "../../components/NearbyCouncils.astro";
 import {
   AREA_TYPE_LABEL,
   CURRENT_YEAR,
@@ -45,7 +46,7 @@ import {
   type Authority,
 } from "../../lib/council-tax";
 import { councilPages, councilPath, regionPath } from "../../lib/paths";
-import { bandLinks, similarCouncils } from "../../lib/council-links";
+import { bandLinks } from "../../lib/council-links";
 import { sisterLinks, type Council } from "../../lib/registry";
 import { INCREASES_PATH } from "../../lib/site";
 import { councilCardPath } from "../../lib/og";
@@ -109,7 +110,6 @@ const links = sisterLinks(council);
 const path = councilPath(council);
 const question = `How much is council tax in ${name} in ${year}?`;
 const bands = bandLinks(council, tax.region);
-const similar = similarCouncils(council);
 const profile = councilProfile(council, tax);
 const taxLink = councilTaxLink(council.slug);
 
@@ -185,6 +185,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
     ...(history.length > 1 ? [{id: 'history', label: 'Previous years'}] : []),
     ...(own ? [{id: 'who-sets-it', label: 'Who sets the charge'}] : []),
+    {id: 'similar', label: 'Nearby and alike'},
     ...(profile.sources.length > 0 ? [{id: 'sources', label: 'Sources'}] : []),
   ]} />
 
@@ -287,21 +288,9 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
 
   {/* The reorganisation field is held: see "Held data" in CLAUDE.md. */}
 
-  {profile.sources.length > 0 && <ProfileSources name={name} sources={profile.sources} />}
+  <NearbyCouncils council={council} />
 
-  {similar && (
-    <section class="section" id="similar" aria-labelledby="similar-heading">
-      <h2 id="similar-heading">Similar councils</h2>
-      <p class="muted">{similar.heading}, by council type in the UK Places register.</p>
-      <details data-similar-drawer><summary>Read the similar councils list for {name}</summary>
-      <ul class="sister-links" data-similar-councils>
-        {similar.pages.map(({ council: other, tax: otherTax }) => (
-          <li><a href={councilPath(other)}>{otherTax.name}</a></li>
-        ))}
-      </ul>
-      </details>
-    </section>
-  )}
+  {profile.sources.length > 0 && <ProfileSources name={name} sources={profile.sources} />}
 
   {links.length > 0 && (
     <section class="section" id="more" aria-labelledby="more-heading">
