@@ -1,0 +1,72 @@
+---
+import { authorities } from "../lib/efs";
+import { englishRows } from "../lib/council-picker";
+import { loadRegistry } from "../lib/registry";
+
+const billing = englishRows();
+const spine = Object.values(loadRegistry().councils);
+const byGss = new Map(Object.entries(authorities).filter(([, authority]) => authority.gss).map(([key, authority]) => [authority.gss, key]));
+const rows = [
+  ...billing.map(row => ({ ...row, key: byGss.get(row.gss) ?? null })),
+  ...Object.entries(authorities).filter(([, authority]) => !authority.slug).map(([key, authority]) => {
+    // County geography comes only from the registry's exact parent code join.
+    const region = authority.gss ? spine.find(council => council.parentGss === authority.gss)?.region ?? '' : '';
+    return { name: authority.name, search: `${authority.name} ${region}`, region, type: authority.type, href: '', key };
+  }),
+].sort((a, b) => a.name.localeCompare(b.name, 'en-GB'));
+---
+<section class="card efs-finder" data-efs-finder hidden aria-label="Exceptional Financial Support finder">
+  <form role="search">
+    <label class="field" for="efs-query"><span>Find my council</span>
+      <input id="efs-query" type="search" autocomplete="off" spellcheck="false" placeholder="Council name, county or region" aria-controls="efs-results" aria-describedby="efs-status" />
+    </label>
+    <p id="efs-status" class="muted small" role="status">Enter at least two letters to find an authority or check whether it is listed.</p>
+  </form>
+  <ul id="efs-results" class="efs-results" hidden data-pagefind-ignore>
+    {rows.map(row => <li hidden data-search={row.search} data-region={row.region} data-name={row.name}>
+      <a href={row.key ? `#authority-${row.key}` : row.href}>{row.name}<span>{row.type}{row.region ? ` · ${row.region}` : ''}</span></a>
+      {!row.key && <p class="muted small">Not listed on this page. Follow the link to its council profile.</p>}
+    </li>)}
+  </ul>
+</section>
+<script>
+  import { matchesCouncil, matchingRegion, normalise, rankCouncils } from "../lib/council-search";
+
+  const finder = document.querySelector<HTMLElement>('[data-efs-finder]');
+  if (finder) {
+    const input = finder.querySelector<HTMLInputElement>('input')!;
+    const list = finder.querySelector<HTMLUListElement>('ul')!;
+    const status = finder.querySelector<HTMLElement>('[role="status"]')!;
+    const rows = [...list.querySelectorAll<HTMLLIElement>('li')];
+    const initial = status.textContent;
+    input.addEventListener('input', () => {
+      const query = normalise(input.value);
+      const region = matchingRegion(query, rows.map(row => row.dataset.region ?? ''));
+      const matches = query.length < 2 ? [] : rankCouncils(query, rows
+        .filter(row => matchesCouncil(query, row.dataset.search ?? '') && (!region || normalise(row.dataset.region ?? '') === region))
+        .map(row => ({ name: row.dataset.name!, row })));
+      const shown = matches.slice(0, 8).map(match => match.row);
+      rows.forEach(row => { row.hidden = !shown.includes(row); });
+      list.append(...shown);
+      list.hidden = !shown.length;
+      status.textContent = query.length < 2 ? initial : matches.length
+        ? `${matches.length} matching ${matches.length === 1 ? 'authority' : 'authorities'}${matches.length > 8 ? '; showing the first eight. Keep typing to narrow the list' : ''}. Tab to choose a result.`
+        : 'No matching authority. Try a shorter name, county or region.';
+    });
+    finder.querySelector('form')!.addEventListener('submit', event => {
+      event.preventDefault();
+      list.querySelector<HTMLAnchorElement>('li:not([hidden]) a')?.focus();
+    });
+    finder.hidden = false;
+  }
+</script>
+<style>
+  .efs-finder[hidden], .efs-results[hidden], .efs-results li[hidden] { display: none; }
+  .efs-finder { margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+  .efs-finder .field { max-width: 34rem; }
+  .efs-results { list-style: none; margin: 0; padding: 0; }
+  .efs-results li { border-top: 1px solid var(--border); padding: 0.4rem 0; }
+  .efs-results a { display: block; padding: 0.4rem 0; font-weight: 600; }
+  .efs-results span { display: block; font-size: 0.85rem; font-weight: 400; color: var(--text-muted); }
+  .efs-results p { margin: 0; }
+</style>

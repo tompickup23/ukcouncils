@@ -4,6 +4,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import PageContents from "../components/PageContents.astro";
 import SourceLine from "../components/SourceLine.astro";
 import EfsFigure from "../components/EfsFigure.astro";
+import EfsFinder from "../components/EfsFinder.astro";
 import { efs, pages, authorities, statements, multipleFigures, figuresByAuthority, type EfsTable } from "../lib/efs";
 import { efsYear, efsSource, efsTableHeading } from "../lib/efs-presentation";
 import { hubCardPath } from "../lib/og";
@@ -34,6 +35,7 @@ const collectionSource = {
     <h1>Exceptional Financial Support</h1>
     <p class="lede">MHCLG's published support, by year and council, from {efsYear(years.at(-1)!)} to {efsYear(years[0])}.</p>
   </header>
+  <EfsFinder />
   <PageContents items={[{ id: "what-it-is", label: "What it is" }, { id: "by-year", label: "By year" }, { id: "by-council", label: "By council" }, { id: "method", label: "How this page is made" }]} />
 
   <section class="section" id="what-it-is" aria-labelledby="what-heading">
@@ -94,8 +96,11 @@ const collectionSource = {
     {councilIndex.map(([key, authority]) => {
       const entries = byAuthority.get(key)!;
       const differences = multipleFigures.filter(entry => entry.authority === key);
-      return <section class="authority-section" id={`authority-${key}`} aria-labelledby={`name-${key}`} data-efs-authority={key}>
-        <h3 id={`name-${key}`}>{authority.slug ? <a href={`/councils/${authority.slug}/`}>{authority.name}</a> : authority.name}</h3>
+      const listedYears = years.filter(year => entries.some(entry => entry.statement.page === year));
+      return <details class="authority-drawer" data-efs-authority-drawer>
+        <summary>{authority.name}<span>Listed on the {listedYears.map(efsYear).join(', ')} {listedYears.length === 1 ? 'page' : 'pages'}</span></summary>
+        <section class="authority-section" id={`authority-${key}`} aria-labelledby={`name-${key}`} data-efs-authority={key}>
+        <h3 id={`name-${key}`} tabindex="-1">{authority.slug ? <a href={`/councils/${authority.slug}/`}>{authority.name}</a> : authority.name}</h3>
         {differences.map(difference => <aside class="revision-note" data-efs-multiple>
           <h4>MHCLG's pages print more than one figure for {efsYear(difference.supportYear)}</h4>
           <p>{efsYear(difference.relation)}</p>
@@ -109,7 +114,8 @@ const collectionSource = {
           {entries.filter(entry => entry.statement.page === year).map(({ statement, figure }) => <EfsFigure figure={figure} statement={statement} />)}
         </section>)}
         <p><a href="#by-council">Back to council index</a></p>
-      </section>;
+        </section>
+      </details>;
     })}
   </section>
 
@@ -123,8 +129,37 @@ const collectionSource = {
     <p>The source is published under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{efs.licence}</a>.</p>
   </section>
 </BaseLayout>
+<script>
+  function revealAuthority(hash: string) {
+    let id: string;
+    try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
+    if (!id) return;
+    const target = document.getElementById(id);
+    const drawer = target?.closest<HTMLDetailsElement>('[data-efs-authority-drawer]');
+    if (!drawer) return;
+    drawer.open = true;
+    drawer.querySelector<HTMLElement>('h3')?.focus({ preventScroll: true });
+    target?.scrollIntoView();
+    return true;
+  }
+  document.addEventListener('click', event => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const link = (event.target as Element | null)?.closest?.('a[href^="#"]');
+    const hash = link?.getAttribute('href');
+    if (!hash || !revealAuthority(hash)) return;
+    // Native navigation to the same hash would take focus back from the heading.
+    event.preventDefault();
+    if (location.hash !== hash) history.pushState(null, '', hash);
+  });
+  window.addEventListener('hashchange', () => revealAuthority(location.hash));
+  revealAuthority(location.hash);
+</script>
 <style>
-  .year-section, .authority-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .year-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .authority-drawer { margin-top: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+  .authority-drawer > summary { padding: 1rem; cursor: pointer; font-weight: 600; }
+  .authority-drawer > summary span { display: block; margin-top: 0.25rem; color: var(--text-muted); font-size: 0.9rem; font-weight: 400; }
+  .authority-section { padding: 1rem; }
   .year-section > h3, .authority-section > h3 { font-size: 1.5rem; margin-top: 0; }
   .table-section, .council-year { margin: 1.5rem 0; }
   .efs-table { table-layout: fixed; }
