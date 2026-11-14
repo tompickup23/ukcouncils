@@ -86,6 +86,23 @@ line under every Band D figure is not optional).
   of tolerance, runs on every static path.
 - **Components are copied into this repo, never imported across repos.**
 
+## Before archiving a session
+
+Commit and push any code to a branch before an archive step, as a draft pull
+request if it is not for review. A handoff note that exists only in a worktree
+is lost when the worktree is removed: put it in the pull request. On 13 November
+2026 a UK Council Tax session's uncommitted work survived an archive only as a
+Codex snapshot under `refs/codex/snapshots`; look there, and in Codex's archived
+session logs, before concluding that a session's work was never done. The
+current plan for both sites is in tompickup23/ukcounciltax,
+`docs/PLAN-2026-11-13-ASSESSMENT-AND-NEXT.md`.
+
+## Session state
+
+Read `docs/STATE.md` first: open pull requests, what is live, what is next and
+the decisions waiting, in 20 lines. Each session replaces it inside its own
+pull request.
+
 ## Held data
 
 **The registry `reorganisation` field is held, from 5 November 2026.** No page

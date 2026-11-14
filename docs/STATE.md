@@ -1,20 +1,14 @@
-# UK Councils state | 14 November 2026
+# State | UK Councils | 14 November 2026
 
-Main baseline: 75cdac1. Session 6 branch: feat/dossier-296, review only.
-Stage 1 was committed and pushed before feature work: 4b5678b.
-Audit: docs/DOSSIER-STATE-2026-11-14.md; source notes: docs/DOSSIER-SOURCE-NOTES.md.
-This branch adds services on 296 profiles, responsibility tables on 294, official links on 272.
-City of London and Isles of Scilly use verified links only; no generic responsibility mapping.
-Budget summaries use reported RA line 799 on 287 profiles; nine missing returns remain absent.
-All summary figures now use SourceLine and the full-first citation pipeline.
-Dossier gate checks 296 universal sections, source presence, budget values and exact service links.
-Existing coverage: population 294, collection 296, elections 174, EFS 51, payments 234, holidays 287.
-Existing independent reorganisation panels remain on 184; the registry field stays held.
-Local verification: 326 tests, zero Astro errors, build/dist pass, 42 focused browser checks pass.
-No client script, font or header changed; hosted CI supplies full browser and CSP runs.
-Number diff: 297 permitted pages; no removed numbers or SVG text changes. Titles/canonicals unchanged.
-Blocked: composition source, checked section 114/audit sources, corrected registry and C4 decision.
-Also pending: new body-type sources/routes, wider reviewed service links, live contracts source.
-Food hygiene stays unlinked. Extra indicators need separate source notes; no composite score.
-Dossier completion remains due mid January 2027; reversal remains May to June 2027 and gated.
-No merge, deployment or reversal authorised by this PR.
+Replace this file in each session's own pull request. At most 20 lines. Detail belongs in PR bodies.
+
+- **Live:** main `babf592`, merged 14 November. Session 6, the dossiers (PR 54): a services section on all 296 profiles, responsibility tables on 294, official service links on 272, and the RA line 799 budget tile on 287. Summary figures use the full first citation pipeline. Election citations name the issuing body, not UK Elections, as publisher.
+- **Earlier, still live:** nearby and alike (PR 50), Exceptional Financial Support by council (PR 49), Estate Kit 0.5.0 (PR 48). The registry reorganisation field has been held since 5 November.
+- **Open:** PR 53 (documents: the archive rule and this file).
+- **Dossier, what remains:** the audit is `docs/DOSSIER-STATE-2026-11-14.md`. Blocked on sources: council composition, section 114 and audit status, a corrected registry for C4 (and Tom's wording), pages for other body types, wider reviewed service links, and contracts once UK Public Contracts is live. Food hygiene stays unlinked.
+- **Small open point:** in two tier areas the responsibility table names "X County Council" but the district by its billing name alone.
+- **Next:** session 9 (the map on `/councils/` by type, finances as drawings). It waits for estate-kit 0.6.0, which has not been started.
+- **Weekly from 17 November:** the measurement note.
+- **Decisions waiting on Tom:** X3 (the Actions billing, which estate-kit's CI needs), X1 (two new chart forms), X4 (removing worktrees).
+- **Binding dates:** the dossier on all 296 profiles by mid January 2027. It gates the reversal in May to June 2027.
+- **Plan for both sites:** tompickup23/ukcounciltax, `docs/PLAN-2026-11-13-ASSESSMENT-AND-NEXT.md`.
