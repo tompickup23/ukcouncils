@@ -97,6 +97,12 @@ session logs, before concluding that a session's work was never done. The
 current plan for both sites is in tompickup23/ukcounciltax,
 `docs/PLAN-2026-11-13-ASSESSMENT-AND-NEXT.md`.
 
+## Session state
+
+Read `docs/STATE.md` first: open pull requests, what is live, what is next and
+the decisions waiting, in 20 lines. Each session replaces it inside its own
+pull request.
+
 ## Held data
 
 **The registry `reorganisation` field is held, from 5 November 2026.** No page
