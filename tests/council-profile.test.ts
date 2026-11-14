@@ -60,6 +60,7 @@ function expectedSections(gss: string, parentGss: string | null): string[] {
   const calendar = FEED.authorities[parentGss || gss];
   const present: Record<string, boolean> = {
     about: true,
+    services: true,
     budget: budget.councils[gss]?.status === 'available',
     collection: Boolean(collection.councils[gss]),
     elections: Boolean(elections.councils[gss]),

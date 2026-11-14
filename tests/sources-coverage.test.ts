@@ -12,6 +12,7 @@ const citations: Record<string, string[]> = {
   efs: ["efsPages", "page.title", "page.firstPublished"],
   links: ["councilTaxLinks.source", "councilTaxLinks.fetched", "localLinks.source", "budgetLinks.source", "budgetLinks.fetched"],
   budget: ["budget.sources", "source.fileUrl", "source.sha256"],
+  services: ["functionsSource"],
   population: ["population.source"],
   collection: ["collection.source"],
   elections: ["elections.source"],

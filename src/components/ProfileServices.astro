@@ -1,0 +1,36 @@
+---
+import {functionsFor, functionsSource} from '../lib/council-functions';
+import {localLinks, localLinksSource, ownPagesFor} from '../lib/local-links';
+import type {Council} from '../lib/registry';
+import type {Authority} from '../lib/council-tax';
+import SourceLine from './SourceLine.astro';
+interface Props {council: Council; tax: Authority}
+const {council, tax} = Astro.props;
+const functions = functionsFor(council, tax);
+const ownPages = ownPagesFor(council.gss);
+const links = localLinks.services.filter(service => ownPages?.[service.id]);
+---
+{(functions || links.length > 0) && <section class="section" id="services" aria-labelledby="services-heading" data-profile-section="services">
+  <h2 id="services-heading">Council services in {tax.name}</h2>
+  {functions && <div data-council-functions>
+    <p>These selected functions follow the published division of council responsibilities.</p>
+    <SourceLine source={functionsSource()} />
+    <p class="caveat">Councils can arrange for another body to deliver a service. This describes responsibility, not a complete directory of providers.</p>
+    <details data-services-drawer>
+      <summary>Read who is responsible for these services in {tax.name}</summary>
+      <div class="table-wrap" tabindex="0" role="region" aria-label={`Council responsibilities in ${tax.name}`}>
+        <table class="data">
+          <caption>Selected council responsibilities in {tax.name}</caption>
+          <thead><tr><th scope="col">Service</th><th scope="col">Responsible council</th></tr></thead>
+          <tbody>{functions.map(row => <tr><th scope="row">{row.label}</th><td>{row.authority}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <SourceLine source={functionsSource()} />
+    </details>
+  </div>}
+  {links.length > 0 && <div data-profile-own-pages>
+    <h3>The council's own service pages</h3>
+    <ul>{links.map(service => <li><a data-council-service={service.id} href={ownPages![service.id]}>{service.title}</a></li>)}</ul>
+    <SourceLine source={localLinksSource()} />
+  </div>}
+</section>}
