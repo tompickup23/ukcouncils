@@ -157,8 +157,16 @@ export class Canvas {
     }
     series(what, colours) { if (colours.length > 1)
         this.checks.series.push({ what, colours }); }
+    /** Refuse clipped labels after the frame has its final height. */
+    assertTextBounds() {
+        for (const t of this.checks.texts) {
+            const b = t.box;
+            if (b && (b.x < 0 || b.y < 0 || b.x + b.w > this.W || b.y + b.h > this.H))
+                throw new Error(`text outside the canvas: ${t.content}`);
+        }
+    }
     /** Runs the gates and returns the finished SVG. */
-    finish(what, label, extraAttrs = "") {
+    finish(what, label, extraAttrs = "", role = "img") {
         if (this.silent) {
             assertGates(this.checks, gatePalettes(this.mode), what);
             const body = this.parts.join("").replace(/<title>[^<]*<\/title>/g, "");
@@ -173,7 +181,7 @@ export class Canvas {
         // On a desk the SVG carries the marker itself, so the skin's [data-ground="desk"] rule
         // points its names at the desk wherever the string is inserted.
         const desk = onDesk(this.mode) ? ' data-ground="desk"' : "";
-        return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n2(this.W)} ${n2(H)}" width="${n2(this.W)}" height="${n2(H)}" role="img" aria-label="${esc(label)}" class="ek-chart"${desk}${extraAttrs ? " " + extraAttrs : ""}>${this.parts.join("")}</svg>`;
+        return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n2(this.W)} ${n2(H)}" width="${n2(this.W)}" height="${n2(H)}" role="${role}" aria-label="${esc(label)}" class="ek-chart"${desk}${extraAttrs ? " " + extraAttrs : ""}>${this.parts.join("")}</svg>`;
     }
 }
 function fail(token) {

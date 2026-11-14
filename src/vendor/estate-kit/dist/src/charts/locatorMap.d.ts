@@ -1,19 +1,6 @@
 import { type ChartOptions, type ChartOutput } from "./frame.js";
-type Ring = number[][];
-export interface AreaFeature {
-    type: "Feature";
-    properties: {
-        code: string;
-        name: string;
-    };
-    geometry: {
-        type: "Polygon";
-        coordinates: Ring[];
-    } | {
-        type: "MultiPolygon";
-        coordinates: Ring[][];
-    };
-}
+export type { AreaFeature } from "./grammar/geo.js";
+import { type AreaFeature } from "./grammar/geo.js";
 export interface LocatorMapOptions extends ChartOptions {
     /** The areas to draw: the focus and its neighbours, with their codes and names. */
     areas: AreaFeature[];
@@ -41,4 +28,3 @@ export interface LocatorMapOptions extends ChartOptions {
 /** The ramp steps for a number of classes, spread across the seven so the ends always show. */
 export declare function rampFor(classes: number): string[];
 export declare function locatorMap(o: LocatorMapOptions): ChartOutput;
-export {};

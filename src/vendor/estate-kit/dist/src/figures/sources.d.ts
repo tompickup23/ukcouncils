@@ -12,4 +12,4 @@ export declare function shortSourceText(source: Source): string;
 export declare function sourceEntryHtml(source: Source, fixture?: boolean): string;
 /** A short citation. The page checker requires its full entry to precede it. */
 export declare function shortSourceHtml(source: Source, fixture?: boolean): string;
-export declare function sourceLinesHtml(figures: Figure[], format: "full" | "short"): string;
+export declare function sourceLinesHtml(figures: Pick<Figure, "source" | "fixture">[], format: "full" | "short"): string;

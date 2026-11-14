@@ -1,5 +1,5 @@
 // Generated from tokens/tokens.json by scripts/build-tokens.mjs. Do not hand edit: run npm run tokens.
-export const VERSION = "0.3.0";
+export const VERSION = "0.6.0";
 export const tokens = {
     "color": {
         "light": {
@@ -782,6 +782,127 @@ export const tokens = {
                 "to": "#888888"
             }
         ]
+    },
+    "print": {
+        "about": "Print sheets: the page box, faces, type sizes in points, leading and colours of a printed surface. A sheet is not a site and has no dark theme. It is generated as generated/print/<sheet>.css (an @page rule and a block of --print-* custom properties between estate-print markers) and read in Python with print_tokens(). The values are the surface's own, quoted in $meta.sources.print, so taking the sheet changes nothing on the page.",
+        "sheets": {
+            "brief": {
+                "about": "The house brief that Reports tools/md2pdf.py prints: A4, a serif body under sans headings, navy headings and table heads, one red accent.",
+                "page": {
+                    "size": "A4",
+                    "margin": "16mm 15mm 18mm 15mm"
+                },
+                "face": {
+                    "body": "Georgia, 'Times New Roman', serif",
+                    "heading": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                    "footer": "Helvetica, Arial, sans-serif",
+                    "mono": "Menlo, monospace"
+                },
+                "size": {
+                    "root": "10.4pt",
+                    "h1": "21pt",
+                    "h2": "13.5pt",
+                    "h3": "11.2pt",
+                    "lede": "9.6pt",
+                    "table": "9.1pt",
+                    "small": "8.8pt",
+                    "footer": "8pt",
+                    "front-heading": "12.5pt",
+                    "pocket": "11pt",
+                    "pocket-heading": "15pt"
+                },
+                "leading": "1.4",
+                "color": {
+                    "paper": "#fff",
+                    "text": "#1a1a1a",
+                    "strong": "#111",
+                    "lede": "#333",
+                    "muted": "#6b7280",
+                    "heading": "#16233b",
+                    "on-heading": "#fff",
+                    "accent": "#b8312f",
+                    "rule": "#c9ced6",
+                    "panel": "#f3f5f9",
+                    "stripe": "#f7f8fa",
+                    "quote-bg": "#eef6ee",
+                    "quote-rule": "#2f7d4f",
+                    "flag-bg": "#fff1cc",
+                    "flag-border": "#e0b64a",
+                    "flag-ink": "#5a3d00",
+                    "ask-bg": "#f9ecec",
+                    "ask-stripe": "#f5e3e3",
+                    "ask-ink": "#4a1f1f",
+                    "answer-bg": "#eef6ee",
+                    "answer-stripe": "#e4f0e4"
+                },
+                "text-on": [
+                    [
+                        "text",
+                        "paper"
+                    ],
+                    [
+                        "strong",
+                        "paper"
+                    ],
+                    [
+                        "lede",
+                        "paper"
+                    ],
+                    [
+                        "muted",
+                        "paper"
+                    ],
+                    [
+                        "heading",
+                        "paper"
+                    ],
+                    [
+                        "accent",
+                        "paper"
+                    ],
+                    [
+                        "on-heading",
+                        "heading"
+                    ],
+                    [
+                        "accent",
+                        "panel"
+                    ],
+                    [
+                        "text",
+                        "panel"
+                    ],
+                    [
+                        "text",
+                        "stripe"
+                    ],
+                    [
+                        "text",
+                        "quote-bg"
+                    ],
+                    [
+                        "flag-ink",
+                        "flag-bg"
+                    ],
+                    [
+                        "ask-ink",
+                        "ask-bg"
+                    ],
+                    [
+                        "ask-ink",
+                        "ask-stripe"
+                    ],
+                    [
+                        "text",
+                        "answer-bg"
+                    ],
+                    [
+                        "text",
+                        "answer-stripe"
+                    ]
+                ]
+            }
+        }
     }
 };
 export const SITE_KEYS = Object.keys(tokens.sites);
@@ -806,6 +927,11 @@ export function palette(theme, site = "ukdemographics") {
     return { ...tokens.color[theme], ...accent };
 }
 export const SKIN_KEYS = Object.keys(tokens.skins.sites);
+export const PRINT_KEYS = Object.keys(tokens.print.sheets);
+/** One print sheet: its page box, faces, type sizes, leading and colours. */
+export function printSheet(key = "brief") {
+    return tokens.print.sheets[key];
+}
 /** One site's skin: its register's skin under its own values. */
 export function skin(key) {
     const entry = tokens.skins.sites[key];

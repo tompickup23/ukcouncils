@@ -1,9 +1,10 @@
 ---
 import SourceLine from './SourceLine.astro';
+import ServiceBars from './ServiceBars.astro';
 import {budgetYear, budget, budgetMoney, budgetSource, FINANCING_IDS, funding, nonRingfencedReserves, observation, services, RESERVES_CAVEAT, type BudgetCouncil} from '../lib/budget';
 import {reservesSource} from '../lib/council-budget';
-interface Props {council: BudgetCouncil; name: string; id: string; headingLevel?: 3 | 4}
-const {council, name, id, headingLevel = 3} = Astro.props;
+interface Props {council: BudgetCouncil; name: string; id: string; headingLevel?: 3 | 4; /** Draw the service lines above their table. */ bars?: boolean}
+const {council, name, id, headingLevel = 3, bars = false} = Astro.props;
 const Heading = `h${headingLevel}` as 'h3' | 'h4';
 const dsg = council.values.grantindsg;
 const present = (value: number | null) => value !== null && value !== 0;
@@ -19,6 +20,7 @@ const note8 = council.notes.raPart1.includes('[note 8]');
 <div class="budget-tables">
   {name !== council.name && <p class="source-line">Printed in the RA return as “{council.name}”.</p>}
   <Heading id={`${id}-services`}>Service expenditure</Heading>
+  {bars && <ServiceBars council={council} name={name} caveat={rows.some(row => row.value! < 0) ? 'A figure below zero is net income.' : undefined} />}
   <div class="table-wrap" tabindex="0" role="region" aria-labelledby={`${id}-services`}>
     <table class="data">
       <caption>{name}: observed net current expenditure by service, {budgetYear}</caption>

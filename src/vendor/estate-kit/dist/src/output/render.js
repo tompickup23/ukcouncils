@@ -23,8 +23,10 @@ import { billAnatomy } from "../charts/billAnatomy.js";
 import { positionStrip } from "../charts/positionStrip.js";
 import { hemicycle } from "../charts/hemicycle.js";
 import { locatorMap } from "../charts/locatorMap.js";
+import { rankedBars } from "../charts/rankedBars.js";
+import { areaMap } from "../charts/areaMap.js";
 /** The charts a request may name, by the name each is exported under. */
-export const EXPORT_CHARTS = { zeroBar, line, waffle, statTile, scoreCard, billAnatomy, positionStrip, hemicycle, locatorMap };
+export const EXPORT_CHARTS = { zeroBar, line, waffle, statTile, scoreCard, billAnatomy, positionStrip, hemicycle, locatorMap, rankedBars, areaMap };
 /** Options a request sets on its own fields, not inside options. */
 const RESERVED = ["set", "site", "ground", "mode", "template"];
 /** Thrown with every failing request. The message names each request and each reason. */
@@ -43,7 +45,7 @@ function stringErrors(out) {
         if (DASHES.test(text))
             errs.push(`dash in the ${what}: "${text.match(DASHES)[0]}"`);
     }
-    if (!/^<svg [^>]*role="img"[^>]*aria-label="[^"]+"/.test(out.svg))
+    if (!/^<svg [^>]*role="(?:img|group)"[^>]*aria-label="[^"]+"/.test(out.svg))
         errs.push("the SVG has no role and accessible name");
     if (!out.alt.trim())
         errs.push("no alt text");

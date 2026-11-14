@@ -53,6 +53,13 @@ export interface ValueFigure extends Base {
     value: number;
     display?: Display;
 }
+/** A sourced unknown, never a numeric zero. Numeric charts still use value(), which refuses it. */
+export interface UnknownValueFigure extends Base {
+    kind: "value";
+    value: null;
+    display?: never;
+}
+export type ValueRecord = ValueFigure | UnknownValueFigure;
 export interface SeriesPoint {
     /** The category or period, for example "2025/26" or an ISO date for a time axis. */
     label: string;
@@ -65,7 +72,7 @@ export interface SeriesFigure extends Base {
     axis: "category" | "time";
     points: SeriesPoint[];
 }
-export type Figure = ValueFigure | SeriesFigure;
+export type Figure = ValueRecord | SeriesFigure;
 export type DisplayForm = keyof Display;
 /** Problems with one record, as plain sentences. Empty when the record is sound. */
 export declare function validateFigure(key: string, f: unknown): string[];
@@ -75,7 +82,7 @@ export declare function sourceText(s: Source): string;
  * The caption for one or more figures. Figures that share a source collapse into one
  * entry, so a chart of ten bars from one table prints one source.
  */
-export declare function captionFor(figs: Figure[]): string;
+export declare function captionFor(figs: Pick<Figure, "source" | "fixture">[]): string;
 /**
  * The caption as HTML, with each document title linked to its url. Its text content is
  * exactly captionFor(), which the tests check.
@@ -87,6 +94,8 @@ export interface FigureSet {
     keys(): string[];
     get(key: string): Figure;
     value(key: string): ValueFigure;
+    /** A value record, including a sourced null. */
+    valueRecord(key: string): ValueRecord;
     series(key: string): SeriesFigure;
     /** A display form of a value figure: the recorded form if there is one, else generated. */
     show(key: string, form?: DisplayForm): string;

@@ -54,8 +54,11 @@ describe("the vendored estate kit", () => {
     expect(ignored.trim().split("\n").filter(Boolean)).toEqual([]);
   });
 
-  it("carries this site's token file and the components the site renders", () => {
-    for (const file of ["generated/tokens.css", "src/components/BillAnatomy.astro", "src/components/ChartFigure.astro", "dist/src/index.js", "tokens/tokens.json"]) {
+  // The site takes the charts part only: its tokens come from the estate template in
+  // global.css, and the kit has no UK Councils token block to vendor.
+  it("carries the charts part, the guard and the components the site renders", () => {
+    expect(version).toMatch(/^parts charts$/m);
+    for (const file of ["verify-vendor.mjs", "src/components/AreaMap.astro", "src/components/RankedBars.astro", "src/components/ChartFigure.astro", "dist/src/index.js"]) {
       expect(recorded.has(file), file).toBe(true);
     }
   });

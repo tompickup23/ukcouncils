@@ -1,5 +1,6 @@
 export * from "./figures/figures.js";
 export { tokens, palette, partyColour, partyKey, partyName, SITE_KEYS, VERSION, type SiteKey, type Theme } from "../generated/tokens.js";
+export { printSheet, PRINT_KEYS, type PrintKey } from "../generated/tokens.js";
 export { skin, skinPalette, deskPalette, SKIN_KEYS, DESK_KEYS, type Skin, type SkinKey, type Register } from "../generated/tokens.js";
 export { gatePalettes, hexPalette, type Ground, type Mode } from "./charts/canvas.js";
 export { zeroBar, type ZeroBarOptions } from "./charts/zeroBar.js";
@@ -21,3 +22,6 @@ export { checkSources, sourceErrors } from "./qa/sources.js";
 export { checkNames, nameErrors } from "./qa/names.js";
 export { summaryRowTiles, summaryRowHtml, type SummaryFact, type SummaryRowOptions, type SummaryTile } from "./charts/summaryRow.js";
 export { linear, zeroDomain, zeroScale, bands, barPath, openBar, polylineObstacles, overlaps, firstClear, stackRows, spread, annotate, measure, zeroLine, type BarSpec, type Candidate, type Annotation, type Piece } from "./charts/grammar/index.js";
+export { rankedBars, type RankedBarsOptions, type RankedBarRow } from "./charts/rankedBars.js";
+export { areaMap, type AreaMapOptions } from "./charts/areaMap.js";
+export { defineMapIndicators, mapClass, colourFor, type MapIndicator, type MapIndicatorRegistry, type FixedMapIndicator, type CategoricalMapIndicator } from "./charts/mapIndicators.js";

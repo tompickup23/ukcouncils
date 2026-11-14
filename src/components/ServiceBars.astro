@@ -1,0 +1,26 @@
+---
+/**
+ * One council's service expenditure as ranked bars (NV12). The service table in the
+ * budget drawer holds the same rows in the same order and is the text equivalent,
+ * so the kit's own table twin is not printed a second time. The site's source line
+ * and the caveat that qualifies the figures sit under the drawing.
+ */
+import SourceLine from './SourceLine.astro';
+import '../vendor/estate-kit/src/components/kit.css';
+import {budgetSource, type BudgetCouncil} from '../lib/budget';
+import {serviceBars} from '../lib/budget-bars';
+interface Props {council: BudgetCouncil; name: string; caveat?: string}
+const {council, name, caveat} = Astro.props;
+const out = serviceBars(council, name);
+---
+{out && <figure class="service-bars" data-service-bars data-pagefind-ignore>
+  <Fragment set:html={out.svg} />
+  <figcaption>
+    <SourceLine source={budgetSource()} />
+    {caveat && <p class="caveat">{caveat}</p>}
+  </figcaption>
+</figure>}
+<style>
+  .service-bars { margin: 1rem 0; max-width: 40rem; }
+  .service-bars :global(svg) { width: 100%; height: auto; display: block; }
+</style>
