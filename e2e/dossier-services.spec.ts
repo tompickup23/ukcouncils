@@ -44,3 +44,13 @@ test('services and sources work without JavaScript', async ({browser, baseURL}) 
   await expect(page.locator('#services [data-council-service="bins"]')).toBeVisible();
   await context.close();
 });
+
+for (const slug of ['burnley', 'birmingham']) {
+  test(`${slug} summary accommodates enlarged text`, async ({page}) => {
+    await page.goto(`/councils/${slug}/`);
+    await page.addStyleTag({content: 'html { font-size: 200%; }'});
+    const value = page.locator('[data-summary-tile="budget"] [data-figure]');
+    expect(await value.evaluate(node => node.scrollWidth <= node.clientWidth)).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth-document.documentElement.clientWidth)).toBeLessThanOrEqual(2);
+  });
+}
