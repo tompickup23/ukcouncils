@@ -5,7 +5,8 @@ import {budget} from '../src/lib/budget';
 
 function budgetProseWords(section: Element): number {
   const copy = section.cloneNode(true) as HTMLElement;
-  copy.querySelectorAll('table, .source-line, style, script').forEach(node => node.remove());
+  // A drawing's labels and values repeat its table; they are not prose.
+  copy.querySelectorAll('table, .source-line, style, script, svg').forEach(node => node.remove());
   const walker = document.createTreeWalker(copy, NodeFilter.SHOW_TEXT);
   const parts: string[] = [];
   while (walker.nextNode()) parts.push(walker.currentNode.textContent ?? '');
