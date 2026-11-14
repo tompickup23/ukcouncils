@@ -1,6 +1,7 @@
 // The Estate Kit. Tokens, the figure record, the charts and the output templates.
 export * from "./figures/figures.js";
 export { tokens, palette, partyColour, partyKey, partyName, SITE_KEYS, VERSION } from "../generated/tokens.js";
+export { printSheet, PRINT_KEYS } from "../generated/tokens.js";
 export { skin, skinPalette, deskPalette, SKIN_KEYS, DESK_KEYS } from "../generated/tokens.js";
 export { gatePalettes, hexPalette } from "./charts/canvas.js";
 export { zeroBar } from "./charts/zeroBar.js";
@@ -23,3 +24,6 @@ export { checkSources, sourceErrors } from "./qa/sources.js";
 export { checkNames, nameErrors } from "./qa/names.js";
 export { summaryRowTiles, summaryRowHtml } from "./charts/summaryRow.js";
 export { linear, zeroDomain, zeroScale, bands, barPath, openBar, polylineObstacles, overlaps, firstClear, stackRows, spread, annotate, measure, zeroLine } from "./charts/grammar/index.js";
+export { rankedBars } from "./charts/rankedBars.js";
+export { areaMap } from "./charts/areaMap.js";
+export { defineMapIndicators, mapClass, colourFor } from "./charts/mapIndicators.js";

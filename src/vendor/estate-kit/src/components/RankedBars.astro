@@ -1,0 +1,9 @@
+---
+import ChartFigure from "./ChartFigure.astro";
+import { rankedBars, type RankedBarsOptions } from "../../dist/src/index.js";
+// No ChartActions dependency at the call site: the baseline and table need no script.
+type Props = RankedBarsOptions & { tableOpen?: boolean; class?: string; id?: string };
+const { tableOpen, class: className, id, ...opts } = Astro.props;
+const out = rankedBars(opts);
+---
+<ChartFigure out={out} keys={opts.rows.flatMap(r => [r.figure, ...(r.change ? [r.change] : [])])} tableOpen={tableOpen} class={className} id={id} />

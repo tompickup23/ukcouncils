@@ -99,8 +99,10 @@ export declare class Canvas {
         h: number;
     }): void;
     series(what: string, colours: Colour[]): void;
+    /** Refuse clipped labels after the frame has its final height. */
+    assertTextBounds(): void;
     /** Runs the gates and returns the finished SVG. */
-    finish(what: string, label: string, extraAttrs?: string): string;
+    finish(what: string, label: string, extraAttrs?: string, role?: "img" | "group"): string;
 }
 /**
  * The colours a hex render paints with: the site's skin palette where the site has a

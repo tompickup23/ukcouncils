@@ -1,4 +1,4 @@
-export declare const VERSION = "0.3.0";
+export declare const VERSION = "0.6.0";
 export declare const tokens: {
     readonly color: {
         readonly light: {
@@ -714,6 +714,62 @@ export declare const tokens: {
             readonly to: "#888888";
         }];
     };
+    readonly print: {
+        readonly about: "Print sheets: the page box, faces, type sizes in points, leading and colours of a printed surface. A sheet is not a site and has no dark theme. It is generated as generated/print/<sheet>.css (an @page rule and a block of --print-* custom properties between estate-print markers) and read in Python with print_tokens(). The values are the surface's own, quoted in $meta.sources.print, so taking the sheet changes nothing on the page.";
+        readonly sheets: {
+            readonly brief: {
+                readonly about: "The house brief that Reports tools/md2pdf.py prints: A4, a serif body under sans headings, navy headings and table heads, one red accent.";
+                readonly page: {
+                    readonly size: "A4";
+                    readonly margin: "16mm 15mm 18mm 15mm";
+                };
+                readonly face: {
+                    readonly body: "Georgia, 'Times New Roman', serif";
+                    readonly heading: "'Helvetica Neue', Helvetica, Arial, sans-serif";
+                    readonly footer: "Helvetica, Arial, sans-serif";
+                    readonly mono: "Menlo, monospace";
+                };
+                readonly size: {
+                    readonly root: "10.4pt";
+                    readonly h1: "21pt";
+                    readonly h2: "13.5pt";
+                    readonly h3: "11.2pt";
+                    readonly lede: "9.6pt";
+                    readonly table: "9.1pt";
+                    readonly small: "8.8pt";
+                    readonly footer: "8pt";
+                    readonly "front-heading": "12.5pt";
+                    readonly pocket: "11pt";
+                    readonly "pocket-heading": "15pt";
+                };
+                readonly leading: "1.4";
+                readonly color: {
+                    readonly paper: "#fff";
+                    readonly text: "#1a1a1a";
+                    readonly strong: "#111";
+                    readonly lede: "#333";
+                    readonly muted: "#6b7280";
+                    readonly heading: "#16233b";
+                    readonly "on-heading": "#fff";
+                    readonly accent: "#b8312f";
+                    readonly rule: "#c9ced6";
+                    readonly panel: "#f3f5f9";
+                    readonly stripe: "#f7f8fa";
+                    readonly "quote-bg": "#eef6ee";
+                    readonly "quote-rule": "#2f7d4f";
+                    readonly "flag-bg": "#fff1cc";
+                    readonly "flag-border": "#e0b64a";
+                    readonly "flag-ink": "#5a3d00";
+                    readonly "ask-bg": "#f9ecec";
+                    readonly "ask-stripe": "#f5e3e3";
+                    readonly "ask-ink": "#4a1f1f";
+                    readonly "answer-bg": "#eef6ee";
+                    readonly "answer-stripe": "#e4f0e4";
+                };
+                readonly "text-on": readonly [readonly ["text", "paper"], readonly ["strong", "paper"], readonly ["lede", "paper"], readonly ["muted", "paper"], readonly ["heading", "paper"], readonly ["accent", "paper"], readonly ["on-heading", "heading"], readonly ["accent", "panel"], readonly ["text", "panel"], readonly ["text", "stripe"], readonly ["text", "quote-bg"], readonly ["flag-ink", "flag-bg"], readonly ["ask-ink", "ask-bg"], readonly ["ask-ink", "ask-stripe"], readonly ["text", "answer-bg"], readonly ["text", "answer-stripe"]];
+            };
+        };
+    };
 };
 export type Theme = "light" | "dark";
 export type SiteKey = keyof typeof tokens.sites;
@@ -730,6 +786,60 @@ export declare function palette(theme: Theme, site?: SiteKey): Record<string, st
 export type SkinKey = keyof typeof tokens.skins.sites;
 export type Register = keyof typeof tokens.skins.registers;
 export declare const SKIN_KEYS: SkinKey[];
+export type PrintKey = keyof typeof tokens.print.sheets;
+export declare const PRINT_KEYS: PrintKey[];
+/** One print sheet: its page box, faces, type sizes, leading and colours. */
+export declare function printSheet(key?: PrintKey): {
+    readonly about: "The house brief that Reports tools/md2pdf.py prints: A4, a serif body under sans headings, navy headings and table heads, one red accent.";
+    readonly page: {
+        readonly size: "A4";
+        readonly margin: "16mm 15mm 18mm 15mm";
+    };
+    readonly face: {
+        readonly body: "Georgia, 'Times New Roman', serif";
+        readonly heading: "'Helvetica Neue', Helvetica, Arial, sans-serif";
+        readonly footer: "Helvetica, Arial, sans-serif";
+        readonly mono: "Menlo, monospace";
+    };
+    readonly size: {
+        readonly root: "10.4pt";
+        readonly h1: "21pt";
+        readonly h2: "13.5pt";
+        readonly h3: "11.2pt";
+        readonly lede: "9.6pt";
+        readonly table: "9.1pt";
+        readonly small: "8.8pt";
+        readonly footer: "8pt";
+        readonly "front-heading": "12.5pt";
+        readonly pocket: "11pt";
+        readonly "pocket-heading": "15pt";
+    };
+    readonly leading: "1.4";
+    readonly color: {
+        readonly paper: "#fff";
+        readonly text: "#1a1a1a";
+        readonly strong: "#111";
+        readonly lede: "#333";
+        readonly muted: "#6b7280";
+        readonly heading: "#16233b";
+        readonly "on-heading": "#fff";
+        readonly accent: "#b8312f";
+        readonly rule: "#c9ced6";
+        readonly panel: "#f3f5f9";
+        readonly stripe: "#f7f8fa";
+        readonly "quote-bg": "#eef6ee";
+        readonly "quote-rule": "#2f7d4f";
+        readonly "flag-bg": "#fff1cc";
+        readonly "flag-border": "#e0b64a";
+        readonly "flag-ink": "#5a3d00";
+        readonly "ask-bg": "#f9ecec";
+        readonly "ask-stripe": "#f5e3e3";
+        readonly "ask-ink": "#4a1f1f";
+        readonly "answer-bg": "#eef6ee";
+        readonly "answer-stripe": "#e4f0e4";
+    };
+    readonly "text-on": readonly [readonly ["text", "paper"], readonly ["strong", "paper"], readonly ["lede", "paper"], readonly ["muted", "paper"], readonly ["heading", "paper"], readonly ["accent", "paper"], readonly ["on-heading", "heading"], readonly ["accent", "panel"], readonly ["text", "panel"], readonly ["text", "stripe"], readonly ["text", "quote-bg"], readonly ["flag-ink", "flag-bg"], readonly ["ask-ink", "ask-bg"], readonly ["ask-ink", "ask-stripe"], readonly ["text", "answer-bg"], readonly ["text", "answer-stripe"]];
+};
 export interface Skin {
     register: Register;
     name?: string;

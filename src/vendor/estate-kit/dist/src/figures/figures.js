@@ -44,9 +44,11 @@ export function validateFigure(key, f) {
                 errs.push(`${key}: source.${field} is blank; leave it out or fill it`);
         }
     }
-    if (r.kind === "value" && (typeof r.value !== "number" || !Number.isFinite(r.value))) {
-        errs.push(`${key}: value must be a finite number`);
+    if (r.kind === "value" && r.value !== null && (typeof r.value !== "number" || !Number.isFinite(r.value))) {
+        errs.push(`${key}: value must be a finite number or null`);
     }
+    if (r.kind === "value" && r.value === null && "display" in r)
+        errs.push(`${key}: an unknown value cannot have display forms`);
     if (r.kind === "series") {
         if (r.axis !== "category" && r.axis !== "time")
             errs.push(`${key}: axis must be "category" or "time"`);
@@ -129,10 +131,16 @@ export function defineFigures(data) {
             throw new Error(`figure set has no key "${key}"`);
         return f;
     };
-    const value = (key) => {
+    const valueRecord = (key) => {
         const f = get(key);
         if (f.kind !== "value")
             throw new Error(`figure "${key}" is a series, not a single value`);
+        return f;
+    };
+    const value = (key) => {
+        const f = valueRecord(key);
+        if (f.value === null)
+            throw new Error(`${key}: unknown value; this chart requires a number`);
         return f;
     };
     const series = (key) => {
@@ -145,9 +153,12 @@ export function defineFigures(data) {
         keys: () => Object.keys(records),
         get,
         value,
+        valueRecord,
         series,
         show: (key, form = "full") => {
-            const f = value(key);
+            const f = valueRecord(key);
+            if (f.value === null)
+                return "Unknown";
             return f.display?.[form] ?? formatValue(f.value, f.unit, f.dp, form);
         },
         caption: (keys) => captionFor((Array.isArray(keys) ? keys : [keys]).map(get)),

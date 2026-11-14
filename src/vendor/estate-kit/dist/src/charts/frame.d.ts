@@ -69,7 +69,7 @@ export interface Framed {
  * Lays out header and footer and hands back the plot rectangle. For inline the plot
  * height is the chart's own need; for a card it is what the fixed canvas leaves.
  */
-export declare function frame(o: ChartOptions, caption: string, plotNeed: number, thumbForm?: string, figures?: Figure[]): Framed;
+export declare function frame(o: ChartOptions, caption: string, plotNeed: number, thumbForm?: string, figures?: Pick<Figure, "source" | "fixture">[]): Framed;
 /** The paint mode with the chart's ground on it; a ground on the mode itself wins. */
 export declare function withGround(mode: Mode, ground?: Ground): Mode;
 export declare const NICE_STEPS: number[];

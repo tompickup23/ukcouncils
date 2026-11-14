@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tompickup23/estate-kit/schema/figure.schema.json",
+  "title": "Estate Kit figure set",
+  "description": "A figures file: one record per key. The same rules are enforced in code by validateFigure() in src/figures/figures.ts and validate_figure() in python/estate_kit/figures.py. Keys starting with a dollar sign are notes and are skipped.",
+  "type": "object",
+  "patternProperties": {
+    "^\\$": {},
+    "^[^$]": { "$ref": "#/$defs/figure" }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["publisher", "title", "edition"],
+      "anyOf": [{ "required": ["table"] }, { "required": ["page"] }],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$" },
+        "publicationDate": { "type": "string", "format": "date" },
+        "publisher": { "type": "string", "pattern": "\\S" },
+        "title": { "type": "string", "pattern": "\\S" },
+        "table": { "type": "string", "pattern": "\\S" },
+        "page": { "type": "string", "pattern": "\\S" },
+        "edition": { "type": "string", "pattern": "\\S" },
+        "url": { "type": "string", "format": "uri" },
+        "accessed": { "type": "string", "format": "date" }
+      }
+    },
+    "display": {
+      "type": "object",
+      "properties": { "full": { "type": "string" }, "round": { "type": "string" }, "short": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "base": {
+      "type": "object",
+      "required": ["kind", "label", "unit", "source"],
+      "properties": {
+        "label": { "type": "string", "pattern": "\\S", "description": "What the figure is a count of." },
+        "name": { "type": "string" },
+        "unit": { "enum": ["gbp", "pence", "percent", "count", "rate", "index"] },
+        "dp": { "type": "integer", "minimum": 0 },
+        "source": { "$ref": "#/$defs/source" },
+        "fixture": { "type": "boolean" },
+        "note": { "type": "string" }
+      }
+    },
+    "figure": {
+      "oneOf": [
+        {
+          "allOf": [{ "$ref": "#/$defs/base" }],
+          "required": ["value"],
+          "properties": { "kind": { "const": "value" }, "value": { "type": ["number", "null"] }, "display": { "$ref": "#/$defs/display" } },
+          "if": { "properties": { "value": { "type": "null" } } },
+          "then": { "not": { "required": ["display"] } }
+        },
+        {
+          "allOf": [{ "$ref": "#/$defs/base" }],
+          "required": ["axis", "points"],
+          "properties": {
+            "kind": { "const": "series" },
+            "axis": { "enum": ["category", "time"] },
+            "points": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["label", "value"],
+                "properties": { "label": { "type": "string" }, "value": { "type": "number" }, "display": { "$ref": "#/$defs/display" } }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

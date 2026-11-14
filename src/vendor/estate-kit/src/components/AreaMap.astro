@@ -1,0 +1,8 @@
+---
+import ChartFigure from "./ChartFigure.astro";
+import { areaMap, type AreaMapOptions } from "../../dist/src/index.js";
+type Props = AreaMapOptions & { tableOpen?: boolean; class?: string };
+const { tableOpen = true, class: className, ...opts } = Astro.props;
+const out = areaMap(opts);
+---
+<ChartFigure out={out} keys={opts.modeData === "fixed" ? Object.values(opts.values) : []} tableOpen={tableOpen} class={className} id={`${opts.id}-table`} />
