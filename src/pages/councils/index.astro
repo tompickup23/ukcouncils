@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import CouncilPicker from "../../components/CouncilPicker.astro";
+import CouncilClassMap from "../../components/CouncilClassMap.astro";
 import { englishRows } from "../../lib/council-picker";
 import { hubCardPath } from "../../lib/og";
 import { REGIONS, councilPages, slugify } from "../../lib/paths";
@@ -23,6 +24,7 @@ const values = Object.fromEntries(pages.map(({council, tax}) => [council.gss, ta
   </ul></nav></details>
   <CouncilPicker id="council-directory" rows={rows} caption={`Councils in England and area Band D, ${year}`} figure={{heading: 'Area Band D', values, missing: 'n/a', source: councilTaxSource(CURRENT_YEAR, loadYear(CURRENT_YEAR).source.bandTable)}} />
   <p class="caveat">Area averages include adult social care and average parish precepts. Your exact bill varies by parish and discounts. The figure is the annual Band D charge, not the council's own share.</p>
+  <CouncilClassMap />
 </BaseLayout>
 <style>
   .directory-regions summary { min-height: 44px; cursor: pointer; color: var(--accent); font-weight: 600; }

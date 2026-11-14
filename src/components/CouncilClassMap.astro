@@ -1,0 +1,57 @@
+---
+/**
+ * The map of England on /councils/ (NV8, W2): a second way in beside the picker,
+ * which stays first and is the map's text equivalent. Every area is a native link
+ * to its council page, so the drawing works with scripts off. 296 links would sit
+ * in the keyboard order, so a skip link goes past them.
+ *
+ * The source sits in the site's own line under the drawing, as on the home page,
+ * so the kit draws with its source in HTML and the line is the one the rest of the
+ * site prints.
+ */
+import { areaMap } from "../vendor/estate-kit/dist/src/index.js";
+import SourceLine from "./SourceLine.astro";
+import { CLASS_REGISTRY, classMapData } from "../lib/council-class-map";
+
+const data = classMapData();
+const out = areaMap({
+  id: "council-classes",
+  title: `Councils in England by class, ${data.year}`,
+  description: `Each of the ${data.count} councils in England that bill council tax, shaded and patterned by its class. Select an area to open its council page.`,
+  areas: data.areas,
+  links: data.links,
+  registry: CLASS_REGISTRY,
+  indicator: "class",
+  modeData: "categorical",
+  categories: data.categories,
+  source: data.source,
+  boundaryCredit: data.boundaryCredit,
+  notDrawn: "Scotland, Wales and Northern Ireland, whose councils are not on this page.",
+  sourcePlacement: "html",
+});
+---
+<section class="section class-map" aria-labelledby="class-map-heading">
+  <h2 id="class-map-heading">Councils on a map, by class</h2>
+  <p>The same {data.count} councils as the list above, drawn on a map of England. Each area links to its council page.</p>
+  <a class="class-map-skip" href="#class-map-after">Skip the map</a>
+  <figure class="class-map-figure" data-figure="council-classes" data-pagefind-ignore>
+    <Fragment set:html={out.svg} />
+    <figcaption>
+      <SourceLine source={data.siteSource} />
+      <p class="source-line">Boundaries: <a href={data.boundary.url}>{data.boundary.publisher}, {data.boundary.title}</a>, simplified for drawing. Not drawn: Scotland, Wales and Northern Ireland.</p>
+      <p class="small map-attribution">{data.boundary.attribution} Licensed under <a href={data.boundary.licenceUrl}>OGL v3.0</a>.</p>
+      <p class="caveat">Classes are those in the class column of MHCLG's Table 9, with inner and outer London boroughs drawn as one class. MHCLG places the City of London with the inner London boroughs and the Isles of Scilly with the unitary authorities, and the map shows them in those classes. The class says what kind of council bills the area; it is not a measure of anything.</p>
+    </figcaption>
+  </figure>
+  <details class="class-map-table" id="class-map-after">
+    <summary>The map as a table</summary>
+    <div class="table-wrap" set:html={out.table} />
+  </details>
+</section>
+<style>
+  .class-map-figure { margin: 0; max-width: 40rem; }
+  .class-map-figure :global(svg) { width: 100%; height: auto; display: block; }
+  .class-map-figure figcaption { margin-top: 0.5rem; }
+  .class-map-skip { display: inline-flex; align-items: center; min-height: 44px; }
+  .class-map-table summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; color: var(--accent); font-weight: 600; }
+</style>

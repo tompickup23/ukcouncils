@@ -1,5 +1,6 @@
 ---
 import BudgetTables from './BudgetTables.astro';
+import ServiceBars from './ServiceBars.astro';
 import SourceLine from './SourceLine.astro';
 import {budgetSource, budgetYear} from '../lib/budget';
 import {budgetHeadline} from '../lib/budget-headline';
@@ -17,6 +18,7 @@ const headline = budgetHeadline(gss);
   </div>}
   <p>This is the budget returned to MHCLG; the spending record covers published payments.</p>
   <SourceLine source={budgetSource()} />
+  <ServiceBars council={view.council} name={view.name} tableNote="The same figures, with their RA line numbers, are in the service expenditure table below." />
   <details data-budget-drawer><summary>Read the service expenditure, funding and reserves tables for {view.name}</summary>
   <p>Service expenditure is net of sales, fees, charges and transfers, excluding NHS-funded expenditure. Pounds are converted from printed whole thousands.</p>
   <BudgetTables council={view.council} name={view.name} id="billing-budget" />
@@ -25,7 +27,7 @@ const headline = budgetHeadline(gss);
     <h3 id="county-budget-heading">{view.county.name} County Council budget for {budgetYear}</h3>
     <p>The following tables cover the whole county council budget.</p>
     <details data-county-budget-drawer><summary>Read the service expenditure, funding and reserves tables for {view.county.name} County Council</summary>
-    <BudgetTables council={view.county.council} name={view.county.name} id="county-budget-tables" headingLevel={4} />
+    <BudgetTables council={view.county.council} name={view.county.name} id="county-budget-tables" headingLevel={4} bars />
     </details>
   </section>}
   {view.gameUrl && <p><a href={view.gameUrl}>Play the budget game for {view.name} on UK Council Tax</a></p>}

@@ -1,0 +1,25 @@
+---
+/**
+ * One council's service expenditure as ranked bars (NV12). The service table in the
+ * budget drawer holds the same rows in the same order and is the text equivalent,
+ * so the kit's own table twin is not printed a second time. The site's source line
+ * sits under the drawing, as under every figure.
+ */
+import SourceLine from './SourceLine.astro';
+import {budgetSource, type BudgetCouncil} from '../lib/budget';
+import {serviceBars} from '../lib/budget-bars';
+interface Props {council: BudgetCouncil; name: string; tableNote: string}
+const {council, name, tableNote} = Astro.props;
+const out = serviceBars(council, name);
+---
+{out && <figure class="service-bars" data-service-bars data-pagefind-ignore>
+  <Fragment set:html={out.svg} />
+  <figcaption>
+    <SourceLine source={budgetSource()} />
+    <p class="small">{tableNote}</p>
+  </figcaption>
+</figure>}
+<style>
+  .service-bars { margin: 1rem 0; max-width: 40rem; }
+  .service-bars :global(svg) { width: 100%; height: auto; display: block; }
+</style>
