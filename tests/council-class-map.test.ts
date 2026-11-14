@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { areaMap } from '../src/vendor/estate-kit/dist/src/index.js';
-import { CLASS_REGISTRY, COUNCIL_CLASSES, TOLERANCE, classFor, classMapData, simplifyRing } from '../src/lib/council-class-map';
+import { COUNCIL_CLASSES, TOLERANCE, classFor, classMapData, simplifyRing } from '../src/lib/council-class-map';
 import { englishRows } from '../src/lib/council-picker';
 import { councilPages } from '../src/lib/paths';
 
@@ -72,18 +71,4 @@ describe('the council class map on /councils/', () => {
     expect(simplifyRing(tiny)).toEqual(tiny);
   });
 
-  it('renders every area as a native link to its council page, with the table in the same order', { timeout: 120_000 }, () => {
-    const out = areaMap({
-      id: 't', title: 'Test', description: 'Test map.', areas: data.areas, links: data.links, registry: CLASS_REGISTRY,
-      indicator: 'class', modeData: 'categorical', categories: data.categories, source: data.source,
-      boundaryCredit: data.boundaryCredit, notDrawn: 'Scotland, Wales and Northern Ireland.', sourcePlacement: 'html',
-    });
-    const hrefs = [...out.svg.matchAll(/<a href="([^"]+)" role="link"/g)].map(m => m[1]);
-    expect(hrefs).toHaveLength(296);
-    expect(new Set(hrefs)).toEqual(new Set(councilPages().map(p => `/councils/${p.council.slug}/`)));
-    expect(out.svg).toContain('aria-label="City of London: London borough or the City of London; London borough or the City of London"');
-    // A head row, 296 area rows and the source row in the foot.
-    expect((out.table.match(/<tr/g) ?? []).length).toBe(298);
-    expect(out.svg).not.toMatch(/[–—]| - /);
-  });
 });

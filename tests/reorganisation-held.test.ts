@@ -53,7 +53,8 @@ describe("the held reorganisation field", () => {
       for (const phrase of HELD_PHRASES) if (html.includes(phrase)) hits.push(`${phrase} in ${path.slice(DIST.length)}`);
     }
     expect(hits).toEqual([]);
-  });
+    // Every built page through the gate: about four seconds alone, more beside other files.
+  }, 30_000);
 });
 
 

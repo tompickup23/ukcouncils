@@ -23,6 +23,14 @@ describe.skipIf(!built)('built drawings', () => {
     expect(skip).toBeLessThan(map);
     expect(html.indexOf('id="class-map-after"')).toBeGreaterThan(map);
     expect(figure).toMatch(/Source: <a [^>]*>MHCLG, Council Tax levels set by local authorities in England 2026 to 2027<\/a>, Table 9/);
+    const hrefs = [...figure.matchAll(/<a href="([^"]+)" role="link"/g)].map(m => m[1]);
+    expect(new Set(hrefs).size).toBe(296);
+    for (const href of hrefs) expect(existsSync(join(DIST, href, 'index.html')), href).toBe(true);
+    expect(figure).toContain('aria-label="City of London: London borough or the City of London; London borough or the City of London"');
+    expect(figure).toContain('aria-label="Isles of Scilly: Unitary authority; Unitary authority"');
+    expect(figure).not.toMatch(/[\u2013\u2014]| - /);
+    const drawer = html.slice(html.indexOf('id="class-map-after"'), html.indexOf('</details>', html.indexOf('id="class-map-after"')));
+    expect(drawer.match(/<tbody>[\s\S]*<\/tbody>/)![0].match(/<tr>/g)).toHaveLength(296);
   });
 
   it('draw the service lines on each profile with a budget, before the drawer that holds the table', () => {
