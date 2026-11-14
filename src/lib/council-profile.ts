@@ -2,7 +2,7 @@ import {budgetHeadline} from "./budget-headline";
 import {functionsFor, functionsSource} from "./council-functions";
 import {councilBudget, type CouncilBudget} from "./council-budget";
 import { collectionFor, collectionSource } from "./collection";
-import { electionFor, electionSourceLine } from "./elections";
+import { electionFor, electionSource } from "./elections";
 import { councilEfs } from "./council-efs";
 import { efsSource } from "./efs-presentation";
 import { populationFor, populationSource } from "./population";
@@ -204,10 +204,7 @@ export function profileSources(council: Council, tax: Authority, today = londonT
   const support = councilEfs(council.slug);
   if (support) for (const {statement} of support.entries) add(efsSource(statement.page, statement.table));
   const election = electionFor(council.gss);
-  if (election) {
-    const citation = electionSourceLine(election);
-    add({publisher: "UK Elections", title: citation.label, url: citation.url, table: citation.attribution});
-  }
+  if (election) add(electionSource(election));
   const budgetView = councilBudget(council);
   if (budgetView) for (const source of budgetView.sources) add(source);
   const spending = spendingRecord(tax.name, spendingFor(council.gss));

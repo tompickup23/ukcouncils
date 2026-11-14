@@ -12,7 +12,7 @@ import { type SourceRef } from "../lib/sources";
 import { loadYear } from "../lib/council-tax";
 import { populationFor, populationSource } from "../lib/population";
 import { collectionFor, collectionRate, collectionSource, collectionYear } from "../lib/collection";
-import { electionFor, electionSourceLine } from "../lib/elections";
+import { electionFor, electionSource } from "../lib/elections";
 import { councilEfs } from "../lib/council-efs";
 import SourceLine from "./SourceLine.astro";
 import { budgetHeadline } from "../lib/budget-headline";
@@ -47,7 +47,7 @@ const collected = collectionFor(council.gss);
 if (collected && collected.rate !== null) tiles.push({ label: `Council tax collected in year, ${collectionYear()}`, value: collectionRate(collected.rate), figure: true, href: "#collection", more: "Collection and arrears", source: collectionSource() });
 
 const election = electionFor(council.gss);
-if (election) tiles.push({ label: "Next scheduled election", value: String(election.dateLabel ?? election.nextYear), figure: true, href: "#elections", more: "Elections", source: { publisher: "UK Elections", title: election.sourceLabel, table: electionSourceLine(election).attribution, url: election.sourceUrl } });
+if (election) tiles.push({ label: "Next scheduled election", value: String(election.dateLabel ?? election.nextYear), figure: true, href: "#elections", more: "Elections", source: electionSource(election) });
 
 const headline = budgetHeadline(council.gss);
 if (headline) tiles.push({ label: headline.label, value: headline.value, figure: true, href: "#budget", more: "Budget and reserves", source: headline.source, caveat: headline.caveat });
