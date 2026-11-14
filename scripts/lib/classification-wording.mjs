@@ -32,7 +32,7 @@ export function maskExistingClassifications(html) {
     script => script.replace(/"classCode":"UA","classLabel":"Unitary authority"/g, maskWord));
   // The class map on /councils/ (NV8): MHCLG's class label in the kit's exact markup, and
   // the one caveat sentence that names the class. Any other wording in the map is checked.
-  html = html.replace(/<figure\b[^>]*data-figure="council-classes"[^>]*>[\s\S]*?<\/figure>/g, figure => figure
+  html = html.replace(/<figure\b[^>]*data-class-map[^>]*>[\s\S]*?<\/figure>/g, figure => figure
     .replace(/(aria-label="[^"<>]+: )Unitary authority; Unitary authority"/g, '$1classification; classification"')
     .replace(/(<title>[^<>]+: )Unitary authority; Unitary authority(<\/title>)/g, '$1classification; classification$2')
     .replace(/(<text\b[^>]*>)Unitary authority( \(horizontal lines\))?(<\/text>)/g, '$1classification$2$3')

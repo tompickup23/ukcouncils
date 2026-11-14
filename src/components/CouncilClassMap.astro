@@ -35,7 +35,7 @@ const out = areaMap({
   <h2 id="class-map-heading">Councils on a map, by class</h2>
   <p>The same {data.count} councils as the list above, drawn on a map of England. Each area links to its council page.</p>
   <a class="class-map-skip" href="#class-map-after">Skip the map</a>
-  <figure class="class-map-figure" data-figure="council-classes" data-pagefind-ignore>
+  <figure class="class-map-figure" data-class-map data-pagefind-ignore>
     <Fragment set:html={out.svg} />
     <figcaption>
       <SourceLine source={data.siteSource} />

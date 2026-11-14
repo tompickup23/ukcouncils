@@ -20,7 +20,7 @@ const note8 = council.notes.raPart1.includes('[note 8]');
 <div class="budget-tables">
   {name !== council.name && <p class="source-line">Printed in the RA return as “{council.name}”.</p>}
   <Heading id={`${id}-services`}>Service expenditure</Heading>
-  {bars && <ServiceBars council={council} name={name} tableNote="The same figures, with their RA line numbers, are in the table below." />}
+  {bars && <ServiceBars council={council} name={name} caveat={rows.some(row => row.value! < 0) ? 'A figure below zero is net income.' : undefined} />}
   <div class="table-wrap" tabindex="0" role="region" aria-labelledby={`${id}-services`}>
     <table class="data">
       <caption>{name}: observed net current expenditure by service, {budgetYear}</caption>
