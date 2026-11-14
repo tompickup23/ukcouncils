@@ -264,8 +264,8 @@ jobs:
           # failed every run. They are tried for three minutes and are not required: the
           # runner image already holds Chrome's libraries, and a missing one fails the
           # browser tests that follow, loudly.
-          uv run --with 'playwright>=1.50,<2' python -m playwright install chromium
-          timeout --kill-after=10 180 uv run --with 'playwright>=1.50,<2' python -m playwright install-deps chromium || echo "::warning::Chromium system packages were not installed because the Ubuntu package servers could not be reached. The run continues with the packages the runner image holds."
+          uv run --with 'playwright==1.65.1' python -m playwright install chromium
+          timeout --kill-after=10 180 uv run --with 'playwright==1.65.1' python -m playwright install-deps chromium || echo "::warning::Chromium system packages were not installed because the Ubuntu package servers could not be reached. The run continues with the packages the runner image holds."
 
       - name: Serve the built PR
         run: |
