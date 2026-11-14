@@ -128,7 +128,8 @@ export function areaMap(o) {
         canvas.rect(panel.x, panel.y, panel.w, panel.h, R.ground, `rx="${tokens.radius["radius-sm"].replace("px", "")}"`);
     const stroke = fixed ? `stroke="${R.ground}"` : canvas.paint({ stroke: bg });
     for (const r of rows) {
-        const name = `${r.a.properties.name}: ${r.shown}${r.cls === null ? "" : `; ${labels[r.cls]}`}`;
+        // In categorical mode the shown value is the class label, so it is not repeated.
+        const name = `${r.a.properties.name}: ${r.shown}${r.cls === null || !fixed ? "" : `; ${labels[r.cls]}`}`;
         canvas.add(`<a href="${r.link}" role="link" aria-label="${esc(name)}" class="ek-area-link"><path d="${r.d}" fill="${fillFor(r.cls)}" ${stroke} stroke-width="1.5" stroke-linejoin="round" data-ek-area="${esc(r.code)}" data-ek-class="${r.cls ?? "unknown"}"><title>${esc(name)}</title></path></a>`);
     }
     // Grounded plates deliberately overlay geography, as in LocatorMap. Only key swatches
@@ -140,7 +141,7 @@ export function areaMap(o) {
         const h = fs + tpl.font.value + 24;
         return { item: r, w, h, anchor: p, r: p.r, eligible: p.r > Math.min(w, h) * 0.3, fits: (x, y) => p.inside(x + w / 2, y + h / 2) };
     });
-    const layout = placePlates(candidates, { panel, gap: 6, inset: 6 });
+    const layout = o.plates === false ? { placed: [], unplaced: [] } : placePlates(candidates, { panel, gap: 6, inset: 6 });
     for (const p of layout.placed) {
         canvas.add(`<g pointer-events="none" aria-hidden="true" data-ek-plate="${esc(p.item.code)}">`);
         canvas.rect(p.x, p.y, p.w, p.h, ground, 'rx="3"');

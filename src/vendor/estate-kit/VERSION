@@ -1,16 +1,16 @@
 parts charts
-version 0.6.0
-tag v0.6.0
-commit 3418f9c4dfde1e446bdac474a0cc6d4189ced041
+version 0.6.1
+tag v0.6.1
+commit 38966aafe2803340a340e092b03d0ecb8c686109
 repository tompickup23/estate-kit
 vendored 2026-11-14 by scripts/vendor.mjs
 
 sha256 104547dd6a5dc90fb398fd6d33c56bcc265795fdbd226929722b35e9ecfaeb50 dist/generated/metrics.d.ts
 sha256 3e30086de4b71cda935270afd1f6fbe8c63ba606fe25d2ac595b5748d26569cc dist/generated/metrics.js
-sha256 3433def03bc25fa9fd4960739e96f71607f3c28d6325ba17af83d85c97e18c94 dist/generated/tokens.d.ts
-sha256 133a0754a9ecfe8911c784d6c3b904592cf61a5bf77eea3f3804e2036086c8c1 dist/generated/tokens.js
-sha256 9cb3e95a9077d4b3800edfb517b2d4341ec264fe42c988e772715ade47980b7c dist/src/charts/areaMap.d.ts
-sha256 5e79066eced152af67046a04661e2e2a5f380ff7235986fae3dd54e9e42990be dist/src/charts/areaMap.js
+sha256 941a8b90650720e705f0ed01301d10aa06f9cdaba80e8a980f56180a4360e39c dist/generated/tokens.d.ts
+sha256 44fe380fadcf5dbe5425d92f2a51e357e6003ae342a14ba85a58450fc77795ee dist/generated/tokens.js
+sha256 2e0578247736333f7a2457b36f97808278980d5b3377993f8d9dd551458854ec dist/src/charts/areaMap.d.ts
+sha256 57450a2a21cf87d2a93165e1d8031c43da91847941850e1e30897360e94121fb dist/src/charts/areaMap.js
 sha256 9f520e195765708efd4af1e9a5ae1f2c54ecd269ecdaad024ae33a578301ad01 dist/src/charts/billAnatomy.d.ts
 sha256 1c126fde75068e9ac9bb661b23a91b064a4eeab601534c8884f3eed32b987703 dist/src/charts/billAnatomy.js
 sha256 0afbc84865349ba89db767c79fc9a6ced2147ea2a0ca401c0e3670524a45e2e6 dist/src/charts/canvas.d.ts
@@ -84,7 +84,7 @@ sha256 1e9ff5939e86ee7dc66cbeb12c6b63c894082404ff78884b7674a5cae01b2a6a dist/src
 sha256 8a0c0e4ef6d42939c0226a3441cce09e10818f2813250ec589f3e9f7cb8e3f48 dist/src/qa/colour.d.ts
 sha256 04178caff6dc041f7e05f7ffad4af0396239d76c2bb2a0e2e0c6258259b846ac dist/src/qa/colour.js
 sha256 7216de0ebec44e796bf063f7daf0be898770035c6b60e19b785ddc8395e0d689 dist/src/qa/gates.d.ts
-sha256 a37f2f1f87473de318971c37252cbb1ab3553cb4c3ae4ec414076468f3d67032 dist/src/qa/gates.js
+sha256 a25fb993d19c1426cf1fa66af81ca32b51b5ea7dcaca48ee9f9d599a232db786 dist/src/qa/gates.js
 sha256 6031a4a3e5d684949b33e0a9203805586ea79498b88941213788e9cbfed2659d dist/src/qa/names.d.ts
 sha256 35dd4967e305a9b9a822db140805173998284d285998af8dcf97319d64f9496a dist/src/qa/names.js
 sha256 c67bde85167b71c4f809a81412102d33798d1ea2977c0e0ede0932e48294eb55 dist/src/qa/sources.d.ts

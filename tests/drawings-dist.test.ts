@@ -26,8 +26,11 @@ describe.skipIf(!built)('built drawings', () => {
     const hrefs = [...figure.matchAll(/<a href="([^"]+)" role="link"/g)].map(m => m[1]);
     expect(new Set(hrefs).size).toBe(296);
     for (const href of hrefs) expect(existsSync(join(DIST, href, 'index.html')), href).toBe(true);
-    expect(figure).toContain('aria-label="City of London: London borough or the City of London; London borough or the City of London"');
-    expect(figure).toContain('aria-label="Isles of Scilly: Unitary authority; Unitary authority"');
+    expect(figure).toContain('aria-label="City of London: London borough or the City of London"');
+    expect(figure).toContain('aria-label="Isles of Scilly: Unitary authority"');
+    // Plates are off (kit 0.6.1): no opaque label over the map, and the class named once.
+    expect(figure).not.toContain('data-ek-plate');
+    expect(figure).not.toContain('Unitary authority; Unitary authority');
     expect(figure).not.toMatch(/[\u2013\u2014]| - /);
     const drawer = html.slice(html.indexOf('id="class-map-after"'), html.indexOf('</details>', html.indexOf('id="class-map-after"')));
     expect(drawer.match(/<tbody>[\s\S]*<\/tbody>/)![0].match(/<tr>/g)).toHaveLength(296);

@@ -14,6 +14,12 @@ interface AreaMapBase extends ChartOptions {
     boundaryCredit: string;
     /** State geographic exclusions and what the measure does not show. */
     notDrawn: string;
+    /**
+     * Plates name an area and its value over the map where one fits. True by default. A
+     * categorical map whose key already names every class can pass false: plates are opaque,
+     * and on a whole country map only the largest areas take one.
+     */
+    plates?: boolean;
 }
 export type AreaMapOptions = AreaMapBase & ({
     modeData: "fixed";

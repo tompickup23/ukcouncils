@@ -18,7 +18,9 @@
  */
 import { contrast, seenDistance, VISIONS } from "./colour.js";
 /** The dash pattern of the map renderer: em dash, en dash, a spaced hyphen, the entities. */
-export const DASHES = /[\u2013\u2014]| - |&mdash;|&ndash;/; // dash-ok: the pattern itself
+// "&[mn]dash;" matches both entities without spelling either name, so a site that ships
+// the kit to the browser does not carry the entity text its own dash sweep refuses.
+export const DASHES = /[\u2013\u2014]| - |&[mn]dash;/; // dash-ok: the pattern itself
 /** No ranking language in a title or the alt text: areas are never ordered by a value. */
 export const RANKING_WORDS = /\b(highest|lowest|fastest|slowest|most|least|top|bottom|largest|smallest|biggest|ranked|ranking|rank|league)\b/i;
 /** Neutral verbs: a share "fell" or "rose", nothing more. */

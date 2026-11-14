@@ -1,4 +1,4 @@
-export declare const VERSION = "0.6.0";
+export declare const VERSION = "0.6.1";
 export declare const tokens: {
     readonly color: {
         readonly light: {
