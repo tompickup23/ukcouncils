@@ -5,8 +5,11 @@ import { heldWording } from '../scripts/lib/held-wording.mjs';
 // The class map names MHCLG's "Unitary authority" class. The held wording gate masks that
 // label only in the map's exact markup; any other wording in the map still trips it.
 const page = 'dist/councils/index.html';
-describe.skipIf(!existsSync(page))('the class map and the held wording gate', () => {
-  const html = readFileSync(page, 'utf8');
+// Read lazily: a describe body runs at collection even when skipped, and CI's validate job
+// runs before any build, so dist/ is absent there.
+const built = existsSync(page);
+describe.skipIf(!built)('the class map and the held wording gate', () => {
+  const html = built ? readFileSync(page, 'utf8') : '';
   it('passes with the class label as drawn', () => {
     expect(html).toContain('<td>Unitary authority</td>');
     expect(heldWording(html)).toBe(false);
