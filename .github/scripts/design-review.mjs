@@ -3,13 +3,21 @@ import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { capturePaths, eventBody } from './review-inputs.mjs';
 
+// The pinned checker's own metadata allows any Playwright 1.x. Playwright 1.65.2
+// (14 November 2026, Chromium build 1255) stopped the checker on the runner, so
+// its packages are named here and the checker file stays byte for byte as pinned.
+// The workflow installs the browser for the same Playwright version.
+const CHECKER_PLAYWRIGHT = 'playwright==1.65.1';
+const CHECKER_PILLOW = 'pillow>=10,<13';
+
 const output = process.argv[2];
 mkdirSync(output, { recursive: true });
 let summary;
 let status = 2;
 try {
   const paths = capturePaths(eventBody());
-  const args = ['run', '--script', '.github/design-check/design_check.py', process.cwd(),
+  const args = ['run', '--no-project', '--with', CHECKER_PLAYWRIGHT, '--with', CHECKER_PILLOW,
+    'python', '.github/design-check/design_check.py', process.cwd(),
     '--preview', 'http://127.0.0.1:4321', '--shots', output, '--site-name', 'UK Councils',
     ...paths.flatMap((path) => ['--path', path])];
   const result = spawnSync('uv', args, { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
