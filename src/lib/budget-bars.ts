@@ -1,5 +1,5 @@
 import { defineFigures, rankedBars, type ChartOutput } from '../vendor/estate-kit/dist/src/index.js';
-import { budgetSource, budgetYear, services, type BudgetCouncil } from './budget';
+import { budgetMoney, budgetSource, budgetYear, services, type BudgetCouncil } from './budget';
 import { longDate } from './sources';
 
 /**
@@ -35,5 +35,6 @@ export function serviceBars(council: BudgetCouncil, name: string): ChartOutput |
     classLabel: `MHCLG service headings for ${name}, in the order of the RA return`,
     basis: `budget for ${budgetYear}, in pounds converted from printed whole thousands`,
     sourcePlacement: 'html',
+    alt: `Bars from zero of ${name}'s net current expenditure by MHCLG service heading, ${budgetYear}, in the order of the RA return. ${rows.map(row => `${row.label}: ${row.value! < 0 ? `minus ${budgetMoney(-row.value!)}` : budgetMoney(row.value)}`).join('; ')}.`,
   });
 }

@@ -33,7 +33,7 @@ describe('service expenditure as ranked bars', () => {
       const expected = serviceRows(council).map(r => r.value! < 0 ? `minus ${budgetMoney(-r.value!)}` : budgetMoney(r.value));
       expect(values(out.svg), name).toEqual(expected);
       expect(out.svg).not.toContain('servicetot');
-      expect(out.svg).not.toMatch(/[–—]| - /);
+      expect(out.svg).not.toMatch(/[\u2013\u2014]| - /);
     }
   });
 

@@ -93,7 +93,7 @@ jobs:
         run: npm run test:dist
 
       - name: Verify every rendered panel claim
-        run: npx vitest run tests/reorganisation-held.test.ts
+        run: npx vitest run tests/reorganisation-held.test.ts tests/class-map-wording.test.ts tests/drawings-dist.test.ts
 
       - name: Install Chromium
         run: |

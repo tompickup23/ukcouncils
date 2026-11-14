@@ -26,6 +26,10 @@ for (const theme of ['light', 'dark'] as const) {
     await expect(section.locator('a.ek-area-link')).toHaveCount(296);
     await noSidewaysScroll(page);
     await axe(page, '.class-map');
+    await section.locator('#class-map-after > summary').click();
+    await noSidewaysScroll(page);
+    await axe(page, '#class-map-after');
+    await section.locator('#class-map-after > summary').click();
     // The skip link takes the keyboard past all 296 area links to the table drawer.
     await section.getByRole('link', { name: 'Skip the map' }).focus();
     await page.keyboard.press('Enter');

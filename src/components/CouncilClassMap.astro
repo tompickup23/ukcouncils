@@ -11,6 +11,7 @@
  */
 import { areaMap } from "../vendor/estate-kit/dist/src/index.js";
 import SourceLine from "./SourceLine.astro";
+import "../vendor/estate-kit/src/components/kit.css";
 import { CLASS_REGISTRY, classMapData } from "../lib/council-class-map";
 
 const data = classMapData();
@@ -45,7 +46,7 @@ const out = areaMap({
   </figure>
   <details class="class-map-table" id="class-map-after">
     <summary>The map as a table</summary>
-    <div class="table-wrap" set:html={out.table} />
+    <div class="table-wrap" tabindex="0" role="region" aria-label="The class map as a table" set:html={out.table} />
   </details>
 </section>
 <style>

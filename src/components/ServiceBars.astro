@@ -6,6 +6,7 @@
  * sits under the drawing, as under every figure.
  */
 import SourceLine from './SourceLine.astro';
+import '../vendor/estate-kit/src/components/kit.css';
 import {budgetSource, type BudgetCouncil} from '../lib/budget';
 import {serviceBars} from '../lib/budget-bars';
 interface Props {council: BudgetCouncil; name: string; tableNote: string}
@@ -16,6 +17,7 @@ const out = serviceBars(council, name);
   <Fragment set:html={out.svg} />
   <figcaption>
     <SourceLine source={budgetSource()} />
+    <p class="caveat">Service expenditure is net of sales, fees, charges and transfers, excluding NHS-funded expenditure. A figure below zero is net income. Pounds are converted from printed whole thousands.</p>
     <p class="small">{tableNote}</p>
   </figcaption>
 </figure>}
