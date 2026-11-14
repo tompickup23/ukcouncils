@@ -1,3 +1,5 @@
+import {budgetHeadline} from "./budget-headline";
+import {functionsFor, functionsSource} from "./council-functions";
 import {councilBudget, type CouncilBudget} from "./council-budget";
 import { collectionFor, collectionSource } from "./collection";
 import { electionFor, electionSourceLine } from "./elections";
@@ -31,13 +33,12 @@ import { spendingFor, spendingRecord, type SpendingRecord } from "./spending";
  * their data: who runs the council (seats by party and control) and its
  * last election. Scheduled elections use only verified quoted years.
  *
- * No statutory basis for the services a type of council provides is named on
- * the methodology or sources pages, so the first section states the type as
- * the register records it and lists no services.
+ * Selected service functions use the pinned Commons Library table; special
+ * authorities without a reviewed mapping retain only their official links.
  */
 
 /** The section ids, in the order a council page prints them. */
-export const PROFILE_SECTIONS = ["about", "tax-summary", "collection", "exceptional-financial-support", "elections", "budget", "spending", "school-holidays", "sources"] as const;
+export const PROFILE_SECTIONS = ["about", "services", "tax-summary", "collection", "exceptional-financial-support", "elections", "budget", "spending", "school-holidays", "sources"] as const;
 export type ProfileSection = (typeof PROFILE_SECTIONS)[number];
 
 export interface ProfileAbout {
@@ -195,6 +196,8 @@ export function profileSources(council: Council, tax: Authority, today = londonT
   const about = profileAbout(council);
   if (about.population) add(populationSource());
   if (about.ownPages) add(localLinksSource());
+  if (functionsFor(council, tax)) add(functionsSource());
+  add(budgetHeadline(council.gss)?.source ?? null);
   const summary = profileTax(council, tax);
   if (summary?.change) add(summary.changeSource);
   if (collectionFor(council.gss)) add(collectionSource());
@@ -239,6 +242,7 @@ export function councilProfile(council: Council, tax: Authority, today = londonT
   const sources = profileSources(council, tax, today);
   const present: Record<ProfileSection, boolean> = {
     about: true,
+    services: Boolean(functionsFor(council, tax) || about.ownPages),
     collection: collectionFor(council.gss) !== null,
     "exceptional-financial-support": councilEfs(council.slug) !== null,
     elections: electionFor(council.gss) !== null,

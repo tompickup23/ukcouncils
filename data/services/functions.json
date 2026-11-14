@@ -1,0 +1,20 @@
+{
+  "source": {
+    "publisher": "House of Commons Library",
+    "title": "Local government in England: structures",
+    "url": "https://researchbriefings.files.parliament.uk/documents/SN07104/SN07104.pdf",
+    "table": "Appendix, functions table, pages 33 and 34; section 2, page 9",
+    "date": "2026-05-06"
+  },
+  "checked": "2026-11-14",
+  "licence": "Open Parliament Licence",
+  "excludedGss": ["E09000001", "E06000053"],
+  "rows": [
+    {"label": "Schools and education", "tier": "county", "page": 33},
+    {"label": "Social care", "tier": "county", "page": 34},
+    {"label": "Libraries", "tier": "county", "page": 34},
+    {"label": "Rubbish and recycling collection", "tier": "district", "page": 34},
+    {"label": "Housing", "tier": "district", "page": 33},
+    {"label": "Environmental health", "tier": "district", "page": 33}
+  ]
+}

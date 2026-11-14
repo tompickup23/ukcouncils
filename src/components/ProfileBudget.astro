@@ -2,12 +2,19 @@
 import BudgetTables from './BudgetTables.astro';
 import SourceLine from './SourceLine.astro';
 import {budgetSource, budgetYear} from '../lib/budget';
+import {budgetHeadline} from '../lib/budget-headline';
 import type {CouncilBudget} from '../lib/council-budget';
-interface Props {view: CouncilBudget}
-const {view} = Astro.props;
+interface Props {view: CouncilBudget; gss: string}
+const {view, gss} = Astro.props;
+const headline = budgetHeadline(gss);
 ---
 <section class="section" id="budget" data-profile-section="budget" aria-labelledby="budget-heading">
   <h2 id="budget-heading">{view.name} council budget for {budgetYear}</h2>
+  {headline && <div data-fact data-budget-headline>
+    <p>{headline.label}: <strong data-figure>{headline.value}</strong>.</p>
+    <SourceLine source={headline.source} />
+    <p class="caveat">{headline.caveat}</p>
+  </div>}
   <p>This is the budget returned to MHCLG; the spending record covers published payments.</p>
   <SourceLine source={budgetSource()} />
   <details data-budget-drawer><summary>Read the service expenditure, funding and reserves tables for {view.name}</summary>

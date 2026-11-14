@@ -29,13 +29,14 @@ export function frontDoorChecks(root, dist) {
     const where = council.slug;
     check(!heldWording(html), `Held wording outside cited source text ${where}`);
     const about = section(html, 'about');
+    const serviceSection = section(html, 'services');
     const collectionSection = section(html, 'collection');
     const electionSection = section(html, 'elections');
     const own = links.councils[council.gss];
     const election = elections.councils[council.gss];
     const pop = population.areas[council.gss];
     const popBlock = /<div\b[^>]*data-profile-population[^>]*>[\s\S]*?<\/div>/.exec(about)?.[0] ?? '';
-    const ownBlock = /<div\b[^>]*data-profile-own-pages[^>]*>[\s\S]*?<\/dl>\s*<p[^>]*class="source-line[\s\S]*?<\/p>/.exec(about)?.[0] ?? '';
+    const ownBlock = /<div\b[^>]*data-profile-own-pages[^>]*>[\s\S]*?<\/ul>\s*<p[^>]*class="source-line[\s\S]*?<\/p>/.exec(serviceSection)?.[0] ?? '';
     check(Boolean(popBlock) === Boolean(pop), `Population presence ${where}`);
     check(Boolean(ownBlock) === Boolean(own), `Service row presence ${where}`);
     check(Boolean(collectionSection) === Boolean(collection.councils[council.gss]), `Collection presence ${where}`);
@@ -48,7 +49,7 @@ export function frontDoorChecks(root, dist) {
     for (const service of links.services) {
       const expected = own?.[service.id];
       const pattern = new RegExp(`<a\\b[^>]*href="([^"]+)"[^>]*>${service.title}</a>`);
-      const found = pattern.exec(about)?.[1]?.replace(/&amp;/g, '&');
+      const found = pattern.exec(serviceSection)?.[1]?.replace(/&amp;/g, '&');
       check(found === expected, `Service ${service.id} presence or URL ${where}`);
     }
     if (own?.councilTax) count.links++;
@@ -93,9 +94,9 @@ export function frontDoorChecks(root, dist) {
       const currentRow = rows.find(row => /data-current(?:[\s=>])/.test(row));
       check(Boolean(currentRow && (currentRow.match(/<strong\b/g) ?? []).length === 2), `${kind} current row emphasis ${where}`);
     }
-    const order = ['about', 'tax-summary', 'collection', 'exceptional-financial-support', 'elections', 'reorganisation', 'budget', 'county-budget', 'spending', 'school-holidays', 'sources'];
+    const order = ['about', 'services', 'tax-summary', 'collection', 'exceptional-financial-support', 'elections', 'reorganisation', 'budget', 'county-budget', 'spending', 'school-holidays', 'sources'];
     const present = order.filter(id => section(html, id));
-    check(present.every((id, i) => i === 0 || html.indexOf(`id="${id}"`) > html.indexOf(`id="${present[i - 1]}"`)), `Profile order ${where}`);
+    check(present.every((id, i) => i === 0 || html.indexOf(`id="${id}"`) > html.indexOf(`id="${present[i-1]}"`)), `Profile order ${where}`);
     const contents = /<nav\b[^>]*aria-label="On this page"[\s\S]*?<\/nav>/.exec(html)?.[0];
     check(Boolean(contents), `Missing contents ${where}`);
     if (contents) {
@@ -103,10 +104,7 @@ export function frontDoorChecks(root, dist) {
       const listed = [...contents.matchAll(/href="#([^"]+)"/g)].map(m => m[1]).filter(id => order.includes(id));
       check(JSON.stringify(listed) === JSON.stringify(present), `Contents order ${where}`);
     }
-    // The summary row (D1). Its short source lines are allowed only because the full
-    // citation is on the same page: every address a short line cites must be in the
-    // page's own sources list, and each tile must point at a section that exists
-    // (decision S1, 9 November 2026). The row leads with Band D (decision S2).
+    // Summary first-use citations now pass through the same metadata and gate as body lines.
     const summary = /<section\b[^>]*data-profile-summary[\s\S]*?<\/section>/.exec(html)?.[0] ?? '';
     check(summary !== '', `Summary row missing ${where}`);
     const tileIds = [...summary.matchAll(/data-summary-tile="([^"]+)"/g)].map(m => m[1]);
@@ -114,7 +112,8 @@ export function frontDoorChecks(root, dist) {
     for (const id of tileIds) check(html.includes(`id="${id}"`), `Summary tile points at a missing section ${where} ${id}`);
     const sourcesList = /<ul\b[^>]*data-profile-sources[\s\S]*?<\/ul>/.exec(html)?.[0] ?? '';
     const listedSources = new Set([...sourcesList.matchAll(/href="([^"]+)"/g)].map(m => m[1]));
-    for (const m of summary.matchAll(/class="source-line source-short"[^>]*>[\s\S]*?<a href="([^"]+)"/g)) {
+    for (const m of sourcesList.matchAll(/\bid="([^"]+)"/g)) listedSources.add(`#${m[1]}`);
+    for (const m of summary.matchAll(/class="source-line[^"]*"[^>]*>[\s\S]*?<a href="([^"]+)"/g)) {
       check(listedSources.has(m[1]), `Short source with no full entry on the page ${where} ${m[1]}`);
     }
     const newSections = section(html, 'tax-summary') + collectionSection + electionSection + popBlock + ownBlock;

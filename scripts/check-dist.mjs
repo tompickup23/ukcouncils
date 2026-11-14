@@ -54,6 +54,12 @@ function* files(dir) {
 }
 
 const failures = [];
+const dossierRegistry = JSON.parse(readFileSync(join(process.cwd(), 'data/registry/councils.json'), 'utf8'));
+const dossierBudget = JSON.parse(readFileSync(join(process.cwd(), 'data/budget/ra-2026-27.json'), 'utf8'));
+const dossierLinks = JSON.parse(readFileSync(join(process.cwd(), 'data/links/local-links.json'), 'utf8'));
+const dossierFunctions = JSON.parse(readFileSync(join(process.cwd(), 'data/services/functions.json'), 'utf8'));
+const dossierBySlug = new Map(Object.values(dossierRegistry.councils).map(council => [council.slug, council]));
+const dossierMoney = new Intl.NumberFormat('en-GB', {style: 'currency', currency: 'GBP', maximumFractionDigits: 0});
 const dossierCounts = {};
 if (!existsSync(join(DIST, "apple-touch-icon.png"))) failures.push("missing Apple touch icon PNG");
 const rel = (path) => path.slice(DIST.length) || "/";
@@ -95,7 +101,17 @@ for (const path of files(DIST)) {
   if (councilSlug) {
     failures.push(...citationErrors(text).map(error => `${error} on ${rel(path)}`));
     await setImmediate();
-    const dossier = dossierChecks(text);
+    const council = dossierBySlug.get(councilSlug);
+    if (!council) throw new Error(`Unknown dossier council ${councilSlug}`);
+    const row = dossierBudget.councils[council.gss];
+    const total = row?.values.servicetot;
+    const headline = row?.status === 'available' && total != null && total !== 0
+      ? `${total < 0 ? 'minus ' : ''}${dossierMoney.format(Math.abs(total) * 1000)}` : null;
+    const dossier = dossierChecks(text, {
+      budget: headline,
+      functions: !dossierFunctions.excludedGss.includes(council.gss),
+      links: dossierLinks.councils[council.gss] ?? {},
+    });
     failures.push(...dossier.failures.map(failure => `${failure} on ${rel(path)}`));
     for (const [key, count] of Object.entries(dossier.counts)) dossierCounts[key] = (dossierCounts[key] ?? 0) + count;
     const expected = `https://ukcounciltax.co.uk/councils/${councilSlug}/`;
@@ -260,6 +276,7 @@ console.log(`B2 coverage: ${JSON.stringify(frontDoor.counts)}`);
 const budgets = budgetChecks(process.cwd(), DIST);
 failures.push(...budgets.failures);
 console.log(`C3 coverage: ${JSON.stringify(budgets.counts)}`);
+if (dossierCounts.pages !== 296) failures.push('Expected all 296 English dossier pages');
 console.log(`Dossier coverage: ${JSON.stringify(dossierCounts)}`);
 
 if (failures.length) {

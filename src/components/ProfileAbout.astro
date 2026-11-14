@@ -1,11 +1,9 @@
 ---
 /**
  * What the council is, as the UK Places register records it: its official
- * name, its type and, for a district, its county. No statutory basis for the
- * services a type provides is cited on this site, so none are listed.
+ * name, its type and, for a district, its county. Services have their own section.
  */
 import { populationSource } from "../lib/population";
-import { localLinks, localLinksSource } from "../lib/local-links";
 import SourceLine from "./SourceLine.astro";
 import type { ProfileAbout } from "../lib/council-profile";
 
@@ -27,25 +25,18 @@ const { name, about } = Astro.props;
       <p>{about.officialName} is recorded as {about.type} in the register.</p>
       <SourceLine source={about.source} />
     </>}
-    <details data-about-drawer><summary>Read the council register and service links for {name}</summary>
+    <details data-about-drawer><summary>Read the council register for {name}</summary>
     <dl class="profile-list">
       <div><dt>Name in the register</dt><dd>{about.officialName}</dd></div>
       <div><dt>Type</dt><dd data-council-type>{about.type}</dd></div>
       {about.county && <div><dt>County</dt><dd>{about.county}</dd></div>}
     </dl>
     {about.population && <SourceLine source={about.source} />}
-    {about.ownPages && <div data-profile-own-pages>
-      <dl class="profile-list"><div><dt>The council's own pages</dt><dd>
-        {localLinks.services.filter(service => about.ownPages?.[service.id]).map(service => <a class="own-page" href={about.ownPages![service.id]}>{service.title}</a>)}
-      </dd></div></dl>
-      <SourceLine source={localLinksSource()} />
-    </div>}
     </details>
   </div>
 </section>
 
 <style>
-  .own-page { display: block; }
   .profile-about { max-width: 40rem; }
   .profile-list { margin: 0.5rem 0; display: grid; gap: 0.35rem; }
   .profile-list div { display: grid; grid-template-columns: minmax(7rem, auto) minmax(0, 1fr); gap: 1rem; }

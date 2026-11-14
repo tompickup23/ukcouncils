@@ -4,6 +4,8 @@ import {reorganisationSources, reorganisationData} from '../lib/reorganisation';
 import { population } from "../lib/population";
 import { collection } from "../lib/collection";
 import { elections } from "../lib/elections";
+import {functionsSource} from "../lib/council-functions";
+import SourceLine from "../components/SourceLine.astro";
 import { localLinks } from "../lib/local-links";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
@@ -77,6 +79,10 @@ const registry = loadRegistry();
     <p>{elections.source.rule} A record that does not meet this rule has no elections section.
       Quotations subject to the content hold are omitted while the year and citation remain.
       Each printed record links to the primary statutory instrument or council page.</p>
+    <h2>Selected council responsibilities</h2>
+    <SourceLine source={functionsSource()} />
+    <p>Selected functions from the published tier table, under the Open Parliament Licence.
+      District profiles distinguish their council from the county council. City of London and Isles of Scilly have no generic function mapping.</p>
     <h2>The council's own service pages</h2>
     <p><a href={localLinks.source.url}>{localLinks.source.name}, links to services provided by local authorities</a>,
       export of {longDate(localLinks.source.exportDate)}, checked by UK Places on {longDate(localLinks.checkedOn)}.

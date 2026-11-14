@@ -21,8 +21,9 @@ export function budgetChecks(root, dist) {
     counts.billing += sectionCount; counts.county += countyCount;
     check(sectionCount === Number(available), `Budget presence ${where}`);
     check(countyCount === Number(county), `County presence ${where}`);
+    const contents = /<nav\b[^>]*aria-label="On this page"[\s\S]*?<\/nav>/.exec(html)?.[0] ?? '';
     for (const [id, expected] of [['budget', available], ['county-budget', county]]) {
-      check((html.match(new RegExp(`href="#${id}"`, 'g')) ?? []).length === Number(expected), `Budget contents ${id} ${where}`);
+      check((contents.match(new RegExp(`href="#${id}"`, 'g')) ?? []).length === Number(expected), `Budget contents ${id} ${where}`);
     }
     const start = html.indexOf('<section class="section" id="budget"');
     let end = start, depth = 0;
