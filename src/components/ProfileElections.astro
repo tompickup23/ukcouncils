@@ -1,10 +1,11 @@
 ---
-import { electionFor, electionQuoteIsHeld, electionSourceLine } from "../lib/elections";
+import { electionFor, electionQuoteIsHeld, electionSource } from "../lib/elections";
+import SourceLine from "./SourceLine.astro";
 import { sisterLinks, type Council } from "../lib/registry";
 interface Props { council: Council; name: string }
 const {council, name} = Astro.props;
 const record = electionFor(council.gss);
-const source = record ? electionSourceLine(record) : null;
+const source = record ? electionSource(record) : null;
 const link = sisterLinks(council).find(link => link.site === "ukelections");
 const pattern = {
   whole: "The whole council is elected together.",
@@ -15,7 +16,7 @@ const pattern = {
 {record && source && <section class="section" id="elections" data-profile-section="elections" aria-labelledby="elections-heading">
   <h2 id="elections-heading">Elections in {name}</h2>
   <p>The next scheduled election to {name} council is in {record.dateLabel ?? record.nextYear}.</p>
-  <p class="source-line">Source: <a href={source.url}>{source.label}</a>, {source.attribution}.</p>
+  <SourceLine source={source} />
   <details data-elections-drawer><summary>Read the election schedule notes for {name}</summary>
   <p>{pattern[record.pattern]}</p>
   {!electionQuoteIsHeld(record.quote) && <blockquote cite={record.sourceUrl}>{record.quote}</blockquote>}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { elections, electionFor, electionSourceLine, electionQuoteIsHeld } from "../src/lib/elections";
+import { elections, electionFor, electionSource, electionSourceLine, electionQuoteIsHeld } from "../src/lib/elections";
 import { councilPages } from "../src/lib/paths";
 import { verifyPinnedHash } from "../scripts/lib/pinned-json.mjs";
 import { ELECTION_HASH, PREDECESSOR_HASH } from "../scripts/import-next-elections.mjs";
@@ -29,6 +29,16 @@ describe("pinned next elections", () => {
     for (const slug of ["sheffield", "westminster", "woking"]) expect(page(slug)).toBeNull();
     expect(rows.filter(r => r.joinedVia !== null)).toEqual([page("barnsley")]);
     expect(electionSourceLine(page("burnley")!).attribution).toBe("quoted in the UK Elections council election register, checked 24 October 2026");
+  });
+  it("names the issuing body as publisher, with UK Elections as the register that quoted it", () => {
+    for (const row of rows) {
+      const source = electionSource(row);
+      expect(source.publisher).not.toBe("UK Elections");
+      expect(source.table).toBe(electionSourceLine(row).attribution);
+      expect(`${source.publisher}, ${source.title}`).toBe(row.sourceUrl.includes("legislation.gov.uk") ? `legislation.gov.uk, ${row.sourceLabel}` : row.sourceLabel);
+    }
+    expect(electionSource(page("middlesbrough")!)).toMatchObject({publisher: "legislation.gov.uk", title: "Middlesbrough (Electoral Changes) Order 2025, SI 2025/1345, art.1(3)(b)"});
+    expect(electionSource(page("redcar-and-cleveland")!)).toMatchObject({publisher: "Redcar and Cleveland Borough Council", title: "Upcoming elections"});
   });
   it("holds exactly the seven quotes with reorganisation content", () => {
     const held = councilPages().filter(({council}) => {

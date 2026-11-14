@@ -1,3 +1,4 @@
+import {budgetHeadline} from "../src/lib/budget-headline";
 import { describe, expect, it } from "vitest";
 import { existsSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -10,7 +11,7 @@ import { councilEfs } from "../src/lib/council-efs";
 
 /**
  * The summary row on every council page (D1): a tile only for a fact the data holds,
- * Band D first, each value equal to the data, and each short source line pointing at an
+ * Band D first, each value equal to the data, and each source line pointing at an
  * address the page's own sources list carries.
  */
 const DIST = join(resolve(import.meta.dirname, ".."), "dist");
@@ -25,14 +26,14 @@ function tiles(html: string) {
     id: m[1],
     html: m[2],
     value: text(/class="summary-value[^"]*"[^>]*>([\s\S]*?)<\/span>/.exec(m[2])?.[1] ?? ""),
-    sourceHref: /class="source-line source-short"[^>]*>[\s\S]*?<a href="([^"]+)"/.exec(m[2])?.[1] ?? null,
+    sourceHref: /class="source-line[^"]*"[^>]*>[\s\S]*?<a href="([^"]+)"/.exec(m[2])?.[1] ?? null,
     moreHref: /class="summary-more"[^>]*><a href="([^"]+)"/.exec(m[2])?.[1] ?? null,
   }));
 }
 
 describe.skipIf(!built)("the summary row on every built council page", () => {
   it("shows a tile only for a fact the data holds, Band D first, with the published values", () => {
-    const counts = { "council-tax": 0, about: 0, collection: 0, elections: 0, "exceptional-financial-support": 0 } as Record<string, number>;
+    const counts = { "council-tax": 0, about: 0, collection: 0, elections: 0, budget: 0, "exceptional-financial-support": 0 } as Record<string, number>;
     for (const { council, tax } of pages) {
       const found = tiles(page(council.slug));
       const expected = [
@@ -40,6 +41,7 @@ describe.skipIf(!built)("the summary row on every built council page", () => {
         ...(populationFor(council.gss) !== null ? ["about"] : []),
         ...(collectionFor(council.gss)?.rate != null ? ["collection"] : []),
         ...(electionFor(council.gss) ? ["elections"] : []),
+        ...(budgetHeadline(council.gss) ? ["budget"] : []),
         ...(councilEfs(council.slug) ? ["exceptional-financial-support"] : []),
       ];
       expect(found.map((t) => t.id), council.slug).toEqual(expected);
@@ -50,11 +52,13 @@ describe.skipIf(!built)("the summary row on every built council page", () => {
       if (residents !== null) expect(by.about.value, council.slug).toBe(new Intl.NumberFormat("en-GB").format(residents));
       const rate = collectionFor(council.gss)?.rate;
       if (rate != null) expect(by.collection.value, council.slug).toBe(collectionRate(rate));
+      const headline = budgetHeadline(council.gss);
+      if (headline) expect(by.budget.value, council.slug).toBe(headline.value);
       const election = electionFor(council.gss);
       if (election) expect(by.elections.value, council.slug).toBe(String(election.dateLabel ?? election.nextYear));
     }
     // The coverage the B2 dist check reports for the sections these tiles point at.
-    expect(counts).toEqual({ "council-tax": 296, about: 294, collection: 296, elections: 174, "exceptional-financial-support": 51 });
+    expect(counts).toEqual({ "council-tax": 296, about: 294, collection: 296, elections: 174, budget: 287, "exceptional-financial-support": 51 });
   });
 
   it("links every tile to a section on the page and every short source to a listed address", () => {
@@ -62,6 +66,7 @@ describe.skipIf(!built)("the summary row on every built council page", () => {
       const html = page(council.slug);
       const list = /<ul[^>]*data-profile-sources[\s\S]*?<\/ul>/.exec(html)?.[0] ?? "";
       const listed = new Set([...list.matchAll(/href="([^"]+)"/g)].map((m) => m[1]));
+      for (const m of list.matchAll(/\bid="([^"]+)"/g)) listed.add(`#${m[1]}`);
       for (const tile of tiles(html)) {
         expect(tile.moreHref, `${council.slug} ${tile.id}`).toBe(`#${tile.id}`);
         expect(html.includes(`id="${tile.id}"`), `${council.slug} #${tile.id}`).toBe(true);
