@@ -33,8 +33,8 @@ export function maskExistingClassifications(html) {
   // The class map on /councils/ (NV8): MHCLG's class label in the kit's exact markup, and
   // the one caveat sentence that names the class. Any other wording in the map is checked.
   html = html.replace(/<figure\b[^>]*data-class-map[^>]*>[\s\S]*?<\/figure>/g, figure => figure
-    .replace(/(aria-label="[^"<>]+: )Unitary authority; Unitary authority"/g, '$1classification; classification"')
-    .replace(/(<title>[^<>]+: )Unitary authority; Unitary authority(<\/title>)/g, '$1classification; classification$2')
+    .replace(/(aria-label="[^"<>]+: )Unitary authority"/g, '$1classification"')
+    .replace(/(<title>[^<>]+: )Unitary authority(<\/title>)/g, '$1classification$2')
     .replace(/(<text\b[^>]*>)Unitary authority( \(horizontal lines\))?(<\/text>)/g, '$1classification$2$3')
     .replace(/(<p\b[^>]*class="caveat"[^>]*>[^<>]*MHCLG places the City of London with the inner London boroughs and the Isles of Scilly with the )unitary( authorities, and the map shows them in those classes\.)/g, '$1classification$2'));
   html = html.replace(/<details\b[^>]*id="class-map-after"[^>]*>[\s\S]*?<\/details>/g, drawer => drawer

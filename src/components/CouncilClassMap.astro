@@ -29,6 +29,9 @@ const out = areaMap({
   boundaryCredit: data.boundaryCredit,
   notDrawn: "Scotland, Wales and Northern Ireland, whose councils are not on this page.",
   sourcePlacement: "html",
+  // Only the two largest areas took a plate, and opaque plates cut holes in them while
+  // repeating the key. The links, key and table name every area (kit 0.6.1).
+  plates: false,
 });
 ---
 <section class="section class-map" aria-labelledby="class-map-heading">
