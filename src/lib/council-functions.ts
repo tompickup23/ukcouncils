@@ -18,8 +18,11 @@ export function functionsFor(council: Council, tax: Authority) {
   const district = tax.classCode === 'SD';
   const county = district && council.parentGss ? loadYear(CURRENT_YEAR).counties[council.parentGss] : null;
   if (district && !county) return null;
+  if (typeof council.officialName !== 'string' || !council.officialName.trim()) {
+    throw new Error(`Missing officialName for council responsibilities: ${council.gss}`);
+  }
   return pinned.rows.map(row => ({
     label: row.label,
-    authority: district && row.tier === 'county' ? `${county!.name} County Council` : tax.name,
+    authority: district && row.tier === 'county' ? `${county!.name} County Council` : council.officialName,
   }));
 }

@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-for (const slug of ['burnley', 'birmingham', 'coventry', 'city-of-london', 'isles-of-scilly']) {
+for (const slug of ['burnley', 'blackpool', 'birmingham', 'camden', 'bromley', 'coventry', 'city-of-london', 'isles-of-scilly']) {
   for (const theme of ['light', 'dark'] as const) {
     test(`${slug} sourced dossier in ${theme}`, async ({page}, testInfo) => {
       await page.emulateMedia({colorScheme: theme});
@@ -26,6 +26,15 @@ for (const slug of ['burnley', 'birmingham', 'coventry', 'city-of-london', 'isle
         await expect(page.locator('[data-services-drawer]')).not.toHaveAttribute('open');
         await page.locator('[data-services-drawer] > summary').click();
         await expect(page.locator('#services tbody tr')).toHaveCount(6);
+        const officialNames: Record<string, string> = {
+          burnley: 'Burnley Borough Council', blackpool: 'Blackpool Borough Council',
+          birmingham: 'Birmingham City Council', camden: 'London Borough of Camden',
+          bromley: 'London Borough of Bromley', coventry: 'Coventry City Council',
+        };
+        const expected = slug === 'burnley'
+          ? [...Array(3).fill('Lancashire County Council'), ...Array(3).fill(officialNames[slug])]
+          : Array(6).fill(officialNames[slug]);
+        await expect(page.locator('[data-council-functions] tbody td')).toHaveText(expected);
       }
       await page.locator('#services').scrollIntoViewIfNeeded();
       await expect(page.locator('#services [data-council-service="councilTax"]')).toBeVisible();
