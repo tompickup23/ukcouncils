@@ -15,15 +15,38 @@ describe('dossier source boundaries', () => {
       {label: 'Schools and education', authority: 'Lancashire County Council'},
       {label: 'Social care', authority: 'Lancashire County Council'},
       {label: 'Libraries', authority: 'Lancashire County Council'},
-      {label: 'Rubbish and recycling collection', authority: 'Burnley'},
-      {label: 'Housing', authority: 'Burnley'},
-      {label: 'Environmental health', authority: 'Burnley'},
+      {label: 'Rubbish and recycling collection', authority: 'Burnley Borough Council'},
+      {label: 'Housing', authority: 'Burnley Borough Council'},
+      {label: 'Environmental health', authority: 'Burnley Borough Council'},
     ]);
-    expect(new Set(functions('birmingham')!.map(row => row.authority))).toEqual(new Set(['Birmingham']));
     expect(functions('city-of-london')).toBeNull();
     expect(functions('isles-of-scilly')).toBeNull();
     expect(pages.filter(({council, tax}) => functionsFor(council, tax))).toHaveLength(294);
   });
+  it.each([
+    ['blackpool', 'Blackpool Council'],
+    ['birmingham', 'Birmingham Council'],
+    ['camden', 'Camden Council'],
+    ['bromley', 'Bromley Council'],
+  ])('uses the official name for every function in %s', (slug, officialName) => {
+    expect(functions(slug)).toHaveLength(6);
+    expect(new Set(functions(slug)!.map(row => row.authority))).toEqual(new Set([officialName]));
+  });
+  it.each(['burnley', 'blackpool', 'birmingham', 'camden', 'bromley'])(
+    'rejects missing or blank official names for %s during static generation', slug => {
+      const {council, tax} = pages.find(page => page.council.slug === slug)!;
+      for (const officialName of [undefined, null, '', '   ']) {
+        const invalid = {...council, officialName} as typeof council;
+        expect(() => functionsFor(invalid, tax)).toThrow(`Missing officialName for council responsibilities: ${council.gss}`);
+      }
+    },
+  );
+  it.each(['city-of-london', 'isles-of-scilly'])(
+    'excludes %s before requiring an official name', slug => {
+      const {council, tax} = pages.find(page => page.council.slug === slug)!;
+      expect(functionsFor({...council, officialName: ''}, tax)).toBeNull();
+    },
+  );
   it('uses the published total with unit conversion and drops missing returns', () => {
     expect(budgetHeadline('E08000026')).toBeNull();
     expect(budgetHeadline('missing')).toBeNull();
