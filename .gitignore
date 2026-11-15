@@ -24,3 +24,6 @@ data/raw/
 
 # The versioned Estate Kit build is part of the source tree.
 !src/vendor/estate-kit/dist/
+
+# Local build comparisons and dossier verification reports
+.ops/

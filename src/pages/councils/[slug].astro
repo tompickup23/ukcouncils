@@ -27,6 +27,7 @@ import { electionFor } from "../../lib/elections";
 import ProfileBudget from "../../components/ProfileBudget.astro";
 import ProfileAbout from "../../components/ProfileAbout.astro";
 import ProfileTax from "../../components/ProfileTax.astro";
+import DossierAbsences from "../../components/DossierAbsences.astro";
 import ProfileSources from "../../components/ProfileSources.astro";
 import ProfileServices from "../../components/ProfileServices.astro";
 import ProfileSummary from "../../components/ProfileSummary.astro";
@@ -293,6 +294,8 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   {/* The reorganisation field is held: see "Held data" in CLAUDE.md. */}
 
   <NearbyCouncils council={council} />
+
+  <DossierAbsences gss={council.gss} />
 
   {profile.sources.length > 0 && <ProfileSources name={name} sources={profile.sources} />}
 
