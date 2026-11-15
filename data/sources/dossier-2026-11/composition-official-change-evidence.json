@@ -1,0 +1,51 @@
+{
+  "retrieved": "2026-11-15",
+  "licence": "Council copyright; selected factual values only",
+  "rows": [
+    {
+      "council": "Cambridge",
+      "url": "https://www.cambridge.gov.uk/news/2026/05/08/cambridge-city-council-election-results-may-2026",
+      "date": "2026-05-08",
+      "kind": "Last election composition",
+      "party_totals": {
+        "Labour": 17,
+        "Green Party": 12,
+        "Liberal Democrats": 11,
+        "Conservative": 1,
+        "Your Party": 1
+      },
+      "total": 42,
+      "note": "Compared with the council page reviewed 2 November. Difference establishes changed composition, not its mechanism.",
+      "original_sha256": "e14b8e6d6068764559d1d7f6abb8acf7690cf4a4c60202570335077e16ec4b99"
+    },
+    {
+      "council": "Harrow",
+      "url": "https://www.harrow.gov.uk/news/article/11507/2026-local-election-results",
+      "date": "2026-05-08",
+      "kind": "Last election composition",
+      "party_totals": {
+        "Conservative": 42,
+        "Labour": 12,
+        "Arise": 1
+      },
+      "total": null,
+      "note": "Current page reports 41 Conservative and 1 Independent. Difference establishes changed composition, not its mechanism. Article polling-date text conflicts with its linked 7 May election.",
+      "original_sha256": null
+    },
+    {
+      "council": "Manchester",
+      "url": "https://democracy.manchester.gov.uk/mgAi.aspx?ID=20295",
+      "date": "2026-09-23",
+      "kind": "Official confirmation of party change and by-election",
+      "party_totals": {
+        "Labour": 64,
+        "Green": 21,
+        "Reform": 7,
+        "Liberal Democrat": 4
+      },
+      "total": null,
+      "note": "Council records a party change and Burnage by-election on 10 September 2026 before this composition. No person name retained.",
+      "original_sha256": "624877737cc35b45fea2148f18d4e3f41355a1ce0476659feb7497a17609825f"
+    }
+  ]
+}

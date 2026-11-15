@@ -1,0 +1,1286 @@
+{
+  "publisher": "Ministry of Housing, Communities and Local Government",
+  "title": "Addressing the local audit backlog in England: Non-compliance lists",
+  "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+  "original_sha256": "49e66ae8896985dfa87202c925c3cb36da643ef181b2dd6e7822cdaeb74d9d78",
+  "published_or_updated": "2026-03-26",
+  "data_cut_off": "2026-03-09",
+  "retrieved": "2026-11-15",
+  "licence": "Open Government Licence v3.0",
+  "licence_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "transformation": "HTML tables only; surrounding prose and author metadata excluded. Dash punctuation converted to words or colon; cells otherwise retained. No GSS or ONS code field exists.",
+  "tables": [
+    {
+      "heading": "Context",
+      "rows": [
+        [
+          "Financial year(s)",
+          "Backstop date"
+        ],
+        [
+          "Up to and including 2022/23",
+          "13 December 2024"
+        ],
+        [
+          "2023/24",
+          "28 February 2025"
+        ],
+        [
+          "2024/25",
+          "27 February 2026"
+        ],
+        [
+          "2025/26",
+          "31 January 2027"
+        ],
+        [
+          "2026/27",
+          "30 November 2027"
+        ],
+        [
+          "2027/28",
+          "30 November 2028"
+        ]
+      ]
+    },
+    {
+      "heading": "13 December 2024  to  Financial years up to and including 2022/23, updated with information as of 9 March 2026",
+      "rows": [
+        [
+          "Name of body",
+          "All unaudited draft accounts published by 31 October 2024?",
+          "Appointed audit firm",
+          "All audit opinions delivered by 13 December 2024?",
+          "Date audit opinion delivered",
+          "All audit opinions published as of 9 March 2026?"
+        ],
+        [
+          "Amber Valley Borough Council",
+          "yes",
+          "Mazars LLP",
+          "yes",
+          "11/12/24",
+          "yes"
+        ],
+        [
+          "Babergh District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "Bexley London Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "10/12/24",
+          "yes"
+        ],
+        [
+          "Birmingham City Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "21/11/25",
+          "yes"
+        ],
+        [
+          "Broadland District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "29/11/24",
+          "yes"
+        ],
+        [
+          "Bromsgrove District Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "16/01/25",
+          "yes"
+        ],
+        [
+          "Buckinghamshire Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "29/11/24",
+          "yes"
+        ],
+        [
+          "Calderdale Metropolitan Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "Canterbury City Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "Yes",
+          "14/03/24",
+          "yes"
+        ],
+        [
+          "Castle Point Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "10/12/24",
+          "yes"
+        ],
+        [
+          "Chesterfield Borough Council",
+          "yes",
+          "Mazars LLP",
+          "yes",
+          "10/12/24",
+          "yes"
+        ],
+        [
+          "Chief Constable of Derbyshire",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "10/12/24",
+          "yes"
+        ],
+        [
+          "Chief Constable of Hertfordshire",
+          "yes",
+          "BDO LLP",
+          "no",
+          "07/02/25",
+          "yes"
+        ],
+        [
+          "Chief Constable of Leicestershire",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "13/12/24",
+          "yes"
+        ],
+        [
+          "Colchester City Council",
+          "yes",
+          "BDO LLP",
+          "no",
+          "20/12/24",
+          "yes"
+        ],
+        [
+          "Copeland Borough Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "14/05/25",
+          "yes"
+        ],
+        [
+          "Croydon London Borough Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "15/08/25",
+          "yes"
+        ],
+        [
+          "Derby City Council",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "18/12/24",
+          "yes"
+        ],
+        [
+          "Derbyshire Fire Authority",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "12/12/24",
+          "yes"
+        ],
+        [
+          "Dover District Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "12/12/24",
+          "yes"
+        ],
+        [
+          "East Hertfordshire District Council",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "24/04/25",
+          "yes"
+        ],
+        [
+          "Gloucester City Council",
+          "no",
+          "Deloitte LLP",
+          "yes",
+          "27/01/25",
+          "yes"
+        ],
+        [
+          "Guildford Borough Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "Yes",
+          "06/12/24",
+          "yes"
+        ],
+        [
+          "Haringey London Borough Council",
+          "yes",
+          "BDO LLP",
+          "no",
+          "18/12/24",
+          "yes"
+        ],
+        [
+          "Hastings Borough Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "12/12/24",
+          "yes"
+        ],
+        [
+          "Hertsmere Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "12/12/24",
+          "yes"
+        ],
+        [
+          "Horsham District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "28/11/24",
+          "yes"
+        ],
+        [
+          "King’s Lynn Internal Drainage Board",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "12/12/24",
+          "yes"
+        ],
+        [
+          "Lewes District Council",
+          "no",
+          "Deloitte LLP",
+          "no",
+          "11/07/25",
+          "yes"
+        ],
+        [
+          "Lindsey Marsh Drainage Board",
+          "yes",
+          "No appointed auditor as of 13 December 2024",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "London Borough of Enfield",
+          "yes",
+          "BDO LLP",
+          "no",
+          "04/07/25",
+          "yes"
+        ],
+        [
+          "London Borough of Redbridge",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "11/12/24",
+          "yes"
+        ],
+        [
+          "London Fire Commissioner",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "11/12/24",
+          "yes"
+        ],
+        [
+          "Luton Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "Malvern Hills District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "03/12/24",
+          "yes"
+        ],
+        [
+          "Mansfield District Council",
+          "yes",
+          "Mazars LLP",
+          "yes",
+          "14/12/23",
+          "yes"
+        ],
+        [
+          "Merseyside Waste Disposal Authority",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "07/08/25",
+          "yes"
+        ],
+        [
+          "Mid Suffolk District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "Middlesbrough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "11/12/24",
+          "yes"
+        ],
+        [
+          "Newham London Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "11/12/24",
+          "yes"
+        ],
+        [
+          "North Northamptonshire Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "04/12/24",
+          "yes"
+        ],
+        [
+          "North Tyneside Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "North York Moors National Park Authority",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "14/11/24",
+          "yes"
+        ],
+        [
+          "North Yorkshire County Council",
+          "yes",
+          "Deloitte LLP",
+          "no",
+          "18/12/24",
+          "yes"
+        ],
+        [
+          "North Yorkshire Police Fire and Crime Commissioner",
+          "yes",
+          "Mazars LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "Peak District National Park Authority",
+          "yes",
+          "Mazars LLP",
+          "yes",
+          "11/10/24",
+          "yes"
+        ],
+        [
+          "Police and Crime Commissioner for Derbyshire",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "10/12/24",
+          "yes"
+        ],
+        [
+          "Police and Crime Commissioner for Durham",
+          "yes",
+          "Mazars LLP",
+          "yes",
+          "12/12/24",
+          "yes"
+        ],
+        [
+          "Police and Crime Commissioner for Hertfordshire",
+          "yes",
+          "BDO LLP",
+          "no",
+          "07/02/25",
+          "yes"
+        ],
+        [
+          "Police and Crime Commissioner for Leicestershire",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "13/12/24",
+          "yes"
+        ],
+        [
+          "Redditch Borough Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "28/01/25",
+          "yes"
+        ],
+        [
+          "Rushmoor Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "11/12/23",
+          "yes"
+        ],
+        [
+          "Sevenoaks District Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "06/12/24",
+          "yes"
+        ],
+        [
+          "Slough Borough Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "South Cambridgeshire District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "South Norfolk District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "South Oxfordshire District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "St Albans City and District Council",
+          "yes",
+          "BDO LLP",
+          "no",
+          "31/01/25",
+          "yes"
+        ],
+        [
+          "Surrey Heath Borough Council",
+          "yes",
+          "BDO LLP",
+          "no",
+          "23/12/24",
+          "yes"
+        ],
+        [
+          "Thanet District Council",
+          "yes",
+          "Grant Thornton Uk LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Three Rivers District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "13/12/24",
+          "yes"
+        ],
+        [
+          "Uttlesford District Council",
+          "no",
+          "BDO LLP",
+          "yes",
+          "28/01/25",
+          "yes"
+        ],
+        [
+          "Vale of White Horse District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "09/12/24",
+          "yes"
+        ],
+        [
+          "Warrington Borough Council",
+          "yes",
+          "No appointed auditor as of 13 December 2024",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Watford Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "29/11/24",
+          "yes"
+        ],
+        [
+          "Wiltshire Council",
+          "no",
+          "Deloitte LLP",
+          "no",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "Wychavon District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "12/12/24",
+          "yes"
+        ]
+      ]
+    },
+    {
+      "heading": "28 February 2025  to  Financial year 2023/24 updated with information as of 9 March 2026",
+      "rows": [
+        [
+          "Name of body",
+          "Draft accounts published by 16 January 2025?",
+          "Appointed audit firm",
+          "Audit opinion delivered by 28 February 2025?",
+          "Date audit opinion delivered",
+          "Audit opinion published as of 9 March 2026?"
+        ],
+        [
+          "Ashfield District Council",
+          "yes",
+          "Forvis Mazars LLP",
+          "no",
+          "19/03/25",
+          "yes"
+        ],
+        [
+          "Birmingham City Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "21/11/25",
+          "yes"
+        ],
+        [
+          "Bromsgrove District Council",
+          "yes",
+          "No appointed auditor for 2023/24",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Cambridge City Council",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "14/05/25",
+          "yes"
+        ],
+        [
+          "Cambridgeshire County Council",
+          "yes",
+          "KPMG LLP",
+          "yes",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "Charnwood Borough Council",
+          "yes",
+          "Azets Audit Services Limited",
+          "yes",
+          "10/02/25",
+          "yes"
+        ],
+        [
+          "Cheshire West and Chester Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "no",
+          "24/03/25",
+          "yes"
+        ],
+        [
+          "Chief Constable of Cleveland",
+          "yes",
+          "Forvis Mazars LLP",
+          "yes",
+          "24/02/25",
+          "yes"
+        ],
+        [
+          "Chief Constable of Hertfordshire",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "23/04/25",
+          "yes"
+        ],
+        [
+          "Colchester City Council",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "16/05/25",
+          "yes"
+        ],
+        [
+          "Croydon London Borough Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "no",
+          "18/08/25",
+          "yes"
+        ],
+        [
+          "Cumberland Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "East Hertfordshire District Council",
+          "no",
+          "Azets Audit Services Limited",
+          "no",
+          "01/10/25",
+          "yes"
+        ],
+        [
+          "East Midlands Combined Authority",
+          "no",
+          "No appointed auditor for financial year 2023/24",
+          "no",
+          "27/02/26",
+          "yes"
+        ],
+        [
+          "Eastbourne Borough Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "11/03/25",
+          "yes"
+        ],
+        [
+          "Gloucester City Council",
+          "no",
+          "No appointed auditor for financial year 2023/24",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Gravesham Borough Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "09/07/25",
+          "yes"
+        ],
+        [
+          "Harlow District Council",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "12/11/25",
+          "yes"
+        ],
+        [
+          "Hartlepool Development Corporation",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Hastings Borough Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "Hereford and Worcester Fire Authority",
+          "no",
+          "Bishop Fleming LLP",
+          "no",
+          "26/06/25",
+          "yes"
+        ],
+        [
+          "Lancaster City Council",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Leicester, Leicestershire and Rutland Combined Fire Authority",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "Lewes District Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "15/07/25",
+          "yes"
+        ],
+        [
+          "Lindsey Marsh Drainage Board",
+          "yes",
+          "No appointed auditor for financial year 2023/24",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "London Borough of Enfield",
+          "yes",
+          "Grant Thornton UK LLP",
+          "no",
+          "29/08/25",
+          "yes"
+        ],
+        [
+          "London Borough of Hillingdon",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "27/03/25",
+          "yes"
+        ],
+        [
+          "Luton Borough Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "25/04/25",
+          "yes"
+        ],
+        [
+          "Malvern Hills District Council",
+          "yes",
+          "Azets Audit Services Limited",
+          "yes",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "Merseyside Waste Disposal Authority",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "07/08/25",
+          "yes"
+        ],
+        [
+          "Middlesbrough Development Corporation",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "North London Waste Authority",
+          "yes",
+          "Forvis Mazars LLP",
+          "yes",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "North West Leicestershire District Council",
+          "no",
+          "Azets Audit Services Limited",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Pendle Borough Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "27/02/25",
+          "yes"
+        ],
+        [
+          "Police and Crime Commissioner for Hertfordshire",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "23/04/25",
+          "yes"
+        ],
+        [
+          "Police and Crime Commissioner for Humberside",
+          "yes",
+          "Forvis Mazars LLP",
+          "yes",
+          "26/02/25",
+          "yes"
+        ],
+        [
+          "Redditch Borough Council",
+          "no",
+          "No appointed auditor for 2023/24",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Reigate and Banstead Borough Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "Royal Borough of Kingston upon Thames",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "14/03/25",
+          "yes"
+        ],
+        [
+          "Slough Borough Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "30/01/26",
+          "yes"
+        ],
+        [
+          "South Tees Development Corporation",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "St Albans City and District Council",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "12/05/25",
+          "yes"
+        ],
+        [
+          "Stafford Borough Council",
+          "no",
+          "Azets Audit Services Limited",
+          "no",
+          "11/06/25",
+          "yes"
+        ],
+        [
+          "Staffordshire County Council",
+          "yes",
+          "KPMG LLP",
+          "yes",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "Tees Valley Combined Authority",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Warrington Borough Council",
+          "yes",
+          "No appointed auditor for 2023/24",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "West Midlands Fire and Rescue Authority",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "18/02/25",
+          "yes"
+        ],
+        [
+          "Wiltshire Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "27/08/25",
+          "yes"
+        ],
+        [
+          "Worcester City Council",
+          "yes",
+          "Azets Audit Services Limited",
+          "yes",
+          "28/02/25",
+          "yes"
+        ],
+        [
+          "York and North Yorkshire Combined Authority",
+          "yes",
+          "Forvis Mazars LLP",
+          "yes",
+          "27/02/25",
+          "yes"
+        ]
+      ]
+    },
+    {
+      "heading": "27 February 2026  to  Financial year 2024/25",
+      "rows": [
+        [
+          "Name of body",
+          "Draft accounts published by 15 January 2026?",
+          "Appointed audit firm",
+          "Audit opinion delivered by 27 February 2026?",
+          "Date audit opinion delivered",
+          "Audit opinion published as of 9 March  2026?"
+        ],
+        [
+          "Basildon Borough Council *",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Cheltenham Borough Council",
+          "no",
+          "Bishop Fleming LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Chief Constable of Northumbria",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "County Durham and Darlington Fire and Rescue Service",
+          "yes",
+          "Forvis Mazars LLP",
+          "yes",
+          "18/02/26",
+          "no"
+        ],
+        [
+          "Cumberland Council",
+          "no",
+          "Grant Thornton UK LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "East Sussex County Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "yes",
+          "25/02/26",
+          "yes"
+        ],
+        [
+          "Gloucester City Council",
+          "no",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Gosport Borough Council",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "19/02/26",
+          "yes"
+        ],
+        [
+          "Hartlepool Development Corporation",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Huntingdonshire District Council",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "04/03/26",
+          "yes"
+        ],
+        [
+          "Hyndburn Borough Council",
+          "yes",
+          "Forvis Mazars LLP",
+          "yes",
+          "26/02/26",
+          "yes"
+        ],
+        [
+          "Lancaster City Council",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Lindsey Marsh Drainage Board",
+          "yes",
+          "No appointed auditor for 2024/25",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "London Borough of Merton (Pension fund only  to  the opinion for the main accounts was published by the backstop)",
+          "yes",
+          "Ernst & Young LLP",
+          "yes",
+          "16/02/26",
+          "yes"
+        ],
+        [
+          "Middlesbrough Development Corporation",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Norfolk County Council (including Norfolk Pension Fund)",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "North West Leicestershire District Council",
+          "yes",
+          "Azets Audit Service Limited",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Norwich City Council",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Nottingham City Council",
+          "yes",
+          "Grant Thornton UK LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Police and Crime Commissioner for Northumbria",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Reading Borough Council",
+          "yes",
+          "KPMG LLP",
+          "yes",
+          "27/02/26",
+          "yes"
+        ],
+        [
+          "Runnymede Borough Council *",
+          "yes",
+          "Grant Thornton UK LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Salisbury City Council",
+          "yes",
+          "No appointed auditor for 2024/25",
+          "n/a",
+          "n/a",
+          "no"
+        ],
+        [
+          "Sheffield City Council",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "South Tees Development Corporation",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Stoke-on-Trent City Council",
+          "yes",
+          "Forvis Mazars LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Tees Valley Combined Authority",
+          "yes",
+          "Ernst & Young LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Transport for the North",
+          "yes",
+          "Forvis Mazars LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Warrington Borough Council *",
+          "yes",
+          "Forvis Mazars LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "West London Waste Authority",
+          "yes",
+          "KPMG LLP",
+          "no",
+          "n/a",
+          "no"
+        ],
+        [
+          "Wigan Council",
+          "yes",
+          "Forvis Mazars LLP",
+          "yes",
+          "27/02/26",
+          "yes"
+        ],
+        [
+          "Woking Borough Council *",
+          "yes",
+          "Grant Thornton UK LLP",
+          "No",
+          "n/a",
+          "no"
+        ],
+        [
+          "Wychavon District Council",
+          "yes",
+          "Azets Audit Services Limited",
+          "yes",
+          "27/02/26",
+          "yes"
+        ]
+      ]
+    }
+  ]
+}

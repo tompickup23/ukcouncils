@@ -1,0 +1,43 @@
+{
+  "checked": "2026-11-15",
+  "result": "No maintained official national notice register located in the searches and official resources checked. This is a bounded research result, not proof that no register exists.",
+  "searched_publishers": [
+    "GOV.UK and MHCLG",
+    "UK Parliament written answers",
+    "House of Commons Library",
+    "Councils own websites"
+  ],
+  "searches": [
+    "section 114 notices register",
+    "section 114 notices centrally",
+    "section 114 notices list site:gov.uk",
+    "section 114 notices does not hold"
+  ],
+  "official_resources": [
+    {
+      "title": "Local authority financial resilience",
+      "publisher": "House of Commons Library",
+      "date": "2025-05-15",
+      "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-8520/",
+      "finding": "Dated research briefing with a historical table and separate discussion of subsection 2 notices, not a continuously maintained comprehensive register."
+    },
+    {
+      "title": "Local Government Finance Act 1988, section 114",
+      "url": "https://www.legislation.gov.uk/ukpga/1988/41/section/114",
+      "finding": "Record the subsection cited by each actual notice. Do not treat every notice as subsection 3."
+    }
+  ],
+  "minimum_register_fields": [
+    "body identity and exact profile GSS with evidence of assignment",
+    "council-owned original notice URL",
+    "notice issue date, separate from publication date",
+    "Act and exact subsection cited",
+    "page locator and selected extract without personal names",
+    "retrieval date, original file hash and retained extract hash",
+    "licence and redaction record",
+    "separate record for each supplementary notice",
+    "supersession or cessation only from an explicit later official document",
+    "search log and explicit non-exhaustive coverage"
+  ],
+  "efs_rule": "Exceptional Financial Support is not evidence of a section 114 notice. No cause is recorded."
+}

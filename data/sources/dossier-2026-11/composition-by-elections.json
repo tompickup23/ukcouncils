@@ -1,0 +1,1283 @@
+{
+  "url": "https://opencouncildata.co.uk/changesC.php?y=2026",
+  "original_sha256": "5d5469e7f46e6b15d28cecba945fbe424e47ce24008f24298079e782c4b680d3",
+  "retrieved": "2026-11-15",
+  "licence": "Creative Commons Attribution ShareAlike 4.0",
+  "publisher_caveat": "List may not be comprehensive and does not always include by-elections on May election days.",
+  "scope": "Party change events after 7 May 2026; includes holds. Dates are as printed, not independently verified polling dates. Manchester is labelled 11 September here but the council gives polling date 10 September. No GSS or publisher council ID on these rows, so no exact-code profile join.",
+  "transformation": "Date, council and party labels only. Wards discarded. Dash punctuation in labels replaced by colon.",
+  "rows": [
+    {
+      "date_as_printed": "2026-11-14",
+      "council": "Hyndburn",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-11-14",
+      "council": "North East Lincolnshire",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-11-14",
+      "council": "Oldham",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-11-14",
+      "council": "Staffordshire Moorlands",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-11-14",
+      "council": "Suffolk",
+      "from": "Reform UK",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-11-14",
+      "council": "Wigan",
+      "from": "Independent / Other",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-11-06",
+      "council": "Bournemouth, Christchurch and Poole",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-10-30",
+      "council": "Argyll and Bute",
+      "from": "Independent / Other",
+      "to": "Scottish National Party (SNP)"
+    },
+    {
+      "date_as_printed": "2026-10-30",
+      "council": "Bassetlaw",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-10-30",
+      "council": "Dudley",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-10-30",
+      "council": "Halton",
+      "from": "Liberal Democrats",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-10-30",
+      "council": "Newark and Sherwood",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-10-30",
+      "council": "Nottinghamshire",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-10-24",
+      "council": "Wychavon",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-10-23",
+      "council": "Carmarthenshire",
+      "from": "Labour Party",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-10-23",
+      "council": "East Hertfordshire",
+      "from": "Green Party (E&W)",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-10-23",
+      "council": "Leeds",
+      "from": "Labour Party",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-10-23",
+      "council": "South Kesteven",
+      "from": "Independent / Other",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-10-16",
+      "council": "Flintshire",
+      "from": "Independent / Other",
+      "to": "Flintshire People's Voice"
+    },
+    {
+      "date_as_printed": "2026-10-16",
+      "council": "Leicestershire",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-10-16",
+      "council": "Mid Devon",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-10-16",
+      "council": "Wiltshire",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-10-14",
+      "council": "Stroud",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-10-09",
+      "council": "Aberdeen City",
+      "from": "Scottish National Party (SNP)",
+      "to": "Scottish National Party (SNP)"
+    },
+    {
+      "date_as_printed": "2026-10-09",
+      "council": "Amber Valley",
+      "from": "Conservative and Unionist",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-10-09",
+      "council": "Lambeth",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-10-09",
+      "council": "Newcastle-under-Lyme",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-10-02",
+      "council": "Blackpool",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-10-02",
+      "council": "Highland",
+      "from": "Independent / Other",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-10-02",
+      "council": "North West Leicestershire",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-10-02",
+      "council": "Northumberland",
+      "from": "Independent / Other",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-10-02",
+      "council": "Northumberland",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-10-02",
+      "council": "Stirling",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-09-25",
+      "council": "Brighton and Hove",
+      "from": "Labour Party",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-09-25",
+      "council": "Cotswold",
+      "from": "Green Party (E&W)",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-09-25",
+      "council": "Milton Keynes",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-09-25",
+      "council": "South Staffordshire",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-09-25",
+      "council": "Windsor and Maidenhead",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-09-24",
+      "council": "Tunbridge Wells",
+      "from": "Tunbridge Wells Alliance",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-09-18",
+      "council": "Charnwood",
+      "from": "Green Party (E&W)",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-09-18",
+      "council": "Sheffield",
+      "from": "Green Party (E&W)",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-09-18",
+      "council": "South Lanarkshire",
+      "from": "Independent / Other",
+      "to": "Scottish National Party (SNP)"
+    },
+    {
+      "date_as_printed": "2026-09-16",
+      "council": "Bassetlaw",
+      "from": "Conservative and Unionist",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-09-11",
+      "council": "Manchester",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-09-11",
+      "council": "North East Derbyshire",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-09-11",
+      "council": "North Somerset",
+      "from": "Conservative and Unionist",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-09-11",
+      "council": "West Suffolk",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-09-04",
+      "council": "Edinburgh",
+      "from": "Scottish National Party (SNP)",
+      "to": "Scottish Green Party"
+    },
+    {
+      "date_as_printed": "2026-09-04",
+      "council": "Edinburgh",
+      "from": "Scottish National Party (SNP)",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-09-04",
+      "council": "Oxfordshire",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-09-04",
+      "council": "Rhondda Cynon Taf",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-09-04",
+      "council": "Somerset",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-09-03",
+      "council": "Stroud",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-08-30",
+      "council": "Dover",
+      "from": "Conservative and Unionist",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-08-30",
+      "council": "Newcastle upon Tyne",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-08-30",
+      "council": "Sheffield",
+      "from": "Independent / Other",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-08-30",
+      "council": "St. Helens",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-08-30",
+      "council": "Wandsworth",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-08-21",
+      "council": "Barnsley",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-08-21",
+      "council": "Cumberland",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-08-21",
+      "council": "Huntingdonshire",
+      "from": "Reform UK",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-08-21",
+      "council": "Nottingham",
+      "from": "Independent / Other",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-08-14",
+      "council": "East Devon",
+      "from": "Independent / Other",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-08-14",
+      "council": "Kirklees",
+      "from": "Reform UK",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-08-07",
+      "council": "Caerphilly",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-08-07",
+      "council": "King's Lynn and West Norfolk",
+      "from": "Conservative and Unionist",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-08-07",
+      "council": "King's Lynn and West Norfolk",
+      "from": "Conservative and Unionist",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-08-07",
+      "council": "Reigate and Banstead",
+      "from": "Conservative and Unionist",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-08-07",
+      "council": "South Tyneside",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-31",
+      "council": "Bolton",
+      "from": "Labour Party",
+      "to": "Independent / Other"
+    },
+    {
+      "date_as_printed": "2026-07-31",
+      "council": "Eastleigh",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-31",
+      "council": "Isle of Anglesey",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-07-31",
+      "council": "South Holland",
+      "from": "Independent / Other",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-31",
+      "council": "Uttlesford",
+      "from": "Residents for Uttlesford",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-25",
+      "council": "East Devon",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-25",
+      "council": "Medway",
+      "from": "Conservative and Unionist",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-25",
+      "council": "South Gloucestershire",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-25",
+      "council": "Thurrock",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-07-25",
+      "council": "Thurrock",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-07-18",
+      "council": "Breckland",
+      "from": "Independent / Other",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-18",
+      "council": "Cambridgeshire",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-18",
+      "council": "Cherwell",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-18",
+      "council": "Norfolk",
+      "from": "Reform UK",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-18",
+      "council": "Peterborough",
+      "from": "Independent / Other",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-07-18",
+      "council": "Rushmoor",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-07-18",
+      "council": "South Staffordshire",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-18",
+      "council": "Stafford",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-07-11",
+      "council": "Neath Port Talbot",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-07-11",
+      "council": "North Norfolk",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-11",
+      "council": "Pembrokeshire",
+      "from": "Independent / Other",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-11",
+      "council": "South Lanarkshire",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Camden",
+      "from": "Green Party (E&W)",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Cardiff",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Flintshire",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Flintshire",
+      "from": "Independent / Other",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Gateshead",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Gwynedd",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Independent / Other"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Lambeth",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Lambeth",
+      "from": "Independent / Other",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Stratford-on-Avon",
+      "from": "Liberal Democrats",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Surrey",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Vale of Glamorgan",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-07-10",
+      "council": "Waverley",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-04",
+      "council": "Aberdeenshire",
+      "from": "Independent / Other",
+      "to": "Scottish National Party (SNP)"
+    },
+    {
+      "date_as_printed": "2026-07-04",
+      "council": "Dorset",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-07-04",
+      "council": "Powys",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-07-04",
+      "council": "Powys",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-04",
+      "council": "Powys",
+      "from": "Reform UK",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-03",
+      "council": "Bolton",
+      "from": "Independent / Other",
+      "to": "Horwich & Blackrod First Independents"
+    },
+    {
+      "date_as_printed": "2026-07-03",
+      "council": "Cheshire West and Chester",
+      "from": "Conservative and Unionist",
+      "to": "Independent / Other"
+    },
+    {
+      "date_as_printed": "2026-07-03",
+      "council": "Cotswold",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-03",
+      "council": "Gloucestershire",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-07-03",
+      "council": "Harborough",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-07-03",
+      "council": "Telford and Wrekin",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-07-03",
+      "council": "Torfaen",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Aberdeen City",
+      "from": "Liberal Democrats",
+      "to": "Scottish National Party (SNP)"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Brighton and Hove",
+      "from": "Independent / Other",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Cambridgeshire",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Carmarthenshire",
+      "from": "Reform UK",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Denbighshire",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Independent / Other"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Denbighshire",
+      "from": "Independent / Other",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Ealing",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Hackney",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Hackney",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Halton",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Haringey",
+      "from": "Green Party (E&W)",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Haringey",
+      "from": "Labour Party",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Hertsmere",
+      "from": "Liberal Democrats",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Highland",
+      "from": "Independent / Other",
+      "to": "Independent / Other"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Merthyr Tydfil",
+      "from": "Reform UK",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Nuneaton and Bedworth",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Rhondda Cynon Taf",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "St. Helens",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Staffordshire",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Teignbridge",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-06-26",
+      "council": "Uttlesford",
+      "from": "Liberal Democrats",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Conwy",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Conwy",
+      "from": "Reform UK",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Essex",
+      "from": "Reform UK",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Lewisham",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "New Forest",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Rochford",
+      "from": "Reform UK",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Swansea",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Swansea",
+      "from": "Reform UK",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Wrexham",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Wrexham",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-06-19",
+      "council": "Wrexham",
+      "from": "Plaid Cymru: The Party of Wales",
+      "to": "Plaid Cymru: The Party of Wales"
+    },
+    {
+      "date_as_printed": "2026-06-12",
+      "council": "Cheshire West and Chester",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-06-12",
+      "council": "Dacorum",
+      "from": "Independent / Other",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-06-12",
+      "council": "Slough",
+      "from": "Conservative and Unionist",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-06-07",
+      "council": "City of London",
+      "from": "Independent / Other",
+      "to": "Independent / Other"
+    },
+    {
+      "date_as_printed": "2026-06-05",
+      "council": "Westmorland and Furness",
+      "from": "Conservative and Unionist",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-29",
+      "council": "Swansea",
+      "from": "Conservative and Unionist",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-22",
+      "council": "Dorset",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-22",
+      "council": "Fylde",
+      "from": "Independent / Other",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-22",
+      "council": "Lancaster",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-05-22",
+      "council": "Malvern Hills",
+      "from": "Malvern Hills Independents",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Basingstoke and Deane",
+      "from": "Conservative and Unionist",
+      "to": "Basingstoke & Deane Independents"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Brentwood",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Cambridge",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Cannock Chase",
+      "from": "Green Party (E&W)",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Chelmsford",
+      "from": "Liberal Democrats",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Cherwell",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Cherwell",
+      "from": "Independent / Other",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Chesterfield",
+      "from": "Liberal Democrats",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Chesterfield",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Crawley",
+      "from": "Conservative and Unionist",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Dudley",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "East Hertfordshire",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Eastleigh",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Exeter",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Gloucestershire",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Great Yarmouth",
+      "from": "Conservative and Unionist",
+      "to": "Great Yarmouth First"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Guildford",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Halton",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Hastings",
+      "from": "Labour Party",
+      "to": "Independent / Other"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Hertfordshire",
+      "from": "Reform UK",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Hertsmere",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Horsham",
+      "from": "Liberal Democrats",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Knowsley",
+      "from": "Green Party (E&W)",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Leeds",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Leeds",
+      "from": "Morley Borough Independents",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Leeds",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Lewes",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Lewes",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Mid Sussex",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Newport",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Norwich",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Powys",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Reading",
+      "from": "Labour Party",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Reigate and Banstead",
+      "from": "Green Party (E&W)",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Rochford",
+      "from": "Rochford District Residents",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Rochford",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Rother",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Rugby",
+      "from": "Conservative and Unionist",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Rushmoor",
+      "from": "Independent / Other",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Salford",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Sheffield",
+      "from": "Liberal Democrats",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Sheffield",
+      "from": "Labour Party",
+      "to": "Labour Party"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Somerset",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "St Albans",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "St Albans",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Stevenage",
+      "from": "Labour Party",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Stratford-on-Avon",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Surrey",
+      "from": "Conservative and Unionist",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Tunbridge Wells",
+      "from": "Labour Party",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Tunbridge Wells",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Welwyn Hatfield",
+      "from": "Conservative and Unionist",
+      "to": "Conservative and Unionist"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "West Northamptonshire",
+      "from": "Independent / Other",
+      "to": "Reform UK"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "West Suffolk",
+      "from": "Conservative and Unionist",
+      "to": "Green Party (E&W)"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Wokingham",
+      "from": "Liberal Democrats",
+      "to": "Liberal Democrats"
+    },
+    {
+      "date_as_printed": "2026-05-10",
+      "council": "Wolverhampton",
+      "from": "Independent / Other",
+      "to": "Reform UK"
+    }
+  ]
+}

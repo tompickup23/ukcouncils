@@ -1,0 +1,34 @@
+{
+  "retrieved": "2026-11-15",
+  "licence": "Creative Commons Attribution ShareAlike 4.0 for website extracts; CSV downloads declared public domain",
+  "licence_url": "http://creativecommons.org/licenses/by-sa/4.0/",
+  "transformation": "Selected dating, licence and scope text only. Contact and individual author fields excluded.",
+  "rows": [
+    {
+      "url": "https://opencouncildata.co.uk/",
+      "title": "Homepage last-updated label",
+      "original_sha256": "2f81eef6c52670c965ab8c7fd2c218ced9f4bc98d0ee6bfd68302cd6679b1afe",
+      "selected_fragments": [
+        "GB Councillors & Councils",
+        "Last Updated: 15-11-2026"
+      ]
+    },
+    {
+      "url": "https://opencouncildata.co.uk/aboutthissite.php",
+      "title": "Reuse statement",
+      "original_sha256": "2159e9256fd3dfa41fa3ee3c33a46e08c3b89084499c3fb08f8ce4189a8ccb79",
+      "selected_fragments": [
+        "The CSV downloads are public domain.",
+        "The website and its contents are provided under an Attribution Sharealike Licence."
+      ]
+    },
+    {
+      "url": "https://opencouncildata.co.uk/productsAndDownloads.php",
+      "title": "Archive scope",
+      "original_sha256": "818d6423f48edf848892bcccae91b5cbaac852e0376905363aaaca2a694ec46c",
+      "selected_fragments": [
+        "shortly after the May elections in each year"
+      ]
+    }
+  ]
+}

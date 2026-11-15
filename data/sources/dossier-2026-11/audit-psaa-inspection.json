@@ -1,0 +1,163 @@
+{
+  "publisher": "Public Sector Audit Appointments Limited",
+  "title": "September 2026: audit opinion data",
+  "publication_url": "https://www.psaa.co.uk/managing-audit-quality/monthly-audit-opinion-data/september-2026-audit-opinion-data/",
+  "publication_date": "2026-10-19",
+  "data_cut_off": "2026-09-30",
+  "url": "https://www.psaa.co.uk/wp-content/uploads/2026/10/Opinion-data-detailed-30Sep2026-website.xlsx",
+  "original_sha256": "4f7f0ace0b299113205faec36f4d13230d708ec4aeab5ad3f34146fa0a11f988",
+  "retrieved": "2026-11-15",
+  "licence": "PSAA copyright. Website terms permit non-commercial reproduction with acknowledgement, retained notices and no modification without prior written consent. No open licence identified.",
+  "licence_url": "https://www.psaa.co.uk/legal/",
+  "raw_file_committed": false,
+  "reason": "Workbook creator metadata is populated; full original is not retained under the no-person rule. Redistribution of transformed full tables also requires licence resolution. This file records schema and audit counts only.",
+  "sheets": [
+    {
+      "sheet": "2025-2026",
+      "columns": [
+        "Audit Year",
+        "Organisation Name",
+        "Firm",
+        "Sector Type",
+        "Audit Status",
+        "Audit Signed Date"
+      ],
+      "rows": 534,
+      "status_counts": {
+        "Unsigned": 515,
+        "Delivered by backstop": 19
+      },
+      "gss_or_ons_columns": []
+    },
+    {
+      "sheet": "2024-2025",
+      "columns": [
+        "Audit Year",
+        "Organisation Name",
+        "Firm",
+        "Sector Type",
+        "Audit Status",
+        "Audit Signed Date"
+      ],
+      "rows": 531,
+      "status_counts": {
+        "Delivered by backstop": 491,
+        "Unsigned": 14,
+        "Post backstop opinion delivered": 26
+      },
+      "gss_or_ons_columns": []
+    },
+    {
+      "sheet": "2023-2024",
+      "columns": [
+        "Audit Year",
+        "Organisation Name",
+        "Firm",
+        "Sector Type",
+        "Audit Status",
+        "Audit Signed Date"
+      ],
+      "rows": 534,
+      "status_counts": {
+        "Delivered by backstop": 475,
+        "Post backstop opinion delivered": 49,
+        "Unsigned": 10
+      },
+      "gss_or_ons_columns": []
+    },
+    {
+      "sheet": "2022-2023",
+      "columns": [
+        "Audit Year",
+        "Organisation Name",
+        "Firm",
+        "Sector Type",
+        "Audit Status",
+        "Audit Signed Date"
+      ],
+      "rows": 540,
+      "status_counts": {
+        "Late Opinion Delivered": 498,
+        "Post backstop opinion delivered": 33,
+        "Delivered On Time": 5,
+        "Delay Likely": 4
+      },
+      "gss_or_ons_columns": []
+    },
+    {
+      "sheet": "2021-2022",
+      "columns": [
+        "Audit Year",
+        "Organisation Name",
+        "Firm",
+        "Sector Type",
+        "Audit Status",
+        "Audit Signed Date"
+      ],
+      "rows": 540,
+      "status_counts": {
+        "Late Opinion Delivered": 454,
+        "Post backstop opinion delivered": 24,
+        "Delivered On Time": 59,
+        "Delay Likely": 3
+      },
+      "gss_or_ons_columns": []
+    },
+    {
+      "sheet": "2020-2021",
+      "columns": [
+        "Audit Year",
+        "Organisation Name",
+        "Firm",
+        "Sector Type",
+        "Audit Status",
+        "Audit Signed Date"
+      ],
+      "rows": 547,
+      "status_counts": {
+        "Late Opinion Delivered": 476,
+        "Post backstop opinion delivered": 18,
+        "Delivered On Time": 50,
+        "Delay Likely": 3
+      },
+      "gss_or_ons_columns": []
+    },
+    {
+      "sheet": "2019-2020",
+      "columns": [
+        "Audit Year",
+        "Organisation Name",
+        "Firm",
+        "Sector Type",
+        "Audit Status",
+        "Audit Signed Date"
+      ],
+      "rows": 552,
+      "status_counts": {
+        "Late Opinion Delivered": 299,
+        "Delivered On Time": 243,
+        "Post backstop opinion delivered": 8,
+        "Delay Likely": 2
+      },
+      "gss_or_ons_columns": []
+    },
+    {
+      "sheet": "2018-2019",
+      "columns": [
+        "Audit Year",
+        "Organisation Name",
+        "Firm",
+        "Sector Type",
+        "Audit Status",
+        "Audit Signed Date"
+      ],
+      "rows": 561,
+      "status_counts": {
+        "Delivered On Time": 331,
+        "Late Opinion Delivered": 229,
+        "Post backstop opinion delivered": 1
+      },
+      "gss_or_ons_columns": []
+    }
+  ]
+}

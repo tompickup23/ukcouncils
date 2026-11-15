@@ -1,0 +1,6055 @@
+{
+  "publisher": "Open Council Data UK",
+  "title": "English Council Compositions 2026",
+  "table_url": "https://opencouncildata.co.uk/councils.php?model=E&y=0",
+  "original_sha256": "0b17adb555571dd84424722367f1604e1ce820670d131cac22a03b95f9163c98",
+  "retrieved": "2026-11-15",
+  "site_last_updated": "2026-11-15",
+  "licence": "Creative Commons Attribution ShareAlike 4.0",
+  "licence_url": "http://creativecommons.org/licenses/by-sa/4.0/",
+  "transformation": "Retained published council identity, party totals, vacancy count and seat total. Excluded control, all person fields and unrelated text. Each linked council page supplies its printed GSS codes.",
+  "rows": [
+    {
+      "council": "Adur",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=165&y=0",
+      "compiler_id": 165,
+      "party_totals": {
+        "Lab": 17,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 2,
+        "Ref": 6,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 29,
+      "source_sha256": "b448eac342a462ff00e8075f5489b379b2f8e16513777e5209ea427b8124ca41",
+      "gss_codes_as_printed": [
+        "E07000223"
+      ]
+    },
+    {
+      "council": "Amber Valley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=170&y=0",
+      "compiler_id": 170,
+      "party_totals": {
+        "Lab": 19,
+        "Con": 6,
+        "LD": 1,
+        "Grn": 6,
+        "Ref": 3,
+        "Oth": 6,
+        "Vac": 1
+      },
+      "total": 42,
+      "source_sha256": "8c30cfad2eb098bb03842d439709cb4ad75a7052432fd153dd1e40d5dd45af22",
+      "gss_codes_as_printed": [
+        "E07000032"
+      ]
+    },
+    {
+      "council": "Arun",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=29&y=0",
+      "compiler_id": 29,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 19,
+        "LD": 14,
+        "Grn": 5,
+        "Ref": 1,
+        "Oth": 7,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "bbbc282089a35df15df5b25891b1bce2b374c6f4f8b665cea1e1ef627991e939",
+      "gss_codes_as_printed": [
+        "E07000224"
+      ]
+    },
+    {
+      "council": "Ashfield",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=30&y=0",
+      "compiler_id": 30,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 1,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 3,
+        "Oth": 30,
+        "Vac": 1
+      },
+      "total": 35,
+      "source_sha256": "d9bd4f64561a8f6d5b7ebb3e70f605bf17b8a6b8cb41aff8323d15569f74b841",
+      "gss_codes_as_printed": [
+        "E07000170"
+      ]
+    },
+    {
+      "council": "Ashford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=31&y=0",
+      "compiler_id": 31,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 17,
+        "LD": 0,
+        "Grn": 12,
+        "Ref": 0,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 47,
+      "source_sha256": "c91b9cb9278fae237102f63140890d204f2b44f1c8dcb2f719527a98725752e5",
+      "gss_codes_as_printed": [
+        "E07000105"
+      ]
+    },
+    {
+      "council": "Babergh",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=33&y=0",
+      "compiler_id": 33,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 7,
+        "LD": 4,
+        "Grn": 9,
+        "Ref": 2,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 32,
+      "source_sha256": "0133895bdf5ceeb81069205df4e6ec57aae8eae70638b91169dfdb94fb1432c0",
+      "gss_codes_as_printed": [
+        "E07000200"
+      ]
+    },
+    {
+      "council": "Barking and Dagenham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=227&y=0",
+      "compiler_id": 227,
+      "party_totals": {
+        "Lab": 38,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 4,
+        "Ref": 9,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 51,
+      "source_sha256": "551ee7c451fe2dcee3e78f74f1868884bae55067628490cfd1bda4f002fa7ecc",
+      "gss_codes_as_printed": [
+        "E09000002"
+      ]
+    },
+    {
+      "council": "Barnet",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=228&y=0",
+      "compiler_id": 228,
+      "party_totals": {
+        "Lab": 31,
+        "Con": 31,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "d48d264473f0e8c73f781165481a7a3af3f88806f4c959bd8aabf0c22917acc0",
+      "gss_codes_as_printed": [
+        "E09000003"
+      ]
+    },
+    {
+      "council": "Barnsley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=264&y=0",
+      "compiler_id": 264,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 0,
+        "LD": 7,
+        "Grn": 0,
+        "Ref": 41,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "a9a4000386327ea280742e402a571fce68578967970989c89dd39d0bca05dbb3",
+      "gss_codes_as_printed": [
+        "E08000038"
+      ]
+    },
+    {
+      "council": "Basildon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=171&y=0",
+      "compiler_id": 171,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 12,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 12,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "b3ed9d58ac1702835a6fa633d2e8338c9ae37507c9fe27a9c8e8b1ebea7fa712",
+      "gss_codes_as_printed": [
+        "E07000066"
+      ]
+    },
+    {
+      "council": "Basingstoke and Deane",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=172&y=0",
+      "compiler_id": 172,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 11,
+        "LD": 11,
+        "Grn": 2,
+        "Ref": 3,
+        "Oth": 17,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "e5da0ed2d0b58d02e5908b19e9627edbb9b4b58c5f7f0a521fb5f97699d29bd4",
+      "gss_codes_as_printed": [
+        "E07000084"
+      ]
+    },
+    {
+      "council": "Bassetlaw",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=35&y=0",
+      "compiler_id": 35,
+      "party_totals": {
+        "Lab": 34,
+        "Con": 3,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 8,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "0386b2c26f6f89c15bddc61ad10a5e9d49702afbddc1f7d625154fbe1e197334",
+      "gss_codes_as_printed": [
+        "E07000171"
+      ]
+    },
+    {
+      "council": "Bath and North East Somerset",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=327&y=0",
+      "compiler_id": 327,
+      "party_totals": {
+        "Lab": 6,
+        "Con": 2,
+        "LD": 38,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 59,
+      "source_sha256": "5f4d2bb5f86d7042d6030506e8f0e8323c2bce7775281521ce1f1c8dce7936b1",
+      "gss_codes_as_printed": [
+        "E06000022"
+      ]
+    },
+    {
+      "council": "Bedford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=328&y=0",
+      "compiler_id": 328,
+      "party_totals": {
+        "Lab": 11,
+        "Con": 14,
+        "LD": 12,
+        "Grn": 4,
+        "Ref": 0,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 46,
+      "source_sha256": "f2de66800cd03ced651d5ce8da2697832c9657d0cf33e47403b915da53d78f79",
+      "gss_codes_as_printed": [
+        "E06000055"
+      ]
+    },
+    {
+      "council": "Bexley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=229&y=0",
+      "compiler_id": 229,
+      "party_totals": {
+        "Lab": 9,
+        "Con": 28,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 7,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 45,
+      "source_sha256": "c55ac246e528858d9daa47e7fac4570319357b519a436a2275f35696ed494209",
+      "gss_codes_as_printed": [
+        "E09000004"
+      ]
+    },
+    {
+      "council": "Birmingham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=259&y=0",
+      "compiler_id": 259,
+      "party_totals": {
+        "Lab": 14,
+        "Con": 16,
+        "LD": 12,
+        "Grn": 19,
+        "Ref": 21,
+        "Oth": 18,
+        "Vac": 1
+      },
+      "total": 101,
+      "source_sha256": "bb6996e2d84ea6729a0f2e7b05ca79f17da4b24df04c3e5bf753d40b18cfefdd",
+      "gss_codes_as_printed": [
+        "E08000025"
+      ]
+    },
+    {
+      "council": "Blaby",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=36&y=0",
+      "compiler_id": 36,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 18,
+        "LD": 8,
+        "Grn": 2,
+        "Ref": 1,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "776c8bb5798ddfd094b6eb76f4e9fd4d44fd04dc8eb45d336321b39ed4039950",
+      "gss_codes_as_printed": [
+        "E07000129"
+      ]
+    },
+    {
+      "council": "Blackburn with Darwen",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=365&y=0",
+      "compiler_id": 365,
+      "party_totals": {
+        "Lab": 20,
+        "Con": 5,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 9,
+        "Oth": 17,
+        "Vac": 0
+      },
+      "total": 51,
+      "source_sha256": "6272c1afee6a408c4def924bc5bb0e793a41e04811302bb86ffb608c77111c14",
+      "gss_codes_as_printed": [
+        "E06000008"
+      ]
+    },
+    {
+      "council": "Blackpool",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=329&y=0",
+      "compiler_id": 329,
+      "party_totals": {
+        "Lab": 27,
+        "Con": 11,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 4,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "1e3ba6927f086748373fa9d9c96830abe8ad29147aa23c669c8f599ff7463552",
+      "gss_codes_as_printed": [
+        "E06000009"
+      ]
+    },
+    {
+      "council": "Bolsover",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=37&y=0",
+      "compiler_id": 37,
+      "party_totals": {
+        "Lab": 22,
+        "Con": 1,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 12,
+        "Vac": 0
+      },
+      "total": 37,
+      "source_sha256": "1718ea83bbd0dad98451bbd4f9f6d772393ea4ce10ffc90e8e9404bf19d1acee",
+      "gss_codes_as_printed": [
+        "E07000033"
+      ]
+    },
+    {
+      "council": "Bolton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=265&y=0",
+      "compiler_id": 265,
+      "party_totals": {
+        "Lab": 18,
+        "Con": 10,
+        "LD": 6,
+        "Grn": 5,
+        "Ref": 10,
+        "Oth": 10,
+        "Vac": 1
+      },
+      "total": 60,
+      "source_sha256": "3479c50793ffc3141716eb53e952e14f35005f9d30d914703e2c87408b9b32b2",
+      "gss_codes_as_printed": [
+        "E08000001"
+      ]
+    },
+    {
+      "council": "Boston",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=38&y=0",
+      "compiler_id": 38,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 4,
+        "LD": 1,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 24,
+        "Vac": 0
+      },
+      "total": 30,
+      "source_sha256": "69c6bba8cfe3bbc7cc9b78e929f33aeb0b905ff7ba8b5251f7b1c56aef0d69fc",
+      "gss_codes_as_printed": [
+        "E07000136"
+      ]
+    },
+    {
+      "council": "Bournemouth, Christchurch and Poole",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=409&y=0",
+      "compiler_id": 409,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 9,
+        "LD": 27,
+        "Grn": 5,
+        "Ref": 3,
+        "Oth": 24,
+        "Vac": 0
+      },
+      "total": 76,
+      "source_sha256": "1051440ad8998eabe857860e517d3e0e7f006619d544a2cebaa8173d56e2b501",
+      "gss_codes_as_printed": [
+        "E06000058"
+      ]
+    },
+    {
+      "council": "Bracknell Forest",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=331&y=0",
+      "compiler_id": 331,
+      "party_totals": {
+        "Lab": 20,
+        "Con": 10,
+        "LD": 8,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 41,
+      "source_sha256": "2c7bf0eae7fd6dde5c7b2ebd98cac9380a1dcb3504d7c91cd7dc7d6905381278",
+      "gss_codes_as_printed": [
+        "E06000036"
+      ]
+    },
+    {
+      "council": "Bradford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=266&y=0",
+      "compiler_id": 266,
+      "party_totals": {
+        "Lab": 17,
+        "Con": 18,
+        "LD": 4,
+        "Grn": 9,
+        "Ref": 27,
+        "Oth": 15,
+        "Vac": 0
+      },
+      "total": 90,
+      "source_sha256": "520abfff77e96e2cc9ecece56287e1a93733767786a915131be8c205c730ecc0",
+      "gss_codes_as_printed": [
+        "E08000032"
+      ]
+    },
+    {
+      "council": "Braintree",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=39&y=0",
+      "compiler_id": 39,
+      "party_totals": {
+        "Lab": 9,
+        "Con": 30,
+        "LD": 0,
+        "Grn": 3,
+        "Ref": 1,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 49,
+      "source_sha256": "bcae2d6ceae29892fddcf36b25c567489a3e93a0a6612abf04a71aca844c2d32",
+      "gss_codes_as_printed": [
+        "E07000067"
+      ]
+    },
+    {
+      "council": "Breckland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=40&y=0",
+      "compiler_id": 40,
+      "party_totals": {
+        "Lab": 9,
+        "Con": 29,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 5,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 49,
+      "source_sha256": "bfba4c34a79cf878f87b0ecc7352d6f737ffedf9bec98a59d959c4e3724c244b",
+      "gss_codes_as_printed": [
+        "E07000143"
+      ]
+    },
+    {
+      "council": "Brent",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=230&y=0",
+      "compiler_id": 230,
+      "party_totals": {
+        "Lab": 26,
+        "Con": 11,
+        "LD": 11,
+        "Grn": 9,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "c924f0fd0624b573f582de124764149eb94ef3703009a06d613eaf6c185139e6",
+      "gss_codes_as_printed": [
+        "E09000005"
+      ]
+    },
+    {
+      "council": "Brentwood",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=173&y=0",
+      "compiler_id": 173,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 11,
+        "LD": 16,
+        "Grn": 0,
+        "Ref": 8,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "3446101e4f982cb8f58517dd64c4991e42fd83f36bff990554c415f44472e314",
+      "gss_codes_as_printed": [
+        "E07000068"
+      ]
+    },
+    {
+      "council": "Brighton and Hove",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=332&y=0",
+      "compiler_id": 332,
+      "party_totals": {
+        "Lab": 31,
+        "Con": 5,
+        "LD": 0,
+        "Grn": 12,
+        "Ref": 0,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "9f04d51e49b79f947cd2a4a2db577c3f0de9da98736e09d1671260a2f63d9bc6",
+      "gss_codes_as_printed": [
+        "E06000043"
+      ]
+    },
+    {
+      "council": "Bristol",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=366&y=0",
+      "compiler_id": 366,
+      "party_totals": {
+        "Lab": 19,
+        "Con": 7,
+        "LD": 9,
+        "Grn": 34,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 70,
+      "source_sha256": "00a257d817bc9e51c281ef80bb808d15c2559f37183b7f34199cf35909147067",
+      "gss_codes_as_printed": [
+        "E06000023"
+      ]
+    },
+    {
+      "council": "Broadland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=41&y=0",
+      "compiler_id": 41,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 20,
+        "LD": 14,
+        "Grn": 4,
+        "Ref": 1,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 47,
+      "source_sha256": "b169b9b6f5ba6b9fd1dc760267e7368bfc6e7f1bf01b5b454d1f65af622e77cd",
+      "gss_codes_as_printed": [
+        "E07000144"
+      ]
+    },
+    {
+      "council": "Bromley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=231&y=0",
+      "compiler_id": 231,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 35,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 5,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 58,
+      "source_sha256": "a6556f69b4eb96e278e6910f308a3e2a49b664283f0a6ece9802714411360e5d",
+      "gss_codes_as_printed": [
+        "E09000006"
+      ]
+    },
+    {
+      "council": "Bromsgrove",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=42&y=0",
+      "compiler_id": 42,
+      "party_totals": {
+        "Lab": 6,
+        "Con": 10,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 8,
+        "Vac": 1
+      },
+      "total": 31,
+      "source_sha256": "34faa047ded944005ba1f6e830ced4af87fb2ee16446c5285703500bc686c0d5",
+      "gss_codes_as_printed": [
+        "E07000234"
+      ]
+    },
+    {
+      "council": "Broxbourne",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=174&y=0",
+      "compiler_id": 174,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 25,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 30,
+      "source_sha256": "8c062efccf948368308ec2de9f24651f6e716910720933cc0d8732be153581a1",
+      "gss_codes_as_printed": [
+        "E07000095"
+      ]
+    },
+    {
+      "council": "Broxtowe",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=43&y=0",
+      "compiler_id": 43,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 10,
+        "LD": 3,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 24,
+        "Vac": 0
+      },
+      "total": 44,
+      "source_sha256": "34e1d7d56833cb91f4d9db23c1e074369ded635f92bf4cff2a653408fb5d55a5",
+      "gss_codes_as_printed": [
+        "E07000172"
+      ]
+    },
+    {
+      "council": "Buckinghamshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=413&y=0",
+      "compiler_id": 413,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 50,
+        "LD": 26,
+        "Grn": 2,
+        "Ref": 2,
+        "Oth": 14,
+        "Vac": 0
+      },
+      "total": 97,
+      "source_sha256": "99b2b9febdff4e4eae70b83bf3359b66eda7e7c39e8b6402fcc943aec10d9cdb",
+      "gss_codes_as_printed": [
+        "E06000060"
+      ]
+    },
+    {
+      "council": "Burnley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=175&y=0",
+      "compiler_id": 175,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 3,
+        "LD": 6,
+        "Grn": 3,
+        "Ref": 12,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 45,
+      "source_sha256": "95256d27020bb15c5b66d05251e7368c8b4d6f0adb37ba455a360c7c6f788b9e",
+      "gss_codes_as_printed": [
+        "E07000117"
+      ]
+    },
+    {
+      "council": "Bury",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=267&y=0",
+      "compiler_id": 267,
+      "party_totals": {
+        "Lab": 31,
+        "Con": 3,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 6,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 51,
+      "source_sha256": "7e59521517b3ea53d07134df8b78efdffd82c19c3ee28cc2de869041b39aacb0",
+      "gss_codes_as_printed": [
+        "E08000002"
+      ]
+    },
+    {
+      "council": "Calderdale",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=268&y=0",
+      "compiler_id": 268,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 0,
+        "LD": 2,
+        "Grn": 7,
+        "Ref": 34,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "02d1f8d7056c0b08c0fe1a7de0a51ae22ff34c1203c329c276981765f28a1b66",
+      "gss_codes_as_printed": [
+        "E08000033"
+      ]
+    },
+    {
+      "council": "Cambridge",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=176&y=0",
+      "compiler_id": 176,
+      "party_totals": {
+        "Lab": 15,
+        "Con": 1,
+        "LD": 11,
+        "Grn": 12,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "59e21bc4671900ec1c4aa9ab17b81594172dc4d507a565f9b190110600bff079",
+      "gss_codes_as_printed": [
+        "E07000008"
+      ]
+    },
+    {
+      "council": "Cambridgeshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=2&y=0",
+      "compiler_id": 2,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 11,
+        "LD": 32,
+        "Grn": 2,
+        "Ref": 9,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 61,
+      "source_sha256": "2cbacecf7fbd966cdd2cf995fd4826be0c7689f2574d3c27f8df82bdf07f780f",
+      "gss_codes_as_printed": [
+        "E10000003"
+      ]
+    },
+    {
+      "council": "Camden",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=232&y=0",
+      "compiler_id": 232,
+      "party_totals": {
+        "Lab": 31,
+        "Con": 3,
+        "LD": 10,
+        "Grn": 10,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "1ee8d666df1e6e3b0c1b94adbce1fec22761ab5f68edde918e6e81d6e1fca13c",
+      "gss_codes_as_printed": [
+        "E09000007"
+      ]
+    },
+    {
+      "council": "Cannock Chase",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=177&y=0",
+      "compiler_id": 177,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 7,
+        "LD": 1,
+        "Grn": 3,
+        "Ref": 13,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "ddc7b3b4bf59a27727fdf7a13fa6b3e3940718ef1242fe9b0c62516b0c240215",
+      "gss_codes_as_printed": [
+        "E07000192"
+      ]
+    },
+    {
+      "council": "Canterbury",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=44&y=0",
+      "compiler_id": 44,
+      "party_totals": {
+        "Lab": 18,
+        "Con": 8,
+        "LD": 8,
+        "Grn": 4,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "388f4bbebcb696e12ff54538c9c6c640aee33d910f1d614b7bbfaab57df559f8",
+      "gss_codes_as_printed": [
+        "E07000106"
+      ]
+    },
+    {
+      "council": "Castle Point",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=179&y=0",
+      "compiler_id": 179,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 38,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "b3f1526565f5d033b56d2d55b5bf8aad284ea01b416bff91ed0c49eb23f13891",
+      "gss_codes_as_printed": [
+        "E07000069"
+      ]
+    },
+    {
+      "council": "Central Bedfordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=333&y=0",
+      "compiler_id": 333,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 20,
+        "LD": 8,
+        "Grn": 1,
+        "Ref": 2,
+        "Oth": 28,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "a2bb8531d2c674648183558af03b05c157301cd3ba5e30ed8776cb336ee1d021",
+      "gss_codes_as_printed": [
+        "E06000056"
+      ]
+    },
+    {
+      "council": "Charnwood",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=45&y=0",
+      "compiler_id": 45,
+      "party_totals": {
+        "Lab": 20,
+        "Con": 22,
+        "LD": 0,
+        "Grn": 7,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 52,
+      "source_sha256": "d0dd1f912c0df4f2d8fa63e40f055ddd9e61c2eb4c40fa8dcef67feac7a80fe6",
+      "gss_codes_as_printed": [
+        "E07000130"
+      ]
+    },
+    {
+      "council": "Chelmsford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=46&y=0",
+      "compiler_id": 46,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 18,
+        "LD": 30,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 7,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "59fd69182905937de3dbacfd2fea9cd07a5004ffb174c3a153ca8f3b9507f273",
+      "gss_codes_as_printed": [
+        "E07000070"
+      ]
+    },
+    {
+      "council": "Cheltenham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=166&y=0",
+      "compiler_id": 166,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 0,
+        "LD": 35,
+        "Grn": 3,
+        "Ref": 1,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 40,
+      "source_sha256": "8bd7c3d297d9f91b273e53c24dcb732fbd608ae8ebed5846156562776dc23a8e",
+      "gss_codes_as_printed": [
+        "E07000078"
+      ]
+    },
+    {
+      "council": "Cherwell",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=180&y=0",
+      "compiler_id": 180,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 8,
+        "LD": 18,
+        "Grn": 4,
+        "Ref": 6,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "ec65b5e84c5bb2f8f8ed76020fa349fbb15709a0986e1b88b46f85195cd6527c",
+      "gss_codes_as_printed": [
+        "E07000177"
+      ]
+    },
+    {
+      "council": "Cheshire East",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=334&y=0",
+      "compiler_id": 334,
+      "party_totals": {
+        "Lab": 28,
+        "Con": 32,
+        "LD": 1,
+        "Grn": 1,
+        "Ref": 1,
+        "Oth": 19,
+        "Vac": 0
+      },
+      "total": 82,
+      "source_sha256": "822feee0f8ba5b3f206fbfcc88eedf98c0465b31117360474f32b534b7ef84bc",
+      "gss_codes_as_printed": [
+        "E06000049"
+      ]
+    },
+    {
+      "council": "Cheshire West and Chester",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=335&y=0",
+      "compiler_id": 335,
+      "party_totals": {
+        "Lab": 34,
+        "Con": 20,
+        "LD": 1,
+        "Grn": 3,
+        "Ref": 3,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 70,
+      "source_sha256": "e71c7955956967e7b41cfbde78bc774bed2e94ff49e890f1afeda62ec6e8285a",
+      "gss_codes_as_printed": [
+        "E06000050"
+      ]
+    },
+    {
+      "council": "Chesterfield",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=47&y=0",
+      "compiler_id": 47,
+      "party_totals": {
+        "Lab": 27,
+        "Con": 0,
+        "LD": 11,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 40,
+      "source_sha256": "bea84abbcf352a59d1c983d7a2650ddfab65ddd919102196f6f8b48f8702d7ed",
+      "gss_codes_as_printed": [
+        "E07000034"
+      ]
+    },
+    {
+      "council": "Chichester",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=48&y=0",
+      "compiler_id": 48,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 5,
+        "LD": 24,
+        "Grn": 2,
+        "Ref": 0,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "ac0af1bf8e0f0caf83af2941f6efbb16ec1e16be4a2d8276a661f34758abb077",
+      "gss_codes_as_printed": [
+        "E07000225"
+      ]
+    },
+    {
+      "council": "Chorley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=181&y=0",
+      "compiler_id": 181,
+      "party_totals": {
+        "Lab": 29,
+        "Con": 4,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 6,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "eb31377c46d7616cc071aeeafc387ec47809cf419276bc1a1602f74ff76e4200",
+      "gss_codes_as_printed": [
+        "E07000118"
+      ]
+    },
+    {
+      "council": "City of London",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=406&y=0",
+      "compiler_id": 406,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 118,
+        "Vac": 0
+      },
+      "total": 125,
+      "source_sha256": "b27b3bba8fdf102d407c06f3301f3eead21f450418b102b5d5206d1eceaad256",
+      "gss_codes_as_printed": [
+        "E09000001"
+      ]
+    },
+    {
+      "council": "Colchester",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=182&y=0",
+      "compiler_id": 182,
+      "party_totals": {
+        "Lab": 9,
+        "Con": 18,
+        "LD": 12,
+        "Grn": 3,
+        "Ref": 5,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 51,
+      "source_sha256": "0dc2829fd7a77409ac81cb32bfb4947bd68710790e3964aafc44ccb4e41c8ab3",
+      "gss_codes_as_printed": [
+        "E07000071"
+      ]
+    },
+    {
+      "council": "Cornwall",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=336&y=0",
+      "compiler_id": 336,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 7,
+        "LD": 26,
+        "Grn": 2,
+        "Ref": 20,
+        "Oth": 27,
+        "Vac": 0
+      },
+      "total": 87,
+      "source_sha256": "335fb73d7856239a92e0666bb74a615df3da70695f4fcbd5f4f5d18caa00049e",
+      "gss_codes_as_printed": [
+        "E06000052"
+      ]
+    },
+    {
+      "council": "Cotswold",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=53&y=0",
+      "compiler_id": 53,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 11,
+        "LD": 22,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 34,
+      "source_sha256": "54c67f7e5090f3040f19bb2ab2fc27b4483ec49f7f78a18b5099076c53117f68",
+      "gss_codes_as_printed": [
+        "E07000079"
+      ]
+    },
+    {
+      "council": "Coventry",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=269&y=0",
+      "compiler_id": 269,
+      "party_totals": {
+        "Lab": 24,
+        "Con": 6,
+        "LD": 0,
+        "Grn": 4,
+        "Ref": 20,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "441e5fab00604706e66a9820234ec2140f0eed35c2b15709e902676ff8a5a8d7",
+      "gss_codes_as_printed": [
+        "E08000026"
+      ]
+    },
+    {
+      "council": "Crawley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=184&y=0",
+      "compiler_id": 184,
+      "party_totals": {
+        "Lab": 21,
+        "Con": 4,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 11,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "bc5a50694bbf2c2135804247737c5f1368871c223704aa5ae93f4514d80d8f5b",
+      "gss_codes_as_printed": [
+        "E07000226"
+      ]
+    },
+    {
+      "council": "Croydon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=233&y=0",
+      "compiler_id": 233,
+      "party_totals": {
+        "Lab": 30,
+        "Con": 28,
+        "LD": 2,
+        "Grn": 8,
+        "Ref": 2,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 70,
+      "source_sha256": "1c3eb31b587b01ccea641aeebd3f4fdf4400497b995da07424f33cef2e58678d",
+      "gss_codes_as_printed": [
+        "E09000008"
+      ]
+    },
+    {
+      "council": "Cumberland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=418&y=0",
+      "compiler_id": 418,
+      "party_totals": {
+        "Lab": 25,
+        "Con": 8,
+        "LD": 4,
+        "Grn": 3,
+        "Ref": 1,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 46,
+      "source_sha256": "5181e0878d5b70d229968f418dcfa9c35dc7397343667c9dabe22fa778317f50",
+      "gss_codes_as_printed": [
+        "E06000063"
+      ]
+    },
+    {
+      "council": "Dacorum",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=54&y=0",
+      "compiler_id": 54,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 18,
+        "LD": 19,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 9,
+        "Vac": 1
+      },
+      "total": 51,
+      "source_sha256": "ab38ac1a2e835f082025b2785a419267652ed6a40a4ed925c01f62a4c44c2768",
+      "gss_codes_as_printed": [
+        "E07000096"
+      ]
+    },
+    {
+      "council": "Darlington",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=337&y=0",
+      "compiler_id": 337,
+      "party_totals": {
+        "Lab": 23,
+        "Con": 12,
+        "LD": 2,
+        "Grn": 6,
+        "Ref": 2,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 50,
+      "source_sha256": "8052e8fb9fab357f5c728cdc1ecd61914004dd461fc9b832f9d4ddeef276fe8e",
+      "gss_codes_as_printed": [
+        "E06000005"
+      ]
+    },
+    {
+      "council": "Dartford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=55&y=0",
+      "compiler_id": 55,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 28,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "1df95b32b4c1c709a018e479dcd1dfd0965259e684e82e779ff2e07568f94148",
+      "gss_codes_as_printed": [
+        "E07000107"
+      ]
+    },
+    {
+      "council": "Derby",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=367&y=0",
+      "compiler_id": 367,
+      "party_totals": {
+        "Lab": 24,
+        "Con": 14,
+        "LD": 3,
+        "Grn": 0,
+        "Ref": 6,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 51,
+      "source_sha256": "4cd615204e42ee2103fb88d068265c43f66bb4335883ec4311881e0240a841af",
+      "gss_codes_as_printed": [
+        "E06000015"
+      ]
+    },
+    {
+      "council": "Derbyshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=4&y=0",
+      "compiler_id": 4,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 10,
+        "LD": 3,
+        "Grn": 3,
+        "Ref": 42,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 64,
+      "source_sha256": "647b8651ce27bd13c01a4dd3e2136969bb18c48bb941cdb77b24a539b628ac5b",
+      "gss_codes_as_printed": [
+        "E10000007"
+      ]
+    },
+    {
+      "council": "Derbyshire Dales",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=56&y=0",
+      "compiler_id": 56,
+      "party_totals": {
+        "Lab": 6,
+        "Con": 9,
+        "LD": 12,
+        "Grn": 4,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 34,
+      "source_sha256": "5378609c69ddb0db2206054418789f60ea329eb41de0824a80e476cb44431787",
+      "gss_codes_as_printed": [
+        "E07000035"
+      ]
+    },
+    {
+      "council": "Devon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=5&y=0",
+      "compiler_id": 5,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 7,
+        "LD": 27,
+        "Grn": 6,
+        "Ref": 16,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 60,
+      "source_sha256": "ef9932629638c6ea07f9126f4281dcf5fadac9f045f1f9576d6a8554ed57dce0",
+      "gss_codes_as_printed": [
+        "E10000008"
+      ]
+    },
+    {
+      "council": "Doncaster",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=260&y=0",
+      "compiler_id": 260,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 6,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 33,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "5e6d70a323a4287ad7732fdcb917e1ff2e44b7c8cdb8adcb5d9cfe1fa2e28508",
+      "gss_codes_as_printed": [
+        "E08000017"
+      ]
+    },
+    {
+      "council": "Dorset",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=408&y=0",
+      "compiler_id": 408,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 30,
+        "LD": 41,
+        "Grn": 4,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 1
+      },
+      "total": 82,
+      "source_sha256": "90caa2741e3f34fee7264b63e352dee4e7c223cf8932d51ce5416a2a64034fab",
+      "gss_codes_as_printed": [
+        "E06000059"
+      ]
+    },
+    {
+      "council": "Dover",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=57&y=0",
+      "compiler_id": 57,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 13,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 32,
+      "source_sha256": "8703420bdd0ef7ddf729570c7251cac58119efcde67ce72f49b897ed3a25b23d",
+      "gss_codes_as_printed": [
+        "E07000108"
+      ]
+    },
+    {
+      "council": "Dudley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=270&y=0",
+      "compiler_id": 270,
+      "party_totals": {
+        "Lab": 16,
+        "Con": 27,
+        "LD": 4,
+        "Grn": 0,
+        "Ref": 22,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 72,
+      "source_sha256": "72115c86589e6bbdff82432280f6ff4ba90722d12b5a206bde43ace43a0b507f",
+      "gss_codes_as_printed": [
+        "E08000027"
+      ]
+    },
+    {
+      "council": "Durham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=338&y=0",
+      "compiler_id": 338,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 1,
+        "LD": 15,
+        "Grn": 2,
+        "Ref": 50,
+        "Oth": 24,
+        "Vac": 1
+      },
+      "total": 98,
+      "source_sha256": "9906ee7740d9d98eb4c25d0b52fa612413aa142181ef05a5ae8bdedb0d80482e",
+      "gss_codes_as_printed": [
+        "E06000047"
+      ]
+    },
+    {
+      "council": "Ealing",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=234&y=0",
+      "compiler_id": 234,
+      "party_totals": {
+        "Lab": 46,
+        "Con": 5,
+        "LD": 13,
+        "Grn": 5,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 70,
+      "source_sha256": "0af804d8a1d78da0f44d288c52818343dace1e5c5a1f26d902b32af62c021837",
+      "gss_codes_as_printed": [
+        "E09000009"
+      ]
+    },
+    {
+      "council": "East Cambridgeshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=58&y=0",
+      "compiler_id": 58,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 15,
+        "LD": 12,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 28,
+      "source_sha256": "d48092aad5f788e45c2041efc7f42d5eb12d92d2b83a2b898e9710bfdcda6380",
+      "gss_codes_as_printed": [
+        "E07000009"
+      ]
+    },
+    {
+      "council": "East Devon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=59&y=0",
+      "compiler_id": 59,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 12,
+        "LD": 21,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 23,
+        "Vac": 1
+      },
+      "total": 60,
+      "source_sha256": "25e09ddd8a017fed4c2b88a776930fedf7b5eb57d9f6989d780b72e3cbb53e35",
+      "gss_codes_as_printed": [
+        "E07000040"
+      ]
+    },
+    {
+      "council": "East Hampshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=61&y=0",
+      "compiler_id": 61,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 18,
+        "LD": 14,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "5f0569b342472f44efeb917f778ea7feb131565b94ca7274920e4bb9c56488ba",
+      "gss_codes_as_printed": [
+        "E07000085"
+      ]
+    },
+    {
+      "council": "East Hertfordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=62&y=0",
+      "compiler_id": 62,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 15,
+        "LD": 10,
+        "Grn": 15,
+        "Ref": 2,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 50,
+      "source_sha256": "7afece35540af38f663e9fbb0ab356a6999b3b6f0b25d13160fe4d5c09855937",
+      "gss_codes_as_printed": [
+        "E07000242"
+      ]
+    },
+    {
+      "council": "East Lindsey",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=63&y=0",
+      "compiler_id": 63,
+      "party_totals": {
+        "Lab": 6,
+        "Con": 26,
+        "LD": 1,
+        "Grn": 1,
+        "Ref": 6,
+        "Oth": 15,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "8728712a358557ca4d546c3c6a78d7410bcb1e204519fecf6a9916ed297cf379",
+      "gss_codes_as_printed": [
+        "E07000137"
+      ]
+    },
+    {
+      "council": "East Riding of Yorkshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=339&y=0",
+      "compiler_id": 339,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 24,
+        "LD": 21,
+        "Grn": 1,
+        "Ref": 3,
+        "Oth": 15,
+        "Vac": 0
+      },
+      "total": 67,
+      "source_sha256": "3fa2e4d1a77d8b1b3e3ffb67824dfe41117505099591de46753b1ee33a261996",
+      "gss_codes_as_printed": [
+        "E06000011"
+      ]
+    },
+    {
+      "council": "East Staffordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=65&y=0",
+      "compiler_id": 65,
+      "party_totals": {
+        "Lab": 21,
+        "Con": 15,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 37,
+      "source_sha256": "34ace62e357ea2eacb041af34b7e65e43b59720327e4afd305940c0c6c0427ae",
+      "gss_codes_as_printed": [
+        "E07000193"
+      ]
+    },
+    {
+      "council": "East Suffolk",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=412&y=0",
+      "compiler_id": 412,
+      "party_totals": {
+        "Lab": 11,
+        "Con": 15,
+        "LD": 9,
+        "Grn": 16,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "6b809c11471224f5ec6140d08f0e9a33b836c92dea55b193219c85ca8d3d270d",
+      "gss_codes_as_printed": [
+        "E07000244"
+      ]
+    },
+    {
+      "council": "East Surrey",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=421&y=0",
+      "compiler_id": 421,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 10,
+        "LD": 39,
+        "Grn": 8,
+        "Ref": 5,
+        "Oth": 9,
+        "Vac": 1
+      },
+      "total": 72,
+      "source_sha256": "3744ee116de1f5684d656997bdc6b1efd93aa38c99ee7b5bc3964898fb6173a7",
+      "gss_codes_as_printed": [
+        "E06000067"
+      ]
+    },
+    {
+      "council": "East Sussex",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=7&y=0",
+      "compiler_id": 7,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 4,
+        "LD": 14,
+        "Grn": 10,
+        "Ref": 20,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 50,
+      "source_sha256": "3bff57037837c11814eb0ba856405b28d3497ce58974a2ed91723763c58e6b3b",
+      "gss_codes_as_printed": [
+        "E10000011"
+      ]
+    },
+    {
+      "council": "Eastbourne",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=66&y=0",
+      "compiler_id": 66,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 8,
+        "LD": 19,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 27,
+      "source_sha256": "f54377ebd4fe5498784441e4a9bfbe84d85d16deb397f606c8b2ad68e264a7e4",
+      "gss_codes_as_printed": [
+        "E07000061"
+      ]
+    },
+    {
+      "council": "Eastleigh",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=67&y=0",
+      "compiler_id": 67,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 1,
+        "LD": 35,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "e0043743b0290353596c04f7fe5b950678d2a17ee0f6c78e65877c0925b50943",
+      "gss_codes_as_printed": [
+        "E07000086"
+      ]
+    },
+    {
+      "council": "Elmbridge",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=186&y=0",
+      "compiler_id": 186,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 9,
+        "LD": 20,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 16,
+        "Vac": 1
+      },
+      "total": 48,
+      "source_sha256": "eea7ac0fb82f534707c8f61018cf1e727904cc8145306e40874352b7d514b966",
+      "gss_codes_as_printed": [
+        "E07000207"
+      ]
+    },
+    {
+      "council": "Enfield",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=235&y=0",
+      "compiler_id": 235,
+      "party_totals": {
+        "Lab": 27,
+        "Con": 31,
+        "LD": 0,
+        "Grn": 5,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "7f33bbc6ed7e1b8f652b83f83326d363f7c00cf9a48806a00b09a258ffe052fc",
+      "gss_codes_as_printed": [
+        "E09000010"
+      ]
+    },
+    {
+      "council": "Epping Forest",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=187&y=0",
+      "compiler_id": 187,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 19,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 12,
+        "Oth": 16,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "478aa732ba0d5c5413ec8451c5d9bfbc36bee97994c921ccc346762da49fc527",
+      "gss_codes_as_printed": [
+        "E07000072"
+      ]
+    },
+    {
+      "council": "Epsom and Ewell",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=69&y=0",
+      "compiler_id": 69,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 4,
+        "LD": 2,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 25,
+        "Vac": 0
+      },
+      "total": 35,
+      "source_sha256": "3c36857ba4d714b532a4d38f03422e8bff83de54770e4153e8f979f88c6381ad",
+      "gss_codes_as_printed": [
+        "E07000208"
+      ]
+    },
+    {
+      "council": "Erewash",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=70&y=0",
+      "compiler_id": 70,
+      "party_totals": {
+        "Lab": 25,
+        "Con": 16,
+        "LD": 1,
+        "Grn": 1,
+        "Ref": 2,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 47,
+      "source_sha256": "274c724838448cd649c1689079ec79d8661b984b094fb1d06986322b696d8b7c",
+      "gss_codes_as_printed": [
+        "E07000036"
+      ]
+    },
+    {
+      "council": "Essex",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=8&y=0",
+      "compiler_id": 8,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 14,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 50,
+        "Oth": 7,
+        "Vac": 0
+      },
+      "total": 78,
+      "source_sha256": "a73e295695ef3f6a8990c494d772bf730c79c045534e388c00ecab4b092d21a8",
+      "gss_codes_as_printed": [
+        "E10000012"
+      ]
+    },
+    {
+      "council": "Exeter",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=188&y=0",
+      "compiler_id": 188,
+      "party_totals": {
+        "Lab": 18,
+        "Con": 1,
+        "LD": 5,
+        "Grn": 10,
+        "Ref": 3,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "e34a556c543116c69ed8001a3ce9ddac3c08af585b1f312bc66c005858fdae0c",
+      "gss_codes_as_printed": [
+        "E07000041"
+      ]
+    },
+    {
+      "council": "Fareham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=189&y=0",
+      "compiler_id": 189,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 22,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 1,
+        "Vac": 1
+      },
+      "total": 32,
+      "source_sha256": "621c96acf802c427991ef1405578039d72aecf1b9b4eb78e7d223d508f0f8118",
+      "gss_codes_as_printed": [
+        "E07000087"
+      ]
+    },
+    {
+      "council": "Fenland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=71&y=0",
+      "compiler_id": 71,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 35,
+        "LD": 2,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "9df74f39ef13ee3267297f7d8dc7eafadf784ea53a61804a13bd241d5eb7c57e",
+      "gss_codes_as_printed": [
+        "E07000010"
+      ]
+    },
+    {
+      "council": "Folkestone and Hythe",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=123&y=0",
+      "compiler_id": 123,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 5,
+        "LD": 2,
+        "Grn": 11,
+        "Ref": 1,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 30,
+      "source_sha256": "b39a79cf24a85af79ca920d3b39a05f238f31ce2a9c7961589fcfefc7c9cf2b7",
+      "gss_codes_as_printed": [
+        "E07000112"
+      ]
+    },
+    {
+      "council": "Forest of Dean",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=73&y=0",
+      "compiler_id": 73,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 6,
+        "LD": 1,
+        "Grn": 15,
+        "Ref": 1,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 38,
+      "source_sha256": "c58680a278db15fec5e19ac021b99d99d96e39fb7a0452e7954fdb24e2e03c95",
+      "gss_codes_as_printed": [
+        "E07000080"
+      ]
+    },
+    {
+      "council": "Fylde",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=74&y=0",
+      "compiler_id": 74,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 22,
+        "LD": 2,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 37,
+      "source_sha256": "7f359b889c9538f71cf35555728ed3cedbea34fd6ae773c759b68f6e1d1ab6d6",
+      "gss_codes_as_printed": [
+        "E07000119"
+      ]
+    },
+    {
+      "council": "Gateshead",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=271&y=0",
+      "compiler_id": 271,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 0,
+        "LD": 12,
+        "Grn": 3,
+        "Ref": 38,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 66,
+      "source_sha256": "dcc9bb358595aade425ab36a9c8102ea1342f121513eeb9faff404f25459e799",
+      "gss_codes_as_printed": [
+        "E08000037"
+      ]
+    },
+    {
+      "council": "Gedling",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=75&y=0",
+      "compiler_id": 75,
+      "party_totals": {
+        "Lab": 24,
+        "Con": 9,
+        "LD": 4,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 41,
+      "source_sha256": "7c7f1586bcbb00d2d1608116d93ad4e1f778687b1e029264627cd04086a247c2",
+      "gss_codes_as_printed": [
+        "E07000173"
+      ]
+    },
+    {
+      "council": "Gloucester",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=76&y=0",
+      "compiler_id": 76,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 10,
+        "LD": 17,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "fceb52a90c9a049c63383d5bc9c6de2a0d0044fa025624a65b3e95c3115aff08",
+      "gss_codes_as_printed": [
+        "E07000081"
+      ]
+    },
+    {
+      "council": "Gloucestershire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=9&y=0",
+      "compiler_id": 9,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 6,
+        "LD": 27,
+        "Grn": 9,
+        "Ref": 9,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "8c71f04211cfe52170bac81b0bfe50073d59b6372f9dc8c8511473c985edbfc4",
+      "gss_codes_as_printed": [
+        "E10000013"
+      ]
+    },
+    {
+      "council": "Gosport",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=167&y=0",
+      "compiler_id": 167,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 11,
+        "LD": 5,
+        "Grn": 0,
+        "Ref": 10,
+        "Oth": 1,
+        "Vac": 1
+      },
+      "total": 28,
+      "source_sha256": "241768f087261418de3ce3ffe89c50cd91a32afc11acc5d8e3328cc2ce0638a0",
+      "gss_codes_as_printed": [
+        "E07000088"
+      ]
+    },
+    {
+      "council": "Gravesham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=77&y=0",
+      "compiler_id": 77,
+      "party_totals": {
+        "Lab": 22,
+        "Con": 12,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 5,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "40b000cd5ef8a65ecf608863f9453701981201142c8ef5f525f889e1b190f0ea",
+      "gss_codes_as_printed": [
+        "E07000109"
+      ]
+    },
+    {
+      "council": "Great Yarmouth",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=190&y=0",
+      "compiler_id": 190,
+      "party_totals": {
+        "Lab": 17,
+        "Con": 17,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 1
+      },
+      "total": 39,
+      "source_sha256": "ebdcc066305557138a7f3549b09208aca1c8c4be0cee48f31f1b074f515719d6",
+      "gss_codes_as_printed": [
+        "E07000145"
+      ]
+    },
+    {
+      "council": "Greenwich",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=236&y=0",
+      "compiler_id": 236,
+      "party_totals": {
+        "Lab": 35,
+        "Con": 6,
+        "LD": 0,
+        "Grn": 13,
+        "Ref": 1,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "43d0da9dbe22db0199dff0608a880b563789868918527c24f40dc740180465ef",
+      "gss_codes_as_printed": [
+        "E09000011"
+      ]
+    },
+    {
+      "council": "Guildford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=78&y=0",
+      "compiler_id": 78,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 10,
+        "LD": 25,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "896eb9b8043289e2b7e456c8af6768b56f05dea6e2a79a7297f28a7dd1a337fc",
+      "gss_codes_as_printed": [
+        "E07000209"
+      ]
+    },
+    {
+      "council": "Hackney",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=237&y=0",
+      "compiler_id": 237,
+      "party_totals": {
+        "Lab": 9,
+        "Con": 6,
+        "LD": 0,
+        "Grn": 42,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "6a595a92595d427ec6f9670329c10f7f784c96f01bca9031d2905f4dc2d861ad",
+      "gss_codes_as_printed": [
+        "E09000012"
+      ]
+    },
+    {
+      "council": "Halton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=368&y=0",
+      "compiler_id": 368,
+      "party_totals": {
+        "Lab": 30,
+        "Con": 0,
+        "LD": 2,
+        "Grn": 0,
+        "Ref": 17,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "cbbe30d17cb3c515e1f5368a769e9a37eb2a2f66c4024a87ef324c18b041c32b",
+      "gss_codes_as_printed": [
+        "E06000006"
+      ]
+    },
+    {
+      "council": "Hammersmith and Fulham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=238&y=0",
+      "compiler_id": 238,
+      "party_totals": {
+        "Lab": 38,
+        "Con": 12,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 50,
+      "source_sha256": "6609126a69240e12be139cd0f42096fb7c80ff7a93241e6afb1225148ef1e356",
+      "gss_codes_as_printed": [
+        "E09000013"
+      ]
+    },
+    {
+      "council": "Hampshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=10&y=0",
+      "compiler_id": 10,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 27,
+        "LD": 26,
+        "Grn": 1,
+        "Ref": 19,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 78,
+      "source_sha256": "f561ac4be5a7f2615b41b1965a64eebcfaffaa55f01e440a54625fca49c18d38",
+      "gss_codes_as_printed": [
+        "E10000014"
+      ]
+    },
+    {
+      "council": "Harborough",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=80&y=0",
+      "compiler_id": 80,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 15,
+        "LD": 7,
+        "Grn": 3,
+        "Ref": 2,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 34,
+      "source_sha256": "6558fd7390627cb094401cf61b6769ceb946e858bdf852bc7240dca19c238c9d",
+      "gss_codes_as_printed": [
+        "E07000131"
+      ]
+    },
+    {
+      "council": "Haringey",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=239&y=0",
+      "compiler_id": 239,
+      "party_totals": {
+        "Lab": 21,
+        "Con": 0,
+        "LD": 8,
+        "Grn": 28,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "b892feb031df595bf1d5594d537810d7ff93f4e8c494b1745fa43d8b0cef6acf",
+      "gss_codes_as_printed": [
+        "E09000014"
+      ]
+    },
+    {
+      "council": "Harlow",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=191&y=0",
+      "compiler_id": 191,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 22,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 33,
+      "source_sha256": "576eec55ea4edc4f8bd17e4cd317a2520748468a33690510a0ef78ab9e98e522",
+      "gss_codes_as_printed": [
+        "E07000073"
+      ]
+    },
+    {
+      "council": "Harrow",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=240&y=0",
+      "compiler_id": 240,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 41,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "a6a22ecac6d927a01a218c2244f742be9a9091ed32fb4d3ea2eb658250ea8c71",
+      "gss_codes_as_printed": [
+        "E09000015"
+      ]
+    },
+    {
+      "council": "Hart",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=192&y=0",
+      "compiler_id": 192,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 8,
+        "LD": 13,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 12,
+        "Vac": 0
+      },
+      "total": 33,
+      "source_sha256": "245e79a418f6975b1bffe761dfc824dcd00fe0de0e895508969447c5e4adda0c",
+      "gss_codes_as_printed": [
+        "E07000089"
+      ]
+    },
+    {
+      "council": "Hartlepool",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=369&y=0",
+      "compiler_id": 369,
+      "party_totals": {
+        "Lab": 14,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 16,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "7bb1f75a3cbf8712356db7348b555a726b85cbaa8ec995fa31f9d6014ba8ae2a",
+      "gss_codes_as_printed": [
+        "E06000001"
+      ]
+    },
+    {
+      "council": "Hastings",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=82&y=0",
+      "compiler_id": 82,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 2,
+        "LD": 0,
+        "Grn": 19,
+        "Ref": 6,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 32,
+      "source_sha256": "6f39375dcd2864b87a84d5e88a5ce2d17bbdaf532237ec1e55af3c639863a10d",
+      "gss_codes_as_printed": [
+        "E07000062"
+      ]
+    },
+    {
+      "council": "Havant",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=193&y=0",
+      "compiler_id": 193,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 5,
+        "LD": 5,
+        "Grn": 5,
+        "Ref": 9,
+        "Oth": 4,
+        "Vac": 1
+      },
+      "total": 36,
+      "source_sha256": "8cf6216d5fa9dd699cc89576541e37de9c4ba9ee3ad76807e134880f1d6e1bae",
+      "gss_codes_as_printed": [
+        "E07000090"
+      ]
+    },
+    {
+      "council": "Havering",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=241&y=0",
+      "compiler_id": 241,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 39,
+        "Oth": 14,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "2d264c4755fc1ca811dd604408cdc080a96d83e055bac78d162f99a8361d470e",
+      "gss_codes_as_printed": [
+        "E09000016"
+      ]
+    },
+    {
+      "council": "Herefordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=340&y=0",
+      "compiler_id": 340,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 20,
+        "LD": 12,
+        "Grn": 8,
+        "Ref": 0,
+        "Oth": 12,
+        "Vac": 0
+      },
+      "total": 53,
+      "source_sha256": "ac7385a4c2a62716c743146ac51477fb88d3a160e738c7a1283dcad4eb49c0bd",
+      "gss_codes_as_printed": [
+        "E06000019"
+      ]
+    },
+    {
+      "council": "Hertfordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=11&y=0",
+      "compiler_id": 11,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 22,
+        "LD": 31,
+        "Grn": 5,
+        "Ref": 13,
+        "Oth": 2,
+        "Vac": 1
+      },
+      "total": 78,
+      "source_sha256": "ec290eb1a56cab191bc5f9af433bbf4f6cc37371ba88b37040b858c032993412",
+      "gss_codes_as_printed": [
+        "E10000015"
+      ]
+    },
+    {
+      "council": "Hertsmere",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=83&y=0",
+      "compiler_id": 83,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 15,
+        "LD": 7,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "e1315ecbc83204a1472e9b803d996a0cd1c9a5879b7d55a5591933073e7f8253",
+      "gss_codes_as_printed": [
+        "E07000098"
+      ]
+    },
+    {
+      "council": "High Peak",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=84&y=0",
+      "compiler_id": 84,
+      "party_totals": {
+        "Lab": 25,
+        "Con": 8,
+        "LD": 1,
+        "Grn": 2,
+        "Ref": 1,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "778df73099c7bf72db358f2f32c364e2f17d938706af02bc33f1618b8647533b",
+      "gss_codes_as_printed": [
+        "E07000037"
+      ]
+    },
+    {
+      "council": "Hillingdon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=242&y=0",
+      "compiler_id": 242,
+      "party_totals": {
+        "Lab": 16,
+        "Con": 31,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 3,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 53,
+      "source_sha256": "e346576798ea6f0411a4de256c1e73415214214162808e88f5aebb3d14332496",
+      "gss_codes_as_printed": [
+        "E09000017"
+      ]
+    },
+    {
+      "council": "Hinckley and Bosworth",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=85&y=0",
+      "compiler_id": 85,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 9,
+        "LD": 23,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 34,
+      "source_sha256": "414b7f73701705ef426b2a1d5c5cc5242a6ab779e49a6eb1f6fda467d5a76e2b",
+      "gss_codes_as_printed": [
+        "E07000132"
+      ]
+    },
+    {
+      "council": "Horsham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=86&y=0",
+      "compiler_id": 86,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 12,
+        "LD": 25,
+        "Grn": 9,
+        "Ref": 1,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "448ad0116dad63ba76c9e3f4e993cdcffdc4c1bf26e63508ad9de2c37d8729a3",
+      "gss_codes_as_printed": [
+        "E07000227"
+      ]
+    },
+    {
+      "council": "Hounslow",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=243&y=0",
+      "compiler_id": 243,
+      "party_totals": {
+        "Lab": 31,
+        "Con": 17,
+        "LD": 1,
+        "Grn": 2,
+        "Ref": 8,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 62,
+      "source_sha256": "0835f2d19c34f9dcd35943867f641acd8be43b4c2456900fb751f2e640849f35",
+      "gss_codes_as_printed": [
+        "E09000018"
+      ]
+    },
+    {
+      "council": "Huntingdonshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=87&y=0",
+      "compiler_id": 87,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 15,
+        "LD": 21,
+        "Grn": 2,
+        "Ref": 9,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 52,
+      "source_sha256": "f43af205f9c7d75f7b7f2e9eaec114bb1ea029b2773a7c14ccd0399dfd03c4af",
+      "gss_codes_as_printed": [
+        "E07000011"
+      ]
+    },
+    {
+      "council": "Hyndburn",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=194&y=0",
+      "compiler_id": 194,
+      "party_totals": {
+        "Lab": 16,
+        "Con": 8,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 8,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 35,
+      "source_sha256": "5d0e4dcf5f4f7f482e0cf11bd1696a1d85d660ed661e521411797797f5d903a9",
+      "gss_codes_as_printed": [
+        "E07000120"
+      ]
+    },
+    {
+      "council": "Ipswich",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=195&y=0",
+      "compiler_id": 195,
+      "party_totals": {
+        "Lab": 29,
+        "Con": 5,
+        "LD": 3,
+        "Grn": 1,
+        "Ref": 10,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "2bb93bd92a1a3113217d511941a34f1820414eb856dc336a84df0f1fae2ee98c",
+      "gss_codes_as_printed": [
+        "E07000202"
+      ]
+    },
+    {
+      "council": "Isle of Wight",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=342&y=0",
+      "compiler_id": 342,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 2,
+        "LD": 4,
+        "Grn": 2,
+        "Ref": 19,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "a70f5437058b81bffb6a03fa6b8e14b327b87410b962840ade4d6d2fb793d2c1",
+      "gss_codes_as_printed": [
+        "E06000046"
+      ]
+    },
+    {
+      "council": "Islington",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=244&y=0",
+      "compiler_id": 244,
+      "party_totals": {
+        "Lab": 32,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 19,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 51,
+      "source_sha256": "19439e3df6576611ed6b278075d108555ff6b521cdbbaa3e1ed22318ecf06d78",
+      "gss_codes_as_printed": [
+        "E09000019"
+      ]
+    },
+    {
+      "council": "Kensington and Chelsea",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=245&y=0",
+      "compiler_id": 245,
+      "party_totals": {
+        "Lab": 13,
+        "Con": 34,
+        "LD": 3,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 50,
+      "source_sha256": "79be455c94dbadd7e283b719f187c8de088b68adbac61e04a8c6abc72c3cee5f",
+      "gss_codes_as_printed": [
+        "E09000020"
+      ]
+    },
+    {
+      "council": "Kent",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=12&y=0",
+      "compiler_id": 12,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 6,
+        "LD": 12,
+        "Grn": 5,
+        "Ref": 47,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 81,
+      "source_sha256": "83e5e5e0ded7c18700a72e76ff07029f95b9508af3c52398fa131a238faf21db",
+      "gss_codes_as_printed": [
+        "E10000016"
+      ]
+    },
+    {
+      "council": "King's Lynn and West Norfolk",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=89&y=0",
+      "compiler_id": 89,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 17,
+        "LD": 2,
+        "Grn": 0,
+        "Ref": 7,
+        "Oth": 24,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "67a518ca9a6e3247bfeef5a3c1fbed8b4bf9ee8e789f86f8ed07ff3184e39f40",
+      "gss_codes_as_printed": [
+        "E07000146"
+      ]
+    },
+    {
+      "council": "Kingston upon Hull",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=341&y=0",
+      "compiler_id": 341,
+      "party_totals": {
+        "Lab": 16,
+        "Con": 0,
+        "LD": 25,
+        "Grn": 0,
+        "Ref": 10,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "669cdc315a6ceac5436d4ebaf4ad3d7147a8f1a16d0b11269bc977c0efe7c2a2",
+      "gss_codes_as_printed": [
+        "E06000010"
+      ]
+    },
+    {
+      "council": "Kingston upon Thames",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=246&y=0",
+      "compiler_id": 246,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 1,
+        "LD": 44,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "1b8cda16080a75c08fa487dc6ba48024e8d7a026fec5dc35aa4ca6db1ccdabec",
+      "gss_codes_as_printed": [
+        "E09000021"
+      ]
+    },
+    {
+      "council": "Kirklees",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=272&y=0",
+      "compiler_id": 272,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 9,
+        "LD": 6,
+        "Grn": 12,
+        "Ref": 26,
+        "Oth": 16,
+        "Vac": 0
+      },
+      "total": 69,
+      "source_sha256": "48517665a5fb1f0f7928562a65cb9d5167f8b9cf595a3fc97d01eeedb05e216d",
+      "gss_codes_as_printed": [
+        "E08000034"
+      ]
+    },
+    {
+      "council": "Knowsley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=273&y=0",
+      "compiler_id": 273,
+      "party_totals": {
+        "Lab": 24,
+        "Con": 0,
+        "LD": 3,
+        "Grn": 8,
+        "Ref": 4,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 45,
+      "source_sha256": "ff4254663b9207910825cd2e8f1263e788b91ef5ef341681beff1315f245ad90",
+      "gss_codes_as_printed": [
+        "E08000011"
+      ]
+    },
+    {
+      "council": "Lambeth",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=247&y=0",
+      "compiler_id": 247,
+      "party_totals": {
+        "Lab": 26,
+        "Con": 0,
+        "LD": 9,
+        "Grn": 28,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "c824b2fe425e560ad86495c918d192e8959e303759effffaa15279932dcbde3c",
+      "gss_codes_as_printed": [
+        "E09000022"
+      ]
+    },
+    {
+      "council": "Lancashire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=13&y=0",
+      "compiler_id": 13,
+      "party_totals": {
+        "Lab": 6,
+        "Con": 9,
+        "LD": 5,
+        "Grn": 3,
+        "Ref": 51,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 84,
+      "source_sha256": "ae86faba29b99940ff0b07c65663e1eb846db83e02aa8faad05bf963c4183909",
+      "gss_codes_as_printed": [
+        "E10000017"
+      ]
+    },
+    {
+      "council": "Lancaster",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=90&y=0",
+      "compiler_id": 90,
+      "party_totals": {
+        "Lab": 20,
+        "Con": 5,
+        "LD": 7,
+        "Grn": 24,
+        "Ref": 0,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 61,
+      "source_sha256": "5b3cde2a2e40ac81101f904793a3c3895acfa9c566f75fe5f6fa318273a30c96",
+      "gss_codes_as_printed": [
+        "E07000121"
+      ]
+    },
+    {
+      "council": "Leeds",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=261&y=0",
+      "compiler_id": 261,
+      "party_totals": {
+        "Lab": 46,
+        "Con": 15,
+        "LD": 6,
+        "Grn": 10,
+        "Ref": 8,
+        "Oth": 13,
+        "Vac": 1
+      },
+      "total": 99,
+      "source_sha256": "459240e79f34afbfb42c127d961b2a304005a7a591e376662bcff8d9da3d1252",
+      "gss_codes_as_printed": [
+        "E08000035"
+      ]
+    },
+    {
+      "council": "Leicester",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=343&y=0",
+      "compiler_id": 343,
+      "party_totals": {
+        "Lab": 32,
+        "Con": 15,
+        "LD": 3,
+        "Grn": 4,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "59daf824a1331a18018f85376d23f709599311e0c51ddd14117e7c322d178976",
+      "gss_codes_as_printed": [
+        "E06000016"
+      ]
+    },
+    {
+      "council": "Leicestershire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=14&y=0",
+      "compiler_id": 14,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 15,
+        "LD": 11,
+        "Grn": 1,
+        "Ref": 23,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "6a4e595ba3ff21a8fab8e4fda427ce36854dc13a560abe10d3a5609b6dcb6d80",
+      "gss_codes_as_printed": [
+        "E10000018"
+      ]
+    },
+    {
+      "council": "Lewes",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=91&y=0",
+      "compiler_id": 91,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 0,
+        "LD": 14,
+        "Grn": 18,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 41,
+      "source_sha256": "056d9530419f39b518ad176c6a6d9f9bb31ce81c2d56a4c0c37f2ee156d7a8af",
+      "gss_codes_as_printed": [
+        "E07000063"
+      ]
+    },
+    {
+      "council": "Lewisham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=248&y=0",
+      "compiler_id": 248,
+      "party_totals": {
+        "Lab": 14,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 40,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "bca7e5adbcb68b3d16ffc0723bcf7665778396ba62f0e5a89aa68cde409ba859",
+      "gss_codes_as_printed": [
+        "E09000023"
+      ]
+    },
+    {
+      "council": "Lichfield",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=92&y=0",
+      "compiler_id": 92,
+      "party_totals": {
+        "Lab": 14,
+        "Con": 21,
+        "LD": 7,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 47,
+      "source_sha256": "448b71b93949f1d7f6574b1daea8f2857e05b2b7a0095dc71775b2a2e08736d5",
+      "gss_codes_as_printed": [
+        "E07000194"
+      ]
+    },
+    {
+      "council": "Lincoln",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=196&y=0",
+      "compiler_id": 196,
+      "party_totals": {
+        "Lab": 17,
+        "Con": 2,
+        "LD": 7,
+        "Grn": 1,
+        "Ref": 4,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 33,
+      "source_sha256": "502303f6bc92ac2587b5ea11216799185356ba0fb2a86e4b99032483e1a5b824",
+      "gss_codes_as_printed": [
+        "E07000138"
+      ]
+    },
+    {
+      "council": "Lincolnshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=15&y=0",
+      "compiler_id": 15,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 15,
+        "LD": 5,
+        "Grn": 0,
+        "Ref": 42,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 70,
+      "source_sha256": "797a1c08ff68b7a8111a6ee55b8d58e5356dbe215449b03fa156243ca32f44cb",
+      "gss_codes_as_printed": [
+        "E10000019"
+      ]
+    },
+    {
+      "council": "Liverpool",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=274&y=0",
+      "compiler_id": 274,
+      "party_totals": {
+        "Lab": 56,
+        "Con": 0,
+        "LD": 13,
+        "Grn": 4,
+        "Ref": 0,
+        "Oth": 12,
+        "Vac": 0
+      },
+      "total": 85,
+      "source_sha256": "b6d502d16d2809012ed53c891d9a4b34aa7c2ab073cada51dd4f1e496ee0f83b",
+      "gss_codes_as_printed": [
+        "E08000012"
+      ]
+    },
+    {
+      "council": "Luton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=344&y=0",
+      "compiler_id": 344,
+      "party_totals": {
+        "Lab": 21,
+        "Con": 3,
+        "LD": 13,
+        "Grn": 2,
+        "Ref": 1,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "45ebdbbeb895a732cec73df81a1404cac04f5ef74193c4167b88232ebf6dd5c9",
+      "gss_codes_as_printed": [
+        "E06000032"
+      ]
+    },
+    {
+      "council": "Maidstone",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=197&y=0",
+      "compiler_id": 197,
+      "party_totals": {
+        "Lab": 6,
+        "Con": 13,
+        "LD": 11,
+        "Grn": 12,
+        "Ref": 3,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 49,
+      "source_sha256": "c9febe6d86863548a1311fcbb8449897034671251e586fca943b4f200b8a700a",
+      "gss_codes_as_printed": [
+        "E07000110"
+      ]
+    },
+    {
+      "council": "Maldon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=93&y=0",
+      "compiler_id": 93,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 10,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 12,
+        "Vac": 0
+      },
+      "total": 31,
+      "source_sha256": "a66bd472f65b3a3f4465e910e1cbaaee387bdc6dbb88d3e2bb8a6ae0f75331ca",
+      "gss_codes_as_printed": [
+        "E07000074"
+      ]
+    },
+    {
+      "council": "Malvern Hills",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=94&y=0",
+      "compiler_id": 94,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 6,
+        "LD": 5,
+        "Grn": 6,
+        "Ref": 1,
+        "Oth": 13,
+        "Vac": 0
+      },
+      "total": 31,
+      "source_sha256": "2c363a7bb4c18396cc73f4733dc0f1c6960dca604212bd8bf2ee64f4dc518551",
+      "gss_codes_as_printed": [
+        "E07000235"
+      ]
+    },
+    {
+      "council": "Manchester",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=262&y=0",
+      "compiler_id": 262,
+      "party_totals": {
+        "Lab": 63,
+        "Con": 0,
+        "LD": 4,
+        "Grn": 21,
+        "Ref": 7,
+        "Oth": 0,
+        "Vac": 1
+      },
+      "total": 96,
+      "source_sha256": "20e88dc40608477b3e1faf14966638b694202a99c169361a70f4fe5993fa2b39",
+      "gss_codes_as_printed": [
+        "E08000003"
+      ]
+    },
+    {
+      "council": "Mansfield",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=95&y=0",
+      "compiler_id": 95,
+      "party_totals": {
+        "Lab": 26,
+        "Con": 4,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 3,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "a3a3dac885e5c6630ab60cdda741b1495992ca6307ff5a86211e61395f30ea5c",
+      "gss_codes_as_printed": [
+        "E07000174"
+      ]
+    },
+    {
+      "council": "Medway",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=345&y=0",
+      "compiler_id": 345,
+      "party_totals": {
+        "Lab": 31,
+        "Con": 17,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 3,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 59,
+      "source_sha256": "17062ee12e79d58b0be4c03d8a65bbcde8c11c4d8f780afddcb377362c19a222",
+      "gss_codes_as_printed": [
+        "E06000035"
+      ]
+    },
+    {
+      "council": "Melton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=96&y=0",
+      "compiler_id": 96,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 11,
+        "LD": 1,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 28,
+      "source_sha256": "130830c1b75d1a58aabf62c74f159808e47e6d688957d2e08a26c68d928cb57a",
+      "gss_codes_as_printed": [
+        "E07000133"
+      ]
+    },
+    {
+      "council": "Merton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=249&y=0",
+      "compiler_id": 249,
+      "party_totals": {
+        "Lab": 32,
+        "Con": 4,
+        "LD": 19,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "af135a5f51429a8ee47e75d06007281bf75d94892c506ea7551e88ba145090e3",
+      "gss_codes_as_printed": [
+        "E09000024"
+      ]
+    },
+    {
+      "council": "Mid Devon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=98&y=0",
+      "compiler_id": 98,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 3,
+        "LD": 34,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "b1aa38e6e20bb9d8ff3b49a3a1fd763b7aebd6f9072d2d6ba1d71440af07ed08",
+      "gss_codes_as_printed": [
+        "E07000042"
+      ]
+    },
+    {
+      "council": "Mid Suffolk",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=99&y=0",
+      "compiler_id": 99,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 3,
+        "LD": 4,
+        "Grn": 23,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 34,
+      "source_sha256": "177b8abba58f3d693162470e43af1da7ccb249340826aae180b01306a4f3b3ac",
+      "gss_codes_as_printed": [
+        "E07000203"
+      ]
+    },
+    {
+      "council": "Mid Sussex",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=100&y=0",
+      "compiler_id": 100,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 18,
+        "LD": 18,
+        "Grn": 4,
+        "Ref": 0,
+        "Oth": 6,
+        "Vac": 1
+      },
+      "total": 48,
+      "source_sha256": "90ba91f2b338c38253c1dab4472954913a838185bdfd993cb4cd38f7ab2d4381",
+      "gss_codes_as_printed": [
+        "E07000228"
+      ]
+    },
+    {
+      "council": "Middlesbrough",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=346&y=0",
+      "compiler_id": 346,
+      "party_totals": {
+        "Lab": 24,
+        "Con": 4,
+        "LD": 1,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 15,
+        "Vac": 0
+      },
+      "total": 46,
+      "source_sha256": "8f941f5b52f72d85c0a4a6321a3b2b4b2131d076e596f60792d8696bb8f2cb75",
+      "gss_codes_as_printed": [
+        "E06000002"
+      ]
+    },
+    {
+      "council": "Milton Keynes",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=370&y=0",
+      "compiler_id": 370,
+      "party_totals": {
+        "Lab": 19,
+        "Con": 11,
+        "LD": 20,
+        "Grn": 0,
+        "Ref": 9,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 60,
+      "source_sha256": "739aca1aa8db7d8a126e3a360db95ab6741c1c0a4ad4d6fe31b0e71bb9b621b2",
+      "gss_codes_as_printed": [
+        "E06000042"
+      ]
+    },
+    {
+      "council": "Mole Valley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=198&y=0",
+      "compiler_id": 198,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 2,
+        "LD": 31,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "6fe55995a1a494f2a777f0dc20b33b4acef2bde23e511592efb9a50776b9c07a",
+      "gss_codes_as_printed": [
+        "E07000210"
+      ]
+    },
+    {
+      "council": "New Forest",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=101&y=0",
+      "compiler_id": 101,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 25,
+        "LD": 14,
+        "Grn": 2,
+        "Ref": 2,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "d2a762c306a3631f1f0a339a94ccc55ccfff1941bb87df0e87323abdf02c5916",
+      "gss_codes_as_printed": [
+        "E07000091"
+      ]
+    },
+    {
+      "council": "Newark and Sherwood",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=102&y=0",
+      "compiler_id": 102,
+      "party_totals": {
+        "Lab": 11,
+        "Con": 12,
+        "LD": 3,
+        "Grn": 1,
+        "Ref": 2,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "1923dc4931344843e9a438722617753e3f098ddce549ec368c526a1bcda9d0b7",
+      "gss_codes_as_printed": [
+        "E07000175"
+      ]
+    },
+    {
+      "council": "Newcastle upon Tyne",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=263&y=0",
+      "compiler_id": 263,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 0,
+        "LD": 25,
+        "Grn": 24,
+        "Ref": 23,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 78,
+      "source_sha256": "73eced8b387dc2510deb314a7f87c8e3dfae8274f794da75abaf6da8b89f0f60",
+      "gss_codes_as_printed": [
+        "E08000021"
+      ]
+    },
+    {
+      "council": "Newcastle-under-Lyme",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=103&y=0",
+      "compiler_id": 103,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 15,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 26,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 44,
+      "source_sha256": "6f46867cf71b021a3015b8390061a389bfcfa05f2b71bffb940e4cc1baa30392",
+      "gss_codes_as_printed": [
+        "E07000195"
+      ]
+    },
+    {
+      "council": "Newham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=250&y=0",
+      "compiler_id": 250,
+      "party_totals": {
+        "Lab": 25,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 15,
+        "Ref": 0,
+        "Oth": 26,
+        "Vac": 0
+      },
+      "total": 66,
+      "source_sha256": "d112f9352e9d24d08011fbb0218d0d9bda32014d7afa27950c36e8f541a60703",
+      "gss_codes_as_printed": [
+        "E09000025"
+      ]
+    },
+    {
+      "council": "Norfolk",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=16&y=0",
+      "compiler_id": 16,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 9,
+        "LD": 13,
+        "Grn": 12,
+        "Ref": 39,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 84,
+      "source_sha256": "343271e3ffd25e5cbd3b1108cd09e7e35f916da77e1c114a735e088a93fd808d",
+      "gss_codes_as_printed": [
+        "E10000020"
+      ]
+    },
+    {
+      "council": "North Devon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=104&y=0",
+      "compiler_id": 104,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 7,
+        "LD": 24,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "be76f6368d11d12a09c3738060fe4013622c97dc06da496d70803621252267fa",
+      "gss_codes_as_printed": [
+        "E07000043"
+      ]
+    },
+    {
+      "council": "North East Derbyshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=106&y=0",
+      "compiler_id": 106,
+      "party_totals": {
+        "Lab": 26,
+        "Con": 14,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 6,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 53,
+      "source_sha256": "85fafb3b639c011590b289afefb2df9214093be33dfcf378d6b61260888f1f94",
+      "gss_codes_as_printed": [
+        "E07000038"
+      ]
+    },
+    {
+      "council": "North East Lincolnshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=371&y=0",
+      "compiler_id": 371,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 10,
+        "LD": 3,
+        "Grn": 0,
+        "Ref": 14,
+        "Oth": 4,
+        "Vac": 1
+      },
+      "total": 42,
+      "source_sha256": "628ff0b74a4ab12beb7615a8b6e0ca41a52775860fb098fc205429fc9f0fbe74",
+      "gss_codes_as_printed": [
+        "E06000012"
+      ]
+    },
+    {
+      "council": "North Hertfordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=199&y=0",
+      "compiler_id": 199,
+      "party_totals": {
+        "Lab": 22,
+        "Con": 7,
+        "LD": 19,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 2
+      },
+      "total": 51,
+      "source_sha256": "4b6edef80845535b07f42a1e50c79d3389b5f7e2e27864be3c0fd1f21956ff6a",
+      "gss_codes_as_printed": [
+        "E07000099"
+      ]
+    },
+    {
+      "council": "North Kesteven",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=107&y=0",
+      "compiler_id": 107,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 26,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 13,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "6867a39279fdfe4bf64b570cb5ac256ce27d1a68b00509b9a887f72b6096468b",
+      "gss_codes_as_printed": [
+        "E07000139"
+      ]
+    },
+    {
+      "council": "North Lincolnshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=347&y=0",
+      "compiler_id": 347,
+      "party_totals": {
+        "Lab": 15,
+        "Con": 27,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "5ef76eb5d929719a71aaec813f76bd38b3beccb1b03d8d951cbcb5264edb1c26",
+      "gss_codes_as_printed": [
+        "E06000013"
+      ]
+    },
+    {
+      "council": "North Norfolk",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=108&y=0",
+      "compiler_id": 108,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 11,
+        "LD": 26,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 40,
+      "source_sha256": "c3cda4d37e3563ecf7681fd1f906b2798d380e9c1371ea0004c2072d392cc767",
+      "gss_codes_as_printed": [
+        "E07000147"
+      ]
+    },
+    {
+      "council": "North Northamptonshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=414&y=0",
+      "compiler_id": 414,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 11,
+        "LD": 1,
+        "Grn": 8,
+        "Ref": 39,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 68,
+      "source_sha256": "5069b2a9d4375ae57d1b9716bd293e161e28ee456c8642c95ff13e04f145cc87",
+      "gss_codes_as_printed": [
+        "E06000061"
+      ]
+    },
+    {
+      "council": "North Somerset",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=348&y=0",
+      "compiler_id": 348,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 12,
+        "LD": 9,
+        "Grn": 8,
+        "Ref": 3,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 50,
+      "source_sha256": "22a239caf5cf74d21281a41ca95a4a6bc6b75ef0f89af3b43f29b667c6315147",
+      "gss_codes_as_printed": [
+        "E06000024"
+      ]
+    },
+    {
+      "council": "North Tyneside",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=275&y=0",
+      "compiler_id": 275,
+      "party_totals": {
+        "Lab": 36,
+        "Con": 8,
+        "LD": 0,
+        "Grn": 3,
+        "Ref": 10,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 60,
+      "source_sha256": "020428ff83089f7a4fd7af7400ca6f4184848fb39192a95459145353b3151f8a",
+      "gss_codes_as_printed": [
+        "E08000022"
+      ]
+    },
+    {
+      "council": "North Warwickshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=109&y=0",
+      "compiler_id": 109,
+      "party_totals": {
+        "Lab": 11,
+        "Con": 17,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 35,
+      "source_sha256": "808f024e1f8edd2ff3a31b5322a26407af1d7d06f206bd9c5180e165f32da812",
+      "gss_codes_as_printed": [
+        "E07000218"
+      ]
+    },
+    {
+      "council": "North West Leicestershire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=110&y=0",
+      "compiler_id": 110,
+      "party_totals": {
+        "Lab": 17,
+        "Con": 11,
+        "LD": 5,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 38,
+      "source_sha256": "2205de39b93d6352e1cb267721b35dad2cec43d3f965d379d694606d38adcc40",
+      "gss_codes_as_printed": [
+        "E07000134"
+      ]
+    },
+    {
+      "council": "North Yorkshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=417&y=0",
+      "compiler_id": 417,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 41,
+        "LD": 13,
+        "Grn": 4,
+        "Ref": 5,
+        "Oth": 17,
+        "Vac": 0
+      },
+      "total": 90,
+      "source_sha256": "be97f82622105d4532c85662214c526b42c529cb62471d6cea9c2f01073a5f39",
+      "gss_codes_as_printed": [
+        "E06000065"
+      ]
+    },
+    {
+      "council": "Northumberland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=349&y=0",
+      "compiler_id": 349,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 28,
+        "LD": 3,
+        "Grn": 2,
+        "Ref": 17,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 69,
+      "source_sha256": "fd52b4748eff16821898d0df9bdd983db714f0a0c0bfefbf184c789fd3e4d1cd",
+      "gss_codes_as_printed": [
+        "E06000057"
+      ]
+    },
+    {
+      "council": "Norwich",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=200&y=0",
+      "compiler_id": 200,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 0,
+        "LD": 3,
+        "Grn": 20,
+        "Ref": 2,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "bd420a7328eca4d5f5b82c844fd6340b0ac38624cb3e61d7c2e8acda297cec27",
+      "gss_codes_as_printed": [
+        "E07000148"
+      ]
+    },
+    {
+      "council": "Nottingham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=350&y=0",
+      "compiler_id": 350,
+      "party_totals": {
+        "Lab": 44,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "2814164cc980dedf284d68c69822e54815eb61ca982c7923cd5dc0b04a47b8c8",
+      "gss_codes_as_printed": [
+        "E06000018"
+      ]
+    },
+    {
+      "council": "Nottinghamshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=19&y=0",
+      "compiler_id": 19,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 18,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 41,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 66,
+      "source_sha256": "106b6fc748f7fbe4e7fe330ad41c9f7c76605323a6669e4431ff834c7d8dd77d",
+      "gss_codes_as_printed": [
+        "E10000024"
+      ]
+    },
+    {
+      "council": "Nuneaton and Bedworth",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=168&y=0",
+      "compiler_id": 168,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 9,
+        "LD": 0,
+        "Grn": 3,
+        "Ref": 16,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 38,
+      "source_sha256": "5e5af2593df3bc534fecc9089a5aab7cc626cc6ef30d72db6b79c077553af475",
+      "gss_codes_as_printed": [
+        "E07000219"
+      ]
+    },
+    {
+      "council": "Oadby and Wigston",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=112&y=0",
+      "compiler_id": 112,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 5,
+        "LD": 16,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 26,
+      "source_sha256": "a51663c75b8d4c1cf2e44ef7c4773352e788adb402e8d1bc62568b7dd47ab028",
+      "gss_codes_as_printed": [
+        "E07000135"
+      ]
+    },
+    {
+      "council": "Oldham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=276&y=0",
+      "compiler_id": 276,
+      "party_totals": {
+        "Lab": 18,
+        "Con": 4,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 14,
+        "Oth": 17,
+        "Vac": 1
+      },
+      "total": 60,
+      "source_sha256": "6a3182915026fab4edc00c0f785022e77127b8251bf310404f84381650a0b8bd",
+      "gss_codes_as_printed": [
+        "E08000004"
+      ]
+    },
+    {
+      "council": "Oxford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=169&y=0",
+      "compiler_id": 169,
+      "party_totals": {
+        "Lab": 20,
+        "Con": 0,
+        "LD": 9,
+        "Grn": 13,
+        "Ref": 0,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "f75f6e640599b5a632c555a11e14f0e2f0757cdffdbe83454112b8d8ea17a147",
+      "gss_codes_as_printed": [
+        "E07000178"
+      ]
+    },
+    {
+      "council": "Oxfordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=20&y=0",
+      "compiler_id": 20,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 9,
+        "LD": 35,
+        "Grn": 7,
+        "Ref": 1,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 69,
+      "source_sha256": "7557de0fbce42ebc4aefa9a338ee0ac727deaba79b9f48b6bcfebac9bed84f32",
+      "gss_codes_as_printed": [
+        "E10000025"
+      ]
+    },
+    {
+      "council": "Pendle",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=201&y=0",
+      "compiler_id": 201,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 10,
+        "LD": 5,
+        "Grn": 0,
+        "Ref": 5,
+        "Oth": 13,
+        "Vac": 0
+      },
+      "total": 33,
+      "source_sha256": "6113859140f4ddbce115e0c8ebe0533e5c26c8e1b1c1f772c9966e52d8a7135a",
+      "gss_codes_as_printed": [
+        "E07000122"
+      ]
+    },
+    {
+      "council": "Peterborough",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=372&y=0",
+      "compiler_id": 372,
+      "party_totals": {
+        "Lab": 10,
+        "Con": 14,
+        "LD": 8,
+        "Grn": 8,
+        "Ref": 4,
+        "Oth": 16,
+        "Vac": 0
+      },
+      "total": 60,
+      "source_sha256": "b6d813b95db295bac60b01f990633eb8c502799560404adf073290ca2647276f",
+      "gss_codes_as_printed": [
+        "E06000031"
+      ]
+    },
+    {
+      "council": "Plymouth",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=373&y=0",
+      "compiler_id": 373,
+      "party_totals": {
+        "Lab": 30,
+        "Con": 3,
+        "LD": 0,
+        "Grn": 3,
+        "Ref": 12,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "90adc04a8f40f4a61238fec5a587a357efa4f25e86787f42cbc2cc99f81f5278",
+      "gss_codes_as_printed": [
+        "E06000026"
+      ]
+    },
+    {
+      "council": "Portsmouth",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=374&y=0",
+      "compiler_id": 374,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 3,
+        "LD": 23,
+        "Grn": 0,
+        "Ref": 10,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "58ac3a6f0417ef8e12fa9619b3a32e151ce55d030709f5747d8d903311976bcb",
+      "gss_codes_as_printed": [
+        "E06000044"
+      ]
+    },
+    {
+      "council": "Preston",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=202&y=0",
+      "compiler_id": 202,
+      "party_totals": {
+        "Lab": 22,
+        "Con": 3,
+        "LD": 14,
+        "Grn": 2,
+        "Ref": 5,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "c2c27a9b8d542c9d4bd5ac2082459ffec1936d8079479c27441671b0cb479dde",
+      "gss_codes_as_printed": [
+        "E07000123"
+      ]
+    },
+    {
+      "council": "Reading",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=375&y=0",
+      "compiler_id": 375,
+      "party_totals": {
+        "Lab": 28,
+        "Con": 5,
+        "LD": 3,
+        "Grn": 11,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 1
+      },
+      "total": 48,
+      "source_sha256": "68b425e5144a9d065d34c7448aaa1998b6a90a40188a351c83f6be1ca769ede4",
+      "gss_codes_as_printed": [
+        "E06000038"
+      ]
+    },
+    {
+      "council": "Redbridge",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=251&y=0",
+      "compiler_id": 251,
+      "party_totals": {
+        "Lab": 43,
+        "Con": 5,
+        "LD": 0,
+        "Grn": 5,
+        "Ref": 1,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "f43e34334495b4ae6ab60cb7846ad2b9b8a3e8b2c365491fbcd71da55499d363",
+      "gss_codes_as_printed": [
+        "E09000026"
+      ]
+    },
+    {
+      "council": "Redcar and Cleveland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=352&y=0",
+      "compiler_id": 352,
+      "party_totals": {
+        "Lab": 21,
+        "Con": 13,
+        "LD": 9,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 14,
+        "Vac": 1
+      },
+      "total": 59,
+      "source_sha256": "7bdffe4ae2b27877f8f84c1c73cdc03c890d800cd8c90c62c85c4ae0d3288646",
+      "gss_codes_as_printed": [
+        "E06000003"
+      ]
+    },
+    {
+      "council": "Redditch",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=203&y=0",
+      "compiler_id": 203,
+      "party_totals": {
+        "Lab": 13,
+        "Con": 5,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 7,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 27,
+      "source_sha256": "07a3b3f24c5ca1b6fb62733bded97c0490415b610d9ec00710050435c6137cbb",
+      "gss_codes_as_printed": [
+        "E07000236"
+      ]
+    },
+    {
+      "council": "Reigate and Banstead",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=204&y=0",
+      "compiler_id": 204,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 16,
+        "LD": 4,
+        "Grn": 15,
+        "Ref": 0,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 45,
+      "source_sha256": "8337745f4191542fe77121c2692c0da45c72d9b79a38259e08a681c56f3f64c4",
+      "gss_codes_as_printed": [
+        "E07000211"
+      ]
+    },
+    {
+      "council": "Ribble Valley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=114&y=0",
+      "compiler_id": 114,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 16,
+        "LD": 6,
+        "Grn": 2,
+        "Ref": 4,
+        "Oth": 7,
+        "Vac": 0
+      },
+      "total": 40,
+      "source_sha256": "4f3d4a1a8f65d9e7315b68e685e77fd4e7332659f4ef2d18ef0184b44a0b44da",
+      "gss_codes_as_printed": [
+        "E07000124"
+      ]
+    },
+    {
+      "council": "Richmond upon Thames",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=252&y=0",
+      "compiler_id": 252,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 0,
+        "LD": 54,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "3420a5ee1020f48080ed2945a8b82eff0c15877fbdaf093a1bf091e48df6ab84",
+      "gss_codes_as_printed": [
+        "E09000027"
+      ]
+    },
+    {
+      "council": "Rochdale",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=277&y=0",
+      "compiler_id": 277,
+      "party_totals": {
+        "Lab": 31,
+        "Con": 7,
+        "LD": 3,
+        "Grn": 0,
+        "Ref": 15,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 60,
+      "source_sha256": "16f67a5b09a0a0fa95cf1cef08b90cb3124d78b2d6f817bc391920d2a3aa26e2",
+      "gss_codes_as_printed": [
+        "E08000005"
+      ]
+    },
+    {
+      "council": "Rochford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=205&y=0",
+      "compiler_id": 205,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 8,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 12,
+        "Oth": 13,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "28fdee63e2eaf3c931707e00e5e3b9a6d9af4e911076cb5f472d616e49386356",
+      "gss_codes_as_printed": [
+        "E07000075"
+      ]
+    },
+    {
+      "council": "Rossendale",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=206&y=0",
+      "compiler_id": 206,
+      "party_totals": {
+        "Lab": 19,
+        "Con": 5,
+        "LD": 0,
+        "Grn": 4,
+        "Ref": 1,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 30,
+      "source_sha256": "f914cc32aa89848e51e6cacffb15067da67fdd5fee8ad8c32d2f3fe3410f3775",
+      "gss_codes_as_printed": [
+        "E07000125"
+      ]
+    },
+    {
+      "council": "Rother",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=116&y=0",
+      "compiler_id": 116,
+      "party_totals": {
+        "Lab": 6,
+        "Con": 13,
+        "LD": 8,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 38,
+      "source_sha256": "4a1171f9842e4fefb58958dd8bbcdb8b53f7cdd64afbf901e8d126033521d8fe",
+      "gss_codes_as_printed": [
+        "E07000064"
+      ]
+    },
+    {
+      "council": "Rotherham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=278&y=0",
+      "compiler_id": 278,
+      "party_totals": {
+        "Lab": 31,
+        "Con": 12,
+        "LD": 3,
+        "Grn": 1,
+        "Ref": 1,
+        "Oth": 10,
+        "Vac": 1
+      },
+      "total": 59,
+      "source_sha256": "f6e16529f7ad20b29360fa1ba775a3b61b742c091b2ea490ef69a7e88ef165c6",
+      "gss_codes_as_printed": [
+        "E08000018"
+      ]
+    },
+    {
+      "council": "Rugby",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=207&y=0",
+      "compiler_id": 207,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 15,
+        "LD": 12,
+        "Grn": 0,
+        "Ref": 3,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "017fc42a4e44343ec822575ed334156fedaaa48dc865c1c08f906513c26a9159",
+      "gss_codes_as_printed": [
+        "E07000220"
+      ]
+    },
+    {
+      "council": "Runnymede",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=208&y=0",
+      "compiler_id": 208,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 12,
+        "LD": 7,
+        "Grn": 2,
+        "Ref": 3,
+        "Oth": 8,
+        "Vac": 1
+      },
+      "total": 41,
+      "source_sha256": "c984eac74c77891d5afeb554bad74f9725c1c02405dcd29027c3c1affe36c421",
+      "gss_codes_as_printed": [
+        "E07000212"
+      ]
+    },
+    {
+      "council": "Rushcliffe",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=117&y=0",
+      "compiler_id": 117,
+      "party_totals": {
+        "Lab": 9,
+        "Con": 23,
+        "LD": 1,
+        "Grn": 2,
+        "Ref": 1,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 44,
+      "source_sha256": "2ab423912238a62d2fa5345ba40f057d7db1d6a24041fe99f7017fa5261a17fe",
+      "gss_codes_as_printed": [
+        "E07000176"
+      ]
+    },
+    {
+      "council": "Rushmoor",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=209&y=0",
+      "compiler_id": 209,
+      "party_totals": {
+        "Lab": 19,
+        "Con": 10,
+        "LD": 3,
+        "Grn": 0,
+        "Ref": 6,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "7c8ace3f698f293a65c8d6c7589366594dd746bc970dbb1204f39c88522614a4",
+      "gss_codes_as_printed": [
+        "E07000092"
+      ]
+    },
+    {
+      "council": "Rutland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=353&y=0",
+      "compiler_id": 353,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 7,
+        "LD": 10,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 27,
+      "source_sha256": "2638f48f1007bf7288032a5cd7009896446d7d7017ab513a0ad437d0420d77c3",
+      "gss_codes_as_printed": [
+        "E06000017"
+      ]
+    },
+    {
+      "council": "Salford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=279&y=0",
+      "compiler_id": 279,
+      "party_totals": {
+        "Lab": 33,
+        "Con": 6,
+        "LD": 1,
+        "Grn": 3,
+        "Ref": 14,
+        "Oth": 2,
+        "Vac": 1
+      },
+      "total": 60,
+      "source_sha256": "bc772461075adcd6aa1d802a7ba2993cecd2530abf2755966a19f865196a6a70",
+      "gss_codes_as_printed": [
+        "E08000006"
+      ]
+    },
+    {
+      "council": "Sandwell",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=280&y=0",
+      "compiler_id": 280,
+      "party_totals": {
+        "Lab": 28,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 2,
+        "Ref": 41,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 72,
+      "source_sha256": "585e0e398a5347b5f39a0a6d9e88f7d88fbd11b9cc5e22a402a5ca92ce6163de",
+      "gss_codes_as_printed": [
+        "E08000028"
+      ]
+    },
+    {
+      "council": "Sefton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=281&y=0",
+      "compiler_id": 281,
+      "party_totals": {
+        "Lab": 35,
+        "Con": 0,
+        "LD": 18,
+        "Grn": 2,
+        "Ref": 4,
+        "Oth": 6,
+        "Vac": 1
+      },
+      "total": 66,
+      "source_sha256": "ab52e98cbfc3b5e9266dc7c475f1dc2eed67cba831d4d32cec2df179213cdabd",
+      "gss_codes_as_printed": [
+        "E08000014"
+      ]
+    },
+    {
+      "council": "Sevenoaks",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=122&y=0",
+      "compiler_id": 122,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 27,
+        "LD": 14,
+        "Grn": 4,
+        "Ref": 2,
+        "Oth": 7,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "6f222a3e64adb144bda0ea7cd51c5d1c683c176087cf980eb2b1b61fb79b09a6",
+      "gss_codes_as_printed": [
+        "E07000111"
+      ]
+    },
+    {
+      "council": "Sheffield",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=282&y=0",
+      "compiler_id": 282,
+      "party_totals": {
+        "Lab": 26,
+        "Con": 0,
+        "LD": 22,
+        "Grn": 19,
+        "Ref": 11,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 84,
+      "source_sha256": "485ad861702a986c6dcab7eb09e620b34631a0352f38a5d79b08ceab4f8f240f",
+      "gss_codes_as_printed": [
+        "E08000039"
+      ]
+    },
+    {
+      "council": "Shropshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=354&y=0",
+      "compiler_id": 354,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 7,
+        "LD": 41,
+        "Grn": 4,
+        "Ref": 15,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 74,
+      "source_sha256": "e71eb0fede57fdafb135bca3c89e5865e428c1ea59b69532fafa17567ec537bb",
+      "gss_codes_as_printed": [
+        "E06000051"
+      ]
+    },
+    {
+      "council": "Slough",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=376&y=0",
+      "compiler_id": 376,
+      "party_totals": {
+        "Lab": 11,
+        "Con": 17,
+        "LD": 10,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 42,
+      "source_sha256": "41cb69e1d20eb4e33eb8207ec7ef6a2dd8d6a848bf5849122373fedef3d5999d",
+      "gss_codes_as_printed": [
+        "E06000039"
+      ]
+    },
+    {
+      "council": "Solihull",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=283&y=0",
+      "compiler_id": 283,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 25,
+        "LD": 6,
+        "Grn": 4,
+        "Ref": 12,
+        "Oth": 1,
+        "Vac": 3
+      },
+      "total": 51,
+      "source_sha256": "de2b2ca677fb07ea395d3e5050e87cfb6da828717f3f2c0c1ec00fafd046bec5",
+      "gss_codes_as_printed": [
+        "E08000029"
+      ]
+    },
+    {
+      "council": "Somerset",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=416&y=0",
+      "compiler_id": 416,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 31,
+        "LD": 61,
+        "Grn": 5,
+        "Ref": 2,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 110,
+      "source_sha256": "95c67f31ad4f1c46fcfe1d3954f44142db2d5135b4188c59c25ef904bc6e1d9d",
+      "gss_codes_as_printed": [
+        "E06000066"
+      ]
+    },
+    {
+      "council": "South Cambridgeshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=125&y=0",
+      "compiler_id": 125,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 2,
+        "LD": 43,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 45,
+      "source_sha256": "353df45fe094db7d357f15f10632a28e6ddc2bed53fdfaecbad3a36977b5ed6a",
+      "gss_codes_as_printed": [
+        "E07000012"
+      ]
+    },
+    {
+      "council": "South Derbyshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=126&y=0",
+      "compiler_id": 126,
+      "party_totals": {
+        "Lab": 21,
+        "Con": 11,
+        "LD": 2,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "e192e385ccd661f40ca00834ac3f5020578fc8c9d354e65ad725aaf992bdd37c",
+      "gss_codes_as_printed": [
+        "E07000039"
+      ]
+    },
+    {
+      "council": "South Gloucestershire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=355&y=0",
+      "compiler_id": 355,
+      "party_totals": {
+        "Lab": 14,
+        "Con": 23,
+        "LD": 19,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 61,
+      "source_sha256": "13006b19a0503a51b2cf2e84abf5c5a3a0dd9e66baf8f19fbb6f12bd07dcc083",
+      "gss_codes_as_printed": [
+        "E06000025"
+      ]
+    },
+    {
+      "council": "South Hams",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=127&y=0",
+      "compiler_id": 127,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 7,
+        "LD": 18,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 1
+      },
+      "total": 31,
+      "source_sha256": "a8b4f4449bce10ae6669e91f6cb9dba13128c9ead7ce6cb113112a58382c86e2",
+      "gss_codes_as_printed": [
+        "E07000044"
+      ]
+    },
+    {
+      "council": "South Holland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=128&y=0",
+      "compiler_id": 128,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 19,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 6,
+        "Oth": 12,
+        "Vac": 0
+      },
+      "total": 37,
+      "source_sha256": "2be8d051442e96ee8d9ea6f70d0bfc2f05a21c9dc57ad53621eab0969223c10d",
+      "gss_codes_as_printed": [
+        "E07000140"
+      ]
+    },
+    {
+      "council": "South Kesteven",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=129&y=0",
+      "compiler_id": 129,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 19,
+        "LD": 3,
+        "Grn": 2,
+        "Ref": 5,
+        "Oth": 25,
+        "Vac": 0
+      },
+      "total": 56,
+      "source_sha256": "8b635fb5bfb7da6e93ab0218f1002be2726f7d9510329d7404023f19d70395a6",
+      "gss_codes_as_printed": [
+        "E07000141"
+      ]
+    },
+    {
+      "council": "South Norfolk",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=131&y=0",
+      "compiler_id": 131,
+      "party_totals": {
+        "Lab": 9,
+        "Con": 23,
+        "LD": 9,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 46,
+      "source_sha256": "62f11e354b676a97dab3a348e5adb2952cb7c6f1459b3c11d86ddd731da44728",
+      "gss_codes_as_printed": [
+        "E07000149"
+      ]
+    },
+    {
+      "council": "South Oxfordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=133&y=0",
+      "compiler_id": 133,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 1,
+        "LD": 20,
+        "Grn": 8,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "5f75726796e5af255f66eda10f61112a9ada99c6d45ff78308f54db4377e701b",
+      "gss_codes_as_printed": [
+        "E07000179"
+      ]
+    },
+    {
+      "council": "South Ribble",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=134&y=0",
+      "compiler_id": 134,
+      "party_totals": {
+        "Lab": 28,
+        "Con": 16,
+        "LD": 5,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 50,
+      "source_sha256": "9bc195ab1a53fa8f4e1aac9f7b0454024b23b84e7c626948ff43ee570e37d682",
+      "gss_codes_as_printed": [
+        "E07000126"
+      ]
+    },
+    {
+      "council": "South Staffordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=136&y=0",
+      "compiler_id": 136,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 29,
+        "LD": 4,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 7,
+        "Vac": 1
+      },
+      "total": 42,
+      "source_sha256": "92616055c0003ab66a7e12d89bf0c3a0b13d10b80875e394cbdda0596e6ca5bd",
+      "gss_codes_as_printed": [
+        "E07000196"
+      ]
+    },
+    {
+      "council": "South Tyneside",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=284&y=0",
+      "compiler_id": 284,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 10,
+        "Ref": 40,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "6bc3ceff28c1c518474c7e73dfb7809e0ba39b5f830b97337e9cbe5797900f75",
+      "gss_codes_as_printed": [
+        "E08000023"
+      ]
+    },
+    {
+      "council": "Southampton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=377&y=0",
+      "compiler_id": 377,
+      "party_totals": {
+        "Lab": 24,
+        "Con": 6,
+        "LD": 8,
+        "Grn": 5,
+        "Ref": 8,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 51,
+      "source_sha256": "a4fe98d3777aeb236bb2ba26e2ecfd844a7fa4bb2f9733a4c37f7a160f586f17",
+      "gss_codes_as_printed": [
+        "E06000045"
+      ]
+    },
+    {
+      "council": "Southend-on-Sea",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=378&y=0",
+      "compiler_id": 378,
+      "party_totals": {
+        "Lab": 17,
+        "Con": 11,
+        "LD": 3,
+        "Grn": 3,
+        "Ref": 11,
+        "Oth": 5,
+        "Vac": 1
+      },
+      "total": 51,
+      "source_sha256": "84ff1e4be8fe44422e9545c933cedc2c44aa2404cdcb6471a5abd1dfc91fd52b",
+      "gss_codes_as_printed": [
+        "E06000033"
+      ]
+    },
+    {
+      "council": "Southwark",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=253&y=0",
+      "compiler_id": 253,
+      "party_totals": {
+        "Lab": 29,
+        "Con": 0,
+        "LD": 12,
+        "Grn": 21,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "731c42b4e95d78bfe933776f1bc47dee706696e0a5c1bcf1fdaaef049824c99f",
+      "gss_codes_as_printed": [
+        "E09000028"
+      ]
+    },
+    {
+      "council": "Spelthorne",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=137&y=0",
+      "compiler_id": 137,
+      "party_totals": {
+        "Lab": 6,
+        "Con": 14,
+        "LD": 10,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "04637a3f8c7e424b5d22f310d81f2a481e8f49aff3249e7ca07e20f61df839d3",
+      "gss_codes_as_printed": [
+        "E07000213"
+      ]
+    },
+    {
+      "council": "St Albans",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=210&y=0",
+      "compiler_id": 210,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 5,
+        "LD": 43,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 56,
+      "source_sha256": "1a68760b0073c1f0a62a7cd5a864b41a5c6ca09dc34f9f0108205f9338f0e288",
+      "gss_codes_as_printed": [
+        "E07000240"
+      ]
+    },
+    {
+      "council": "St. Helens",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=285&y=0",
+      "compiler_id": 285,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 1,
+        "LD": 3,
+        "Grn": 0,
+        "Ref": 34,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "786c78d4bd780fbf53eb4326233cfd86c6b7393e1381f9d020bc12721cffe302",
+      "gss_codes_as_printed": [
+        "E08000013"
+      ]
+    },
+    {
+      "council": "Stafford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=407&y=0",
+      "compiler_id": 407,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 15,
+        "LD": 1,
+        "Grn": 5,
+        "Ref": 0,
+        "Oth": 7,
+        "Vac": 0
+      },
+      "total": 40,
+      "source_sha256": "b8030ba8aa7d2341ea7aa7887a2585d057cff37004a61b6dc101cb2111051547",
+      "gss_codes_as_printed": [
+        "E07000197"
+      ]
+    },
+    {
+      "council": "Staffordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=22&y=0",
+      "compiler_id": 22,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 12,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 43,
+        "Oth": 4,
+        "Vac": 1
+      },
+      "total": 62,
+      "source_sha256": "f89d92d903485e01211282fa40b6301295b20ca7ddbf575c70808bf7172d88a9",
+      "gss_codes_as_printed": [
+        "E10000028"
+      ]
+    },
+    {
+      "council": "Staffordshire Moorlands",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=139&y=0",
+      "compiler_id": 139,
+      "party_totals": {
+        "Lab": 19,
+        "Con": 21,
+        "LD": 1,
+        "Grn": 2,
+        "Ref": 2,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 56,
+      "source_sha256": "4f6f464bb103b2d64190ba81d5bf2e4ae1ac9f3b896188be0790611220355409",
+      "gss_codes_as_printed": [
+        "E07000198"
+      ]
+    },
+    {
+      "council": "Stevenage",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=211&y=0",
+      "compiler_id": 211,
+      "party_totals": {
+        "Lab": 21,
+        "Con": 1,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 10,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "991814676226dd1a722048e9b09f57f0aa5aaf81e6825e0594e0f95925752cae",
+      "gss_codes_as_printed": [
+        "E07000243"
+      ]
+    },
+    {
+      "council": "Stockport",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=286&y=0",
+      "compiler_id": 286,
+      "party_totals": {
+        "Lab": 14,
+        "Con": 1,
+        "LD": 34,
+        "Grn": 4,
+        "Ref": 2,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "3e189f3d76e9d0838f90e946c8b1e344c3b00eeb51a9980786bb2510d629d46a",
+      "gss_codes_as_printed": [
+        "E08000007"
+      ]
+    },
+    {
+      "council": "Stockton-on-Tees",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=356&y=0",
+      "compiler_id": 356,
+      "party_totals": {
+        "Lab": 22,
+        "Con": 25,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 56,
+      "source_sha256": "da132eeaffd0811bf6cecf9be748cbec230dc03d225a9147798bae7d5aa61a6c",
+      "gss_codes_as_printed": [
+        "E06000004"
+      ]
+    },
+    {
+      "council": "Stoke-on-Trent",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=357&y=0",
+      "compiler_id": 357,
+      "party_totals": {
+        "Lab": 27,
+        "Con": 8,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 5,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 44,
+      "source_sha256": "69522dc6b56b006132526486b39975f6b0383eb0079ee65f9bae229d55a2c508",
+      "gss_codes_as_printed": [
+        "E06000021"
+      ]
+    },
+    {
+      "council": "Stratford-on-Avon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=140&y=0",
+      "compiler_id": 140,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 10,
+        "LD": 24,
+        "Grn": 3,
+        "Ref": 2,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 41,
+      "source_sha256": "2efcb2e5c01d7255f4fe83f70a0a4dc7d5df3f0372b03e8086dc55505efdff7d",
+      "gss_codes_as_printed": [
+        "E07000221"
+      ]
+    },
+    {
+      "council": "Stroud",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=212&y=0",
+      "compiler_id": 212,
+      "party_totals": {
+        "Lab": 17,
+        "Con": 6,
+        "LD": 2,
+        "Grn": 24,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 51,
+      "source_sha256": "7f97d2c27574a5acead0b2fb9c4e91faf5cfc345aaef6ced4f750cfd0bc35a0d",
+      "gss_codes_as_printed": [
+        "E07000082"
+      ]
+    },
+    {
+      "council": "Suffolk",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=23&y=0",
+      "compiler_id": 23,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 10,
+        "LD": 2,
+        "Grn": 13,
+        "Ref": 40,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 70,
+      "source_sha256": "b5ffd4e8e9e9b899e4df76c7d68eaba5e456de14ba54726cd13d9b87d55161ad",
+      "gss_codes_as_printed": [
+        "E10000029"
+      ]
+    },
+    {
+      "council": "Sunderland",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=287&y=0",
+      "compiler_id": 287,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 0,
+        "LD": 12,
+        "Grn": 0,
+        "Ref": 57,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 75,
+      "source_sha256": "8df9bf1f5f176109c19d56856aa0185fe4c2fd7bc7d7610f3f3fb4c95571a5fc",
+      "gss_codes_as_printed": [
+        "E08000024"
+      ]
+    },
+    {
+      "council": "Surrey",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=24&y=0",
+      "compiler_id": 24,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 39,
+        "LD": 19,
+        "Grn": 2,
+        "Ref": 3,
+        "Oth": 16,
+        "Vac": 0
+      },
+      "total": 81,
+      "source_sha256": "c839b78b78b4fa3f74ee7c9c94c4e48948bf2bef9c4badd34cb0d1ab04f78346",
+      "gss_codes_as_printed": [
+        "E10000030"
+      ]
+    },
+    {
+      "council": "Surrey Heath",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=142&y=0",
+      "compiler_id": 142,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 6,
+        "LD": 22,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 1
+      },
+      "total": 35,
+      "source_sha256": "6c080011bc2cc252e2f84002e81ad0840e45fb38215d98b2e478144695de96b1",
+      "gss_codes_as_printed": [
+        "E07000214"
+      ]
+    },
+    {
+      "council": "Sutton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=254&y=0",
+      "compiler_id": 254,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 0,
+        "LD": 51,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 55,
+      "source_sha256": "41199985b56f231d92c70b6b9caa8600a62ef8909a01f918a0956eb5a65c20bd",
+      "gss_codes_as_printed": [
+        "E09000029"
+      ]
+    },
+    {
+      "council": "Swale",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=143&y=0",
+      "compiler_id": 143,
+      "party_totals": {
+        "Lab": 15,
+        "Con": 10,
+        "LD": 5,
+        "Grn": 2,
+        "Ref": 4,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 47,
+      "source_sha256": "78bf697cc5fd9135433c7d02fc8e51eac441255296923cd2b38cbe365a6de739",
+      "gss_codes_as_printed": [
+        "E07000113"
+      ]
+    },
+    {
+      "council": "Swindon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=379&y=0",
+      "compiler_id": 379,
+      "party_totals": {
+        "Lab": 19,
+        "Con": 23,
+        "LD": 1,
+        "Grn": 0,
+        "Ref": 13,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "413850e2e5efdfa2647473f30ac458a0a9550a4b425f96c7857ee3b6450e3f82",
+      "gss_codes_as_printed": [
+        "E06000030"
+      ]
+    },
+    {
+      "council": "Tameside",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=288&y=0",
+      "compiler_id": 288,
+      "party_totals": {
+        "Lab": 24,
+        "Con": 5,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 17,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "d367573bc3b5442e62631cc5c01be1bbbf6c6407e12dc0a5e3268f6bb077a785",
+      "gss_codes_as_printed": [
+        "E08000008"
+      ]
+    },
+    {
+      "council": "Tamworth",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=213&y=0",
+      "compiler_id": 213,
+      "party_totals": {
+        "Lab": 14,
+        "Con": 3,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 10,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 30,
+      "source_sha256": "71b2e587b0f00bad249589278860f79f832bcbcfae4bbb919e92dc3fa19ff51a",
+      "gss_codes_as_printed": [
+        "E07000199"
+      ]
+    },
+    {
+      "council": "Tandridge",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=214&y=0",
+      "compiler_id": 214,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 5,
+        "LD": 12,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 25,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "9a8ca8822d9bed611c94b1175bba9a96a8e06639e8d37475bb7e249462c89dee",
+      "gss_codes_as_printed": [
+        "E07000215"
+      ]
+    },
+    {
+      "council": "Teignbridge",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=145&y=0",
+      "compiler_id": 145,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 9,
+        "LD": 26,
+        "Grn": 0,
+        "Ref": 2,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 47,
+      "source_sha256": "2330628a0fb9cd44dc13aeb4754ad6361731e93fee8475c7e9855e04649d09f5",
+      "gss_codes_as_printed": [
+        "E07000045"
+      ]
+    },
+    {
+      "council": "Telford and Wrekin",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=358&y=0",
+      "compiler_id": 358,
+      "party_totals": {
+        "Lab": 37,
+        "Con": 8,
+        "LD": 6,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "2200520818c2f22825a88d2a774d004e397d1d14631de37f88e5eaa708b76714",
+      "gss_codes_as_printed": [
+        "E06000020"
+      ]
+    },
+    {
+      "council": "Tendring",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=146&y=0",
+      "compiler_id": 146,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 12,
+        "LD": 4,
+        "Grn": 0,
+        "Ref": 6,
+        "Oth": 19,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "cc1530deee76c6e2cd4d167d703f2de6e276a6ea25bfb489f80821f64835bf00",
+      "gss_codes_as_printed": [
+        "E07000076"
+      ]
+    },
+    {
+      "council": "Test Valley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=147&y=0",
+      "compiler_id": 147,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 25,
+        "LD": 16,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "3e7042f958992ba50b452db1147cec5f7c6be2ad5faf2c49521b6ba75ac3e089",
+      "gss_codes_as_printed": [
+        "E07000093"
+      ]
+    },
+    {
+      "council": "Tewkesbury",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=148&y=0",
+      "compiler_id": 148,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 8,
+        "LD": 16,
+        "Grn": 4,
+        "Ref": 1,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 38,
+      "source_sha256": "a7bef11480b591b548513adc4a152b536f093cd48240afae7119f8244bf224a9",
+      "gss_codes_as_printed": [
+        "E07000083"
+      ]
+    },
+    {
+      "council": "Thanet",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=149&y=0",
+      "compiler_id": 149,
+      "party_totals": {
+        "Lab": 30,
+        "Con": 13,
+        "LD": 0,
+        "Grn": 6,
+        "Ref": 5,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 56,
+      "source_sha256": "03c63a1d9c075ac4b468f128962d64533609ceebff1e5f3bd58f886240f8c2e0",
+      "gss_codes_as_printed": [
+        "E07000114"
+      ]
+    },
+    {
+      "council": "Three Rivers",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=215&y=0",
+      "compiler_id": 215,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 14,
+        "LD": 18,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "4fc14d090a862e5663c9501360c69ea57b752410f9f8296853e5564a09c6cb88",
+      "gss_codes_as_printed": [
+        "E07000102"
+      ]
+    },
+    {
+      "council": "Thurrock",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=380&y=0",
+      "compiler_id": 380,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 2,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 43,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 49,
+      "source_sha256": "76f4545eccd3947f4c2ab6ca8c263b158ea5f1da3c23da6791d6b3f4761e7fd9",
+      "gss_codes_as_printed": [
+        "E06000034"
+      ]
+    },
+    {
+      "council": "Tonbridge and Malling",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=150&y=0",
+      "compiler_id": 150,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 21,
+        "LD": 11,
+        "Grn": 8,
+        "Ref": 0,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 44,
+      "source_sha256": "71a8c67ffbfbf943c91960c1cb0b8500ab2b67a1a7e9ef14d650ccdee01cecc3",
+      "gss_codes_as_printed": [
+        "E07000115"
+      ]
+    },
+    {
+      "council": "Torbay",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=359&y=0",
+      "compiler_id": 359,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 17,
+        "LD": 15,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "b3c417630800c095eb5b0351ba1753d9850da716837a33a4404a5129a4bb8ec2",
+      "gss_codes_as_printed": [
+        "E06000027"
+      ]
+    },
+    {
+      "council": "Torridge",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=151&y=0",
+      "compiler_id": 151,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 5,
+        "LD": 12,
+        "Grn": 4,
+        "Ref": 0,
+        "Oth": 13,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "42e442f88f0232b1828d9378fc97f1e363e5afef6a491e1549533d776cd394b8",
+      "gss_codes_as_printed": [
+        "E07000046"
+      ]
+    },
+    {
+      "council": "Tower Hamlets",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=255&y=0",
+      "compiler_id": 255,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 1,
+        "LD": 1,
+        "Grn": 5,
+        "Ref": 0,
+        "Oth": 33,
+        "Vac": 0
+      },
+      "total": 45,
+      "source_sha256": "dc15f1fffffd4574893c4bb4290a1db851d12d5d48eb939c95f671dd6c8afc3d",
+      "gss_codes_as_printed": [
+        "E09000030"
+      ]
+    },
+    {
+      "council": "Trafford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=289&y=0",
+      "compiler_id": 289,
+      "party_totals": {
+        "Lab": 35,
+        "Con": 12,
+        "LD": 7,
+        "Grn": 7,
+        "Ref": 1,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "9f2602d2f523564eb273e159cb798a024451700119a8537485856b081dd86ded",
+      "gss_codes_as_printed": [
+        "E08000009"
+      ]
+    },
+    {
+      "council": "Tunbridge Wells",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=216&y=0",
+      "compiler_id": 216,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 7,
+        "LD": 26,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "ebb285cddbadf429a94c3065da66a8bb56be0e1856585aee3c63ef066a8f3ca4",
+      "gss_codes_as_printed": [
+        "E07000116"
+      ]
+    },
+    {
+      "council": "Uttlesford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=152&y=0",
+      "compiler_id": 152,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 12,
+        "LD": 3,
+        "Grn": 0,
+        "Ref": 3,
+        "Oth": 21,
+        "Vac": 0
+      },
+      "total": 39,
+      "source_sha256": "4e7569ca44fdb9d50c1285c45a7b04f7c23305ff51dfc64e9831035f28440ce2",
+      "gss_codes_as_printed": [
+        "E07000077"
+      ]
+    },
+    {
+      "council": "Vale of White Horse",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=153&y=0",
+      "compiler_id": 153,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 1,
+        "LD": 31,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 38,
+      "source_sha256": "0436496b3037f6a925882cf888da3938285f1c1edd72d68e98ef52373063ec7d",
+      "gss_codes_as_printed": [
+        "E07000180"
+      ]
+    },
+    {
+      "council": "Wakefield",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=290&y=0",
+      "compiler_id": 290,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 1,
+        "LD": 2,
+        "Grn": 1,
+        "Ref": 55,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 63,
+      "source_sha256": "2a0d42a42b9cdbe57358d813a0036b000e6a6699434779e4e653807da5c863e7",
+      "gss_codes_as_printed": [
+        "E08000036"
+      ]
+    },
+    {
+      "council": "Walsall",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=291&y=0",
+      "compiler_id": 291,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 10,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 36,
+        "Oth": 13,
+        "Vac": 0
+      },
+      "total": 60,
+      "source_sha256": "e19040d97a6213418d93b9290e7bd812132f8a5511dc906faa76555a23faca7b",
+      "gss_codes_as_printed": [
+        "E08000030"
+      ]
+    },
+    {
+      "council": "Waltham Forest",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=256&y=0",
+      "compiler_id": 256,
+      "party_totals": {
+        "Lab": 15,
+        "Con": 14,
+        "LD": 0,
+        "Grn": 31,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 60,
+      "source_sha256": "1444ebfbba1b3ef376fd850755dc16e60b9df5aaf672b96da78e3d8aceb60849",
+      "gss_codes_as_printed": [
+        "E09000031"
+      ]
+    },
+    {
+      "council": "Wandsworth",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=257&y=0",
+      "compiler_id": 257,
+      "party_totals": {
+        "Lab": 28,
+        "Con": 29,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 58,
+      "source_sha256": "25a98ce67a246366d6c6c999579e670a4ffea724d50b2d14c1f2297ad18328ce",
+      "gss_codes_as_printed": [
+        "E09000032"
+      ]
+    },
+    {
+      "council": "Warrington",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=360&y=0",
+      "compiler_id": 360,
+      "party_totals": {
+        "Lab": 40,
+        "Con": 2,
+        "LD": 11,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 5,
+        "Vac": 0
+      },
+      "total": 58,
+      "source_sha256": "132e48990d353a2eb19a66859df33985cbbc8d3160192a6a215cff710e1ab1e9",
+      "gss_codes_as_printed": [
+        "E06000007"
+      ]
+    },
+    {
+      "council": "Warwick",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=154&y=0",
+      "compiler_id": 154,
+      "party_totals": {
+        "Lab": 7,
+        "Con": 5,
+        "LD": 9,
+        "Grn": 14,
+        "Ref": 0,
+        "Oth": 9,
+        "Vac": 0
+      },
+      "total": 44,
+      "source_sha256": "a4dde0954224326aeca7876da2af4bfbced8a3e51cd74693077192f91c490172",
+      "gss_codes_as_printed": [
+        "E07000222"
+      ]
+    },
+    {
+      "council": "Warwickshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=25&y=0",
+      "compiler_id": 25,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 9,
+        "LD": 14,
+        "Grn": 6,
+        "Ref": 17,
+        "Oth": 8,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "8409daec06b33e8604815b35b31619596a3f0203eb565177f0523209fd57bc53",
+      "gss_codes_as_printed": [
+        "E10000031"
+      ]
+    },
+    {
+      "council": "Watford",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=217&y=0",
+      "compiler_id": 217,
+      "party_totals": {
+        "Lab": 4,
+        "Con": 0,
+        "LD": 32,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 36,
+      "source_sha256": "8a89188eceeedf06e383689b9d7dc741bbfc5cae0f6829565971abe38b9523e8",
+      "gss_codes_as_printed": [
+        "E07000103"
+      ]
+    },
+    {
+      "council": "Waverley",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=156&y=0",
+      "compiler_id": 156,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 9,
+        "LD": 24,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 15,
+        "Vac": 1
+      },
+      "total": 50,
+      "source_sha256": "7356c8bd0ab68bd7fa3b313a17dc76f61ddafaae4024f09880cf51b70ed12045",
+      "gss_codes_as_printed": [
+        "E07000216"
+      ]
+    },
+    {
+      "council": "Wealden",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=157&y=0",
+      "compiler_id": 157,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 9,
+        "LD": 12,
+        "Grn": 10,
+        "Ref": 2,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 45,
+      "source_sha256": "61f718f0f8acd38ddc5bc234cf29276b90ea3d74f9c9b83933b93956335277f4",
+      "gss_codes_as_printed": [
+        "E07000065"
+      ]
+    },
+    {
+      "council": "Welwyn Hatfield",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=218&y=0",
+      "compiler_id": 218,
+      "party_totals": {
+        "Lab": 16,
+        "Con": 12,
+        "LD": 15,
+        "Grn": 0,
+        "Ref": 3,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 48,
+      "source_sha256": "d4252367cf1c8cb2fd7011788e71a1f4cde784ea15f16618bc6403f6519d94e8",
+      "gss_codes_as_printed": [
+        "E07000241"
+      ]
+    },
+    {
+      "council": "West Berkshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=361&y=0",
+      "compiler_id": 361,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 10,
+        "LD": 29,
+        "Grn": 2,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "56a42ec220270b255748592b6403ac5ea8f22ef509def043d453daef0bd46bd4",
+      "gss_codes_as_printed": [
+        "E06000037"
+      ]
+    },
+    {
+      "council": "West Devon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=159&y=0",
+      "compiler_id": 159,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 10,
+        "LD": 6,
+        "Grn": 3,
+        "Ref": 0,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 31,
+      "source_sha256": "90c77a586e4e99a6c71c9b81e260c9fc3c25a9998c59d457ddcf8ed809b0ea3c",
+      "gss_codes_as_printed": [
+        "E07000047"
+      ]
+    },
+    {
+      "council": "West Lancashire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=219&y=0",
+      "compiler_id": 219,
+      "party_totals": {
+        "Lab": 12,
+        "Con": 12,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 7,
+        "Oth": 13,
+        "Vac": 1
+      },
+      "total": 45,
+      "source_sha256": "b3c90e8307725d8cf09d8410b70adbbaf78184890a73585e7a28dcade3c0604c",
+      "gss_codes_as_printed": [
+        "E07000127"
+      ]
+    },
+    {
+      "council": "West Lindsey",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=160&y=0",
+      "compiler_id": 160,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 13,
+        "LD": 13,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 9,
+        "Vac": 1
+      },
+      "total": 36,
+      "source_sha256": "25d99a2db240251a66e8d7e9c716109d775daab8b5d2e3ba6050b9a311dcf2f5",
+      "gss_codes_as_printed": [
+        "E07000142"
+      ]
+    },
+    {
+      "council": "West Northamptonshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=415&y=0",
+      "compiler_id": 415,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 17,
+        "LD": 8,
+        "Grn": 0,
+        "Ref": 39,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 76,
+      "source_sha256": "eb1f444dad725c37669e30f447a778efdf7b7526a2f34aa8b7b0949283f3d04a",
+      "gss_codes_as_printed": [
+        "E06000062"
+      ]
+    },
+    {
+      "council": "West Oxfordshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=220&y=0",
+      "compiler_id": 220,
+      "party_totals": {
+        "Lab": 8,
+        "Con": 17,
+        "LD": 19,
+        "Grn": 4,
+        "Ref": 1,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 49,
+      "source_sha256": "662e1ef151a6a3a2218f6c6238d8086e0ac0a87bf88900159c757ca376078eb2",
+      "gss_codes_as_printed": [
+        "E07000181"
+      ]
+    },
+    {
+      "council": "West Suffolk",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=410&y=0",
+      "compiler_id": 410,
+      "party_totals": {
+        "Lab": 15,
+        "Con": 24,
+        "LD": 1,
+        "Grn": 2,
+        "Ref": 3,
+        "Oth": 19,
+        "Vac": 0
+      },
+      "total": 64,
+      "source_sha256": "db244fc9811c8cfc4dff6920ea6a1c41f1dd20e006f343e813fbdf3481914e81",
+      "gss_codes_as_printed": [
+        "E07000245"
+      ]
+    },
+    {
+      "council": "West Surrey",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=420&y=0",
+      "compiler_id": 420,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 20,
+        "LD": 56,
+        "Grn": 0,
+        "Ref": 8,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 90,
+      "source_sha256": "a0dc410140ad69eb1203d31d87794fb9c6d9e7193dea3a224478cde186bd3da5",
+      "gss_codes_as_printed": [
+        "E06000068"
+      ]
+    },
+    {
+      "council": "West Sussex",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=26&y=0",
+      "compiler_id": 26,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 11,
+        "LD": 23,
+        "Grn": 7,
+        "Ref": 22,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 70,
+      "source_sha256": "db7f0cb56ce27e6d4b8fb026a184a42f105de29db296b4ddd27cd59f3ff08463",
+      "gss_codes_as_printed": [
+        "E10000032"
+      ]
+    },
+    {
+      "council": "Westminster",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=258&y=0",
+      "compiler_id": 258,
+      "party_totals": {
+        "Lab": 22,
+        "Con": 32,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "71400008d37ff5d40f4d0c14225bf45809979787d5b53a843952bbbaef663351",
+      "gss_codes_as_printed": [
+        "E09000033"
+      ]
+    },
+    {
+      "council": "Westmorland and Furness",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=419&y=0",
+      "compiler_id": 419,
+      "party_totals": {
+        "Lab": 15,
+        "Con": 9,
+        "LD": 35,
+        "Grn": 1,
+        "Ref": 1,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 65,
+      "source_sha256": "8c301af615e3ca75e40e1df462f5a369cfdde838533ff55ab99dad3b11097433",
+      "gss_codes_as_printed": [
+        "E06000064"
+      ]
+    },
+    {
+      "council": "Wigan",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=292&y=0",
+      "compiler_id": 292,
+      "party_totals": {
+        "Lab": 43,
+        "Con": 0,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 25,
+        "Oth": 7,
+        "Vac": 0
+      },
+      "total": 75,
+      "source_sha256": "6c3d5d125272dce476556799e0c87ad98d83a11b7d8a14509efcb6d157881878",
+      "gss_codes_as_printed": [
+        "E08000010"
+      ]
+    },
+    {
+      "council": "Wiltshire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=362&y=0",
+      "compiler_id": 362,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 38,
+        "LD": 43,
+        "Grn": 0,
+        "Ref": 10,
+        "Oth": 7,
+        "Vac": 0
+      },
+      "total": 98,
+      "source_sha256": "a11c7a0a6337dd69bf3e224f3b55348b4042ac2da3f4638a5dffc5e6c4f781c0",
+      "gss_codes_as_printed": [
+        "E06000054"
+      ]
+    },
+    {
+      "council": "Winchester",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=222&y=0",
+      "compiler_id": 222,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 4,
+        "LD": 36,
+        "Grn": 2,
+        "Ref": 0,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 45,
+      "source_sha256": "63a2e928a3b0f9bab687df1b12242e53037a11ce920ac13f457602c5b5624bd9",
+      "gss_codes_as_printed": [
+        "E07000094"
+      ]
+    },
+    {
+      "council": "Windsor and Maidenhead",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=363&y=0",
+      "compiler_id": 363,
+      "party_totals": {
+        "Lab": 0,
+        "Con": 8,
+        "LD": 21,
+        "Grn": 0,
+        "Ref": 1,
+        "Oth": 11,
+        "Vac": 0
+      },
+      "total": 41,
+      "source_sha256": "edac4640356c000148875505203fbc05243bbe56df96b15e9ff38c72616e030c",
+      "gss_codes_as_printed": [
+        "E06000040"
+      ]
+    },
+    {
+      "council": "Wirral",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=293&y=0",
+      "compiler_id": 293,
+      "party_totals": {
+        "Lab": 26,
+        "Con": 14,
+        "LD": 6,
+        "Grn": 14,
+        "Ref": 3,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 66,
+      "source_sha256": "daddc6a4c53dd3142e47c3847ef4f0fb13693b2addcc7dd50d02332140431e7c",
+      "gss_codes_as_printed": [
+        "E08000015"
+      ]
+    },
+    {
+      "council": "Woking",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=223&y=0",
+      "compiler_id": 223,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 0,
+        "LD": 22,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 6,
+        "Vac": 1
+      },
+      "total": 30,
+      "source_sha256": "a0541f3ecd86a841cb4e99b5f0942c46ad7404a4663edff9d847f390bf9e2085",
+      "gss_codes_as_printed": [
+        "E07000217"
+      ]
+    },
+    {
+      "council": "Wokingham",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=381&y=0",
+      "compiler_id": 381,
+      "party_totals": {
+        "Lab": 5,
+        "Con": 19,
+        "LD": 29,
+        "Grn": 1,
+        "Ref": 0,
+        "Oth": 0,
+        "Vac": 0
+      },
+      "total": 54,
+      "source_sha256": "19cf3ab643eaf15243f1c7025785991b69e9fc6cb6a049186e2bb7b69fc03f73",
+      "gss_codes_as_printed": [
+        "E06000041"
+      ]
+    },
+    {
+      "council": "Wolverhampton",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=294&y=0",
+      "compiler_id": 294,
+      "party_totals": {
+        "Lab": 35,
+        "Con": 9,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 13,
+        "Oth": 3,
+        "Vac": 0
+      },
+      "total": 60,
+      "source_sha256": "8dd73004a54479c57a910dfb207ce492d86b19dca2f3cedfcd2ced9f745b12da",
+      "gss_codes_as_printed": [
+        "E08000031"
+      ]
+    },
+    {
+      "council": "Worcester",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=224&y=0",
+      "compiler_id": 224,
+      "party_totals": {
+        "Lab": 17,
+        "Con": 0,
+        "LD": 5,
+        "Grn": 11,
+        "Ref": 1,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 35,
+      "source_sha256": "5d34a178f29a1338e92f3364fa1cb58c63c597dfd365c606eb71aebe6971628e",
+      "gss_codes_as_printed": [
+        "E07000237"
+      ]
+    },
+    {
+      "council": "Worcestershire",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=27&y=0",
+      "compiler_id": 27,
+      "party_totals": {
+        "Lab": 2,
+        "Con": 14,
+        "LD": 7,
+        "Grn": 7,
+        "Ref": 21,
+        "Oth": 6,
+        "Vac": 0
+      },
+      "total": 57,
+      "source_sha256": "5c6eda421d447df3bf1bf4659adb71830b7d0efc45e08edc6790127fcac5ca73",
+      "gss_codes_as_printed": [
+        "E10000034"
+      ]
+    },
+    {
+      "council": "Worthing",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=225&y=0",
+      "compiler_id": 225,
+      "party_totals": {
+        "Lab": 15,
+        "Con": 6,
+        "LD": 1,
+        "Grn": 8,
+        "Ref": 5,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 37,
+      "source_sha256": "40bbfc63c26582a31ec9d0ebe657373a488d5a31c30bfed9190bc7edfe7dd984",
+      "gss_codes_as_printed": [
+        "E07000229"
+      ]
+    },
+    {
+      "council": "Wychavon",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=162&y=0",
+      "compiler_id": 162,
+      "party_totals": {
+        "Lab": 1,
+        "Con": 26,
+        "LD": 8,
+        "Grn": 5,
+        "Ref": 1,
+        "Oth": 2,
+        "Vac": 0
+      },
+      "total": 43,
+      "source_sha256": "a3fb6bb0fe5b85118e7850e7ca694e41f9b7a0c415a0b62c94886b02bb4dbe94",
+      "gss_codes_as_printed": [
+        "E07000238"
+      ]
+    },
+    {
+      "council": "Wyre",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=164&y=0",
+      "compiler_id": 164,
+      "party_totals": {
+        "Lab": 15,
+        "Con": 27,
+        "LD": 0,
+        "Grn": 0,
+        "Ref": 4,
+        "Oth": 4,
+        "Vac": 0
+      },
+      "total": 50,
+      "source_sha256": "e8b521b190eb4d1e93cdb163ea294c9cfa8f9dac08aa0d3f1482a869d9d8688d",
+      "gss_codes_as_printed": [
+        "E07000128"
+      ]
+    },
+    {
+      "council": "Wyre Forest",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=226&y=0",
+      "compiler_id": 226,
+      "party_totals": {
+        "Lab": 3,
+        "Con": 18,
+        "LD": 0,
+        "Grn": 1,
+        "Ref": 1,
+        "Oth": 10,
+        "Vac": 0
+      },
+      "total": 33,
+      "source_sha256": "949db80f481d7c7f23db1d6d250a12399d5ea07398aa46cfc98aaba6e22f173f",
+      "gss_codes_as_printed": [
+        "E07000239"
+      ]
+    },
+    {
+      "council": "York",
+      "source_url": "https://opencouncildata.co.uk/council.php?c=364&y=0",
+      "compiler_id": 364,
+      "party_totals": {
+        "Lab": 24,
+        "Con": 3,
+        "LD": 19,
+        "Grn": 0,
+        "Ref": 0,
+        "Oth": 1,
+        "Vac": 0
+      },
+      "total": 47,
+      "source_sha256": "bbddad31e733b4deff33187c86db76ee4716f22ac23cb57d49f8d0c48b36b936",
+      "gss_codes_as_printed": [
+        "E06000014"
+      ]
+    }
+  ]
+}
