@@ -1,0 +1,80 @@
+{
+  "checked": "2026-11-15",
+  "base_commit": "96df5d19cb386ab78dda76af8d6937e1070748d6",
+  "profile_count": 296,
+  "profile_file": "data/council-tax/england-2026-27.json",
+  "profile_sha256": "8e40c590b5870c5da83bebffbd36f890a7441b6d218ff1f460c003fb09b9223d",
+  "rendered": false,
+  "hash_algorithm": "SHA-256",
+  "retention_rule": "Research only. Selected audit and notice extracts without personal names; original response hashes separately labelled. PSAA factual body labels and occurrence counts retained only for the name diagnostic, not per-body audit statuses or the original workbook. All composition datasets removed; provenance and findings remain in docs/DOSSIER-SOURCES-2026-11.md.",
+  "files": [
+    {
+      "path": "docs/dossier-sources-2026-11/audit-mhclg-tables.json",
+      "bytes": 27785,
+      "sha256": "2201ea208b8cc1d9a7712959b628735e611f206ed4014a4435372641c8b2ba9b"
+    },
+    {
+      "path": "docs/dossier-sources-2026-11/audit-psaa-body-names.json",
+      "bytes": 430697,
+      "sha256": "57370b5d7e932a4698ab1523aeaa281532d4c3c4b76363dff32d0865d6070903"
+    },
+    {
+      "path": "docs/dossier-sources-2026-11/audit-psaa-inspection.json",
+      "bytes": 4403,
+      "sha256": "89d0c9b1412690d12f9b01c9a416f9dce415e4c0b0d244155020a7ec0cb9d5f4"
+    },
+    {
+      "path": "docs/dossier-sources-2026-11/dry-run-audit-names.json",
+      "bytes": 689951,
+      "sha256": "ade645ec557500a35d9fe06adcbff3ea3231de755e40c6e4c0c31c8f9d5131fc"
+    },
+    {
+      "path": "docs/dossier-sources-2026-11/dry-run-audit.json",
+      "bytes": 31222,
+      "sha256": "d6015ff64990a47ddeb56974ad5ee75e56e96cb7ccdd60d36f39fd6c92874e2c"
+    },
+    {
+      "path": "docs/dossier-sources-2026-11/dry-run-section-114.json",
+      "bytes": 28401,
+      "sha256": "f06fc29545ea3c7defc1012e7c2d6c61135da47cb9828fde70d76ef8a34217a2"
+    },
+    {
+      "path": "docs/dossier-sources-2026-11/section-114-notices.json",
+      "bytes": 6296,
+      "sha256": "892704547c5a6d4a3e7dbc3dda53af5955441121fa399b5efd469deeeb0e581c"
+    },
+    {
+      "path": "docs/dossier-sources-2026-11/section-114-register-search.json",
+      "bytes": 1946,
+      "sha256": "0d89ad5f53a2d9d1b850ba3911309c50a83d35561b0140cffbd4b58a3f1cae63"
+    }
+  ],
+  "original_responses": [
+    {
+      "file": "audit-mhclg-tables.json",
+      "locator": "$",
+      "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+      "sha256": "49e66ae8896985dfa87202c925c3cb36da643ef181b2dd6e7822cdaeb74d9d78"
+    },
+    {
+      "file": "audit-psaa-inspection.json",
+      "locator": "$",
+      "url": "https://www.psaa.co.uk/wp-content/uploads/2026/10/Opinion-data-detailed-30Sep2026-website.xlsx",
+      "sha256": "4f7f0ace0b299113205faec36f4d13230d708ec4aeab5ad3f34146fa0a11f988"
+    },
+    {
+      "file": "section-114-notices.json",
+      "locator": "$.notices.0",
+      "url": "https://www.thurrock.gov.uk/sites/default/files/assets/documents/section114-notice.pdf",
+      "sha256": "9ea34d692fac67b83f0fbbb06276c352910dd69ce7e52866c5b81e20ab863b47"
+    },
+    {
+      "file": "section-114-notices.json",
+      "locator": "$.notices.1",
+      "url": "https://www.nottinghamcity.gov.uk/media/jmzb22b0/report-made-under-part-viii-s114-3-of-the-local-government-finance-act-1988-291123.pdf",
+      "sha256": "72e1baf1c8a4690538ee22bf57b1b8a7c75583175c3f16be6ee9036d562e8bca"
+    }
+  ],
+  "registry_file": "data/registry/councils.json",
+  "registry_sha256": "1612175c6896119e35a908bc491c4ff76bd4e6e44e5a0d621d6557e5bcb98baf"
+}

@@ -1,0 +1,114 @@
+{
+  "retrieved": "2026-11-15",
+  "coverage_claim": "Two inspected notice documents, not an exhaustive register. Other official confirmations are retrieval leads and are excluded from verified coverage.",
+  "transformation": "Only council, date, Act, subsection and short identification fragments retained. Names, signatures, contact details, causes and financial amounts excluded before writing.",
+  "notices": [
+    {
+      "council": "Thurrock",
+      "profile_gss": "E06000034",
+      "identity_method": "Manual official-domain identity review; profile code from council tax spine, not a code printed in the PDF",
+      "notice_date": "2022-12-19",
+      "section": "114(3)",
+      "act": "Local Government Finance Act 1988",
+      "url": "https://www.thurrock.gov.uk/sites/default/files/assets/documents/section114-notice.pdf",
+      "title": "Report to all Elected Members of Thurrock Council",
+      "locator": "Page 1 heading, date and paragraph 1.2",
+      "original_sha256": "9ea34d692fac67b83f0fbbb06276c352910dd69ce7e52866c5b81e20ab863b47",
+      "original_bytes": 195249,
+      "selected_verbatim_fragments": [
+        "s.114 Local Government Finance Act 1988",
+        "19th December 2022.",
+        "Section 114(3)"
+      ],
+      "licence": "Council copyright; short factual identification extract only. Full document not redistributed.",
+      "full_document_committed": false,
+      "status": "Notice document inspected; no claim about current restrictions"
+    },
+    {
+      "council": "Nottingham",
+      "profile_gss": "E06000018",
+      "identity_method": "Manual official-domain identity review; profile code from council tax spine, not a code printed in the PDF",
+      "notice_date": "2023-11-29",
+      "section": "114(3)",
+      "act": "Local Government Finance Act 1988",
+      "url": "https://www.nottinghamcity.gov.uk/media/jmzb22b0/report-made-under-part-viii-s114-3-of-the-local-government-finance-act-1988-291123.pdf",
+      "title": "Report made under part VIII s.114(3) of the Local Government Finance Act 1988",
+      "locator": "Page 1 title and Date of Report",
+      "original_sha256": "72e1baf1c8a4690538ee22bf57b1b8a7c75583175c3f16be6ee9036d562e8bca",
+      "original_bytes": 216520,
+      "selected_verbatim_fragments": [
+        "Local Government Finance Act 1988",
+        "Date of Report: November 29th, 2023",
+        "s.114(3)"
+      ],
+      "licence": "Council copyright; short factual identification extract only. Full document not redistributed.",
+      "full_document_committed": false,
+      "status": "Notice document inspected; no claim about current restrictions"
+    }
+  ],
+  "official_confirmations_pending_notice": [
+    {
+      "council": "Birmingham",
+      "date_reported": "2023-09-05",
+      "notice_url": "https://www.birmingham.gov.uk/downloads/file/27958/section_114_notice",
+      "official_confirmation_url": "https://www.birmingham.gov.uk/info/50306/commissioners_intervention_and_improvement/2757/frequently_asked_questions_faqs_about_section_114/3",
+      "limitation": "Notice download returned HTTP 403; official FAQ records the date. Subsection not verified from notice."
+    },
+    {
+      "council": "Birmingham",
+      "date_reported": "2023-09-21",
+      "notice_url": null,
+      "official_confirmation_url": "https://www.birmingham.gov.uk/info/50306/commissioners_intervention_and_improvement/2757/frequently_asked_questions_faqs_about_section_114/2",
+      "limitation": "Official FAQ records a supplementary notice. Original notice and subsection remain to be checked."
+    },
+    {
+      "council": "Woking",
+      "date_reported": "2023-06-07",
+      "notice_url": null,
+      "official_confirmation_url": "https://www.woking.gov.uk/your-council/data-finance-performance/council-performance/intervention-improvement/section-114-notice",
+      "limitation": "Official council page records notice date; direct document page returned HTTP 403."
+    },
+    {
+      "council": "Slough",
+      "date_reported": "2021-07-02",
+      "notice_url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
+      "official_confirmation_url": "https://www.slough.gov.uk/news/article/107/council-pauses-non-essential-spending-following-section-114-notice",
+      "limitation": "Official notice download located but direct request returned HTTP 403. Original notice subsection remains to be inspected."
+    },
+    {
+      "council": "Croydon",
+      "date_reported": "2020-11-11",
+      "notice_url": null,
+      "official_confirmation_url": "https://devnews.croydon.gov.uk/council-issues-section-114-notice-as-part-of-action-plan-to-tackle-financial-challenges/",
+      "limitation": "Official announcement located; original notice and subsection remain to be checked."
+    },
+    {
+      "council": "Croydon",
+      "date_reported": "2020-12-02",
+      "notice_url": null,
+      "official_confirmation_url": "https://democracy.croydon.gov.uk/ieListDocuments.aspx?CId=134&MId=2478",
+      "limitation": "Official Council minutes identify notice date; original notice and subsection remain to be checked."
+    },
+    {
+      "council": "Croydon",
+      "date_reported": "2022-11-22",
+      "notice_url": "https://democracy.croydon.gov.uk/documents/s41881/Appendix%201%20-%20S114%20Notice.pdf",
+      "official_confirmation_url": "https://news.croydon.gov.uk/croydon-financially-unsustainable-without-new-model-of-government-support/",
+      "limitation": "Notice PDF linked from official 12 December Council agenda returned HTTP 403. Official announcement records date."
+    },
+    {
+      "council": "Barnet",
+      "date_reported": "2025-01-20",
+      "notice_url": null,
+      "official_confirmation_url": "https://committees.parliament.uk/publications/46814/documents/240955/default/",
+      "limitation": "MHCLG letter dated 6 February 2025 gives publication date of joint report. Council notice, issue date and subsection still to be checked."
+    },
+    {
+      "council": "Northumberland",
+      "date_reported": "2022-05-23",
+      "notice_url": null,
+      "official_confirmation_url": "https://northumberland.moderngov.co.uk/mgAi.aspx?ID=4537",
+      "limitation": "Official Council agenda identifies statutory report date. Original notice and subsection still to be inspected."
+    }
+  ]
+}
