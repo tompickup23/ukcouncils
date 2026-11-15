@@ -1,19 +1,45 @@
-import {readFileSync, writeFileSync, readdirSync} from 'node:fs';
+import {readFileSync, writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 
-// Research only. No network, application import, render or source refresh.
-const root = 'data/sources/dossier-2026-11';
+// Research only. Offline unless --verify-psaa is explicitly requested.
+const root = 'docs/dossier-sources-2026-11';
 const read = name => JSON.parse(readFileSync(`${root}/${name}`, 'utf8'));
 const sha = path => createHash('sha256').update(readFileSync(path)).digest('hex');
-const save = (name, value) => writeFileSync(`${root}/${name}`, `${JSON.stringify(value, null, 2)}\n`);
+const write = process.argv.includes('--write');
+const sourceFiles = ['audit-mhclg-tables.json', 'audit-psaa-inspection.json', 'audit-psaa-body-names.json',
+  'section-114-notices.json', 'section-114-register-search.json'];
+const outputFiles = ['dry-run-audit.json', 'dry-run-audit-names.json', 'dry-run-section-114.json'];
+const manifest = read('manifest.json');
+const paths = sourceFiles.concat(outputFiles).map(name => `${root}/${name}`).sort();
+assert.deepEqual(manifest.files.map(f => f.path).sort(), paths, 'Unexpected manifest inventory');
+function verifyFile(f) {
+  assert.equal(sha(f.path), f.sha256, `SHA-256 mismatch: ${f.path}`);
+  assert.equal(readFileSync(f.path).length, f.bytes, `Size mismatch: ${f.path}`);
+}
+// Even explicit regeneration verifies every pinned input first.
+for (const f of manifest.files) {
+  if (!write || sourceFiles.some(name => f.path === `${root}/${name}`)) verifyFile(f);
+}
+const save = (name, value) => {
+  assert(outputFiles.includes(name));
+  if (write) writeFileSync(`${root}/${name}`, `${JSON.stringify(value, null, 2)}\n`);
+  else assert.deepEqual(read(name), value, `Dry run does not reproduce: ${name}`);
+};
 const profiles = JSON.parse(readFileSync('data/council-tax/england-2026-27.json', 'utf8')).authorities;
 const profileRows = Object.entries(profiles).map(([gss, r]) => ({gss, council: r.name, class: r.classCode}));
 assert.equal(profileRows.length, 296);
-const context = {checked: '2026-11-15', base_commit: 'f4311a8fbb9408c1bb727a2f25d02e1bb6ded925', profile_count: 296,
+const context = {checked: '2026-11-15', base_commit: '96df5d19cb386ab78dda76af8d6937e1070748d6', profile_count: 296,
   profile_file: 'data/council-tax/england-2026-27.json', profile_sha256: sha('data/council-tax/england-2026-27.json'), rendered: false};
-const count = rows => rows.reduce((o, k) => ({...o, [k]: (o[k] || 0) + 1}), {});
-const sum = o => Object.values(o).reduce((a, b) => a + b, 0);
+assert.equal(manifest.profile_sha256, context.profile_sha256, 'Profile input changed');
+const registryFile = 'data/registry/councils.json';
+assert.equal(sha(registryFile), manifest.registry_sha256, 'Registry input changed');
+const registry = JSON.parse(readFileSync(registryFile, 'utf8')).councils;
+const officialProfiles = profileRows.map(r => {
+  assert.equal(registry[r.gss]?.gss, r.gss);
+  assert.equal(typeof registry[r.gss].officialName, 'string');
+  return {gss: r.gss, official_name: registry[r.gss].officialName, class: r.class};
+});
 
 const audit = read('audit-mhclg-tables.json');
 const psaa = read('audit-psaa-inspection.json');
@@ -50,94 +76,113 @@ save('dry-run-section-114.json', {...context,
   absence_interpretation: 'No claim that remaining councils have never issued a notice. No inference from Exceptional Financial Support. No claim that a historic notice remains in force.',
   build_ready: false, decision: 'Approve a non-exhaustive dated notice register and explicit body identity mapping; require original notice inspection for every added record.'});
 
-const a = read('composition-option-a.json');
-const seen = new Set();
-const rows = a.rows.map(r => {
-  assert.equal(r.gss_codes_as_printed.length, 1); const gss = r.gss_codes_as_printed[0];
-  assert(!seen.has(gss), `Duplicate code ${gss}`); seen.add(gss);
-  assert.equal(sum(r.party_totals), r.total, r.council);
-  assert(Object.values(r.party_totals).every(x => Number.isInteger(x) && x >= 0));
-  return {...r, gss};
-});
-const matched = rows.filter(r => profiles[r.gss]);
-assert.equal(matched.length, 295);
-const baseline = read('composition-2026-election-baseline.json');
-const baselineById = new Map();
-for (const r of baseline.rows) {assert(!baselineById.has(Number(r['council id']))); baselineById.set(Number(r['council id']), r);}
-const baselineChecks = matched.map(r => {
-  const old = baselineById.get(r.compiler_id);
-  if (!old) return {gss: r.gss, council: r.council, baseline_present: false};
-  const fields = ['con', 'lab', 'ld', 'green', 'ukip', 'ref', 'pc', 'snp', 'other'];
-  for (const k of fields) assert.match(old[k], /^\d+$/);
-  const total = fields.reduce((n, k) => n + Number(old[k]), 0);
-  const buckets = {Lab: +old.lab, Con: +old.con, LD: +old.ld, Grn: +old.green, Ref: +old.ref,
-    Oth: +old.ukip + +old.pc + +old.snp + +old.other};
-  const differences = Object.entries(buckets).filter(([k, v]) => r.party_totals[k] !== v)
-    .map(([party, previous]) => ({party, previous, current: r.party_totals[party]}));
-  return {gss: r.gss, council: r.council, baseline_present: true, baseline_total: +old.total,
-    baseline_party_sum: total, baseline_reconciles: total === +old.total,
-    current_total: r.total, current_vacancies: r.party_totals.Vac, differences};
-});
-const events = read('composition-party-changes.json');
-const byId = new Map(matched.map(r => [r.compiler_id, r]));
-const joinedEvents = events.rows.filter(e => byId.has(e.compiler_id)).map(e => ({...e, gss: byId.get(e.compiler_id).gss}));
-const b = read('composition-option-b-sample.json');
-assert.equal(b.rows.length, 20);
-assert.deepEqual(count(b.rows.map(r => r.profile_class)), {SD:4, UA:4, MD:4, ILB:4, OLB:4});
-assert.equal(new Set(b.rows.map(r => r.profile_gss)).size, 20);
-for (const r of b.rows) {assert.equal(sum(r.party_totals), r.party_sum); assert.equal(r.party_sum, r.reconciliation_total);}
-const comparisons = b.rows.map(r => {
-  const compiled = matched.find(c => c.gss === r.profile_gss); assert(compiled);
-  return {gss:r.profile_gss, council:r.council, official_date:r.date_shown,
-    official_party_or_group_totals:r.party_totals, official_seat_total:r.reconciliation_total,
-    compiler_buckets:compiled.party_totals, compiler_seat_total:compiled.total,
-    seat_totals_agree:r.reconciliation_total===compiled.total,
-    caution:'Side-by-side values only. Group labels and compiler Other are not interchangeable individual parties. No automatic resolution of disagreement.'};
-});
-save('dry-run-seats.json', {...context,
-  option_a: {source:'composition-option-a.json', rows:rows.length, rows_reconciled:rows.length,
-    exact_code_matches:matched.length, matched_by_class:count(matched.map(r=>profiles[r.gss].classCode)),
-    unmatched_profiles:profileRows.filter(r=>!seen.has(r.gss)),
-    source_rows_outside_profile_scope:rows.filter(r=>!profiles[r.gss]).map(r=>({gss:r.gss,council:r.council})),
-    joined_profile_rows:matched.map(r=>({gss:r.gss,council:r.council,total:r.total,party_totals:r.party_totals})),
-    includes_2026_election_archive:true, effective_date_caveat:'Snapshot retrieved 15 November 2026; site last-updated date is not a per-council effective date.',
-    baseline_comparison_scope:'2026 archive described by publisher as shortly after May elections. Not a verified last ordinary election date for every council. UKIP, PC and SNP grouped into Other for this diagnostic only; vacancies not backfilled into archive.',
-    baseline_present:baselineChecks.filter(r=>r.baseline_present).length,
-    baseline_reconciled:baselineChecks.filter(r=>r.baseline_reconciles).length,
-    changed_since_2026_archive:baselineChecks.filter(r=>r.differences?.length).length,
-    baseline_checks:baselineChecks,
-    party_change_events_after_7_may:joinedEvents.length,
-    profiles_with_party_change_events:[...new Set(joinedEvents.map(e=>e.gss))].sort().map(gss=>({gss,council:profiles[gss].name})),
-    party_change_events:joinedEvents,
-    by_election_archive:{source:'composition-by-elections.json',rows:read('composition-by-elections.json').rows.length,
-      exact_code_joins:0,reason:'No code or publisher council ID on archive rows; names are retained as source labels only. Holds do not change a party total. Dates are not verified polling dates.'}},
-  option_b: {source:'composition-option-b-sample.json',sample_size:20,by_class:count(b.rows.map(r=>r.profile_class)),
-    reconciled:20,totals_on_same_source_page:b.rows.filter(r=>r.total_seats_as_printed!==null).length,
-    additional_official_seat_total_sources:b.rows.filter(r=>r.seat_total_support).length,
-    shown_dates:b.rows.filter(r=>r.date_shown).length,missing_dates:b.rows.filter(r=>!r.date_shown).map(r=>r.council),
-    original_bytes_hashed:b.rows.filter(r=>r.original_sha256).length,
-    indexed_or_reader_transcriptions:b.rows.filter(r=>!r.original_sha256).map(r=>r.council),
-    native_code_joins:0,reviewed_profile_assignments:20,side_by_side_comparison:comparisons,
-    official_change_evidence:'composition-official-change-evidence.json',
-    caveat:'Purposive sample, not a coverage estimate. A reconciled total does not prove currency, party membership or election completeness.'},
-  build_ready:false, decision:'Choose compilation or official-page route, acceptable dating and party/group granularity, refresh ownership, and an absence rule. Keep control and estimates absent.'});
+// Only these three changes are permitted. Preserve punctuation, spacing,
+// word order, prefixes, footnotes, body qualifiers and historic labels.
+const normalise = name => name.toLowerCase().replaceAll('&', 'and').replace(/ council$/, '');
+const psaaNames = read('audit-psaa-body-names.json');
+assert.equal(psaaNames.original_sha256, psaa.original_sha256);
+assert.equal(psaaNames.url, psaa.url);
+assert.deepEqual(psaaNames.sheets.map(s => s.sheet), psaa.sheets.map(s => s.sheet));
+for (const [i, sheet] of psaaNames.sheets.entries()) {
+  assert.equal(sheet.rows, psaa.sheets[i].rows);
+  assert.equal(sheet.bodies.reduce((n, b) => n + b.audit_rows, 0), sheet.rows);
+  assert.equal(new Set(sheet.bodies.map(b => b.name)).size, sheet.bodies.length);
+  assert(sheet.bodies.every(b => Number.isInteger(b.audit_rows) && b.audit_rows > 0));
+}
 
-const sources = readdirSync(root).filter(f=>f.endsWith('.json') && f!=='manifest.json' && !f.startsWith('dry-run-')).sort();
-const originals = [];
-function collect(value, path, sourceFile) {
-  if (!value || typeof value!=='object') return;
-  if (value.original_sha256) originals.push({file:sourceFile,locator:path,url:value.url || value.table_url || null,sha256:value.original_sha256});
-  if (value.source_sha256) originals.push({file:sourceFile,locator:path,url:value.source_url,sha256:value.source_sha256});
-  for (const [key, child] of Object.entries(value)) if (typeof child==='object') collect(child,`${path}.${key}`,sourceFile);
+function compareNames(inputRows) {
+  const bodies = new Map();
+  for (const row of inputRows) {
+    assert.equal(typeof row.name, 'string');
+    if (!bodies.has(row.name)) bodies.set(row.name, {source_name: row.name, occurrences: []});
+    bodies.get(row.name).occurrences.push({cohort: row.cohort, source_rows: row.source_rows});
+  }
+  const matched = [], unmatched = [], ambiguous = [];
+  for (const body of [...bodies.values()].sort((a, b) => a.source_name.localeCompare(b.source_name, 'en'))) {
+    const candidates = officialProfiles.filter(p => normalise(p.official_name) === normalise(body.source_name));
+    const row = {...body, normalised_name: normalise(body.source_name), candidates};
+    if (candidates.length === 1) matched.push(row);
+    else if (candidates.length === 0) unmatched.push(row);
+    else ambiguous.push(row);
+  }
+  const matchedCodes = new Set(matched.map(r => r.candidates[0].gss));
+  const ambiguousCodes = new Set(ambiguous.flatMap(r => r.candidates.map(p => p.gss)));
+  assert([...matchedCodes].every(code => !ambiguousCodes.has(code)));
+  const unmatchedProfiles = officialProfiles.filter(p => !matchedCodes.has(p.gss) && !ambiguousCodes.has(p.gss));
+  const ambiguousProfiles = officialProfiles.filter(p => ambiguousCodes.has(p.gss));
+  return {
+    exact_code_matches: 0,
+    source_rows: inputRows.reduce((n, r) => n + r.source_rows, 0),
+    unique_source_bodies: bodies.size,
+    source_bodies: {matched: matched.length, unmatched: unmatched.length, ambiguous: ambiguous.length},
+    profiles: {matched: matchedCodes.size, unmatched: unmatchedProfiles.length, ambiguous: ambiguousProfiles.length, total: 296},
+    literal_name_matched_profiles: new Set(matched.filter(r => r.source_name === r.candidates[0].official_name).map(r => r.candidates[0].gss)).size,
+    matched_bodies: matched, unmatched_bodies: unmatched, ambiguous_bodies: ambiguous,
+    unmatched_profiles: unmatchedProfiles, ambiguous_profiles: ambiguousProfiles,
+  };
 }
-for (const file of sources) collect(read(file),'$',file);
-const manifestFiles = [...sources,'dry-run-audit.json','dry-run-section-114.json','dry-run-seats.json'];
-save('manifest.json',{...context, hash_algorithm:'SHA-256',
-  retention_rule:'Selected extracts without personal names, not byte-identical originals. Original response hashes are separately labelled. No claim of an original hash when direct retrieval was blocked. PSAA workbook not redistributed.',
-  files:manifestFiles.map(file=>({path:`${root}/${file}`,bytes:readFileSync(`${root}/${file}`).length,sha256:sha(`${root}/${file}`)})),original_responses:originals});
-for (const f of manifestFiles.concat('manifest.json')) {
-  const text=readFileSync(`${root}/${f}`,'utf8');
-  const forbidden = new RegExp(`[${String.fromCharCode(8211, 8212)}]| \x2d |&(?:mdash|ndash);|&#(?:8211|8212);|\\\\u201[34]`, 'i');
-  assert(!forbidden.test(text), `Forbidden punctuation: ${f}`);
+
+const mhclgCohorts = audit.tables.slice(1).map(t => {
+  assert.equal(t.rows[0][0], 'Name of body');
+  return {cohort: t.heading, rows: t.rows.slice(1).map(r => ({name: r[0], cohort: t.heading, source_rows: 1}))};
+});
+const psaaCohorts = psaaNames.sheets.map(s => ({cohort: s.sheet,
+  rows: s.bodies.map(b => ({name: b.name, cohort: s.sheet, source_rows: b.audit_rows}))}));
+const comparePublication = cohorts => ({
+  combined: compareNames(cohorts.flatMap(c => c.rows)),
+  by_cohort: cohorts.map(c => {
+    const result = compareNames(c.rows);
+    return {cohort: c.cohort, exact_code_matches: result.exact_code_matches,
+      source_rows: result.source_rows, unique_source_bodies: result.unique_source_bodies,
+      source_bodies: result.source_bodies, profiles: result.profiles,
+      literal_name_matched_profiles: result.literal_name_matched_profiles};
+  }),
+});
+const nameRun = {...context, registry_file: registryFile, registry_sha256: sha(registryFile),
+  registry_name_field: 'officialName',
+  registry_name_provenance: 'Pinned GOV.UK Local Links Manager names in the registry refreshed by PR 58. No short names used.',
+  normalisation: ['Convert case to lower case', 'Replace each ampersand with and', 'Remove one trailing Council, including its preceding space'],
+  exclusions: 'No whitespace folding or trimming, punctuation removal, footnote stripping, abbreviation expansion, word reordering, alternate names, predecessor substitution or fuzzy matching.',
+  counting_rule: '296 current billing profiles identified by code, then compared using registry officialName only. Distinct source labels counted once per publication or cohort; occurrences retain source-row counts. Across-year repetition is not ambiguity. A label matching multiple profile codes is ambiguous and never assigned. No audit status selected or transferred.',
+  mhclg: {source: 'audit-mhclg-tables.json', ...comparePublication(mhclgCohorts)},
+  psaa: {source: 'audit-psaa-body-names.json', ...comparePublication(psaaCohorts)},
+  build_ready: false, crosswalk_adopted: false,
+  decision: 'Source measure, identity crosswalk and PSAA reuse remain decisions for the owner. Name agreement is a research diagnostic, not authority to import audit data.',
+};
+save('dry-run-audit-names.json', nameRun);
+
+// Optional independent reconstruction of the factual name inventory. Never save
+// the full workbook or its metadata, personal fields or per-body audit statuses.
+if (process.argv.includes('--verify-psaa')) {
+  const {default: readXlsxFile} = await import('read-excel-file/node');
+  const response = await fetch(psaa.url);
+  assert(response.ok, `PSAA HTTP ${response.status}`);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), psaa.original_sha256, 'PSAA original changed');
+  const workbook = await readXlsxFile(bytes);
+  for (const [i, sheet] of psaa.sheets.entries()) {
+    const original = workbook.find(s => s.sheet === sheet.sheet);
+    assert(original, `Missing sheet: ${sheet.sheet}`);
+    assert.deepEqual(original.data[0], sheet.columns);
+    const rows = original.data.slice(1).filter(r => r[1]);
+    assert.equal(rows.length, sheet.rows);
+    const names = rows.map(r => r[1]);
+    const bodies = [...new Set(names)].sort().map(name => ({name, audit_rows: names.filter(n => n === name).length}));
+    assert.deepEqual(bodies, psaaNames.sheets[i].bodies, `Name extraction changed: ${sheet.sheet}`);
+  }
 }
-console.log(JSON.stringify({profiles:296,audit_exact:0,notices_inspected:notices.notices.length,composition_exact:matched.length,sample_reconciled:20,changed_since_annual_archive:baselineChecks.filter(r=>r.differences?.length).length}));
+
+if (write) {
+  manifest.base_commit = context.base_commit;
+  manifest.files = manifest.files.map(f => sourceFiles.some(name => f.path === `${root}/${name}`) ? f :
+    {...f, bytes: readFileSync(f.path).length, sha256: sha(f.path)});
+  writeFileSync(`${root}/manifest.json`, `${JSON.stringify(manifest, null, 2)}\n`);
+}
+for (const f of manifest.files) verifyFile(f);
+const forbidden = new RegExp(`[${String.fromCharCode(8211, 8212)}]| \\x2d |&(?:mdash|ndash);|&#(?:8211|8212);|&#x201[34];|\\\\u201[34]`, 'i');
+for (const path of paths.concat(`${root}/manifest.json`)) {
+  assert(!forbidden.test(readFileSync(path, 'utf8')), `Forbidden punctuation: ${path}`);
+}
+console.log(JSON.stringify({profiles: 296, hashes_verified: manifest.files.length,
+  audit_exact_code: 0, audit_names: {mhclg: nameRun.mhclg.combined.profiles, psaa: nameRun.psaa.combined.profiles},
+  notices_inspected: notices.notices.length, crosswalk_adopted: false}));

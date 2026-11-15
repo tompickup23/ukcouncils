@@ -10,3 +10,6 @@
 - **Weekly from 17 November:** the measurement note, kept in tompickup23/ukcounciltax `docs/MEASUREMENT.md`.
 - **Binding dates:** the dossier on all 296 profiles by mid January 2027; it gates the reversal in May to June 2027.
 - **Plan and prompts for both sites:** tompickup23/ukcounciltax, `docs/PLAN-2026-11-13-ASSESSMENT-AND-NEXT.md` section 8 and `docs/PROMPTS-2026-11-15-NEXT.md`.
+- **PR 60 update:** draft source research in `docs/DOSSIER-SOURCES-2026-11.md`; composition files removed, recoverable from `3e708ae`.
+- **Audit diagnostic:** exact codes 0/296; permitted official-name comparison MHCLG 69/296, PSAA 259/296; no crosswalk adopted.
+- **Research storage:** audit and notice evidence in `docs/dossier-sources-2026-11/`; both data guards unchanged; rebased after PR 59.
