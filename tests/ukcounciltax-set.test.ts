@@ -1,8 +1,4 @@
-import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { eligibleDigest } from "../scripts/lib/ukcounciltax-set.mjs";
 import { councilPages } from "../src/lib/paths";
@@ -30,14 +26,21 @@ describe("UK Council Tax set eligibility copy", () => {
     expect(manifest.hub).toBe("https://ukcounciltax.co.uk/tools/budget/");
   });
 
-  // Drift against UK Council Tax itself. CI has no UK Council Tax checkout, so
-  // the comparison runs where one exists; scripts/copy-ukcounciltax-set.mjs
-  // --check adds the live sitemap.
-  const repo = process.env.UKCT_DIR ?? join(homedir(), "ukcounciltax");
-  const hasRepo = existsSync(join(repo, ".git"));
-  it.skipIf(!hasRepo)("has not drifted from UK Council Tax origin/main", () => {
-    try { execFileSync("git", ["-C", repo, "fetch", "-q", "origin"], { stdio: "ignore", timeout: 20000 }); } catch { /* offline: compare with the local ref */ }
-    const raw = execFileSync("git", ["-C", repo, "show", `origin/main:${manifest.copiedFrom.path}`], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+  // Drift against UK Council Tax itself, read from its public repository on
+  // GitHub, so the check runs in CI and touches no local checkout. In CI a
+  // failed fetch fails the test; offline on a laptop it is skipped.
+  const RAW = `https://raw.githubusercontent.com/${manifest.copiedFrom.repository}/main/${manifest.copiedFrom.path}`;
+  it("has not drifted from UK Council Tax main", async (context) => {
+    let raw: string;
+    try {
+      const response = await fetch(RAW, { signal: AbortSignal.timeout(20000) });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      raw = await response.text();
+    } catch (error) {
+      if (process.env.CI) throw new Error(`could not read ${RAW}: ${(error as Error).message}`);
+      context.skip();
+      return;
+    }
     const sha = createHash("sha256").update(raw).digest("hex");
     const eligible = (JSON.parse(raw).councils as { gss: string; slug: string; name: string; eligible: boolean }[]).filter((row) => row.eligible === true);
     expect(eligibleDigest(eligible), "eligible list changed on UK Council Tax; rerun scripts/copy-ukcounciltax-set.mjs").toBe(manifest.eligibleSha256);

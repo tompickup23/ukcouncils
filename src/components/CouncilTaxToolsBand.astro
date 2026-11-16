@@ -26,7 +26,7 @@ const links = setLinks(manifest);
       <p>Change the council tax rise and the spending on the services you can edit, and see what is left to find. An exploration, not a forecast.</p>
       <details class="ukct-set" data-ukct-set>
         <summary>Choose a council</summary>
-        <p class="ukct-set-note">Set the budget is open for the councils listed here, where UK Council Tax found the budget and tax returns agree.</p>
+        <p class="ukct-set-note">Set the budget is open for the councils listed here, where UK Council Tax's checks on the budget and tax returns pass.</p>
         <ul class="ukct-set-list" aria-labelledby="ukct-set-heading">
           {links.map((link) => <li><a href={link.href} data-crossing-site data-set-gss={link.gss}>{link.name}</a></li>)}
         </ul>
