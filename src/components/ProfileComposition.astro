@@ -1,0 +1,34 @@
+---
+import CompositionSource from './CompositionSource.astro';
+import {snapshotDate, COLUMN_LABELS, type CompositionView} from '../lib/composition';
+import {CONTROL_CAVEAT} from '../../scripts/lib/composition-data.mjs';
+interface Props {view: CompositionView; name: string}
+const {view, name} = Astro.props;
+---
+<section class="section" id="composition" data-profile-section="composition" data-composition-source={view.sourceId} aria-labelledby="composition-heading">
+  <h2 id="composition-heading">Seats by party in {name}</h2>
+  {view.control && <div data-fact>
+    <p data-composition-control>Control as recorded by Open Council Data on {snapshotDate}: <strong>{view.control}</strong></p>
+    <CompositionSource />
+    <p class="caveat">{CONTROL_CAVEAT}</p>
+  </div>}
+  <details data-composition-drawer>
+    <summary>Read the party totals for {name}</summary>
+    <div data-fact class="composition-table">
+      <div class="table-wrap">
+      <table class="data" data-composition-table>
+        <caption>Party totals in the snapshot retrieved {snapshotDate}</caption>
+        <thead><tr><th scope="col">Publisher category</th><th scope="col" class="num">Seats</th></tr></thead>
+        <tbody>{Object.entries(COLUMN_LABELS).map(([key, label]) => <tr data-composition-column={key}><th scope="row">{label}</th><td class="num" data-figure>{view.columns[key]}</td></tr>)}</tbody>
+      </table>
+      </div>
+      <CompositionSource />
+      <p class="caveat">The publisher's column labels are spelled out.</p>
+      <p class="caveat">Other is the publisher's aggregate category. The date is the snapshot's, not an effective date certified for each council.</p>
+    </div>
+  </details>
+</section>
+
+<style>
+  .composition-table { max-width: 36rem; }
+</style>

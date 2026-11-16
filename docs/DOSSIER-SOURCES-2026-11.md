@@ -1,5 +1,7 @@
 # Dossier source decisions | November 2026
 
+**Later decision, 16 November 2026:** Option A is now adopted only under the pinned snapshot and control gates in [the implementation record](COMPOSITION-SNAPSHOT-2026-11-16.md). The research and hold descriptions below record the earlier decision state.
+
 Research checked 15 November 2026, originally against `f4311a8fbb9408c1bb727a2f25d02e1bb6ded925`. Rebased after PR 59 merged, onto `origin/main` at `96df5d19cb386ab78dda76af8d6937e1070748d6`. The denominator is the 296 entries in `data/council-tax/england-2026-27.json`, not the 361-body registry. The mid January 2027 dossier gate remains binding. This research does not complete that gate or authorise a rendering change.
 
 The source bundle is [docs/dossier-sources-2026-11](./dossier-sources-2026-11/). Its [manifest](./dossier-sources-2026-11/manifest.json) records SHA-256 hashes and sizes of retained files, plus separate hashes of original responses where obtainable. Retained sources are selected extracts without personal names, not byte-identical HTML or PDF copies. Original content was processed in memory. Names, contacts, signatures, portraits and author metadata were excluded before files were written. A blocked original has a null original hash, never the hash of an error page. The extract itself still has a manifest hash.

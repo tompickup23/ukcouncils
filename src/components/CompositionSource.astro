@@ -1,0 +1,10 @@
+---
+import {composition, compositionSource, snapshotDate} from '../lib/composition';
+import {citationKey} from '../lib/citation-key';
+const source = compositionSource();
+---
+<p class="source-line" data-citation-key={citationKey(source)} data-citation-record={JSON.stringify(source)}>
+  Source: <a href={source.url}>{source.publisher}, {source.title}</a>, snapshot retrieved {snapshotDate};
+  compiled by a third party, not an official council return.{' '}
+  <a href={composition.source.licenceUrl} rel="license">CC BY-SA 4.0</a> applies to the composition table only.
+</p>

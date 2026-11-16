@@ -1,3 +1,4 @@
+import {compositionFor, compositionSource, type CompositionView} from "./composition";
 import {budgetHeadline} from "./budget-headline";
 import {functionsFor, functionsSource} from "./council-functions";
 import {councilBudget, type CouncilBudget} from "./council-budget";
@@ -29,16 +30,15 @@ import { spendingFor, spendingRecord, type SpendingRecord } from "./spending";
  * council gets the same sections wherever its data exists, and a section with
  * no data is null: the page leaves it out, with no placeholder.
  *
- * Two sections the plan names are not built, because no committed file holds
- * their data: who runs the council (seats by party and control) and its
- * last election. Scheduled elections use only verified quoted years.
+ * Party totals and admitted control use the pinned composition snapshot.
+ * Last election dates remain held. Scheduled elections use only verified quoted years.
  *
  * Selected service functions use the pinned Commons Library table; special
  * authorities without a reviewed mapping retain only their official links.
  */
 
 /** The section ids, in the order a council page prints them. */
-export const PROFILE_SECTIONS = ["about", "services", "tax-summary", "collection", "exceptional-financial-support", "elections", "budget", "spending", "school-holidays", "sources"] as const;
+export const PROFILE_SECTIONS = ["about", "services", "tax-summary", "collection", "exceptional-financial-support", "elections", "composition", "budget", "spending", "school-holidays", "sources"] as const;
 export type ProfileSection = (typeof PROFILE_SECTIONS)[number];
 
 export interface ProfileAbout {
@@ -82,6 +82,7 @@ export interface ProfileTermDates {
 }
 
 export interface CouncilProfile {
+  composition: CompositionView | null;
   about: ProfileAbout;
   budget: CouncilBudget | null;
   spending: SpendingRecord | null;
@@ -205,6 +206,7 @@ export function profileSources(council: Council, tax: Authority, today = londonT
   if (support) for (const {statement} of support.entries) add(efsSource(statement.page, statement.table));
   const election = electionFor(council.gss);
   if (election) add(electionSource(election));
+  if (compositionFor(council.gss)) add(compositionSource());
   const budgetView = councilBudget(council);
   if (budgetView) for (const source of budgetView.sources) add(source);
   const spending = spendingRecord(tax.name, spendingFor(council.gss));
@@ -243,6 +245,7 @@ export function councilProfile(council: Council, tax: Authority, today = londonT
     collection: collectionFor(council.gss) !== null,
     "exceptional-financial-support": councilEfs(council.slug) !== null,
     elections: electionFor(council.gss) !== null,
+    composition: compositionFor(council.gss) !== null,
     budget: budget !== null,
     spending: spending !== null,
     "tax-summary": taxAtAGlance !== null,
@@ -250,6 +253,7 @@ export function councilProfile(council: Council, tax: Authority, today = londonT
     sources: sources.length > 0,
   };
   return {
+    composition: compositionFor(council.gss),
     about,
     budget,
     spending,
