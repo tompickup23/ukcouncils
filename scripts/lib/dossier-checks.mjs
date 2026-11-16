@@ -1,3 +1,4 @@
+import {dossierCoverage} from './dossier-coverage.mjs';
 import {parse, walkSync, ELEMENT_NODE, TEXT_NODE} from 'ultrahtml';
 
 const has = (node, key) => Object.hasOwn(node.attributes ?? {}, key);
@@ -85,5 +86,6 @@ export function dossierChecks(html, expected) {
   }
   if (counts.actions !== 1) failures.push('Council page needs one actions block');
   if (counts.bandAnswers !== 1) failures.push('Council page needs one open band answer');
+  if (expected?.coverage) failures.push(...dossierCoverage(html, expected.coverage));
   return {failures, counts};
 }

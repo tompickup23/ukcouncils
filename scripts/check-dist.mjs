@@ -1,3 +1,4 @@
+import {loadDossier} from './lib/dossier-state.mjs';
 import {reorganisationChecks} from './lib/reorganisation-checks.mjs';
 import { budgetChecks } from './lib/budget-checks.mjs';
 import { heldWording, RA_906_LABEL } from './lib/held-wording.mjs';
@@ -61,6 +62,7 @@ const dossierFunctions = JSON.parse(readFileSync(join(process.cwd(), 'data/servi
 const dossierBySlug = new Map(Object.values(dossierRegistry.councils).map(council => [council.slug, council]));
 const dossierMoney = new Intl.NumberFormat('en-GB', {style: 'currency', currency: 'GBP', maximumFractionDigits: 0});
 const dossierCounts = {};
+const coverageBySlug = new Map(loadDossier().profiles.map(profile => [profile.slug, profile]));
 if (!existsSync(join(DIST, "apple-touch-icon.png"))) failures.push("missing Apple touch icon PNG");
 const rel = (path) => path.slice(DIST.length) || "/";
 let pages = 0;
@@ -108,6 +110,7 @@ for (const path of files(DIST)) {
     const headline = row?.status === 'available' && total != null && total !== 0
       ? `${total < 0 ? 'minus ' : ''}${dossierMoney.format(Math.abs(total) * 1000)}` : null;
     const dossier = dossierChecks(text, {
+      coverage: coverageBySlug.get(councilSlug),
       budget: headline,
       functions: !dossierFunctions.excludedGss.includes(council.gss),
       links: dossierLinks.councils[council.gss] ?? {},

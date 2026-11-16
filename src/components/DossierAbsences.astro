@@ -1,0 +1,14 @@
+---
+import {loadDossier} from '../../scripts/lib/dossier-state.mjs';
+interface Props {gss: string}
+const profile = loadDossier().profiles.find(profile => profile.gss === Astro.props.gss);
+if (!profile) throw new Error('Missing dossier profile');
+const absent = profile.parts.filter(part => part.state !== 'built');
+---
+<section class="section" id="dossier-coverage" aria-labelledby="dossier-coverage-heading">
+  <h2 id="dossier-coverage-heading">What is not shown on this profile</h2>
+  <p>These gaps describe the information held by this site.</p>
+  <ul>
+    {absent.map(part => <li data-dossier-absence={part.key}><strong>{part.label}:</strong> {part.reason}</li>)}
+  </ul>
+</section>
