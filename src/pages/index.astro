@@ -20,7 +20,7 @@ const count = councilPages().length;
 
 /** Pages this site owns. Each card has its own destination. */
 const councilCards = [
-  { href: "/councils/", title: "Every council", text: "One page per council in England: its council tax by band, budget, services and school term dates." },
+  { href: "/councils/", title: "Every council", text: "One page per council in England: its council tax by band and services, with its budget and school term dates where published." },
   { href: "/council-tax/", title: "Council tax in England", text: "The published charge for every council, band by band, sorted within each type of council." },
   { href: "/compare/", title: "Compare councils", text: "Put two councils of the same type side by side for one band and year." },
   { href: "/exceptional-financial-support/", title: "Exceptional Financial Support", text: "Support agreed by MHCLG, by year and council, with every source." },
@@ -39,7 +39,7 @@ const councilCards = [
     </div>
 
     {area && (
-      <div class="card home-hero-figure" aria-labelledby="home-average">
+      <section class="card home-hero-figure" aria-labelledby="home-average">
         <h2 id="home-average">How much is council tax in England in {year}?</h2>
         <Fact
           label={`Average area Band D, England, ${year}`}
@@ -57,7 +57,7 @@ const councilCards = [
             <a href="/council-tax/#history-heading">Read the complete history table</a>
           </div>
         )}
-      </div>
+      </section>
     )}
   </section>
 
