@@ -1,0 +1,67 @@
+---
+/**
+ * The "From UK Council Tax" band. UK Council Tax owns the budget game and set
+ * mode; this site links to them and never hosts them. Both destinations are
+ * self canonical pages on ukcounciltax.co.uk. Set links come only from the
+ * copied eligibility list (src/lib/ukcounciltax-set.ts), so a council without
+ * a set page is never linked to one.
+ */
+import { loadSetManifest, setLinks } from "../lib/ukcounciltax-set";
+
+const manifest = loadSetManifest();
+const links = setLinks(manifest);
+---
+<section class="section ukct-band" aria-labelledby="ukct-band-heading" data-ukct-band>
+  <p class="ukct-band-site">On our sister site, ukcounciltax.co.uk</p>
+  <h2 id="ukct-band-heading">From UK Council Tax</h2>
+  <p class="ukct-band-lede">Two budget tools built from the same official returns. These links leave UK Councils.</p>
+  <div class="ukct-band-grid">
+    <article class="card ukct-tool">
+      <h3><a href={manifest.hub} data-crossing-site>Budget game</a></h3>
+      <p>Guess how a council splits its spending and where its money comes from, then see the published figures.</p>
+      <p class="ukct-tool-dest">Opens on UK Council Tax</p>
+    </article>
+    <article class="card ukct-tool">
+      <h3 id="ukct-set-heading">Set the budget</h3>
+      <p>Change the council tax rise and the spending on the services you can edit, and see what is left to find. An exploration, not a forecast.</p>
+      <details class="ukct-set" data-ukct-set>
+        <summary>Choose a council</summary>
+        <p class="ukct-set-note">Set the budget is open for the councils listed here, where UK Council Tax's checks on the budget and tax returns pass.</p>
+        <ul class="ukct-set-list" aria-labelledby="ukct-set-heading">
+          {links.map((link) => <li><a href={link.href} data-crossing-site data-set-gss={link.gss}>{link.name}</a></li>)}
+        </ul>
+      </details>
+      <p class="ukct-tool-dest">Opens on UK Council Tax</p>
+    </article>
+  </div>
+</section>
+
+<style>
+  .ukct-band {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+  .ukct-band-site { margin: 0; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .ukct-band h2 { margin: 0.2rem 0 0.35rem; }
+  .ukct-band-lede { margin: 0 0 1rem; color: var(--text-muted); }
+  .ukct-band-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: start; }
+  .ukct-tool { margin: 0; border-top: 3px solid var(--accent); }
+  .ukct-tool h3 { margin: 0 0 0.4rem; font-size: 1.2rem; }
+  .ukct-tool p { margin: 0 0 0.6rem; }
+  .ukct-tool-dest { font-size: 0.85rem; color: var(--text-muted); }
+  .ukct-tool-dest::after { content: " \2197"; }
+  .ukct-set summary { cursor: pointer; font-weight: 600; color: var(--accent); padding: 0.3rem 0; }
+  .ukct-set-note { font-size: 0.88rem; color: var(--text-muted); }
+  .ukct-set-list {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); gap: 0.15rem 1rem;
+    list-style: none; padding: 0.25rem 0; margin: 0 0 0.75rem; max-height: 20rem; overflow-y: auto;
+    border-block: 1px solid var(--border);
+  }
+  .ukct-set-list li { padding: 0.15rem 0; min-width: 0; }
+  @media (max-width: 720px) {
+    .ukct-band { padding: 1rem; }
+    .ukct-band-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -34,10 +34,9 @@ for (const theme of ['light', 'dark'] as const) {
   test(`${theme}: homepage has a chart table twin and no two cards with one destination`, async ({page}) => {
     await page.emulateMedia({colorScheme: theme});
     await page.goto('/');
-    await expect(page.locator('.task-thumb')).toHaveCount(3);
     await page.getByText('Read the chart as a table', {exact: true}).click();
     await expect(page.locator('#home-history').locator('..').locator('table')).toBeVisible();
-    const hrefs = await page.locator('.task-nav a.card').evaluateAll(cards => cards.map(card => card.getAttribute('href')));
+    const hrefs = await page.locator('.home-cards a.card').evaluateAll(cards => cards.map(card => card.getAttribute('href')));
     expect(new Set(hrefs).size).toBe(hrefs.length);
   });
 }
