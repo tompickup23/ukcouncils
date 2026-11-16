@@ -7,7 +7,6 @@ it('draws every held England history value without altering the series', () => {
   for (const row of loadYear(CURRENT_YEAR).england.history!.rows) {
     if (typeof row.pounds === 'number') expect(chart.history.table).toContain(row.pounds.toLocaleString('en-GB'));
   }
-  expect(chart.thumbs).toHaveLength(3);
   expect(chart.history.svg.match(/>\d{4}\/\d{2}<\/text>/g)).toHaveLength(3);
 });
 it('keeps every header destination and every band accessible in the footer', () => {

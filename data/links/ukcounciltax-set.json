@@ -1,0 +1,1006 @@
+{
+  "note": "Copied from UK Council Tax by scripts/copy-ukcounciltax-set.mjs. Do not edit by hand.",
+  "copiedFrom": {
+    "repository": "tompickup23/ukcounciltax",
+    "path": "data/pilots/budget-freeze-eligibility.json",
+    "commit": "f7e3cc46b6876cc89f782f439ea16bb7a58eba39",
+    "sha256": "bbb58716cc04f4dfd7f4d7fbbc78bd8ca6f5e8f15c7ca5231375b0eee6ba9557",
+    "edition": "2026-27",
+    "model": "budget-freeze 0.2",
+    "reviewedOn": "2026-11-15"
+  },
+  "hub": "https://ukcounciltax.co.uk/tools/budget/",
+  "verifiedLive": {
+    "source": "https://ukcounciltax.co.uk/sitemap.xml",
+    "fetched": "2026-11-16T12:11:04.433Z",
+    "setPagesListed": 197
+  },
+  "eligibleSha256": "8914a1f51d00179ba2c5e75cb97a807d08f5343fa6ce69cca83fd3004110d2cb",
+  "eligible": [
+    {
+      "gss": "E06000003",
+      "slug": "redcar-and-cleveland",
+      "name": "Redcar and Cleveland"
+    },
+    {
+      "gss": "E06000004",
+      "slug": "stockton-on-tees",
+      "name": "Stockton-on-Tees"
+    },
+    {
+      "gss": "E06000005",
+      "slug": "darlington",
+      "name": "Darlington"
+    },
+    {
+      "gss": "E06000006",
+      "slug": "halton",
+      "name": "Halton"
+    },
+    {
+      "gss": "E06000007",
+      "slug": "warrington",
+      "name": "Warrington"
+    },
+    {
+      "gss": "E06000008",
+      "slug": "blackburn-with-darwen",
+      "name": "Blackburn with Darwen"
+    },
+    {
+      "gss": "E06000009",
+      "slug": "blackpool",
+      "name": "Blackpool"
+    },
+    {
+      "gss": "E06000010",
+      "slug": "kingston-upon-hull-city-of",
+      "name": "Kingston upon Hull"
+    },
+    {
+      "gss": "E06000012",
+      "slug": "north-east-lincolnshire",
+      "name": "North East Lincolnshire"
+    },
+    {
+      "gss": "E06000013",
+      "slug": "north-lincolnshire",
+      "name": "North Lincolnshire"
+    },
+    {
+      "gss": "E06000014",
+      "slug": "york",
+      "name": "York"
+    },
+    {
+      "gss": "E06000018",
+      "slug": "nottingham",
+      "name": "Nottingham"
+    },
+    {
+      "gss": "E06000019",
+      "slug": "herefordshire-county-of",
+      "name": "Herefordshire"
+    },
+    {
+      "gss": "E06000020",
+      "slug": "telford-and-wrekin",
+      "name": "Telford and Wrekin"
+    },
+    {
+      "gss": "E06000021",
+      "slug": "stoke-on-trent",
+      "name": "Stoke-on-Trent"
+    },
+    {
+      "gss": "E06000023",
+      "slug": "bristol-city-of",
+      "name": "Bristol"
+    },
+    {
+      "gss": "E06000024",
+      "slug": "north-somerset",
+      "name": "North Somerset"
+    },
+    {
+      "gss": "E06000026",
+      "slug": "plymouth",
+      "name": "Plymouth"
+    },
+    {
+      "gss": "E06000027",
+      "slug": "torbay",
+      "name": "Torbay"
+    },
+    {
+      "gss": "E06000030",
+      "slug": "swindon",
+      "name": "Swindon"
+    },
+    {
+      "gss": "E06000031",
+      "slug": "peterborough",
+      "name": "Peterborough"
+    },
+    {
+      "gss": "E06000032",
+      "slug": "luton",
+      "name": "Luton"
+    },
+    {
+      "gss": "E06000033",
+      "slug": "southend-on-sea",
+      "name": "Southend-on-Sea"
+    },
+    {
+      "gss": "E06000035",
+      "slug": "medway",
+      "name": "Medway"
+    },
+    {
+      "gss": "E06000036",
+      "slug": "bracknell-forest",
+      "name": "Bracknell Forest"
+    },
+    {
+      "gss": "E06000037",
+      "slug": "west-berkshire",
+      "name": "West Berkshire"
+    },
+    {
+      "gss": "E06000038",
+      "slug": "reading",
+      "name": "Reading"
+    },
+    {
+      "gss": "E06000043",
+      "slug": "brighton-and-hove",
+      "name": "Brighton and Hove"
+    },
+    {
+      "gss": "E06000044",
+      "slug": "portsmouth",
+      "name": "Portsmouth"
+    },
+    {
+      "gss": "E06000045",
+      "slug": "southampton",
+      "name": "Southampton"
+    },
+    {
+      "gss": "E06000046",
+      "slug": "isle-of-wight",
+      "name": "Isle of Wight"
+    },
+    {
+      "gss": "E06000047",
+      "slug": "county-durham",
+      "name": "Durham"
+    },
+    {
+      "gss": "E06000049",
+      "slug": "cheshire-east",
+      "name": "Cheshire East"
+    },
+    {
+      "gss": "E06000054",
+      "slug": "wiltshire",
+      "name": "Wiltshire"
+    },
+    {
+      "gss": "E06000056",
+      "slug": "central-bedfordshire",
+      "name": "Central Bedfordshire"
+    },
+    {
+      "gss": "E06000058",
+      "slug": "bournemouth-christchurch-and-poole",
+      "name": "Bournemouth, Christchurch and Poole"
+    },
+    {
+      "gss": "E06000059",
+      "slug": "dorset",
+      "name": "Dorset"
+    },
+    {
+      "gss": "E06000060",
+      "slug": "buckinghamshire",
+      "name": "Buckinghamshire"
+    },
+    {
+      "gss": "E06000061",
+      "slug": "north-northamptonshire",
+      "name": "North Northamptonshire"
+    },
+    {
+      "gss": "E06000062",
+      "slug": "west-northamptonshire",
+      "name": "West Northamptonshire"
+    },
+    {
+      "gss": "E06000065",
+      "slug": "north-yorkshire",
+      "name": "North Yorkshire"
+    },
+    {
+      "gss": "E07000009",
+      "slug": "east-cambridgeshire",
+      "name": "East Cambridgeshire"
+    },
+    {
+      "gss": "E07000011",
+      "slug": "huntingdonshire",
+      "name": "Huntingdonshire"
+    },
+    {
+      "gss": "E07000012",
+      "slug": "south-cambridgeshire",
+      "name": "South Cambridgeshire"
+    },
+    {
+      "gss": "E07000032",
+      "slug": "amber-valley",
+      "name": "Amber Valley"
+    },
+    {
+      "gss": "E07000033",
+      "slug": "bolsover",
+      "name": "Bolsover"
+    },
+    {
+      "gss": "E07000034",
+      "slug": "chesterfield",
+      "name": "Chesterfield"
+    },
+    {
+      "gss": "E07000035",
+      "slug": "derbyshire-dales",
+      "name": "Derbyshire Dales"
+    },
+    {
+      "gss": "E07000036",
+      "slug": "erewash",
+      "name": "Erewash"
+    },
+    {
+      "gss": "E07000037",
+      "slug": "high-peak",
+      "name": "High Peak"
+    },
+    {
+      "gss": "E07000038",
+      "slug": "north-east-derbyshire",
+      "name": "North East Derbyshire"
+    },
+    {
+      "gss": "E07000039",
+      "slug": "south-derbyshire",
+      "name": "South Derbyshire"
+    },
+    {
+      "gss": "E07000040",
+      "slug": "east-devon",
+      "name": "East Devon"
+    },
+    {
+      "gss": "E07000041",
+      "slug": "exeter",
+      "name": "Exeter"
+    },
+    {
+      "gss": "E07000043",
+      "slug": "north-devon",
+      "name": "North Devon"
+    },
+    {
+      "gss": "E07000044",
+      "slug": "south-hams",
+      "name": "South Hams"
+    },
+    {
+      "gss": "E07000045",
+      "slug": "teignbridge",
+      "name": "Teignbridge"
+    },
+    {
+      "gss": "E07000046",
+      "slug": "torridge",
+      "name": "Torridge"
+    },
+    {
+      "gss": "E07000047",
+      "slug": "west-devon",
+      "name": "West Devon"
+    },
+    {
+      "gss": "E07000061",
+      "slug": "eastbourne",
+      "name": "Eastbourne"
+    },
+    {
+      "gss": "E07000062",
+      "slug": "hastings",
+      "name": "Hastings"
+    },
+    {
+      "gss": "E07000064",
+      "slug": "rother",
+      "name": "Rother"
+    },
+    {
+      "gss": "E07000065",
+      "slug": "wealden",
+      "name": "Wealden"
+    },
+    {
+      "gss": "E07000066",
+      "slug": "basildon",
+      "name": "Basildon"
+    },
+    {
+      "gss": "E07000067",
+      "slug": "braintree",
+      "name": "Braintree"
+    },
+    {
+      "gss": "E07000068",
+      "slug": "brentwood",
+      "name": "Brentwood"
+    },
+    {
+      "gss": "E07000073",
+      "slug": "harlow",
+      "name": "Harlow"
+    },
+    {
+      "gss": "E07000074",
+      "slug": "maldon",
+      "name": "Maldon"
+    },
+    {
+      "gss": "E07000076",
+      "slug": "tendring",
+      "name": "Tendring"
+    },
+    {
+      "gss": "E07000079",
+      "slug": "cotswold",
+      "name": "Cotswold"
+    },
+    {
+      "gss": "E07000080",
+      "slug": "forest-of-dean",
+      "name": "Forest of Dean"
+    },
+    {
+      "gss": "E07000081",
+      "slug": "gloucester",
+      "name": "Gloucester"
+    },
+    {
+      "gss": "E07000082",
+      "slug": "stroud",
+      "name": "Stroud"
+    },
+    {
+      "gss": "E07000083",
+      "slug": "tewkesbury",
+      "name": "Tewkesbury"
+    },
+    {
+      "gss": "E07000084",
+      "slug": "basingstoke-and-deane",
+      "name": "Basingstoke and Deane"
+    },
+    {
+      "gss": "E07000085",
+      "slug": "east-hampshire",
+      "name": "East Hampshire"
+    },
+    {
+      "gss": "E07000088",
+      "slug": "gosport",
+      "name": "Gosport"
+    },
+    {
+      "gss": "E07000089",
+      "slug": "hart",
+      "name": "Hart"
+    },
+    {
+      "gss": "E07000090",
+      "slug": "havant",
+      "name": "Havant"
+    },
+    {
+      "gss": "E07000091",
+      "slug": "new-forest",
+      "name": "New Forest"
+    },
+    {
+      "gss": "E07000092",
+      "slug": "rushmoor",
+      "name": "Rushmoor"
+    },
+    {
+      "gss": "E07000093",
+      "slug": "test-valley",
+      "name": "Test Valley"
+    },
+    {
+      "gss": "E07000094",
+      "slug": "winchester",
+      "name": "Winchester"
+    },
+    {
+      "gss": "E07000095",
+      "slug": "broxbourne",
+      "name": "Broxbourne"
+    },
+    {
+      "gss": "E07000099",
+      "slug": "north-hertfordshire",
+      "name": "North Hertfordshire"
+    },
+    {
+      "gss": "E07000103",
+      "slug": "watford",
+      "name": "Watford"
+    },
+    {
+      "gss": "E07000105",
+      "slug": "ashford",
+      "name": "Ashford"
+    },
+    {
+      "gss": "E07000107",
+      "slug": "dartford",
+      "name": "Dartford"
+    },
+    {
+      "gss": "E07000108",
+      "slug": "dover",
+      "name": "Dover"
+    },
+    {
+      "gss": "E07000109",
+      "slug": "gravesham",
+      "name": "Gravesham"
+    },
+    {
+      "gss": "E07000110",
+      "slug": "maidstone",
+      "name": "Maidstone"
+    },
+    {
+      "gss": "E07000112",
+      "slug": "shepway",
+      "name": "Folkestone and Hythe"
+    },
+    {
+      "gss": "E07000113",
+      "slug": "swale",
+      "name": "Swale"
+    },
+    {
+      "gss": "E07000115",
+      "slug": "tonbridge-and-malling",
+      "name": "Tonbridge and Malling"
+    },
+    {
+      "gss": "E07000116",
+      "slug": "tunbridge-wells",
+      "name": "Tunbridge Wells"
+    },
+    {
+      "gss": "E07000118",
+      "slug": "chorley",
+      "name": "Chorley"
+    },
+    {
+      "gss": "E07000119",
+      "slug": "fylde",
+      "name": "Fylde"
+    },
+    {
+      "gss": "E07000120",
+      "slug": "hyndburn",
+      "name": "Hyndburn"
+    },
+    {
+      "gss": "E07000121",
+      "slug": "lancaster",
+      "name": "Lancaster"
+    },
+    {
+      "gss": "E07000123",
+      "slug": "preston",
+      "name": "Preston"
+    },
+    {
+      "gss": "E07000124",
+      "slug": "ribble-valley",
+      "name": "Ribble Valley"
+    },
+    {
+      "gss": "E07000125",
+      "slug": "rossendale",
+      "name": "Rossendale"
+    },
+    {
+      "gss": "E07000126",
+      "slug": "south-ribble",
+      "name": "South Ribble"
+    },
+    {
+      "gss": "E07000127",
+      "slug": "west-lancashire",
+      "name": "West Lancashire"
+    },
+    {
+      "gss": "E07000128",
+      "slug": "wyre",
+      "name": "Wyre"
+    },
+    {
+      "gss": "E07000129",
+      "slug": "blaby",
+      "name": "Blaby"
+    },
+    {
+      "gss": "E07000130",
+      "slug": "charnwood",
+      "name": "Charnwood"
+    },
+    {
+      "gss": "E07000134",
+      "slug": "north-west-leicestershire",
+      "name": "North West Leicestershire"
+    },
+    {
+      "gss": "E07000135",
+      "slug": "oadby-and-wigston",
+      "name": "Oadby and Wigston"
+    },
+    {
+      "gss": "E07000136",
+      "slug": "boston",
+      "name": "Boston"
+    },
+    {
+      "gss": "E07000138",
+      "slug": "lincoln",
+      "name": "Lincoln"
+    },
+    {
+      "gss": "E07000140",
+      "slug": "south-holland",
+      "name": "South Holland"
+    },
+    {
+      "gss": "E07000141",
+      "slug": "south-kesteven",
+      "name": "South Kesteven"
+    },
+    {
+      "gss": "E07000142",
+      "slug": "west-lindsey",
+      "name": "West Lindsey"
+    },
+    {
+      "gss": "E07000144",
+      "slug": "broadland",
+      "name": "Broadland"
+    },
+    {
+      "gss": "E07000145",
+      "slug": "great-yarmouth",
+      "name": "Great Yarmouth"
+    },
+    {
+      "gss": "E07000147",
+      "slug": "north-norfolk",
+      "name": "North Norfolk"
+    },
+    {
+      "gss": "E07000149",
+      "slug": "south-norfolk",
+      "name": "South Norfolk"
+    },
+    {
+      "gss": "E07000170",
+      "slug": "ashfield",
+      "name": "Ashfield"
+    },
+    {
+      "gss": "E07000171",
+      "slug": "bassetlaw",
+      "name": "Bassetlaw"
+    },
+    {
+      "gss": "E07000175",
+      "slug": "newark-and-sherwood",
+      "name": "Newark and Sherwood"
+    },
+    {
+      "gss": "E07000176",
+      "slug": "rushcliffe",
+      "name": "Rushcliffe"
+    },
+    {
+      "gss": "E07000178",
+      "slug": "oxford",
+      "name": "Oxford"
+    },
+    {
+      "gss": "E07000179",
+      "slug": "south-oxfordshire",
+      "name": "South Oxfordshire"
+    },
+    {
+      "gss": "E07000180",
+      "slug": "vale-of-white-horse",
+      "name": "Vale of White Horse"
+    },
+    {
+      "gss": "E07000192",
+      "slug": "cannock-chase",
+      "name": "Cannock Chase"
+    },
+    {
+      "gss": "E07000194",
+      "slug": "lichfield",
+      "name": "Lichfield"
+    },
+    {
+      "gss": "E07000195",
+      "slug": "newcastle-under-lyme",
+      "name": "Newcastle-under-Lyme"
+    },
+    {
+      "gss": "E07000196",
+      "slug": "south-staffordshire",
+      "name": "South Staffordshire"
+    },
+    {
+      "gss": "E07000197",
+      "slug": "stafford",
+      "name": "Stafford"
+    },
+    {
+      "gss": "E07000200",
+      "slug": "babergh",
+      "name": "Babergh"
+    },
+    {
+      "gss": "E07000202",
+      "slug": "ipswich",
+      "name": "Ipswich"
+    },
+    {
+      "gss": "E07000207",
+      "slug": "elmbridge",
+      "name": "Elmbridge"
+    },
+    {
+      "gss": "E07000208",
+      "slug": "epsom-and-ewell",
+      "name": "Epsom and Ewell"
+    },
+    {
+      "gss": "E07000213",
+      "slug": "spelthorne",
+      "name": "Spelthorne"
+    },
+    {
+      "gss": "E07000214",
+      "slug": "surrey-heath",
+      "name": "Surrey Heath"
+    },
+    {
+      "gss": "E07000215",
+      "slug": "tandridge",
+      "name": "Tandridge"
+    },
+    {
+      "gss": "E07000217",
+      "slug": "woking",
+      "name": "Woking"
+    },
+    {
+      "gss": "E07000218",
+      "slug": "north-warwickshire",
+      "name": "North Warwickshire"
+    },
+    {
+      "gss": "E07000219",
+      "slug": "nuneaton-and-bedworth",
+      "name": "Nuneaton and Bedworth"
+    },
+    {
+      "gss": "E07000221",
+      "slug": "stratford-on-avon",
+      "name": "Stratford-on-Avon"
+    },
+    {
+      "gss": "E07000223",
+      "slug": "adur",
+      "name": "Adur"
+    },
+    {
+      "gss": "E07000224",
+      "slug": "arun",
+      "name": "Arun"
+    },
+    {
+      "gss": "E07000225",
+      "slug": "chichester",
+      "name": "Chichester"
+    },
+    {
+      "gss": "E07000226",
+      "slug": "crawley",
+      "name": "Crawley"
+    },
+    {
+      "gss": "E07000227",
+      "slug": "horsham",
+      "name": "Horsham"
+    },
+    {
+      "gss": "E07000228",
+      "slug": "mid-sussex",
+      "name": "Mid Sussex"
+    },
+    {
+      "gss": "E07000235",
+      "slug": "malvern-hills",
+      "name": "Malvern Hills"
+    },
+    {
+      "gss": "E07000237",
+      "slug": "worcester",
+      "name": "Worcester"
+    },
+    {
+      "gss": "E07000238",
+      "slug": "wychavon",
+      "name": "Wychavon"
+    },
+    {
+      "gss": "E07000239",
+      "slug": "wyre-forest",
+      "name": "Wyre Forest"
+    },
+    {
+      "gss": "E07000240",
+      "slug": "st-albans",
+      "name": "St Albans"
+    },
+    {
+      "gss": "E07000241",
+      "slug": "welwyn-hatfield",
+      "name": "Welwyn Hatfield"
+    },
+    {
+      "gss": "E07000242",
+      "slug": "east-hertfordshire",
+      "name": "East Hertfordshire"
+    },
+    {
+      "gss": "E07000245",
+      "slug": "west-suffolk",
+      "name": "West Suffolk"
+    },
+    {
+      "gss": "E08000001",
+      "slug": "bolton",
+      "name": "Bolton"
+    },
+    {
+      "gss": "E08000003",
+      "slug": "manchester",
+      "name": "Manchester"
+    },
+    {
+      "gss": "E08000004",
+      "slug": "oldham",
+      "name": "Oldham"
+    },
+    {
+      "gss": "E08000005",
+      "slug": "rochdale",
+      "name": "Rochdale"
+    },
+    {
+      "gss": "E08000006",
+      "slug": "salford",
+      "name": "Salford"
+    },
+    {
+      "gss": "E08000007",
+      "slug": "stockport",
+      "name": "Stockport"
+    },
+    {
+      "gss": "E08000008",
+      "slug": "tameside",
+      "name": "Tameside"
+    },
+    {
+      "gss": "E08000009",
+      "slug": "trafford",
+      "name": "Trafford"
+    },
+    {
+      "gss": "E08000010",
+      "slug": "wigan",
+      "name": "Wigan"
+    },
+    {
+      "gss": "E08000011",
+      "slug": "knowsley",
+      "name": "Knowsley"
+    },
+    {
+      "gss": "E08000012",
+      "slug": "liverpool",
+      "name": "Liverpool"
+    },
+    {
+      "gss": "E08000013",
+      "slug": "st-helens",
+      "name": "St Helens"
+    },
+    {
+      "gss": "E08000017",
+      "slug": "doncaster",
+      "name": "Doncaster"
+    },
+    {
+      "gss": "E08000021",
+      "slug": "newcastle-upon-tyne",
+      "name": "Newcastle upon Tyne"
+    },
+    {
+      "gss": "E08000022",
+      "slug": "north-tyneside",
+      "name": "North Tyneside"
+    },
+    {
+      "gss": "E08000023",
+      "slug": "south-tyneside",
+      "name": "South Tyneside"
+    },
+    {
+      "gss": "E08000025",
+      "slug": "birmingham",
+      "name": "Birmingham"
+    },
+    {
+      "gss": "E08000028",
+      "slug": "sandwell",
+      "name": "Sandwell"
+    },
+    {
+      "gss": "E08000029",
+      "slug": "solihull",
+      "name": "Solihull"
+    },
+    {
+      "gss": "E08000030",
+      "slug": "walsall",
+      "name": "Walsall"
+    },
+    {
+      "gss": "E08000032",
+      "slug": "bradford",
+      "name": "Bradford"
+    },
+    {
+      "gss": "E08000033",
+      "slug": "calderdale",
+      "name": "Calderdale"
+    },
+    {
+      "gss": "E08000034",
+      "slug": "kirklees",
+      "name": "Kirklees"
+    },
+    {
+      "gss": "E08000035",
+      "slug": "leeds",
+      "name": "Leeds"
+    },
+    {
+      "gss": "E08000036",
+      "slug": "wakefield",
+      "name": "Wakefield"
+    },
+    {
+      "gss": "E08000037",
+      "slug": "gateshead",
+      "name": "Gateshead"
+    },
+    {
+      "gss": "E08000038",
+      "slug": "barnsley",
+      "name": "Barnsley"
+    },
+    {
+      "gss": "E08000039",
+      "slug": "sheffield",
+      "name": "Sheffield"
+    },
+    {
+      "gss": "E09000002",
+      "slug": "barking-and-dagenham",
+      "name": "Barking and Dagenham"
+    },
+    {
+      "gss": "E09000005",
+      "slug": "brent",
+      "name": "Brent"
+    },
+    {
+      "gss": "E09000006",
+      "slug": "bromley",
+      "name": "Bromley"
+    },
+    {
+      "gss": "E09000007",
+      "slug": "camden",
+      "name": "Camden"
+    },
+    {
+      "gss": "E09000012",
+      "slug": "hackney",
+      "name": "Hackney"
+    },
+    {
+      "gss": "E09000013",
+      "slug": "hammersmith-and-fulham",
+      "name": "Hammersmith and Fulham"
+    },
+    {
+      "gss": "E09000014",
+      "slug": "haringey",
+      "name": "Haringey"
+    },
+    {
+      "gss": "E09000015",
+      "slug": "harrow",
+      "name": "Harrow"
+    },
+    {
+      "gss": "E09000016",
+      "slug": "havering",
+      "name": "Havering"
+    },
+    {
+      "gss": "E09000018",
+      "slug": "hounslow",
+      "name": "Hounslow"
+    },
+    {
+      "gss": "E09000024",
+      "slug": "merton",
+      "name": "Merton"
+    },
+    {
+      "gss": "E09000026",
+      "slug": "redbridge",
+      "name": "Redbridge"
+    },
+    {
+      "gss": "E09000029",
+      "slug": "sutton",
+      "name": "Sutton"
+    },
+    {
+      "gss": "E09000030",
+      "slug": "tower-hamlets",
+      "name": "Tower Hamlets"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CouncilFinder from "../components/CouncilFinder.astro";
+import HomeSearch from "../components/HomeSearch.astro";
+import CouncilTaxToolsBand from "../components/CouncilTaxToolsBand.astro";
 import "../vendor/estate-kit/src/components/kit.css";
 import { homeCharts } from "../lib/home-charts";
 import SourceLine from "../components/SourceLine.astro";
 import Fact from "../components/Fact.astro";
-import PostcodeDoor from "../components/PostcodeDoor.astro";
 import { BANDS, CURRENT_YEAR, PREVIOUS_YEAR, loadYear, percent, wholePounds, yearLabel } from "../lib/council-tax";
 import { REGIONS, bandPath, councilPages, regionPath } from "../lib/paths";
 import { councilTaxSource } from "../lib/sources";
@@ -17,49 +17,61 @@ const area = data.england.areaBandD;
 const year = yearLabel(CURRENT_YEAR);
 const previous = yearLabel(PREVIOUS_YEAR);
 const count = councilPages().length;
+
+/** Pages this site owns. Each card has its own destination. */
+const councilCards = [
+  { href: "/councils/", title: "Every council", text: "One page per council in England: its council tax by band, budget, services and school term dates." },
+  { href: "/council-tax/", title: "Council tax in England", text: "The published charge for every council, band by band, sorted within each type of council." },
+  { href: "/compare/", title: "Compare councils", text: "Put two councils of the same type side by side for one band and year." },
+  { href: "/exceptional-financial-support/", title: "Exceptional Financial Support", text: "Support agreed by MHCLG, by year and council, with every source." },
+];
 ---
 <BaseLayout path="/" title={`Council tax in England ${year}: find and compare councils`}>
-  <section class="home-hero">
-    <p class="eyebrow">UK Councils</p>
-    <h1>Council tax for your area</h1>
-    <p class="lede">
-      Find your council, choose your band and compare the published charge. Covering all {count} councils in England for {year}, with the official source beside every figure.
-    </p>
-    <div class="task-grid"><PostcodeDoor id="postcode-home" /><CouncilFinder /></div>
-    <p><a href="/councils/">Browse all councils</a></p>
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="home-hero-lead">
+      <p class="eyebrow">UK Councils</p>
+      <h1 id="home-title">Council tax for your area</h1>
+      <p class="lede">
+        Find your council, choose your band and compare the published charge. Covering all {count} councils in England for {year}, with the official source beside every figure.
+      </p>
+      <HomeSearch />
+      <p class="home-hero-links"><a href="/councils/">Browse all councils</a> · <a href={INCREASES_PATH}>How much each council raised its share</a></p>
+    </div>
+
+    {area && (
+      <div class="card home-hero-figure" aria-labelledby="home-average">
+        <h2 id="home-average">How much is council tax in England in {year}?</h2>
+        <Fact
+          label={`Average area Band D, England, ${year}`}
+          figure={wholePounds(area.england.pounds)}
+          change={`up ${percent(area.england.changePct)} on ${previous}`}
+          source={councilTaxSource(CURRENT_YEAR, area.table)}
+        ><p class="caveat">Includes adult social care and average parish precepts.</p></Fact>
+        {data.england.history && charts && (
+          <div data-fact class="fact home-history-fact">
+            <h3 id="home-history">How the England average has changed</h3>
+            <figure class="home-history" set:html={charts.history.svg} />
+            <details><summary>Read the chart as a table</summary><div class="table-wrap" set:html={charts.history.table} /></details>
+            <SourceLine source={councilTaxSource(CURRENT_YEAR, data.england.history.table)} />
+            <p class="caveat">Cash figures, not adjusted for inflation. Includes adult social care and average parish precepts.</p>
+            <a href="/council-tax/#history-heading">Read the complete history table</a>
+          </div>
+        )}
+      </div>
+    )}
   </section>
 
-  <nav class="task-nav section" aria-label="Council tax tools">
-    <a class="card" href="/your-area/">{charts && <span class="task-thumb" aria-hidden="true" set:html={charts.thumbs[0]} />}<strong>Find your charge</strong><span>Annual amounts for every band, with the monthly equivalent.</span></a>
-    <a class="card" href="/compare/">{charts && <span class="task-thumb" aria-hidden="true" set:html={charts.thumbs[1]} />}<strong>Compare councils</strong><span>Put the same band and year side by side.</span></a>
-    <a class="card" href={INCREASES_PATH}>{charts && <span class="task-thumb" aria-hidden="true" set:html={charts.thumbs[2]} />}<strong>Understand the increase</strong><span>See how each council changed its own share.</span></a>
-  </nav>
-  {area && (
-    <section class="section" aria-labelledby="home-average">
-      <h2 id="home-average">How much is council tax in England in {year}?</h2>
-      <div class="fact-grid">
-        <div class="card">
-          <Fact
-            label={`Average area Band D, England, ${year}`}
-            figure={wholePounds(area.england.pounds)}
-            change={`up ${percent(area.england.changePct)} on ${previous}`}
-            source={councilTaxSource(CURRENT_YEAR, area.table)}
-          ><p class="caveat">Includes adult social care and average parish precepts.</p></Fact>
-        </div>
-      </div>
-      <p><a href="/council-tax/">Council tax for all {count} councils in England</a> · <a href={INCREASES_PATH}>How much each council raised its share</a></p>
-    </section>
-  )}
+  <section class="section" aria-labelledby="home-council">
+    <h2 id="home-council">Your council, from the official record</h2>
+    <nav class="home-cards" aria-label="Council pages">
+      {councilCards.map((card) => (
+        <a class="card home-card" href={card.href}><strong>{card.title}</strong><span>{card.text}</span></a>
+      ))}
+    </nav>
+  </section>
 
-  {data.england.history && <section class="section" aria-labelledby="home-history">
-    <h2 id="home-history">How the England average has changed</h2>
-    <div data-fact class="fact">
-      {charts && <><figure class="home-history" set:html={charts.history.svg} /><details><summary>Read the chart as a table</summary><div class="table-wrap" set:html={charts.history.table} /></details></>}
-      <SourceLine source={councilTaxSource(CURRENT_YEAR, data.england.history.table)} />
-      <p class="caveat">Cash figures, not adjusted for inflation. Includes adult social care and average parish precepts.</p>
-      <a href="/council-tax/#history-heading">Read the complete history table</a>
-    </div>
-  </section>}
+  <CouncilTaxToolsBand />
+
   <section class="section" aria-labelledby="home-bands">
     <h2 id="home-bands">Council tax by band</h2>
     <ul class="pill-nav">
@@ -76,10 +88,33 @@ const count = councilPages().length;
 </BaseLayout>
 
 <style>
-  .task-thumb { display: block; width: 100%; height: 5rem; overflow: hidden; }
-  .task-thumb :global(svg) { width: 100%; height: 100%; }
-  .home-history { margin: 0; max-width: 45rem; }
-  .home-history :global(svg) { width: 100%; height: auto; }
-  .home-hero { padding: 1.5rem 0 0.5rem;  }
+  .home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    padding: 1.5rem 0 0.5rem;
+  }
+  .home-hero-lead { min-width: 0; }
   .home-hero h1 { font-size: clamp(2rem, 7vw, 3rem); margin: 0 0 0.75rem; }
+  .home-hero-links { margin: 0.9rem 0 0; }
+  .home-hero-figure { min-width: 0; margin: 0; }
+  .home-hero-figure h2 { font-size: 1.2rem; margin: 0 0 0.75rem; }
+  .home-hero-figure .fact { margin-bottom: 0.9rem; }
+  .home-history-fact { border-top: 1px solid var(--border); padding-top: 0.9rem; margin-bottom: 0; }
+  .home-history-fact h3 { font-size: 1rem; margin: 0 0 0.4rem; }
+  .home-history { margin: 0 0 0.5rem; }
+  .home-history :global(svg) { width: 100%; height: auto; }
+  .home-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.85rem; }
+  .home-card { display: block; margin: 0; text-decoration: none; border-top: 3px solid var(--accent); }
+  .home-card:hover { border-color: var(--accent); background: var(--accent-wash); }
+  .home-card strong { display: block; font-size: 1.1rem; color: var(--accent); }
+  .home-card span { display: block; color: var(--text-muted); margin-top: 0.4rem; }
+  @media (max-width: 960px) {
+    .home-hero { grid-template-columns: 1fr; gap: 1.25rem; }
+    .home-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    .home-cards { grid-template-columns: 1fr; }
+  }
 </style>

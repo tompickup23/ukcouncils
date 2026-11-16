@@ -6,7 +6,7 @@ test.beforeEach(async ({page}) => {
 });
 
 test('name lookup supports keyboard selection and empty results without navigation', async ({page}) => {
-  await page.goto('/');
+  await page.goto('/your-area/');
   const input = page.getByLabel('Find your council by name');
   await input.fill('BURNLEY');
   await expect(page.locator('[data-finder-status]')).toContainText('1 matching councils');
@@ -14,7 +14,7 @@ test('name lookup supports keyboard selection and empty results without navigati
   await expect(page.locator('#council-name-results a:visible')).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/councils\/burnley\/#council-tax$/);
-  await page.goto('/');
+  await page.goto('/your-area/');
   await input.fill('<script>');
   await expect(page.locator('[data-finder-status]')).toContainText('No matching council');
   expect(new URL(page.url()).search).toBe('');

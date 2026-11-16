@@ -1,0 +1,144 @@
+---
+/**
+ * One search box for a postcode or a council name, for the homepage.
+ *
+ * A council name is matched in the page, against the same index CouncilFinder
+ * uses. A postcode goes to api.postcodes.io and nowhere else, exactly as in
+ * PostcodeDoor: it is never written into this site's address, a query string
+ * or storage. The input has no name attribute, so even the form's own GET to
+ * /your-area/ (what happens without JavaScript) carries nothing in the URL.
+ */
+import { councilIndex } from "../lib/council-index";
+import { councilPages, councilPath } from "../lib/paths";
+import { loadRegistry } from "../lib/registry";
+
+interface Props { id?: string }
+const { id = "home-search" } = Astro.props;
+const rows = councilIndex();
+const withPage = new Map(councilPages().map(({ council, tax }) => [council.gss, { href: councilPath(council), name: tax.name }]));
+const postcodeIndex = Object.fromEntries(
+  Object.values(loadRegistry().councils).map((c) => [c.gss, withPage.get(c.gss) ?? { href: null, name: c.name, country: c.country }]),
+);
+---
+<form class="home-search card" action="/your-area/" method="get" data-home-search novalidate>
+  <label for={id} class="home-search-label">Find your council</label>
+  <p class="home-search-hint" id={`${id}-hint`}>Enter a postcode or a council name.</p>
+  <div class="home-search-row">
+    <input
+      id={id}
+      type="search"
+      autocomplete="off"
+      autocapitalize="none"
+      spellcheck="false"
+      placeholder="e.g. BB11 1DU or Burnley"
+      maxlength="60"
+      aria-describedby={`${id}-hint ${id}-status ${id}-note`}
+      aria-controls={`${id}-results`}
+      data-home-search-input
+    />
+    <button type="submit">Find</button>
+  </div>
+  <p class="home-search-status" id={`${id}-status`} role="status" aria-live="polite" data-home-search-status></p>
+  <ul id={`${id}-results`} class="home-search-results" hidden data-pagefind-ignore data-home-search-results>
+    {rows.map((row) => <li hidden data-name={row.search} data-region={row.region}>
+      <a href={`${row.url}#council-tax`}>{row.name}<span>{row.classLabel} · {row.region}</span></a>
+    </li>)}
+  </ul>
+  <p class="home-search-note" id={`${id}-note`}>
+    A postcode is sent to postcodes.io to find its council, and is not stored. <a href="/privacy/">Privacy</a>.
+  </p>
+  <noscript><p class="home-search-note">Search needs JavaScript; Find opens the area page. Or <a href="/councils/">browse all councils</a>.</p></noscript>
+  <script type="application/json" data-home-search-index set:html={JSON.stringify(postcodeIndex).replace(/</g, "\\u003c")} />
+</form>
+
+<script>
+  import { matchesCouncil, matchingRegion, normalise, rankCouncils } from "../lib/council-search";
+
+  interface Entry { href: string | null; name: string; country?: string }
+  const POSTCODE = /^[A-Z]{1,2}[0-9][A-Z0-9]?\s?[0-9][A-Z]{2}$/;
+  const SHOWN = 8;
+
+  for (const form of document.querySelectorAll<HTMLFormElement>("[data-home-search]")) {
+    const input = form.querySelector<HTMLInputElement>("[data-home-search-input]")!;
+    const status = form.querySelector<HTMLElement>("[data-home-search-status]")!;
+    const list = form.querySelector<HTMLUListElement>("[data-home-search-results]")!;
+    const index = JSON.parse(form.querySelector("[data-home-search-index]")?.textContent ?? "{}") as Record<string, Entry>;
+    const rows = [...list.querySelectorAll<HTMLLIElement>("li")].map((li) => ({ li, name: li.querySelector("a")!.firstChild!.textContent ?? "", search: li.dataset.name ?? "", region: li.dataset.region ?? "" }));
+    const say = (text: string) => { status.textContent = text; };
+    const looksLikePostcode = (value: string) => /\d/.test(value);
+
+    const matches = () => {
+      const query = normalise(input.value);
+      if (query.length < 2 || looksLikePostcode(query)) return [];
+      const region = matchingRegion(query, rows.map((row) => row.region));
+      return rankCouncils(query, rows.filter((row) => matchesCouncil(query, row.search) && (!region || normalise(row.region) === region)));
+    };
+
+    input.addEventListener("input", () => {
+      const found = matches();
+      const shown = new Set(found.slice(0, SHOWN));
+      for (const row of rows) row.li.hidden = !shown.has(row);
+      for (const row of found.slice(0, SHOWN)) list.append(row.li);
+      list.hidden = !shown.size;
+      const query = normalise(input.value);
+      if (looksLikePostcode(query)) say("Press Find to look up this postcode.");
+      else if (query.length < 2) say("");
+      else say(found.length ? `${found.length} matching ${found.length === 1 ? "council" : "councils"}${found.length > SHOWN ? "; showing the first eight" : ""}. Tab to choose one.` : "No matching council in England. Try a shorter name, or a postcode.");
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const value = input.value.trim();
+      if (!looksLikePostcode(value)) {
+        const found = matches();
+        if (found.length === 1 || (found.length && normalise(found[0].name) === normalise(value))) {
+          window.location.assign(found[0].li.querySelector("a")!.href);
+          return;
+        }
+        say(found.length ? "Several councils match. Choose one from the list." : value.length < 2 ? "Enter a postcode or at least two letters of a council name." : "No matching council in England. Try a shorter name, or a postcode.");
+        return;
+      }
+      const postcode = value.toUpperCase().replace(/\s+/g, " ");
+      if (!POSTCODE.test(postcode)) { say("That does not look like a UK postcode. Try the full postcode, for example BB11 1DU."); return; }
+      say("Finding your council...");
+      let code: string | undefined;
+      try {
+        const response = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(postcode)}`);
+        if (response.status === 404) { say("postcodes.io does not know that postcode. Check it, or search by council name."); return; }
+        if (!response.ok) throw new Error(String(response.status));
+        const body = (await response.json()) as { result?: { codes?: { admin_district?: string } } };
+        code = body.result?.codes?.admin_district;
+      } catch {
+        say("The postcode lookup did not answer. Try again, or search by council name.");
+        return;
+      }
+      const entry = code ? index[code] : undefined;
+      if (!entry) { say("That postcode is not in a council this site holds. Search by council name instead."); return; }
+      if (!entry.href) { say(`${entry.name} is in ${entry.country}. This site publishes councils in England first; ${entry.country} follows.`); return; }
+      say(`Opening ${entry.name}...`);
+      window.location.assign(`${entry.href}#council-tax`);
+    });
+  }
+</script>
+
+<style>
+  .home-search { margin: 0; }
+  .home-search-label { display: block; font-weight: 600; font-size: 1.1rem; }
+  .home-search-hint { margin: 0.2rem 0 0.6rem; color: var(--text-muted); }
+  .home-search-row { display: flex; gap: 0.5rem; }
+  .home-search-row input {
+    flex: 1; min-width: 0; font: inherit; font-size: 1.1rem; padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--bg); color: var(--text);
+  }
+  .home-search-row input::placeholder { color: var(--text-faint); }
+  .home-search-row button {
+    font: inherit; font-weight: 600; padding: 0.6rem 1.2rem; border: none; border-radius: var(--radius-sm);
+    background: var(--accent); color: var(--bg); cursor: pointer;
+  }
+  .home-search-status { min-height: 1.4em; margin: 0.5rem 0 0; }
+  .home-search-status:empty { min-height: 0; }
+  .home-search-results { list-style: none; padding: 0; margin: 0.25rem 0 0; }
+  .home-search-results a { display: block; padding: 0.55rem 0; border-top: 1px solid var(--border); font-weight: 600; }
+  .home-search-results span { display: block; color: var(--text-muted); font-size: 0.85rem; font-weight: 400; }
+  .home-search-note { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
+</style>
