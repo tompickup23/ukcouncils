@@ -17,6 +17,7 @@ const citations: Record<string, string[]> = {
   collection: ["collection.source"],
   elections: ["elections.source"],
   reorganisation: ["reorganisationSources", "source.sha256"],
+  audit: ["auditStatus.source.url", "auditStatus.source.published_or_updated", "auditStatus.source.licence"],
 };
 
 describe("sources catalogue coverage", () => {
@@ -24,20 +25,9 @@ describe("sources catalogue coverage", () => {
     const directories = readdirSync(join(process.cwd(), "data"), { withFileTypes: true })
       .filter(entry => entry.isDirectory() && !["fonts", "raw"].includes(entry.name))
       .map(entry => entry.name).sort();
-    // data/audit/ is staged and no page cites it yet.
-    // Stage 2 will add the page citation and remove this exception.
-    expect(directories).toEqual([...Object.keys(citations), "audit"].sort());
+    expect(directories).toEqual(Object.keys(citations).sort());
     for (const [directory, fields] of Object.entries(citations)) {
       for (const field of fields) expect(catalogue, `${directory}: ${field}`).toContain(field);
-    }
-  });
-  it("keeps the staged audit crosswalk out of every source file", () => {
-    const sourceRoot = join(process.cwd(), "src");
-    for (const entry of readdirSync(sourceRoot, { recursive: true, withFileTypes: true })) {
-      if (!entry.isFile()) continue;
-      const path = join(entry.parentPath, entry.name);
-      // Cover loader imports, direct data imports and file reads while the exception remains.
-      expect(readFileSync(path, "utf8"), path).not.toMatch(/audit-crosswalk|(?:^|[\\/])audit[\\/]/m);
     }
   });
 });

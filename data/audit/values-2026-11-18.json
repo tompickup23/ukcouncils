@@ -1,0 +1,1730 @@
+{
+  "date": "2026-11-18",
+  "footnote": {
+    "marker": "*",
+    "printed": "*These bodies and their appointed audit firms are included on the list because audit opinions from prior years, relating to audits carried out by previous auditors, remained outstanding at the time of the backstop.",
+    "backstop": "2026-02-27",
+    "location": "Paragraph printed immediately after the 27 February 2026 table",
+    "retrieved": "2026-11-18"
+  },
+  "tables": [
+    {
+      "backstop": "2024-12-13",
+      "financialYears": "Up to and including 2022/23",
+      "questions": {
+        "draftAccounts": "All unaudited draft accounts published by 31 October 2024?",
+        "opinionDelivered": "All audit opinions delivered by 13 December 2024?",
+        "dateDelivered": "Date audit opinion delivered",
+        "opinionPublished": "All audit opinions published as of 9 March 2026?"
+      }
+    },
+    {
+      "backstop": "2025-02-28",
+      "financialYears": "2023/24",
+      "questions": {
+        "draftAccounts": "Draft accounts published by 16 January 2025?",
+        "opinionDelivered": "Audit opinion delivered by 28 February 2025?",
+        "dateDelivered": "Date audit opinion delivered",
+        "opinionPublished": "Audit opinion published as of 9 March 2026?"
+      }
+    },
+    {
+      "backstop": "2026-02-27",
+      "financialYears": "2024/25",
+      "questions": {
+        "draftAccounts": "Draft accounts published by 15 January 2026?",
+        "opinionDelivered": "Audit opinion delivered by 27 February 2026?",
+        "dateDelivered": "Date audit opinion delivered",
+        "opinionPublished": "Audit opinion published as of 9 March  2026?"
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "gss": "E06000002",
+      "officialName": "Middlesbrough Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 39,
+          "label": "Middlesbrough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "11/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000007",
+      "officialName": "Warrington Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 64,
+          "label": "Warrington Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 46,
+          "label": "Warrington Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 29,
+          "label": "Warrington Borough Council *",
+          "asterisk": true,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000015",
+      "officialName": "Derby City",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 18,
+          "label": "Derby City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "18/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000018",
+      "officialName": "Nottingham City Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 19,
+          "label": "Nottingham City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000021",
+      "officialName": "Stoke-on-Trent City Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 26,
+          "label": "Stoke-on-Trent City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000032",
+      "officialName": "Luton Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 34,
+          "label": "Luton Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 28,
+          "label": "Luton Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "25/04/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000038",
+      "officialName": "Reading Borough Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 21,
+          "label": "Reading Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "27/02/26",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000039",
+      "officialName": "Slough Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 54,
+          "label": "Slough Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "28/02/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 40,
+          "label": "Slough Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "30/01/26",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000050",
+      "officialName": "Cheshire West and Chester Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 7,
+          "label": "Cheshire West and Chester Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "24/03/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000054",
+      "officialName": "Wiltshire Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 66,
+          "label": "Wiltshire Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "28/02/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 48,
+          "label": "Wiltshire Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "27/08/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000060",
+      "officialName": "Buckinghamshire Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 7,
+          "label": "Buckinghamshire Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "29/11/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000061",
+      "officialName": "North Northamptonshire Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 41,
+          "label": "North Northamptonshire Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "04/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E06000063",
+      "officialName": "Cumberland Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 12,
+          "label": "Cumberland Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 5,
+          "label": "Cumberland Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000008",
+      "officialName": "Cambridge City Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 4,
+          "label": "Cambridge City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "14/05/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000011",
+      "officialName": "Huntingdonshire District Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 10,
+          "label": "Huntingdonshire District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "04/03/26",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000012",
+      "officialName": "South Cambridgeshire District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 55,
+          "label": "South Cambridgeshire District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000032",
+      "officialName": "Amber Valley Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 1,
+          "label": "Amber Valley Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "11/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000034",
+      "officialName": "Chesterfield Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 11,
+          "label": "Chesterfield Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "10/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000061",
+      "officialName": "Eastbourne Borough Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 15,
+          "label": "Eastbourne Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "11/03/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000062",
+      "officialName": "Hastings Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 25,
+          "label": "Hastings Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "12/12/24",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 20,
+          "label": "Hastings Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "28/02/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000063",
+      "officialName": "Lewes District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 29,
+          "label": "Lewes District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "11/07/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 24,
+          "label": "Lewes District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "15/07/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000066",
+      "officialName": "Basildon Borough Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 1,
+          "label": "Basildon Borough Council *",
+          "asterisk": true,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000069",
+      "officialName": "Castle Point Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 10,
+          "label": "Castle Point Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "10/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000071",
+      "officialName": "Colchester City Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 15,
+          "label": "Colchester City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "20/12/24",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 10,
+          "label": "Colchester City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "16/05/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000073",
+      "officialName": "Harlow Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 18,
+          "label": "Harlow District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "12/11/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000077",
+      "officialName": "Uttlesford District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 62,
+          "label": "Uttlesford District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "yes",
+            "dateDelivered": "28/01/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000078",
+      "officialName": "Cheltenham Borough Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 2,
+          "label": "Cheltenham Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000081",
+      "officialName": "Gloucester City Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 22,
+          "label": "Gloucester City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "yes",
+            "dateDelivered": "27/01/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 16,
+          "label": "Gloucester City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 7,
+          "label": "Gloucester City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000088",
+      "officialName": "Gosport Borough Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 8,
+          "label": "Gosport Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "19/02/26",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000092",
+      "officialName": "Rushmoor Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 52,
+          "label": "Rushmoor Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "11/12/23",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000098",
+      "officialName": "Hertsmere Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 26,
+          "label": "Hertsmere Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "12/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000102",
+      "officialName": "Three Rivers District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 61,
+          "label": "Three Rivers District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "13/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000103",
+      "officialName": "Watford Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 65,
+          "label": "Watford Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "29/11/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000106",
+      "officialName": "Canterbury City Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 9,
+          "label": "Canterbury City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "Yes",
+            "dateDelivered": "14/03/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000108",
+      "officialName": "Dover District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 20,
+          "label": "Dover District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "12/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000109",
+      "officialName": "Gravesham Borough Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 17,
+          "label": "Gravesham Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "09/07/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000111",
+      "officialName": "Sevenoaks District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 53,
+          "label": "Sevenoaks District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "06/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000114",
+      "officialName": "Thanet District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 60,
+          "label": "Thanet District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000120",
+      "officialName": "Hyndburn Borough Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 11,
+          "label": "Hyndburn Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "26/02/26",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000121",
+      "officialName": "Lancaster City Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 22,
+          "label": "Lancaster City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 12,
+          "label": "Lancaster City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000122",
+      "officialName": "Pendle Borough Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 34,
+          "label": "Pendle Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "27/02/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000130",
+      "officialName": "Charnwood Borough Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 6,
+          "label": "Charnwood Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "10/02/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000134",
+      "officialName": "North West Leicestershire District Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 33,
+          "label": "North West Leicestershire District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 17,
+          "label": "North West Leicestershire District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000144",
+      "officialName": "Broadland District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 5,
+          "label": "Broadland District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "29/11/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000148",
+      "officialName": "Norwich City Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 18,
+          "label": "Norwich City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000149",
+      "officialName": "South Norfolk District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 56,
+          "label": "South Norfolk District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000170",
+      "officialName": "Ashfield District Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 1,
+          "label": "Ashfield District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "19/03/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000174",
+      "officialName": "Mansfield District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 36,
+          "label": "Mansfield District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "14/12/23",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000179",
+      "officialName": "South Oxfordshire District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 57,
+          "label": "South Oxfordshire District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000180",
+      "officialName": "Vale of White Horse District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 63,
+          "label": "Vale of White Horse District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000197",
+      "officialName": "Stafford Borough Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 43,
+          "label": "Stafford Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "11/06/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000200",
+      "officialName": "Babergh District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 2,
+          "label": "Babergh District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000203",
+      "officialName": "Mid Suffolk District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 38,
+          "label": "Mid Suffolk District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000209",
+      "officialName": "Guildford Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 23,
+          "label": "Guildford Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "Yes",
+            "dateDelivered": "06/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000211",
+      "officialName": "Reigate and Banstead Borough Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 38,
+          "label": "Reigate and Banstead Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "28/02/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000212",
+      "officialName": "Runnymede Borough Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 22,
+          "label": "Runnymede Borough Council *",
+          "asterisk": true,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000214",
+      "officialName": "Surrey Heath Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 59,
+          "label": "Surrey Heath Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "23/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000217",
+      "officialName": "Woking Borough Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 32,
+          "label": "Woking Borough Council *",
+          "asterisk": true,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "No",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000227",
+      "officialName": "Horsham District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 27,
+          "label": "Horsham District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "28/11/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000234",
+      "officialName": "Bromsgrove District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 6,
+          "label": "Bromsgrove District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "16/01/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 3,
+          "label": "Bromsgrove District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000235",
+      "officialName": "Malvern Hills District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 35,
+          "label": "Malvern Hills District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "03/12/24",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 29,
+          "label": "Malvern Hills District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "28/02/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000236",
+      "officialName": "Redditch Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 51,
+          "label": "Redditch Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "28/01/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 37,
+          "label": "Redditch Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000237",
+      "officialName": "Worcester City Council",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 49,
+          "label": "Worcester City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "28/02/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000238",
+      "officialName": "Wychavon District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 67,
+          "label": "Wychavon District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "12/12/24",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 33,
+          "label": "Wychavon District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "27/02/26",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000240",
+      "officialName": "St Albans City and District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 58,
+          "label": "St Albans City and District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "31/01/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 42,
+          "label": "St Albans City and District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "12/05/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E07000242",
+      "officialName": "East Hertfordshire District Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 21,
+          "label": "East Hertfordshire District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "24/04/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 13,
+          "label": "East Hertfordshire District Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "01/10/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E08000010",
+      "officialName": "Wigan Metropolitan Borough Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 31,
+          "label": "Wigan Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "27/02/26",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E08000022",
+      "officialName": "North Tyneside Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 42,
+          "label": "North Tyneside Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E08000025",
+      "officialName": "Birmingham City Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 4,
+          "label": "Birmingham City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "21/11/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 2,
+          "label": "Birmingham City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "21/11/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E08000033",
+      "officialName": "Calderdale Metropolitan Borough Council",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 8,
+          "label": "Calderdale Metropolitan Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "09/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E08000039",
+      "officialName": "Sheffield City Council",
+      "entries": [
+        {
+          "backstop": "2026-02-27",
+          "row": 24,
+          "label": "Sheffield City Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "n/a",
+            "opinionPublished": "no"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E09000004",
+      "officialName": "London Borough of Bexley",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 3,
+          "label": "Bexley London Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "10/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E09000008",
+      "officialName": "London Borough of Croydon",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 17,
+          "label": "Croydon London Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "15/08/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 11,
+          "label": "Croydon London Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "18/08/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E09000010",
+      "officialName": "London Borough of Enfield",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 31,
+          "label": "London Borough of Enfield",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "04/07/25",
+            "opinionPublished": "yes"
+          }
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 26,
+          "label": "London Borough of Enfield",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "29/08/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E09000014",
+      "officialName": "London Borough of Haringey",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 24,
+          "label": "Haringey London Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "18/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E09000017",
+      "officialName": "London Borough of Hillingdon",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 27,
+          "label": "London Borough of Hillingdon",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "no",
+            "opinionDelivered": "no",
+            "dateDelivered": "27/03/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E09000021",
+      "officialName": "Royal Borough of Kingston upon Thames",
+      "entries": [
+        {
+          "backstop": "2025-02-28",
+          "row": 39,
+          "label": "Royal Borough of Kingston upon Thames",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "no",
+            "dateDelivered": "14/03/25",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E09000025",
+      "officialName": "London Borough of Newham",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 40,
+          "label": "Newham London Borough Council",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "11/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "gss": "E09000026",
+      "officialName": "London Borough of Redbridge",
+      "entries": [
+        {
+          "backstop": "2024-12-13",
+          "row": 32,
+          "label": "London Borough of Redbridge",
+          "asterisk": false,
+          "answers": {
+            "draftAccounts": "yes",
+            "opinionDelivered": "yes",
+            "dateDelivered": "11/12/24",
+            "opinionPublished": "yes"
+          }
+        }
+      ]
+    }
+  ]
+}

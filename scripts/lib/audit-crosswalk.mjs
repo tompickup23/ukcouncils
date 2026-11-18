@@ -6,9 +6,23 @@ import {pathToFileURL} from 'node:url';
 
 export const AUDIT_DATE = '2026-11-18';
 export const AUDIT_PATHS = ['data/audit/manifest.json', `data/audit/review-${AUDIT_DATE}.json`,
-  `data/audit/crosswalk-${AUDIT_DATE}.json`, `data/audit/dry-run-${AUDIT_DATE}.json`];
+  `data/audit/crosswalk-${AUDIT_DATE}.json`, `data/audit/dry-run-${AUDIT_DATE}.json`,
+  `data/audit/values-${AUDIT_DATE}.json`, `data/audit/values-dry-run-${AUDIT_DATE}.json`];
 export const INPUT_PATHS = ['docs/dossier-sources-2026-11/audit-mhclg-tables.json',
   'data/council-tax/england-2026-27.json', 'data/registry/councils.json'];
+// The four answer columns, in printed order. The appointed audit firm column is
+// dropped as soon as the research table is read and never enters a value file.
+export const ANSWER_KEYS = ['draftAccounts', 'opinionDelivered', 'dateDelivered', 'opinionPublished'];
+const FIRM_COLUMN = 'Appointed audit firm';
+// The footnote printed below the 27 February 2026 table, retrieved from GOV.UK on
+// 18 November 2026. Its asterisk follows four body labels in that table.
+export const ASTERISK_FOOTNOTE = {
+  marker: '*',
+  printed: '*These bodies and their appointed audit firms are included on the list because audit opinions from prior years, relating to audits carried out by previous auditors, remained outstanding at the time of the backstop.',
+  backstop: '2026-02-27',
+  location: 'Paragraph printed immediately after the 27 February 2026 table',
+  retrieved: AUDIT_DATE,
+};
 export const BODY_CLASSES = ['county', 'police', 'fire', 'pension-fund', 'combined-authority', 'other'];
 const keys = (value, expected) => {
   assert(value && typeof value === 'object' && !Array.isArray(value), 'Expected audit object');
@@ -89,10 +103,14 @@ function readInputs(root, manifest) {
   assert.equal(profiles.length, 296);
   const tables = audit.tables.slice(1).map((table, index) => {
     assert.equal(table.rows[0][0], 'Name of body');
-    const labels = table.rows.slice(1).map(row => row[0]);
+    assert(table.rows.every(row => Array.isArray(row) && row.length === 6), 'Unexpected audit table shape');
+    assert.equal(table.rows[0][2], FIRM_COLUMN, 'Audit firm column moved; stop and report');
+    // Drop the firm column here so no later step can read it.
+    const [header, ...body] = table.rows.map(row => row.filter((_, column) => column !== 2));
+    const labels = body.map(row => row[0]);
     assert.equal(labels.length, manifest.source.tables[index].bodyRows);
     assert.equal(new Set(labels).size, labels.length, 'Duplicate source label within table');
-    return {...manifest.source.tables[index], labels};
+    return {...manifest.source.tables[index], labels, questions: header.slice(1), answers: body.map(row => row.slice(1))};
   });
   assert.equal(tables.length, 3);
   return {profiles, tables};
@@ -189,16 +207,95 @@ export function auditDryRun(crosswalk, inputs) {
     rendered: false};
 }
 
+const TABLE_KEYS = ['backstop', 'financialYears', 'questions'];
+const ENTRY_KEYS = ['backstop', 'row', 'label', 'asterisk', 'answers'];
+
+/** Answers exactly as printed for each profile row the crosswalk assigns. A value
+ * exists only where the crosswalk has a row; the firm column is never read. */
+export function buildAuditValues(crosswalk, inputs) {
+  const questions = table => Object.fromEntries(ANSWER_KEYS.map((key, index) => [key, table.questions[index]]));
+  return {date: AUDIT_DATE, footnote: {...ASTERISK_FOOTNOTE},
+    tables: inputs.tables.map(table => ({backstop: table.backstop, financialYears: table.financialYears, questions: questions(table)})),
+    profiles: crosswalk.profiles.map(profile => {
+      const entries = profile.labels.flatMap(row => row.occurrences.map(occurrence => {
+        const table = inputs.tables.find(item => item.backstop === occurrence.backstop);
+        assert.equal(table.labels.at(occurrence.row-1), row.label, 'Audit row locator differs from the pinned table');
+        const printed = table.answers.at(occurrence.row-1);
+        return {backstop: occurrence.backstop, row: occurrence.row, label: row.label, asterisk: row.label.endsWith(` ${ASTERISK_FOOTNOTE.marker}`),
+          answers: Object.fromEntries(ANSWER_KEYS.map((key, index) => [key, printed[index]]))};
+      })).sort((a, b) => a.backstop.localeCompare(b.backstop));
+      return {gss: profile.gss, officialName: profile.officialName, entries};
+    })};
+}
+
+export function validateAuditValues(values, crosswalk) {
+  keys(values, ['date', 'footnote', 'tables', 'profiles']);
+  assert.equal(values.date, AUDIT_DATE);
+  keys(values.footnote, Object.keys(ASTERISK_FOOTNOTE));
+  assert.deepEqual(values.footnote, ASTERISK_FOOTNOTE, 'Audit footnote differs from the text pinned on retrieval');
+  assert(Array.isArray(values.tables) && values.tables.length === 3, 'Expected three audit tables');
+  for (const table of values.tables) {
+    keys(table, TABLE_KEYS);
+    keys(table.questions, ANSWER_KEYS);
+    for (const question of Object.values(table.questions)) nonempty(question);
+  }
+  const backstops = values.tables.map(table => table.backstop);
+  const crosswalked = new Map(crosswalk.profiles.map(profile => [profile.gss, profile]));
+  const codes = new Set();
+  assert(Array.isArray(values.profiles));
+  for (const profile of values.profiles) {
+    keys(profile, ['gss', 'officialName', 'entries']);
+    assert(crosswalked.has(profile.gss), 'Audit value for a profile without a crosswalk row');
+    assert.equal(profile.officialName, crosswalked.get(profile.gss).officialName);
+    assert(!codes.has(profile.gss), 'Duplicate profile code in audit values'); codes.add(profile.gss);
+    assert(Array.isArray(profile.entries) && profile.entries.length > 0, 'Audit profile without a pinned value');
+    const seen = new Set();
+    for (const entry of profile.entries) {
+      keys(entry, ENTRY_KEYS);
+      keys(entry.answers, ANSWER_KEYS);
+      assert(backstops.includes(entry.backstop), 'Audit value outside the three pinned tables');
+      // One line for each table on a profile; two rows on one table would need review.
+      assert(!seen.has(entry.backstop), 'Two audit rows for one profile on one table'); seen.add(entry.backstop);
+      assert(crosswalked.get(profile.gss).labels.some(row => row.label === entry.label
+        && row.occurrences.some(item => item.backstop === entry.backstop && item.row === entry.row)), 'Audit value without a crosswalk row');
+      assert.equal(entry.asterisk, entry.label.endsWith(` ${ASTERISK_FOOTNOTE.marker}`));
+      if (entry.asterisk) assert.equal(entry.backstop, ASTERISK_FOOTNOTE.backstop, 'Asterisk outside the footnoted table');
+      for (const answer of Object.values(entry.answers)) nonempty(answer);
+    }
+  }
+}
+
+export function auditValuesDryRun(values) {
+  const byTable = values.tables.map(table => {
+    const rows = values.profiles.flatMap(profile => profile.entries.filter(entry => entry.backstop === table.backstop)
+      .map(entry => ({gss: profile.gss, ...entry})));
+    const answers = Object.fromEntries(ANSWER_KEYS.map(key => [key, {question: table.questions[key],
+      counts: Object.fromEntries(sorted(new Set(rows.map(row => row.answers[key]))).filter(answer => key !== 'dateDelivered' || !/^\d/.test(answer))
+        .map(answer => [answer, rows.filter(row => row.answers[key] === answer).length])),
+      ...(key === 'dateDelivered' ? {printedDates: rows.filter(row => /^\d/.test(row.answers[key])).length} : {})}]));
+    return {backstop: table.backstop, financialYears: table.financialYears, profilesWithLines: rows.length,
+      profiles: rows.map(row => row.gss), asterisk: rows.filter(row => row.asterisk).map(row => row.gss), answers};
+  });
+  return {date: AUDIT_DATE, profilesWithLines: values.profiles.length,
+    profilesByTableCount: [1, 2, 3].map(count => ({tables: count, profiles: values.profiles.filter(profile => profile.entries.length === count).length})),
+    byTable, footnote: {printed: values.footnote.printed, retrieved: values.footnote.retrieved,
+      profiles: values.profiles.filter(profile => profile.entries.some(entry => entry.asterisk)).map(profile => profile.gss)},
+    excluded: 'The appointed audit firm column is not read into any value file. Answers respond to the dated question in each printed column heading; they are not audit opinion types.'};
+}
+
 export function loadAuditCrosswalk(root = process.cwd()) {
   // No cache: a later mutation must still fail its pin.
   const manifest = JSON.parse(readFileSync(resolve(root, AUDIT_PATHS[0]), 'utf8'));
   const inputs = readInputs(root, manifest);
   assert.deepEqual(manifest.files.map(file => file.path), AUDIT_PATHS.slice(1), 'Unexpected audit file inventory');
-  const [review, crosswalk, dryRun] = manifest.files.map(file => readPinned(root, file));
+  const [review, crosswalk, dryRun, values, valuesDryRun] = manifest.files.map(file => readPinned(root, file));
   const expected = buildAuditCrosswalk(manifest.source, review, inputs);
   validateAuditCrosswalk(crosswalk, expected);
   assert.deepEqual(dryRun, auditDryRun(expected, inputs), 'Audit dry run does not reproduce');
-  return {source: manifest.source, crosswalk, dryRun, review, inputs};
+  validateAuditValues(values, crosswalk);
+  assert.deepEqual(values, buildAuditValues(crosswalk, inputs), 'Audit values do not reproduce from the pinned tables');
+  assert.deepEqual(valuesDryRun, auditValuesDryRun(values), 'Audit values dry run does not reproduce');
+  return {source: manifest.source, crosswalk, dryRun, review, values, valuesDryRun, inputs};
 }
 
 // Explicit offline rebuild of derived outputs only. Input and review pins must
@@ -209,7 +306,8 @@ export function rebuildAuditCrosswalk(root = process.cwd()) {
   assert.deepEqual(manifest.files.map(file => file.path), AUDIT_PATHS.slice(1), 'Unexpected audit file inventory');
   const review = readPinned(root, manifest.files[0]);
   const crosswalk = buildAuditCrosswalk(manifest.source, review, inputs);
-  const outputs = [crosswalk, auditDryRun(crosswalk, inputs)];
+  const values = buildAuditValues(crosswalk, inputs);
+  const outputs = [crosswalk, auditDryRun(crosswalk, inputs), values, auditValuesDryRun(values)];
   for (const [index, value] of outputs.entries()) {
     const path = AUDIT_PATHS[index + 2];
     const bytes = `${JSON.stringify(value, null, 2)}\n`;
@@ -222,9 +320,10 @@ export function rebuildAuditCrosswalk(root = process.cwd()) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   assert(process.argv.length === 2 || (process.argv.length === 3 && process.argv[2] === '--rebuild'), 'Use no option or --rebuild');
-  const {dryRun} = process.argv[2] === '--rebuild' ? rebuildAuditCrosswalk() : loadAuditCrosswalk();
+  const {dryRun, valuesDryRun} = process.argv[2] === '--rebuild' ? rebuildAuditCrosswalk() : loadAuditCrosswalk();
   console.log(JSON.stringify({profiles: dryRun.profileCount, tier1: dryRun.combined.tier1.count,
     tier2: dryRun.combined.tier2.count, tier2Additional: dryRun.combined.tier2Additional,
     reached: dryRun.combined.reached.count, onNoList: dryRun.combined.profilesOnNoList.length,
-    unresolved: dryRun.unresolvedLabels.length}));
+    unresolved: dryRun.unresolvedLabels.length, withLines: valuesDryRun.profilesWithLines,
+    linesByTable: Object.fromEntries(valuesDryRun.byTable.map(table => [table.backstop, table.profilesWithLines]))}));
 }

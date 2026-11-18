@@ -1,5 +1,6 @@
 ---
 import {notices, noticeDate, noticeLocator, NOTICE_COVERAGE, type NoticeRecord} from '../lib/section-114';
+import {auditStatus, AUDIT_SOURCES_NOTE} from '../lib/audit';
 import { budget, budgetYear } from "../lib/budget";
 import {reorganisationSources, reorganisationData} from '../lib/reorganisation';
 import { population } from "../lib/population";
@@ -75,6 +76,13 @@ const registry = loadRegistry();
     <p><a href={collection.source.url}>{collection.source.title}</a>, {collection.source.publisher},
       published {longDate(collection.source.published)}, revised {longDate(collection.source.revised)}.
       Table 9a, QRC4 lines 1, 4, 5, 20, 23 and 24. {collection.source.licence}.</p>
+    <h2>External audit backstop lists</h2>
+    <p><a href={auditStatus.source.url}>{auditStatus.source.publisher}, {auditStatus.source.title}</a>,
+      updated {longDate(auditStatus.source.published_or_updated)}, information as at {longDate(auditStatus.source.data_cut_off)}.
+      {auditStatus.source.licence}. Three tables, one for each backstop:
+      {auditStatus.values.tables.map((table, index) => `${index ? (index === auditStatus.values.tables.length-1 ? ' and ' : ', ') : ''}${longDate(table.backstop)} (${table.financialYears.replace(/^Up/, 'financial years up')})`).join('')}.
+      {auditStatus.values.profiles.length} council profiles have a row on at least one table.</p>
+    <p data-audit-sources-note>{AUDIT_SOURCES_NOTE}</p>
     <h2>Section 114 original reports</h2>
     <p>{NOTICE_COVERAGE} Each entry is a historical document record.</p>
     <ul>{notices.register.records.map((record: NoticeRecord) => <li>

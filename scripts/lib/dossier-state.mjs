@@ -1,5 +1,6 @@
 import {loadComposition, COMPOSITION_PATHS, compositionAbsence} from './composition-data.mjs';
 import {loadNotices, NOTICE_PATHS, NOTICE_ABSENCE} from './section-114-data.mjs';
+import {loadAuditStatus, auditAbsence, AUDIT_STATUS_PATHS} from './audit-status.mjs';
 import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
@@ -9,7 +10,7 @@ export const ITEMS = ['D1', 'D3', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8'
 export const STATES = ['built', 'absent', 'out-of-scope'];
 // Tom's instruction for this gate authorises these defaults, not the held data.
 export const DECISIONS = {
-  audit: 'Audit identity method, measure and PSAA reuse',
+  audit: 'PSAA per body audit delivery data reuse, for profiles with no row on the MHCLG lists',
   bodies: 'Additional body types in the January scope',
   contracts: 'Contracts in the January scope',
 };
@@ -41,6 +42,8 @@ export function loadDossier(root = process.cwd(), today = new Intl.DateTimeForma
   const composition = loadComposition(root);
   const notices = loadNotices(root);
   for (const path of NOTICE_PATHS) read(path);
+  const audit = loadAuditStatus(root);
+  for (const path of AUDIT_STATUS_PATHS) read(path);
   for (const path of COMPOSITION_PATHS) read(path);
   const efs = read('data/efs/statements.json');
   const programmes = read('data/reorganisation/areas.json');
@@ -77,7 +80,9 @@ export function loadDossier(root = process.cwd(), today = new Intl.DateTimeForma
     add('C3', 'budget', 'Budget and reserves', hasBudget, ['id=budget'], ['data/budget/ra-2026-27.json'], 'No budget return is held for this council in the pinned release.');
     add('C3', 'efs', 'Exceptional Financial Support', hasEfs, ['id=exceptional-financial-support'], ['data/efs/statements.json'], 'This council is not in the pinned support list. This is not evidence that it has received no support.');
     add('C3', 'spending', 'Published payments', Boolean(spending.bodies[gss]?.generated), ['id=spending'], ['data/spending/aidoge-summaries.json'], 'No dated published payments summary is held for this profile.');
-    add('C3', 'audit', 'External audit status', false, ['id=audit-status'], [], 'Audit status is held pending an approved identity method and source reuse decision.', 'audit');
+    // Built only from pinned MHCLG values; otherwise the reason for its own cause,
+    // still held on PSAA reuse with Tom's 15 December default.
+    add('C3', 'audit', 'External audit status', audit.profiles.has(gss), ['id=audit-status', 'data-audit-entry'], AUDIT_STATUS_PATHS, auditAbsence(gss).reason, 'audit');
     add('C3', 'notices', 'Statutory financial notices', notices.profiles.has(gss), ['id=financial-notices', 'data-notice-id'], NOTICE_PATHS, NOTICE_ABSENCE);
     const programme = programmes.areas.some(area => area.councils.some(body => body.gss === gss && body.role !== 'county'));
     add('C4', 'programme', 'Local government programme documents', programme, ['id=reorganisation'], ['data/reorganisation/areas.json', 'data/reorganisation/sources.json'], 'No independently sourced programme panel is held for this profile.');

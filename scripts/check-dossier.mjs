@@ -1,5 +1,6 @@
 import {compositionChecks} from './lib/composition-checks.mjs';
 import {section114Checks} from './lib/section-114-checks.mjs';
+import {auditChecks} from './lib/audit-checks.mjs';
 import {readFileSync, readdirSync, mkdirSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {loadDossier, ITEMS, STATES} from './lib/dossier-state.mjs';
@@ -16,6 +17,7 @@ for (const profile of report.profiles) {
   const html = readFileSync(join('dist/councils', profile.slug, 'index.html'), 'utf8');
   failures.push(...compositionChecks(html, profile.gss).map(failure => `${profile.slug}: ${failure}`));
   failures.push(...section114Checks(html, profile.gss).map(failure => `${profile.slug}: ${failure}`));
+  failures.push(...auditChecks(html, profile.gss).map(failure => `${profile.slug}: ${failure}`));
   failures.push(...dossierCoverage(html, profile).map(failure => `${profile.slug}: ${failure}`));
   for (const item of ITEMS) counts[item][profile.items[item].state]++;
   for (const part of profile.parts) {
