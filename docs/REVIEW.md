@@ -59,3 +59,9 @@ the report and captures. Its separate comment reports findings for the reviewer
 to weigh; design findings do not block the PR. Comments can be updated on PRs
 from this repository; fork PRs retain their artifacts and job summaries because
 their token cannot write PR comments.
+
+Before opening a PR, or editing its description, check the description with
+`npm run check:pr-body -- body.md`, or `npm run check:pr-body -- --pr <number>`
+for an open PR. It reads both blocks with the hosted parser, fails where the
+number diff or design check could not read them, and with a local `dist`
+warns when a glob or capture path matches no built page.
