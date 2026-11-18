@@ -14,7 +14,8 @@ for (const [slug, count, starred] of [['gloucester', 3, false], ['middlesbrough'
     await expect(section.locator('[data-audit-answer]')).toHaveCount(count * 4);
     await expect(section.getByRole('link')).toHaveCount(count);
     await expect(section.locator('[data-audit-footnote]')).toHaveCount(starred ? 1 : 0);
-    await expect(section).toContainText('it is not an audit opinion');
+    await expect(section).toContainText('is not an audit opinion');
+    await expect(section).toContainText('as printed by the publisher');
     await expect(page.locator('[data-dossier-absence="audit"]')).toHaveCount(0);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth-document.documentElement.clientWidth);
     expect(overflow).toBeLessThanOrEqual(2);
