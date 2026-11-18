@@ -3,7 +3,7 @@
   "base_commit": "96df5d19cb386ab78dda76af8d6937e1070748d6",
   "profile_count": 296,
   "profile_file": "data/council-tax/england-2026-27.json",
-  "profile_sha256": "8e40c590b5870c5da83bebffbd36f890a7441b6d218ff1f460c003fb09b9223d",
+  "profile_sha256": "bec0f1dc77f7d9cc71096b33b94a173f4039308678a7b48bb54281b3943205eb",
   "rendered": false,
   "hash_algorithm": "SHA-256",
   "retention_rule": "Research only. Selected audit and notice extracts without personal names; original response hashes separately labelled. PSAA factual body labels and occurrence counts retained only for the name diagnostic, not per-body audit statuses or the original workbook. All composition datasets removed; provenance and findings remain in docs/DOSSIER-SOURCES-2026-11.md.",
@@ -26,17 +26,17 @@
     {
       "path": "docs/dossier-sources-2026-11/dry-run-audit-names.json",
       "bytes": 689951,
-      "sha256": "ade645ec557500a35d9fe06adcbff3ea3231de755e40c6e4c0c31c8f9d5131fc"
+      "sha256": "676f297a0481f15d579e74fd21f7c20e98bf09e1514e71954c7535ff05b075eb"
     },
     {
       "path": "docs/dossier-sources-2026-11/dry-run-audit.json",
       "bytes": 31222,
-      "sha256": "d6015ff64990a47ddeb56974ad5ee75e56e96cb7ccdd60d36f39fd6c92874e2c"
+      "sha256": "e6f5d2f1a14fc0ddc329f6c9cf70d092525dcec61035ed457bcf383b557bffbb"
     },
     {
       "path": "docs/dossier-sources-2026-11/dry-run-section-114.json",
-      "bytes": 28401,
-      "sha256": "f06fc29545ea3c7defc1012e7c2d6c61135da47cb9828fde70d76ef8a34217a2"
+      "bytes": 2893,
+      "sha256": "b01f74a78a47f1ef3013ad2c81f2cf78509bde7aad489df076a30978af4d2a24"
     },
     {
       "path": "docs/dossier-sources-2026-11/section-114-notices.json",
@@ -45,8 +45,8 @@
     },
     {
       "path": "docs/dossier-sources-2026-11/section-114-register-search.json",
-      "bytes": 1946,
-      "sha256": "0d89ad5f53a2d9d1b850ba3911309c50a83d35561b0140cffbd4b58a3f1cae63"
+      "bytes": 30922,
+      "sha256": "357a09dccf99570b4588fd8dad3ecb534f7cc594a00e77b4d3f9aa2b5401911f"
     }
   ],
   "original_responses": [
@@ -76,5 +76,38 @@
     }
   ],
   "registry_file": "data/registry/councils.json",
-  "registry_sha256": "1612175c6896119e35a908bc491c4ff76bd4e6e44e5a0d621d6557e5bcb98baf"
+  "registry_sha256": "92aaf1637f58501fdf1bee272d72923e2b49249f428fe53259175ba6727d4f1d",
+  "input_repins": [
+    {
+      "date": "2026-11-18",
+      "findings_changed": false,
+      "note": "Inputs repinned without changing any research finding. The generated dry runs dry-run-audit.json and dry-run-audit-names.json were reproduced and differ only in the input hashes they record.",
+      "files": [
+        {
+          "path": "docs/dossier-sources-2026-11/dry-run-section-114.json",
+          "from_sha256": "f06fc29545ea3c7defc1012e7c2d6c61135da47cb9828fde70d76ef8a34217a2",
+          "to_sha256": "b01f74a78a47f1ef3013ad2c81f2cf78509bde7aad489df076a30978af4d2a24",
+          "reason": "Updated by hand in PR 68 (37cb4a4) to record the pinned section 114 register. Hand maintained from then; the dry run verifies its hash and no longer regenerates it."
+        },
+        {
+          "path": "docs/dossier-sources-2026-11/section-114-register-search.json",
+          "from_sha256": "0d89ad5f53a2d9d1b850ba3911309c50a83d35561b0140cffbd4b58a3f1cae63",
+          "to_sha256": "357a09dccf99570b4588fd8dad3ecb534f7cc594a00e77b4d3f9aa2b5401911f",
+          "reason": "Updated by hand in PR 68 (37cb4a4) to record the pinned section 114 register. Hand maintained from then; the dry run verifies its hash and no longer regenerates it."
+        },
+        {
+          "path": "data/council-tax/england-2026-27.json",
+          "from_sha256": "8e40c590b5870c5da83bebffbd36f890a7441b6d218ff1f460c003fb09b9223d",
+          "to_sha256": "bec0f1dc77f7d9cc71096b33b94a173f4039308678a7b48bb54281b3943205eb",
+          "reason": "Refreshed by PR 66 (c5de1bf). The only difference from the pinned file is the top level generated date, 2026-10-19 to 2026-11-18. The 296 profile codes, names and class codes the research reads are identical."
+        },
+        {
+          "path": "data/registry/councils.json",
+          "from_sha256": "1612175c6896119e35a908bc491c4ff76bd4e6e44e5a0d621d6557e5bcb98baf",
+          "to_sha256": "92aaf1637f58501fdf1bee272d72923e2b49249f428fe53259175ba6727d4f1d",
+          "reason": "Refreshed by PR 61 (af18fa2). The only difference from the pinned file is the short name of E07000112, Shepway to Folkestone and Hythe. The research reads gss and officialName only, and both are identical for all 296 profiles."
+        }
+      ]
+    }
+  ]
 }

@@ -8,10 +8,14 @@ const read = name => JSON.parse(readFileSync(`${root}/${name}`, 'utf8'));
 const sha = path => createHash('sha256').update(readFileSync(path)).digest('hex');
 const write = process.argv.includes('--write');
 const sourceFiles = ['audit-mhclg-tables.json', 'audit-psaa-inspection.json', 'audit-psaa-body-names.json',
-  'section-114-notices.json', 'section-114-register-search.json'];
-const outputFiles = ['dry-run-audit.json', 'dry-run-audit-names.json', 'dry-run-section-114.json'];
+  'section-114-notices.json'];
+// Updated by hand in PR 68 (18 November 2026) to record the pinned section 114
+// register. Pinned by hash and verified, never regenerated: --write must not
+// replace them with the older generated content. Repin them by hand.
+const handFiles = ['section-114-register-search.json', 'dry-run-section-114.json'];
+const outputFiles = ['dry-run-audit.json', 'dry-run-audit-names.json'];
 const manifest = read('manifest.json');
-const paths = sourceFiles.concat(outputFiles).map(name => `${root}/${name}`).sort();
+const paths = sourceFiles.concat(handFiles, outputFiles).map(name => `${root}/${name}`).sort();
 assert.deepEqual(manifest.files.map(f => f.path).sort(), paths, 'Unexpected manifest inventory');
 function verifyFile(f) {
   assert.equal(sha(f.path), f.sha256, `SHA-256 mismatch: ${f.path}`);
@@ -19,7 +23,7 @@ function verifyFile(f) {
 }
 // Even explicit regeneration verifies every pinned input first.
 for (const f of manifest.files) {
-  if (!write || sourceFiles.some(name => f.path === `${root}/${name}`)) verifyFile(f);
+  if (!write || !outputFiles.some(name => f.path === `${root}/${name}`)) verifyFile(f);
 }
 const save = (name, value) => {
   assert(outputFiles.includes(name));
@@ -65,17 +69,6 @@ for (const n of notices.notices) {
   assert(profiles[n.profile_gss]); assert.match(n.notice_date, /^\d{4}-\d{2}-\d{2}$/);
   assert(n.url.startsWith('https://')); assert.match(n.original_sha256, /^[a-f0-9]{64}$/);
 }
-const noticeCodes = new Set(notices.notices.map(n => n.profile_gss));
-save('dry-run-section-114.json', {...context,
-  source: 'section-114-notices.json', inspected_notice_documents: notices.notices.length,
-  native_code_joins: 0, manually_identified_profile_records: noticeCodes.size,
-  identity_rule: 'Body identities were reviewed against official council domains, then assigned the existing profile code. This is explicit editorial identity evidence, not a native GSS join.',
-  verified_documents: notices.notices.map(n => ({gss: n.profile_gss, council: n.council, date: n.notice_date, section: n.section, url: n.url})),
-  official_confirmation_leads: notices.official_confirmations_pending_notice.length,
-  profiles_without_an_inspected_notice_in_this_research: profileRows.filter(r => !noticeCodes.has(r.gss)),
-  absence_interpretation: 'No claim that remaining councils have never issued a notice. No inference from Exceptional Financial Support. No claim that a historic notice remains in force.',
-  build_ready: false, decision: 'Approve a non-exhaustive dated notice register and explicit body identity mapping; require original notice inspection for every added record.'});
-
 // Only these three changes are permitted. Preserve punctuation, spacing,
 // word order, prefixes, footnotes, body qualifiers and historic labels.
 const normalise = name => name.toLowerCase().replaceAll('&', 'and').replace(/ council$/, '');
@@ -174,7 +167,7 @@ if (process.argv.includes('--verify-psaa')) {
 
 if (write) {
   manifest.base_commit = context.base_commit;
-  manifest.files = manifest.files.map(f => sourceFiles.some(name => f.path === `${root}/${name}`) ? f :
+  manifest.files = manifest.files.map(f => !outputFiles.some(name => f.path === `${root}/${name}`) ? f :
     {...f, bytes: readFileSync(f.path).length, sha256: sha(f.path)});
   writeFileSync(`${root}/manifest.json`, `${JSON.stringify(manifest, null, 2)}\n`);
 }

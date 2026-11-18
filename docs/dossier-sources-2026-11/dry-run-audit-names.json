@@ -3,10 +3,10 @@
   "base_commit": "96df5d19cb386ab78dda76af8d6937e1070748d6",
   "profile_count": 296,
   "profile_file": "data/council-tax/england-2026-27.json",
-  "profile_sha256": "8e40c590b5870c5da83bebffbd36f890a7441b6d218ff1f460c003fb09b9223d",
+  "profile_sha256": "bec0f1dc77f7d9cc71096b33b94a173f4039308678a7b48bb54281b3943205eb",
   "rendered": false,
   "registry_file": "data/registry/councils.json",
-  "registry_sha256": "1612175c6896119e35a908bc491c4ff76bd4e6e44e5a0d621d6557e5bcb98baf",
+  "registry_sha256": "92aaf1637f58501fdf1bee272d72923e2b49249f428fe53259175ba6727d4f1d",
   "registry_name_field": "officialName",
   "registry_name_provenance": "Pinned GOV.UK Local Links Manager names in the registry refreshed by PR 58. No short names used.",
   "normalisation": [
