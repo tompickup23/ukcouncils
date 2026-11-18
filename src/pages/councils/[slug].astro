@@ -1,4 +1,5 @@
 ---
+import ProfileNotices from '../../components/ProfileNotices.astro';
 /**
  * One page per council: the council tax answer, then the profile built from
  * committed data in src/lib/council-profile.ts (what the council is, its
@@ -185,6 +186,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     ...(reorganisationFor(council.gss) ? [{id: 'reorganisation', label: 'Local government reorganisation'}] : []),
     ...(profile.budget ? [{id: 'budget', label: 'Council budget'}] : []),
     ...(profile.budget?.county ? [{id: 'county-budget', label: 'County budget'}] : []),
+    ...(profile.notices.length ? [{id: 'financial-notices', label: 'Section 114 documents'}] : []),
     ...(profile.spending ? [{id: 'spending', label: 'Spending'}] : []),
     ...(profile.termDates ? [{id: 'school-holidays', label: 'School holidays'}] : []),
     ...(englandArea ? [{id: 'compared', label: 'England and area averages'}] : []),
@@ -204,6 +206,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   {profile.composition && <ProfileComposition view={profile.composition} name={name} />}
   <ReorganisationPanel gss={council.gss} />
   {profile.budget && <ProfileBudget view={profile.budget} gss={council.gss} />}
+  {profile.notices.length > 0 && <ProfileNotices records={profile.notices} />}
   <SpendingRecord gss={council.gss} name={name} />
 
   <SchoolHolidays name={name} term={profile.termDates} />

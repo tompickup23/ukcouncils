@@ -85,6 +85,8 @@ For example, MHCLG's `Basildon Borough Council *` stays unmatched: the asterisk 
 
 ## 2. Section 114 notices
 
+**Implementation update, 18 November 2026:** the 16 November decision is implemented in the [pinned register](../data/budget/section-114-2026-11-18.json). Eleven original reports on eight billing profiles have been inspected, including all nine leads below. The [current dry run](dossier-sources-2026-11/dry-run-section-114.json), [follow-up search log](dossier-sources-2026-11/section-114-register-search.json) and [register note](DOSSIER-GATE.md#original-notice-register) supersede the decision request and two-record coverage in the 15 November research below. Eight hashes are obtained; three binary downloads remain blocked with null hashes. The research below is retained as the original search record.
+
 ### Register search and verified documents
 
 No maintained official national notice register was located in the GOV.UK, MHCLG, Parliament and council-site searches recorded in `section-114-register-search.json`. This is a bounded search finding, not proof that no register exists. The [House of Commons Library briefing, Local authority financial resilience](https://commonslibrary.parliament.uk/research-briefings/cbp-8520/), **15 May 2025**, contains a historical table and separate discussion of subsection 2 notices. It is an official research publication, not a continuously maintained exhaustive register.

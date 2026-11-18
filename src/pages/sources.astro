@@ -1,4 +1,5 @@
 ---
+import {notices, noticeDate, noticeLocator, NOTICE_COVERAGE, type NoticeRecord} from '../lib/section-114';
 import { budget, budgetYear } from "../lib/budget";
 import {reorganisationSources, reorganisationData} from '../lib/reorganisation';
 import { population } from "../lib/population";
@@ -74,6 +75,13 @@ const registry = loadRegistry();
     <p><a href={collection.source.url}>{collection.source.title}</a>, {collection.source.publisher},
       published {longDate(collection.source.published)}, revised {longDate(collection.source.revised)}.
       Table 9a, QRC4 lines 1, 4, 5, 20, 23 and 24. {collection.source.licence}.</p>
+    <h2>Section 114 original reports</h2>
+    <p>{NOTICE_COVERAGE} Each entry is a historical document record.</p>
+    <ul>{notices.register.records.map((record: NoticeRecord) => <li>
+      <a href={record.url}>{record.council}, report under section {record.provision} of the {record.act}</a>,
+      issued {noticeDate(record.notice_date)}, {noticeLocator(record)}. Retrieved {noticeDate(record.retrieved)}.
+    </li>)}</ul>
+    <p>{notices.register.licence}</p>
     <h2>Seats by party and control</h2>
     <p><a href={composition.source.url}>{composition.source.publisher}, {composition.source.title}</a>,
       snapshot retrieved {snapshotDate}; compiled by a third party, not an official council return.

@@ -1,0 +1,17 @@
+---
+import SourceLine from './SourceLine.astro';
+import {noticeLine, noticeSource, NOTICE_COVERAGE, type NoticeRecord} from '../lib/section-114';
+interface Props {records: NoticeRecord[]}
+const {records} = Astro.props;
+---
+<section class="section" id="financial-notices" data-profile-section="financial-notices" aria-labelledby="financial-notices-heading">
+  <h2 id="financial-notices-heading">Section 114 documents</h2>
+  <p>{NOTICE_COVERAGE}</p>
+  <ul>
+    {records.map(record => <li data-notice-id={record.id}>
+      <p data-notice-line>{noticeLine(record)}</p>
+      <SourceLine source={noticeSource(record)} />
+      <p class="caveat">Historical document record.</p>
+    </li>)}
+  </ul>
+</section>

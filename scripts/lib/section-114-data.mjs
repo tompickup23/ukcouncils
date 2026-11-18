@@ -84,3 +84,5 @@ export function loadNotices(root = process.cwd()) {
 export const noticeDate = iso => new Intl.DateTimeFormat('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'}).format(new Date(`${iso}T00:00:00Z`));
 export const noticeLocator = row => `${row.locator.pages.length === 1 ? 'Page' : 'Pages'} ${row.locator.pages.join(', ')}${row.locator.paragraphs.length ? `; ${row.locator.paragraphs.length === 1 ? 'paragraph' : 'paragraphs'} ${row.locator.paragraphs.join(', ')}` : ''}`;
 export const noticeLine = row => `${noticeDate(row.notice_date)}: report under section ${row.provision} of the ${row.act}.`;
+export const noticeSource = row => ({publisher: row.council, title: `report under section ${row.provision} of the ${row.act}`,
+  url: row.url, table: `${noticeLocator(row)}; issued ${noticeDate(row.notice_date)}; retrieved ${noticeDate(row.retrieved)}`});

@@ -2,7 +2,9 @@ import {describe, it, expect} from 'vitest';
 import {readFileSync, mkdtempSync, mkdirSync, writeFileSync, rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join, dirname} from 'node:path';
-import {loadNotices, validateNotices, NOTICE_PATHS} from '../scripts/lib/section-114-data.mjs';
+import {loadNotices, validateNotices, NOTICE_PATHS, NOTICE_COVERAGE, NOTICE_ABSENCE, noticeLine, noticeSource} from '../scripts/lib/section-114-data.mjs';
+import {section114Checks} from '../scripts/lib/section-114-checks.mjs';
+import {loadDossier} from '../scripts/lib/dossier-state.mjs';
 
 const {register, profiles} = loadNotices();
 describe('original notice register admission', () => {
@@ -57,5 +59,66 @@ describe('original notice register admission', () => {
       put(NOTICE_PATHS[0], JSON.stringify(manifest));
       expect(() => loadNotices(root)).toThrow();
     } finally {rmSync(root, {recursive: true, force: true});}
+  });
+});
+
+const fixture = (gss = 'E08000025') => {
+  const rows = profiles.get(gss) ?? [];
+  const citation = (row: any) => {const s = noticeSource(row); return `<a href="${s.url}">${s.publisher}, ${s.title}</a>, ${s.table}.`;};
+  return `<main>${rows.length ? `<section id="financial-notices"><h2>Section 114 documents</h2><p>${NOTICE_COVERAGE}</p><ul>${rows.map((row: any) =>
+    `<li data-notice-id="${row.id}"><p data-notice-line>${noticeLine(row)}</p><p data-citation-record='${JSON.stringify(noticeSource(row))}'>Source: ${citation(row)}</p><p>Historical document record.</p></li>`).join('')}</ul></section><ul data-profile-sources>${rows.map((row: any) => `<li data-citation-entry="${row.id}">${citation(row)}</li>`).join('')}</ul>`
+    : `<li data-dossier-absence="notices"><strong>Statutory financial notices:</strong> ${NOTICE_ABSENCE}</li>`}</main>`;
+};
+
+describe('section 114 built page guard', () => {
+  it('checks every admitted profile and the single true reason on all other profiles', () => {
+    const dossier = loadDossier(process.cwd(), '2026-11-18');
+    for (const profile of dossier.profiles) {
+      const part = profile.parts.find(part => part.key === 'notices')!;
+      expect(section114Checks(fixture(profile.gss), profile.gss), profile.slug).toEqual([]);
+      expect(part.state).toBe(profiles.has(profile.gss) ? 'built' : 'absent');
+      expect(part.reason).toBe(profiles.has(profile.gss) ? null : NOTICE_ABSENCE);
+      expect(part.decision).toBeNull();
+    }
+  });
+  it('fails on dates, provisions, locators, missing records, duplicate records and wrong council links', () => {
+    for (const [before, after] of [
+      ['5 September 2023', '6 September 2023'], ['section 114 (2)', 'section 114 (3)'],
+      ['Page 1', 'Page 2'], ['Historical document record.', 'Current document record.'],
+      ['www.birmingham.gov.uk', 'www.slough.gov.uk'], ['data-notice-id', 'data-unused'],
+      ['<section id="financial-notices">', '<section hidden id="financial-notices">'],
+      [NOTICE_COVERAGE, ''],
+    ]) expect(section114Checks(fixture().replace(before, after), 'E08000025')).not.toEqual([]);
+    expect(section114Checks(fixture().replace('</ul></section>', '<li data-notice-id="extra">Extra document</li></ul></section>'), 'E08000025')).toContain('Notice presence differs from pinned records');
+    expect(section114Checks('<main></main>', 'E08000025')).toContain('Notice presence differs from pinned records');
+  });
+  it('rejects a notice on a profile without a pinned record, even with its marker removed', () => {
+    expect(section114Checks(fixture(), 'E07000117')).toContain('Notice presence differs from pinned records');
+    const text = '<p>5 September 2023: report under section 114 (3) of the Local Government Finance Act 1988.</p>';
+    expect(section114Checks(fixture('E07000117') + text, 'E07000117')).toContain('Notice claim outside pinned record or exact absence wording');
+  });
+  it('rejects negative claims anywhere, including metadata and extra text inside permitted nodes', () => {
+    for (const claim of ['No notice exists.', 'No section 114 notice was issued.', 'The council has never issued a notice.', 'Section 114: none issued.', 'No statutory financial report exists.']) {
+      for (const gss of ['E07000117', 'E08000025']) {
+        expect(section114Checks(fixture(gss) + `<p>${claim}</p>`, gss)).not.toEqual([]);
+        expect(section114Checks(`<meta name="description" content="${claim}">` + fixture(gss), gss)).not.toEqual([]);
+        expect(section114Checks(fixture(gss).replace('</li>', `${claim}</li>`), gss)).not.toEqual([]);
+      }
+    }
+  });
+  it('rejects a missing, false, hidden or duplicate absence explanation', () => {
+    const html = fixture('E07000117');
+    for (const altered of [html.replace(NOTICE_ABSENCE, 'Original download blocked.'), html.replace('<li ', '<li hidden '), html.replace('<li ', '<li aria-hidden="true" '), html.replace(NOTICE_ABSENCE, ''), html + html]) {
+      expect(section114Checks(altered, 'E07000117')).not.toEqual([]);
+    }
+  });
+  it('allows an exact existing election citation without exempting its surrounding prose', () => {
+    const elections = JSON.parse(readFileSync('data/elections/next-elections.json', 'utf8')).councils;
+    for (const [gss, row] of Object.entries(elections) as [string, {sourceLabel: string; sourceUrl: string}][]) {
+      if (!/notices/i.test(row.sourceLabel)) continue;
+      const link = `<p><a href="${row.sourceUrl}">${row.sourceLabel}</a></p>`;
+      expect(section114Checks(fixture(gss) + link, gss)).toEqual([]);
+      expect(section114Checks(fixture(gss) + link.replace('</p>', 'No notice exists.</p>'), gss)).not.toEqual([]);
+    }
   });
 });

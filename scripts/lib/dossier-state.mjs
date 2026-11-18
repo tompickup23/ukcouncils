@@ -1,4 +1,5 @@
 import {loadComposition, COMPOSITION_PATHS, compositionAbsence} from './composition-data.mjs';
+import {loadNotices, NOTICE_PATHS, NOTICE_ABSENCE} from './section-114-data.mjs';
 import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
@@ -9,7 +10,6 @@ export const STATES = ['built', 'absent', 'out-of-scope'];
 // Tom's instruction for this gate authorises these defaults, not the held data.
 export const DECISIONS = {
   audit: 'Audit identity method, measure and PSAA reuse',
-  notices: 'Non-exhaustive original statutory notice register',
   bodies: 'Additional body types in the January scope',
   contracts: 'Contracts in the January scope',
 };
@@ -39,6 +39,8 @@ export function loadDossier(root = process.cwd(), today = new Intl.DateTimeForma
   const collection = read('data/collection/collection-rates-2025-26.json');
   const elections = read('data/elections/next-elections.json');
   const composition = loadComposition(root);
+  const notices = loadNotices(root);
+  for (const path of NOTICE_PATHS) read(path);
   for (const path of COMPOSITION_PATHS) read(path);
   const efs = read('data/efs/statements.json');
   const programmes = read('data/reorganisation/areas.json');
@@ -76,7 +78,7 @@ export function loadDossier(root = process.cwd(), today = new Intl.DateTimeForma
     add('C3', 'efs', 'Exceptional Financial Support', hasEfs, ['id=exceptional-financial-support'], ['data/efs/statements.json'], 'This council is not in the pinned support list. This is not evidence that it has received no support.');
     add('C3', 'spending', 'Published payments', Boolean(spending.bodies[gss]?.generated), ['id=spending'], ['data/spending/aidoge-summaries.json'], 'No dated published payments summary is held for this profile.');
     add('C3', 'audit', 'External audit status', false, ['id=audit-status'], [], 'Audit status is held pending an approved identity method and source reuse decision.', 'audit');
-    add('C3', 'notices', 'Statutory financial notices', false, ['id=financial-notices'], [], 'Statutory financial notices are held pending a decision on an original-document register. No negative status is inferred.', 'notices');
+    add('C3', 'notices', 'Statutory financial notices', notices.profiles.has(gss), ['id=financial-notices', 'data-notice-id'], NOTICE_PATHS, NOTICE_ABSENCE);
     const programme = programmes.areas.some(area => area.councils.some(body => body.gss === gss && body.role !== 'county'));
     add('C4', 'programme', 'Local government programme documents', programme, ['id=reorganisation'], ['data/reorganisation/areas.json', 'data/reorganisation/sources.json'], 'No independently sourced programme panel is held for this profile.');
     // The withdrawn registry field is never evidence for an independent panel.

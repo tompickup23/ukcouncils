@@ -54,6 +54,7 @@ const MANIFEST = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", "
 const FEED = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", MANIFEST.file), "utf-8"));
 const CURRENT = loadYear(CURRENT_YEAR);
 const COMPOSITION = JSON.parse(readFileSync(join(ROOT, "data/elections/composition-review-2026-11-16.json"), "utf8"));
+const NOTICES = JSON.parse(readFileSync(join(ROOT, "data/budget/section-114-2026-11-18.json"), "utf8"));
 
 /** The sections a council's data supports, read from the raw files, not through the reader. */
 function expectedSections(gss: string, parentGss: string | null): string[] {
@@ -63,6 +64,7 @@ function expectedSections(gss: string, parentGss: string | null): string[] {
     about: true,
     services: true,
     budget: budget.councils[gss]?.status === 'available',
+    "financial-notices": NOTICES.records.some((row: {gss: string}) => row.gss === gss),
     collection: Boolean(collection.councils[gss]),
     elections: Boolean(elections.councils[gss]),
     composition: COMPOSITION.profiles.some((row: {gss: string; seatsAdmitted: boolean}) => row.gss === gss && row.seatsAdmitted),

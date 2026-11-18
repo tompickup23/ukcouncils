@@ -1,4 +1,5 @@
 import {compositionChecks, compositionFieldLeaks} from './lib/composition-checks.mjs';
+import {section114Checks} from './lib/section-114-checks.mjs';
 import {loadDossier} from './lib/dossier-state.mjs';
 import {reorganisationChecks} from './lib/reorganisation-checks.mjs';
 import { budgetChecks } from './lib/budget-checks.mjs';
@@ -108,6 +109,7 @@ for (const path of files(DIST)) {
     await setImmediate();
     const council = dossierBySlug.get(councilSlug);
     if (!council) throw new Error(`Unknown dossier council ${councilSlug}`);
+    failures.push(...section114Checks(text, council.gss).map(error => `${error} on ${rel(path)}`));
     const row = dossierBudget.councils[council.gss];
     const total = row?.values.servicetot;
     const headline = row?.status === 'available' && total != null && total !== 0
