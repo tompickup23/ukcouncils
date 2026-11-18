@@ -23,7 +23,9 @@ const AUDIT_PATTERNS = [
   /\baudit(?:s|ed|or|ors|ing)?\b/i,
   /\bPSAA\b|Public Sector Audit Appointments/i,
   /\bbackstop\b|non[\s-]?compliance/i,
-  /\b(?:draft|statement of|unaudited)\s+accounts?\b/i,
+  // Plural only: the singular is in the budget line General Fund Revenue Account on 287 profiles.
+  /\baccounts\b/i,
+  /\bopinions?\b/i,
 ];
 export const mentionsAudit = value => AUDIT_PATTERNS.some(pattern => pattern.test(value));
 const UNREAD_ATTRIBUTES = new Set(['href', 'src', 'srcset', 'cite', 'action', 'class', 'id', 'style', 'integrity', 'for', 'aria-labelledby', 'aria-describedby', 'aria-controls']);

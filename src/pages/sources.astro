@@ -1,6 +1,6 @@
 ---
 import {notices, noticeDate, noticeLocator, NOTICE_COVERAGE, type NoticeRecord} from '../lib/section-114';
-import {auditStatus} from '../lib/audit';
+import {auditStatus, AUDIT_SOURCES_NOTE} from '../lib/audit';
 import { budget, budgetYear } from "../lib/budget";
 import {reorganisationSources, reorganisationData} from '../lib/reorganisation';
 import { population } from "../lib/population";
@@ -82,11 +82,7 @@ const registry = loadRegistry();
       {auditStatus.source.licence}. Three tables, one for each backstop:
       {auditStatus.values.tables.map((table, index) => `${index ? (index === auditStatus.values.tables.length-1 ? ' and ' : ', ') : ''}${longDate(table.backstop)} (${table.financialYears.replace(/^Up/, 'financial years up')})`).join('')}.
       {auditStatus.values.profiles.length} council profiles have a row on at least one table.</p>
-    <p>These are lists of bodies that did not publish audited accounts by a backstop date, not a census of every body.
-      Each answer is shown as printed and responds to the dated question in its column heading; it is not an audit opinion.
-      The appointed audit firm column is not shown. A body name is matched to a council profile only by its official name after three fixed normalisations
-      or by a reviewed official source; predecessor, pension fund and other bodies are not attached to a present council.
-      A council with no row has a stated reason on its profile, and no statement is made about its audits.</p>
+    <p data-audit-sources-note>{AUDIT_SOURCES_NOTE}</p>
     <h2>Section 114 original reports</h2>
     <p>{NOTICE_COVERAGE} Each entry is a historical document record.</p>
     <ul>{notices.register.records.map((record: NoticeRecord) => <li>

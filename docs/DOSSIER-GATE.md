@@ -46,7 +46,7 @@ D1's eleven partial profiles are the nine without a budget return plus Barnsley 
 | Control | 129 | 167 | Unsupported compiler labels held; no inference from totals |
 | EFS | 51 | 245 | Not in the pinned list; no negative inference |
 | Published payments | 234 | 62 | No dated summary held |
-| Audit status | 79 | 217 | No row on the MHCLG lists 215; predecessor row only, North Yorkshire 1; pension fund row only, Merton 1. PSAA per body data reuse held |
+| Audit status | 79 | 217 | No row on the MHCLG lists 215; row under its former name only, North Yorkshire 1; pension fund row only, Merton 1. PSAA per body data reuse held |
 | Section 114 original notices | 8 | 288 | Eleven inspected originals; non-exhaustive register, no negative inference |
 | Independent programme panels | 184 | 112 | No independently sourced panel held |
 | School holidays | 287 | 9 | No publishable calendar in the pinned snapshot |

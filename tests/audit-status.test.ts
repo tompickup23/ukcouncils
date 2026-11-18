@@ -1,7 +1,8 @@
 import {describe, it, expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {loadAuditCrosswalk} from '../scripts/lib/audit-crosswalk.mjs';
-import {loadAuditStatus, auditAbsence, auditLine, auditAnswers, auditSource, auditFootnote, AUDIT_ABSENCE, AUDIT_ABSENCE_CAUSES, AUDIT_HEADING, AUDIT_COVERAGE} from '../scripts/lib/audit-status.mjs';
+import {loadAuditStatus, auditAbsence, auditLine, auditAnswers, auditSource, auditFootnote, AUDIT_ABSENCE, AUDIT_ABSENCE_CAUSES, AUDIT_HEADING, AUDIT_COVERAGE, AUDIT_SOURCES_NOTE} from '../scripts/lib/audit-status.mjs';
+import {existsSync} from 'node:fs';
 import {auditChecks, firmChecks, mentionsAudit, auditFirmNames} from '../scripts/lib/audit-checks.mjs';
 import {loadDossier} from '../scripts/lib/dossier-state.mjs';
 
@@ -34,7 +35,7 @@ describe('audit status dossier state', () => {
       expect(part.reason).toBe(entries.length ? null : auditAbsence(profile.gss).reason);
       expect(auditChecks(fixture(profile.gss), profile.gss), profile.slug).toEqual([]);
     }
-    expect(counts).toEqual({built: 79, 'no-row': 215, predecessor: 1, 'pension-fund': 1});
+    expect(counts).toEqual({built: 79, 'no-row': 215, 'former-name': 1, 'pension-fund': 1});
   }, 30000);
   it('uses the no-row reason only where no crosswalk label of any kind names the profile', () => {
     const labelled = new Set(crosswalk.profiles.map((row: Json) => row.gss));
@@ -43,13 +44,14 @@ describe('audit status dossier state', () => {
       expect(auditAbsence(profile.gss).reason === AUDIT_ABSENCE['no-row'], profile.slug).toBe(!(profile.gss in AUDIT_ABSENCE_CAUSES));
     }
   });
-  it('names the North Yorkshire predecessor as printed, on the 13 December 2024 list, without its values', () => {
+  it('says only what is printed for North Yorkshire: a row under its former name, not attached', () => {
     const {cause, reason} = auditAbsence(NORTH_YORKSHIRE);
-    expect(cause).toBe('predecessor');
+    expect(cause).toBe('former-name');
     const row = crosswalk.unassigned.find((item: Json) => item.label === 'North Yorkshire County Council')!;
     expect(row.occurrences).toEqual([{backstop: '2024-12-13', row: 44}]);
-    expect(reason).toContain('No row for the present council is held.');
-    expect(reason).toContain('A predecessor body, North Yorkshire County Council, has a row on the list for the 13 December 2024 backstop');
+    expect(reason).toContain("The list for the 13 December 2024 backstop has a row printed as North Yorkshire County Council, the council's name before 1 April 2023. That row is not shown here.");
+    // The county council continued under a new name (SI 2022/328), so neither claim is true.
+    expect(reason).not.toMatch(/predecessor|No row for the present council/);
     expect(status.profiles.has(NORTH_YORKSHIRE)).toBe(false);
     for (const answer of research.tables[1].rows[44].slice(1)) if (/\d/.test(answer)) expect(reason).not.toContain(answer);
   });
@@ -68,10 +70,11 @@ describe('audit status dossier state', () => {
   });
   it('keeps every absence reason free of a positive or negative statement about audits', () => {
     const verdicts = /\b(?:failed|late|behind|overdue|clean|qualified|unqualified|delayed|on time|up to date|compliant|disclaim\w*|modified)\b/i;
-    for (const reason of [AUDIT_ABSENCE['no-row'], AUDIT_ABSENCE.predecessor('North Yorkshire County Council'), AUDIT_ABSENCE['pension-fund']]) {
+    for (const reason of [AUDIT_ABSENCE['no-row'], AUDIT_ABSENCE['former-name']('North Yorkshire County Council'), AUDIT_ABSENCE['pension-fund']]) {
       expect(reason).not.toMatch(verdicts);
       expect(reason).toContain('PSAA');
       expect(reason).toMatch(/not a statement about (?:its|this council's) audits/);
+      expect(reason).not.toMatch(/predecessor/);
     }
     for (const text of [AUDIT_COVERAGE, auditFootnote()]) expect(text).not.toMatch(/\b(?:failed|late|behind|overdue)\b/i);
   });
@@ -103,7 +106,7 @@ describe('audit status built page guard', () => {
     expect(auditChecks(fixture(NORTH_YORKSHIRE) + '<p>Draft accounts published by 16 January 2025? no</p>', NORTH_YORKSHIRE)).not.toEqual([]);
   });
   it('rejects any positive or negative audit statement on a profile without a row, including metadata', () => {
-    for (const claim of ['Its audit is up to date.', 'The accounts were audited on time.', 'This council missed the backstop.', 'Audited accounts: none outstanding.', 'No PSAA concerns.', 'Its statement of accounts was signed off.', 'Draft accounts published.']) {
+    for (const claim of ['Its audit is up to date.', 'The accounts were audited on time.', 'This council missed the backstop.', 'Audited accounts: none outstanding.', 'No PSAA concerns.', 'Its statement of accounts was signed off.', 'Draft accounts published.', 'Opinion published on time.', 'Its accounts were signed off.']) {
       for (const gss of [BURNLEY, NORTH_YORKSHIRE, MERTON]) {
         expect(auditChecks(fixture(gss) + `<p>${claim}</p>`, gss), claim).not.toEqual([]);
         expect(auditChecks(`<meta name="description" content="${claim}">` + fixture(gss), gss), claim).not.toEqual([]);
@@ -152,8 +155,22 @@ describe('audit status built page guard', () => {
     expect(auditChecks(fixture('E07000124') + record({table: 'audited on time'}), 'E07000124')).not.toEqual([]);
     expect(auditChecks(fixture(BURNLEY) + link, BURNLEY)).not.toEqual([]);
   });
+  it('pins the intro and the sources catalogue paragraph word for word', () => {
+    expect(AUDIT_COVERAGE).toBe('MHCLG lists the bodies that did not publish all audited accounts by a backstop date. In its words, publication is "a joint endeavour between bodies and audit firms". The lines below are as printed by the publisher; this site does not correct or reconcile them. Each answer responds to the dated question beside it and is not an audit opinion.');
+    expect(AUDIT_COVERAGE).not.toMatch(/each backstop/);
+    expect(AUDIT_SOURCES_NOTE).toBe("These are lists of bodies that did not publish audited accounts by a backstop date, not a census of every body. Each answer is shown as printed by the publisher and responds to the dated question in its column heading; it is not an audit opinion. The appointed audit firm column is not shown. A body name is matched to a council profile only by its official name after three fixed normalisations or by a reviewed official source. Rows printed for a predecessor body, under a council's former name, for a pension fund or for another body are not attached to a present council. A council with no lines has a stated reason on its profile, and no statement is made about its audits.");
+    expect(readFileSync('src/pages/sources.astro', 'utf8')).toContain('<p data-audit-sources-note>{AUDIT_SOURCES_NOTE}</p>');
+    // The quoted phrase is printed on the pinned GOV.UK page as part of its first paragraph.
+    expect(AUDIT_COVERAGE).toContain('"a joint endeavour between bodies and audit firms"');
+  });
+  it.skipIf(!existsSync('dist/sources/index.html'))('prints the pinned paragraph once on the built sources page', () => {
+    const page = readFileSync('dist/sources/index.html', 'utf8');
+    const paragraphs = [...page.matchAll(/<p data-audit-sources-note[^>]*>([\s\S]*?)<\/p>/g)].map(match => match[1].replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim());
+    expect(paragraphs).toEqual([AUDIT_SOURCES_NOTE]);
+  });
   it('detects audit wording but not ordinary budget prose', () => {
     expect(mentionsAudit('The council budget for 2026/27.')).toBe(false);
-    for (const text of ['audit', 'audited accounts', 'the backstop date', 'PSAA', 'statement of accounts']) expect(mentionsAudit(text), text).toBe(true);
+    expect(mentionsAudit('Housing Services (General Fund Revenue Account [GFRA] only)')).toBe(false);
+    for (const text of ['audit', 'audited accounts', 'the backstop date', 'PSAA', 'statement of accounts', 'accounts', 'opinion']) expect(mentionsAudit(text), text).toBe(true);
   });
 });

@@ -1,6 +1,7 @@
 import {compositionChecks, compositionFieldLeaks} from './lib/composition-checks.mjs';
 import {section114Checks} from './lib/section-114-checks.mjs';
 import {auditChecks, firmChecks} from './lib/audit-checks.mjs';
+import {AUDIT_SOURCES_NOTE} from './lib/audit-status.mjs';
 import {loadDossier} from './lib/dossier-state.mjs';
 import {reorganisationChecks} from './lib/reorganisation-checks.mjs';
 import { budgetChecks } from './lib/budget-checks.mjs';
@@ -136,6 +137,8 @@ for (const path of files(DIST)) {
 
   if (rel(path) === "/findings/index.html" && !/<title>Findings: council tax data notes, England /.test(text)) failures.push("findings title does not carry the subject");
   if (rel(path) === "/sources/index.html") {
+    const notes = [...text.matchAll(/<p data-audit-sources-note[^>]*>([\s\S]*?)<\/p>/g)].map(match => match[1].replace(/&#39;/g, "'").replace(/\s+/g, " ").trim());
+    if (JSON.stringify(notes) !== JSON.stringify([AUDIT_SOURCES_NOTE])) failures.push("audit catalogue paragraph differs from the pinned text on /sources/index.html");
     for (const needle of ["AI DOGE", "UK School Holiday Dates", "Local Authority Districts (May 2026) Boundaries UK BSC", "Exceptional Financial Support for local authorities for 2026-27"]) {
       if (!text.includes(needle)) failures.push(`sources page does not name ${needle}`);
     }

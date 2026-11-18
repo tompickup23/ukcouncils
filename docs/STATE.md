@@ -4,7 +4,7 @@
 - **Source committed first:** MHCLG non-compliance lists, updated 26 March 2026, information as at 9 March 2026, OGL v3.0; still the latest GOV.UK edition on 18 November 2026. Answers pinned through the PR 67 crosswalk in `data/audit/values-2026-11-18.json`; no audit firm column or name.
 - **Built:** an External audit part on 79 profiles: 50 on the 13 December 2024 list, 32 on 28 February 2025, 19 on 27 February 2026. 59 on one table, 18 on two, Gloucester and Warrington on all three.
 - **Footnote:** four starred labels (Basildon, Runnymede, Warrington, Woking), not five as briefed; the printed footnote is pinned with its retrieval date.
-- **Absent with reasons:** 215 no row on the lists; North Yorkshire, predecessor row only; Merton, pension fund row only. No statement about any council's audits; PSAA per body data not shown, reuse not cleared.
+- **Absent with reasons:** 215 no row on the lists; North Yorkshire, a row under its name before 1 April 2023, not attached pending Tom; Merton, pension fund row only. No statement about any council's audits; PSAA per body data not shown, reuse not cleared.
 - **Cumberland:** built from its own rows on two tables; the Copeland row is not attached or mentioned.
 - **Guards:** strict fields, pins, crosswalk-only values, exact rendered lines and reasons, no audit wording elsewhere on a profile, no firm name on any page.
 - **C3 roll-up:** built on Croydon, Nottingham and Woking; absent on 293.
