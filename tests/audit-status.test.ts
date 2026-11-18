@@ -125,7 +125,7 @@ describe('audit status built page guard', () => {
       .filter((name: any) => !name.startsWith('No appointed auditor')) as string[];
     expect(firms.length).toBeGreaterThan(5);
     // Names come from the firm column at run time, so this file holds none of them.
-    const names = auditFirmNames();
+    const names: string[] = auditFirmNames();
     expect(names.length).toBeGreaterThan(firms.length);
     const encoded = firms.filter(name => name.includes('&')).map(name => name.replace('&', '&amp;'));
     expect(encoded.length).toBeGreaterThan(0);
