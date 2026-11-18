@@ -39,7 +39,7 @@
     },
     {
       "path": "data/council-tax/england-2026-27.json",
-      "sha256": "8e40c590b5870c5da83bebffbd36f890a7441b6d218ff1f460c003fb09b9223d"
+      "sha256": "bec0f1dc77f7d9cc71096b33b94a173f4039308678a7b48bb54281b3943205eb"
     },
     {
       "path": "data/registry/councils.json",
