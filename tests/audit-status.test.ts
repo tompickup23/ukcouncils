@@ -2,7 +2,7 @@ import {describe, it, expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {loadAuditCrosswalk} from '../scripts/lib/audit-crosswalk.mjs';
 import {loadAuditStatus, auditAbsence, auditLine, auditAnswers, auditSource, auditFootnote, AUDIT_ABSENCE, AUDIT_ABSENCE_CAUSES, AUDIT_HEADING, AUDIT_COVERAGE} from '../scripts/lib/audit-status.mjs';
-import {auditChecks, firmChecks, mentionsAudit} from '../scripts/lib/audit-checks.mjs';
+import {auditChecks, firmChecks, mentionsAudit, auditFirmNames} from '../scripts/lib/audit-checks.mjs';
 import {loadDossier} from '../scripts/lib/dossier-state.mjs';
 
 type Json = Record<string, any>;
@@ -124,12 +124,18 @@ describe('audit status built page guard', () => {
     const firms = [...new Set(research.tables.slice(1).flatMap((table: Json) => table.rows.slice(1).map((row: string[]) => row[2])))]
       .filter((name: any) => !name.startsWith('No appointed auditor')) as string[];
     expect(firms.length).toBeGreaterThan(5);
-    for (const firm of [...firms, 'Grant Thornton', 'Mazars', 'Ernst &amp; Young']) {
+    // Names come from the firm column at run time, so this file holds none of them.
+    const names = auditFirmNames();
+    expect(names.length).toBeGreaterThan(firms.length);
+    const encoded = firms.filter(name => name.includes('&')).map(name => name.replace('&', '&amp;'));
+    expect(encoded.length).toBeGreaterThan(0);
+    for (const firm of [...names, ...encoded]) {
       expect(firmChecks(`<main><p>Audited by ${firm}.</p></main>`), firm).toEqual(['Audit firm name on page']);
       expect(firmChecks(`<main><div data-share-text="${firm}"></div></main>`), firm).toEqual(['Audit firm name on page']);
       expect(auditChecks(fixture(GLOUCESTER).replace('</section>', `<p>${firm}</p></section>`), GLOUCESTER)).toContain('Audit firm name on page');
     }
-    expect(firmChecks('<main><a href="https://example.com/x+BDO/y" integrity="sha384-ab+BDO/cd">Budget</a></main>')).toEqual([]);
+    const short = names.reduce((a, b) => a.length <= b.length ? a : b);
+    expect(firmChecks(`<main><a href="https://example.com/x+${short}/y" integrity="sha384-ab+${short}/cd">Budget</a></main>`)).toEqual([]);
   });
   it('admits an exact existing election citation titled as accounts, and nothing beside it', () => {
     const elections = JSON.parse(readFileSync('data/elections/next-elections.json', 'utf8')).councils;

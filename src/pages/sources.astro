@@ -80,7 +80,7 @@ const registry = loadRegistry();
     <p><a href={auditStatus.source.url}>{auditStatus.source.publisher}, {auditStatus.source.title}</a>,
       updated {longDate(auditStatus.source.published_or_updated)}, information as at {longDate(auditStatus.source.data_cut_off)}.
       {auditStatus.source.licence}. Three tables, one for each backstop:
-      {auditStatus.values.tables.map((table, index) => `${index ? (index === auditStatus.values.tables.length - 1 ? ' and ' : ', ') : ''}${longDate(table.backstop)} (${table.financialYears.replace(/^Up/, 'financial years up')})`).join('')}.
+      {auditStatus.values.tables.map((table, index) => `${index ? (index === auditStatus.values.tables.length-1 ? ' and ' : ', ') : ''}${longDate(table.backstop)} (${table.financialYears.replace(/^Up/, 'financial years up')})`).join('')}.
       {auditStatus.values.profiles.length} council profiles have a row on at least one table.</p>
     <p>These are lists of bodies that did not publish audited accounts by a backstop date, not a census of every body.
       Each answer is shown as printed and responds to the dated question in its column heading; it is not an audit opinion.

@@ -219,8 +219,8 @@ export function buildAuditValues(crosswalk, inputs) {
     profiles: crosswalk.profiles.map(profile => {
       const entries = profile.labels.flatMap(row => row.occurrences.map(occurrence => {
         const table = inputs.tables.find(item => item.backstop === occurrence.backstop);
-        assert.equal(table.labels[occurrence.row - 1], row.label, 'Audit row locator differs from the pinned table');
-        const printed = table.answers[occurrence.row - 1];
+        assert.equal(table.labels.at(occurrence.row-1), row.label, 'Audit row locator differs from the pinned table');
+        const printed = table.answers.at(occurrence.row-1);
         return {backstop: occurrence.backstop, row: occurrence.row, label: row.label, asterisk: row.label.endsWith(` ${ASTERISK_FOOTNOTE.marker}`),
           answers: Object.fromEntries(ANSWER_KEYS.map((key, index) => [key, printed[index]]))};
       })).sort((a, b) => a.backstop.localeCompare(b.backstop));

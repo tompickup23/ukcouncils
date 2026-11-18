@@ -12,13 +12,13 @@ Every required part of D1, D3 and C1 to C9 on every billing profile must have ex
 2. **Absent with a stated reason (`absent`).** The content is absent and exactly one visible explanation appears in the profile's coverage section. Reason kinds are `no-source`, `not-published` or `held`. No source means no usable source in this site's pinned holdings; it does not assert that the council has published nothing. `not-published` requires specific publisher evidence and is not used for any current gap. Held means an unresolved source, identity, reuse or scope decision. A blank, hidden, duplicated or missing explanation fails.
 3. **Out of the January scope by Tom's decision (`out-of-scope`).** The content remains absent, the same visible explanation remains, and the report records the authority and effective date of the scope decision. The only encoded decisions are the defaults Tom authorised in this task, effective after the deadline below. A different decision requires a reviewed change to the state rules and, where applicable, pinned data. No live research is read by the build.
 
-An item with several parts is `absent` if any part is absent, otherwise `out-of-scope` if any part is excluded, otherwise `built`. This conservative roll-up does not hide built parts: their individual states and counts are reported separately. For example, C3 has built budgets but remains absent as a whole because audit remains held and the notice register is not exhaustive. Completion means every part is accounted for in one of the three states, not that every possible figure exists.
+An item with several parts is `absent` if any part is absent, otherwise `out-of-scope` if any part is excluded, otherwise `built`. This conservative roll-up does not hide built parts: their individual states and counts are reported separately. For example, C3 is built on only three profiles because most profiles have no row on the MHCLG audit lists, no EFS entry or no inspected notice, although their budgets are built. Completion means every part is accounted for in one of the three states, not that every possible figure exists.
 
 The build must fail if any expected profile or item is missing, any part has conflicting states, a built part is missing or unpinned, or an absent or excluded part has no visible reason. The current absence wording describes the site's holdings only. It does not name people, infer a financial status or turn an EFS omission into a negative claim.
 
 ## Item boundaries and measured counts
 
-Measured on 18 November 2026 against a clean full build of base `c5de1bf8def97b57af8b1d12f12e36e8abb37812`, using Node 22.23.4. Both builds contain 329 HTML pages and 296 billing profiles. The original notice register adds 11 historical document records on eight profiles. The other 288 profiles retain an explicit non-exhaustive register explanation. Composition remains at 294 party tables and 129 admitted control lines. The table records candidate states checked against the built content and explanations.
+Measured on 18 November 2026 against a clean full build of base `37cb4a4`, using Node 22.23.4. Both builds contain 329 HTML pages and 296 billing profiles. External audit lines from the MHCLG backstop lists render on 79 profiles; the other 217 keep a reason for their own cause. The original notice register has 11 historical document records on eight profiles; the other 288 profiles retain an explicit non-exhaustive register explanation. Composition remains at 294 party tables and 129 admitted control lines. The table records candidate states checked against the built content and explanations.
 
 | Item | Required parts | Built | Absent with reason | Out of scope |
 |---|---|---:|---:|---:|
@@ -26,7 +26,7 @@ Measured on 18 November 2026 against a clean full build of base `c5de1bf8def97b5
 | D3 | Processed source citations and bibliography, including summary first use | 296 | 0 | 0 |
 | C1 | Dossier shell, register and nearby and alike on each English billing profile | 296 | 0 | 0 |
 | C2 | Verified election schedule, seats by party and control as separate parts | 70 | 226 | 0 |
-| C3 | Budget and reserves, EFS, published payments, audit status and original statutory financial notices | 0 | 296 | 0 |
+| C3 | Budget and reserves, EFS, published payments, audit status and original statutory financial notices | 3 | 293 | 0 |
 | C4 | Independently sourced programme panel where held | 184 | 112 | 0 |
 | C5 | School calendar and reviewed council responsibilities | 287 | 9 | 0 |
 | C6 | Checked official service links | 272 | 24 | 0 |
@@ -46,7 +46,7 @@ D1's eleven partial profiles are the nine without a budget return plus Barnsley 
 | Control | 129 | 167 | Unsupported compiler labels held; no inference from totals |
 | EFS | 51 | 245 | Not in the pinned list; no negative inference |
 | Published payments | 234 | 62 | No dated summary held |
-| Audit status | 0 | 296 | Identity, measure and reuse decision held |
+| Audit status | 79 | 217 | No row on the MHCLG lists 215; predecessor row only, North Yorkshire 1; pension fund row only, Merton 1. PSAA per body data reuse held |
 | Section 114 original notices | 8 | 288 | Eleven inspected originals; non-exhaustive register, no negative inference |
 | Independent programme panels | 184 | 112 | No independently sourced panel held |
 | School holidays | 287 | 9 | No publishable calendar in the pinned snapshot |
@@ -66,7 +66,7 @@ The three remaining decisions have **15 December 2026** as their decide-by date.
 
 | Decision | What Tom must settle | Default from 16 December 2026 |
 |---|---|---|
-| Audit identity method | Accept or reject the measured official-name method, review the residual identities, select the measure and resolve PSAA reuse if needed. Research has no adopted crosswalk. | Audit status out of January scope; identity and reuse absence remains |
+| PSAA audit data reuse | The identity method and the MHCLG lists are adopted and render on 79 profiles. Decide whether per body PSAA audit delivery data is needed for the other 217, and clear its reuse terms if so. | The 217 audit absences move out of January scope with the same reasons; the 79 built lines are unaffected |
 | C7 scope | Decide which additional body types need profiles, with a suitable registry, routes and sources. | Additional body types out of January scope; existing English billing profiles remain the denominator |
 | C9 scope | Decide whether contracts are required for January, with a pinned figure, scope and date and verified live UK Public Contracts destinations. | Contracts out of January scope; contracts absence remains |
 
@@ -106,7 +106,7 @@ All other profiles have the same reason because the same fact holds for each: no
 
 ## Page text exceptions and verification
 
-All 296 billing profiles change: eight gain dated historical document lines and lose their notice absence reason; 288 replace the held-register explanation with the explicit non-exhaustive register explanation. The source catalogue gains the original report references. The measured numeric differences and the full list of allowed page paths are recorded in the draft PR. Council tax, budgets, seats, control, collection and other existing figures remain unchanged.
+In the external audit change, all 296 billing profiles change: 79 gain an External audit part, a contents link and one bibliography entry for each table, and lose the held audit reason; 217 replace the held audit reason with the reason for their own cause. The source catalogue gains the MHCLG publication. Earlier, the notice register added dated historical document lines on eight profiles and the non-exhaustive explanation on 288. The measured numeric differences and the full list of allowed page paths are recorded in the draft PR. Council tax, budgets, seats, control, collection and other existing figures remain unchanged.
 
 The [composition implementation record](COMPOSITION-SNAPSHOT-2026-11-16.md) remains the source of its decision and counts. The original notice checks compare actual dates, provisions, links, locators, citations and bibliography entries with the pinned records. They reject missing, additional, altered or hidden records, false absence explanations and any notice claim outside those checked rendering paths, including metadata.
 
@@ -197,7 +197,7 @@ Verification for this snapshot is recorded in the draft PR. The build and distri
 | county-durham | B | B | B | A | A | A | B | B | A | B | A |
 | coventry | A | B | B | A | A | A | B | B | A | B | A |
 | crawley | B | B | B | A | A | B | B | B | A | B | A |
-| croydon | B | B | B | A | A | A | B | B | A | B | A |
+| croydon | B | B | B | A | B | A | B | B | A | B | A |
 | cumberland | A | B | B | B | A | A | B | A | A | B | A |
 | dacorum | B | B | B | A | A | B | B | B | A | B | A |
 | darlington | B | B | B | A | A | A | B | B | A | B | A |
@@ -312,7 +312,7 @@ Verification for this snapshot is recorded in the draft PR. The build and distri
 | north-yorkshire | B | B | B | A | A | A | B | A | A | B | A |
 | northumberland | B | B | B | A | A | A | B | B | A | B | A |
 | norwich | B | B | B | A | A | B | B | B | A | B | A |
-| nottingham | B | B | B | B | A | B | B | B | A | B | A |
+| nottingham | B | B | B | B | B | B | B | B | A | B | A |
 | nuneaton-and-bedworth | B | B | B | A | A | B | B | B | A | B | A |
 | oadby-and-wigston | B | B | B | A | A | B | B | B | A | B | A |
 | oldham | B | B | B | A | A | A | B | B | A | B | A |
@@ -422,7 +422,7 @@ Verification for this snapshot is recorded in the draft PR. The build and distri
 | winchester | B | B | B | A | A | B | B | B | A | B | A |
 | windsor-and-maidenhead | B | B | B | A | A | A | B | B | A | B | A |
 | wirral | B | B | B | A | A | A | B | B | A | B | A |
-| woking | B | B | B | A | A | B | B | B | A | B | A |
+| woking | B | B | B | A | B | B | B | B | A | B | A |
 | wokingham | B | B | B | B | A | A | B | B | A | B | A |
 | wolverhampton | B | B | B | B | A | A | B | B | A | B | A |
 | worcester | B | B | B | A | A | B | B | B | A | B | A |
