@@ -3,7 +3,7 @@
   "base_commit": "96df5d19cb386ab78dda76af8d6937e1070748d6",
   "profile_count": 296,
   "profile_file": "data/council-tax/england-2026-27.json",
-  "profile_sha256": "8e40c590b5870c5da83bebffbd36f890a7441b6d218ff1f460c003fb09b9223d",
+  "profile_sha256": "bec0f1dc77f7d9cc71096b33b94a173f4039308678a7b48bb54281b3943205eb",
   "rendered": false,
   "join_rule": "Only an exact GSS or ONS code already present in a publisher row. No inferred codes, name joins or predecessor substitutions.",
   "mhclg": {

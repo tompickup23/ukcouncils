@@ -20,7 +20,8 @@
     "data:registry": "node scripts/build-registry.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "data:efs-check": "node scripts/check-efs-source.mjs",
-    "diff:numbers": "node scripts/diff-numbers.mjs"
+    "diff:numbers": "node scripts/diff-numbers.mjs",
+    "check:pr-body": "node scripts/check-pr-body.mjs"
   },
   "dependencies": {
     "@fontsource/source-sans-3": "^5.3.1",
