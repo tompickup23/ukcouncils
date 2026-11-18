@@ -3,7 +3,7 @@ import {readFileSync, writeFileSync, mkdtempSync, mkdirSync, rmSync} from 'node:
 import {createHash} from 'node:crypto';
 import {tmpdir} from 'node:os';
 import {dirname, join} from 'node:path';
-import {AUDIT_PATHS, INPUT_PATHS, loadAuditCrosswalk, normaliseAuditName, rebuildAuditCrosswalk} from '../scripts/lib/audit-crosswalk.mjs';
+import {AUDIT_PATHS, INPUT_PATHS, ANSWER_KEYS, ASTERISK_FOOTNOTE, loadAuditCrosswalk, normaliseAuditName, rebuildAuditCrosswalk} from '../scripts/lib/audit-crosswalk.mjs';
 
 const data = loadAuditCrosswalk();
 type Json = Record<string, any>;
@@ -128,4 +128,82 @@ describe('pinned MHCLG identity crosswalk', () => {
     rebuildAuditCrosswalk(root);
     for (const path of AUDIT_PATHS) expect(readFileSync(join(root, path), 'utf8')).toBe(readFileSync(path, 'utf8'));
   }));
+});
+
+describe('pinned MHCLG answers through the crosswalk', () => {
+  const values = data.values;
+  const research = JSON.parse(readFileSync(INPUT_PATHS[0], 'utf8'));
+  it('holds one entry for each crosswalk row and table, with answers exactly as printed', () => {
+    expect(values.profiles.map((row: Json) => row.gss)).toEqual(data.crosswalk.profiles.map((row: Json) => row.gss));
+    expect(values.profiles).toHaveLength(79);
+    expect(data.valuesDryRun.byTable.map((table: Json) => table.profilesWithLines)).toEqual([50, 32, 19]);
+    expect(data.valuesDryRun.profilesByTableCount.map((row: Json) => row.profiles)).toEqual([59, 18, 2]);
+    for (const profile of values.profiles) for (const entry of profile.entries) {
+      const table = research.tables[1 + values.tables.findIndex((item: Json) => item.backstop === entry.backstop)];
+      const printed = table.rows[entry.row];
+      expect(printed[0]).toBe(entry.label);
+      expect(ANSWER_KEYS.map(key => entry.answers[key])).toEqual([printed[1], printed[3], printed[4], printed[5]]);
+    }
+    expect(values.tables.map((table: Json) => table.questions.opinionDelivered)).toEqual([
+      'All audit opinions delivered by 13 December 2024?', 'Audit opinion delivered by 28 February 2025?', 'Audit opinion delivered by 27 February 2026?']);
+  });
+  it('never carries the appointed audit firm column or a firm name', () => {
+    const firms = new Set(research.tables.slice(1).flatMap((table: Json) => table.rows.map((row: string[]) => row[2])));
+    expect(firms.has('Appointed audit firm')).toBe(true);
+    for (const path of [AUDIT_PATHS[4], AUDIT_PATHS[5]]) {
+      const text = readFileSync(path, 'utf8');
+      for (const firm of firms) if (firm !== 'Appointed audit firm') expect(text.includes(firm as string), `${path}: ${firm}`).toBe(false);
+      expect(text).not.toMatch(/\bLLP\b|auditFirm|appointed auditor/i);
+    }
+  });
+  it('pins the asterisk footnote as printed and applies it only to the four starred labels', () => {
+    expect(values.footnote).toEqual(ASTERISK_FOOTNOTE);
+    expect(values.footnote.printed.startsWith('*These bodies')).toBe(true);
+    const starred = values.profiles.flatMap((profile: Json) => profile.entries.filter((entry: Json) => entry.asterisk).map((entry: Json) => entry.label));
+    expect(starred.sort()).toEqual(['Basildon Borough Council *', 'Runnymede Borough Council *', 'Warrington Borough Council *', 'Woking Borough Council *']);
+  });
+  it('keeps predecessor and pension rows off the present councils', () => {
+    const codes = values.profiles.map((row: Json) => row.gss);
+    expect(codes).not.toContain('E06000065');
+    expect(codes).not.toContain('E09000024');
+    const cumberland = values.profiles.find((row: Json) => row.gss === 'E06000063')!;
+    expect(cumberland.entries.map((entry: Json) => [entry.backstop, entry.label])).toEqual([['2025-02-28', 'Cumberland Council'], ['2026-02-27', 'Cumberland Council']]);
+  });
+  it('rejects a value for a profile without a crosswalk row, even after repinning', () => fixture((root, change) => {
+    change(AUDIT_PATHS[4], value => {value.profiles.push({...value.profiles[0], gss: 'E07000117', officialName: 'Burnley Borough Council'});}, true);
+    expect(() => loadAuditCrosswalk(root)).toThrow('Audit value for a profile without a crosswalk row');
+  }));
+  it('rejects unexpected fields at every level, including a firm field, after repinning', () => {
+    for (const target of ['root', 'footnote', 'table', 'questions', 'profile', 'entry', 'answers']) fixture((root, change) => {
+      change(AUDIT_PATHS[4], value => {
+        const entry = value.profiles[0].entries[0];
+        const obj = {root: value, footnote: value.footnote, table: value.tables[0], questions: value.tables[0].questions,
+          profile: value.profiles[0], entry, answers: entry.answers}[target]!;
+        obj.appointedAuditFirm = 'Excluded field';
+      }, true);
+      expect(() => loadAuditCrosswalk(root), target).toThrow('Unexpected audit fields');
+    });
+  });
+  it('rejects an altered answer, footnote or asterisk, and an unpinned values file', () => {
+    fixture((root, change) => {
+      change(AUDIT_PATHS[4], value => {value.profiles[0].entries[0].answers.opinionPublished = 'changed';}, true);
+      expect(() => loadAuditCrosswalk(root)).toThrow('Audit values do not reproduce');
+    });
+    fixture((root, change) => {
+      change(AUDIT_PATHS[4], value => {value.footnote.printed = 'Changed footnote';}, true);
+      expect(() => loadAuditCrosswalk(root)).toThrow('Audit footnote differs');
+    });
+    fixture((root, change) => {
+      change(AUDIT_PATHS[4], value => {value.profiles[0].entries[0].asterisk = true;}, true);
+      expect(() => loadAuditCrosswalk(root)).toThrow();
+    });
+    fixture((root, change) => {
+      change(AUDIT_PATHS[4], value => {value.profiles[0].entries[0].answers.draftAccounts = 'no';});
+      expect(() => loadAuditCrosswalk(root)).toThrow('Unpinned audit file');
+    });
+    fixture((root, change) => {
+      change(AUDIT_PATHS[5], value => {value.byTable[0].profilesWithLines++;}, true);
+      expect(() => loadAuditCrosswalk(root)).toThrow('Audit values dry run does not reproduce');
+    });
+  });
 });

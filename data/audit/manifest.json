@@ -58,6 +58,14 @@
     {
       "path": "data/audit/dry-run-2026-11-18.json",
       "sha256": "32a8b8785c0e29e75ca2a54fb2f52d0307f35611d0e7c0d896a440ef7a47ba52"
+    },
+    {
+      "path": "data/audit/values-2026-11-18.json",
+      "sha256": "71c22a9950044e07e7064efbf54f31198ea25a270aa627a0c5ac3edecae0e9ad"
+    },
+    {
+      "path": "data/audit/values-dry-run-2026-11-18.json",
+      "sha256": "195d342d86df7a2fd3d87ff45b047fdf4e8095164f82773e0a07174176ec9ad4"
     }
   ]
 }
