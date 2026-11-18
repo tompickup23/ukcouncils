@@ -1,3 +1,4 @@
+import {compositionChecks, compositionFieldLeaks} from './lib/composition-checks.mjs';
 import {loadDossier} from './lib/dossier-state.mjs';
 import {reorganisationChecks} from './lib/reorganisation-checks.mjs';
 import { budgetChecks } from './lib/budget-checks.mjs';
@@ -72,6 +73,7 @@ const efsBySlug = new Map(Object.entries(efs.authorities).filter(([, authority])
 for (const path of files(DIST)) {
   if (!/\.(html|xml|txt|json|js|css|svg|webmanifest)$|_headers$|_redirects$/.test(path)) continue;
   const text = readFileSync(path, "utf-8");
+  if (compositionFieldLeaks(text)) failures.push(`Held composition field in ${rel(path)}`);
   if (DASH.test(text)) failures.push(`dash in ${rel(path)}`);
   // The withdrawn Lancashire reorganisation note is held: see "Held data" in CLAUDE.md.
   for (const phrase of HELD_PHRASES) if (text.includes(phrase)) failures.push(`held reorganisation text "${phrase}" in ${rel(path)}`);
@@ -100,6 +102,7 @@ for (const path of files(DIST)) {
   }
 
   const councilSlug = /^\/councils\/([^/]+)\/index\.html$/.exec(rel(path))?.[1];
+  failures.push(...compositionChecks(text, councilSlug ? dossierBySlug.get(councilSlug)?.gss : null).map(error => `${error} on ${rel(path)}`));
   if (councilSlug) {
     failures.push(...citationErrors(text).map(error => `${error} on ${rel(path)}`));
     await setImmediate();

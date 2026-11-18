@@ -3,6 +3,7 @@ import { budget, budgetYear } from "../lib/budget";
 import {reorganisationSources, reorganisationData} from '../lib/reorganisation';
 import { population } from "../lib/population";
 import { collection } from "../lib/collection";
+import {composition, snapshotDate} from "../lib/composition";
 import { elections } from "../lib/elections";
 import {functionsSource} from "../lib/council-functions";
 import SourceLine from "../components/SourceLine.astro";
@@ -73,6 +74,14 @@ const registry = loadRegistry();
     <p><a href={collection.source.url}>{collection.source.title}</a>, {collection.source.publisher},
       published {longDate(collection.source.published)}, revised {longDate(collection.source.revised)}.
       Table 9a, QRC4 lines 1, 4, 5, 20, 23 and 24. {collection.source.licence}.</p>
+    <h2>Seats by party and control</h2>
+    <p><a href={composition.source.url}>{composition.source.publisher}, {composition.source.title}</a>,
+      snapshot retrieved {snapshotDate}; compiled by a third party, not an official council return.
+      <a href={composition.source.licenceUrl}>CC BY-SA 4.0</a> applies to the composition table only.
+      Other is the publisher's aggregate. The snapshot date is not a certified effective date for every council.</p>
+    <p>Only reconciling printed totals are shown. Control requires the compiler's field to pass the snapshot checks.
+      Unsupported control labels and conflicting records are held. City of London needs a chamber review;
+      Isles of Scilly has no source row.</p>
     <h2>Scheduled council elections</h2>
     <p><a href={`https://github.com/tompickup23/ukelections/blob/${elections.source.commit}/${elections.source.file}`}>{elections.source.publisher}, {elections.source.title}</a>,
       checked {longDate(elections.source.checked)}. {elections.source.method}</p>

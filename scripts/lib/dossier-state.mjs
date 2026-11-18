@@ -1,3 +1,4 @@
+import {loadComposition, COMPOSITION_PATHS, compositionAbsence} from './composition-data.mjs';
 import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
@@ -7,7 +8,6 @@ export const ITEMS = ['D1', 'D3', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8'
 export const STATES = ['built', 'absent', 'out-of-scope'];
 // Tom's instruction for this gate authorises these defaults, not the held data.
 export const DECISIONS = {
-  composition: 'Composition source and licence or dating rule',
   audit: 'Audit identity method, measure and PSAA reuse',
   notices: 'Non-exhaustive original statutory notice register',
   bodies: 'Additional body types in the January scope',
@@ -38,6 +38,8 @@ export function loadDossier(root = process.cwd(), today = new Intl.DateTimeForma
   const population = read('data/population/mye25-population.json');
   const collection = read('data/collection/collection-rates-2025-26.json');
   const elections = read('data/elections/next-elections.json');
+  const composition = loadComposition(root);
+  for (const path of COMPOSITION_PATHS) read(path);
   const efs = read('data/efs/statements.json');
   const programmes = read('data/reorganisation/areas.json');
   read('data/reorganisation/sources.json');
@@ -66,7 +68,10 @@ export function loadDossier(root = process.cwd(), today = new Intl.DateTimeForma
     add('D3', 'citations', 'Sources and citations', true, ['id=sources', 'data-citation-record'], ['data/council-tax/england-2026-27.json'], null);
     add('C1', 'profile', 'Council profile', true, ['id=about', 'id=similar', 'data-council-type'], ['data/registry/councils.json', 'data/council-tax/england-2026-27.json'], null);
     add('C2', 'elections', 'Scheduled elections', Boolean(elections.councils[gss]), ['id=elections'], ['data/elections/next-elections.json'], 'No verified election schedule is held for this profile.');
-    add('C2', 'composition', 'Seats by party and control', false, ['id=composition'], [], 'Seats by party and control are held pending a source decision.', 'composition');
+    const seats = composition.profiles.get(gss);
+    if (!seats || seats.slug !== council.slug) throw new Error(`Composition profile identity mismatch ${gss}`);
+    add('C2', 'composition', 'Seats by party', seats.seatsAdmitted, ['id=composition', 'data-composition-table'], COMPOSITION_PATHS, compositionAbsence(seats, 'seats'));
+    add('C2', 'control', 'Control', seats.controlAdmitted, ['data-composition-control'], COMPOSITION_PATHS, compositionAbsence(seats, 'control'));
     add('C3', 'budget', 'Budget and reserves', hasBudget, ['id=budget'], ['data/budget/ra-2026-27.json'], 'No budget return is held for this council in the pinned release.');
     add('C3', 'efs', 'Exceptional Financial Support', hasEfs, ['id=exceptional-financial-support'], ['data/efs/statements.json'], 'This council is not in the pinned support list. This is not evidence that it has received no support.');
     add('C3', 'spending', 'Published payments', Boolean(spending.bodies[gss]?.generated), ['id=spending'], ['data/spending/aidoge-summaries.json'], 'No dated published payments summary is held for this profile.');

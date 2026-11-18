@@ -30,27 +30,28 @@ describe('dossier completion states', () => {
     expect(dossierCoverage(fixture().replace('id="budget"', 'id="removed"'), profile)).toContain('Missing built dossier part budget');
   });
   it('rejects absent, blank, hidden, duplicated or misplaced explanations', () => {
-    const start = '<li data-dossier-absence="composition">';
-    const row = `${start}<strong>Seats by party and control:</strong> Seats by party and control are held pending a source decision.</li>`;
+    const start = '<li data-dossier-absence="control">';
+    const row = `${start}<strong>Control:</strong> ${profile.parts.find(part => part.key === 'control')!.reason}</li>`;
+    expect(fixture()).toContain(row);
     for (const replacement of ['', `${start}</li>`, row.replace('<li ', '<li hidden '), row + row]) {
-      expect(dossierCoverage(fixture().replace(row, replacement), profile)).toContain('Missing visible dossier reason composition');
+      expect(dossierCoverage(fixture().replace(row, replacement), profile)).toContain('Missing visible dossier reason control');
     }
-    expect(dossierCoverage(fixture().replace(row, '') + row, profile)).toContain('Missing visible dossier reason composition');
+    expect(dossierCoverage(fixture().replace(row, '') + row, profile)).toContain('Missing visible dossier reason control');
   });
   it('rejects both built and absent states and unpinned built content', () => {
-    expect(dossierCoverage(fixture().replace('</main>', '<section id="composition"></section></main>'), profile)).toContain('Absent dossier part has built content composition');
+    expect(dossierCoverage(fixture().replace('</main>', '<p data-composition-control></p></main>'), profile)).toContain('Absent dossier part has built content control');
     const changed = structuredClone(profile);
     changed.parts.find(part => part.key === 'budget')!.sources = [];
     expect(dossierCoverage(fixture(), changed)).toContain('Unpinned dossier source budget');
   });
   it('does not treat an open decision as a decision already taken', () => {
-    expect(decisionState('composition', '2026-12-15')).toBe('absent');
-    expect(decisionState('composition', '2026-12-16')).toBe('out-of-scope');
+    expect(decisionState('audit', '2026-12-15')).toBe('absent');
+    expect(decisionState('audit', '2026-12-16')).toBe('out-of-scope');
     const january = loadDossier(process.cwd(), '2027-01-15');
-    expect(january.profiles.every(row => row.parts.filter(part => part.state === 'out-of-scope').length === 5)).toBe(true);
+    expect(january.profiles.every(row => row.parts.filter(part => part.state === 'out-of-scope').length === 4)).toBe(true);
     const changed = structuredClone(january.profiles[0]);
-    changed.parts.find(part => part.key === 'composition')!.decision = null;
-    expect(dossierCoverage(fixture(changed), changed)).toContain('Missing Tom decision composition');
+    changed.parts.find(part => part.key === 'audit')!.decision = null;
+    expect(dossierCoverage(fixture(changed), changed)).toContain('Missing Tom decision audit');
   });
   it('keeps an absent input distinct from an absent official publication', () => {
     const missing = report.profiles.filter(row => row.parts.find(part => part.key === 'holidays')!.state === 'absent');

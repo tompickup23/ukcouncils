@@ -3,8 +3,8 @@
  * One page per council: the council tax answer, then the profile built from
  * committed data in src/lib/council-profile.ts (what the council is, its
  * spending record, Band D among councils of its type, the next school break, and one list of
- * sources). A section whose data is missing is absent, not blank. Seats,
- * control and last election dates remain held.
+ * sources). A section whose data is missing is absent, not blank.
+ * Composition uses only the pinned snapshot; last election dates remain held.
  */
 import ReorganisationPanel from "../../components/ReorganisationPanel.astro";
 import {reorganisationFor} from "../../lib/reorganisation";
@@ -21,6 +21,7 @@ import SpendingRecord from "../../components/SpendingRecord.astro";
 import CouncilEfs from "../../components/CouncilEfs.astro";
 import { councilEfs } from "../../lib/council-efs";
 import ProfileCollection from "../../components/ProfileCollection.astro";
+import ProfileComposition from "../../components/ProfileComposition.astro";
 import ProfileElections from "../../components/ProfileElections.astro";
 import { collectionFor } from "../../lib/collection";
 import { electionFor } from "../../lib/elections";
@@ -180,6 +181,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
     ...(collectionFor(council.gss) ? [{id: 'collection', label: 'Council tax collection'}] : []),
     ...(councilEfs(council.slug) ? [{id: 'exceptional-financial-support', label: 'Exceptional Financial Support'}] : []),
     ...(electionFor(council.gss) ? [{id: 'elections', label: 'Elections'}] : []),
+    ...(profile.composition ? [{id: 'composition', label: 'Seats by party'}] : []),
     ...(reorganisationFor(council.gss) ? [{id: 'reorganisation', label: 'Local government reorganisation'}] : []),
     ...(profile.budget ? [{id: 'budget', label: 'Council budget'}] : []),
     ...(profile.budget?.county ? [{id: 'county-budget', label: 'County budget'}] : []),
@@ -199,6 +201,7 @@ const description = `Band D in ${name} is ${pounds(bandD)} a year in ${year}`
   <ProfileCollection gss={council.gss} name={name} />
   <CouncilEfs slug={council.slug} />
   <ProfileElections council={council} name={name} />
+  {profile.composition && <ProfileComposition view={profile.composition} name={name} />}
   <ReorganisationPanel gss={council.gss} />
   {profile.budget && <ProfileBudget view={profile.budget} gss={council.gss} />}
   <SpendingRecord gss={council.gss} name={name} />

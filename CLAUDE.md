@@ -105,6 +105,21 @@ pull request.
 
 ## Held data
 
+**Composition exception, 16 November 2026:** Tom selected the pinned Open Council
+Data website snapshot under CC BY-SA 4.0, applied to the composition table only.
+Party totals may render after exact GSS joins and reconciliation to the printed
+Total. Printed zero seat counts are observations, not missing values.
+Control may render only from the compiler's own field after the strict
+majority check and no disagreement with an eligible quoted council statement.
+Tom confirmed that unsupported control labels stay held, including minority,
+mayoral and mixed labels. Never infer no overall control from those labels or
+from counts. City of London and Isles of Scilly stay absent with reasons.
+All other composition inputs, personal names, political group breakdowns,
+coalition and administration fields, leader details, majority sizes and
+last election dates stay held. No live or unpinned composition feeds enter a build.
+`composition-manifest.json`, the loader and the distribution checks enforce this
+exception. The registry hold below is unchanged.
+
 **The registry `reorganisation` field is held, from 5 November 2026.** No page
 renders it: not the council page section, its contents entry, JSON-LD, OG text
 or the search index. The field came from the UK Places spine and described the
@@ -146,7 +161,7 @@ the system; the manual choice is stored under `ukcouncils-theme`.
 
 ## Infrastructure
 
-- GitHub `tompickup23/ukcouncils`, private until launch.
+- GitHub `tompickup23/ukcouncils`, public.
 - Cloudflare account `35e8f9e8edb5487b97309d107331f7f5`, Pages project
   `ukcouncils`, production branch `main`, direct upload from `deploy.yml`.
 - `deploy.yml` on push to `main`: the same gates as `ci.yml` in the same

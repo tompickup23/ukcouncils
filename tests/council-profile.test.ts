@@ -53,6 +53,7 @@ const SPENDING = JSON.parse(readFileSync(join(ROOT, "data", "spending", "aidoge-
 const MANIFEST = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", "manifest.json"), "utf-8"));
 const FEED = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", MANIFEST.file), "utf-8"));
 const CURRENT = loadYear(CURRENT_YEAR);
+const COMPOSITION = JSON.parse(readFileSync(join(ROOT, "data/elections/composition-review-2026-11-16.json"), "utf8"));
 
 /** The sections a council's data supports, read from the raw files, not through the reader. */
 function expectedSections(gss: string, parentGss: string | null): string[] {
@@ -64,6 +65,7 @@ function expectedSections(gss: string, parentGss: string | null): string[] {
     budget: budget.councils[gss]?.status === 'available',
     collection: Boolean(collection.councils[gss]),
     elections: Boolean(elections.councils[gss]),
+    composition: COMPOSITION.profiles.some((row: {gss: string; seatsAdmitted: boolean}) => row.gss === gss && row.seatsAdmitted),
     "exceptional-financial-support": Boolean(councilEfs(pages.find(p => p.council.gss === gss)!.council.slug)),
     spending: Boolean(SPENDING.bodies[gss]?.generated),
     "tax-summary": typeof bandD === "number" && bandD > 0,
@@ -125,12 +127,11 @@ describe("the Lancashire council profiles", () => {
     expect(after?.next).toBeNull();
   });
 
-  it("builds no seats or control: no committed file holds them", () => {
-    const files = readdirSync(join(ROOT, "data"), { recursive: true }) as string[];
-    expect(files.filter((f) => /seat|control|councillor/i.test(f))).toEqual([]);
+  it("admits only pinned composition and keeps other election fields held", () => {
     for (const { council, tax } of lancashire) {
       const profile = councilProfile(council, tax) as unknown as Record<string, unknown>;
-      for (const key of ["seats", "control", "elections"]) expect(profile[key]).toBeUndefined();
+      expect(profile.composition).toBeTruthy();
+      for (const key of ["seats", "control", "elections", "coalition", "administration", "leader"]) expect(profile[key]).toBeUndefined();
     }
   });
 
