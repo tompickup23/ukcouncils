@@ -48,7 +48,9 @@ describe('dossier completion states', () => {
     expect(decisionState('audit', '2026-12-15')).toBe('absent');
     expect(decisionState('audit', '2026-12-16')).toBe('out-of-scope');
     const january = loadDossier(process.cwd(), '2027-01-15');
-    expect(january.profiles.every(row => row.parts.filter(part => part.state === 'out-of-scope').length === 4)).toBe(true);
+    expect(january.profiles.every(row => row.parts.filter(part => part.state === 'out-of-scope').length === 3)).toBe(true);
+    expect(january.profiles.filter(row => row.parts.find(part => part.key === 'notices')!.state === 'built')).toHaveLength(8);
+    expect(january.profiles.filter(row => row.parts.find(part => part.key === 'notices')!.state === 'absent')).toHaveLength(288);
     const changed = structuredClone(january.profiles[0]);
     changed.parts.find(part => part.key === 'audit')!.decision = null;
     expect(dossierCoverage(fixture(changed), changed)).toContain('Missing Tom decision audit');

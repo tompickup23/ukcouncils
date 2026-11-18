@@ -39,5 +39,641 @@
     "supersession or cessation only from an explicit later official document",
     "search log and explicit non-exhaustive coverage"
   ],
-  "efs_rule": "Exceptional Financial Support is not evidence of a section 114 notice. No cause is recorded."
+  "efs_rule": "Exceptional Financial Support is not evidence of a section 114 notice. No cause is recorded.",
+  "follow_up": {
+    "checked": "2026-11-18",
+    "scope": "Two prior inspected originals and all nine retrieval leads. All eleven original reports inspected; eight assigned billing profiles.",
+    "direct_attempts": [
+      {
+        "url": "https://www.thurrock.gov.uk/sites/default/files/assets/documents/section114-notice.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "9ea34d692fac67b83f0fbbb06276c352910dd69ce7e52866c5b81e20ab863b47",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      },
+      {
+        "url": "https://www.nottinghamcity.gov.uk/media/jmzb22b0/report-made-under-part-viii-s114-3-of-the-local-government-finance-act-1988-291123.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "72e1baf1c8a4690538ee22bf57b1b8a7c75583175c3f16be6ee9036d562e8bca",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/downloads/file/27958/section_114_notice",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://www.woking.gov.uk/your-council/data-finance-performance/council-performance/intervention-improvement/section-114-notice",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/documents/s26447/Appendix%201%20-%20Section%20114%20notice%20-%2011%20November%202020.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/documents/s41881/Appendix%201%20-%20S114%20Notice.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/mgAi.aspx?ID=45526",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/downloads/download/6387/section_notices",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27684/section_114_notice.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://northumberland.moderngov.co.uk/documents/s11024/03.1%20S114%20Report%20Final%2023%2005%202022.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "0dd6891f852e0091d93c60a1478422ac63178543938a7d2fd5b7dac4e00fff44",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/documents/s26448/Appendix%202%20-%20Section%20114%20report%20-%202%20December%202020.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://www.slough.gov.uk/downloads/download/473/finance-statement-and-notice",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://www.croydon.gov.uk/sites/default/files/2021-03/Section%20114%20report%20-%202%20December%202020.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "4a08301e89d713ae7271d512dc90524fc44eca76be07598ef18af5e224cf1b3b",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/documents/g11602/Public%2Breports%2Bpack%2B28th-Jan-2025%2B19.00%2BCouncil.pdf?T=10",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "8bd2058e9f7596c784b39089beefd533d72a0f28ac2138b727cd5715d2b21a13",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      },
+      {
+        "url": "https://woking.moderngov.co.uk/mgAi.aspx?ID=22854",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://northumberland.moderngov.co.uk/ieListDocuments.aspx?CId=140&MId=1836&Ver=4",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://www.woking.gov.uk/sites/default/files/documents/S114%20Notice%20Final%20070623%20.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 403,
+        "outcome": "Retrieval blocked or unavailable; no original hash"
+      },
+      {
+        "url": "https://woking.moderngov.co.uk/documents/s30365/WBC23-027%20Appendix%201%20-%20S114%20Notice%20Final%20070623.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "875e994e250bb091b98c439855da5479a9e93a4a43a667eb4775cba3f2cd2599",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      },
+      {
+        "url": "https://croydon.moderngov.co.uk/documents/s41881/Appendix%201%20-%20S114%20Notice.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "4b36cfa6b15560ad4cf40b68e7bd57bc9de9bc168e69cc7c1bca1632492cd9df",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/ieListDocuments.aspx?CId=134&MeetingId=3470",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": null,
+        "http_status": 200,
+        "outcome": "HTML page retrieved; not an original notice"
+      },
+      {
+        "url": "https://www.croydon.gov.uk/sites/default/files/2022-11/Section%20114%20report%20-%2022%20November%202022.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "989efbea004a33296059b5be87a2354f68b097bc6a146392ab1ed4a7e2939695",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      },
+      {
+        "url": "https://croydon.moderngov.co.uk/documents/s26447/Appendix%201%20-%20Section%20114%20notice%20-%2011%20November%202020.pdf",
+        "method": "direct HTTP",
+        "retrieved": "2026-11-18",
+        "original_sha256": "2434134ed6ac7466b4e7cab684e156b09ee1f4348be7688ac8030a875541f423",
+        "http_status": 200,
+        "outcome": "Original PDF obtained; identification inspected separately"
+      }
+    ],
+    "web_searches": [
+      "site:birmingham.gov.uk section 114 notice 21 September 2023 pdf",
+      "site:woking.gov.uk section 114 notice 7 June 2023 pdf",
+      "site:slough.gov.uk section 114 notice 2 July 2021 pdf",
+      "site:democracy.croydon.gov.uk \"S114\" \"2020\" notice",
+      "site:barnet.gov.uk \"20 January 2025\" \"114\" report",
+      "site:northumberland.moderngov.co.uk \"23 May 2022\" \"114\"",
+      "site:woking.gov.uk \"Section 114\" \"2023\" \"pdf\" \"notice\"",
+      "site:barnet.moderngov.co.uk \"January 2025\" \"114\" report",
+      "site:moderngov.woking.gov.uk \"2023\" \"Section 114\" \"June\" report",
+      "site:barnet.moderngov.co.uk \"Council\" \"28th January, 2025\"",
+      "site:woking.gov.uk \"section114\" filetype:pdf",
+      "site:moderngov.woking.gov.uk \"Section 114 Notice\" \"2023\" \"Report\" June 20",
+      "site:birmingham.gov.uk \"Section 114 (3)\" \"5th September 2023\"",
+      "site:barnet.moderngov.co.uk \"20 January 2025\" \"Joint\" report",
+      "Woking \"7 June 2023\" \"notice\" filetype:pdf site:moderngov.woking.gov.uk",
+      "site:birmingham.cmis.uk.com \"September 2023\" \"114\"",
+      "site:barnet.moderngov.co.uk \"Joint Report\" \"20th January\" \"2025\"",
+      "site:democracy.croydon.gov.uk/documents \"2 December 2020\" \"Report under Section\"",
+      "site:northumberland.moderngov.co.uk/documents/s11024",
+      "\"Appendix 2\" \"Section 114 report\" \"2 December 2020\"",
+      "\"03.1 S114 Report Final 23 05 2022\"",
+      "\"Woking\" \"Section 114 Notice\" \"pdf\" June 2023 original",
+      "site:croydon.gov.uk \"22 November 2022\" \"notice\" filetype:pdf",
+      "site:northumberland.gov.uk \"23 May 2022\" \"114\" filetype:pdf",
+      "\"Croydon\" \"S114 Notice\" \"22 November\" pdf",
+      "\"Woking\" \"Report to all Elected Members\" \"2023\"",
+      "site:democracy.croydon.gov.uk \"12th December, 2022\" \"114\"",
+      "site:croydon.gov.uk \"Croydon S114 Notice.pdf\"",
+      "\"s41881\" \"Croydon\"",
+      "\"Croydon\" \"22/11/2022\" \"Section 114\" filetype:pdf",
+      "\"Croydon\" \"22 November 2022\" \"Report under\" filetype:pdf"
+    ],
+    "web_attempts": [
+      {
+        "url": "https://www.thurrock.gov.uk/sites/default/files/assets/documents/section114-notice.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened"
+      },
+      {
+        "url": "https://www.nottinghamcity.gov.uk/media/jmzb22b0/report-made-under-part-viii-s114-3-of-the-local-government-finance-act-1988-291123.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/downloads/download/6387/section_notices",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened"
+      },
+      {
+        "url": "https://www.woking.gov.uk/your-council/data-finance-performance/council-performance/intervention-improvement/section-114-notice",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/downloads/file/27958/section_114_notice",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/ieListDocuments.aspx?CId=134&MId=2478",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "agenda opened"
+      },
+      {
+        "url": "https://northumberland.moderngov.co.uk/mgAi.aspx?ID=4537",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "agenda opened"
+      },
+      {
+        "url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "provision inspected on page 2"
+      },
+      {
+        "url": "https://www.thurrock.gov.uk/sites/default/files/assets/documents/section114-notice.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "provision inspected on page 1"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/ieListDocuments.aspx?CId=134&MId=2478",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "agenda revisited"
+      },
+      {
+        "url": "https://northumberland.moderngov.co.uk/mgAi.aspx?ID=4537",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "agenda revisited"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/mgAi.aspx?ID=45526",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "agenda opened"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/documents/s26447/Appendix%201%20-%20Section%20114%20notice%20-%2011%20November%202020.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/documents/s41881/Appendix%201%20-%20S114%20Notice.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://northumberland.moderngov.co.uk/mgAi.aspx?ID=4537",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original document link located"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/ieListDocuments.aspx?CId=134&MId=2478",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "December original link located"
+      },
+      {
+        "url": "https://northumberland.moderngov.co.uk/documents/s11024/03.1%20S114%20Report%20Final%2023%2005%202022.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/documents/s26448/Appendix%202%20-%20Section%20114%20report%20-%202%20December%202020.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/mgAi.aspx?ID=45526",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403 on revisit"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27684/section_114_notice.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://www.slough.gov.uk/downloads/download/473/finance-statement-and-notice",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "library opened"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/mgAi.aspx?ID=45526",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403 on revisit"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened through indexed council PDF"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27684/section_114_notice.pdf%3E",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened through indexed council PDF"
+      },
+      {
+        "url": "https://www.woking.gov.uk/your-council/data-finance-performance/council-performance/intervention-improvement/section-114-notice",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403 on revisit"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "heading and date read on page 1"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/mgAi.aspx?ID=45526",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403 on revisit"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/documents/g11602/Public%2Breports%2Bpack%2B28th-Jan-2025%2B19.00%2BCouncil.pdf?T=10",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original report opened within council pack"
+      },
+      {
+        "url": "https://www.croydon.gov.uk/sites/default/files/2021-03/Section%20114%20report%20-%202%20December%202020.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened"
+      },
+      {
+        "url": "https://woking.moderngov.co.uk/mgAi.aspx?ID=22854",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "agenda opened"
+      },
+      {
+        "url": "https://northumberland.moderngov.co.uk/ieListDocuments.aspx?CId=140&MId=1836&Ver=4",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/documents/g11602/Public%2Breports%2Bpack%2B28th-Jan-2025%2B19.00%2BCouncil.pdf?T=10",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "report heading and issue date inspected on page 29"
+      },
+      {
+        "url": "https://woking.moderngov.co.uk/documents/s30365/WBC23-027%20Appendix%201%20-%20S114%20Notice%20Final%20070623.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://www.croydon.gov.uk/sites/default/files/2021-03/Section%20114%20report%20-%202%20December%202020.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "heading and issue date read on page 1"
+      },
+      {
+        "url": "https://barnet.moderngov.co.uk/documents/g11602/Public%2Breports%2Bpack%2B28th-Jan-2025%2B19.00%2BCouncil.pdf?T=10",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "paragraph 2.2 inspected on page 29"
+      },
+      {
+        "url": "https://www.woking.gov.uk/your-council/data-finance-performance/council-performance/intervention-improvement/section-114-notice",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403 on revisit"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/ieListDocuments.aspx?CId=134&MId=2997",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "inaccessible"
+      },
+      {
+        "url": "https://www.woking.gov.uk/sites/default/files/documents/S114%20Notice%20Final%20070623%20.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened"
+      },
+      {
+        "url": "https://democracy.croydon.gov.uk/ieListDocuments.aspx?CId=134&MeetingId=3470",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 403"
+      },
+      {
+        "url": "https://www.croydon.gov.uk/sites/default/files/2022-11/Section%20114%20report%20-%2022%20November%202022.pdf",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "original opened; committee copy subsequently used for explicit issue date"
+      },
+      {
+        "url": "https://www.slough.gov.uk/downloads/download/473/finance-statement-and-notice",
+        "method": "web reader",
+        "retrieved": "2026-11-18",
+        "outcome": "library link revisited"
+      },
+      {
+        "url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
+        "method": "direct request with a browser user agent",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 200, PDF; heading, date and provision read; SHA-256 8603bf3447a4ad45d9991eff1287b0b1dd21d39b7c6b1ebcab171905af8292fe"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27684/section_114_notice.pdf",
+        "method": "direct request with a browser user agent",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 200, PDF; heading, date and provision read; SHA-256 b6b8c50c5abc045190f4124bfa4d14ff85ae68116c949bab3bb34e896075152c"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
+        "method": "direct request with a browser user agent",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 200, PDF; heading, date and provision read; SHA-256 8d8571b3744a023c7be9201816777e4a180d5bafc23f968c0b4e85dcaf7cf28c"
+      }
+    ],
+    "leads_not_admitted": [],
+    "binary_retrieval_still_open": [],
+    "search_result_rule": "Search results only locate leads. Admission requires opening and reading the original PDF, including a council committee copy. Search snippets, accounts, minutes and announcements do not admit a record.",
+    "direct_identification_rechecks": [
+      {
+        "url": "https://northumberland.moderngov.co.uk/documents/s11024/03.1%20S114%20Report%20Final%2023%2005%202022.pdf",
+        "retrieved": "2026-11-18",
+        "outcome": "Pages 1, 3 and 5 read; issue date and exact subsection inspected."
+      },
+      {
+        "url": "https://northumberland.moderngov.co.uk/documents/s11024/03.1%20S114%20Report%20Final%2023%2005%202022.pdf",
+        "retrieved": "2026-11-18",
+        "outcome": "Page 1 issue date read again."
+      },
+      {
+        "url": "https://woking.moderngov.co.uk/documents/s30365/WBC23-027%20Appendix%201%20-%20S114%20Notice%20Final%20070623.pdf",
+        "retrieved": "2026-11-18",
+        "outcome": "Page 1 issue date and subsection read."
+      },
+      {
+        "url": "https://croydon.moderngov.co.uk/documents/s41881/Appendix%201%20-%20S114%20Notice.pdf",
+        "retrieved": "2026-11-18",
+        "outcome": "Page 1 heading, 22/11/22 issue date and exact subsection read."
+      }
+    ],
+    "committee_search_limitation": "Birmingham committee domain returned a robots exclusion during search. Council original PDFs were opened separately through the web reader.",
+    "identity_review": [
+      {
+        "gss": "E06000018",
+        "profile_slug": "nottingham",
+        "profile_name": "Nottingham City Council",
+        "original_council": "Nottingham City Council",
+        "original_url": "https://www.nottinghamcity.gov.uk/media/jmzb22b0/report-made-under-part-viii-s114-3-of-the-local-government-finance-act-1988-291123.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E06000034",
+        "profile_slug": "thurrock",
+        "profile_name": "Thurrock Council",
+        "original_council": "Thurrock Council",
+        "original_url": "https://www.thurrock.gov.uk/sites/default/files/assets/documents/section114-notice.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E06000039",
+        "profile_slug": "slough",
+        "profile_name": "Slough Borough Council",
+        "original_council": "Slough Borough Council",
+        "original_url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E06000057",
+        "profile_slug": "northumberland",
+        "profile_name": "Northumberland County Council",
+        "original_council": "Northumberland County Council",
+        "original_url": "https://northumberland.moderngov.co.uk/documents/s11024/03.1%20S114%20Report%20Final%2023%2005%202022.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E07000217",
+        "profile_slug": "woking",
+        "profile_name": "Woking Borough Council",
+        "original_council": "Woking Borough Council",
+        "original_url": "https://woking.moderngov.co.uk/documents/s30365/WBC23-027%20Appendix%201%20-%20S114%20Notice%20Final%20070623.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E08000025",
+        "profile_slug": "birmingham",
+        "profile_name": "Birmingham City Council",
+        "original_council": "Birmingham City Council",
+        "original_url": "https://www.birmingham.gov.uk/download/downloads/id/27684/section_114_notice.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E08000025",
+        "profile_slug": "birmingham",
+        "profile_name": "Birmingham City Council",
+        "original_council": "Birmingham City Council",
+        "original_url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E09000003",
+        "profile_slug": "barnet",
+        "profile_name": "London Borough of Barnet",
+        "original_council": "London Borough of Barnet",
+        "original_url": "https://barnet.moderngov.co.uk/documents/g11602/Public%2Breports%2Bpack%2B28th-Jan-2025%2B19.00%2BCouncil.pdf?T=10",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E09000008",
+        "profile_slug": "croydon",
+        "profile_name": "London Borough of Croydon",
+        "original_council": "Croydon Council",
+        "original_url": "https://croydon.moderngov.co.uk/documents/s26447/Appendix%201%20-%20Section%20114%20notice%20-%2011%20November%202020.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E09000008",
+        "profile_slug": "croydon",
+        "profile_name": "London Borough of Croydon",
+        "original_council": "Croydon Council",
+        "original_url": "https://www.croydon.gov.uk/sites/default/files/2021-03/Section%20114%20report%20-%202%20December%202020.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      },
+      {
+        "gss": "E09000008",
+        "profile_slug": "croydon",
+        "profile_name": "London Borough of Croydon",
+        "original_council": "Croydon Council",
+        "original_url": "https://croydon.moderngov.co.uk/documents/s41881/Appendix%201%20-%20S114%20Notice.pdf",
+        "status": "assigned",
+        "basis": "Original council heading and council-owned host reviewed against the existing billing profile; not a publisher-supplied GSS code."
+      }
+    ]
+  }
 }

@@ -12,13 +12,13 @@ Every required part of D1, D3 and C1 to C9 on every billing profile must have ex
 2. **Absent with a stated reason (`absent`).** The content is absent and exactly one visible explanation appears in the profile's coverage section. Reason kinds are `no-source`, `not-published` or `held`. No source means no usable source in this site's pinned holdings; it does not assert that the council has published nothing. `not-published` requires specific publisher evidence and is not used for any current gap. Held means an unresolved source, identity, reuse or scope decision. A blank, hidden, duplicated or missing explanation fails.
 3. **Out of the January scope by Tom's decision (`out-of-scope`).** The content remains absent, the same visible explanation remains, and the report records the authority and effective date of the scope decision. The only encoded decisions are the defaults Tom authorised in this task, effective after the deadline below. A different decision requires a reviewed change to the state rules and, where applicable, pinned data. No live research is read by the build.
 
-An item with several parts is `absent` if any part is absent, otherwise `out-of-scope` if any part is excluded, otherwise `built`. This conservative roll-up does not hide built parts: their individual states and counts are reported separately. For example, C3 has built budgets but remains absent as a whole because audit and notices are held. Completion means every part is accounted for in one of the three states, not that every possible figure exists.
+An item with several parts is `absent` if any part is absent, otherwise `out-of-scope` if any part is excluded, otherwise `built`. This conservative roll-up does not hide built parts: their individual states and counts are reported separately. For example, C3 has built budgets but remains absent as a whole because audit remains held and the notice register is not exhaustive. Completion means every part is accounted for in one of the three states, not that every possible figure exists.
 
 The build must fail if any expected profile or item is missing, any part has conflicting states, a built part is missing or unpinned, or an absent or excluded part has no visible reason. The current absence wording describes the site's holdings only. It does not name people, infer a financial status or turn an EFS omission into a negative claim.
 
 ## Item boundaries and measured counts
 
-Measured on 16 November 2026 against a clean full build of base `456a20004e734eb7a9a46157cda210ee43a14d33`, using Node 22.23.4. Both builds contain 329 HTML pages and 296 billing profiles. The dated composition snapshot adds 294 party tables and 129 admitted control lines. Seats and control are separate measured parts; an absence reason is removed only where that part renders. The table records candidate states checked against the built content and explanations.
+Measured on 18 November 2026 against a clean full build of base `c5de1bf8def97b57af8b1d12f12e36e8abb37812`, using Node 22.23.4. Both builds contain 329 HTML pages and 296 billing profiles. The original notice register adds 11 historical document records on eight profiles. The other 288 profiles retain an explicit non-exhaustive register explanation. Composition remains at 294 party tables and 129 admitted control lines. The table records candidate states checked against the built content and explanations.
 
 | Item | Required parts | Built | Absent with reason | Out of scope |
 |---|---|---:|---:|---:|
@@ -47,7 +47,7 @@ D1's eleven partial profiles are the nine without a budget return plus Barnsley 
 | EFS | 51 | 245 | Not in the pinned list; no negative inference |
 | Published payments | 234 | 62 | No dated summary held |
 | Audit status | 0 | 296 | Identity, measure and reuse decision held |
-| Section 114 original notices | 0 | 296 | Register decision held; no negative inference |
+| Section 114 original notices | 8 | 288 | Eleven inspected originals; non-exhaustive register, no negative inference |
 | Independent programme panels | 184 | 112 | No independently sourced panel held |
 | School holidays | 287 | 9 | No publishable calendar in the pinned snapshot |
 | Responsibilities | 294 | 2 | Special authorities have no reviewed generic mapping |
@@ -62,12 +62,11 @@ The registry reorganisation field remains held everywhere under `CLAUDE.md`; it 
 
 ## Open decisions and the default
 
-The four remaining decisions have **15 December 2026** as their decide-by date. If Tom does not decide by the end of that day in Europe/London, the named part is **out of the January gate**, with its absence explanation retained on every affected page. This fallback is authorised by this task. It is not a claim that Tom has selected a source. Before 16 December these four remain held absences. Composition was decided on 16 November and has no automatic scope expiry; its unresolved profiles keep their specific reasons. The build uses the London calendar date and tests both sides of the boundary. No public page text changes when the fallback takes effect.
+The three remaining decisions have **15 December 2026** as their decide-by date. If Tom does not decide by the end of that day in Europe/London, the named part is **out of the January gate**, with its absence explanation retained on every affected page. This fallback is authorised by this task. It is not a claim that Tom has selected a source. Before 16 December these three remain held absences. Composition and the original notice register were decided on 16 November and have no automatic scope expiry; their unresolved profiles keep their specific reasons. The build uses the London calendar date and tests both sides of the boundary. No public page text changes when the fallback takes effect.
 
 | Decision | What Tom must settle | Default from 16 December 2026 |
 |---|---|---|
 | Audit identity method | Accept or reject the measured official-name method, review the residual identities, select the measure and resolve PSAA reuse if needed. Research has no adopted crosswalk. | Audit status out of January scope; identity and reuse absence remains |
-| Section 114 register | Approve a non-exhaustive register of inspected original notices, evidenced identities and maintenance responsibility. EFS is not evidence of a notice. | Notices out of January scope; register absence remains |
 | C7 scope | Decide which additional body types need profiles, with a suitable registry, routes and sources. | Additional body types out of January scope; existing English billing profiles remain the denominator |
 | C9 scope | Decide whether contracts are required for January, with a pinned figure, scope and date and verified live UK Public Contracts destinations. | Contracts out of January scope; contracts absence remains |
 
@@ -93,11 +92,23 @@ The council-linked [Five Islands Academy term dates page](https://fiveislands.sc
 
 Five council calendar publications are verified. Scilly provides a verified council referral and a separate academy calendar. Blackpool and City of London provide council referral or directory evidence, not an authority calendar. South Tyneside remains blocked. Those limits explain why this research cannot honestly supply nine council-published calendars. Tom decides whether and how any of these sources enters the calendar pipeline. All nine profile calendars remain absent in this PR.
 
+## Original notice register
+
+The decision of 16 November 2026 approves a non-exhaustive register of original notices. Each admitted record requires an original notice or report opened and read on the council's own site, including its committee system. It must carry an issue date and cite the Local Government Finance Act 1988 and the exact section 114 subsection as printed. Each record retains council, explicitly reviewed and assigned GSS identity, issue date, provision, original URL, page or paragraph locator, retrieval date and SHA-256 where original bytes are obtainable. A blocked binary has a null hash, never the hash of an error page. A supplementary notice is a separate record. No signatures, personal names, amounts, causes or explanations are retained. No current restriction or cessation is inferred from a historical document.
+
+Three records need a note on what the printed provision means. Northumberland, 23 May 2022: the document is headed as a report under sections 114 and 114A, with one element under section 114(2) and another under section 114A(2). This register is of section 114 reports, so the page prints the section 114(2) element only and does not print the section 114A element. Thurrock, 19 December 2022, and Slough, 2 July 2021: each heading cites section 114 without a subsection, and subsection (3) is recorded from the place where the document quotes the statute, which is the page or paragraph the locator gives.
+
+Tom's sessions maintain the register, on request. Refresh requires original inspection and explicit council identity review, a reviewed register diff, a new manifest pin and the same mutation, build and distribution checks. The source commit precedes page work. The build reads `data/budget/section-114-manifest.json` and its single pinned register file, never the research log or a live feed. The loader rejects unexpected fields and any unpinned file.
+
+The [dry run](dossier-sources-2026-11/dry-run-section-114.json) records 11 admissions on Barnet, Birmingham, Croydon, Northumberland, Nottingham, Slough, Thurrock and Woking. All nine original retrieval leads are resolved; none remains unadmitted. All 11 originals have hashes. Birmingham 5 September 2023, Birmingham 21 September 2023 and Slough 2 July 2021 were first read through the web reader after direct requests returned HTTP 403; on 18 November 2026 each downloaded as a PDF with a browser user agent and was hashed. No hash is null. The [search log](dossier-sources-2026-11/section-114-register-search.json) records each attempt and the successful council library or committee copy where located. No news report, government letter, Commons Library table, EFS entry or council announcement admits a notice.
+
+All other profiles have the same reason because the same fact holds for each: no entry in this site's inspected register. That wording does not assert that a council issued no notice. No profile is labelled as having a blocked original merely because another council's retrieval was blocked. The notice decision no longer expires into out-of-scope status in December.
+
 ## Page text exceptions and verification
 
-**All 296 billing profiles** now account separately for seats and control. Party tables render on 294 profiles and compiler control on 129. The remaining reasons are specific to the pinned source and checks. The source catalogue gains the composition citation. Council tax, budget, collection and other existing figures are unchanged. The numeric allowlist is `councils/*/index.html` and `sources/index.html`.
+All 296 billing profiles change: eight gain dated historical document lines and lose their notice absence reason; 288 replace the held-register explanation with the explicit non-exhaustive register explanation. The source catalogue gains the original report references. The measured numeric differences and the full list of allowed page paths are recorded in the draft PR. Council tax, budgets, seats, control, collection and other existing figures remain unchanged.
 
-The [composition implementation record](COMPOSITION-SNAPSHOT-2026-11-16.md) holds the source decision, counts, control label comparison limits and chart suitability check. The vendored stacked bar accepts money only, so the composition uses its small table without a new chart type. Control has 16 corroborated and 113 single-source records. All 22 different council-statement labels are already unsupported compiler labels and remain held. No no-overall-control line is inferred.
+The [composition implementation record](COMPOSITION-SNAPSHOT-2026-11-16.md) remains the source of its decision and counts. The original notice checks compare actual dates, provisions, links, locators, citations and bibliography entries with the pinned records. They reject missing, additional, altered or hidden records, false absence explanations and any notice claim outside those checked rendering paths, including metadata.
 
 ### Refreshing composition
 
@@ -120,7 +131,7 @@ Verification for this snapshot is recorded in the draft PR. The build and distri
 
 ## Every profile
 
-`B` means built from a pinned source. `A` means at least one absent part, with each reason on the page. `O` means out of January scope under the recorded decision. Partial items use the conservative roll-up above; the full generated report lists their built and absent parts. All rows below are measured on 16 November 2026, before the fallback date.
+`B` means built from a pinned source. `A` means at least one absent part, with each reason on the page. `O` means out of January scope under the recorded decision. Partial items use the conservative roll-up above; the full generated report lists their built and absent parts. All rows below are measured on 18 November 2026, before the fallback date.
 
 | Profile | D1 | D3 | C1 | C2 | C3 | C4 | C5 | C6 | C7 | C8 | C9 |
 |---|---|---|---|---|---|---|---|---|---|---|---|

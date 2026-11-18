@@ -1,0 +1,292 @@
+{
+  "reviewed": "2026-11-18",
+  "coverage": "Original notices inspected by this site; not an exhaustive register.",
+  "licence": "Council copyright. Factual identification only; originals are not redistributed.",
+  "records": [
+    {
+      "id": "E06000018-2023-11-29",
+      "council": "Nottingham City Council",
+      "gss": "E06000018",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "nottingham",
+        "profile_name": "Nottingham City Council"
+      },
+      "notice_date": "2023-11-29",
+      "printed_date": "November 29th, 2023",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114(3)",
+      "url": "https://www.nottinghamcity.gov.uk/media/jmzb22b0/report-made-under-part-viii-s114-3-of-the-local-government-finance-act-1988-291123.pdf",
+      "locator": {
+        "pages": [
+          1
+        ],
+        "paragraphs": []
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "72e1baf1c8a4690538ee22bf57b1b8a7c75583175c3f16be6ee9036d562e8bca"
+    },
+    {
+      "id": "E06000034-2022-12-19",
+      "council": "Thurrock Council",
+      "gss": "E06000034",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "thurrock",
+        "profile_name": "Thurrock Council"
+      },
+      "notice_date": "2022-12-19",
+      "printed_date": "19th December 2022",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114(3)",
+      "url": "https://www.thurrock.gov.uk/sites/default/files/assets/documents/section114-notice.pdf",
+      "locator": {
+        "pages": [
+          1
+        ],
+        "paragraphs": [
+          "1.2"
+        ]
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "9ea34d692fac67b83f0fbbb06276c352910dd69ce7e52866c5b81e20ab863b47"
+    },
+    {
+      "id": "E06000039-2021-07-02",
+      "council": "Slough Borough Council",
+      "gss": "E06000039",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "slough",
+        "profile_name": "Slough Borough Council"
+      },
+      "notice_date": "2021-07-02",
+      "printed_date": "2 July 2021",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114 (3)",
+      "url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
+      "locator": {
+        "pages": [
+          1,
+          2
+        ],
+        "paragraphs": []
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "8603bf3447a4ad45d9991eff1287b0b1dd21d39b7c6b1ebcab171905af8292fe"
+    },
+    {
+      "id": "E06000057-2022-05-23",
+      "council": "Northumberland County Council",
+      "gss": "E06000057",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "northumberland",
+        "profile_name": "Northumberland County Council"
+      },
+      "notice_date": "2022-05-23",
+      "printed_date": "23rd May 2022",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114(2)",
+      "url": "https://northumberland.moderngov.co.uk/documents/s11024/03.1%20S114%20Report%20Final%2023%2005%202022.pdf",
+      "locator": {
+        "pages": [
+          1,
+          3,
+          5
+        ],
+        "paragraphs": [
+          "1.8",
+          "2.1"
+        ]
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "0dd6891f852e0091d93c60a1478422ac63178543938a7d2fd5b7dac4e00fff44"
+    },
+    {
+      "id": "E07000217-2023-06-07",
+      "council": "Woking Borough Council",
+      "gss": "E07000217",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "woking",
+        "profile_name": "Woking Borough Council"
+      },
+      "notice_date": "2023-06-07",
+      "printed_date": "7 June 2023",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114 (3)",
+      "url": "https://woking.moderngov.co.uk/documents/s30365/WBC23-027%20Appendix%201%20-%20S114%20Notice%20Final%20070623.pdf",
+      "locator": {
+        "pages": [
+          1
+        ],
+        "paragraphs": []
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "875e994e250bb091b98c439855da5479a9e93a4a43a667eb4775cba3f2cd2599"
+    },
+    {
+      "id": "E08000025-2023-09-05",
+      "council": "Birmingham City Council",
+      "gss": "E08000025",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "birmingham",
+        "profile_name": "Birmingham City Council"
+      },
+      "notice_date": "2023-09-05",
+      "printed_date": "5th September 2023",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114 (3)",
+      "url": "https://www.birmingham.gov.uk/download/downloads/id/27684/section_114_notice.pdf",
+      "locator": {
+        "pages": [
+          1
+        ],
+        "paragraphs": []
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "b6b8c50c5abc045190f4124bfa4d14ff85ae68116c949bab3bb34e896075152c"
+    },
+    {
+      "id": "E08000025-2023-09-21",
+      "council": "Birmingham City Council",
+      "gss": "E08000025",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "birmingham",
+        "profile_name": "Birmingham City Council"
+      },
+      "notice_date": "2023-09-21",
+      "printed_date": "21st September 2023",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114 (2)",
+      "url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
+      "locator": {
+        "pages": [
+          1
+        ],
+        "paragraphs": []
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "8d8571b3744a023c7be9201816777e4a180d5bafc23f968c0b4e85dcaf7cf28c"
+    },
+    {
+      "id": "E09000003-2025-01-20",
+      "council": "London Borough of Barnet",
+      "gss": "E09000003",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "barnet",
+        "profile_name": "London Borough of Barnet"
+      },
+      "notice_date": "2025-01-20",
+      "printed_date": "20th January 2025",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114 (2)(a)",
+      "url": "https://barnet.moderngov.co.uk/documents/g11602/Public%2Breports%2Bpack%2B28th-Jan-2025%2B19.00%2BCouncil.pdf?T=10",
+      "locator": {
+        "pages": [
+          29
+        ],
+        "paragraphs": [
+          "2.2"
+        ]
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "8bd2058e9f7596c784b39089beefd533d72a0f28ac2138b727cd5715d2b21a13"
+    },
+    {
+      "id": "E09000008-2020-11-11",
+      "council": "Croydon Council",
+      "gss": "E09000008",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "croydon",
+        "profile_name": "London Borough of Croydon"
+      },
+      "notice_date": "2020-11-11",
+      "printed_date": "11/11/20",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114(3)",
+      "url": "https://croydon.moderngov.co.uk/documents/s26447/Appendix%201%20-%20Section%20114%20notice%20-%2011%20November%202020.pdf",
+      "locator": {
+        "pages": [
+          1
+        ],
+        "paragraphs": []
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "2434134ed6ac7466b4e7cab684e156b09ee1f4348be7688ac8030a875541f423"
+    },
+    {
+      "id": "E09000008-2020-12-02",
+      "council": "Croydon Council",
+      "gss": "E09000008",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "croydon",
+        "profile_name": "London Borough of Croydon"
+      },
+      "notice_date": "2020-12-02",
+      "printed_date": "02/12/20",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114(3)",
+      "url": "https://www.croydon.gov.uk/sites/default/files/2021-03/Section%20114%20report%20-%202%20December%202020.pdf",
+      "locator": {
+        "pages": [
+          1
+        ],
+        "paragraphs": []
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "4a08301e89d713ae7271d512dc90524fc44eca76be07598ef18af5e224cf1b3b"
+    },
+    {
+      "id": "E09000008-2022-11-22",
+      "council": "Croydon Council",
+      "gss": "E09000008",
+      "identity": {
+        "status": "assigned",
+        "method": "Reviewed original council heading and council-owned host against the billing profile identity; not a GSS code printed by the publisher.",
+        "profile_slug": "croydon",
+        "profile_name": "London Borough of Croydon"
+      },
+      "notice_date": "2022-11-22",
+      "printed_date": "22/11/22",
+      "act": "Local Government Finance Act 1988",
+      "provision": "114(3)",
+      "url": "https://croydon.moderngov.co.uk/documents/s41881/Appendix%201%20-%20S114%20Notice.pdf",
+      "locator": {
+        "pages": [
+          1
+        ],
+        "paragraphs": []
+      },
+      "retrieved": "2026-11-18",
+      "inspection": "original PDF read",
+      "original_sha256": "4b36cfa6b15560ad4cf40b68e7bd57bc9de9bc168e69cc7c1bca1632492cd9df"
+    }
+  ]
+}
