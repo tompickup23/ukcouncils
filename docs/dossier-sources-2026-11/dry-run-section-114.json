@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-18",
-  "base_commit": "6bc9b060037f02720e0b55468cb4a31aedf62113",
+  "base_commit": "c5de1bf8def97b57af8b1d12f12e36e8abb37812",
   "profile_count": 296,
   "register": "data/budget/section-114-2026-11-18.json",
   "records_admitted": [
@@ -88,24 +88,8 @@
   "profiles_without_an_inspected_record": 288,
   "native_code_joins": 0,
   "identity_rule": "Explicit review of the council heading and council-owned host; GSS codes assigned from the billing profile identity. No successor or county attribution.",
-  "original_hashes_obtained": 8,
-  "binary_retrieval_still_open": [
-    {
-      "id": "E06000039-2021-07-02",
-      "url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
-      "reason": "HTTP 403 for original bytes. Original PDF identification opened and read through the web reader; no hash of the error response retained."
-    },
-    {
-      "id": "E08000025-2023-09-05",
-      "url": "https://www.birmingham.gov.uk/download/downloads/id/27684/section_114_notice.pdf",
-      "reason": "HTTP 403 for original bytes. Original PDF identification opened and read through the web reader; no hash of the error response retained."
-    },
-    {
-      "id": "E08000025-2023-09-21",
-      "url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
-      "reason": "HTTP 403 for original bytes. Original PDF identification opened and read through the web reader; no hash of the error response retained."
-    }
-  ],
+  "original_hashes_obtained": 11,
+  "binary_retrieval_still_open": [],
   "absence_interpretation": "No entry is not a statement that no notice was issued. This register is not exhaustive.",
   "maintenance": "Owner sessions, on request; additions require original document inspection."
 }

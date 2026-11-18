@@ -15,7 +15,9 @@ describe('original notice register admission', () => {
     expect(profiles.get('E09000008').map((row: any) => row.notice_date)).toEqual(['2020-11-11', '2020-12-02', '2022-11-22']);
     expect(profiles.get('E09000003')[0].provision).toBe('114 (2)(a)');
     expect(profiles.get('E06000057')[0].provision).toBe('114(2)');
-    expect(register.records.filter((row: any) => row.original_sha256 === null).map((row: any) => row.id)).toEqual(['E06000039-2021-07-02', 'E08000025-2023-09-05', 'E08000025-2023-09-21']);
+    // Every original downloads with a browser user agent, so every record carries its hash.
+    expect(register.records.filter((row: any) => row.original_sha256 === null)).toEqual([]);
+    expect(register.records.every((row: any) => row.inspection === 'original PDF read')).toBe(true);
     expect(profiles.has('E07000117')).toBe(false);
   });
   it('rejects unexpected personal, narrative and status fields at every level', () => {
@@ -106,6 +108,20 @@ describe('section 114 built page guard', () => {
       }
     }
   });
+  it('rejects claims that avoid the word section, and claims carried in any attribute', () => {
+    for (const claim of ['No 114 report has been issued.', 'A report was made under 114(3).', 'This council has never made a report under the 1988 Act.', 'No report under the Local Government Finance Act 1988.']) {
+      for (const gss of ['E07000117', 'E08000025']) expect(section114Checks(fixture(gss) + `<p>${claim}</p>`, gss), claim).not.toEqual([]);
+    }
+    for (const attribute of ['data-share-text', 'placeholder', 'value', 'data-description', 'aria-label']) {
+      expect(section114Checks(fixture('E07000117') + `<div ${attribute}="No section 114 notice exists."></div>`, 'E07000117'), attribute).not.toEqual([]);
+    }
+  });
+  it('does not read an amount, a count or an address as a section number', () => {
+    for (const text of ['Band D is £2,114.50 in 2026/27.', 'The council made 114 payments in the report period.'.replace('114 payments', '1,114 payments'), 'A total of 3114 records were issued.']) {
+      expect(section114Checks(fixture('E07000117') + `<p>${text}</p>`, 'E07000117'), text).toEqual([]);
+    }
+    expect(section114Checks(fixture('E07000117') + '<a href="/reports/114/issued">Budget</a>', 'E07000117')).toEqual([]);
+  });
   it('rejects a missing, false, hidden or duplicate absence explanation', () => {
     const html = fixture('E07000117');
     for (const altered of [html.replace(NOTICE_ABSENCE, 'Original download blocked.'), html.replace('<li ', '<li hidden '), html.replace('<li ', '<li aria-hidden="true" '), html.replace(NOTICE_ABSENCE, ''), html + html]) {
@@ -114,11 +130,24 @@ describe('section 114 built page guard', () => {
   });
   it('allows an exact existing election citation without exempting its surrounding prose', () => {
     const elections = JSON.parse(readFileSync('data/elections/next-elections.json', 'utf8')).councils;
+    // The exception applies to any election record, so pin the profiles that need it.
+    // A new source title with notice wording must be reviewed here before it is exempt.
+    expect(Object.entries(elections).filter(([, row]: any) => /notices?|114|1988/i.test(row.sourceLabel)).map(([gss]) => gss).sort())
+      .toEqual(['E06000062', 'E07000098', 'E07000121', 'E07000170']);
     for (const [gss, row] of Object.entries(elections) as [string, {sourceLabel: string; sourceUrl: string}][]) {
       if (!/notices/i.test(row.sourceLabel)) continue;
       const link = `<p><a href="${row.sourceUrl}">${row.sourceLabel}</a></p>`;
       expect(section114Checks(fixture(gss) + link, gss)).toEqual([]);
       expect(section114Checks(fixture(gss) + link.replace('</p>', 'No notice exists.</p>'), gss)).not.toEqual([]);
+      // The citation attribute may repeat the pinned title and address, and nothing else.
+      const record = (extra = {}) => `<p data-citation-record='${JSON.stringify({publisher: 'Council', title: row.sourceLabel, url: row.sourceUrl, table: 'checked', ...extra})}'></p>`;
+      expect(section114Checks(fixture(gss) + record(), gss)).toEqual([]);
+      // As built: the label is the publisher and the title joined with a comma.
+      const [publisher, ...rest] = row.sourceLabel.split(', ');
+      expect(section114Checks(fixture(gss) + record({publisher, title: rest.join(', ')}), gss)).toEqual([]);
+      expect(section114Checks(fixture(gss) + record({publisher, title: rest.join(', '), url: 'https://example.com/'}), gss)).not.toEqual([]);
+      expect(section114Checks(fixture(gss) + record({table: 'No section 114 notice exists'}), gss)).not.toEqual([]);
+      expect(section114Checks(fixture(gss) + record({title: row.sourceLabel + ' and no notice was issued'}), gss)).not.toEqual([]);
     }
   });
 });

@@ -15,7 +15,19 @@ const hidden = node => {
   }
   return false;
 };
-const mentionsNotice = value => /\b(?:notices?|section\s*114|s\.?\s*114|statutory\s+financial\s+(?:reports?|documents?))\b/i.test(value);
+// A bare 114 counts only as a section number: not inside an amount or a longer number,
+// and only near a word a claim about a report would use.
+const BARE_114 = String.raw`(?<![\d,.£])114[A-Z]?(?![\d]|[,.]\d)`;
+const CLAIM_WORD = String.raw`\b(?:reports?|issued|made|served)\b`;
+const NOTICE_PATTERNS = [
+  /\b(?:notices?|section\s*114|s\.?\s*114|statutory\s+financial\s+(?:reports?|documents?))\b/i,
+  new RegExp(`${BARE_114}[^.]{0,80}${CLAIM_WORD}|${CLAIM_WORD}[^.]{0,80}${BARE_114}`, 'i'),
+  /\b1988\s+Act\b|\bFinance\s+Act\s+1988\b/i,
+];
+export const mentionsNotice = value => NOTICE_PATTERNS.some(pattern => pattern.test(value));
+// Attribute values are prose a reader or a share target can receive. Addresses,
+// identifiers and styling are not.
+const UNREAD_ATTRIBUTES = new Set(['href', 'src', 'srcset', 'cite', 'action', 'class', 'id', 'style', 'integrity', 'for', 'aria-labelledby', 'aria-describedby', 'aria-controls']);
 
 /** Exact pinned prose plus a closed vocabulary elsewhere on the profile. A marker
  * alone cannot admit a notice, a different date, a status claim or a negative claim. */
@@ -80,7 +92,21 @@ export function section114Checks(html, gss, root = process.cwd()) {
   // notice prose needs an explicit reviewed rendering path instead of a claim.
   const permitted = node => approved.some(parent => node === parent || inside(node, parent));
   const remaining = textNodes.filter(node => !permitted(node)).map(node => node.value).join(' ');
-  const attributes = elements.flatMap(node => ['content', 'alt', 'title', 'aria-label'].map(key => node.attributes?.[key] ?? '')).join(' ');
+  // Every attribute value outside a node checked in full above, not a short list of names.
+  // The election citation record repeats the pinned source title and address: drop exactly
+  // those two fields when they equal this profile's pin, and still read the rest.
+  const readable = (key, value) => {
+    if (key !== 'data-citation-record' || !election) return String(value);
+    try {
+      const record = JSON.parse(decode(String(value)));
+      // The pinned label is the publisher and the title joined, or the title alone.
+      const joined = record.title === election.sourceLabel ? ['title'] : `${record.publisher}, ${record.title}` === election.sourceLabel ? ['publisher', 'title'] : null;
+      if (record.url !== election.sourceUrl || !joined) return String(value);
+      return Object.entries(record).filter(([field]) => field !== 'url' && !joined.includes(field)).map(([, text]) => String(text)).join(' . ');
+    } catch { return String(value); }
+  };
+  const attributes = elements.filter(node => !permitted(node)).flatMap(node => Object.entries(node.attributes ?? {})
+    .filter(([key]) => !UNREAD_ATTRIBUTES.has(key)).map(([key, value]) => readable(key, value))).join(' . ');
   if (mentionsNotice(clean(remaining)) || mentionsNotice(clean(attributes))) failures.push('Notice claim outside pinned record or exact absence wording');
   return [...new Set(failures)];
 }

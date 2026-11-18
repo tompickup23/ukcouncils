@@ -78,8 +78,8 @@
         "paragraphs": []
       },
       "retrieved": "2026-11-18",
-      "inspection": "original PDF read through web reader; binary download blocked",
-      "original_sha256": null
+      "inspection": "original PDF read",
+      "original_sha256": "8603bf3447a4ad45d9991eff1287b0b1dd21d39b7c6b1ebcab171905af8292fe"
     },
     {
       "id": "E06000057-2022-05-23",
@@ -158,8 +158,8 @@
         "paragraphs": []
       },
       "retrieved": "2026-11-18",
-      "inspection": "original PDF read through web reader; binary download blocked",
-      "original_sha256": null
+      "inspection": "original PDF read",
+      "original_sha256": "b6b8c50c5abc045190f4124bfa4d14ff85ae68116c949bab3bb34e896075152c"
     },
     {
       "id": "E08000025-2023-09-21",
@@ -183,8 +183,8 @@
         "paragraphs": []
       },
       "retrieved": "2026-11-18",
-      "inspection": "original PDF read through web reader; binary download blocked",
-      "original_sha256": null
+      "inspection": "original PDF read",
+      "original_sha256": "8d8571b3744a023c7be9201816777e4a180d5bafc23f968c0b4e85dcaf7cf28c"
     },
     {
       "id": "E09000003-2025-01-20",

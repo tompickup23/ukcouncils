@@ -5,7 +5,7 @@
 - **Built:** historical document lines on Barnet, Birmingham, Croydon, Northumberland, Nottingham, Slough, Thurrock and Woking.
 - **Provisions:** exact printed subsections retained; Birmingham has two distinct records and Croydon three.
 - **Coverage:** eight of 296 profiles built for notices; 288 have the explicit non-exhaustive register explanation. No negative status is inferred.
-- **Retrieval:** all nine notice leads resolved. Eight original hashes obtained; both Birmingham notices and Slough remain binary retrieval tasks with null hashes after HTTP 403.
+- **Retrieval:** all nine notice leads resolved. All 11 originals have hashes. The Slough and two Birmingham files, first logged as HTTP 403, download with a browser user agent and were hashed on 18 November.
 - **Maintenance:** owner sessions on request, original inspection and explicit identity review for every addition; see `docs/DOSSIER-GATE.md`.
 - **Guards:** manifest pin, strict fields and identities, actual rendered dates, provisions, citations, links and absence wording. No current restrictions or cessation inferred.
 - **Composition unchanged:** 294 party tables and 129 admitted compiler control lines.

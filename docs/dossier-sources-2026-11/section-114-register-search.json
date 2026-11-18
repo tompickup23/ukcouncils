@@ -528,14 +528,28 @@
         "method": "web reader",
         "retrieved": "2026-11-18",
         "outcome": "library link revisited"
+      },
+      {
+        "url": "https://www.slough.gov.uk/downloads/file/2040/slough-s114-notice-2-july-2021",
+        "method": "direct request with a browser user agent",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 200, PDF; heading, date and provision read; SHA-256 8603bf3447a4ad45d9991eff1287b0b1dd21d39b7c6b1ebcab171905af8292fe"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27684/section_114_notice.pdf",
+        "method": "direct request with a browser user agent",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 200, PDF; heading, date and provision read; SHA-256 b6b8c50c5abc045190f4124bfa4d14ff85ae68116c949bab3bb34e896075152c"
+      },
+      {
+        "url": "https://www.birmingham.gov.uk/download/downloads/id/27939/supplementary_section_114_notice.pdf",
+        "method": "direct request with a browser user agent",
+        "retrieved": "2026-11-18",
+        "outcome": "HTTP 200, PDF; heading, date and provision read; SHA-256 8d8571b3744a023c7be9201816777e4a180d5bafc23f968c0b4e85dcaf7cf28c"
       }
     ],
     "leads_not_admitted": [],
-    "binary_retrieval_still_open": [
-      "E06000039-2021-07-02",
-      "E08000025-2023-09-05",
-      "E08000025-2023-09-21"
-    ],
+    "binary_retrieval_still_open": [],
     "search_result_rule": "Search results only locate leads. Admission requires opening and reading the original PDF, including a council committee copy. Search snippets, accounts, minutes and announcements do not admit a record.",
     "direct_identification_rechecks": [
       {
