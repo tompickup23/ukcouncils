@@ -29,11 +29,11 @@ export function compositionChecks(html, gss = null, root = process.cwd()) {
   if (sections.length !== Number(seatsExpected) || tables.length !== Number(seatsExpected)) failures.push('Composition presence differs from admitted snapshot row');
   if (controls.length !== Number(controlExpected)) failures.push('Control line without admitted snapshot row or missing admitted control');
   const date = new Intl.DateTimeFormat('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'}).format(new Date(`${source.retrieved}T00:00:00Z`));
-  const expectedControl = controlExpected ? `Control as recorded by Open Council Data on ${date}: ${controlLabel(expected)}` : null;
+  const expectedControl = controlExpected ? `Control in the Open Council Data snapshot retrieved ${date}: ${controlLabel(expected)}` : null;
   for (const control of controls) {
     if (clean(textOf(control)) !== expectedControl || !sections.some(section => inside(control, section))) failures.push('Control differs from admitted compiler field');
   }
-  const controlMentions = html.match(/Control as recorded by Open Council Data on /g) ?? [];
+  const controlMentions = html.match(/Control in the Open Council Data snapshot retrieved /g) ?? [];
   if (controlMentions.length !== Number(controlExpected)) failures.push('Control text outside admitted line');
   if (seatsExpected && sections.length === 1 && tables.length === 1) {
     const section = sections[0];

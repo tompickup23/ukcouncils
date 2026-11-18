@@ -11,7 +11,7 @@ const review = JSON.parse(readFileSync(COMPOSITION_PATHS[2], 'utf8'));
 const chorley = data.profiles.get('E07000118')!;
 const burnley = data.profiles.get('E07000117')!;
 const fixture = (profile = chorley) => `<main><section id="composition" data-composition-source="${profile.sourceId}">
-${profile.controlAdmitted ? `<p data-composition-control>Control as recorded by Open Council Data on ${snapshotDate}: ${controlLabel(profile)}</p><p>${CONTROL_CAVEAT}</p>` : ''}
+${profile.controlAdmitted ? `<p data-composition-control>Control in the Open Council Data snapshot retrieved ${snapshotDate}: ${controlLabel(profile)}</p><p>${CONTROL_CAVEAT}</p>` : ''}
 <table data-composition-table>${Object.entries(COLUMN_LABELS).map(([key, label]) => `<tr data-composition-column="${key}"><th>${label}</th><td>${profile.columns[key]}</td></tr>`).join('')}</table>
 <p>Open Council Data English Council Compositions 2026 ${snapshotDate}; compiled by a third party, not an official council return</p>
 <p>Other is the publisher's aggregate category. The date is not an effective date certified for each council.</p>
@@ -85,7 +85,7 @@ describe('composition distribution guard', () => {
   });
   it('fails on unpinned table values, unsupported control and control on absent profiles', () => {
     expect(compositionChecks(fixture().replace('<td>29</td>', '<td>30</td>'), chorley.gss)).toContain('Unpinned composition value or column');
-    const control = '<p data-composition-control>Control as recorded by Open Council Data on 16 November 2026: Labour</p>';
+    const control = '<p data-composition-control>Control in the Open Council Data snapshot retrieved 16 November 2026: Labour</p>';
     expect(compositionChecks(fixture(burnley).replace('</section>', control + '</section>'), burnley.gss)).toContain('Control line without admitted snapshot row or missing admitted control');
     expect(compositionChecks(control, 'E06000053')).toContain('Control line without admitted snapshot row or missing admitted control');
     expect(compositionChecks(fixture().replace('>Labour</', '>Conservative</'), chorley.gss).length).toBeGreaterThan(0);
