@@ -36,6 +36,36 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
+      # Reports whether the publisher's composition table still hashes to the
+      # pinned originalSha256. Reads only the committed manifest, writes only
+      # the job summary, changes no data and never fails the job: a changed
+      # hash or a network error is a line for a person to read.
+      - name: Compare the composition snapshot with the publisher's table
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          node --input-type=module <<'NODE'
+          import {appendFileSync, readFileSync} from 'node:fs';
+          import {createHash} from 'node:crypto';
+          const say = line => {
+            console.log(line);
+            try { appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${line}\n`); } catch {}
+          };
+          try {
+            const {source} = JSON.parse(readFileSync('data/elections/composition-manifest.json', 'utf8'));
+            const url = new URL(source.url);
+            if (url.protocol !== 'https:' || url.hostname !== 'opencouncildata.co.uk') throw new Error('unexpected source host');
+            const response = await fetch(url, {signal: AbortSignal.timeout(60000)});
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const sha256 = createHash('sha256').update(Buffer.from(await response.arrayBuffer())).digest('hex');
+            say(sha256 === source.originalSha256
+              ? `Composition snapshot: the publisher's table matches the pinned SHA-256 (retrieved ${source.retrieved}).`
+              : `Composition snapshot: the publisher's table no longer matches the pinned SHA-256 (retrieved ${source.retrieved}); today ${sha256}. No data was changed.`);
+          } catch (error) {
+            say(`Composition snapshot: not compared, the publisher's table could not be read (${error.message}). No data was changed.`);
+          }
+          NODE
+
       - name: Install
         run: npm ci
 
