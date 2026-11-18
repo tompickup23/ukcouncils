@@ -31,7 +31,8 @@ describe('dossier completion states', () => {
   });
   it('rejects absent, blank, hidden, duplicated or misplaced explanations', () => {
     const start = '<li data-dossier-absence="control">';
-    const row = `${start}<strong>Control:</strong> sources disagree; held for review</li>`;
+    const row = `${start}<strong>Control:</strong> ${profile.parts.find(part => part.key === 'control')!.reason}</li>`;
+    expect(fixture()).toContain(row);
     for (const replacement of ['', `${start}</li>`, row.replace('<li ', '<li hidden '), row + row]) {
       expect(dossierCoverage(fixture().replace(row, replacement), profile)).toContain('Missing visible dossier reason control');
     }

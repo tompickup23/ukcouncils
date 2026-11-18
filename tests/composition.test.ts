@@ -2,7 +2,7 @@ import {describe, it, expect} from 'vitest';
 import {readFileSync, mkdtempSync, mkdirSync, writeFileSync, rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {loadComposition, validateComposition, controlCheck, reconciles, COMPOSITION_PATHS, COLUMN_LABELS, CONTROL_CAVEAT, controlLabel} from '../scripts/lib/composition-data.mjs';
+import {loadComposition, validateComposition, controlCheck, reconciles, compositionAbsence, COMPOSITION_PATHS, COLUMN_LABELS, CONTROL_CAVEAT, controlLabel} from '../scripts/lib/composition-data.mjs';
 import {compositionChecks, compositionFieldLeaks} from '../scripts/lib/composition-checks.mjs';
 import {compositionSource, snapshotDate} from '../src/lib/composition';
 const data = loadComposition();
@@ -52,6 +52,20 @@ describe('pinned composition admission', () => {
     expect(() => validateComposition(snapshot, changed)).toThrow();
     row.controlAdmitted = false;
     expect(validateComposition(snapshot, changed).get(row.gss)!.controlAdmitted).toBe(false);
+  });
+  it('gives each held control profile the reason that is true for it', () => {
+    const held = review.profiles.filter((p: {controlAdmitted: boolean}) => !p.controlAdmitted);
+    const reasons = held.map((p: {slug: string}) => compositionAbsence(p, 'control'));
+    expect(held).toHaveLength(167);
+    expect(reasons.filter((reason: string) => reason.startsWith("The compiler's control label for this council is not one of the single party labels"))).toHaveLength(165);
+    // No profile in this snapshot has a printable label contradicted by a council statement.
+    expect(reasons.filter((reason: string) => reason.includes('sources disagree'))).toHaveLength(0);
+    const chorleyRow = structuredClone(chorley);
+    chorleyRow.controlCheck2.outcome = 'disagrees';
+    expect(compositionAbsence(chorleyRow, 'control')).toBe('sources disagree; held for review');
+    expect(compositionAbsence({...chorleyRow, controlCheck1: 'empty publisher field'}, 'control')).toBe('The compiler records no control label for this council.');
+    expect(compositionAbsence({...chorleyRow, controlCheck1: 'fails majority check'}, 'control')).toContain('does not pass');
+    expect(compositionAbsence(burnley, 'seats')).toBeNull();
   });
   it('rejects a value changed without its manifest pin', () => {
     const root = mkdtempSync(join(tmpdir(), 'ukc-composition-'));

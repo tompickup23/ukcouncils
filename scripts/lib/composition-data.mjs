@@ -104,5 +104,11 @@ export function compositionAbsence(profile, kind) {
   if (profile.slug === 'city-of-london') return 'City of London is held pending review of its chamber definition.';
   if (!profile.sourceId) return 'The pinned Open Council Data table has no row for Isles of Scilly.';
   if (profile.reconciliation !== 'reconciles') return 'The printed party totals do not reconcile to the printed total; held for review.';
-  return kind === 'control' ? 'sources disagree; held for review' : null;
+  if (kind !== 'control') return null;
+  // Say why this profile is held. "Sources disagree" is true only where a label this site
+  // prints passed the seat check and an eligible council statement names something else.
+  if (profile.controlCheck1 === 'empty publisher field') return 'The compiler records no control label for this council.';
+  if (profile.controlCheck1 === 'unsupported publisher value') return "The compiler's control label for this council is not one of the single party labels this site prints. No control is inferred from the seat totals.";
+  if (profile.controlCheck1 !== 'passes') return "The compiler's control label does not pass this site's seat check; held for review.";
+  return 'sources disagree; held for review';
 }
