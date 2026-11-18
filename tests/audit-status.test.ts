@@ -131,6 +131,21 @@ describe('audit status built page guard', () => {
     }
     expect(firmChecks('<main><a href="https://example.com/x+BDO/y" integrity="sha384-ab+BDO/cd">Budget</a></main>')).toEqual([]);
   });
+  it('admits an exact existing election citation titled as accounts, and nothing beside it', () => {
+    const elections = JSON.parse(readFileSync('data/elections/next-elections.json', 'utf8')).councils;
+    // A new election source title with audit wording must be reviewed here before it is admitted.
+    const matching = Object.entries(elections).filter(([, row]: any) => mentionsAudit(row.sourceLabel)).map(([gss]) => gss).sort();
+    expect(matching).toEqual(['E07000124']);
+    const row = elections.E07000124;
+    const link = `<p><a href="${row.sourceUrl}">${row.sourceLabel}</a></p>`;
+    expect(auditChecks(fixture('E07000124') + link, 'E07000124')).toEqual([]);
+    expect(auditChecks(fixture('E07000124') + link.replace('</p>', ' Its audit is complete.</p>'), 'E07000124')).not.toEqual([]);
+    const [publisher, ...rest] = row.sourceLabel.split(', ');
+    const record = (extra = {}) => `<p data-citation-record='${JSON.stringify({publisher, title: rest.join(', '), url: row.sourceUrl, table: 'checked', ...extra})}'></p>`;
+    expect(auditChecks(fixture('E07000124') + record(), 'E07000124')).toEqual([]);
+    expect(auditChecks(fixture('E07000124') + record({table: 'audited on time'}), 'E07000124')).not.toEqual([]);
+    expect(auditChecks(fixture(BURNLEY) + link, BURNLEY)).not.toEqual([]);
+  });
   it('detects audit wording but not ordinary budget prose', () => {
     expect(mentionsAudit('The council budget for 2026/27.')).toBe(false);
     for (const text of ['audit', 'audited accounts', 'the backstop date', 'PSAA', 'statement of accounts']) expect(mentionsAudit(text), text).toBe(true);

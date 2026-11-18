@@ -112,10 +112,24 @@ export function auditChecks(html, gss, root = process.cwd()) {
     approved.push(section);
   }
   approved.push(...bibliography);
+  // One existing election source title is a statement of accounts. Admit only the exact
+  // source link for this profile, as the section 114 guard does, not its surrounding prose.
+  const election = JSON.parse(readFileSync(resolve(root, 'data/elections/next-elections.json'), 'utf8')).councils[gss];
+  if (election) approved.push(...elements.filter(node => node.name === 'a'
+    && decode(node.attributes.href ?? '') === election.sourceUrl && clean(textOf(node)) === clean(election.sourceLabel)));
+  const readable = (key, value) => {
+    if (key !== 'data-citation-record' || !election) return String(value);
+    try {
+      const record = JSON.parse(decode(String(value)));
+      const joined = record.title === election.sourceLabel ? ['title'] : `${record.publisher}, ${record.title}` === election.sourceLabel ? ['publisher', 'title'] : null;
+      if (record.url !== election.sourceUrl || !joined) return String(value);
+      return Object.entries(record).filter(([field]) => field !== 'url' && !joined.includes(field)).map(([, text]) => String(text)).join(' . ');
+    } catch { return String(value); }
+  };
   const permitted = node => approved.some(parent => node === parent || inside(node, parent));
   const remaining = textNodes.filter(node => !permitted(node)).map(node => node.value).join(' ');
   const attributes = elements.filter(node => !permitted(node)).flatMap(node => Object.entries(node.attributes ?? {})
-    .filter(([key]) => !UNREAD_ATTRIBUTES.has(key)).map(([, value]) => String(value))).join(' . ');
+    .filter(([key]) => !UNREAD_ATTRIBUTES.has(key)).map(([key, value]) => readable(key, value))).join(' . ');
   if (mentionsAudit(clean(remaining)) || mentionsAudit(clean(attributes))) failures.push('Audit claim outside pinned values or exact absence wording');
   failures.push(...firmChecks(html, root));
   return [...new Set(failures)];
