@@ -1,0 +1,63 @@
+{
+  "source": {
+    "publisher": "Ministry of Housing, Communities and Local Government",
+    "title": "Addressing the local audit backlog in England: Non-compliance lists",
+    "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+    "original_sha256": "49e66ae8896985dfa87202c925c3cb36da643ef181b2dd6e7822cdaeb74d9d78",
+    "published_or_updated": "2026-03-26",
+    "data_cut_off": "2026-03-09",
+    "retrieved": "2026-11-15",
+    "licence": "Open Government Licence v3.0",
+    "licence_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "edition_checked": "2026-11-18",
+    "edition_url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists",
+    "scope": "Lists of bodies that did not publish by the relevant backstop, not a census. A missing row is not evidence of anything. Pension fund entries are separate from main council accounts.",
+    "discrepancy": "The first table has 67 body rows although publisher prose says 68 bodies. No row is added.",
+    "transformation": "Identity labels and table membership only. No personal names, audit firm names or per-body PSAA values. Labels retain the research spelling; in the Merton pension fund label the original dash is represented by two spaces, to, two spaces. No other label change.",
+    "tables": [
+      {
+        "backstop": "2024-12-13",
+        "financialYears": "Up to and including 2022/23",
+        "bodyRows": 67
+      },
+      {
+        "backstop": "2025-02-28",
+        "financialYears": "2023/24",
+        "bodyRows": 50
+      },
+      {
+        "backstop": "2026-02-27",
+        "financialYears": "2024/25",
+        "bodyRows": 33
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "path": "docs/dossier-sources-2026-11/audit-mhclg-tables.json",
+      "sha256": "2201ea208b8cc1d9a7712959b628735e611f206ed4014a4435372641c8b2ba9b"
+    },
+    {
+      "path": "data/council-tax/england-2026-27.json",
+      "sha256": "bec0f1dc77f7d9cc71096b33b94a173f4039308678a7b48bb54281b3943205eb"
+    },
+    {
+      "path": "data/registry/councils.json",
+      "sha256": "92aaf1637f58501fdf1bee272d72923e2b49249f428fe53259175ba6727d4f1d"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/audit/review-2026-11-18.json",
+      "sha256": "bae46754bb8d00ac92722ac9c1fd2d0dd69a7e4e720f7468b448b6127d6ba26f"
+    },
+    {
+      "path": "data/audit/crosswalk-2026-11-18.json",
+      "sha256": "de08d6eb426d3a608c2f387a343a030d2b0f11636bd75da908c0dcd2f3296254"
+    },
+    {
+      "path": "data/audit/dry-run-2026-11-18.json",
+      "sha256": "32a8b8785c0e29e75ca2a54fb2f52d0307f35611d0e7c0d896a440ef7a47ba52"
+    }
+  ]
+}
