@@ -1,5 +1,6 @@
 import {compositionFor, compositionSource, type CompositionView} from "./composition";
 import {noticesFor, noticeSource, type NoticeRecord} from "./section-114";
+import {auditFor, auditSource, type AuditEntry} from "./audit";
 import {budgetHeadline} from "./budget-headline";
 import {functionsFor, functionsSource} from "./council-functions";
 import {councilBudget, type CouncilBudget} from "./council-budget";
@@ -39,7 +40,7 @@ import { spendingFor, spendingRecord, type SpendingRecord } from "./spending";
  */
 
 /** The section ids, in the order a council page prints them. */
-export const PROFILE_SECTIONS = ["about", "services", "tax-summary", "collection", "exceptional-financial-support", "elections", "composition", "budget", "financial-notices", "spending", "school-holidays", "sources"] as const;
+export const PROFILE_SECTIONS = ["about", "services", "tax-summary", "collection", "exceptional-financial-support", "elections", "composition", "budget", "audit-status", "financial-notices", "spending", "school-holidays", "sources"] as const;
 export type ProfileSection = (typeof PROFILE_SECTIONS)[number];
 
 export interface ProfileAbout {
@@ -84,6 +85,7 @@ export interface ProfileTermDates {
 
 export interface CouncilProfile {
   notices: NoticeRecord[];
+  audit: AuditEntry[];
   composition: CompositionView | null;
   about: ProfileAbout;
   budget: CouncilBudget | null;
@@ -211,6 +213,7 @@ export function profileSources(council: Council, tax: Authority, today = londonT
   if (compositionFor(council.gss)) add(compositionSource());
   const budgetView = councilBudget(council);
   if (budgetView) for (const source of budgetView.sources) add(source);
+  for (const entry of auditFor(council.gss)) add(auditSource(entry));
   for (const record of noticesFor(council.gss)) add(noticeSource(record));
   const spending = spendingRecord(tax.name, spendingFor(council.gss));
   if (spending) add(spending.source);
@@ -250,6 +253,7 @@ export function councilProfile(council: Council, tax: Authority, today = londonT
     elections: electionFor(council.gss) !== null,
     composition: compositionFor(council.gss) !== null,
     budget: budget !== null,
+    "audit-status": auditFor(council.gss).length > 0,
     "financial-notices": noticesFor(council.gss).length > 0,
     spending: spending !== null,
     "tax-summary": taxAtAGlance !== null,
@@ -258,6 +262,7 @@ export function councilProfile(council: Council, tax: Authority, today = londonT
   };
   return {
     notices: noticesFor(council.gss),
+    audit: auditFor(council.gss),
     composition: compositionFor(council.gss),
     about,
     budget,

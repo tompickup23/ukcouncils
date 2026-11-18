@@ -1,5 +1,6 @@
 import {compositionChecks, compositionFieldLeaks} from './lib/composition-checks.mjs';
 import {section114Checks} from './lib/section-114-checks.mjs';
+import {auditChecks, firmChecks} from './lib/audit-checks.mjs';
 import {loadDossier} from './lib/dossier-state.mjs';
 import {reorganisationChecks} from './lib/reorganisation-checks.mjs';
 import { budgetChecks } from './lib/budget-checks.mjs';
@@ -90,6 +91,7 @@ for (const path of files(DIST)) {
     failures.push(`missing 180 by 180 Apple touch icon link on ${rel(path)}`);
   }
   if (heldWording(text)) failures.push(`held wording outside cited source text in ${rel(path)}`);
+  failures.push(...firmChecks(text).map(error => `${error} ${rel(path)}`));
   const prose = text.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, "").replace(/<[^>]+>/g, " ");
   if (/\s-\s/.test(prose)) failures.push(`spaced hyphen in prose on ${rel(path)}`);
 
@@ -110,6 +112,7 @@ for (const path of files(DIST)) {
     const council = dossierBySlug.get(councilSlug);
     if (!council) throw new Error(`Unknown dossier council ${councilSlug}`);
     failures.push(...section114Checks(text, council.gss).map(error => `${error} on ${rel(path)}`));
+    failures.push(...auditChecks(text, council.gss).map(error => `${error} on ${rel(path)}`));
     const row = dossierBudget.councils[council.gss];
     const total = row?.values.servicetot;
     const headline = row?.status === 'available' && total != null && total !== 0

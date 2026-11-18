@@ -1,0 +1,28 @@
+---
+import SourceLine from './SourceLine.astro';
+import {auditLine, auditAnswers, auditSource, auditFootnote, AUDIT_HEADING, AUDIT_COVERAGE, type AuditEntry} from '../lib/audit';
+interface Props {entries: AuditEntry[]}
+const {entries} = Astro.props;
+---
+<section class="section" id="audit-status" data-profile-section="audit-status" aria-labelledby="audit-status-heading">
+  <h2 id="audit-status-heading">{AUDIT_HEADING}</h2>
+  <p>{AUDIT_COVERAGE}</p>
+  <ul class="audit-lines">
+    {entries.map(entry => <li data-audit-entry={entry.backstop}>
+      <p data-audit-line>{auditLine(entry)}</p>
+      <dl class="audit-answers">
+        {auditAnswers(entry).map(row => <div data-audit-answer={row.key}><dt>{row.question}</dt><dd>{row.answer}</dd></div>)}
+      </dl>
+      {entry.asterisk && <p class="caveat" data-audit-footnote>{auditFootnote()}</p>}
+      <SourceLine source={auditSource(entry)} />
+    </li>)}
+  </ul>
+</section>
+<style>
+  .audit-lines { padding-left: 0; list-style: none; }
+  .audit-lines > li + li { margin-top: 1.25rem; }
+  .audit-answers { margin: 0.5rem 0; }
+  .audit-answers > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.25rem 1rem; padding: 0.25rem 0; border-top: 1px solid var(--border); }
+  .audit-answers dt { margin: 0; overflow-wrap: anywhere; }
+  .audit-answers dd { margin: 0; font-weight: 600; }
+</style>
