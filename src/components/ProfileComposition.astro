@@ -8,7 +8,7 @@ const {view, name} = Astro.props;
 <section class="section" id="composition" data-profile-section="composition" data-composition-source={view.sourceId} aria-labelledby="composition-heading">
   <h2 id="composition-heading">Seats by party in {name}</h2>
   {view.control && <div data-fact>
-    <p data-composition-control>Control as recorded by Open Council Data on {snapshotDate}: <strong>{view.control}</strong></p>
+    <p data-composition-control>Control in the Open Council Data snapshot retrieved {snapshotDate}: <strong>{view.control}</strong></p>
     <CompositionSource />
     <p class="caveat">{CONTROL_CAVEAT}</p>
   </div>}
