@@ -1,20 +1,17 @@
 # State | UK Councils | 20 November 2026
 
-- **This PR:** `data/audit-north-yorkshire`, PR 73, draft data change; owner approval required to merge.
-- **Base:** main was `cbc3833` before this change. This branch does not authorise publication.
-- **H2 implemented:** decision of 19 November attaches the row printed as North Yorkshire County Council on the 13 December 2024 MHCLG table to North Yorkshire, E06000065.
-- **Identity verified:** raw SI 2022/328, articles 2 and 3, and the official council name resolution support the continuing body and name from 1 April 2023. The profile gives one plain former name sentence and cites the order by title and number.
-- **Audit source:** MHCLG non-compliance lists, updated 26 March 2026, information as at 9 March 2026, OGL v3.0. Latest edition checked on 20 November. The pinned research table stays byte unchanged.
-- **Snapshots:** `data/audit/manifest.json` pins the regenerated 20 November crosswalk, review, values and dry runs; the 18 November files remain as the earlier record. No audit firm name is added.
-- **Measured audit coverage:** 80 profiles, previously 79; 51 on the 2024 table, 32 on 2025 and 19 on 2026. 60 profiles on one table, 18 on two and two on all three.
-- **Measured absences:** 216, previously 217; 215 no row and Merton pension fund only. The former-name absence cause is removed because no remaining profile uses it.
-- **Cumberland:** retains its own two rows. Copeland is not attached or mentioned.
+- **Live:** main `cbc3833` (PR 72, the state note of 19 November) before this change; the last page change before it is `60b0153` (PR 71), deployed 18 November 2026. This file rides with PR 73, North Yorkshire's audit row (decision H2), built in Codex and reviewed by Claude on 20 November with no data rule breach. It merges on Tom's yes.
+- **Merged on 18 November:** PR 64 (party totals and checked control), 65 (RA workbooks restored in the weekly refresh), 66 (data refresh), 67 (MHCLG audit identity crosswalk), 68 (section 114 notice register), 69 (control line wording), 70 (external audit status lines) and 71 (upkeep).
+- **Dossier, three sources live:** 294 party tables and 129 control lines; 11 section 114 notice records on eight profiles; an External audit part on 80 profiles with PR 73 (51 on the 13 December 2024 list, 32 on 28 February 2025, 19 on 27 February 2026), 79 and 50 before it.
+- **Audit source:** MHCLG non-compliance lists, updated 26 March 2026, information as at 9 March 2026, OGL v3.0, still the latest edition on 20 November. Read through the crosswalk into `data/audit/values-2026-11-20.json`; `data/audit/manifest.json` pins the 20 November files and the 18 November files stay as the earlier record. The pinned research table is byte unchanged. No audit firm column or name on any page.
+- **Audit absences, with reasons:** 216 with PR 73: 215 profiles with no row on the lists; Merton, pension fund row only. The former name cause is removed because no profile uses it. Cumberland is built from its own rows; the Copeland row is not attached or mentioned.
+- **North Yorkshire (H2):** the row printed as North Yorkshire County Council on the 13 December 2024 table is attached to E06000065 with the name as printed and one sentence that it is the council's name before 1 April 2023. Basis: SI 2022/328, articles 2 and 3, cited on the page; the council's minutes of 22 February 2023 (item 85), which record the change of name, are cited in the crosswalk evidence only. Whether to add the minutes as a second source line on the page is open for Tom.
+- **Control line:** says the snapshot was retrieved on its date, not recorded by the publisher (PR 69).
 - **C3 roll-up:** built on Croydon, Nottingham and Woking; absent on 293.
-- **Composition and notices:** 294 party tables and 129 control lines; 11 notice records on eight profiles, unchanged.
-- **Page scope:** North Yorkshire and the sources catalogue, whose printed audit coverage count rises to 80. Other profiles are unchanged.
-- **Still held:** PSAA per body audit data and its permission request, registry reorganisation and unsupported control labels; no registry edit.
-- **December fallback:** the 216 audit absences move out of January scope from 16 December with the same text. Existing other-body and contract rules are unchanged in this PR.
-- **Verification:** final local gates, research hashes, text and number comparison, and hosted head checks are recorded in PR 73 comments.
-- **Check trap:** hosted number diff uses main when the run starts. Fetch and merge origin/main before marking ready; inspect baseline and candidate columns before interpreting a failure.
-- **Waiting:** owner review and the yes to merge. H2 is no longer an open decision. No merge or deployment here.
-- **Plan:** UK Council Tax `docs/PLAN-CURRENT.md` and `docs/DECISIONS-2026-11-19.md`. Dossier due mid January 2027; reversal still requires Search Console evidence.
+- **Tooling (PR 71):** `npm run check:pr-body` reads a description with the hosted parser, run it before opening or editing a pull request; the research dry run passes with 8 hashes verified, and the two section 114 research files are hand maintained, pinned and never regenerated; the weekly refresh writes one line to its job summary saying whether the composition table still matches its pin. Read that line after the refresh on Monday 23 November.
+- **Waiting on Tom:** the yes to merge PR 73; whether the North Yorkshire page also cites the council minutes; the PSAA permission request is on hold at his word.
+- **Still held:** PSAA per body audit data (reuse not cleared), registry reorganisation and other composition inputs; X1 funding bars, sparklines and history strips.
+- **December fallback:** from 16 December the 216 audit absences move out of scope with the same text; PSAA audit data reuse, other body types and contracts stay out.
+- **Check trap:** the number diff compares a branch with main as it is when the run starts. Marking a pull request ready fires a new run, so a branch that sits behind main fails on pages it never touched. This happened on PR 71: 82 pages, every differing number on the main side, from PR 70 merged 22 minutes earlier. Merge main in before marking ready, and read which side the numbers are on before believing the failure.
+- **Binding dates:** dossier on all 296 profiles by mid January 2027; the May to June 2027 reversal also requires Search Console evidence.
+- **Plan:** UK Council Tax `docs/PLAN-CURRENT.md` and `docs/DECISIONS-2026-11-16.md`. Review rules: `docs/REVIEW.md`.
