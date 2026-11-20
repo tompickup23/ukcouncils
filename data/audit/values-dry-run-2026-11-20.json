@@ -1,0 +1,254 @@
+{
+  "date": "2026-11-20",
+  "profilesWithLines": 80,
+  "profilesByTableCount": [
+    {
+      "tables": 1,
+      "profiles": 60
+    },
+    {
+      "tables": 2,
+      "profiles": 18
+    },
+    {
+      "tables": 3,
+      "profiles": 2
+    }
+  ],
+  "byTable": [
+    {
+      "backstop": "2024-12-13",
+      "financialYears": "Up to and including 2022/23",
+      "profilesWithLines": 51,
+      "profiles": [
+        "E06000002",
+        "E06000007",
+        "E06000015",
+        "E06000032",
+        "E06000039",
+        "E06000054",
+        "E06000060",
+        "E06000061",
+        "E06000065",
+        "E07000012",
+        "E07000032",
+        "E07000034",
+        "E07000062",
+        "E07000063",
+        "E07000069",
+        "E07000071",
+        "E07000077",
+        "E07000081",
+        "E07000092",
+        "E07000098",
+        "E07000102",
+        "E07000103",
+        "E07000106",
+        "E07000108",
+        "E07000111",
+        "E07000114",
+        "E07000144",
+        "E07000149",
+        "E07000174",
+        "E07000179",
+        "E07000180",
+        "E07000200",
+        "E07000203",
+        "E07000209",
+        "E07000214",
+        "E07000227",
+        "E07000234",
+        "E07000235",
+        "E07000236",
+        "E07000238",
+        "E07000240",
+        "E07000242",
+        "E08000022",
+        "E08000025",
+        "E08000033",
+        "E09000004",
+        "E09000008",
+        "E09000010",
+        "E09000014",
+        "E09000025",
+        "E09000026"
+      ],
+      "asterisk": [],
+      "answers": {
+        "draftAccounts": {
+          "question": "All unaudited draft accounts published by 31 October 2024?",
+          "counts": {
+            "no": 11,
+            "yes": 40
+          }
+        },
+        "opinionDelivered": {
+          "question": "All audit opinions delivered by 13 December 2024?",
+          "counts": {
+            "Yes": 2,
+            "no": 17,
+            "yes": 32
+          }
+        },
+        "dateDelivered": {
+          "question": "Date audit opinion delivered",
+          "counts": {
+            "n/a": 2
+          },
+          "printedDates": 49
+        },
+        "opinionPublished": {
+          "question": "All audit opinions published as of 9 March 2026?",
+          "counts": {
+            "no": 2,
+            "yes": 49
+          }
+        }
+      }
+    },
+    {
+      "backstop": "2025-02-28",
+      "financialYears": "2023/24",
+      "profilesWithLines": 32,
+      "profiles": [
+        "E06000007",
+        "E06000032",
+        "E06000039",
+        "E06000050",
+        "E06000054",
+        "E06000063",
+        "E07000008",
+        "E07000061",
+        "E07000062",
+        "E07000063",
+        "E07000071",
+        "E07000073",
+        "E07000081",
+        "E07000109",
+        "E07000121",
+        "E07000122",
+        "E07000130",
+        "E07000134",
+        "E07000170",
+        "E07000197",
+        "E07000211",
+        "E07000234",
+        "E07000235",
+        "E07000236",
+        "E07000237",
+        "E07000240",
+        "E07000242",
+        "E08000025",
+        "E09000008",
+        "E09000010",
+        "E09000017",
+        "E09000021"
+      ],
+      "asterisk": [],
+      "answers": {
+        "draftAccounts": {
+          "question": "Draft accounts published by 16 January 2025?",
+          "counts": {
+            "no": 15,
+            "yes": 17
+          }
+        },
+        "opinionDelivered": {
+          "question": "Audit opinion delivered by 28 February 2025?",
+          "counts": {
+            "no": 26,
+            "yes": 6
+          }
+        },
+        "dateDelivered": {
+          "question": "Date audit opinion delivered",
+          "counts": {
+            "n/a": 7
+          },
+          "printedDates": 25
+        },
+        "opinionPublished": {
+          "question": "Audit opinion published as of 9 March 2026?",
+          "counts": {
+            "no": 7,
+            "yes": 25
+          }
+        }
+      }
+    },
+    {
+      "backstop": "2026-02-27",
+      "financialYears": "2024/25",
+      "profilesWithLines": 19,
+      "profiles": [
+        "E06000007",
+        "E06000018",
+        "E06000021",
+        "E06000038",
+        "E06000063",
+        "E07000011",
+        "E07000066",
+        "E07000078",
+        "E07000081",
+        "E07000088",
+        "E07000120",
+        "E07000121",
+        "E07000134",
+        "E07000148",
+        "E07000212",
+        "E07000217",
+        "E07000238",
+        "E08000010",
+        "E08000039"
+      ],
+      "asterisk": [
+        "E06000007",
+        "E07000066",
+        "E07000212",
+        "E07000217"
+      ],
+      "answers": {
+        "draftAccounts": {
+          "question": "Draft accounts published by 15 January 2026?",
+          "counts": {
+            "no": 3,
+            "yes": 16
+          }
+        },
+        "opinionDelivered": {
+          "question": "Audit opinion delivered by 27 February 2026?",
+          "counts": {
+            "No": 1,
+            "no": 13,
+            "yes": 5
+          }
+        },
+        "dateDelivered": {
+          "question": "Date audit opinion delivered",
+          "counts": {
+            "n/a": 13
+          },
+          "printedDates": 6
+        },
+        "opinionPublished": {
+          "question": "Audit opinion published as of 9 March  2026?",
+          "counts": {
+            "no": 13,
+            "yes": 6
+          }
+        }
+      }
+    }
+  ],
+  "footnote": {
+    "printed": "*These bodies and their appointed audit firms are included on the list because audit opinions from prior years, relating to audits carried out by previous auditors, remained outstanding at the time of the backstop.",
+    "retrieved": "2026-11-18",
+    "profiles": [
+      "E06000007",
+      "E07000066",
+      "E07000212",
+      "E07000217"
+    ]
+  },
+  "excluded": "The appointed audit firm column is not read into any value file. Answers respond to the dated question in each printed column heading; they are not audit opinion types."
+}

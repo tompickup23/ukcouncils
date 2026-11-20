@@ -55,7 +55,7 @@ const FEED = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", MANIF
 const CURRENT = loadYear(CURRENT_YEAR);
 const COMPOSITION = JSON.parse(readFileSync(join(ROOT, "data/elections/composition-review-2026-11-16.json"), "utf8"));
 const NOTICES = JSON.parse(readFileSync(join(ROOT, "data/budget/section-114-2026-11-18.json"), "utf8"));
-const AUDIT = JSON.parse(readFileSync(join(ROOT, "data/audit/values-2026-11-18.json"), "utf8"));
+const AUDIT = JSON.parse(readFileSync(join(ROOT, "data/audit/values-2026-11-20.json"), "utf8"));
 
 /** The sections a council's data supports, read from the raw files, not through the reader. */
 function expectedSections(gss: string, parentGss: string | null): string[] {
@@ -113,6 +113,16 @@ describe("the Lancashire council profiles", () => {
       expect(councilProfile(council, tax).sections, council.slug).toEqual(
         expectedSections(council.gss, council.parentGss),
       );
+    }
+  });
+
+  it("includes the North Yorkshire identity order in its bibliography only", () => {
+    for (const {council, tax} of pages) {
+      const sources = councilProfile(council, tax).sources.filter(source => source.url === 'https://www.legislation.gov.uk/uksi/2022/328/made');
+      expect(sources, council.slug).toEqual(council.gss === 'E06000065' ? [{
+        publisher: 'UK legislation', title: 'The North Yorkshire (Structural Changes) Order 2022',
+        url: 'https://www.legislation.gov.uk/uksi/2022/328/made', table: 'SI 2022/328, articles 2 and 3',
+      }] : []);
     }
   });
 

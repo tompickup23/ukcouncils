@@ -18,7 +18,7 @@ The build must fail if any expected profile or item is missing, any part has con
 
 ## Item boundaries and measured counts
 
-Measured on 18 November 2026 against a clean full build of base `37cb4a4`, using Node 22.23.4. Both builds contain 329 HTML pages and 296 billing profiles. External audit lines from the MHCLG backstop lists render on 79 profiles; the other 217 keep a reason for their own cause. The original notice register has 11 historical document records on eight profiles; the other 288 profiles retain an explicit non-exhaustive register explanation. Composition remains at 294 party tables and 129 admitted control lines. The table records candidate states checked against the built content and explanations.
+Measured on 20 November 2026 against base `cbc3833`, main before the North Yorkshire attachment, using Node 22.23.4. Both builds contain 329 HTML pages and 296 billing profiles. External audit lines from the MHCLG backstop lists render on 80 profiles; the other 216 keep a reason for their own cause. The original notice register has 11 historical document records on eight profiles; the other 288 profiles retain an explicit non-exhaustive register explanation. Composition remains at 294 party tables and 129 admitted control lines. The table records candidate states checked against the built content and explanations.
 
 | Item | Required parts | Built | Absent with reason | Out of scope |
 |---|---|---:|---:|---:|
@@ -46,7 +46,7 @@ D1's eleven partial profiles are the nine without a budget return plus Barnsley 
 | Control | 129 | 167 | Unsupported compiler labels held; no inference from totals |
 | EFS | 51 | 245 | Not in the pinned list; no negative inference |
 | Published payments | 234 | 62 | No dated summary held |
-| Audit status | 79 | 217 | No row on the MHCLG lists 215; row under its former name only, North Yorkshire 1; pension fund row only, Merton 1. PSAA per body data reuse held |
+| Audit status | 80 | 216 | No row on the MHCLG lists 215; pension fund row only, Merton 1. North Yorkshire is attached under its printed former name by decision H2. PSAA per body data reuse held |
 | Section 114 original notices | 8 | 288 | Eleven inspected originals; non-exhaustive register, no negative inference |
 | Independent programme panels | 184 | 112 | No independently sourced panel held |
 | School holidays | 287 | 9 | No publishable calendar in the pinned snapshot |
@@ -66,7 +66,7 @@ The three remaining decisions have **15 December 2026** as their decide-by date.
 
 | Decision | What Tom must settle | Default from 16 December 2026 |
 |---|---|---|
-| PSAA audit data reuse | The identity method and the MHCLG lists are adopted and render on 79 profiles. Decide whether per body PSAA audit delivery data is needed for the other 217, and clear its reuse terms if so. | The 217 audit absences move out of January scope with the same reasons; the 79 built lines are unaffected |
+| PSAA audit data reuse | The identity method and the MHCLG lists are adopted and render on 80 profiles. Decide whether per body PSAA audit delivery data is needed for the other 216, and clear its reuse terms if so. | The 216 audit absences move out of January scope with the same reasons; the 80 built lines are unaffected |
 | C7 scope | Decide which additional body types need profiles, with a suitable registry, routes and sources. | Additional body types out of January scope; existing English billing profiles remain the denominator |
 | C9 scope | Decide whether contracts are required for January, with a pinned figure, scope and date and verified live UK Public Contracts destinations. | Contracts out of January scope; contracts absence remains |
 
@@ -106,7 +106,9 @@ All other profiles have the same reason because the same fact holds for each: no
 
 ## Page text exceptions and verification
 
-In the external audit change, all 296 billing profiles change: 79 gain an External audit part, a contents link and one bibliography entry for each table, and lose the held audit reason; 217 replace the held audit reason with the reason for their own cause. The source catalogue gains the MHCLG publication. Earlier, the notice register added dated historical document lines on eight profiles and the non-exhaustive explanation on 288. The measured numeric differences and the full list of allowed page paths are recorded in the draft PR. Council tax, budgets, seats, control, collection and other existing figures remain unchanged.
+Decision H2 of 19 November 2026 attaches the North Yorkshire County Council row on the 13 December 2024 table to the continuing North Yorkshire profile. The page prints the name as held, the four original questions and answers, one sentence explaining the name before 1 April 2023, and The North Yorkshire (Structural Changes) Order 2022, SI 2022/328, articles 2 and 3, in a source line. The new dated crosswalk and values are regenerated from the unchanged research table. Audit parts increase from 79 to 80 and absences fall from 217 to 216. The 2024 table reaches 51 profiles; the 2025 and 2026 tables remain at 32 and 19. Cumberland retains its own two rows; Merton and the 215 no-row profiles retain their exact reasons.
+
+Only the North Yorkshire profile and the sources catalogue change. The catalogue prints the coverage count, now 80, and its identity wording now admits a reviewed continuing council under a former name. The numeric comparison permits only `councils/north-yorkshire/index.html` and `sources/index.html`. Council tax, budgets, seats, control, collection and other existing figures remain unchanged.
 
 The [composition implementation record](COMPOSITION-SNAPSHOT-2026-11-16.md) remains the source of its decision and counts. The original notice checks compare actual dates, provisions, links, locators, citations and bibliography entries with the pinned records. They reject missing, additional, altered or hidden records, false absence explanations and any notice claim outside those checked rendering paths, including metadata.
 

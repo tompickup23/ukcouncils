@@ -4,7 +4,8 @@ import {readFileSync, writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 
-export const AUDIT_DATE = '2026-11-18';
+export const AUDIT_DATE = '2026-11-20';
+const ORIGINAL_REVIEW_DATE = '2026-11-18';
 export const AUDIT_PATHS = ['data/audit/manifest.json', `data/audit/review-${AUDIT_DATE}.json`,
   `data/audit/crosswalk-${AUDIT_DATE}.json`, `data/audit/dry-run-${AUDIT_DATE}.json`,
   `data/audit/values-${AUDIT_DATE}.json`, `data/audit/values-dry-run-${AUDIT_DATE}.json`];
@@ -21,7 +22,7 @@ export const ASTERISK_FOOTNOTE = {
   printed: '*These bodies and their appointed audit firms are included on the list because audit opinions from prior years, relating to audits carried out by previous auditors, remained outstanding at the time of the backstop.',
   backstop: '2026-02-27',
   location: 'Paragraph printed immediately after the 27 February 2026 table',
-  retrieved: AUDIT_DATE,
+  retrieved: ORIGINAL_REVIEW_DATE,
 };
 export const BODY_CLASSES = ['county', 'police', 'fire', 'pension-fund', 'combined-authority', 'other'];
 const keys = (value, expected) => {
@@ -42,7 +43,7 @@ function validateEvidence(evidence) {
     assert.equal(url.protocol, 'https:');
     assert(url.hostname.endsWith('.gov.uk') || url.hostname === 'salisburycitycouncil.gov.uk'
       || url.hostname === 'cumberland.moderngov.co.uk', 'Evidence must use an official source');
-    assert.equal(item.retrieved, AUDIT_DATE);
+    assert([ORIGINAL_REVIEW_DATE, AUDIT_DATE].includes(item.retrieved), 'Unexpected audit evidence retrieval date');
   }
 }
 
@@ -75,7 +76,7 @@ function validateSource(source) {
     'retrieved', 'licence', 'licence_url', 'edition_checked', 'edition_url', 'scope', 'discrepancy', 'transformation', 'tables']);
   assert.equal(source.published_or_updated, '2026-03-26');
   assert.equal(source.data_cut_off, '2026-03-09');
-  assert.equal(source.edition_checked, AUDIT_DATE);
+  assert.equal(source.edition_checked, ORIGINAL_REVIEW_DATE);
   assert.equal(source.licence, 'Open Government Licence v3.0');
   assert.deepEqual(source.tables, [
     {backstop: '2024-12-13', financialYears: 'Up to and including 2022/23', bodyRows: 67},

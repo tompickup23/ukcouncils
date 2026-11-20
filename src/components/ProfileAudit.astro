@@ -1,6 +1,6 @@
 ---
 import SourceLine from './SourceLine.astro';
-import {auditLine, auditAnswers, auditSource, auditFootnote, AUDIT_HEADING, AUDIT_COVERAGE, type AuditEntry} from '../lib/audit';
+import {auditLine, auditAnswers, auditSource, auditFootnote, auditIdentity, AUDIT_HEADING, AUDIT_COVERAGE, type AuditEntry} from '../lib/audit';
 interface Props {entries: AuditEntry[]}
 const {entries} = Astro.props;
 ---
@@ -15,6 +15,10 @@ const {entries} = Astro.props;
       </dl>
       {entry.asterisk && <p class="caveat" data-audit-footnote>{auditFootnote()}</p>}
       <SourceLine source={auditSource(entry)} />
+      {auditIdentity(entry) && <>
+        <p class="caveat" data-audit-identity>{auditIdentity(entry)!.note}</p>
+        <SourceLine source={auditIdentity(entry)!.source} />
+      </>}
     </li>)}
   </ul>
 </section>

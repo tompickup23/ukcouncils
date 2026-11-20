@@ -1,6 +1,6 @@
 import {compositionFor, compositionSource, type CompositionView} from "./composition";
 import {noticesFor, noticeSource, type NoticeRecord} from "./section-114";
-import {auditFor, auditSource, type AuditEntry} from "./audit";
+import {auditFor, auditSource, auditIdentity, type AuditEntry} from "./audit";
 import {budgetHeadline} from "./budget-headline";
 import {functionsFor, functionsSource} from "./council-functions";
 import {councilBudget, type CouncilBudget} from "./council-budget";
@@ -213,7 +213,11 @@ export function profileSources(council: Council, tax: Authority, today = londonT
   if (compositionFor(council.gss)) add(compositionSource());
   const budgetView = councilBudget(council);
   if (budgetView) for (const source of budgetView.sources) add(source);
-  for (const entry of auditFor(council.gss)) add(auditSource(entry));
+  for (const entry of auditFor(council.gss)) {
+    add(auditSource(entry));
+    const identity = auditIdentity(entry);
+    if (identity) add(identity.source);
+  }
   for (const record of noticesFor(council.gss)) add(noticeSource(record));
   const spending = spendingRecord(tax.name, spendingFor(council.gss));
   if (spending) add(spending.source);

@@ -25,22 +25,18 @@ const PSAA = 'Per body audit delivery data from Public Sector Audit Appointments
 // the tests check the cause against the pinned crosswalk for every profile.
 export const AUDIT_ABSENCE = {
   'no-row': `${HOLDINGS} This council has no row on those lists. Absence from them is not a statement about its audits. ${PSAA}`,
-  'former-name': label => `${HOLDINGS} The list for the 13 December 2024 backstop has a row printed as ${label}, the council's name before 1 April 2023. That row is not shown here. No lines are shown, and that is not a statement about this council's audits. ${PSAA}`,
   'pension-fund': `${HOLDINGS} The council's main accounts have no row on those lists. The list for the 27 February 2026 backstop has a row for the council's pension fund only, which is not shown here. Absence from the lists is not a statement about its audits. ${PSAA}`,
 };
 // Reviewed causes other than no row. The crosswalk keeps these labels unassigned;
 // this map only chooses the reason and never attaches their values to a profile.
 export const AUDIT_ABSENCE_CAUSES = {
-  // The same council under its name before 1 April 2023 (SI 2022/328, articles 2 and 3(1)).
-  // Whether to attach this row as lines is Tom's decision; until then it stays unattached.
-  E06000065: {cause: 'former-name', label: 'North Yorkshire County Council', backstop: '2024-12-13'},
   E09000024: {cause: 'pension-fund', label: 'London Borough of Merton (Pension fund only  to  the opinion for the main accounts was published by the backstop)', backstop: '2026-02-27'},
 };
 
 export function auditAbsence(gss) {
   const special = AUDIT_ABSENCE_CAUSES[gss];
   if (!special) return {cause: 'no-row', reason: AUDIT_ABSENCE['no-row']};
-  const reason = special.cause === 'former-name' ? AUDIT_ABSENCE['former-name'](special.label) : AUDIT_ABSENCE[special.cause];
+  const reason = AUDIT_ABSENCE[special.cause];
   return {cause: special.cause, reason};
 }
 
@@ -63,7 +59,16 @@ export function auditSource(entry, root = process.cwd()) {
   return {publisher: source.publisher, title: source.title, url: source.url,
     table: `table for the ${auditDate(entry.backstop)} backstop; updated ${auditDate(source.published_or_updated)}; information as at ${auditDate(source.data_cut_off)}; ${source.licence}`};
 }
+/** The reviewed continuing body uses its earlier printed name on this row only. */
+export function auditIdentity(entry) {
+  if (entry.label !== 'North Yorkshire County Council' || entry.backstop !== '2024-12-13' || entry.row !== 44) return null;
+  return {
+    note: "This row is printed under the council's name before 1 April 2023.",
+    source: {publisher: 'UK legislation', title: 'The North Yorkshire (Structural Changes) Order 2022',
+      url: 'https://www.legislation.gov.uk/uksi/2022/328/made', table: 'SI 2022/328, articles 2 and 3'},
+  };
+}
 export const auditFootnote = (root = process.cwd()) => `Footnote printed by MHCLG for the asterisk: ${loadAuditStatus(root).footnote.printed}`;
 
 /** The catalogue paragraph on the sources page, pinned by a test and the distribution check. */
-export const AUDIT_SOURCES_NOTE = 'These are lists of bodies that did not publish audited accounts by a backstop date, not a census of every body. Each answer is shown as printed by the publisher and responds to the dated question in its column heading; it is not an audit opinion. The appointed audit firm column is not shown. A body name is matched to a council profile only by its official name after three fixed normalisations or by a reviewed official source. Rows printed for a predecessor body, under a council\'s former name, for a pension fund or for another body are not attached to a present council. A council with no lines has a stated reason on its profile, and no statement is made about its audits.';
+export const AUDIT_SOURCES_NOTE = 'These are lists of bodies that did not publish audited accounts by a backstop date, not a census of every body. Each answer is shown as printed by the publisher and responds to the dated question in its column heading; it is not an audit opinion. The appointed audit firm column is not shown. A body name is matched to a council profile only by its official name after three fixed normalisations or by a reviewed official source. Rows printed for a predecessor body, for a pension fund or for another body are not attached to a present council. A row under a former name is attached only where reviewed official evidence confirms the continuing council. A council with no lines has a stated reason on its profile, and no statement is made about its audits.';
