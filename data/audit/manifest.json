@@ -48,24 +48,24 @@
   ],
   "files": [
     {
-      "path": "data/audit/review-2026-11-18.json",
-      "sha256": "bae46754bb8d00ac92722ac9c1fd2d0dd69a7e4e720f7468b448b6127d6ba26f"
+      "path": "data/audit/review-2026-11-20.json",
+      "sha256": "8da30a13230e530eab31c7213561b1f0d0dd30d119284914ff7cd7579cb8e235"
     },
     {
-      "path": "data/audit/crosswalk-2026-11-18.json",
-      "sha256": "de08d6eb426d3a608c2f387a343a030d2b0f11636bd75da908c0dcd2f3296254"
+      "path": "data/audit/crosswalk-2026-11-20.json",
+      "sha256": "c29f01c1b0f7e7518d84e7c813e52b6ef7e390eab06e4147a4444b01e33d035b"
     },
     {
-      "path": "data/audit/dry-run-2026-11-18.json",
-      "sha256": "32a8b8785c0e29e75ca2a54fb2f52d0307f35611d0e7c0d896a440ef7a47ba52"
+      "path": "data/audit/dry-run-2026-11-20.json",
+      "sha256": "904b98c89b9d48ce1a0da8b02576aec7ade47085cd24eeb36295d78f157634a5"
     },
     {
-      "path": "data/audit/values-2026-11-18.json",
-      "sha256": "71c22a9950044e07e7064efbf54f31198ea25a270aa627a0c5ac3edecae0e9ad"
+      "path": "data/audit/values-2026-11-20.json",
+      "sha256": "61acc33e72f5aaab01c51b1ff1cd02a76984e186cd9c0ede1ae3c8753a96cc4a"
     },
     {
-      "path": "data/audit/values-dry-run-2026-11-18.json",
-      "sha256": "195d342d86df7a2fd3d87ff45b047fdf4e8095164f82773e0a07174176ec9ad4"
+      "path": "data/audit/values-dry-run-2026-11-20.json",
+      "sha256": "e069c0ceb4b1fee6e6ba707862fdf71a90461129edf3c4e36811c98c8adcd8f2"
     }
   ]
 }

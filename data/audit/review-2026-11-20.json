@@ -1,0 +1,806 @@
+{
+  "reviewed": "2026-11-20",
+  "rows": [
+    {
+      "label": "Basildon Borough Council *",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E07000066",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/basildon",
+          "retrieved": "2026-11-18",
+          "quote": "Basildon Borough Council",
+          "note": "Reviewed footnote marker, not an automatic normalisation. GOV.UK confirms the exact council name before the marker; the MHCLG footnote qualifies prior audit years, not body identity."
+        }
+      ]
+    },
+    {
+      "label": "Bexley London Borough Council",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E09000004",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/bexley",
+          "retrieved": "2026-11-18",
+          "quote": "London Borough of Bexley",
+          "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+        }
+      ]
+    },
+    {
+      "label": "Cambridgeshire County Council",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "county",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Cambridgeshire County Council",
+          "note": "The printed body label identifies a county rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Chief Constable of Cleveland",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Cleveland",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Chief Constable of Derbyshire",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Derbyshire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Chief Constable of Hertfordshire",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Hertfordshire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Chief Constable of Leicestershire",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Leicestershire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Chief Constable of Northumbria",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Northumbria",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Copeland Borough Council",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Copeland Borough Council",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        },
+        {
+          "url": "https://cumberland.moderngov.co.uk/documents/s25243/Copeland%2BBorough%2BStatement%2Bof%2BAccounts%2B2019-20%2B2020-21%2B2021-22%2B2022-23%2BAppendix%2B1.pdf",
+          "retrieved": "2026-11-18",
+          "quote": "Copeland Borough Council was abolished on 1 April 2023.",
+          "note": "Statement of Accounts, narrative report. Historic district outside the current billing set; no successor assignment."
+        }
+      ]
+    },
+    {
+      "label": "County Durham and Darlington Fire and Rescue Service",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "fire",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "County Durham and Darlington Fire and Rescue Service",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Croydon London Borough Council",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E09000008",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/croydon",
+          "retrieved": "2026-11-18",
+          "quote": "London Borough of Croydon",
+          "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+        }
+      ]
+    },
+    {
+      "label": "Derbyshire Fire Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "fire",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Derbyshire Fire Authority",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "East Midlands Combined Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "combined-authority",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "East Midlands Combined Authority",
+          "note": "The printed body label identifies a combined authority rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "East Sussex County Council",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "county",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "East Sussex County Council",
+          "note": "The printed body label identifies a county rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Haringey London Borough Council",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E09000014",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/haringey",
+          "retrieved": "2026-11-18",
+          "quote": "London Borough of Haringey",
+          "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+        }
+      ]
+    },
+    {
+      "label": "Harlow District Council",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E07000073",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/harlow",
+          "retrieved": "2026-11-18",
+          "quote": "Harlow Council",
+          "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+        },
+        {
+          "url": "https://www.gov.uk/government/publications/harlow-district-council",
+          "retrieved": "2026-11-18",
+          "quote": "Harlow District Council",
+          "note": "The GOV.UK publication uses the source label for the same Harlow local authority."
+        }
+      ]
+    },
+    {
+      "label": "Hartlepool Development Corporation",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Hartlepool Development Corporation",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Hereford and Worcester Fire Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "fire",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Hereford and Worcester Fire Authority",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "King’s Lynn Internal Drainage Board",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "King’s Lynn Internal Drainage Board",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Leicester, Leicestershire and Rutland Combined Fire Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "fire",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Leicester, Leicestershire and Rutland Combined Fire Authority",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Lindsey Marsh Drainage Board",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Lindsey Marsh Drainage Board",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "London Borough of Merton (Pension fund only  to  the opinion for the main accounts was published by the backstop)",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "pension-fund",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "London Borough of Merton (Pension fund only  to  the opinion for the main accounts was published by the backstop)",
+          "note": "The publisher explicitly limits this entry to the pension fund. No assignment to Merton main accounts. The retained research spells the original dash as two spaces, to, two spaces."
+        }
+      ]
+    },
+    {
+      "label": "London Fire Commissioner",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "fire",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "London Fire Commissioner",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Merseyside Waste Disposal Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Merseyside Waste Disposal Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Middlesbrough Council",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E06000002",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/middlesbrough",
+          "retrieved": "2026-11-18",
+          "quote": "Middlesbrough Borough Council",
+          "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+        },
+        {
+          "url": "https://www.middlesbrough.gov.uk/",
+          "retrieved": "2026-11-18",
+          "quote": "Middlesbrough Council",
+          "note": "The council website uses the shorter source label; GOV.UK links this domain under the registry official name."
+        }
+      ]
+    },
+    {
+      "label": "Middlesbrough Development Corporation",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Middlesbrough Development Corporation",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Newham London Borough Council",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E09000025",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/newham",
+          "retrieved": "2026-11-18",
+          "quote": "London Borough of Newham",
+          "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+        }
+      ]
+    },
+    {
+      "label": "Norfolk County Council (including Norfolk Pension Fund)",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "county",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Norfolk County Council (including Norfolk Pension Fund)",
+          "note": "The printed body label identifies a county rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "North London Waste Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "North London Waste Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "North York Moors National Park Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "North York Moors National Park Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "North Yorkshire County Council",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E06000065",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.legislation.gov.uk/uksi/2022/328/made",
+          "retrieved": "2026-11-20",
+          "quote": "“the North Yorkshire Council” means the council of the county of North Yorkshire;",
+          "note": "The North Yorkshire (Structural Changes) Order 2022, SI 2022/328, article 2. Article 3(1) makes this continuing council the sole principal authority on or after 1 April 2023. Article 3(3) provides for omitting county from its name by resolution. Raw legislation.gov.uk XML read on the retrieval date. H2, decided on 19 November 2026, authorises this same-body attachment with the label as printed."
+        },
+        {
+          "url": "https://edemocracy.northyorks.gov.uk/mgAi.aspx?ID=11268",
+          "retrieved": "2026-11-20",
+          "quote": "shall be known as “The North Yorkshire Council” from Vesting Day on 1 April 2023",
+          "note": "New Constitution for North Yorkshire Council, official minutes. The resolved name and date fulfil the condition in article 3(3). This is the continuing county council under a new name, not a predecessor or successor assignment."
+        }
+      ]
+    },
+    {
+      "label": "North Yorkshire Police Fire and Crime Commissioner",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "North Yorkshire Police Fire and Crime Commissioner",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Peak District National Park Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Peak District National Park Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Police and Crime Commissioner for Derbyshire",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Derbyshire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Police and Crime Commissioner for Durham",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Durham",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Police and Crime Commissioner for Hertfordshire",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Hertfordshire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Police and Crime Commissioner for Humberside",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Humberside",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Police and Crime Commissioner for Leicestershire",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Leicestershire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Police and Crime Commissioner for Northumbria",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "police",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Northumbria",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Runnymede Borough Council *",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E07000212",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/runnymede",
+          "retrieved": "2026-11-18",
+          "quote": "Runnymede Borough Council",
+          "note": "Reviewed footnote marker, not an automatic normalisation. GOV.UK confirms the exact council name before the marker; the MHCLG footnote qualifies prior audit years, not body identity."
+        }
+      ]
+    },
+    {
+      "label": "Salisbury City Council",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Salisbury City Council",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        },
+        {
+          "url": "https://salisburycitycouncil.gov.uk/our-council/about-your-council/",
+          "retrieved": "2026-11-18",
+          "quote": "As a Parish Council",
+          "note": "Salisbury City Council identifies its parish status. It is not the Wiltshire billing authority."
+        }
+      ]
+    },
+    {
+      "label": "South Tees Development Corporation",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "South Tees Development Corporation",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Staffordshire County Council",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "county",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Staffordshire County Council",
+          "note": "The printed body label identifies a county rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Tees Valley Combined Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "combined-authority",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Tees Valley Combined Authority",
+          "note": "The printed body label identifies a combined authority rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Transport for the North",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Transport for the North",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Warrington Borough Council *",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E06000007",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/warrington",
+          "retrieved": "2026-11-18",
+          "quote": "Warrington Borough Council",
+          "note": "Reviewed footnote marker, not an automatic normalisation. GOV.UK confirms the exact council name before the marker; the MHCLG footnote qualifies prior audit years, not body identity."
+        }
+      ]
+    },
+    {
+      "label": "West London Waste Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "other",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "West London Waste Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "West Midlands Fire and Rescue Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "fire",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "West Midlands Fire and Rescue Authority",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    },
+    {
+      "label": "Wigan Council",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E08000010",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/wigan",
+          "retrieved": "2026-11-18",
+          "quote": "Wigan Metropolitan Borough Council",
+          "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+        },
+        {
+          "url": "https://www.wigan.gov.uk/index.aspx",
+          "retrieved": "2026-11-18",
+          "quote": "Wigan Council",
+          "note": "The council website uses the shorter source label; GOV.UK links this domain under the registry official name."
+        }
+      ]
+    },
+    {
+      "label": "Woking Borough Council *",
+      "tier": 2,
+      "decision": "assigned",
+      "gss": "E07000217",
+      "bodyClass": null,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/pay-council-tax/woking",
+          "retrieved": "2026-11-18",
+          "quote": "Woking Borough Council",
+          "note": "Reviewed footnote marker, not an automatic normalisation. GOV.UK confirms the exact council name before the marker; the MHCLG footnote qualifies prior audit years, not body identity."
+        }
+      ]
+    },
+    {
+      "label": "York and North Yorkshire Combined Authority",
+      "tier": 2,
+      "decision": "not-billing-profile",
+      "gss": null,
+      "bodyClass": "combined-authority",
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "York and North Yorkshire Combined Authority",
+          "note": "The printed body label identifies a combined authority rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ]
+    }
+  ]
+}

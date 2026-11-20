@@ -1,5 +1,5 @@
 import {loadAuditStatus} from '../../scripts/lib/audit-status.mjs';
-export {auditLine, auditAnswers, auditSource, auditFootnote, AUDIT_HEADING, AUDIT_COVERAGE, AUDIT_SOURCES_NOTE} from '../../scripts/lib/audit-status.mjs';
+export {auditLine, auditAnswers, auditSource, auditFootnote, auditIdentity, AUDIT_HEADING, AUDIT_COVERAGE, AUDIT_SOURCES_NOTE} from '../../scripts/lib/audit-status.mjs';
 export interface AuditEntry {
   backstop: string; row: number; label: string; asterisk: boolean;
   answers: {draftAccounts: string; opinionDelivered: string; dateDelivered: string; opinionPublished: string};

@@ -1,7 +1,7 @@
 import {describe, it, expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {loadAuditCrosswalk} from '../scripts/lib/audit-crosswalk.mjs';
-import {loadAuditStatus, auditAbsence, auditLine, auditAnswers, auditSource, auditFootnote, AUDIT_ABSENCE, AUDIT_ABSENCE_CAUSES, AUDIT_HEADING, AUDIT_COVERAGE, AUDIT_SOURCES_NOTE} from '../scripts/lib/audit-status.mjs';
+import {loadAuditStatus, auditAbsence, auditLine, auditAnswers, auditSource, auditFootnote, auditIdentity, AUDIT_ABSENCE, AUDIT_ABSENCE_CAUSES, AUDIT_HEADING, AUDIT_COVERAGE, AUDIT_SOURCES_NOTE} from '../scripts/lib/audit-status.mjs';
 import {existsSync} from 'node:fs';
 import {auditChecks, firmChecks, mentionsAudit, auditFirmNames} from '../scripts/lib/audit-checks.mjs';
 import {loadDossier} from '../scripts/lib/dossier-state.mjs';
@@ -13,18 +13,25 @@ const dossier = loadDossier(process.cwd(), '2026-11-18');
 const research = JSON.parse(readFileSync('docs/dossier-sources-2026-11/audit-mhclg-tables.json', 'utf8'));
 const GLOUCESTER = 'E07000081', BASILDON = 'E07000066', BURNLEY = 'E07000117', NORTH_YORKSHIRE = 'E06000065', MERTON = 'E09000024';
 
-const citation = (entry: Json) => {const s = auditSource(entry); return `<a href="${s.url}">${s.publisher}, ${s.title}</a>, ${s.table}.`;};
+const citation = (source: Json) => `<a href="${source.url}">${source.publisher}, ${source.title}</a>, ${source.table}.`;
+const sourceLine = (source: Json) => `<p data-citation-record='${JSON.stringify(source)}'>Source: ${citation(source)}</p>`;
 const fixture = (gss: string) => {
   const entries = status.profiles.get(gss) ?? [];
   if (!entries.length) return `<main><li data-dossier-absence="audit"><strong>External audit status:</strong> ${auditAbsence(gss).reason}</li></main>`;
-  return `<main><a href="#audit-status">${AUDIT_HEADING}</a><section id="audit-status"><h2>${AUDIT_HEADING}</h2><p>${AUDIT_COVERAGE}</p><ul>${entries.map((entry: Json) =>
-    `<li data-audit-entry="${entry.backstop}"><p data-audit-line>${auditLine(entry)}</p><dl>${auditAnswers(entry).map((row: Json) => `<div><dt>${row.question}</dt><dd>${row.answer}</dd></div>`).join('')}</dl>`
-    + `${entry.asterisk ? `<p data-audit-footnote>${auditFootnote()}</p>` : ''}<p data-citation-record='${JSON.stringify(auditSource(entry))}'>Source: ${citation(entry)}</p></li>`).join('')}</ul></section>`
-    + `<ul data-profile-sources>${entries.map((entry: Json) => `<li data-citation-entry="x">${citation(entry)}</li>`).join('')}</ul></main>`;
+  return `<main><a href="#audit-status">${AUDIT_HEADING}</a><section id="audit-status"><h2>${AUDIT_HEADING}</h2><p>${AUDIT_COVERAGE}</p><ul>${entries.map((entry: Json) => {
+    const identity = auditIdentity(entry);
+    return `<li data-audit-entry="${entry.backstop}"><p data-audit-line>${auditLine(entry)}</p><dl>${auditAnswers(entry).map((row: Json) => `<div><dt>${row.question}</dt><dd>${row.answer}</dd></div>`).join('')}</dl>`
+      + `${entry.asterisk ? `<p data-audit-footnote>${auditFootnote()}</p>` : ''}${sourceLine(auditSource(entry))}`
+      + `${identity ? `<p data-audit-identity>${identity.note}</p>${sourceLine(identity.source)}` : ''}</li>`;
+  }).join('')}</ul></section>`
+    + `<ul data-profile-sources>${entries.flatMap((entry: Json) => {
+      const identity = auditIdentity(entry);
+      return identity ? [auditSource(entry), identity.source] : [auditSource(entry)];
+    }).map((source: Json) => `<li data-citation-entry="x">${citation(source)}</li>`).join('')}</ul></main>`;
 };
 
 describe('audit status dossier state', () => {
-  it('builds exactly the 79 profiles with pinned values and gives every other profile one true reason', () => {
+  it('builds exactly the 80 profiles with pinned values and gives every other profile one true reason', () => {
     const counts: Record<string, number> = {};
     for (const profile of dossier.profiles) {
       const part = profile.parts.find((row: Json) => row.key === 'audit')!;
@@ -35,7 +42,7 @@ describe('audit status dossier state', () => {
       expect(part.reason).toBe(entries.length ? null : auditAbsence(profile.gss).reason);
       expect(auditChecks(fixture(profile.gss), profile.gss), profile.slug).toEqual([]);
     }
-    expect(counts).toEqual({built: 79, 'no-row': 215, 'former-name': 1, 'pension-fund': 1});
+    expect(counts).toEqual({built: 80, 'no-row': 215, 'pension-fund': 1});
   }, 30000);
   it('uses the no-row reason only where no crosswalk label of any kind names the profile', () => {
     const labelled = new Set(crosswalk.profiles.map((row: Json) => row.gss));
@@ -44,16 +51,31 @@ describe('audit status dossier state', () => {
       expect(auditAbsence(profile.gss).reason === AUDIT_ABSENCE['no-row'], profile.slug).toBe(!(profile.gss in AUDIT_ABSENCE_CAUSES));
     }
   });
-  it('says only what is printed for North Yorkshire: a row under its former name, not attached', () => {
-    const {cause, reason} = auditAbsence(NORTH_YORKSHIRE);
-    expect(cause).toBe('former-name');
-    const row = crosswalk.unassigned.find((item: Json) => item.label === 'North Yorkshire County Council')!;
-    expect(row.occurrences).toEqual([{backstop: '2024-12-13', row: 44}]);
-    expect(reason).toContain("The list for the 13 December 2024 backstop has a row printed as North Yorkshire County Council, the council's name before 1 April 2023. That row is not shown here.");
-    // The county council continued under a new name (SI 2022/328), so neither claim is true.
-    expect(reason).not.toMatch(/predecessor|No row for the present council/);
-    expect(status.profiles.has(NORTH_YORKSHIRE)).toBe(false);
-    for (const answer of research.tables[1].rows[44].slice(1)) if (/\d/.test(answer)) expect(reason).not.toContain(answer);
+  it('attaches North Yorkshire under its printed name with the dated identity note and order citation', () => {
+    const [entry] = status.profiles.get(NORTH_YORKSHIRE);
+    expect(entry.label).toBe('North Yorkshire County Council');
+    expect(entry.backstop).toBe('2024-12-13');
+    expect(entry.row).toBe(44);
+    expect(auditIdentity(entry)).toEqual({
+      note: "This row is printed under the council's name before 1 April 2023.",
+      source: {publisher: 'UK legislation', title: 'The North Yorkshire (Structural Changes) Order 2022',
+        url: 'https://www.legislation.gov.uk/uksi/2022/328/made', table: 'SI 2022/328, articles 2 and 3'},
+    });
+    expect(Object.keys(AUDIT_ABSENCE).sort()).toEqual(['no-row', 'pension-fund']);
+    expect(AUDIT_ABSENCE_CAUSES).not.toHaveProperty(NORTH_YORKSHIRE);
+    for (const [gss, entries] of status.profiles) if (gss !== NORTH_YORKSHIRE) {
+      for (const other of entries) expect(auditIdentity(other)).toBeNull();
+    }
+  });
+  it('rejects a missing or altered former name note and order citation', () => {
+    const html = fixture(NORTH_YORKSHIRE);
+    const identity = auditIdentity(status.profiles.get(NORTH_YORKSHIRE)[0])!;
+    expect(auditChecks(html, NORTH_YORKSHIRE)).toEqual([]);
+    for (const [before, after] of [[identity.note, ''], ['1 April 2023', '1 April 2024'],
+      [identity.source.title, 'Changed order'], ['SI 2022/328', 'SI 2022/329'],
+      [identity.source.url, 'https://example.com/order']]) {
+      expect(auditChecks(html.replace(before, after), NORTH_YORKSHIRE), before).not.toEqual([]);
+    }
   });
   it('limits the Merton reason to its pension fund row and repeats nothing from that row', () => {
     const {cause, reason} = auditAbsence(MERTON);
@@ -70,7 +92,7 @@ describe('audit status dossier state', () => {
   });
   it('keeps every absence reason free of a positive or negative statement about audits', () => {
     const verdicts = /\b(?:failed|late|behind|overdue|clean|qualified|unqualified|delayed|on time|up to date|compliant|disclaim\w*|modified)\b/i;
-    for (const reason of [AUDIT_ABSENCE['no-row'], AUDIT_ABSENCE['former-name']('North Yorkshire County Council'), AUDIT_ABSENCE['pension-fund']]) {
+    for (const reason of Object.values(AUDIT_ABSENCE)) {
       expect(reason).not.toMatch(verdicts);
       expect(reason).toContain('PSAA');
       expect(reason).toMatch(/not a statement about (?:its|this council's) audits/);
@@ -107,7 +129,7 @@ describe('audit status built page guard', () => {
   });
   it('rejects any positive or negative audit statement on a profile without a row, including metadata', () => {
     for (const claim of ['Its audit is up to date.', 'The accounts were audited on time.', 'This council missed the backstop.', 'Audited accounts: none outstanding.', 'No PSAA concerns.', 'Its statement of accounts was signed off.', 'Draft accounts published.', 'Opinion published on time.', 'Its accounts were signed off.']) {
-      for (const gss of [BURNLEY, NORTH_YORKSHIRE, MERTON]) {
+      for (const gss of [BURNLEY, MERTON]) {
         expect(auditChecks(fixture(gss) + `<p>${claim}</p>`, gss), claim).not.toEqual([]);
         expect(auditChecks(`<meta name="description" content="${claim}">` + fixture(gss), gss), claim).not.toEqual([]);
         expect(auditChecks(fixture(gss).replace('</li>', ` ${claim}</li>`), gss), claim).not.toEqual([]);
@@ -158,7 +180,7 @@ describe('audit status built page guard', () => {
   it('pins the intro and the sources catalogue paragraph word for word', () => {
     expect(AUDIT_COVERAGE).toBe('MHCLG lists the bodies that did not publish all audited accounts by a backstop date. In its words, publication is "a joint endeavour between bodies and audit firms". The lines below are as printed by the publisher; this site does not correct or reconcile them. Each answer responds to the dated question beside it and is not an audit opinion.');
     expect(AUDIT_COVERAGE).not.toMatch(/each backstop/);
-    expect(AUDIT_SOURCES_NOTE).toBe("These are lists of bodies that did not publish audited accounts by a backstop date, not a census of every body. Each answer is shown as printed by the publisher and responds to the dated question in its column heading; it is not an audit opinion. The appointed audit firm column is not shown. A body name is matched to a council profile only by its official name after three fixed normalisations or by a reviewed official source. Rows printed for a predecessor body, under a council's former name, for a pension fund or for another body are not attached to a present council. A council with no lines has a stated reason on its profile, and no statement is made about its audits.");
+    expect(AUDIT_SOURCES_NOTE).toBe("These are lists of bodies that did not publish audited accounts by a backstop date, not a census of every body. Each answer is shown as printed by the publisher and responds to the dated question in its column heading; it is not an audit opinion. The appointed audit firm column is not shown. A body name is matched to a council profile only by its official name after three fixed normalisations or by a reviewed official source. Rows printed for a predecessor body, for a pension fund or for another body are not attached to a present council. A row under a former name is attached only where reviewed official evidence confirms the continuing council. A council with no lines has a stated reason on its profile, and no statement is made about its audits.");
     expect(readFileSync('src/pages/sources.astro', 'utf8')).toContain('<p data-audit-sources-note>{AUDIT_SOURCES_NOTE}</p>');
     // The quoted phrase is printed on the pinned GOV.UK page as part of its first paragraph.
     expect(AUDIT_COVERAGE).toContain('"a joint endeavour between bodies and audit firms"');

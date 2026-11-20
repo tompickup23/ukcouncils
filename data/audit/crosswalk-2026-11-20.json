@@ -1,0 +1,2844 @@
+{
+  "source": {
+    "publisher": "Ministry of Housing, Communities and Local Government",
+    "title": "Addressing the local audit backlog in England: Non-compliance lists",
+    "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+    "original_sha256": "49e66ae8896985dfa87202c925c3cb36da643ef181b2dd6e7822cdaeb74d9d78",
+    "published_or_updated": "2026-03-26",
+    "data_cut_off": "2026-03-09",
+    "retrieved": "2026-11-15",
+    "licence": "Open Government Licence v3.0",
+    "licence_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "edition_checked": "2026-11-18",
+    "edition_url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists",
+    "scope": "Lists of bodies that did not publish by the relevant backstop, not a census. A missing row is not evidence of anything. Pension fund entries are separate from main council accounts.",
+    "discrepancy": "The first table has 67 body rows although publisher prose says 68 bodies. No row is added.",
+    "transformation": "Identity labels and table membership only. No personal names, audit firm names or per-body PSAA values. Labels retain the research spelling; in the Merton pension fund label the original dash is represented by two spaces, to, two spaces. No other label change.",
+    "tables": [
+      {
+        "backstop": "2024-12-13",
+        "financialYears": "Up to and including 2022/23",
+        "bodyRows": 67
+      },
+      {
+        "backstop": "2025-02-28",
+        "financialYears": "2023/24",
+        "bodyRows": 50
+      },
+      {
+        "backstop": "2026-02-27",
+        "financialYears": "2024/25",
+        "bodyRows": 33
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "gss": "E06000002",
+      "officialName": "Middlesbrough Borough Council",
+      "labels": [
+        {
+          "label": "Middlesbrough Council",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/middlesbrough",
+              "retrieved": "2026-11-18",
+              "quote": "Middlesbrough Borough Council",
+              "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+            },
+            {
+              "url": "https://www.middlesbrough.gov.uk/",
+              "retrieved": "2026-11-18",
+              "quote": "Middlesbrough Council",
+              "note": "The council website uses the shorter source label; GOV.UK links this domain under the registry official name."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000007",
+      "officialName": "Warrington Borough Council",
+      "labels": [
+        {
+          "label": "Warrington Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Warrington Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 64
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 46
+            }
+          ]
+        },
+        {
+          "label": "Warrington Borough Council *",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/warrington",
+              "retrieved": "2026-11-18",
+              "quote": "Warrington Borough Council",
+              "note": "Reviewed footnote marker, not an automatic normalisation. GOV.UK confirms the exact council name before the marker; the MHCLG footnote qualifies prior audit years, not body identity."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 29
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000015",
+      "officialName": "Derby City",
+      "labels": [
+        {
+          "label": "Derby City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Derby City",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000018",
+      "officialName": "Nottingham City Council",
+      "labels": [
+        {
+          "label": "Nottingham City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Nottingham City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000021",
+      "officialName": "Stoke-on-Trent City Council",
+      "labels": [
+        {
+          "label": "Stoke-on-Trent City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Stoke-on-Trent City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000032",
+      "officialName": "Luton Borough Council",
+      "labels": [
+        {
+          "label": "Luton Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Luton Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 34
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000038",
+      "officialName": "Reading Borough Council",
+      "labels": [
+        {
+          "label": "Reading Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Reading Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000039",
+      "officialName": "Slough Borough Council",
+      "labels": [
+        {
+          "label": "Slough Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Slough Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 54
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000050",
+      "officialName": "Cheshire West and Chester Council",
+      "labels": [
+        {
+          "label": "Cheshire West and Chester Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Cheshire West and Chester Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000054",
+      "officialName": "Wiltshire Council",
+      "labels": [
+        {
+          "label": "Wiltshire Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Wiltshire Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 66
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000060",
+      "officialName": "Buckinghamshire Council",
+      "labels": [
+        {
+          "label": "Buckinghamshire Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Buckinghamshire Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000061",
+      "officialName": "North Northamptonshire Council",
+      "labels": [
+        {
+          "label": "North Northamptonshire Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "North Northamptonshire Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 41
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000063",
+      "officialName": "Cumberland Council",
+      "labels": [
+        {
+          "label": "Cumberland Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Cumberland Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 12
+            },
+            {
+              "backstop": "2026-02-27",
+              "row": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E06000065",
+      "officialName": "North Yorkshire Council",
+      "labels": [
+        {
+          "label": "North Yorkshire County Council",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.legislation.gov.uk/uksi/2022/328/made",
+              "retrieved": "2026-11-20",
+              "quote": "“the North Yorkshire Council” means the council of the county of North Yorkshire;",
+              "note": "The North Yorkshire (Structural Changes) Order 2022, SI 2022/328, article 2. Article 3(1) makes this continuing council the sole principal authority on or after 1 April 2023. Article 3(3) provides for omitting county from its name by resolution. Raw legislation.gov.uk XML read on the retrieval date. H2, decided on 19 November 2026, authorises this same-body attachment with the label as printed."
+            },
+            {
+              "url": "https://edemocracy.northyorks.gov.uk/mgAi.aspx?ID=11268",
+              "retrieved": "2026-11-20",
+              "quote": "shall be known as “The North Yorkshire Council” from Vesting Day on 1 April 2023",
+              "note": "New Constitution for North Yorkshire Council, official minutes. The resolved name and date fulfil the condition in article 3(3). This is the continuing county council under a new name, not a predecessor or successor assignment."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000008",
+      "officialName": "Cambridge City Council",
+      "labels": [
+        {
+          "label": "Cambridge City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Cambridge City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000011",
+      "officialName": "Huntingdonshire District Council",
+      "labels": [
+        {
+          "label": "Huntingdonshire District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Huntingdonshire District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000012",
+      "officialName": "South Cambridgeshire District Council",
+      "labels": [
+        {
+          "label": "South Cambridgeshire District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "South Cambridgeshire District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000032",
+      "officialName": "Amber Valley Borough Council",
+      "labels": [
+        {
+          "label": "Amber Valley Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Amber Valley Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000034",
+      "officialName": "Chesterfield Borough Council",
+      "labels": [
+        {
+          "label": "Chesterfield Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Chesterfield Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000061",
+      "officialName": "Eastbourne Borough Council",
+      "labels": [
+        {
+          "label": "Eastbourne Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Eastbourne Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000062",
+      "officialName": "Hastings Borough Council",
+      "labels": [
+        {
+          "label": "Hastings Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Hastings Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 25
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000063",
+      "officialName": "Lewes District Council",
+      "labels": [
+        {
+          "label": "Lewes District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Lewes District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 29
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000066",
+      "officialName": "Basildon Borough Council",
+      "labels": [
+        {
+          "label": "Basildon Borough Council *",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/basildon",
+              "retrieved": "2026-11-18",
+              "quote": "Basildon Borough Council",
+              "note": "Reviewed footnote marker, not an automatic normalisation. GOV.UK confirms the exact council name before the marker; the MHCLG footnote qualifies prior audit years, not body identity."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000069",
+      "officialName": "Castle Point Borough Council",
+      "labels": [
+        {
+          "label": "Castle Point Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Castle Point Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000071",
+      "officialName": "Colchester City Council",
+      "labels": [
+        {
+          "label": "Colchester City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Colchester City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 15
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000073",
+      "officialName": "Harlow Council",
+      "labels": [
+        {
+          "label": "Harlow District Council",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/harlow",
+              "retrieved": "2026-11-18",
+              "quote": "Harlow Council",
+              "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+            },
+            {
+              "url": "https://www.gov.uk/government/publications/harlow-district-council",
+              "retrieved": "2026-11-18",
+              "quote": "Harlow District Council",
+              "note": "The GOV.UK publication uses the source label for the same Harlow local authority."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000077",
+      "officialName": "Uttlesford District Council",
+      "labels": [
+        {
+          "label": "Uttlesford District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Uttlesford District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 62
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000078",
+      "officialName": "Cheltenham Borough Council",
+      "labels": [
+        {
+          "label": "Cheltenham Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Cheltenham Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000081",
+      "officialName": "Gloucester City Council",
+      "labels": [
+        {
+          "label": "Gloucester City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Gloucester City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 22
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 16
+            },
+            {
+              "backstop": "2026-02-27",
+              "row": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000088",
+      "officialName": "Gosport Borough Council",
+      "labels": [
+        {
+          "label": "Gosport Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Gosport Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000092",
+      "officialName": "Rushmoor Borough Council",
+      "labels": [
+        {
+          "label": "Rushmoor Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Rushmoor Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 52
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000098",
+      "officialName": "Hertsmere Borough Council",
+      "labels": [
+        {
+          "label": "Hertsmere Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Hertsmere Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000102",
+      "officialName": "Three Rivers District Council",
+      "labels": [
+        {
+          "label": "Three Rivers District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Three Rivers District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 61
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000103",
+      "officialName": "Watford Borough Council",
+      "labels": [
+        {
+          "label": "Watford Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Watford Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000106",
+      "officialName": "Canterbury City Council",
+      "labels": [
+        {
+          "label": "Canterbury City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Canterbury City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000108",
+      "officialName": "Dover District Council",
+      "labels": [
+        {
+          "label": "Dover District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Dover District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000109",
+      "officialName": "Gravesham Borough Council",
+      "labels": [
+        {
+          "label": "Gravesham Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Gravesham Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000111",
+      "officialName": "Sevenoaks District Council",
+      "labels": [
+        {
+          "label": "Sevenoaks District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Sevenoaks District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 53
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000114",
+      "officialName": "Thanet District Council",
+      "labels": [
+        {
+          "label": "Thanet District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Thanet District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000120",
+      "officialName": "Hyndburn Borough Council",
+      "labels": [
+        {
+          "label": "Hyndburn Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Hyndburn Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000121",
+      "officialName": "Lancaster City Council",
+      "labels": [
+        {
+          "label": "Lancaster City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Lancaster City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 22
+            },
+            {
+              "backstop": "2026-02-27",
+              "row": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000122",
+      "officialName": "Pendle Borough Council",
+      "labels": [
+        {
+          "label": "Pendle Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Pendle Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 34
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000130",
+      "officialName": "Charnwood Borough Council",
+      "labels": [
+        {
+          "label": "Charnwood Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Charnwood Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000134",
+      "officialName": "North West Leicestershire District Council",
+      "labels": [
+        {
+          "label": "North West Leicestershire District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "North West Leicestershire District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 33
+            },
+            {
+              "backstop": "2026-02-27",
+              "row": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000144",
+      "officialName": "Broadland District Council",
+      "labels": [
+        {
+          "label": "Broadland District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Broadland District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000148",
+      "officialName": "Norwich City Council",
+      "labels": [
+        {
+          "label": "Norwich City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Norwich City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000149",
+      "officialName": "South Norfolk District Council",
+      "labels": [
+        {
+          "label": "South Norfolk District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "South Norfolk District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000170",
+      "officialName": "Ashfield District Council",
+      "labels": [
+        {
+          "label": "Ashfield District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Ashfield District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000174",
+      "officialName": "Mansfield District Council",
+      "labels": [
+        {
+          "label": "Mansfield District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Mansfield District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 36
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000179",
+      "officialName": "South Oxfordshire District Council",
+      "labels": [
+        {
+          "label": "South Oxfordshire District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "South Oxfordshire District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 57
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000180",
+      "officialName": "Vale of White Horse District Council",
+      "labels": [
+        {
+          "label": "Vale of White Horse District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Vale of White Horse District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 63
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000197",
+      "officialName": "Stafford Borough Council",
+      "labels": [
+        {
+          "label": "Stafford Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Stafford Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 43
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000200",
+      "officialName": "Babergh District Council",
+      "labels": [
+        {
+          "label": "Babergh District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Babergh District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000203",
+      "officialName": "Mid Suffolk District Council",
+      "labels": [
+        {
+          "label": "Mid Suffolk District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Mid Suffolk District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 38
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000209",
+      "officialName": "Guildford Borough Council",
+      "labels": [
+        {
+          "label": "Guildford Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Guildford Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000211",
+      "officialName": "Reigate and Banstead Borough Council",
+      "labels": [
+        {
+          "label": "Reigate and Banstead Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Reigate and Banstead Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 38
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000212",
+      "officialName": "Runnymede Borough Council",
+      "labels": [
+        {
+          "label": "Runnymede Borough Council *",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/runnymede",
+              "retrieved": "2026-11-18",
+              "quote": "Runnymede Borough Council",
+              "note": "Reviewed footnote marker, not an automatic normalisation. GOV.UK confirms the exact council name before the marker; the MHCLG footnote qualifies prior audit years, not body identity."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000214",
+      "officialName": "Surrey Heath Borough Council",
+      "labels": [
+        {
+          "label": "Surrey Heath Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Surrey Heath Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 59
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000217",
+      "officialName": "Woking Borough Council",
+      "labels": [
+        {
+          "label": "Woking Borough Council *",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/woking",
+              "retrieved": "2026-11-18",
+              "quote": "Woking Borough Council",
+              "note": "Reviewed footnote marker, not an automatic normalisation. GOV.UK confirms the exact council name before the marker; the MHCLG footnote qualifies prior audit years, not body identity."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000227",
+      "officialName": "Horsham District Council",
+      "labels": [
+        {
+          "label": "Horsham District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Horsham District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000234",
+      "officialName": "Bromsgrove District Council",
+      "labels": [
+        {
+          "label": "Bromsgrove District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Bromsgrove District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 6
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000235",
+      "officialName": "Malvern Hills District Council",
+      "labels": [
+        {
+          "label": "Malvern Hills District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Malvern Hills District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 35
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 29
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000236",
+      "officialName": "Redditch Borough Council",
+      "labels": [
+        {
+          "label": "Redditch Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Redditch Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 51
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000237",
+      "officialName": "Worcester City Council",
+      "labels": [
+        {
+          "label": "Worcester City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Worcester City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 49
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000238",
+      "officialName": "Wychavon District Council",
+      "labels": [
+        {
+          "label": "Wychavon District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Wychavon District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 67
+            },
+            {
+              "backstop": "2026-02-27",
+              "row": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000240",
+      "officialName": "St Albans City and District Council",
+      "labels": [
+        {
+          "label": "St Albans City and District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "St Albans City and District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 58
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E07000242",
+      "officialName": "East Hertfordshire District Council",
+      "labels": [
+        {
+          "label": "East Hertfordshire District Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "East Hertfordshire District Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 21
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E08000010",
+      "officialName": "Wigan Metropolitan Borough Council",
+      "labels": [
+        {
+          "label": "Wigan Council",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/wigan",
+              "retrieved": "2026-11-18",
+              "quote": "Wigan Metropolitan Borough Council",
+              "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+            },
+            {
+              "url": "https://www.wigan.gov.uk/index.aspx",
+              "retrieved": "2026-11-18",
+              "quote": "Wigan Council",
+              "note": "The council website uses the shorter source label; GOV.UK links this domain under the registry official name."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E08000022",
+      "officialName": "North Tyneside Council",
+      "labels": [
+        {
+          "label": "North Tyneside Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "North Tyneside Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E08000025",
+      "officialName": "Birmingham City Council",
+      "labels": [
+        {
+          "label": "Birmingham City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Birmingham City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 4
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E08000033",
+      "officialName": "Calderdale Metropolitan Borough Council",
+      "labels": [
+        {
+          "label": "Calderdale Metropolitan Borough Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Calderdale Metropolitan Borough Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E08000039",
+      "officialName": "Sheffield City Council",
+      "labels": [
+        {
+          "label": "Sheffield City Council",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Sheffield City Council",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2026-02-27",
+              "row": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E09000004",
+      "officialName": "London Borough of Bexley",
+      "labels": [
+        {
+          "label": "Bexley London Borough Council",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/bexley",
+              "retrieved": "2026-11-18",
+              "quote": "London Borough of Bexley",
+              "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E09000008",
+      "officialName": "London Borough of Croydon",
+      "labels": [
+        {
+          "label": "Croydon London Borough Council",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/croydon",
+              "retrieved": "2026-11-18",
+              "quote": "London Borough of Croydon",
+              "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 17
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E09000010",
+      "officialName": "London Borough of Enfield",
+      "labels": [
+        {
+          "label": "London Borough of Enfield",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "London Borough of Enfield",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 31
+            },
+            {
+              "backstop": "2025-02-28",
+              "row": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E09000014",
+      "officialName": "London Borough of Haringey",
+      "labels": [
+        {
+          "label": "Haringey London Borough Council",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/haringey",
+              "retrieved": "2026-11-18",
+              "quote": "London Borough of Haringey",
+              "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E09000017",
+      "officialName": "London Borough of Hillingdon",
+      "labels": [
+        {
+          "label": "London Borough of Hillingdon",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "London Borough of Hillingdon",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E09000021",
+      "officialName": "Royal Borough of Kingston upon Thames",
+      "labels": [
+        {
+          "label": "Royal Borough of Kingston upon Thames",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "Royal Borough of Kingston upon Thames",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2025-02-28",
+              "row": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E09000025",
+      "officialName": "London Borough of Newham",
+      "labels": [
+        {
+          "label": "Newham London Borough Council",
+          "tier": 2,
+          "evidence": [
+            {
+              "url": "https://www.gov.uk/pay-council-tax/newham",
+              "retrieved": "2026-11-18",
+              "quote": "London Borough of Newham",
+              "note": "Reviewed identity: GOV.UK names the billing council and links its official website. The MHCLG label identifies the same borough."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gss": "E09000026",
+      "officialName": "London Borough of Redbridge",
+      "labels": [
+        {
+          "label": "London Borough of Redbridge",
+          "tier": 1,
+          "evidence": [
+            {
+              "registryPath": "data/registry/councils.json",
+              "officialName": "London Borough of Redbridge",
+              "method": "Lower case, ampersand to and, remove one trailing Council with its preceding space; nothing else."
+            }
+          ],
+          "occurrences": [
+            {
+              "backstop": "2024-12-13",
+              "row": 32
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unassigned": [
+    {
+      "label": "Cambridgeshire County Council",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Cambridgeshire County Council",
+          "note": "The printed body label identifies a county rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 5
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "county"
+    },
+    {
+      "label": "Chief Constable of Cleveland",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Cleveland",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 8
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Chief Constable of Derbyshire",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Derbyshire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 12
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Chief Constable of Hertfordshire",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Hertfordshire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 13
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 9
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Chief Constable of Leicestershire",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Leicestershire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 14
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Chief Constable of Northumbria",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Chief Constable of Northumbria",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 3
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Copeland Borough Council",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Copeland Borough Council",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        },
+        {
+          "url": "https://cumberland.moderngov.co.uk/documents/s25243/Copeland%2BBorough%2BStatement%2Bof%2BAccounts%2B2019-20%2B2020-21%2B2021-22%2B2022-23%2BAppendix%2B1.pdf",
+          "retrieved": "2026-11-18",
+          "quote": "Copeland Borough Council was abolished on 1 April 2023.",
+          "note": "Statement of Accounts, narrative report. Historic district outside the current billing set; no successor assignment."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 16
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "County Durham and Darlington Fire and Rescue Service",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "County Durham and Darlington Fire and Rescue Service",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 4
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "fire"
+    },
+    {
+      "label": "Derbyshire Fire Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Derbyshire Fire Authority",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 19
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "fire"
+    },
+    {
+      "label": "East Midlands Combined Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "East Midlands Combined Authority",
+          "note": "The printed body label identifies a combined authority rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 14
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "combined-authority"
+    },
+    {
+      "label": "East Sussex County Council",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "East Sussex County Council",
+          "note": "The printed body label identifies a county rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 6
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "county"
+    },
+    {
+      "label": "Hartlepool Development Corporation",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Hartlepool Development Corporation",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 19
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 9
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "Hereford and Worcester Fire Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Hereford and Worcester Fire Authority",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 21
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "fire"
+    },
+    {
+      "label": "King’s Lynn Internal Drainage Board",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "King’s Lynn Internal Drainage Board",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 28
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "Leicester, Leicestershire and Rutland Combined Fire Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Leicester, Leicestershire and Rutland Combined Fire Authority",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 23
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "fire"
+    },
+    {
+      "label": "Lindsey Marsh Drainage Board",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Lindsey Marsh Drainage Board",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 30
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 25
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 13
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "London Borough of Merton (Pension fund only  to  the opinion for the main accounts was published by the backstop)",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "London Borough of Merton (Pension fund only  to  the opinion for the main accounts was published by the backstop)",
+          "note": "The publisher explicitly limits this entry to the pension fund. No assignment to Merton main accounts. The retained research spells the original dash as two spaces, to, two spaces."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 14
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "pension-fund"
+    },
+    {
+      "label": "London Fire Commissioner",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "London Fire Commissioner",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 33
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "fire"
+    },
+    {
+      "label": "Merseyside Waste Disposal Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Merseyside Waste Disposal Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 37
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 30
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "Middlesbrough Development Corporation",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Middlesbrough Development Corporation",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 31
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 15
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "Norfolk County Council (including Norfolk Pension Fund)",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Norfolk County Council (including Norfolk Pension Fund)",
+          "note": "The printed body label identifies a county rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 16
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "county"
+    },
+    {
+      "label": "North London Waste Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "North London Waste Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 32
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "North York Moors National Park Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "North York Moors National Park Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 43
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "North Yorkshire Police Fire and Crime Commissioner",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "North Yorkshire Police Fire and Crime Commissioner",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 45
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Peak District National Park Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Peak District National Park Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 46
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "Police and Crime Commissioner for Derbyshire",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Derbyshire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 47
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Police and Crime Commissioner for Durham",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Durham",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 48
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Police and Crime Commissioner for Hertfordshire",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Hertfordshire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 49
+        },
+        {
+          "backstop": "2025-02-28",
+          "row": 35
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Police and Crime Commissioner for Humberside",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Humberside",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 36
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Police and Crime Commissioner for Leicestershire",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Leicestershire",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2024-12-13",
+          "row": 50
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Police and Crime Commissioner for Northumbria",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Police and Crime Commissioner for Northumbria",
+          "note": "The printed body label identifies a police rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 20
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "police"
+    },
+    {
+      "label": "Salisbury City Council",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Salisbury City Council",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        },
+        {
+          "url": "https://salisburycitycouncil.gov.uk/our-council/about-your-council/",
+          "retrieved": "2026-11-18",
+          "quote": "As a Parish Council",
+          "note": "Salisbury City Council identifies its parish status. It is not the Wiltshire billing authority."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 23
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "South Tees Development Corporation",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "South Tees Development Corporation",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 41
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 25
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "Staffordshire County Council",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Staffordshire County Council",
+          "note": "The printed body label identifies a county rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 44
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "county"
+    },
+    {
+      "label": "Tees Valley Combined Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Tees Valley Combined Authority",
+          "note": "The printed body label identifies a combined authority rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 45
+        },
+        {
+          "backstop": "2026-02-27",
+          "row": 27
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "combined-authority"
+    },
+    {
+      "label": "Transport for the North",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "Transport for the North",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 28
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "West London Waste Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "West London Waste Authority",
+          "note": "The printed body label identifies a other rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2026-02-27",
+          "row": 30
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "other"
+    },
+    {
+      "label": "West Midlands Fire and Rescue Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "West Midlands Fire and Rescue Authority",
+          "note": "The printed body label identifies a fire rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 47
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "fire"
+    },
+    {
+      "label": "York and North Yorkshire Combined Authority",
+      "tier": 2,
+      "evidence": [
+        {
+          "url": "https://www.gov.uk/government/publications/addressing-the-local-audit-backlog-in-england-non-compliance-lists/addressing-the-local-audit-backlog-in-england-non-compliance-lists--2",
+          "retrieved": "2026-11-18",
+          "quote": "York and North Yorkshire Combined Authority",
+          "note": "The printed body label identifies a combined authority rather than one of the 296 billing profiles. No assignment to a council or successor."
+        }
+      ],
+      "occurrences": [
+        {
+          "backstop": "2025-02-28",
+          "row": 50
+        }
+      ],
+      "decision": "not-billing-profile",
+      "bodyClass": "combined-authority"
+    }
+  ]
+}

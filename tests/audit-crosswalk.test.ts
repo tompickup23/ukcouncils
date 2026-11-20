@@ -35,13 +35,13 @@ describe('pinned MHCLG identity crosswalk', () => {
     const d = data.dryRun;
     expect(d.profileCount).toBe(296);
     expect([d.sourceLabels, d.sourceRows, d.tier1Labels, d.tier2Labels]).toEqual([120, 150, 69, 51]);
-    expect([d.combined.tier1.count, d.combined.tier2.count, d.combined.tier2Additional, d.combined.reached.count]).toEqual([69, 11, 10, 79]);
-    expect(d.combined.profilesOnNoList).toHaveLength(217);
+    expect([d.combined.tier1.count, d.combined.tier2.count, d.combined.tier2Additional, d.combined.reached.count]).toEqual([69, 12, 11, 80]);
+    expect(d.combined.profilesOnNoList).toHaveLength(216);
     expect(d.unresolvedLabels).toEqual([]);
     expect(d.byTable.map((table: Json) => [table.sourceRows, table.tier1.count, table.tier2.count, table.reached.count, table.profilesOnNoList.length]))
-      .toEqual([[67, 45, 5, 50, 246], [50, 30, 2, 32, 264], [33, 14, 5, 19, 277]]);
+      .toEqual([[67, 45, 6, 51, 245], [50, 30, 2, 32, 264], [33, 14, 5, 19, 277]]);
     expect(d.notBillingProfilesByClass.map((row: Json) => [row.bodyClass, row.labels.length]))
-      .toEqual([['county', 5], ['police', 12], ['fire', 6], ['pension-fund', 1], ['combined-authority', 3], ['other', 13]]);
+      .toEqual([['county', 4], ['police', 12], ['fire', 6], ['pension-fund', 1], ['combined-authority', 3], ['other', 13]]);
     const reached = new Set(d.combined.reached.profiles);
     expect(d.combined.profilesOnNoList.every((row: Json) => !reached.has(row.gss))).toBe(true);
   });
@@ -52,10 +52,10 @@ describe('pinned MHCLG identity crosswalk', () => {
     expect(normaliseAuditName('Basildon Borough Council *')).toBe('basildon borough council *');
     expect(normaliseAuditName('Bexley London Borough Council')).not.toBe(normaliseAuditName('London Borough of Bexley'));
   });
-  it('preserves qualifiers and never assigns historical or pension identities to main accounts', () => {
+  it('preserves qualifiers and keeps predecessor and pension identities separate', () => {
     const excluded = data.crosswalk.unassigned;
     expect(excluded.find((row: Json) => row.label.startsWith('London Borough of Merton')).bodyClass).toBe('pension-fund');
-    expect(excluded.find((row: Json) => row.label === 'North Yorkshire County Council').bodyClass).toBe('county');
+    expect(excluded.some((row: Json) => row.label === 'North Yorkshire County Council')).toBe(false);
     expect(excluded.find((row: Json) => row.label === 'Copeland Borough Council').bodyClass).toBe('other');
     const warrington = data.crosswalk.profiles.find((row: Json) => row.gss === 'E06000007')!;
     expect(warrington.labels.map((row: Json) => row.tier).sort()).toEqual([1, 2]);
@@ -135,9 +135,9 @@ describe('pinned MHCLG answers through the crosswalk', () => {
   const research = JSON.parse(readFileSync(INPUT_PATHS[0], 'utf8'));
   it('holds one entry for each crosswalk row and table, with answers exactly as printed', () => {
     expect(values.profiles.map((row: Json) => row.gss)).toEqual(data.crosswalk.profiles.map((row: Json) => row.gss));
-    expect(values.profiles).toHaveLength(79);
-    expect(data.valuesDryRun.byTable.map((table: Json) => table.profilesWithLines)).toEqual([50, 32, 19]);
-    expect(data.valuesDryRun.profilesByTableCount.map((row: Json) => row.profiles)).toEqual([59, 18, 2]);
+    expect(values.profiles).toHaveLength(80);
+    expect(data.valuesDryRun.byTable.map((table: Json) => table.profilesWithLines)).toEqual([51, 32, 19]);
+    expect(data.valuesDryRun.profilesByTableCount.map((row: Json) => row.profiles)).toEqual([60, 18, 2]);
     for (const profile of values.profiles) for (const entry of profile.entries) {
       const table = research.tables[1 + values.tables.findIndex((item: Json) => item.backstop === entry.backstop)];
       const printed = table.rows[entry.row];
@@ -146,6 +146,15 @@ describe('pinned MHCLG answers through the crosswalk', () => {
     }
     expect(values.tables.map((table: Json) => table.questions.opinionDelivered)).toEqual([
       'All audit opinions delivered by 13 December 2024?', 'Audit opinion delivered by 28 February 2025?', 'Audit opinion delivered by 27 February 2026?']);
+  });
+  it('changes no existing profile values, table questions, footnote or other reviewed identity', () => {
+    const previous = JSON.parse(readFileSync('data/audit/values-2026-11-18.json', 'utf8'));
+    expect(values.profiles.filter((profile: Json) => profile.gss !== 'E06000065')).toEqual(previous.profiles);
+    expect(values.tables).toEqual(previous.tables);
+    expect(values.footnote).toEqual(previous.footnote);
+    const previousReview = JSON.parse(readFileSync('data/audit/review-2026-11-18.json', 'utf8'));
+    const others = (rows: Json[]) => rows.filter(row => row.label !== 'North Yorkshire County Council');
+    expect(others(data.review.rows)).toEqual(others(previousReview.rows));
   });
   it('never carries the appointed audit firm column or a firm name', () => {
     const firms = new Set(research.tables.slice(1).flatMap((table: Json) => table.rows.map((row: string[]) => row[2])));
@@ -164,7 +173,16 @@ describe('pinned MHCLG answers through the crosswalk', () => {
   });
   it('keeps predecessor and pension rows off the present councils', () => {
     const codes = values.profiles.map((row: Json) => row.gss);
-    expect(codes).not.toContain('E06000065');
+    const northYorkshire = values.profiles.find((row: Json) => row.gss === 'E06000065')!;
+    expect(northYorkshire.entries).toEqual([{
+      backstop: '2024-12-13', row: 44, label: 'North Yorkshire County Council', asterisk: false,
+      answers: {draftAccounts: research.tables[1].rows[44][1], opinionDelivered: research.tables[1].rows[44][3],
+        dateDelivered: research.tables[1].rows[44][4], opinionPublished: research.tables[1].rows[44][5]},
+    }]);
+    const identity = data.crosswalk.profiles.find((row: Json) => row.gss === 'E06000065')!;
+    expect(identity.labels[0].tier).toBe(2);
+    expect(identity.labels[0].evidence.map((item: Json) => item.url)).toEqual([
+      'https://www.legislation.gov.uk/uksi/2022/328/made', 'https://edemocracy.northyorks.gov.uk/mgAi.aspx?ID=11268']);
     expect(codes).not.toContain('E09000024');
     const cumberland = values.profiles.find((row: Json) => row.gss === 'E06000063')!;
     expect(cumberland.entries.map((entry: Json) => [entry.backstop, entry.label])).toEqual([['2025-02-28', 'Cumberland Council'], ['2026-02-27', 'Cumberland Council']]);

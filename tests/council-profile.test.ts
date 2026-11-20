@@ -55,7 +55,7 @@ const FEED = JSON.parse(readFileSync(join(ROOT, "data", "school-holidays", MANIF
 const CURRENT = loadYear(CURRENT_YEAR);
 const COMPOSITION = JSON.parse(readFileSync(join(ROOT, "data/elections/composition-review-2026-11-16.json"), "utf8"));
 const NOTICES = JSON.parse(readFileSync(join(ROOT, "data/budget/section-114-2026-11-18.json"), "utf8"));
-const AUDIT = JSON.parse(readFileSync(join(ROOT, "data/audit/values-2026-11-18.json"), "utf8"));
+const AUDIT = JSON.parse(readFileSync(join(ROOT, "data/audit/values-2026-11-20.json"), "utf8"));
 
 /** The sections a council's data supports, read from the raw files, not through the reader. */
 function expectedSections(gss: string, parentGss: string | null): string[] {

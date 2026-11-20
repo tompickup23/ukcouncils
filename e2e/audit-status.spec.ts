@@ -24,7 +24,6 @@ for (const [slug, count, starred] of [['gloucester', 3, false], ['middlesbrough'
 
 for (const [slug, text] of [
   ['burnley', 'This council has no row on those lists.'],
-  ['north-yorkshire', 'has a row printed as North Yorkshire County Council, the council\'s name before 1 April 2023'],
   ['merton', 'has a row for the council\'s pension fund only'],
 ] as const) {
   test(`${slug} keeps its own audit absence reason and no audit lines`, async ({page}) => {
@@ -36,3 +35,15 @@ for (const [slug, text] of [
     await expect(reason).toContainText('not a statement about');
   });
 }
+
+test('North Yorkshire shows its printed row and the continuing body evidence', async ({page}) => {
+  await page.goto('/councils/north-yorkshire/#audit-status');
+  const section = page.locator('#audit-status');
+  await expect(section.locator('[data-audit-entry]')).toHaveCount(1);
+  await expect(section.locator('[data-audit-answer]')).toHaveCount(4);
+  await expect(section.locator('[data-audit-line]')).toContainText('Name as printed: North Yorkshire County Council');
+  await expect(section.locator('[data-audit-identity]')).toHaveText("This row is printed under the council's name before 1 April 2023.");
+  await expect(section.getByRole('link', {name: 'UK legislation, The North Yorkshire (Structural Changes) Order 2022'})).toHaveAttribute('href', 'https://www.legislation.gov.uk/uksi/2022/328/made');
+  await expect(section).toContainText('SI 2022/328, articles 2 and 3');
+  await expect(page.locator('[data-dossier-absence="audit"]')).toHaveCount(0);
+});

@@ -2,7 +2,7 @@ import {parse, walkSync, ELEMENT_NODE, TEXT_NODE} from 'ultrahtml';
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {INPUT_PATHS} from './audit-crosswalk.mjs';
-import {loadAuditStatus, auditAbsence, auditLine, auditAnswers, auditSource, auditFootnote, AUDIT_HEADING, AUDIT_COVERAGE} from './audit-status.mjs';
+import {loadAuditStatus, auditAbsence, auditLine, auditAnswers, auditSource, auditFootnote, auditIdentity, AUDIT_HEADING, AUDIT_COVERAGE} from './audit-status.mjs';
 
 const decode = value => value.replace(/&quot;|&#34;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const clean = value => decode(value).replace(/\s+/g, ' ').replace(/\s+([.,;:?])/g, '$1').trim();
@@ -93,21 +93,27 @@ export function auditChecks(html, gss, root = process.cwd()) {
     const citation = `${source.publisher}, ${source.title}, ${source.table}.`;
     const answers = auditAnswers(entry, root).map(row => `${row.question} ${row.answer}`).join(' ');
     const itemText = `${auditLine(entry, root)} ${answers}${entry.asterisk ? ` ${auditFootnote(root)}` : ''} Source: ${citation}`;
-    wanted.push(itemText);
-    if (!item || item.attributes['data-audit-entry'] !== entry.backstop || clean(textOf(item)) !== clean(itemText) || hidden(item)
+    const identity = auditIdentity(entry);
+    const sources = identity ? [source, identity.source] : [source];
+    const citationsText = sources.map(value => `${value.publisher}, ${value.title}, ${value.table}.`);
+    const fullItemText = itemText + (identity ? ` ${identity.note} Source: ${citationsText[1]}` : '');
+    wanted.push(fullItemText);
+    if (!item || item.attributes['data-audit-entry'] !== entry.backstop || clean(textOf(item)) !== clean(fullItemText) || hidden(item)
       || sections.length !== 1 || !inside(item, sections[0])) failures.push('Rendered audit line differs from pinned value');
     if (item) {
       const footnotes = elements.filter(node => has(node, 'data-audit-footnote') && inside(node, item));
       if (footnotes.length !== Number(entry.asterisk)) failures.push('Audit footnote differs from pinned label');
       const links = elements.filter(node => node.name === 'a' && inside(node, item));
-      if (links.length !== 1 || decode(links[0].attributes.href ?? '') !== source.url) failures.push('Audit link differs from the publication');
+      if (links.length !== sources.length || sources.some((value, i) => decode(links[i]?.attributes.href ?? '') !== value.url)) failures.push('Audit link differs from the publication');
       const citations = elements.filter(node => has(node, 'data-citation-record') && inside(node, item));
-      if (citations.length !== 1 || decode(citations[0].attributes['data-citation-record']) !== JSON.stringify(source)) failures.push('Audit citation differs from pinned value');
+      if (citations.length !== sources.length || sources.some((value, i) => decode(citations[i]?.attributes['data-citation-record'] ?? '') !== JSON.stringify(value))) failures.push('Audit citation differs from pinned value');
     }
-    const entries = elements.filter(node => has(node, 'data-citation-entry') && elements.some(list => has(list, 'data-profile-sources') && inside(node, list))
-      && clean(textOf(node)) === clean(citation));
-    if (entries.length !== 1) failures.push('Audit bibliography differs from pinned value');
-    bibliography.push(...entries);
+    for (const text of citationsText) {
+      const entries = elements.filter(node => has(node, 'data-citation-entry') && elements.some(list => has(list, 'data-profile-sources') && inside(node, list))
+        && clean(textOf(node)) === clean(text));
+      if (entries.length !== 1) failures.push('Audit bibliography differs from pinned value');
+      bibliography.push(...entries);
+    }
   });
   for (const section of sections) {
     if (clean(textOf(section)) !== clean(wanted.join(' ')) || hidden(section) || !main || !inside(section, main)) failures.push('Audit section contains unpinned or hidden text');
