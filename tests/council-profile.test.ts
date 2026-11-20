@@ -116,6 +116,16 @@ describe("the Lancashire council profiles", () => {
     }
   });
 
+  it("includes the North Yorkshire identity order in its bibliography only", () => {
+    for (const {council, tax} of pages) {
+      const sources = councilProfile(council, tax).sources.filter(source => source.url === 'https://www.legislation.gov.uk/uksi/2022/328/made');
+      expect(sources, council.slug).toEqual(council.gss === 'E06000065' ? [{
+        publisher: 'UK legislation', title: 'The North Yorkshire (Structural Changes) Order 2022',
+        url: 'https://www.legislation.gov.uk/uksi/2022/328/made', table: 'SI 2022/328, articles 2 and 3',
+      }] : []);
+    }
+  });
+
   it("takes the type from the register as recorded", () => {
     for (const { council, tax } of lancashire) {
       expect(councilProfile(council, tax).about.type).toBe(council.type);
