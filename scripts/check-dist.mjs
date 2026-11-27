@@ -68,6 +68,26 @@ const dossierMoney = new Intl.NumberFormat('en-GB', {style: 'currency', currency
 const dossierCounts = {};
 const coverageBySlug = new Map(loadDossier().profiles.map(profile => [profile.slug, profile]));
 if (!existsSync(join(DIST, "apple-touch-icon.png"))) failures.push("missing Apple touch icon PNG");
+
+// security.txt (RFC 9116), as on UK Council Tax: a mailto Contact, an Expires in
+// the future and at most a year ahead, and a Canonical on this origin. Astro
+// copies it from public/.well-known; a build that drops the dot directory fails here.
+const securityTxt = join(DIST, ".well-known", "security.txt");
+if (!existsSync(securityTxt)) failures.push("missing /.well-known/security.txt");
+else {
+  const fields = new Map();
+  for (const line of readFileSync(securityTxt, "utf8").split("\n")) {
+    const match = /^([A-Za-z-]+):\s*(.+)$/.exec(line.trim());
+    if (match) fields.set(match[1].toLowerCase(), [...(fields.get(match[1].toLowerCase()) ?? []), match[2]]);
+  }
+  if (!(fields.get("contact") ?? []).some((value) => /^mailto:[^@\s]+@[^@\s]+$/.test(value))) failures.push("security.txt has no mailto Contact");
+  const expires = fields.get("expires") ?? [];
+  const when = Date.parse(expires[0] ?? "");
+  if (expires.length !== 1 || Number.isNaN(when)) failures.push("security.txt needs exactly one valid Expires");
+  else if (when <= Date.now()) failures.push(`security.txt expired on ${expires[0]}`);
+  else if (when - Date.now() > 366 * 24 * 60 * 60 * 1000) failures.push(`security.txt Expires is more than a year ahead: ${expires[0]}`);
+  if ((fields.get("canonical") ?? [])[0] !== `${SITE_URL}/.well-known/security.txt`) failures.push("security.txt Canonical is not on the site origin");
+}
 const rel = (path) => path.slice(DIST.length) || "/";
 let pages = 0;
 const efs = JSON.parse(readFileSync(join(process.cwd(), "data/efs/statements.json"), "utf8"));
