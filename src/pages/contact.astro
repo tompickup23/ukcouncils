@@ -9,7 +9,9 @@ import { CONTACT_EMAIL, OFFICIAL_BAND_CHECK, OFFICIAL_COUNCIL_LOOKUP } from "../
   <div class="prose">
     <p>UK Councils is an independent reference publisher. We explain official figures; we cannot access council accounts, amend bills or process payments.</p>
     <h2>Site questions and factual corrections</h2>
-    {CONTACT_EMAIL ? <p>Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> about this site's content.</p> : <p>A public contact mailbox is being verified. No contact form is available on this site yet.</p>}
+    {CONTACT_EMAIL ? (
+      <p data-contact-email>Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> about this site's content, including factual corrections. This mailbox is shared with UK Council Tax, a sister reference site.</p>
+    ) : <p>A public contact mailbox is being verified. No contact form is available on this site yet.</p>}
     <p>For a factual correction, include the page address, the figure or statement concerned, and a link to the relevant official source. Do not send a council account number, your bill, or other personal financial information.</p>
     <p>Our <a href="/corrections/">corrections page</a> explains how substantive changes are recorded.</p>
     <h2>Your bill or council services</h2>

@@ -13,7 +13,7 @@ export const SITE_URL = "https://ukcouncils.co.uk";
 export const SITE_TAGLINE = "Your council, from the official record";
 
 /** Publish a contact address only after receipt has been confirmed. */
-export const CONTACT_EMAIL: string | null = null;
+export const CONTACT_EMAIL: string | null = "info@ukcouncils.co.uk";
 export const OFFICIAL_BAND_CHECK = "https://www.gov.uk/council-tax-bands";
 export const OFFICIAL_COUNCIL_LOOKUP = "https://www.gov.uk/find-local-council";
 
